@@ -207,7 +207,7 @@ cat_count = [
 	'JavaScript',
 	'Python',
 	'Ruby',
-	'C++',
+	'Cpp',
 	'PHP',
 	'NodeJS',
 	'Scala',
