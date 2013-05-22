@@ -1,0 +1,853 @@
+.arr-recipe {
+    border: 6px solid #6aa;
+    border-collapse: separate;
+    border-spacing: 2px;
+    display: table;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    text-indent: 0;
+    width: 100%
+    }
+.arr-recipe-name {
+    display: table-cell;
+    font-size: 1.125em;
+    line-height: 1.2;
+    padding-bottom: 1ex;
+    padding-left: 1em;
+    padding-right: 1px;
+    padding-top: 1ex;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.arr-recipe-number {
+    background: #6aa;
+    color: white;
+    display: table-cell;
+    font-size: 0.75em;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    text-align: center;
+    vertical-align: inherit;
+    width: 15%
+    }
+.backmatter-cover {
+    display: block;
+    float: left;
+    padding-bottom: 20px;
+    padding-right: 20px
+    }
+.backmatter-end {
+    border: 1px inset;
+    clear: both;
+    color: gray;
+    display: block;
+    height: 2px;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em
+    }
+.calibre {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 0;
+    margin-left: 5pt;
+    margin-right: 5pt;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0
+    }
+.calibre1 {
+    display: block
+    }
+.calibre10 {
+    font-weight: bold
+    }
+.calibre11 {
+    line-height: 1.2
+    }
+.calibre12 {
+    display: block;
+    margin-bottom: 9px;
+    margin-top: 9px
+    }
+.calibre13 {
+    display: table-column;
+    text-align: left
+    }
+.calibre14 {
+    display: table-row;
+    vertical-align: middle
+    }
+.calibre15 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    text-align: inherit;
+    vertical-align: inherit;
+    width: 5%
+    }
+.calibre16 {
+    display: block;
+    line-height: 1.2
+    }
+.calibre17 {
+    background-color: rgb(230, 230, 250);
+    color: #227;
+    font-family: "DroidSans"
+    }
+.calibre18 {
+    display: block;
+    page-break-after: always
+    }
+.calibre19 {
+    color: #445;
+    display: block;
+    font-size: 1.41667em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    text-align: left
+    }
+.calibre2 {
+    display: none
+    }
+.calibre20 {
+    clear: both;
+    color: #255;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.8ex;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.8em
+    }
+.calibre21 {
+    height: auto;
+    width: auto
+    }
+.calibre22 {
+    clear: both;
+    color: #255;
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.calibre23 {
+    display: table-header-group;
+    vertical-align: middle
+    }
+.calibre24 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top
+    }
+.calibre25 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 2.2in
+    }
+.calibre26 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top
+    }
+.calibre27 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 2.2in
+    }
+.calibre28 {
+    display: table-row;
+    margin-bottom: 0;
+    margin-top: 0;
+    vertical-align: middle
+    }
+.calibre29 {
+    display: block;
+    font-size: 1em
+    }
+.calibre3 {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.67em
+    }
+.calibre30 {
+    font-family: DroidSansMono;
+    font-size: 0.77778em;
+    white-space: pre-wrap
+    }
+.calibre31 {
+    border: 0 none;
+    display: table-row;
+    margin-bottom: 0;
+    margin-top: 0;
+    vertical-align: middle
+    }
+.calibre32 {
+    display: block;
+    font-size: 1em;
+    padding-left: 1em;
+    text-indent: -1em;
+    word-wrap: break-word
+    }
+.calibre33 {
+    display: table-cell;
+    font-size: 0.75em;
+    padding-bottom: 0.4em;
+    padding-left: 0.2em;
+    padding-right: 1px;
+    padding-top: 0.2em;
+    text-align: inherit;
+    text-decoration: underline;
+    vertical-align: inherit
+    }
+.calibre34 {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.calibre35 {
+    display: block;
+    margin-left: 40px
+    }
+.calibre36 {
+    display: block;
+    font-size: 1em;
+    margin-left: 1em;
+    text-indent: -1em;
+    word-wrap: break-word
+    }
+.calibre37 {
+    border: 1px inset;
+    color: gray;
+    display: block;
+    height: 2px;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em
+    }
+.calibre38 {
+    display: block;
+    font-size: 0.77778em
+    }
+.calibre39 {
+    font-family: DroidSansMono;
+    font-size: 0.71429em;
+    white-space: pre-wrap
+    }
+.calibre4 {
+    display: block;
+    line-height: 130%;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0
+    }
+.calibre40 {
+    display: table-cell;
+    font-size: 1em;
+    padding-bottom: 0.4em;
+    padding-left: 0.2em;
+    padding-right: 1px;
+    padding-top: 0.2em;
+    text-align: inherit;
+    text-decoration: underline;
+    vertical-align: inherit
+    }
+.calibre41 {
+    display: block;
+    font-size: 0.77778em;
+    padding-left: 1em;
+    text-indent: -1em;
+    word-wrap: break-word
+    }
+.calibre42 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 1.9in
+    }
+.calibre43 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 1.9in
+    }
+.calibre5 {
+    font-style: italic
+    }
+.calibre6 {
+    display: table-row-group;
+    vertical-align: middle
+    }
+.calibre7 {
+    display: table-row;
+    vertical-align: inherit
+    }
+.calibre8 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.calibre9 {
+    display: table-column
+    }
+.cf {
+    color: #227;
+    font-family: "DroidSans";
+    font-size: 0.75em
+    }
+.cf1 {
+    color: #227;
+    font-family: "DroidSans";
+    font-size: 1em
+    }
+.cf2 {
+    color: #227;
+    font-family: "DroidSans";
+    font-size: 0.66667em
+    }
+.chapter-name {
+    background: url(images/h1-underline.gif) repeat-x bottom;
+    color: #555;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex
+    }
+.chapter-number {
+    color: #999;
+    display: block;
+    font-size: 0.91667em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.chapter-title {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 2em;
+    text-align: right
+    }
+.codeline {
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    line-height: 1.2;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.codeline1 {
+    border: 0 none;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    line-height: 1.2;
+    padding-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: top
+    }
+.codeline2 {
+    border: 0 none;
+    border-top: 1px solid #aad;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    line-height: 1.2;
+    padding-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: top
+    }
+.codeline3 {
+    border: 0 none;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    line-height: 1.2;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.codeline4 {
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 1em;
+    line-height: 1.2;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.codeline5 {
+    border: 0 none;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 1em;
+    line-height: 1.2;
+    padding-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: top
+    }
+.codeline6 {
+    border: 0 none;
+    border-top: 1px solid #aad;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 1em;
+    line-height: 1.2;
+    padding-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: top
+    }
+.codeprefix {
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.codeprefix1 {
+    border: 0 none;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: top
+    }
+.codeprefix2 {
+    border: 0 none;
+    border-top: 1px solid #aad;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: top
+    }
+.codeprefix3 {
+    border: 0 none;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.codeprefix4 {
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.77778em;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.codeprefix5 {
+    border: 0 none;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.77778em;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: top
+    }
+.codeprefix6 {
+    border: 0 none;
+    border-top: 1px solid #aad;
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.77778em;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: top
+    }
+.comment {
+    color: #151;
+    font-style: italic
+    }
+.copyright {
+    background: #abb;
+    border-top: 1px #355 solid;
+    color: #355;
+    display: block;
+    font-size: 0.58333em;
+    margin-top: 3em;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    text-align: center
+    }
+.copyright-body {
+    font-family: "DroidSans";
+    font-size: 0.75em
+    }
+.epigraph {
+    border-color: #ddd;
+    border-style: solid;
+    border-width: 6px;
+    display: block;
+    font-size: 0.75em;
+    font-style: italic;
+    left: 30%;
+    margin-bottom: 0.7em;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 0;
+    position: relative;
+    text-align: left;
+    width: 60%
+    }
+.episign {
+    border-color: #ddd;
+    border-style: solid;
+    border-width: 2px 0 0 0;
+    display: block;
+    font-size: 1em;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    text-align: right
+    }
+.figure {
+    border-color: #ddd;
+    border-style: dotted;
+    border-width: 3px;
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 7px;
+    text-align: center
+    }
+.figurecaption {
+    display: block;
+    font-weight: bold;
+    text-align: center
+    }
+.footnote-number {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    text-align: inherit;
+    vertical-align: inherit;
+    white-space: nowrap;
+    width: 1.5em
+    }
+.footnotes {
+    border-color: #888;
+    border-style: solid none none none;
+    border-width: 2px 0 0 0;
+    display: block;
+    font-size: 0.75em;
+    margin-top: 2em
+    }
+.hlines {
+    background: #ddf;
+    border-bottom: 2px solid #aad;
+    display: table-cell;
+    font-weight: bold;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top
+    }
+.last-para-in-cell {
+    display: block;
+    line-height: 130%;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0
+    }
+.part-number {
+    font-size: 0.83333em;
+    line-height: 1.2
+    }
+.part-title {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.67em;
+    text-align: center
+    }
+.pg-partintro {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em
+    }
+.prefacesignoffdate {
+    display: block;
+    font-size: 0.75em
+    }
+.processedcode {
+    border-collapse: separate;
+    border-spacing: 2px;
+    display: table;
+    margin-bottom: 0.7em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.7em;
+    text-indent: 0
+    }
+.processedcode1 {
+    border: 0 none;
+    border-collapse: separate;
+    border-spacing: 2px;
+    display: table;
+    margin-bottom: 0.7em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.7em;
+    text-indent: 0
+    }
+.prompt {
+    color: rgb(144, 17, 125);
+    font-weight: bold
+    }
+.shade-fg-black {
+    background-color: rgb(220, 220, 180);
+    color: black
+    }
+.shade-fg-white {
+    background-color: rgb(50, 50, 100);
+    color: white
+    }
+.sidebar {
+    border: 3px solid #aaa;
+    display: block;
+    font-family: sans;
+    font-size: 0.75em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em
+    }
+.sidebar-title {
+    border-bottom: 1px solid #aaa;
+    display: block;
+    font-weight: bold;
+    text-align: center
+    }
+.simpletable {
+    border: 2px solid #aad;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    display: table;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    text-indent: 0
+    }
+.string {
+    color: #551;
+    font-style: italic
+    }
+.table-of-contents {
+    border-collapse: separate;
+    border-spacing: 2px;
+    display: table;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-indent: 0
+    }
+.titlepage {
+    border-color: #888;
+    border-style: solid none;
+    border-width: 3px;
+    color: #555;
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center
+    }
+.titlepage1 {
+    clear: both;
+    color: #777;
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    text-align: center
+    }
+.titlepage2 {
+    clear: both;
+    color: #777;
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    text-align: center
+    }
+.titlepage3 {
+    color: #777;
+    display: block;
+    font-size: 0.75em;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 30px;
+    text-align: center
+    }
+.titlepage4 {
+    border-top: 1px solid #bbb;
+    color: #444;
+    display: block;
+    font-size: 0.58333em;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 45px;
+    text-align: center
+    }

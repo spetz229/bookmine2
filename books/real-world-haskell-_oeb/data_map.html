@@ -1,0 +1,172 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: data_assoc.html
+next: data_funcs.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="data_assoc.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="data_funcs.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="data_map" class="calibre27" id="data_map"></a><h3 id="title-IDADDASD" class="docSection1Title">13.2. Maps</h3><a name="x_wI" class="calibre27" id="x_wI"></a><p class="docText">The <tt class="calibre34">Data.Map</tt>
+    module<a name="ch13-datamapmod" class="calibre27" id="ch13-datamapmod"></a><a name="ch13-maps" class="calibre27" id="ch13-maps"></a> provides a Map type with behavior that is
+    similar to association lists but has much better performance.</p><a name="x_sF1" class="calibre27" id="x_sF1"></a><p class="docText">Maps give us the same capabilities as hash<a name="I_indexterm13_d1e29278" class="calibre27" id="I_indexterm13_d1e29278"></a><a name="I_indexterm13_d1e29283" class="calibre27" id="I_indexterm13_d1e29283"></a> tables do in other languages. Internally, a map is
+    implemented as a balanced binary tree. Compared to a hash table, this is a
+    much more efficient representation in a language with immutable data. This
+    is the most visible example of how deeply pure functional programming
+    affects how we write code: we choose data structures and algorithms that
+    we can express cleanly and that perform efficiently, but our choices for
+    specific tasks are often different from their counterparts in imperative
+    languages.</p><a name="x_tF1" class="calibre27" id="x_tF1"></a><p class="docText">Some functions in the <tt class="calibre34">Data.Map</tt> module have
+    the same names as those in the <tt class="calibre34">Prelude</tt>. Therefore, we
+    will import it with <tt class="calibre34">import qualified Data.Map as
+    Map</tt> and use <tt class="calibre34">Map.</tt><tt class="calibre34"><i class="docEmphasis">name</i></tt> to refer to
+    names in that module. Let's start our tour of <tt class="calibre34">Data.Map</tt> by taking a look at some ways to build
+    a map:</p><pre class="calibre39">-- file: ch13/buildmap.hs
+import qualified Data.Map as Map
+
+-- Functions to generate a Map that represents an association list
+-- as a map
+
+al = [(1, "one"), (2, "two"), (3, "three"), (4, "four")]
+
+{- | Create a map representation of 'al' by converting the association
+-  list using Map.fromList -}
+mapFromAL =
+    Map.fromList al
+
+{- | Create a map representation of 'al' by doing a fold -}
+mapFold =
+    foldl (\map (k, v) -&gt; Map.insert k v map) Map.empty al
+
+{- | Manually create a map with the elements of 'al' in it -}
+mapManual =
+    Map.insert 2 "two" . 
+    Map.insert 4 "four" .
+    Map.insert 1 "one" .
+    Map.insert 3 "three" $ Map.empty</pre><br class="calibre48"/>
+<a name="x_xI" class="calibre27" id="x_xI"></a><p class="docText">Functions such as <tt class="calibre34">Map.insert</tt> work <a name="I_indexterm13_d1e29315" class="calibre27" id="I_indexterm13_d1e29315"></a>in the usual Haskell way: they return a copy of the input
+    data, with the requested change applied. This is quite handy with maps. It
+    means that you can use <tt class="calibre34">foldl</tt> to build
+    up a map as in the <tt class="calibre34">mapFold</tt> example. Or,
+    you can chain together calls to <tt class="calibre34">Map.insert</tt> as in the <tt class="calibre34">mapManual</tt> example. Let's use <i class="docEmphasis">ghci</i> to verify that all of these maps are as
+    expected:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:l buildmap.hs</b>
+[1 of 1] Compiling Main             ( buildmap.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">al</b>
+Loading package array-0.1.0.0 ... linking ... done.
+Loading package containers-0.1.0.2 ... linking ... done.
+[(1,"one"),(2,"two"),(3,"three"),(4,"four")]
+ghci&gt; <b class="calibre40">mapFromAL</b>
+fromList [(1,"one"),(2,"two"),(3,"three"),(4,"four")]
+ghci&gt; <b class="calibre40">mapFold</b>
+fromList [(1,"one"),(2,"two"),(3,"three"),(4,"four")]
+ghci&gt; <b class="calibre40">mapManual</b>
+fromList [(1,"one"),(2,"two"),(3,"three"),(4,"four")]</pre><a name="x_yI" class="calibre27" id="x_yI"></a><p class="docText">Notice that the output from <tt class="calibre34">mapManual</tt> differs from the order of the list we
+    used to construct the map. Maps do not guarantee that they will preserve
+    the original ordering.</p><a name="x_zI" class="calibre27" id="x_zI"></a><p class="docText">Maps operate similarly in concept to association lists.
+    The <tt class="calibre34">Data.Map</tt> module provides functions
+    for adding and removing data from maps. It also lets us filter them,
+    modify them, fold over them, and convert to and from association lists.
+    The library documentation for this module is good, so instead of going
+    into detail on each function, we will present an example that ties
+    together many of the concepts we've discussed in this chapter.</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="data_assoc.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="data_funcs.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

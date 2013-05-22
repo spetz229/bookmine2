@@ -1,0 +1,873 @@
+---
+layout: page
+title: "jQuery: Novice to Ninja"
+prev: OEBPS/ch09.html
+next: OEBPS/apb.html
+book_path: books/earle-castledine-craig-sharkie-jquery-novice-to-ninja-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="toc" title="Appendix A. Reference Material"><div class="toc"><div class="toc"><div class="toc"><h1 class="title"><a xmlns:saxon="http://icl.com/saxon" id="appendix_reference" class="calibre5"></a>Appendix A. Reference Material</h1></div></div></div>
+  
+      
+
+  
+      jQuery is all about being flexible and applicable to as many
+  situations as possible. Both the core library and the plugin architecture
+  encourage this philosophy. The most common usage scenarios are usually
+  catered for straight out of the box, so jQuery’s flexibility rests in the
+  ability to override those defaults. This results in a lot of options! No
+  need to memorize them all, though; just have a good reference on hand, and
+  always check jQuery’s <a href="http://api.jquery.com/">online
+  documentation.</a> And don’t be afraid to dive into the jQuery or plugin
+  source code to look for anything the documentation may have missed.
+
+  
+      <div class="toc" title="$.ajax Options"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e13534" class="calibre5"></a>
+            <code class="literal">$.ajax</code> Options</h2></div></div></div>
+    
+         
+
+    
+         The powerful array of Ajax functions in jQuery is underpinned by a
+    single method: <a id="cha-001"></a>
+            <code class="email">$.ajax</code>. This method accepts a
+    plethora of options, giving it the flexibility to be used in countless
+    situations. We examined some of the options throughout the book, but as
+    always with jQuery, there’s more! You should double-check the
+    documentation for changes, but in case you feel like delving into the
+    details while on the bus, here we go:
+
+    
+         <div class="toc" title="Flags"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e13543" class="calibre5"></a>Flags</h3></div></div></div>
+      
+            
+
+      
+            
+               <a id="cha-002"></a>
+               <a id="cha-002b"></a>The “flaggable” options accept a Boolean
+      value—<code class="email">true</code> or <code class="email">false</code>—to enable or
+      disable the given functionality. Most of the time the defaults will be
+      satisfactory, but it’s easy to override them to customize your
+      request.
+
+      
+            <div class="toc"><dl class="calibre2"><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-003"></a>async</code>
+                  </span></dt><dd class="calibre10">
+            
+                     The <code class="email">async</code> option is
+            <code class="email">true</code> by default, but if you need to do a
+            <a id="cha-003a"></a>synchronous request (which you should try to
+            minimize, as it locks the browser while it’s working), you can set
+            this to <code class="email">false</code>. It’s such a bad idea, though,
+            that the feature will likely be deprecated in the future.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-004"></a>cache</code>
+                  </span></dt><dd class="calibre10">
+            
+                     Caching data can be an issue when performing <a id="cha-004a"></a>Ajax requests; if a user’s browser stores old
+            requests, it might not fetch the latest data. To disable caching,
+            you can set the <code class="email">cache</code> option to
+            <code class="email">false</code>. <code class="email">Script</code> and
+            <code class="email">JSONP</code> requests are uncached by default.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-005"></a>crossDomain</code>
+                  </span></dt><dd class="calibre10">
+            
+                     jQuery will set this flag <code class="email">false</code> for
+            same-domain requests and <code class="email">true</code> for <a id="cha-005b"></a>
+                        <a id="cha-005a"></a>cross-domain requests automatically. But if you need
+            to force it on, you can set it here.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-006"></a>global</code>
+                  </span></dt><dd class="calibre10">
+            
+                     We saw that we could handle events from any Ajax request
+            using <a id="cha-006a"></a>
+                        <a id="cha-006b"></a>global event handlers. You also have the option of
+            stopping global event handlers from handling a particular event by
+            specifying <code class="email">false</code> for the
+            <code class="email">global</code> parameter.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-007"></a>ifModified</code>
+                  </span></dt><dd class="calibre10">
+            
+                     By setting the <code class="email">ifModified</code> flag, you can
+            force a request to be “successful” (that is, to fire the
+            <code class="email">success</code> handler) <span><em class="calibre8">only</em></span> if
+            the <a id="ch007b"></a>
+                        <a id="ch007a"></a>document was modified since the last request. This
+            can be useful if you only want to do some processing when there’s
+            new data to display.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-008"></a>isLocal</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-008a"></a>
+                        <a id="cha-008b"></a>This is used to force the current environment to be
+            recognized as “local,” such as when you browse your site from a
+            <span>file:/// url</span> (rather than via a server).
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-009"></a>processData</code>
+                  </span></dt><dd class="calibre10">
+            
+                     When you have data to send along with your request, jQuery
+            will process it and <a id="cha-009a"></a>convert it to an appropriate query string value. If
+            this is undesirable (for example, if you need to pass a DOM
+            document, or some other sort of structure) you can set the
+            <code class="email">processData</code> flag to
+            <code class="email">false</code>.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-010"></a>traditional</code>
+                  </span></dt><dd class="calibre10">
+            
+                     This flag deals with serializing nested data; recent
+            versions of jQuery will <a id="ch008b"></a>
+                        <a id="cha-010a"></a>serialize objects and more complicated structures.
+            But some server-side languages do not support this. If you need to
+            use the old, flat style of serialization, set this flag to
+            <code class="email">true</code>.<a id="d4e13663"></a>
+                        <a id="d4e13664"></a>
+                     
+          
+                  </dd></dl></div>
+    
+         </div>
+
+    
+         <div class="toc" title="Settings"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e13665" class="calibre5"></a>Settings</h3></div></div></div>
+      
+            
+
+      
+            
+               <a id="cha-011"></a>
+               <a id="cha-011a"></a>Many of the Ajax options allow you to specify more than
+      just a simple on/off value; they generally accept strings or objects to
+      customize and define your Ajax request.
+
+      
+            <div class="toc"><dl class="calibre2"><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-012"></a>accepts</code>
+                  </span></dt><dd class="calibre10">
+            
+                     You can specify what kind of response you will handle from
+            the server by passing a map to the <code class="email">accepts</code>
+            setting; for example: <code class="email">{ xml: 'application/xml ', text:
+            'text/plain ' }</code>. However, if you need to modify this,
+            it’s recommended you do it just once in the global Ajax
+            setup.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-013"></a>contents</code>
+                  </span></dt><dd class="calibre10">
+            
+                     This setting lets you override or specify how jQuery will
+            pass a given <a id="cha-013b"></a>
+                        <a id="cha-013a"></a>content type, such as mapping a type to a string or
+            regular expression. For example, by default the type
+            <span>xml</span> is matched to the regex <span>/xml/</span> and
+            <span>text</span> to <span>/text/</span>.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-014"></a>contentType</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-014a"></a>
+                        <a id="cha-014b"></a>The <code class="email">contentType</code> setting allows
+            you to set the content type for the request. By default it’s
+            <code class="email">application/x-www-form-urlencoded</code>, which is
+            fine for most cases.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-015"></a>context</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-015e"></a>
+                        <a id="cha-015a"></a>When Ajax <a id="cha-015c"></a>callbacks execute, their context is the
+            <code class="email">window</code> object, which is not overly useful. You
+            set the <code class="email">context</code> option so that the <a id="cha-015d"></a>
+                        <code class="email">this</code> property in a callback
+            refers to a handy tool, like a custom JavaScript object or a
+            jQuery element.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-016"></a>converters</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-016a"></a>
+                        <a id="cha-016b"></a>This is another advanced setting that maps
+            <code class="email">dataType</code> values to other
+            <code class="email">dataType</code> values.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-017"></a>data</code>
+                  </span></dt><dd class="calibre10">
+            
+                     To pass data to the server, you specify a string, JavaScript
+            array, or object for the <code class="email">data</code> setting. If you
+            pass in an array or object (and you haven’t disabled the
+            <code class="email">processData</code> flag), the data will be <a id="cha-017b"></a>
+                        <a id="cha-017a"></a>
+                        <a id="cha-017d"></a>
+                        <a id="cha-017c"></a>serialized with the
+            <code class="email">jQuery.params</code> utility function. This
+            takes the input and converts it into a query-string format (very
+            handy)! If it’s a <code class="email">GET</code> request, the string will
+            be appended to the URL.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-018"></a>dataType</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-018a"></a>
+                        <a id="cha-018b"></a>Whereas <code class="email">contentType</code> sets the
+            content type of the data you were sending to the server, the
+            <code class="email">dataType</code> parameter sets the type of data you’re
+            expecting to <span><em class="calibre8">receive</em></span> from the server. The
+            default type is “everything” (<code class="email">*/*</code>), but you
+            could specify <code class="email">xml</code>, <code class="email">html</code>,
+            <code class="email">script</code>, <code class="email">json</code>, or
+            <code class="email">text</code>—in which case jQuery will use the
+            appropriate content type string.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-019"></a>headers</code>
+                  </span></dt><dd class="calibre10">
+            
+                     If you need to add or modify headers for the current
+            request, you can specify them in a map here.<a id="cha-019a"></a>
+                        <a id="cha-019b"></a>
+                        <a id="cha-019c"></a>
+                     
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-020"></a>jsonp</code>
+                  </span></dt><dd class="calibre10">
+            
+                     When you make JSONP calls (which allow <a id="cha-020a"></a>
+                        <a id="cha-020b"></a>
+                        <a id="cha-020c"></a>cross-domain requests), it’s expected that the
+            <a id="cha-020e"></a>callback function name will be
+            <code class="email">callback</code>. If the service you’re using requires
+            a different name, you can define it with the
+            <code class="email">jsonp</code> setting.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-021"></a>mimeType</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-021a"></a>Use this setting if you need to override the default
+            mime type.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-022"></a>password</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-022b"></a>
+                        <a id="cha-022a"></a>Authentication requests require your username and
+            password. You can specify the latter in the
+            <code class="email">password</code> setting.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-023"></a>scriptCharset</code>
+                  </span></dt><dd class="calibre10">
+            
+                     The <code class="email">scriptCharset</code> property allows you to
+            specify the <a id="cha-023b"></a>
+                        <a id="cha-023a"></a>character set of <code class="email">script</code> tags injected by
+            <code class="email">script</code> or <code class="email">jsonp</code> Ajax
+            calls.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-024"></a>statusCode</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-024b"></a>
+                        <a id="cha-024a"></a>This is a nifty map of “status code-to-functions”
+            for handling certain responses from the server. If the status code
+            is matched (for example, <code class="email">404 not
+            found</code>), the related JavaScript function is
+            called.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-025"></a>timeout</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-025a"></a>
+                        <a id="cha-025b"></a>The <code class="email">timeout</code> parameter has the
+            honor of being the only <code class="email">ajax</code> setting that
+            accepts a number: it defines how many milliseconds need to elapse
+            before aborting an Ajax request.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-026"></a>type</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-026a"></a>
+                        <a id="cha-026b"></a>
+                        <a id="cha-026c"></a>One of the most important settings for an Ajax
+            request, the <code class="email">type</code> property defines the HTTP
+            request type: <code class="email">GET</code>, <code class="email">POST</code>,
+            <code class="email">PUT</code>, or <code class="email">DELETE</code>.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-027"></a>url</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-027a"></a>The other most important setting along with
+            <code class="email">type</code>, the <code class="email">url</code> string defines
+            the address of the location you want to call.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-028"></a>username</code>
+                  </span></dt><dd class="calibre10">
+            
+                     The companion to the <code class="email">password</code> field, the
+            <code class="email">username</code> option specifies the username to send
+            with any <a id="cha-028b"></a>
+                        <a id="cha-028a"></a>authentication requests.
+          
+                  </dd><dt class="toc"><span>
+                     <code class="email">
+                        <a id="cha-029"></a>xhrFields</code>
+                  </span></dt><dd class="calibre10">
+            
+                     
+                        <a id="cha-029a"></a>
+                        <a id="cha-029b"></a>
+                        <a id="cha-029e"></a>This is a final advanced setting for mapping a field
+            name to field values to be set on the underlying XHR
+            object.<a id="d4e13966"></a>
+                        <a id="d4e13967"></a>
+                     
+          
+                  </dd></dl></div>
+    
+         </div>
+
+    
+         <div class="toc" title="Callbacks and Functions"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e13968" class="calibre5"></a>Callbacks and Functions</h3></div></div></div>
+      
+            
+
+      
+            Finally, there’s a bunch of callbacks and functions you can define
+      to tweak your request and handle events that occur during the request’s
+      life cycle.
+
+      
+            
+               <a id="cha-030b"></a>
+               <a id="cha-030a"></a>
+               <a id="cha-030"></a>We covered event handlers in <a href="ch06.html" title="Chapter 6Construction, Ajax, and Interactivity">Chapter 6</a>. The <a id="cha-031"></a>
+               <a id="cha-031a"></a>
+               <code class="email">complete</code> handler will fire whenever an
+      <code class="email">$.ajax</code> call completes—regardless of success or
+      failure—so it’s a good place to clean up any loose ends. The
+      <code class="email">error</code> handler is called whenever the call fails, and
+      the <a id="cha-033"></a>
+               <a id="cha-033a"></a>
+               <code class="email">success</code> handler fires whenever it
+      completes correctly.
+
+      
+            
+               <a id="cha-034a"></a>
+               <a id="cha-034"></a>
+               <a id="cha-034b"></a>As well as the event callbacks, there’s also a handful of
+      functions existing as hooks; these let you modify various parts of a
+      request on a call-by-call basis. The <a id="cha-035"></a>
+               <code class="email">beforeSend</code> function fires before the
+      send message is executed, and gives you a place to modify the request if
+      you require. Your handler is given the request object and the current
+      jQuery object. This is a common place to modify the request headers when
+      it’s required. Also, it’s your last chance to stop anything from
+      happening: if you return <code class="email">false</code> from this function,
+      the request will be aborted.
+
+      
+            The <a id="cha-036"></a>
+               <code class="email">jsonpCallback</code> (string name or function)
+      can be used in place of the randomly generated name that jQuery provides
+      by default when performing JSONP requests. You’d do this if you wanted
+      to have greater control over how requests are cached.
+
+      
+            At the lowest level, the magic of Ajax comes from the browser’s
+      implementation of the <a id="cha-037c"></a>
+               <a id="cha-037b"></a>
+               <a id="cha-037"></a>
+               <code class="email">XMLHTTPRequest</code> (or XHR for short)
+      object. This is the fellow that lets us communicate with the server from
+      the client. By default, jQuery looks for the appropriate XHR object and
+      uses this for any Ajax calls. You can modify this if you want to augment
+      or replace it by specifying your own <code class="email">xhr</code> function.
+      The function needs to return the object that should be used.
+
+      
+            The last hook that’s available is the <a id="cha-038"></a>
+               <code class="email">dataFilter</code> function. This is
+      called after a request successfully returns, and is a place for you to
+      make sure the response data is okay. If you need to do any <a id="cha-038b"></a>
+               <a id="cha-038a"></a>data sanitizing, this is the spot. The
+      <code class="email">dataFilter</code> function is passed the raw response
+      data and the type; you should return the data once you’ve processed it
+      so the request cycle can continue.<a id="d4e14047"></a>
+               <a id="d4e14048"></a>
+               <a id="d4e14049"></a>
+            
+    
+         </div>
+  
+      </div>
+
+  
+      <div class="toc" title="$.support Options"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e14050" class="calibre5"></a>
+            <code class="literal">$.support</code> Options</h2></div></div></div>
+    
+         
+
+    
+         
+            <a id="cha-041"></a>
+            <a id="cha-041a"></a>In the old days, we’d use <a id="cha-0419"></a>browser sniffing to determine which version of which browser
+    was being used, and adjust our code to work around known bugs. Those days
+    are over: we now have a more reliable alternative; where possible, we
+    should use feature detection to check whether the browser supports a
+    particular piece of functionality, and supply a workaround or fallback if
+    needed.
+
+    
+         If you use pure jQuery, most of these issues are taken care of
+    internally, but if you’re getting your hands dirty with some raw
+    JavaScript, there’s a nifty mechanism for feature detection available via
+    the <code class="email">support</code> action. We looked at this in <a href="ch06.html" title="Chapter 6Construction, Ajax, and Interactivity">Chapter 6</a>, but only briefly spoke of the many options
+    available. They all return a <code class="email">true</code> or
+    <code class="email">false</code> value to indicate if they’re supported, which can
+    then be used in an
+    <code class="email">if</code>/<code class="email">then</code>/<code class="email">else</code>
+    block to provide support for both cases. For example:
+
+    
+         <pre class="programlisting">var domObject = document.getElementById('content');
+if ($.support.cssFloat) {
+  domObject.style.cssFloat = "left";
+} else {
+  domObject.style.styleFloat = "left";
+}</pre>
+
+    
+         Here are the available properties:
+
+    
+         <div class="toc"><dl class="calibre2"><dt class="toc"><span>
+                  <a id="cha-042"></a>
+                  <code class="email">ajax</code>
+               </span></dt><dd class="calibre10">
+          
+                  This value will be <code class="email">true</code> if the user’s
+          browser has the ability to create an <a id="cha-042b"></a>
+                     <a id="cha-042a"></a>XHR object.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-043"></a>
+                  <code class="email">boxModel</code>
+               </span></dt><dd class="calibre10">
+          
+                  The <code class="email">boxModel</code> property (which is initially
+          set to <code class="email">null</code>, and changed to
+          <code class="email">true</code> or <code class="email">false</code> after the
+          document has loaded) will be <code class="email">true</code> if the browser
+          renders in accordance with the W3C box model.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-044"></a>
+                  <code class="email">checkClone</code>
+               </span></dt><dd class="calibre10">
+          
+                  When <a id="cha-044a"></a>cloning a checkbox or radio button, if the <code class="email">checked</code> attribute’s value is not
+          maintained, the <code class="email">checkClone</code> value will be
+          false.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-045"></a>
+                  <code class="email">checkOn</code>
+               </span></dt><dd class="calibre10">
+          
+                  This is <code class="email">true</code> if the value of a <a id="cha-045a"></a>checkbox defaults to “on” when no value has been
+          specified.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-046"></a>
+                  <code class="email">cors</code>
+               </span></dt><dd class="calibre10">
+          
+                  
+                     <a id="cha-046a"></a>
+                     <a id="cha-046b"></a>This will be <code class="email">true</code> if the user’s
+          browser can create an XHR object that lets you specify the
+          <a id="cha-046c"></a>
+                     <code class="email">withCredentials</code> property, which
+          is itself required for making <a id="cha-046d"></a>cross-domain calls using the <a id="cha-046e"></a>Cross-Origin Resource Sharing mechanism.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-047"></a>
+                  <code class="email">changeBubbles</code>
+               </span></dt><dd class="calibre10">
+          
+                  Detecting browser features as they pertain to events can be a
+          tricky business—it used to be a very common reason to do browser
+          sniffing. Thankfully some clever people figured it all out, so now
+          if you want to know if you can (reliably) react to the <a id="cha-047a"></a>
+                     <code class="email">change</code> event, you can check the
+          <code class="email">changeBubbles</code> property.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-048"></a>
+                  <code class="email">cssFloat</code>
+               </span></dt><dd class="calibre10">
+          
+                  We saw the <code class="email">cssFloat</code> in action in the
+          example above. It detects whether the browser uses the
+          <code class="email">cssFloat</code> label to address the <a id="cha-048a"></a>float style in JavaScript. (It’s impossible to simply
+          <code class="email">float</code>, because that’s a JavaScript keyword
+          referring to floating-point numbers). Internet Explorer uses
+          <a id="cha-048b"></a>
+                     <code class="email">styleFloat</code> instead of
+          <code class="email">cssFloat</code>.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-049"></a>
+                  <code class="email">hrefNormalized</code>
+               </span></dt><dd class="calibre10">
+          
+                  Some browsers fiddle around with <a id="cha-049a"></a>
+                     <a id="cha-049b"></a>links that they’ve determined have been constructed
+          incorrectly—which is a problem if it’s unexpected! The
+          <code class="email">hrefNormalized</code> property will return
+          <code class="email">true</code> if the browser modifies the links.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-050"></a>
+                  <code class="email">htmlSerialize</code>
+               </span></dt><dd class="calibre10">
+          
+                  
+                     <a id="cha-050b"></a>
+                     <a id="cha-050a"></a>If you need to make sure that link elements (such as
+          <code class="email">link</code> and <code class="email">script</code> tags) are serialized correctly when
+          using <a id="cha-050c"></a>
+                     <code class="email">innerHTML</code>, you can use the
+          <code class="email">htmlSerialize</code> property. <a id="cha-050d"></a>Internet Explorer has problems with this, and you’ll
+          need to wrap the offending tags in your own wrapper elements if you
+          want it to play nice.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-051"></a>
+                  <code class="email">leadingWhitespace</code>
+               </span></dt><dd class="calibre10">
+          
+                  
+                     <a id="cha-051a"></a>
+                     <a id="cha-051b"></a>The <code class="email">leadingWhitespace</code> option lets
+          you know if the browser leaves the first node in a DOM child as
+          whitespace or not. When <code class="email">innerHTML</code> is used,
+          <a id="cha-0519"></a>Internet Explorer strips out the first child if it’s a
+          whitespace text node; this can mess up your jQuery code if you’re
+          relying on a set number of children.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-052"></a>
+                  <code class="email">noCloneEvent</code>
+               </span></dt><dd class="calibre10">
+          
+                  
+                     <a id="cha-052a"></a>When you clone a DOM node, some browsers will also
+          clone the event handlers that are attached to it, while others
+          won’t. If events aren’t cloned the <code class="email">noCloneEvent</code>
+          property will be <code class="email">true</code>.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-053"></a>
+                  <code class="email">opacity</code>
+               </span></dt><dd class="calibre10">
+          
+                  We’re all big fans of opacity: it makes sites look futuristic.
+          Unfortunately some browsers are unable to play with opacity via
+          JavaScript (of course, if you use jQuery you’re safe). The
+          <code class="email">opacity</code> property tests to see if the rendering
+          engine understands opacity; otherwise, you will need to resort to
+          using the browser’s filters.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-054"></a>
+                  <code class="email">optDisabled</code>
+               </span></dt><dd class="calibre10">
+          
+                  
+                     <a id="cha-054a"></a>This is <code class="email">true</code> if <code class="email">option</code> elements that are inside a <code class="email">select</code> element are disabled
+          automatically.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-055"></a>
+                  <code class="email">optSelected</code>
+               </span></dt><dd class="calibre10">
+          
+                  This is <code class="email">true</code> if option elements that are
+          selected by default correctly report being selected.<a id="d4e14286"></a>
+                  
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-056"></a>
+                  <code class="email">scriptEval</code>
+               </span></dt><dd class="calibre10">
+          
+                  Browsers also behave differently with regard to executing
+          scripts with injected <a id="cha-056a"></a>
+                     <code class="email">script</code> tags. The
+          <code class="email">scriptEval</code> property will let you know if it’s
+          safe to inject via <a id="cha-056b"></a>
+                     <code class="email">appendChild</code>, or if you should
+          use the <a id="cha-056c"></a>
+                     <code class="email">script.text</code> property.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-057"></a>
+                  <code class="email">style</code>
+               </span></dt><dd class="calibre10">
+          
+                  
+                     <a id="cha-057a"></a>To find the style currently applied to an element, use
+          the <a id="cha-057b"></a>
+                     <a id="cha-057c"></a>
+                     <code class="email">getAttribute</code> method and ask
+          for <code class="email">style</code>—in some browsers. To test whether
+          <code class="email">getAttribute("style")</code> will work on your user’s
+          browser, check the <code class="email">style</code> property.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-058"></a>
+                  <code class="email">submitBubbles</code>
+               </span></dt><dd class="calibre10">
+          
+                  Another event you can check for is the <a id="cha-058a"></a>
+                     <code class="email">submit</code> event via the
+          <code class="email">submitBubbles</code> property. Internally, this uses
+          the same feature detection tricks as
+          <code class="email">changeBubbles</code>.
+        
+               </dd><dt class="toc"><span>
+                  <a id="cha-059"></a>
+                  <a id="cha-059a"></a>
+                  <code class="email">tbody</code>
+               </span></dt><dd class="calibre10">
+          
+                  And finally, in some browsers a <code class="email">tbody</code> element will be automatically
+          inserted into an empty <code class="email">table</code>—which can mess up your DOM
+          manipulations. To check whether you need to look out for this,
+          there’s the <code class="email">tbody</code> property. This will return
+          <code class="email">true</code> (confusingly) if you can have a table
+          without a <code class="email">tbody</code> element being
+          automatically inserted.
+        
+               </dd></dl></div>
+
+    
+         The best part about the <code class="email">support</code> action is
+    that it forces you to understand what bugs you’re working around. With
+    browser sniffing, it’s easy to become complacent and start putting more
+    code than is necessary in conditional blocks. By using
+    <code class="email">support</code> you only target specific aspects,
+    ensuring your users enjoy a consistent experience, regardless of how the
+    vendors modify their browser code.<a id="d4e14363"></a>
+            <a id="d4e14364"></a>
+         
+  
+      </div>
+
+  
+      <div class="toc" title="Events"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="section_appendix_events" class="calibre5"></a>Events</h2></div></div></div>
+    
+         
+
+    
+         
+            <a id="cha-060"></a>We’ve spent a lot of time looking at events, and as we’ve
+    mentioned on a few occasions, jQuery simplifies the cross-browser event
+    handling process by normalizing events to conform to the W3C standard. A
+    normalized event object has a stack of properties and methods that can be
+    useful. We’ve used some of them throughout the book, and now we’ll look at
+    the ones that got away! You can find the full list of event properties in
+    the <a href="http://docs.jquery.com/Events/jQuery.Event">jQuery Events
+    documentation.</a>
+         
+
+    
+         <div class="toc" title="Event Properties"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e14372" class="calibre5"></a>Event Properties</h3></div></div></div>
+      
+            
+
+      
+            
+               <a id="cha-061"></a>We saw this briefly in <a href="ch09.html" title="Chapter 9Plugins, Themes, and Advanced Topics">Chapter 9</a>: the <code class="email">type</code> property
+      will give you the name of the event that fired (even for custom events,
+      if you’ve named them).
+
+      
+            When an event handler is called, you can obtain the DOM element
+      that was the source of the event via the <a id="cha-062a"></a>
+               <a id="cha-062"></a>
+               <code class="email">target</code> property. This can also be
+      wrapped in a jQuery selector to escape the DOM and back into jQuery
+      land. Additionally, if the event is a mouse movement, you can find the
+      element that was the previous target (where the mouse previously was)
+      with the <a id="cha-063"></a>
+               <code class="email">relatedTarget</code> property. And if the
+      event is moving up through the hierarchy—when you’re dealing with
+      bubbling events—the <a id="cha-064"></a>
+               <code class="email">currentTarget</code> will inform you of the
+      target for the current bubbling phase.
+
+      
+            The <a id="cha-065"></a>
+               <code class="email">data</code> property returns you any data
+      you’ve attached when binding the event, and which will let you know
+      <code class="email">which</code> button or key was pressed for <a id="cha-067"></a>
+               <a id="cha-067a"></a>keyboard events.
+
+      
+            A final, extremely useful property is the event’s <a id="cha-066a"></a>
+               <a id="cha-066"></a>
+               <code class="email">timeStamp</code>. This gives you the precise
+      time when the event occurred, and it’s most commonly employed when
+      implementing time-based effects. For example, if you wanted to create a
+      special triple-click event on your page, you could consult the event’s
+      timestamps to see if three clicks had occurred in a given span of
+      time.<a id="d4e14414"></a>
+            
+    
+         </div>
+
+    
+         <div class="toc" title="Event Methods"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e14415" class="calibre5"></a>Event Methods<a id="cha-068a" class="calibre5"></a>
+               <a id="cha-068" class="calibre5"></a>
+            </h3></div></div></div>
+      
+            
+
+      
+            We’ve seen event methods we could use, like <a id="cha-069"></a>
+               <a id="cha-069a"></a>
+               <code class="email">preventDefault</code> and <a id="cha-070"></a>
+               <code class="email">stopPropagation</code>, which let us
+      control how events bubble and are handled by the browser. One more in
+      the same vein is the <a id="cha-071"></a>
+               <code class="email">stopImmediatePropagation</code> method,
+      which is a bit more hardcore than
+      <code class="email">stopPropagation</code>. While
+      <code class="email">stopPropagation</code> prevents parent handlers from
+      running, <code class="email">stopImmediatePropagation</code> stops any
+      further event handlers from running—even on the same element.
+
+      
+            The rest of the methods simply report whether or not any of the
+      other methods have been called. The methods <a id="cha-072"></a>
+               <code class="email">isDefaultPrevented</code>, <a id="cha-073"></a>
+               <code class="email">isPropagationStopped</code>, and
+      <a id="cha-074"></a>
+               <code class="email">isImmediatePropagationStopped</code>
+      return a Boolean value that would be <code class="email">false</code>, unless
+      the respective commands have been issued.<a id="d4e14453"></a>
+               <a id="d4e14454"></a>
+            
+    
+         </div>
+
+    
+         <div class="toc" title="DIY Event Objects"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e14455" class="calibre5"></a>DIY Event Objects<a id="cha-075a" class="calibre5"></a>
+               <a id="cha-075" class="calibre5"></a>
+            </h3></div></div></div>
+      
+            
+
+      
+            While we’re talking about events, there’s one final aspect you
+      might like to know about them: you can create your own event objects and
+      pass them directly to handlers. Check out this code:
+
+      
+            <pre class="programlisting">// Regular event binding
+$('p').bind('click', function(e) {
+  $(this).text(e.pageX);
+});
+// Home-made event object!
+var e = $.Event('click');
+e.pageX = 100;
+e.pageY = 100;
+$('p').trigger(e);</pre>
+
+      
+            We’ve created an artificial click event and manually set its
+      <a id="cha-076"></a>
+               <code class="email">pageX</code> and <a id="cha-076a"></a>
+               <code class="email">pageY</code> properties. This gives you
+      ultimate control over the details of the event that triggers an event
+      handler.<a id="d4e14473"></a>
+               <a id="d4e14474"></a>
+            
+    
+         </div>
+  
+      </div>
+
+   </div></div>
+
+{% endraw %}
+

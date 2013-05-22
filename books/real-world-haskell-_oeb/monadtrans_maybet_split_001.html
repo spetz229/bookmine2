@@ -1,0 +1,41 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: monadtrans_maybet_split_000.html
+next: I_sect118_d1e40515.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<p class="calibre37"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="sfbody1"><tr class="calibre16"><td class="v3"><h2 class="docSidebarTitle" id="calibre_pb_0">Exercise</h2><div class="calibre15"><ol class="docList2" type="1"><li class="calibre19"><div class="calibre15"><p class="docText">Our Parse monad is not a perfect replacement
+            for its earlier counterpart. Because we are using
+            Maybe instead of Either to represent a
+            result, we can't report any useful information if a parse
+            fails.</p><p class="docText">Create an EitherT sometype monad transformer,
+            and use it to implement a more capable Parse monad
+            that can report an error message if parsing fails.</p></div></li></ol></div><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><p class="docText">If you like to explore the Haskell libraries for fun, you may
+          have run across an existing Monad instance for the
+          Either type in the <tt class="calibre34">Control.Monad.Error</tt>
+          module. We suggest that you do not use that as a guide. Its design
+          is too restrictive: it turns Either String into a
+          monad, when you could use a type parameter instead of
+          String.</p><p class="docText"><span class="docEmphasis">Hint</span>: if you follow this suggestion,
+          you'll probably need to use the <tt class="calibre34">FlexibleInstances</tt>
+          language extension in your definition.</p></td></tr></table></td></tr></table></p><br class="calibre48"/></td></tr></table></p><br class="calibre20"/>
+<a href="21061538.html" class="calibre13"><img src="pixel.gif" alt="" border="0" class="calibre26"/></a><ul class="calibre28"></ul><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="middle" class="v1" height="5"><img src="pixel.gif" alt="" border="0" class="calibre8"/></td></tr><tr class="calibre6"><td valign="middle" class="v1"><table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody"><tr class="calibre6"><td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td></tr></table></td><td class="v1"/><td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect118_d1e39964.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect118_d1e40515.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="top" class="v2"><span class="calibre9"></span></td></tr></table><!--IP User 2--><td class="calibre7">
+                         
+                      </td><tr class="calibre6"><td colspan="3" valign="bottom" class="calibre7"><br class="calibre20"/><p class="v4"></p><br class="calibre20"/></td></tr></div>
+
+{% endraw %}
+

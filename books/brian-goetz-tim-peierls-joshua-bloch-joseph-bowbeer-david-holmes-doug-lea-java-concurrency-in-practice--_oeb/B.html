@@ -1,0 +1,77 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: A.html
+next: C.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<p class="calibre1"> </p><h2 class="docPrefaceTitle" id="calibre_pb_0">Index</h2><p class="calibre1"> </p>
+										[<a class="v9" href="SYMBOL.html">SYMBOL</a>]
+									
+										[<a class="v9" href="A.html">A</a>]
+									
+										[<a class="v10" href="B.html">B</a>]
+									
+										[<a class="v9" href="C.html">C</a>]
+									
+										[<a class="v9" href="D.html">D</a>]
+									
+										[<a class="v9" href="E.html">E</a>]
+									
+										[<a class="v9" href="F.html">F</a>]
+									
+										[<a class="v9" href="G.html">G</a>]
+									
+										[<a class="v9" href="H.html">H</a>]
+									
+										[<a class="v9" href="I.html">I</a>]
+									
+										[<a class="v9" href="J.html">J</a>]
+									
+										[<a class="v9" href="K.html">K</a>]
+									
+										[<a class="v9" href="L.html">L</a>]
+									
+										[<a class="v9" href="M.html">M</a>]
+									
+										[<a class="v9" href="N.html">N</a>]
+									
+										[<a class="v9" href="O.html">O</a>]
+									
+										[<a class="v9" href="P.html">P</a>]
+									
+										[<a class="v9" href="Q.html">Q</a>]
+									
+										[<a class="v9" href="R.html">R</a>]
+									
+										[<a class="v9" href="S.html">S</a>]
+									
+										[<a class="v9" href="T.html">T</a>]
+									
+										[<a class="v9" href="U.html">U</a>]
+									
+										[<a class="v9" href="V.html">V</a>]
+									
+										[<a class="v9" href="W.html">W</a>]
+									<p class="calibre3"> </p><p class="calibre1"> </p> <a class="v11" href="ch11lev1sec3.html#iddle1182"> <span class="docEmphStrong">backoff</span></a><p class="calibre3"> </p>     <a class="v11" href="ch11lev1sec3.html#iddle1183"> and nonblocking algorithms</a><p class="calibre3"> </p>
+<a class="v11" href="ch13lev1sec2.html#iddle1184"> <span class="docEmphStrong">barging</span></a><a class="v11" href="ch13lev1sec2.html#iddle1185"> 2nd</a><a class="v11" href="ch13lev1sec2.html#iddle1186"> 3rd</a> [See also  <a class="calibre2" href="F.html#iddle2319"><span class="docEmphStrong">fairness</span></a>.] [See also  <a class="calibre2" href="L.html#iddle3124"><span class="docEmphStrong">lock(ing)</span>, ordering</a>.] [See also  <a class="calibre2" href="C.html#iddle1604"><span class="docEmphStrong">contention/contended</span>, synchronization</a>.]<p class="calibre3"> </p>     <a class="v11" href="ch13lev1sec5.html#iddle1187"> and read-write locks</a><p class="calibre3"> </p>     <a class="v11" href="ch13lev1sec3.html#iddle1188"> performance advantages of</a><p class="calibre3"> </p><a name="iddle1195" class="calibre18" id="iddle1195"></a>
+<a class="v11" href="ch05lev1sec5.html#iddle1189"> <span class="docEmphStrong">barrier(s)</span></a><a class="v11" href="ch05lev1sec5.html#iddle1190"> 2nd</a><a class="v11" href="ch05lev1sec5.html#iddle1191"> 3rd</a><a class="v11" href="ch05lev1sec5.html#iddle1192"> 4th</a> [See also  <a class="calibre2" href="L.html#iddle2932"><span class="docEmphStrong">latch(es)</span></a>.] [See also  <a class="calibre2" href="S.html#iddle4145"><span class="docEmphStrong">semaphores</span></a>.] [See also  <a class="calibre2" href="S.html#iddle4585"><span class="docEmphStrong">synchronizer(s)</span></a>.]<p class="calibre3"> </p>     <a class="v11" href="ch12lev1sec2.html#iddle1193"> -based timer</a><p class="calibre3"> </p>     <a class="v11" href="ch05lev1sec5.html#iddle1194"> action</a><p class="calibre3"> </p>      <a class="v11" href="ch11lev1sec3.html#iddle1195"> memory</a><a class="v11" href="ch16lev1sec1.html#iddle1196"> 2nd</a><p class="calibre3"> </p>     <a class="v11" href="ch05lev1sec5.html#iddle1197"> point</a><p class="calibre3"> </p>
+<a class="v11" href="ch06.html#iddle1198"> <span class="docEmphStrong">behavior</span></a><a class="v11" href="ch06.html#iddle1199"> 2nd</a> [See also  <a class="calibre2" href="R.html#iddle3864"><span class="docEmphStrong">representation</span>, activities</a>.] [See also  <a class="calibre2" href="A.html#iddle1134"><span class="docEmphStrong">asynchrony/asynchronous</span>, tasks</a>.]<p class="calibre3"> </p><span class="docEmphStrong">bias</span>
+ [See  <a class="calibre2" href="T.html#iddle4687"><span class="docEmphStrong">testing</span></a>, pitfalls.]<p class="calibre3"> </p> <a class="v11" href="bib01.html#iddle1201"> <span class="docEmphStrong">bibliography</span></a><p class="calibre3"> </p> <a class="v11" href="ch14lev1sec2.html#iddle1202"> <span class="docEmphStrong">binary latch</span></a><p class="calibre3"> </p>     <a class="v11" href="ch14lev1sec5.html#iddle1203"> AQS-based</a><p class="calibre3"> </p> <a class="v11" href="ch05lev1sec5.html#iddle1204"> <span class="docEmphStrong">binary semaphore</span></a><p class="calibre3"> </p>     <a class="v11" href="ch05lev1sec5.html#iddle1205"> mutex use</a><p class="calibre3"> </p> <a class="v11" href="ch04lev1sec3.html#iddle1206"> <span class="docEmphStrong">Bloch, Joshua</span></a><p class="calibre3"> </p>     <a class="v11" href="ch04lev1sec3.html#iddle1207"> (bibliographic reference)</a><p class="calibre3"> </p><a name="iddle1234" class="calibre18" id="iddle1234"></a> <a class="v11" href="ch05lev1sec3.html#iddle1208"> <span class="docEmphStrong">block(ing)</span></a><p class="calibre3"> </p>     <a class="v11" href="ch05lev1sec5.html#iddle1209"> bounded collections</a><p class="calibre3"> </p>         <a class="v11" href="ch05lev1sec5.html#iddle1210"> semaphore management of</a><p class="calibre3"> </p>         <a class="v11" href="ch12.html#iddle1211"> testing</a><p class="calibre3"> </p>     <a class="v11" href="ch11lev1sec3.html#iddle1212"> context switching impact of</a><p class="calibre3"> </p>     <a class="v11" href="ch05lev1sec3.html#iddle1213"> interruptible methods and</a><p class="calibre3"> </p>     <a class="v11" href="ch07lev1sec1.html#iddle1214"> interruption handling methods</a><p class="calibre3"> </p>     <a class="v11" href="ch07lev1sec1.html#iddle1215"> methods</a><p class="calibre3"> </p>         <a class="v11" href="ch07lev1sec1.html#iddle1216"> and interruption</a><p class="calibre3"> </p>     <a class="v11" href="ch07lev1sec1.html#iddle1217"> non-interruptable</a><p class="calibre3"> </p>     <a class="v11" href="ch12lev1sec1.html#iddle1218"> operations</a><p class="calibre3"> </p>         <a class="v11" href="ch12lev1sec1.html#iddle1219"> testing</a><p class="calibre3"> </p>         <a class="v11" href="ch08lev1sec1.html#iddle1220"> thread pool size impact</a><p class="calibre3"> </p>     
+<a class="v11" href="ch05lev1sec2.html#iddle1221"> queues</a> [See also  <a class="calibre2" href="S.html#iddle4136"><span class="docEmphStrong">Semaphore</span></a>.]<p class="calibre3"> </p>         <a class="v11" href="ch08lev1sec3.html#iddle1222"> and thread pool management</a><p class="calibre3"> </p>         <a class="v11" href="ch07lev1sec1.html#iddle1223"> cancellation, problems</a><p class="calibre3"> </p>         <a class="v11" href="ch07lev1sec1.html#iddle1224"> cancellation, solutions</a><p class="calibre3"> </p>         <a class="v11" href="ch06lev1sec3.html#iddle1225"> <tt class="calibre33">Executor</tt> functionality combined with</a><p class="calibre3"> </p>         <a class="v11" href="ch05lev1sec2.html#iddle1226"> producer-consumer pattern and</a><p class="calibre3"> </p>     <a class="v11" href="ch11lev1sec3.html#iddle1227"> spin-waiting</a><p class="calibre3"> </p>     <a class="v11" href="ch14.html#iddle1228"> state-dependent actions</a><p class="calibre3"> </p>         <a class="v11" href="ch14lev1sec1.html#iddle1229"> and polling</a><p class="calibre3"> </p>         <a class="v11" href="ch14lev1sec1.html#iddle1230"> and sleeping</a><p class="calibre3"> </p>         <a class="v11" href="ch14lev1sec1.html#iddle1231"> condition queues</a><p class="calibre3"> </p>         <a class="v11" href="ch14lev1sec1.html#iddle1232"> structure</a><p class="calibre3"> </p>     <a class="v11" href="ch11lev1sec3.html#iddle1233"> threads, costs of</a><p class="calibre3"> </p>     <a class="v11" href="ch08lev1sec1.html#iddle1234"> waits</a><p class="calibre3"> </p>         <a class="v11" href="ch08lev1sec1.html#iddle1235"> timed vs. unbounded</a><p class="calibre3"> </p> <a class="v11" href="ch05lev1sec1.html#iddle1236"> <span class="docEmphStrong">BlockingQueue</span></a><p class="calibre3"> </p>     <a class="v11" href="ch04lev1sec1.html#iddle1237"> and state-based preconditions</a><p class="calibre3"> </p>     <a class="v11" href="ch03lev1sec5.html#iddle1238"> safe publication use</a><p class="calibre3"> </p>     <a class="v11" href="ch08lev1sec3.html#iddle1239"> thread pool use of</a><p class="calibre3"> </p>
+<a class="v11" href="ch02lev1sec2.html#iddle1240"> <span class="docEmphStrong">bound(ed)</span></a><a class="v11" href="ch02lev1sec2.html#iddle1241"> 2nd</a> [See also  <a class="calibre2" href="T.html#iddle4891"><span class="docEmphStrong">time/timing</span>, constraints</a>.] [See also  <a class="calibre2" href="G.html#iddle2520"><span class="docEmphStrong">guidelines</span>, encapsulation</a>.]<p class="calibre3"> </p>     <a class="v11" href="ch05lev1sec5.html#iddle1242"> blocking collections</a><p class="calibre3"> </p>         <a class="v11" href="ch05lev1sec5.html#iddle1243"> semaphore management of</a><p class="calibre3"> </p>     <a class="v11" href="ch14lev1sec1.html#iddle1244"> buffers</a><p class="calibre3"> </p>         <a class="v11" href="ch14lev1sec1.html#iddle1245"> blocking operations</a><p class="calibre3"> </p>         <a class="v11" href="ch12lev1sec2.html#iddle1246"> scalability testing</a><p class="calibre3"> </p>         <a class="v11" href="ch12lev1sec2.html#iddle1247"> size determination</a><p class="calibre3"> </p>     <a class="v11" href="ch05lev1sec3.html#iddle1248"> queues</a><p class="calibre3"> </p>         <a class="v11" href="ch05lev1sec3.html#iddle1249"> and producer-consumer pattern</a><p class="calibre3"> </p>         <a class="v11" href="ch08lev1sec3.html#iddle1250"> saturation policies</a><p class="calibre3"> </p>         <a class="v11" href="ch08lev1sec3.html#iddle1251"> thread pool use</a><p class="calibre3"> </p>         <a class="v11" href="ch08lev1sec3.html#iddle1252"> thread pool use of</a><p class="calibre3"> </p>     <a class="v11" href="ch11.html#iddle1253"> resource</a><p class="calibre3"> </p>
+<a class="v11" href="ch02_split_001.html#iddle1254"> <span class="docEmphStrong">boundaries</span></a> [See also  <a class="calibre2" href="G.html#iddle2520"><span class="docEmphStrong">guidelines</span>, encapsulation</a>.]<p class="calibre3"> </p>     <a class="v11" href="ch06.html#iddle1255"> task</a><p class="calibre3"> </p>         <a class="v11" href="ch06lev1sec2.html#iddle1256"> analysis for parallelism</a><p class="calibre3"> </p> <a class="v11" href="ch02_split_001.html#iddle1257"> <span class="docEmphStrong">broken multi-threaded programs</span></a><p class="calibre3"> </p>     <a class="v11" href="ch02_split_001.html#iddle1258"> strategies for fixing</a><p class="calibre3"> </p> <a class="v11" href="ch05lev1sec5.html#iddle1259"> <span class="docEmphStrong">BrokenBarrierException</span></a><p class="calibre3"> </p>     <a class="v11" href="ch05lev1sec5.html#iddle1260"> parallel iterative algorithm use</a><p class="calibre3"> </p><a name="iddle1272" class="calibre18" id="iddle1272"></a>
+<a class="v11" href="ch01lev1sec3.html#iddle1261"> <span class="docEmphStrong">buffer(s)</span></a> [See also  <a class="calibre2" href="C.html#iddle1279"><span class="docEmphStrong">cache/caching</span></a>.]<p class="calibre3"> </p>     <a class="v11" href="ch14lev1sec1.html#iddle1262"> bounded</a><p class="calibre3"> </p>         <a class="v11" href="ch14lev1sec1.html#iddle1263"> blocking state-dependent operations with</a><p class="calibre3"> </p>         <a class="v11" href="ch12lev1sec2.html#iddle1264"> scalability testing</a><p class="calibre3"> </p>         <a class="v11" href="ch12lev1sec2.html#iddle1265"> size determination</a><p class="calibre3"> </p>     <a class="v11" href="ch12.html#iddle1266"> <tt class="calibre33">BoundedBuffer</tt> example</a><p class="calibre3"> </p>         <a class="v11" href="ch14lev1sec1.html#iddle1267"> condition queue use</a><p class="calibre3"> </p>         <a class="v11" href="ch12.html#iddle1268"> test case development for</a><p class="calibre3"> </p>     <a class="v11" href="ch12lev1sec1.html#iddle1269"> <tt class="calibre33">BoundedBufferTest</tt> example</a><p class="calibre3"> </p>     <a class="v11" href="ch12lev1sec2.html#iddle1270"> capacities</a><p class="calibre3"> </p>         <a class="v11" href="ch12lev1sec2.html#iddle1271"> comparison testing</a><p class="calibre3"> </p>     <a class="v11" href="ch12.html#iddle1272"> testing</a><p class="calibre3"> </p>
+<a class="v11" href="ch12lev1sec4.html#iddle1273"> <span class="docEmphStrong">bug pattern(s)</span></a><a class="v11" href="ch12lev1sec4.html#iddle1274"> 2nd</a><a class="v11" href="ch12lev1sec4.html#iddle1275"> 3rd</a><a class="v11" href="ch12lev1sec4.html#iddle1276"> 4th</a> [See also  <a class="calibre2" href="C.html#iddle1462"><span class="docEmphStrong">concurrent/concurrency</span>, debugging</a>.] [See also  <a class="calibre2" href="D.html#iddle1943"><span class="docEmphStrong">design patterns</span></a>.] [See also  <a class="calibre2" href="B.html#iddle1272"><span class="docEmphStrong">buffer(s)</span>, testing</a>.]<p class="calibre3"> </p>     <a class="v11" href="ch12lev1sec4.html#iddle1277"> detector</a><p class="calibre3"> </p><a name="iddle1278" class="calibre18" id="iddle1278"></a>
+<a class="v11" href="ch14lev1sec1.html#iddle1278"> busy-waiting</a> [See also  <a class="calibre2" href="B.html#iddle1227"><span class="docEmphStrong">block(ing)</span>, spin-waiting</a>.]<p class="calibre3"> </p><p class="calibre1"> </p>
+<p class="calibre1"> </p>
+
+</div>
+
+{% endraw %}
+

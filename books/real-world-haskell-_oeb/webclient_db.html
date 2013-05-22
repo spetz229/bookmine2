@@ -1,0 +1,293 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: webclient_types.html
+next: webclient_parser.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="webclient_types.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="webclient_parser.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="webclient_db" class="calibre27" id="webclient_db"></a><h3 id="title-IDAVHV5H" class="docSection1Title">22.2. The Database</h3><a name="x_lk" class="calibre27" id="x_lk"></a><p class="docText">Next, we'll write the code to make possible persistent
+    storage in a database. We'll primarily be interested in moving data
+    between the Haskell structures that we defined in
+    <span class="docEmphasis">PodTypes.hs</span> and the database on disk. Also, the first
+    time the user runs the program, the user will need to create the database
+    tables that he will use to store our data.</p><a name="x_mk" class="calibre27" id="x_mk"></a><p class="docText">We'll use HDBC (see <a class="docLink" href="databases_split_000.html#databases">Chapter 21</a>) to
+    interact with a Sqlite database. Sqlite is lightweight and self-contained,
+    which makes it perfect for this project. For information on installing
+    HDBC and Sqlite, consult <a class="docLink" href="databases_hdbc_install.html#databases_hdbc_install">Section 21.2</a>:</p><pre class="calibre39">-- file: ch22/PodDB.hs
+module PodDB where
+
+import Database.HDBC
+import Database.HDBC.Sqlite3
+import PodTypes
+import Control.Monad(when)
+import Data.List(sort)
+
+-- | Initialize DB and return database Connection
+connect :: FilePath -&gt; IO Connection
+connect fp =
+    do dbh &lt;- connectSqlite3 fp
+       prepDB dbh
+       return dbh
+
+{- | Prepare the database for our data.
+
+We create two tables and ask the database engine to verify some pieces
+of data consistency for us:
+
+* castid and epid both are unique primary keys and must never be duplicated
+* castURL also is unique
+* In the episodes table, for a given podcast (epcast), there must be only
+  one instance of each given URL or episode ID
+-}
+prepDB :: IConnection conn =&gt; conn -&gt; IO ()
+prepDB dbh =
+    do tables &lt;- getTables dbh
+       when (not ("podcasts" `elem` tables)) $
+           do run dbh "CREATE TABLE podcasts (\
+                       \castid INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,\
+                       \castURL TEXT NOT NULL UNIQUE)" []
+              return ()
+       when (not ("episodes" `elem` tables)) $
+           do run dbh "CREATE TABLE episodes (\
+                       \epid INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,\
+                       \epcastid INTEGER NOT NULL,\
+                       \epurl TEXT NOT NULL,\
+                       \epdone INTEGER NOT NULL,\
+                       \UNIQUE(epcastid, epurl),\
+                       \UNIQUE(epcastid, epid))" []
+              return ()
+       commit dbh
+
+{- | Adds a new podcast to the database.  Ignores the castid on the
+incoming podcast, and returns a new object with the castid populated.
+
+An attempt to add a podcast that already exists is an error. -}
+addPodcast :: IConnection conn =&gt; conn -&gt; Podcast -&gt; IO Podcast
+addPodcast dbh podcast = 
+    handleSql errorHandler $
+      do -- Insert the castURL into the table.  The database
+         -- will automatically assign a cast ID.
+         run dbh "INSERT INTO podcasts (castURL) VALUES (?)"
+             [toSql (castURL podcast)]
+         -- Find out the castID for the URL we just added.
+         r &lt;- quickQuery' dbh "SELECT castid FROM podcasts WHERE castURL = ?"
+              [toSql (castURL podcast)]
+         case r of
+           [[x]] -&gt; return $ podcast {castId = fromSql x}
+           y -&gt; fail $ "addPodcast: unexpected result: " ++ show y
+    where errorHandler e = 
+              do fail $ "Error adding podcast; does this URL already exist?\n"
+                     ++ show e
+
+{- | Adds a new episode to the database. 
+
+Since this is done by automation instead of by user request, we will
+simply ignore requests to add duplicate episodes.  This way, when we are
+processing a feed, each URL encountered can be fed to this function,
+without having to first look it up in the DB.
+
+Also, we generally won't care about the new ID here, so don't bother
+fetching it. -}
+addEpisode :: IConnection conn =&gt; conn -&gt; Episode -&gt; IO ()
+addEpisode dbh ep =
+    run dbh "INSERT OR IGNORE INTO episodes (epCastId, epURL, epDone) \
+                \VALUES (?, ?, ?)"
+                [toSql (castId . epCast $ ep), toSql (epURL ep),
+                 toSql (epDone ep)]
+    &gt;&gt; return ()
+       
+{- | Modifies an existing podcast.  Looks up the given podcast by
+ID and modifies the database record to match the passed Podcast. -}
+updatePodcast :: IConnection conn =&gt; conn -&gt; Podcast -&gt; IO ()
+updatePodcast dbh podcast =
+    run dbh "UPDATE podcasts SET castURL = ? WHERE castId = ?" 
+            [toSql (castURL podcast), toSql (castId podcast)]
+    &gt;&gt; return ()
+
+{- | Modifies an existing episode.  Looks it up by ID and modifies the
+database record to match the given episode. -}
+updateEpisode :: IConnection conn =&gt; conn -&gt; Episode -&gt; IO ()
+updateEpisode dbh episode =
+    run dbh "UPDATE episodes SET epCastId = ?, epURL = ?, epDone = ? \
+             \WHERE epId = ?"
+             [toSql (castId . epCast $ episode),
+              toSql (epURL episode),
+              toSql (epDone episode),
+              toSql (epId episode)]
+    &gt;&gt; return ()
+
+{- | Remove a podcast.  First removes any episodes that may exist
+for this podcast. -}
+removePodcast :: IConnection conn =&gt; conn -&gt; Podcast -&gt; IO ()
+removePodcast dbh podcast =
+    do run dbh "DELETE FROM episodes WHERE epcastid = ?" 
+         [toSql (castId podcast)]
+       run dbh "DELETE FROM podcasts WHERE castid = ?"
+         [toSql (castId podcast)]
+       return ()
+
+{- | Gets a list of all podcasts. -}
+getPodcasts :: IConnection conn =&gt; conn -&gt; IO [Podcast]
+getPodcasts dbh =
+    do res &lt;- quickQuery' dbh 
+              "SELECT castid, casturl FROM podcasts ORDER BY castid" []
+       return (map convPodcastRow res)
+
+{- | Get a particular podcast.  Nothing if the ID doesn't match, or
+Just Podcast if it does. -}
+getPodcast :: IConnection conn =&gt; conn -&gt; Integer -&gt; IO (Maybe Podcast)
+getPodcast dbh wantedId =
+    do res &lt;- quickQuery' dbh 
+              "SELECT castid, casturl FROM podcasts WHERE castid = ?"
+              [toSql wantedId]
+       case res of
+         [x] -&gt; return (Just (convPodcastRow x))
+         [] -&gt; return Nothing
+         x -&gt; fail $ "Really bad error; more than one podcast with ID"
+
+{- | Convert the result of a SELECT into a Podcast record -}
+convPodcastRow :: [SqlValue] -&gt; Podcast
+convPodcastRow [svId, svURL] =
+    Podcast {castId = fromSql svId,
+             castURL = fromSql svURL}
+convPodcastRow x = error $ "Can't convert podcast row " ++ show x
+
+{- | Get all episodes for a particular podcast. -}
+getPodcastEpisodes :: IConnection conn =&gt; conn -&gt; Podcast -&gt; IO [Episode]
+getPodcastEpisodes dbh pc =
+    do r &lt;- quickQuery' dbh
+            "SELECT epId, epURL, epDone FROM episodes WHERE epCastId = ?"
+            [toSql (castId pc)]
+       return (map convEpisodeRow r)
+    where convEpisodeRow [svId, svURL, svDone] =
+              Episode {epId = fromSql svId, epURL = fromSql svURL,
+                       epDone = fromSql svDone, epCast = pc}</pre><br class="calibre48"/>
+<a name="x_hv" class="calibre27" id="x_hv"></a><p class="docText">In the <tt class="calibre34">PodDB</tt> module, we
+    have defined functions to connect to the database, create the needed
+    tables for it, add data to it, query it, and remove data from it. Here is
+    an example <i class="docEmphasis">ghci</i> session demonstrating
+    interacting with the database. It will create a database file named
+    <i class="docEmphasis">poddbtest.db</i> in the current working directory and add
+    a podcast and an episode to it:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:load PodDB.hs</b>
+[1 of 2] Compiling PodTypes         ( PodTypes.hs, interpreted )
+[2 of 2] Compiling PodDB            ( PodDB.hs, interpreted )
+Ok, modules loaded: PodDB, PodTypes.
+ghci&gt; <b class="calibre40">dbh &lt;- connect "poddbtest.db"</b>
+ghci&gt; <b class="calibre40">:type dbh</b>
+dbh :: Connection
+ghci&gt; <b class="calibre40">getTables dbh</b>
+["episodes","podcasts","sqlite_sequence"]
+ghci&gt; <b class="calibre40">let url = "http://feeds.thisamericanlife.org/talpodcast"</b>
+ghci&gt; <b class="calibre40">pc &lt;- addPodcast dbh (Podcast {castId=0, castURL=url})</b>
+Podcast {castId = 1, castURL = "http://feeds.thisamericanlife.org/talpodcast"}
+ghci&gt; <b class="calibre40">getPodcasts dbh</b>
+[Podcast {castId = 1, castURL = "http://feeds.thisamericanlife.org/talpodcast"}]
+ghci&gt; <b class="calibre40">addEpisode dbh (Episode {epId = 0, epCast = pc, epURL = 
+"http://www.example.com/foo.mp3", epDone = False})</b>
+ghci&gt; <b class="calibre40">getPodcastEpisodes dbh pc</b>
+[Episode {epId = 1, epCast = Podcast {castId = 1, castURL = 
+"http://feeds.thisamericanlife.org/talpodcast"}, epURL = "http://www.example.com/foo.mp3", 
+epDone = False}]
+ghci&gt; <b class="calibre40">commit dbh</b>ghci&gt; <b class="calibre40">disconnect dbh</b></pre>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="webclient_types.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="webclient_parser.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

@@ -1,0 +1,51 @@
+---
+layout: page
+title: "vi and Vim Editors Pocket Reference"
+prev: OEBPS/ch01s05.html
+next: OEBPS/ch01s07.html
+book_path: books/arnold-robbins-vi-and-vim-editors-pocket-reference-support-for-every-text-editing-task-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Input Mode Shortcuts"><div class="book"><div class="book"><div class="book"><h1 class="title1"><a id="viref2-ch-1-sect-5" class="calibre1"></a>Input Mode Shortcuts</h1></div></div></div><p class="copyright"><em class="calibre3">vi</em> provides<a id="sec6inputmodeshortcuts"></a> two ways to decrease the amount of typing you have to do:
+    <em class="calibre3"><a id="I_indexterm1_d1e1929"></a>abbreviations</em> and
+    <em class="calibre3">maps</em>.</p><div class="book" title="Word Abbreviation"><div class="book"><div class="book"><div class="book"><h2 class="title2"><a id="viref2-ch-1-sect-5.1" class="calibre1"></a>Word Abbreviation</h2></div></div></div><div class="book"><dl class="calibre7"><dt class="book"><span><code class="literal">:ab</code> <em class="calibre3"><code class="calibre9">abbr
+          phrase</code></em></span></dt><dd class="calibre8"><p class="copyright">Define <span><em class="calibre3">abbr</em></span> as an abbreviation for
+            <span><em class="calibre3">phrase<a id="I_indexterm1_d1e1956"></a></em></span>.</p></dd><dt class="book"><span><code class="literal">:ab</code></span></dt><dd class="calibre8"><p class="copyright">List all defined abbreviations.</p></dd><dt class="book"><span><code class="literal">:unab</code>
+          <em class="calibre3"><code class="calibre9">abbr</code></em></span></dt><dd class="calibre8"><p class="copyright">Remove definition of <span><em class="calibre3">abbr</em></span>.</p></dd></dl></div></div><div class="book" title="Command and Input Mode Maps"><div class="book"><div class="book"><div class="book"><h2 class="title2"><a id="viref2-ch-1-sect-5.2" class="calibre1"></a>Command and Input Mode Maps</h2></div></div></div><div class="book"><dl class="calibre7"><dt class="book"><span><code class="literal">:map</code> <em class="calibre3"><code class="calibre9">x sequence</code></em></span></dt><dd class="calibre8"><p class="copyright">Define <a id="I_indexterm1_d1e1994"></a><a id="I_indexterm1_d1e1997"></a><a id="I_indexterm1_d1e2000"></a>character(s) <span><em class="calibre3">x</em></span> as a
+            <span><em class="calibre3">sequence</em></span> of editing commands.</p></dd><dt class="book"><span><code class="literal">:unmap</code> <em class="calibre3"><code class="calibre9">x</code></em></span></dt><dd class="calibre8"><p class="copyright">Disable the <span><em class="calibre3">sequence</em></span> defined for
+            <span><em class="calibre3">x</em></span>.</p></dd><dt class="book"><span><code class="literal">:map</code></span></dt><dd class="calibre8"><p class="copyright">List the characters that are currently mapped.</p></dd><dt class="book"><span><code class="literal">:map!</code> <em class="calibre3"><code class="calibre9">x sequence</code></em></span></dt><dd class="calibre8"><p class="copyright">Define character(s) <span><em class="calibre3">x</em></span> as a
+            <span><em class="calibre3">sequence</em></span> of editing commands or text that
+            will be recognized in insert mode.</p></dd><dt class="book"><span><code class="literal">:unmap!</code> <em class="calibre3"><code class="calibre9">x</code></em></span></dt><dd class="calibre8"><p class="copyright">Disable the <span><em class="calibre3">sequence</em></span> defined for the
+            insert mode map <span><em class="calibre3">x</em></span>.</p></dd><dt class="book"><span><code class="literal">:map!</code></span></dt><dd class="calibre8"><p class="copyright">List the characters that are currently mapped for
+            interpretation in insert mode.</p></dd></dl></div><p class="copyright">For both command and insert mode maps, the map name
+      <span><em class="calibre3">x</em></span> can take several forms:</p><div class="book"><dl class="calibre7"><dt class="book"><span><span><em class="calibre3">One character</em></span></span></dt><dd class="calibre8"><p class="copyright">When you type the character, <em class="calibre3">vi</em> executes
+            the associated sequence of commands.</p></dd><dt class="book"><span><span><em class="calibre3">Multiple characters</em></span></span></dt><dd class="calibre8"><p class="copyright">All the characters must be typed within one second. The
+            value of <code class="literal">notimeout</code> changes the behavior.</p></dd><dt class="book"><span><code class="literal">#</code> <em class="calibre3"><code class="calibre9">n</code></em></span></dt><dd class="calibre8"><p class="copyright">Function key notation: a <code class="literal">#</code> followed by a
+            digit <span><em class="calibre3">n</em></span> represents the sequence of characters
+            sent by the keyboard’s function key number
+            <span><em class="calibre3">n</em></span>.</p></dd></dl></div><p class="copyright">To enter characters such as Escape (<code class="literal">^[</code>) or
+      carriage return (<code class="literal">^M</code>), first type
+      <span class="keycap">CTRL-V</span> (<code class="literal">^V</code>).</p></div><div class="book" title="Executable Buffers"><div class="book"><div class="book"><div class="book"><h2 class="title2"><a id="viref2-ch-1-sect-5.3" class="calibre1"></a>Executable Buffers</h2></div></div></div><p class="copyright">Named <a id="I_indexterm1_d1e2136"></a>buffers <a id="I_indexterm1_d1e2140"></a>provide yet another way to create “macros”—complex command
+      sequences you can repeat with a few keystrokes. Here’s how it’s
+      done:</p><div class="book"><ol class="orderedlist"><li class="listitem"><p class="copyright">Type a <em class="calibre3">vi</em> command sequence or an
+          <em class="calibre3">ex</em> command <span><em class="calibre3">preceded by a
+          colon</em></span>; return to command mode.</p></li><li class="listitem"><p class="copyright">Delete the text into a named buffer.</p></li><li class="listitem"><p class="copyright">Execute the buffer with the <code class="literal">@</code> command
+          followed by the buffer letter.</p></li></ol></div><p class="copyright">The <em class="calibre3">ex</em> command
+      <code class="literal">:@</code><em class="calibre3"><code class="calibre9">buf-name</code></em> works
+      similarly.</p><p class="copyright">Some versions of <em class="calibre3">vi</em> treat <code class="literal">*</code>
+      identically to <code class="literal">@</code> when used from the
+      <em class="calibre3">ex</em> command line. In addition, if the buffer character
+      supplied after the <code class="literal">@</code> or <code class="literal">*</code> commands
+      is <code class="literal">*</code>, the command is taken from the default (unnamed)
+      buffer.</p></div><div class="book" title="Automatic Indentation"><div class="book"><div class="book"><div class="book"><h2 class="title2"><a id="viref2-ch-1-sect-5.4" class="calibre1"></a>Automatic Indentation</h2></div></div></div><p class="copyright">Enable <a id="I_indexterm1_d1e2205"></a>automatic indentation with the following command:</p><pre class="screen">:set autoindent</pre><p class="copyright">Four special input sequences affect automatic indentation:</p><div class="book"><dl class="calibre7"><dt class="book"><span><code class="literal">^T</code></span></dt><dd class="calibre8"><p class="copyright">Add one level of indentation; typed in insert mode</p></dd><dt class="book"><span><code class="literal">^D</code></span></dt><dd class="calibre8"><p class="copyright">Remove one level of indentation; typed in insert mode</p></dd></dl></div><div class="book"><dl class="calibre7"><dt class="book"><span><code class="literal">^ ^D</code></span></dt><dd class="calibre8"><p class="copyright">Shift the cursor back to the beginning of the line, but only
+            for the current line<sup class="calibre24">[<a id="viref2-ch-1-note-1" href="#ftn.viref2-ch-1-note-1">1</a>]</sup></p></dd><dt class="book"><span><code class="literal">0 ^D</code></span></dt><dd class="calibre8"><p class="copyright">Shift the cursor back to the beginning of the line and reset
+            the current auto-indent level to zero<sup class="calibre24">[<a id="viref2-ch-1-note-2" href="#ftn.viref2-ch-1-note-2">2</a>]</sup></p></dd></dl></div><p class="copyright">Two commands can be used for shifting source code:</p><div class="book"><dl class="calibre7"><dt class="book"><span><code class="literal">&lt;&lt;</code></span></dt><dd class="calibre8"><p class="copyright">Shift a line left eight spaces</p></dd><dt class="book"><span><code class="literal">&gt;&gt;</code></span></dt><dd class="calibre8"><p class="copyright">Shift a line right eight spaces</p></dd></dl></div><p class="copyright">The default shift is the value of <code class="literal">shiftwidth</code>,
+      usually eight spaces<a id="I_indexterm1_d1e2285"></a>.</p></div><div class="book"><br class="book"/><hr class="calibre5"/><div class="book"><p class="copyright"><sup class="calibre24">[<a id="ftn.viref2-ch-1-note-1" href="#viref2-ch-1-note-1">1</a>] </sup><code class="literal">^ ^D</code> and <code class="literal">0 ^D</code> are
+                not in <em class="calibre3">elvis</em>.</p></div><div class="book"><p class="copyright"><sup class="calibre24">[<a id="ftn.viref2-ch-1-note-2" href="#viref2-ch-1-note-2">2</a>] </sup>The <em class="calibre3">nvi</em> 1.79 documentation has these
+                two commands switched, but the program actually behaves as
+                described here.</p></div></div></div></div>
+
+{% endraw %}
+

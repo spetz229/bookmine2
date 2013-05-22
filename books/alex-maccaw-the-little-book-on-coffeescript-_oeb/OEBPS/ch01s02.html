@@ -1,0 +1,69 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch01.html
+next: OEBPS/ch01s03.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Functions"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e500" class="calibre2"></a>Functions</h1></div></div></div><p class="calibre8">CoffeeScript removes the rather verbose <code class="literal">function</code> statement, and replaces it with a thin
+    arrow: <code class="literal">-&gt;</code>. Functions can be
+    one-liners or indented on multiple lines. The last expression in the
+    function is implicitly returned. In other words, you don’t need to use the
+    <code class="literal">return</code> statement unless you want to
+    return earlier inside the function.</p><p class="calibre8">With that in mind, let’s take a look at an example:</p><pre class="screen">func = -&gt; "bar"</pre><p class="calibre8">You can see in the resultant compilation, the <code class="literal">-&gt;</code> is turned into a <code class="literal">function</code> statement, and the <code class="literal">"bar"</code> string is automatically returned.</p><p class="calibre8">As mentioned earlier, there’s no reason why we can’t use multiple
+    lines, as long as we indent the function body properly:</p><pre class="screen">func = -&gt;
+  # An extra line
+  "bar"</pre><div class="book" title="Function Arguments"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id2600767" class="calibre2"></a>Function Arguments</h2></div></div></div><p class="calibre8">How about specifying arguments? Well, CoffeeScript lets you do
+      that by specifying arguments in parentheses before the arrow:</p><pre class="screen">times = (a, b) -&gt; a * b</pre><p class="calibre8">CoffeeScript supports default arguments too. For example:</p><pre class="screen">times = (a = 1, b = 2) -&gt; a * b</pre><p class="calibre8">You can also use splats to accept multiple arguments (denoted by
+      <code class="literal">...</code>):</p><pre class="screen">sum = (nums...) -&gt; 
+  result = 0
+  nums.forEach (n) -&gt; result += n
+  result</pre><p class="calibre8">In the example above, <code class="literal">nums</code> is
+      an array of all the arguments passed to the function. It’s not an
+      <code class="literal">arguments</code> object, but rather a real
+      array, so you don’t need to concern yourself with <code class="literal">Array.prototype.splice</code> or <code class="literal">jQuery.makeArray()</code> if you want to manipulate
+      it.</p><pre class="screen">trigger = (events...) -&gt;
+  events.splice(1, 0, this)
+  this.constructor.trigger.apply(events)</pre></div><div class="book" title="Function Invocation"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id2993890" class="calibre2"></a>Function Invocation</h2></div></div></div><p class="calibre8">Functions can be invoked exactly as in JavaScript, with parens
+      <code class="literal">()</code>, <code class="literal">apply()</code>, or <code class="literal">call()</code>. However, like Ruby, CoffeeScript will
+      automatically call functions if they are invoked with at least one
+      argument:</p><pre class="screen">a = "Howdy!"
+
+alert a
+# Equivalent to:
+alert(a)
+
+alert inspect a
+# Equivalent to:
+alert(inspect(a))</pre><p class="calibre8">Although parenthesis is optional, I’d recommend using it if it’s
+      not immediately obvious what’s
+      being invoked, and with which arguments. In the last example, with
+      <code class="literal">inspect</code>, I’d definitely recommend
+      wrapping at least the <code class="literal">inspect</code>
+      invocation in parens:</p><pre class="screen">alert inspect(a)</pre><p class="calibre8">If you don’t pass any arguments with an invocation, CoffeeScript
+      has no way of working out if you intend to invoke the function, or just
+      treat it like a variable. In this respect, CoffeeScript’s behavior
+      differs from Ruby’s, which always invokes references to functions, and
+      is more similar to Python’s. This has been the source of a few errors in
+      my CoffeeScript programs, so it’s worth keeping an eye out for cases
+      where you intend to call a function without any arguments, and include
+      parenthesis.</p></div><div class="book" title="Function Context"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id2758230" class="calibre2"></a>Function Context</h2></div></div></div><p class="calibre8">Context changes are rife within JavaScript, especially with event
+      callbacks, so CoffeeScript
+      provides a few helpers to manage this. One such helper is a variation on
+      <code class="literal">-&gt;</code>, the fat arrow function:
+      <code class="literal">=&gt;</code></p><p class="calibre8">Using the fat arrow instead of the thin arrow ensures that the
+      function context will be bound to the local one. For example:</p><pre class="screen">this.clickHandler = -&gt; alert "clicked"
+element.addEventListener "click", (e) =&gt; this.clickHandler(e)</pre><p class="calibre8">The reason you might want to do this is that callbacks from
+      <code class="literal">addEventListener()</code> are executed in
+      the context of the <code class="literal">element</code>, i.e.
+      <code class="literal">this</code> equals the element. If you want
+      to keep <code class="literal">this</code> equal to the local
+      context, without doing a <code class="literal">self = this</code>
+      dance, fat arrows are the way to go.</p><p class="calibre8">This binding idea is a similar concept to jQuery’s <a class="ulink" href="http://api.jquery.com/jQuery.proxy/"><code class="literal">proxy()</code></a> or <a class="ulink" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind">ES5’s</a>
+      <code class="literal">bind()</code> functions.</p></div></div></div>
+
+{% endraw %}
+

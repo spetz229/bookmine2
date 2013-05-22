@@ -1,0 +1,23 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: app01.html
+next: app01lev1sec2.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<a name="app01lev1sec1" class="calibre18" id="app01lev1sec1"></a>
+<h3 id="title-IDAQOP5K" class="docSection1Title">A.1. Class Annotations</h3>
+<p class="docText1">We use three class-level annotations to describe a class's <span class="docEmphasis">intended</span> thread-safety promises: <tt class="calibre25">@Immutable</tt>, <tt class="calibre25">@ThreadSafe</tt>, and <tt class="calibre25">@NotThreadSafe</tt>. <tt class="calibre25">@Immutable</tt> means, of course, that the class is immutable, and implies <tt class="calibre25">@ThreadSafe</tt>. <tt class="calibre25">@NotThreadSafe</tt> is optionalif a class is not annotated as thread-safe, it should be presumed not to be thread-safe, but if you want to make it extra clear, use <tt class="calibre25">@NotThreadSafe</tt>.</p>
+<p class="docText1">These annotations are relatively unintrusive and are beneficial to both users and maintainers. Users can see immediately whether a class is thread-safe, and maintainers can see immediately whether thread-safety guarantees must be preserved. Annotations are also useful to a third constituency: tools. Static codeanalysis tools may be able to verify that the code complies with the contract indicated by the annotation, such as verifying that a class annotated with <tt class="calibre25">@Immutable</tt> actually is immutable.</p>
+<a href="21021536.html" class="calibre2"><img src="pixel.jpg" alt="" border="0" class="calibre26"/></a>
+<p class="calibre3"> </p>
+
+</div>
+
+{% endraw %}
+

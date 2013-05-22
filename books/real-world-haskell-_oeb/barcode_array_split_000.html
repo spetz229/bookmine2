@@ -1,0 +1,208 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: I_sect112_d1e27234.html
+next: barcode_array_split_001.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect112_d1e27234.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect112_d1e27657.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="barcode_array" class="calibre27" id="barcode_array"></a><h3 id="title-IDAC5RZD" class="docSection1Title">12.2. Introducing Arrays</h3><a name="x_bF1" class="calibre27" id="x_bF1"></a><p class="docText">Before we continue,<a name="ch12-arraysbarcodes" class="calibre27" id="ch12-arraysbarcodes"></a> here are all of the imports that we will be using in the
+    remainder of this chapter:</p><pre class="calibre39">-- file: ch12/Barcode.hs
+import Data.Array (Array(..), (!), bounds, elems, indices,
+                   ixmap, listArray)
+
+import Control.Applicative ((&lt;$&gt;))
+import Control.Monad (forM_)
+import Data.Char (digitToInt)
+import Data.Ix (Ix(..))
+import Data.List (foldl', group, sort, sortBy, tails)
+import Data.Maybe (catMaybes, listToMaybe)
+import Data.Ratio (Ratio)
+import Data.Word (Word8)
+import System.Environment (getArgs)
+import qualified Data.ByteString.Lazy.Char8 as L
+import qualified Data.Map as M
+
+import Parse                    -- from chapter 11</pre><br class="calibre48"/>
+<a name="x_UT" class="calibre27" id="x_UT"></a><p class="docText">The barcode encoding process can largely be table-driven,
+    in which we use small tables of bit patterns to decide how to encode each
+    digit. Haskell's bread-and-butter—data types, lists, and tuples—are not
+    well-suited to use for tables whose elements may be accessed randomly. A
+    list has to be traversed linearly to reach the <span class="docEmphasis">k</span>th
+    element. A tuple doesn't have this problem, but Haskell's type system
+    makes it difficult to write a function that takes a tuple and an element
+    offset and returns the element at that offset within the tuple. (We'll
+    explore why in the exercises that follow.)</p><a name="x_VT" class="calibre27" id="x_VT"></a><p class="docText">The usual data type for constant-time random access is of
+    course the array. Haskell provides several array data types. We'll thus
+    represent our encoding tables as arrays of strings.</p><a name="x_WT" class="calibre27" id="x_WT"></a><p class="docText">The simplest array type is in the <tt class="calibre34">Data.Array</tt>
+    module, <a name="I_indexterm12_d1e27358" class="calibre27" id="I_indexterm12_d1e27358"></a>which we're using here. This presents arrays that can
+    contain values of any Haskell type. Like other common Haskell types, these
+    arrays <a name="I_indexterm12_d1e27364" class="calibre27" id="I_indexterm12_d1e27364"></a>are <span class="docEmphasis">immutable</span>. An immutable array is
+    populated with values just once, when it is created. Its contents cannot
+    subsequently be modified. (The standard libraries also provide other array
+    types, some of which are mutable, but we won't cover those for a
+    while.)</p><pre class="calibre39">-- file: ch12/Barcode.hs
+leftOddList = ["0001101", "0011001", "0010011", "0111101", "0100011",
+               "0110001", "0101111", "0111011", "0110111", "0001011"]
+
+rightList = map complement &lt;$&gt; leftOddList
+    where complement '0' = '1'
+          complement '1' = '0'
+
+leftEvenList = map reverse rightList
+
+parityList = ["111111", "110100", "110010", "110001", "101100",
+              "100110", "100011", "101010", "101001", "100101"]
+
+listToArray :: [a] -&gt; Array Int a
+listToArray xs = listArray (0,l-1) xs
+    where l = length xs
+
+leftOddCodes, leftEvenCodes, rightCodes, parityCodes :: Array Int String
+
+leftOddCodes = listToArray leftOddList
+leftEvenCodes = listToArray leftEvenList
+rightCodes = listToArray rightList
+parityCodes = listToArray parityList</pre><br class="calibre48"/>
+<a name="x_XT" class="calibre27" id="x_XT"></a><p class="docText">The <tt class="calibre34">Data.Array</tt> module's <i class="docEmphasis">listArray</i> function<a name="I_indexterm12_d1e27381" class="calibre27" id="I_indexterm12_d1e27381"></a> populates an array from a list. It takes as its first
+    parameter the bounds of the array to create; the second is the values with
+    which to populate it.</p><a name="x_YT" class="calibre27" id="x_YT"></a><p class="docText">An unusual feature of the Array type is that
+    its type is parameterized over both the data it contains and the index
+    type. For example, the type of a one-dimensional array of
+    String is Array Int String, but a
+    two-dimensional array would have the type Array (Int,Int)
+    String:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:m +Data.Array</b>ghci&gt; <b class="calibre40">:type listArray</b>
+listArray :: (Ix i) =&gt; (i, i) -&gt; [e] -&gt; Array i e</pre><a name="x_ZT" class="calibre27" id="x_ZT"></a><p class="docText">We can construct an array easily:</p><pre class="calibre39">ghci&gt; <b class="calibre40">listArray (0,2) "foo"</b>
+array (0,2) [(0,'f'),(1,'o'),(2,'o')]
+</pre><a name="x_aT" class="calibre27" id="x_aT"></a><p class="docText">Notice that we have to specify the lower and upper bounds
+    of the array. These bounds are inclusive, so an array from 0 to 2 has
+    elements 0, 1, and 2:</p><pre class="calibre39">ghci&gt; <b class="calibre40">listArray (0,3) [True,False,False,True,False]</b>
+array (0,3) [(0,True),(1,False),(2,False),(3,True)]
+ghci&gt; <b class="calibre40">listArray (0,10) "too short"</b>
+array (0,10) [(0,'t'),(1,'o'),(2,'o'),(3,' '),(4,'s'),(5,'h'),(6,'o'),
+(7,'r'),(8,'t'),(9,*** Exception: (Array.!): undefined array element</pre><a name="x_bT" class="calibre27" id="x_bT"></a><p class="docText">Once an array is constructed, we can use the <i class="docEmphasis">(!)</i> operator<a name="I_indexterm12_d1e27437" class="calibre27" id="I_indexterm12_d1e27437"></a> to access its elements by index:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let a = listArray (0,14) ['a'..]</b>ghci&gt; <b class="calibre40">a ! 2</b>
+'c'
+ghci&gt; <b class="calibre40">a ! 100</b>
+*** Exception: Error in array index</pre><a name="x_cT" class="calibre27" id="x_cT"></a><p class="docText">Since the array construction function lets us specify the
+    bounds of an array, we don't have to use the zero-based array indexing
+    that is familiar to C programmers. We can choose whatever bounds are
+    convenient for our purposes:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let a = listArray (-9,5) ['a'..]</b>ghci&gt; <b class="calibre40">a ! (-2)</b>
+'h'</pre><a name="x_dT" class="calibre27" id="x_dT"></a><p class="docText">The index type can be any member of the Ix
+    type. This<a name="I_indexterm12_d1e27475" class="calibre27" id="I_indexterm12_d1e27475"></a> lets us use, for example, Char as the index
+    type:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let a = listArray ('a', 'h') [97..]</b>ghci&gt; <b class="calibre40">a ! 'e'</b>
+101</pre><a name="x_eT" class="calibre27" id="x_eT"></a><p class="docText">To create a higher-dimensioned array, we use a tuple of
+    Ix instances as the index type. The
+    <tt class="calibre34">Prelude</tt> makes tuples of up to five elements members of
+    the Ix class. To illustrate, here's a small three-dimensional
+    array:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let a = listArray ((0,0,0), (9,9,9)) [0..]</b>ghci&gt; <b class="calibre40">a ! (4,3,7)</b>
+437</pre><a name="barcode_arrayd1e27862" class="calibre27" id="barcode_arrayd1e27862"></a><h4 id="title-IDAOFSZD" class="docSection1Title">12.2.1. Arrays and Laziness</h4><a name="x_cF1" class="calibre27" id="x_cF1"></a><p class="docText">The list that<a name="I_indexterm12_d1e27521" class="calibre27" id="I_indexterm12_d1e27521"></a> we use to populate the array must contain at least as
+      many elements as are in the array. If we do not provide enough elements,
+      we'll get an error at runtime. When the error occurs depends on the
+      nature of the array.</p><a name="x_dF1" class="calibre27" id="x_dF1"></a><p class="docText">Here, we are using an array type that is nonstrict in
+      its elements. If we provide a list of three values to an array that we
+      specify as containing more than three elements, the remaining elements
+      will undefined. We will not get an error unless we access an element
+      beyond the third:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let a = listArray (0,5) "bar"</b>ghci&gt; <b class="calibre40">a ! 2</b>
+'r'
+ghci&gt; <b class="calibre40">a ! 4</b>
+*** Exception: (Array.!): undefined array element</pre><a name="x_eF1" class="calibre27" id="x_eF1"></a><p class="docText">Haskell also provides strict arrays, which behave
+      differently. We will discuss the tradeoffs between the two kinds of
+      arrays in <a class="docLink" href="I_sect126_d1e49589.html#bloomfilter_uarray">Section 26.3.1</a>.</p><a name="barcode_fold" class="calibre27" id="barcode_fold"></a><h4 id="title-IDAYGSZD" class="docSection1Title">12.2.2. Folding over Arrays</h4><a name="x_fT" class="calibre27" id="x_fT"></a><p class="docText">The <i class="docEmphasis">bounds</i>
+      function<a name="I_indexterm12_d1e27559" class="calibre27" id="I_indexterm12_d1e27559"></a> returns a tuple describing the bounds that we used to
+      create the array. The <i class="docEmphasis">indices</i>
+      function returns a list of every index. We can use these to define some
+      useful folds, since the <tt class="calibre34">Data.Array</tt> module<a name="I_indexterm12_d1e27569" class="calibre27" id="I_indexterm12_d1e27569"></a> doesn't define any fold functions itself:</p><pre class="calibre39">-- file: ch12/Barcode.hs
+-- | Strict left fold, similar to foldl' on lists.
+foldA :: Ix k =&gt; (a -&gt; b -&gt; a) -&gt; a -&gt; Array k b -&gt; a
+foldA f s a = go s (indices a)
+    where go s (j:js) = let s' = f s (a ! j)
+                        in s' `seq` go s' js
+          go s _ = s
+
+-- | Strict left fold using the first element of the array as its
+-- starting value, similar to foldl1 on lists.
+foldA1 :: Ix k =&gt; (a -&gt; a -&gt; a) -&gt; Array k a -&gt; a
+foldA1 f a = foldA f (a ! fst (bounds a)) a</pre><br class="calibre48"/>
+<a name="x_gT" class="calibre27" id="x_gT"></a><p class="docText">You might wonder why the array modules don't already
+      provide such useful things as folding functions. There are some obvious
+      correspondences between a one-<span class="docEmphasis">dimensional</span> array and a list. For
+      instance, there are only two natural ways in which we can fold
+      sequentially: left-to-right and right-to-left. Additionally, we can only
+      fold over one element at a time.</p><a name="x_hT" class="calibre27" id="x_hT"></a><p class="docText">This does not translate even to two-dimensional arrays.
+      <a name="I_indexterm12_d1e27584" class="calibre27" id="I_indexterm12_d1e27584"></a>First of all, there are several kinds of fold that make
+      sense. We might still want to fold over single elements, but we now have
+      the possibility of folding over rows or columns, too. On top of this,
+      for element-at-a-time folding, there are no longer just two sequences
+      for traversal.</p><a name="x_iT" class="calibre27" id="x_iT"></a><p class="docText">In other words, for two-dimensional arrays, there are
+      enough permutations of possibly useful behavior that there aren't many
+      compelling reasons to choose a handful for a standard library. This
+      problem is only compounded for higher dimensions, so it's best to let
+      developers write folds that suit the needs of their applications. As we
+      can see from our examples, this is not hard to do.</p><a name="barcode_array_mutable" class="calibre27" id="barcode_array_mutable"></a><h4 id="title-IDANISZD" class="docSection1Title">12.2.3. Modifying Array Elements</h4><a name="x_jT" class="calibre27" id="x_jT"></a><p class="docText">While "modification"<a name="I_indexterm12_d1e27597" class="calibre27" id="I_indexterm12_d1e27597"></a> functions exist for immutable arrays, they are not very
+      practical. For example, the <i class="docEmphasis">accum</i>
+      function<a name="I_indexterm12_d1e27608" class="calibre27" id="I_indexterm12_d1e27608"></a> takes an array and a list of <tt class="calibre34">(index, value)</tt>
+      pairs and returns a new array with the values at the given indices
+      replaced.</p><a name="x_kT" class="calibre27" id="x_kT"></a><p class="docText">Since arrays are immutable, modifying even one element
+      requires copying the entire array. This quickly becomes prohibitively
+      expensive on arrays of even modest size.</p><a name="x_lT" class="calibre27" id="x_lT"></a><p class="docText">Another array type, DiffArray in the
+      <tt class="calibre34">Data.Array.Diff</tt> module, <a name="I_indexterm12_d1e27625" class="calibre27" id="I_indexterm12_d1e27625"></a>attempts to offset the cost of small modifications by
+      storing deltas between successive versions of an array. Unfortunately,
+      it is not implemented efficiently at the time of this writing, and it is
+      currently too slow to be of practical use.</p><a name="barcode_array_mutabled1e27974" class="calibre27" id="barcode_array_mutabled1e27974"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_mT" class="calibre27" id="x_mT"></a></p><p class="docText">It <span class="docEmphasis">is</span> in fact possible to modify
+        an array efficiently in Haskell, using the ST monad.
+        We'll return to this subject in <a class="docLink" href="bloomfilter_split_000.html#bloomfilter">Chapter 26</a>.</p></div><a name="I_sidebar12_d1e27642" class="calibre27" id="I_sidebar12_d1e27642"></a></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

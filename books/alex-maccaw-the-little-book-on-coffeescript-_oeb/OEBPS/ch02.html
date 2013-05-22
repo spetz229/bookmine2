@@ -1,0 +1,63 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch01s08.html
+next: OEBPS/ch02s02.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="calibre1"></div><div class="book" title="Chapter 2. CoffeeScript Classes"><div class="book"><div class="book"><div class="book"><div class="calibre1"></div><h1 class="title1"><a id="I_chapter2_d1e952" class="calibre2"></a>Chapter 2. CoffeeScript Classes</h1></div></div></div><p class="calibre8">For some purists, classes in JavaScript seem to have the kind of
+  effect that cloves of garlic have to Dracula; although, let’s be honest, if
+  you’re that way inclined, you’re unlikely to be reading a book on
+  CoffeeScript. However, it turns out that classes are just as useful in
+  JavaScript as they are in other languages and CoffeeScript provides a great
+  abstraction.</p><p class="calibre8">Behind the scenes, CoffeeScript is using JavaScript’s native prototype
+  to create classes; adding a bit of syntactic sugar for static property
+  inheritance and context persistence. As a developer, all that’s exposed to
+  you is the <code class="literal">class</code> keyword:</p><pre class="screen">class Animal</pre><p class="calibre8">In the example above, <code class="literal">Animal</code> is the
+  name of the class, and also the name of the resultant variable that you can
+  use to create instances. Behind the scenes, CoffeeScript is using
+  constructor functions, which means you can instantiate classes using the
+  <code class="literal">new</code> operator:</p><pre class="screen">animal = new Animal</pre><p class="calibre8">Defining constructors (functions that get invoked upon instantiation)
+  is simple—just use a function named <code class="literal">constructor</code>. This is akin to using Ruby’s <code class="literal">initialize</code> or Python’s <code class="literal">__init__</code>:</p><pre class="screen">class Animal
+  constructor: (name) -&gt;
+    @name = name</pre><p class="calibre8">In fact, CoffeeScript provides a shorthand for the common pattern of
+  setting instance properties. By prefixing arguments with <code class="literal">@</code>, CoffeeScript will automatically set the arguments as instance properties in the
+  constructor. Indeed, this shorthand will also work for normal functions
+  outside classes. The example below is equivalent to the last example, where
+  we set the instance properties manually:</p><pre class="screen">class Animal
+  constructor: (@name) -&gt;</pre><p class="calibre8">As you’d expect, any arguments passed on instantiation are proxied to
+  the constructor function:</p><pre class="screen">animal = new Animal("Parrot")
+alert "Animal is a #{animal.name}"</pre><div class="book" title="Instance Properties"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect12_d1e1003" class="calibre2"></a>Instance Properties</h1></div></div></div><p class="calibre8">Adding additional instance properties to a class is very
+    straightforward; it’s exactly the same syntax as adding properties on an
+    object. Just make sure properties are indented correctly inside the class
+    body:</p><pre class="screen">class Animal
+  price: 5
+
+  sell: (customer) -&gt;
+
+animal = new Animal
+animal.sell(new Customer)</pre><p class="calibre8">Context changes are rife within JavaScript, and in <a class="ulink" href="ch01.html" title="Chapter 1. CoffeeScript Syntax">Chapter 1</a> we talked about how CoffeeScript can lock
+    the value of <code class="literal">this</code> to a particular
+    context using a fat arrow function: <code class="literal">=&gt;</code>. This ensures that whatever context a
+    function is called under, it’ll always execute inside the context it was
+    created in. CoffeeScript has extended support for fat arrows to classes,
+    so by using a fat arrow for an instance method you’ll ensure that it’s
+    invoked in the correct context, and that <code class="literal">this</code> is always equal to the current
+    instance:</p><pre class="screen">class Animal
+  price: 5
+
+  sell: =&gt;
+    alert "Give me #{@price} shillings!"
+
+animal = new Animal
+$("#sell").click(animal.sell)</pre><p class="calibre8">As demonstrated in the example above, this is especially useful in
+    event callbacks. Normally, the <code class="literal">sell()</code>
+    function would be invoked in the context of the <code class="literal">#sell</code> element. However, by using fat arrows for
+    <code class="literal">sell()</code>, we’re ensuring the correct
+    context is being maintained, and that <code class="literal">this.price</code> equals <code class="literal">5</code>.</p></div></div></div>
+
+{% endraw %}
+

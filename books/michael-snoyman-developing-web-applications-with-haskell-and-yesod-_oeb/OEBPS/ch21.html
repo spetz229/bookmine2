@@ -1,0 +1,49 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch20s02.html
+next: OEBPS/ch21s02.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="calibre8"></div><div class="book" title="Chapter 21. Case Study: Sphinx-Based Search"><div class="book"><div class="book"><div class="book"><div class="calibre8"></div><h1 class="title1"><a id="I_chapter4_d1e8354" class="calibre1"></a>Chapter 21. Case Study: Sphinx-Based Search</h1></div></div></div><p class="calibre7"><a class="ulink" href="http://sphinxsearch.com/">Sphinx</a> is a search
+   server, and powers the search feature on many sites, including Yesod’s own site. While the actual
+   code necessary to integrate Yesod with Sphinx is relatively short, it touches on a number of
+   complicated topics, and is therefore a great case study in how to play with some of the
+   under-the-surface details of Yesod.</p><p class="calibre7">There are essentially three different pieces at play here:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7">Storing the content we wish to search. This is fairly straightforward Persistent code,
+                and we won’t dwell on it much in this chapter.</p></li><li class="listitem"><p class="calibre7">Accessing Sphinx search results from inside Yesod. Thanks to the <code class="function">sphinx</code>
+    package, this is actually very easy.</p></li><li class="listitem"><p class="calibre7">Providing the document content to Sphinx. This is where the interesting stuff happens, and
+    will show how to deal with streaming content from a database directly to XML, which gets sent
+    directly over the wire to the client.</p></li></ul></div><div class="book" title="Sphinx Setup"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect14_d1e8379" class="calibre1"></a>Sphinx Setup</h1></div></div></div><p class="calibre7"></p><p class="calibre7">Unlike many of our other examples, to start with here we’ll need to actually configure
+   and run our external Sphinx server. I’m not going to go into all the details of Sphinx, partly
+   because it’s not relevant to our point here, and mostly because I’m not an expert on Sphinx.</p><p class="calibre7">Sphinx provides three main command-line utilities: <code class="literal">searchd</code> is the actual search daemon that receives requests from the
+            client (in this case, our web app) and returns the search results. <code class="literal">indexer</code> parses the set of documents and creates the search
+            index. <code class="literal">search</code> is a debugging utility that will run
+            simple queries against Sphinx.</p><p class="calibre7">There are two important settings: the source and the index. The source tells Sphinx
+   where to read document information from. It has direct support for MySQL and PostgreSQL, as well
+   as a more general XML format known as xmlpipe2. We’re going to use the last one. This not only
+   will give us more flexibility with choosing Persistent backends, but will also demonstrate some
+   more powerful Yesod concepts.</p><p class="calibre7">The second setting is the index. Sphinx can handle multiple indices simultaneously,
+   which allows it to provide search for multiple services at once. Each index will have a source it
+   pulls from.</p><p class="calibre7">In our case, we’re going to provide a URL from our application (/search/xmlpipe) that provides
+   the XML file required by Sphinx, and then pipe that through to the indexer. So we’ll add the
+   following to our Sphinx config file:</p><a id="I_programlisting4_d1e8405" class="firstname"></a><pre class="programlistinghaskell">source searcher_src
+{
+	type = xmlpipe2
+	xmlpipe_command = curl http://localhost:3000/search/xmlpipe
+}
+
+index searcher
+{
+	source = searcher_src
+	path = /var/data/searcher
+	docinfo = extern
+	charset_type = utf-8
+}</pre><p class="calibre7">In order to build your search index, you would run <code class="literal">indexer searcher</code>. Obviously
+   this won’t work until you have your web app running. For a production site, it would make sense
+   to run this command via a crontab script so the index is regularly updated.</p></div></div></div>
+
+{% endraw %}
+

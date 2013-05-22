@@ -1,0 +1,645 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="und">
+  <head>
+    <meta content="6ace87f7-0171-4a0a-8338-bdd9eb45e7b0" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Rework</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="8ea92b3e-006d-4fc6-b5ca-776c5ccc9eda" playOrder="1">
+      <navLabel>
+        <text>INTRODUCTION</text>
+      </navLabel>
+      <content src="Rework_split_002.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="c4e6b559-0f76-4572-8a19-0819d9b2bd38" playOrder="2">
+      <navLabel>
+        <text>FIRST</text>
+      </navLabel>
+      <content src="Rework_split_004.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="5b3c3459-7bc3-476f-8361-1578efdcbfe4" playOrder="3">
+      <navLabel>
+        <text>The new reality</text>
+      </navLabel>
+      <content src="Rework_split_005.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="7a7958e9-1cd0-430a-8c41-5a7559bc0bf3" playOrder="4">
+      <navLabel>
+        <text>TAKEDOWNS</text>
+      </navLabel>
+      <content src="Rework_split_006.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="2d38ee4d-a6f6-4f92-a94b-e23173b64751" playOrder="5">
+      <navLabel>
+        <text>Ignore the real world</text>
+      </navLabel>
+      <content src="Rework_split_007.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="c6be640c-4955-4cac-9b61-0214f21bd264" playOrder="6">
+      <navLabel>
+        <text>Learning from mistakes is overrated</text>
+      </navLabel>
+      <content src="Rework_split_008.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="c347ffa5-38a2-4bed-9548-328a9d692ee6" playOrder="7">
+      <navLabel>
+        <text>Planning is guessing</text>
+      </navLabel>
+      <content src="Rework_split_009.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="e78dcd2d-e0aa-460e-b301-61dac54cc925" playOrder="8">
+      <navLabel>
+        <text>Why grow?</text>
+      </navLabel>
+      <content src="Rework_split_010.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="52a7934e-8447-45db-9b10-9f5856650679" playOrder="9">
+      <navLabel>
+        <text>Workaholism</text>
+      </navLabel>
+      <content src="Rework_split_011.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="9106f7c9-2f06-4fe1-a7d9-20ef734384d3" playOrder="10">
+      <navLabel>
+        <text>Enough with “entrepreneurs”</text>
+      </navLabel>
+      <content src="Rework_split_012.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="0b0924cb-6701-4ca0-9183-a0d2126f0ce9" playOrder="11">
+      <navLabel>
+        <text>GO</text>
+      </navLabel>
+      <content src="Rework_split_013.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="270c2a2e-ff7f-4483-af20-036833549c9f" playOrder="12">
+      <navLabel>
+        <text>Make a dent in the universe</text>
+      </navLabel>
+      <content src="Rework_split_014.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="fb46bf1d-9326-43fb-8406-b082fdf0854b" playOrder="13">
+      <navLabel>
+        <text>Scratch your own itch</text>
+      </navLabel>
+      <content src="Rework_split_015.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="abe3ab51-6d82-4e2c-aaf6-61ab947e5e52" playOrder="14">
+      <navLabel>
+        <text>Start making something</text>
+      </navLabel>
+      <content src="Rework_split_016.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="2f6f504f-c8ec-4dd4-9089-92eefd816c58" playOrder="15">
+      <navLabel>
+        <text>No time is no excuse</text>
+      </navLabel>
+      <content src="Rework_split_018.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="44cd6a8f-fae3-4b93-a069-cc0ad9cedae7" playOrder="16">
+      <navLabel>
+        <text>Draw a line in the sand</text>
+      </navLabel>
+      <content src="Rework_split_019.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="37adda61-6e65-497c-9ae5-c49d34a67fdf" playOrder="17">
+      <navLabel>
+        <text>Mission statement impossible</text>
+      </navLabel>
+      <content src="Rework_split_020.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="08aaaf0b-7a0a-4058-a147-5f527aa4d7bc" playOrder="18">
+      <navLabel>
+        <text>Outside money is Plan Z</text>
+      </navLabel>
+      <content src="Rework_split_021.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="6d604634-1e5d-45cb-ab63-ff0c9afa78f9" playOrder="19">
+      <navLabel>
+        <text>You need less than you think</text>
+      </navLabel>
+      <content src="Rework_split_022.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="23cf2da4-19b1-4f2e-9bea-c4114cf74451" playOrder="20">
+      <navLabel>
+        <text>Start a business, not a startup</text>
+      </navLabel>
+      <content src="Rework_split_024.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="aaeac231-015c-4c45-8f0a-35c5cf0c85c3" playOrder="21">
+      <navLabel>
+        <text>Building to flip is building to flop</text>
+      </navLabel>
+      <content src="Rework_split_026.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="2077e004-7316-4139-89b8-4e4cdf3f6e77" playOrder="22">
+      <navLabel>
+        <text>Less mass</text>
+      </navLabel>
+      <content src="Rework_split_027.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="b587bc24-8ea3-40b1-9234-7998120ce76a" playOrder="23">
+      <navLabel>
+        <text>PROGRESS</text>
+      </navLabel>
+      <content src="Rework_split_028.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="296ef35f-e74b-45b9-a1e2-cc9c37d71e16" playOrder="24">
+      <navLabel>
+        <text>Embrace constraints</text>
+      </navLabel>
+      <content src="Rework_split_030.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="7fc21484-02a9-4c49-871a-a922069903fb" playOrder="25">
+      <navLabel>
+        <text>Build half a product, not a half-assed product</text>
+      </navLabel>
+      <content src="Rework_split_031.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="0855d233-f8da-47b0-afa3-42ce8d7ee373" playOrder="26">
+      <navLabel>
+        <text>Start at the epicenter</text>
+      </navLabel>
+      <content src="Rework_split_032.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="21d345c9-8dbf-42c4-be3d-e1738cf270e4" playOrder="27">
+      <navLabel>
+        <text>Ignore the details early on</text>
+      </navLabel>
+      <content src="Rework_split_033.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="f103688f-a09e-4155-9c89-b4942d393a4f" playOrder="28">
+      <navLabel>
+        <text>Making the call is making progress</text>
+      </navLabel>
+      <content src="Rework_split_034.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="5d9d801a-eb64-48ef-a452-42e0eef4a7fe" playOrder="29">
+      <navLabel>
+        <text>Be a curator</text>
+      </navLabel>
+      <content src="Rework_split_035.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="0ed252db-75e4-49de-b120-b1e0c3000ed4" playOrder="30">
+      <navLabel>
+        <text>Throw less at the problem</text>
+      </navLabel>
+      <content src="Rework_split_036.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="7f011b71-e4d9-4252-b3c6-80d3ba884c5d" playOrder="31">
+      <navLabel>
+        <text>Focus on what won’t change</text>
+      </navLabel>
+      <content src="Rework_split_037.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="3f1c8233-0d87-4dab-b546-c10c35bbe1f6" playOrder="32">
+      <navLabel>
+        <text>Tone is in your fingers</text>
+      </navLabel>
+      <content src="Rework_split_038.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="cd3fc841-cfb4-42df-b683-54a1769a7aa6" playOrder="33">
+      <navLabel>
+        <text>Sell your by-products</text>
+      </navLabel>
+      <content src="Rework_split_039.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="adea953b-a632-42d9-9407-75be5b79edf3" playOrder="34">
+      <navLabel>
+        <text>Launch now</text>
+      </navLabel>
+      <content src="Rework_split_040.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="ff84d6cf-1c7e-4506-8b60-73bf51db0628" playOrder="35">
+      <navLabel>
+        <text>PRODUCTIVITY</text>
+      </navLabel>
+      <content src="Rework_split_041.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="0ad4966f-3062-4957-9082-23fbcc2fc357" playOrder="36">
+      <navLabel>
+        <text>Illusions of agreement</text>
+      </navLabel>
+      <content src="Rework_split_042.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="195ab5ae-aab9-429c-8b62-272c30473472" playOrder="37">
+      <navLabel>
+        <text>Reasons to quit</text>
+      </navLabel>
+      <content src="Rework_split_043.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="e66158d9-a522-49b9-b5c2-aeb4605e3e5c" playOrder="38">
+      <navLabel>
+        <text>Interruption is the enemy of productivity</text>
+      </navLabel>
+      <content src="Rework_split_044.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="e01eb5d9-de03-472f-a2ab-c4c8add5ad89" playOrder="39">
+      <navLabel>
+        <text>Meetings are toxic</text>
+      </navLabel>
+      <content src="Rework_split_046.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="efc6cad6-98bd-4ff2-aba5-bf4c6174b53c" playOrder="40">
+      <navLabel>
+        <text>Good enough is fine</text>
+      </navLabel>
+      <content src="Rework_split_048.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="7b2769a5-f7b8-43b0-8ea0-d2bacb97e76c" playOrder="41">
+      <navLabel>
+        <text>Quick wins</text>
+      </navLabel>
+      <content src="Rework_split_049.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="5d7ee708-f72d-41d6-bfc0-4fe1875984d7" playOrder="42">
+      <navLabel>
+        <text>Don’t be a hero</text>
+      </navLabel>
+      <content src="Rework_split_050.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="0973cc0d-357a-46af-9ab4-bb4e47fc509a" playOrder="43">
+      <navLabel>
+        <text>Go to sleep</text>
+      </navLabel>
+      <content src="Rework_split_051.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="52dfd2b3-ffb3-4b88-a3bb-cef4e8b3c219" playOrder="44">
+      <navLabel>
+        <text>Your estimates suck</text>
+      </navLabel>
+      <content src="Rework_split_052.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="71a47e75-f663-422a-ac09-aa440e429a90" playOrder="45">
+      <navLabel>
+        <text>Long lists don’t get done</text>
+      </navLabel>
+      <content src="Rework_split_053.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="af90ed1a-1f8f-4f06-843f-5030e6d9c6ba" playOrder="46">
+      <navLabel>
+        <text>Make tiny decisions</text>
+      </navLabel>
+      <content src="Rework_split_054.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="302a084e-c516-458c-9444-8b190eca6c3c" playOrder="47">
+      <navLabel>
+        <text>COMPETITORS</text>
+      </navLabel>
+      <content src="Rework_split_055.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="9c27f458-38cd-4166-b718-d99e9b395528" playOrder="48">
+      <navLabel>
+        <text>Don’t copy</text>
+      </navLabel>
+      <content src="Rework_split_056.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="77da0b74-d668-448d-85a0-7765418d1a31" playOrder="49">
+      <navLabel>
+        <text>Decommoditize your product</text>
+      </navLabel>
+      <content src="Rework_split_057.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="c83a1a90-d4db-4ed9-a667-78f083b3d10a" playOrder="50">
+      <navLabel>
+        <text>Pick a fight</text>
+      </navLabel>
+      <content src="Rework_split_058.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="244ebf63-de88-4e8e-bad0-e90259fcb453" playOrder="51">
+      <navLabel>
+        <text>Underdo your competition</text>
+      </navLabel>
+      <content src="Rework_split_059.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="7a7a20b5-2430-4821-865b-905089912231" playOrder="52">
+      <navLabel>
+        <text>Who cares what they’re doing?</text>
+      </navLabel>
+      <content src="Rework_split_060.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="68357203-fa15-40d2-acfb-2bb6e051bbdf" playOrder="53">
+      <navLabel>
+        <text>EVOLUTION</text>
+      </navLabel>
+      <content src="Rework_split_061.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="71fb6a74-c2f7-4612-8648-4eff9236d3d0" playOrder="54">
+      <navLabel>
+        <text>Say no by default</text>
+      </navLabel>
+      <content src="Rework_split_063.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="de3ac4dd-9e34-41cc-a8f1-46af73e3075f" playOrder="55">
+      <navLabel>
+        <text>Let your customers outgrow you</text>
+      </navLabel>
+      <content src="Rework_split_064.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="cbdfbfec-bbfa-4f32-8484-e951c861c011" playOrder="56">
+      <navLabel>
+        <text>Don’t confuse enthusiasm with priority</text>
+      </navLabel>
+      <content src="Rework_split_065.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="b4caa1af-0da7-41f1-9246-38fb90c474ab" playOrder="57">
+      <navLabel>
+        <text>Be at-home good</text>
+      </navLabel>
+      <content src="Rework_split_066.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="d6c1b96e-73d9-4b3e-86d6-01b921772691" playOrder="58">
+      <navLabel>
+        <text>Don’t write it down</text>
+      </navLabel>
+      <content src="Rework_split_068.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="d21785f9-1727-480a-a9ec-22cc4d16fb5c" playOrder="59">
+      <navLabel>
+        <text>PROMOTION</text>
+      </navLabel>
+      <content src="Rework_split_069.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="20e18c38-6284-4c2e-8913-801f403df1e2" playOrder="60">
+      <navLabel>
+        <text>Welcome obscurity</text>
+      </navLabel>
+      <content src="Rework_split_070.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="1ed7049b-2529-44e9-b743-bb30603e3663" playOrder="61">
+      <navLabel>
+        <text>Build an audience</text>
+      </navLabel>
+      <content src="Rework_split_072.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="eefe53fb-863e-4684-8c90-d5fb6130e8eb" playOrder="62">
+      <navLabel>
+        <text>Out-teach your competition</text>
+      </navLabel>
+      <content src="Rework_split_073.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="56ed6787-3565-4a6b-b06c-c2840a5c75b3" playOrder="63">
+      <navLabel>
+        <text>Emulate chefs</text>
+      </navLabel>
+      <content src="Rework_split_074.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="6023fca7-1b90-451e-95ea-64289488c874" playOrder="64">
+      <navLabel>
+        <text>Go behind the scenes</text>
+      </navLabel>
+      <content src="Rework_split_075.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="8f58e17c-568b-4a66-8c66-7d31a4a3d265" playOrder="65">
+      <navLabel>
+        <text>Nobody likes plastic flowers</text>
+      </navLabel>
+      <content src="Rework_split_077.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="be47f192-4d97-47fb-812c-7e28ebad668c" playOrder="66">
+      <navLabel>
+        <text>Press releases are spam</text>
+      </navLabel>
+      <content src="Rework_split_079.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="6234d491-340c-41a6-b08a-f56aad1f6841" playOrder="67">
+      <navLabel>
+        <text>Forget about the Wall Street Journal</text>
+      </navLabel>
+      <content src="Rework_split_081.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="1704dfee-79fb-456d-a05a-0d823b20908d" playOrder="68">
+      <navLabel>
+        <text>Drug dealers get it right</text>
+      </navLabel>
+      <content src="Rework_split_082.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="23071e06-0c46-4b16-91f7-647fc1bf17d0" playOrder="69">
+      <navLabel>
+        <text>Marketing is not a department</text>
+      </navLabel>
+      <content src="Rework_split_083.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="ac74cb1b-a279-45d7-9e0b-c19bfa858b18" playOrder="70">
+      <navLabel>
+        <text>The myth of the overnight sensation</text>
+      </navLabel>
+      <content src="Rework_split_085.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="d6d81d16-6d89-4bba-b5ba-dafcf95e9b37" playOrder="71">
+      <navLabel>
+        <text>HIRING</text>
+      </navLabel>
+      <content src="Rework_split_086.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="ea1fe1be-c01f-4dfd-a083-a838b8cb14c1" playOrder="72">
+      <navLabel>
+        <text>Do it yourself first</text>
+      </navLabel>
+      <content src="Rework_split_088.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="eda0b4fd-d673-4a34-b03a-b7e091b516a2" playOrder="73">
+      <navLabel>
+        <text>Hire when it hurts</text>
+      </navLabel>
+      <content src="Rework_split_089.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="314a5e21-cb2e-45d9-bf19-d9f81bf67f22" playOrder="74">
+      <navLabel>
+        <text>Pass on great people</text>
+      </navLabel>
+      <content src="Rework_split_090.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="2fb7bc55-cdaf-45d0-b6bf-b26262d3e8a2" playOrder="75">
+      <navLabel>
+        <text>Strangers at a cocktail party</text>
+      </navLabel>
+      <content src="Rework_split_091.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="e5e02ff9-6a40-4d1d-b331-72bcdf696934" playOrder="76">
+      <navLabel>
+        <text>Resumés are ridiculous</text>
+      </navLabel>
+      <content src="Rework_split_092.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="5b7c2d80-c7e6-4d94-ba9f-341c4d5bb154" playOrder="77">
+      <navLabel>
+        <text>Years of irrelevance</text>
+      </navLabel>
+      <content src="Rework_split_093.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="9920854f-ed06-482a-9978-e3b7dc77cd33" playOrder="78">
+      <navLabel>
+        <text>Forget about formal education</text>
+      </navLabel>
+      <content src="Rework_split_094.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="4a5f9010-612c-4a20-b4ad-55606bcde2a2" playOrder="79">
+      <navLabel>
+        <text>Everybody works</text>
+      </navLabel>
+      <content src="Rework_split_096.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="46adc90e-74ce-49f0-b406-f010fe799656" playOrder="80">
+      <navLabel>
+        <text>Hire managers of one</text>
+      </navLabel>
+      <content src="Rework_split_098.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="89e6d5d0-6ac2-4d1e-9785-f763e81817eb" playOrder="81">
+      <navLabel>
+        <text>Hire great writers</text>
+      </navLabel>
+      <content src="Rework_split_099.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="18ae64ba-800f-4d76-8e0d-8ab306a66471" playOrder="82">
+      <navLabel>
+        <text>The best are everywhere</text>
+      </navLabel>
+      <content src="Rework_split_100.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="3fab36fa-5e7d-4d83-a65e-a1c06b0ebd7f" playOrder="83">
+      <navLabel>
+        <text>Test-drive employees</text>
+      </navLabel>
+      <content src="Rework_split_102.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="212f0c29-f74b-402d-95cc-27984fea4479" playOrder="84">
+      <navLabel>
+        <text>DAMAGE CONTROL</text>
+      </navLabel>
+      <content src="Rework_split_103.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="815e2fcc-3662-4db8-9070-1662d253c756" playOrder="85">
+      <navLabel>
+        <text>Own your bad news</text>
+      </navLabel>
+      <content src="Rework_split_104.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="85bcd030-c607-4896-9444-9e4d57cd78c8" playOrder="86">
+      <navLabel>
+        <text>Speed changes everything</text>
+      </navLabel>
+      <content src="Rework_split_105.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="a9a1d23f-9df6-47b2-949d-88c875f97c23" playOrder="87">
+      <navLabel>
+        <text>How to say you’re sorry</text>
+      </navLabel>
+      <content src="Rework_split_106.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="b6e7ca98-37af-4996-836e-c81e1a0a7497" playOrder="88">
+      <navLabel>
+        <text>Put everyone on the front lines</text>
+      </navLabel>
+      <content src="Rework_split_107.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="df5b426c-207c-45c5-bed5-e011835a2fd2" playOrder="89">
+      <navLabel>
+        <text>Take a deep breath</text>
+      </navLabel>
+      <content src="Rework_split_108.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="62c36689-7c38-44fa-be63-8fc95ebe32dd" playOrder="90">
+      <navLabel>
+        <text>CULTURE</text>
+      </navLabel>
+      <content src="Rework_split_109.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="759b3dcc-6e3d-4e6d-88fe-f46db3887642" playOrder="91">
+      <navLabel>
+        <text>You don’t create a culture</text>
+      </navLabel>
+      <content src="Rework_split_110.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="ba15e502-5513-45cd-9c03-6f8e7c42cb94" playOrder="92">
+      <navLabel>
+        <text>Decisions are temporary</text>
+      </navLabel>
+      <content src="Rework_split_111.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="6e6aee6e-6ec2-42cc-b828-5876a8035655" playOrder="93">
+      <navLabel>
+        <text>Skip the rock stars</text>
+      </navLabel>
+      <content src="Rework_split_113.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="9db8d299-e3e7-405e-9477-ad01bd070e1b" playOrder="94">
+      <navLabel>
+        <text>They’re not thirteen</text>
+      </navLabel>
+      <content src="Rework_split_114.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="892c4563-943e-4008-901f-980d34812497" playOrder="95">
+      <navLabel>
+        <text>Send people home at 5</text>
+      </navLabel>
+      <content src="Rework_split_115.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="5463a73a-4f59-4a63-9b4e-f7d6e0a2c8dd" playOrder="96">
+      <navLabel>
+        <text>Don’t scar on the first cut</text>
+      </navLabel>
+      <content src="Rework_split_116.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="8708fd35-e81d-4a1e-a10c-f1a5fb125ec5" playOrder="97">
+      <navLabel>
+        <text>Sound like you</text>
+      </navLabel>
+      <content src="Rework_split_117.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="3f5ef0df-8594-4ca3-8b68-26adabf7777b" playOrder="98">
+      <navLabel>
+        <text>Four-letter words</text>
+      </navLabel>
+      <content src="Rework_split_118.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="77cdc9b3-c7e8-46d2-beb8-935327999577" playOrder="99">
+      <navLabel>
+        <text>ASAP is poison</text>
+      </navLabel>
+      <content src="Rework_split_119.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="04764b70-ce13-464c-ac6a-8a0a90a0f3b8" playOrder="100">
+      <navLabel>
+        <text>CONCLUSION</text>
+      </navLabel>
+      <content src="Rework_split_120.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="9a204f99-2014-4a68-a847-efc4c08e26a3" playOrder="101">
+      <navLabel>
+        <text>Inspiration is perishable</text>
+      </navLabel>
+      <content src="Rework_split_122.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="9136a7eb-91c4-4ab4-a109-bca37f023719" playOrder="102">
+      <navLabel>
+        <text>RESOURCES</text>
+      </navLabel>
+      <content src="Rework_split_124.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="4f213c41-39db-486c-a704-11689b04d1d0" playOrder="103">
+      <navLabel>
+        <text>About 37signals</text>
+      </navLabel>
+      <content src="Rework_split_125.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="a19c883e-6483-4721-89c9-71ea33c98c29" playOrder="104">
+      <navLabel>
+        <text>37signals products</text>
+      </navLabel>
+      <content src="Rework_split_126.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="40320777-5b75-4933-90d0-3b9ca6150422" playOrder="105">
+      <navLabel>
+        <text>ACKNOWLEDGMENTS</text>
+      </navLabel>
+      <content src="Rework_split_127.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

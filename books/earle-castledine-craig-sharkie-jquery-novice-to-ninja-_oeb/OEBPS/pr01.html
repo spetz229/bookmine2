@@ -1,0 +1,608 @@
+---
+layout: page
+title: "jQuery: Novice to Ninja"
+prev: OEBPS/index.html
+next: OEBPS/ch01.html
+book_path: books/earle-castledine-craig-sharkie-jquery-novice-to-ninja-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="toc" title="Preface"><div class="toc"><div class="toc"><div class="toc"><h1 class="title"><a xmlns:saxon="http://icl.com/saxon" id="intro" class="calibre5"></a>Preface</h1></div></div></div>
+  
+      
+
+  
+      No matter what kind of ninja you are—a cooking ninja, a corporate
+  lawyer ninja, or an actual <span><em class="calibre8">ninja</em></span> ninja—virtuosity lies
+  in first mastering the basic tools of the trade. Once conquered, it’s then
+  up to the full-fledged ninja to apply that knowledge in creative and
+  inventive ways.
+
+  
+      In recent times, jQuery has proven itself to be a simple but powerful
+  tool for taming and transforming web pages, bending even the most stubborn
+  and aging browsers to our will. jQuery is a library with two principal
+  purposes: manipulating elements on a web page, and helping out with Ajax
+  requests. Sure, there are quite a few commands available to do this, but
+  they’re all consistent and easy to learn. Once you’ve chained together your
+  first few actions, you’ll be addicted to the jQuery building blocks, and
+  your friends and family will wish you’d never discovered it!
+
+  
+      On top of the core jQuery library is jQuery UI: a set of fine-looking
+  controls and widgets (such as accordions, tabs, and dialogs), combined with
+  a collection of full-featured behaviors for implementing controls of your
+  own. jQuery UI lets you quickly throw together awesome interfaces with
+  little effort, and serves as a great example of what you can achieve with a
+  little jQuery know-how.
+
+  
+      At its core, jQuery is a tool to help us improve the usability of our
+  sites and create a better user experience. <span><strong class="calibre9">Usability</strong></span>
+  refers to the study of the principles behind an object’s <span><em class="calibre8">perceived
+  efficiency or elegance</em></span>. Far from being merely flashy, trendy
+  design, jQuery lets us speedily sculpt our pages in ways both subtle and
+  extreme: from finessing a simple sliding panel to implementing a brand-new
+  user interaction you invented in your sleep.
+
+  
+      Becoming a ninja isn’t about learning an API inside out and back to
+  front; that’s just having a good memory. The real skill and value comes when
+  you can apply your knowledge to making something exceptional: something that
+  builds on the combined insights of the past to be even slightly better than
+  anything anyone has done before. This is certainly not easy, but thanks to
+  jQuery, it’s fun just trying.
+
+  
+
+  
+      <div class="toc" title="Who Should Read This Book"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e104" class="calibre5"></a>Who Should Read This Book</h2></div></div></div>
+    
+         
+
+    
+         If you’re a front-end web designer looking to add a dash of cool
+    interactivity to your sites, and you’ve heard all the buzz surrounding
+    jQuery and want to find out what the fuss is about, this book will put you
+    on the right track. If you’ve dabbled with JavaScript, but have been
+    frustrated by the complexity of many seemingly simple tasks, we’ll show
+    you how jQuery can help out. Even if you’re familiar with the basics of
+    jQuery, but want to take your skills to the next level, you’ll find a
+    wealth of good coding advice and in-depth knowledge.
+
+    
+         You should already have intermediate to advanced HTML and CSS
+    skills, as jQuery uses CSS-style selectors to zero in on page elements.
+    Some rudimentary programming knowledge will be helpful to have, as
+    jQuery—despite its clever abstractions—is still based on JavaScript. That
+    said, we’ve tried to explain any JavaScript concepts as we use them, so
+    with a little willingness to learn you’ll do fine.
+  
+      </div>
+
+  
+      <div class="toc" title="What’s in This Book"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e108" class="calibre5"></a>What’s in This Book</h2></div></div></div>
+    
+         
+
+    
+         By the end of this book, you’ll be able to take your static HTML and
+    CSS web pages and bring them to life with a bit of jQuery magic. You’ll
+    learn how to select elements on the page, move them around, remove them
+    entirely, add new ones with Ajax, animate them … in short, you’ll be able
+    to bend HTML and CSS to your will! We also cover the powerful
+    functionality of the jQuery UI library, and investigate the recently
+    released jQuery Mobile framework.
+
+    
+         This book comprises the following nine chapters and three
+    appendices. Read them in order from beginning to end to gain a complete
+    understanding of the subject, or skip around if you only need a refresher
+    on a particular topic.
+
+    
+         <div class="toc"><dl class="calibre2"><dt class="toc"><span>
+                  <a href="ch01.html" title="Chapter 1Falling in Love with jQuery">Chapter 1:
+        <em class="calibre8">Falling in Love with jQuery</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  Before we dive into learning all the ins and outs of jQuery,
+          we’ll have a quick look at why you’d want to use it in the first
+          place: why it’s better than writing your own JavaScript, and why
+          it’s better than the other JavaScript libraries out there. We’ll
+          brush up on some CSS concepts that are key to understanding jQuery,
+          and briefly touch on the basic syntax required to call jQuery into
+          action.
+        
+               </dd><dt class="toc"><span>
+                  <a href="ch02.html" title="Chapter 2Selecting, Decorating, and Enhancing">Chapter 2:
+        <em class="calibre8">Selecting, Decorating, and
+        Enhancing</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  Ostensibly, jQuery’s most significant advantage over plain
+          JavaScript is the ease with which it lets you select elements on the
+          page to play with. We’ll start off this chapter by teaching you how
+          to use jQuery’s selectors to zero in on your target elements, and
+          then we’ll look at how you can use jQuery to alter those elements’
+          CSS properties.
+        
+               </dd><dt class="toc"><span>
+                  <a href="ch03.html" title="Chapter 3Animating, Scrolling, and Resizing">Chapter 3:
+        <em class="calibre8">Animating, Scrolling, and
+        Resizing</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  jQuery excels at animation: whether you’d like to gently slide
+          open a menu or send a dialog whizzing across the screen, jQuery can
+          help you out. In this chapter, we’ll explore jQuery’s wide range of
+          animation helpers, and put them into practice by enhancing a few
+          simple user interface components. We’ll also have a quick look at
+          some animation-like helpers for scrolling the page and making
+          elements resizable.
+        
+               </dd><dt class="toc"><span>
+                  <a href="ch04.html" title="Chapter 4Images and Slideshows">Chapter 4: <em class="calibre8">Images and
+        Slideshows</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  With the basics well and truly under our belts, we’ll turn to
+          building some of the most common jQuery widgets out there: image
+          galleries and slideshows. We’ll learn how to build lightbox
+          displays, scrolling thumbnail galleries and cross-fading galleries,
+          and even take a stab at an iPhoto-style flip-book.
+        
+               </dd><dt class="toc"><span>
+                  <a href="ch05.html" title="Chapter 5Menus, Tabs, Tooltips, and Panels">Chapter 5: <em class="calibre8">Menus, Tabs,
+        Tooltips, and Panels</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  Now that we’re comfortable with building cool UI widgets with
+          jQuery, we’ll dive into some slightly more sophisticated controls:
+          drop-down and accordion-style menus, tabbed interfaces, tooltips,
+          and various types of content panels. We’re really on a roll now: our
+          sites are looking less and less like the brochure-style pages of the
+          1990s, and more and more like the Rich Internet Applications of the
+          21st century!
+        
+               </dd><dt class="toc"><span>
+                  <a href="ch06.html" title="Chapter 6Construction, Ajax, and Interactivity">Chapter 6: <em class="calibre8">Construction,
+        Ajax, and Interactivity</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  This is the one you’ve all been waiting for: Ajax! In order to
+          make truly desktop-style applications on the Web, you need to be
+          able to pass data back and forth to and from the server without any
+          of those pesky refreshes clearing your interface from the screen—and
+          that’s what Ajax is all about. jQuery includes a raft of convenient
+          methods for handling Ajax requests in a simple, cross-browser
+          manner, letting you leave work with a smile on your face. But before
+          we get too carried away, our code is growing more complex, so we’d
+          better take a look at some best practices for organizing it.
+        
+               </dd><dt class="toc"><span>
+                  <a href="ch07.html" title="Chapter 7Forms, Controls, and Dialogs">Chapter 7: <em class="calibre8">Forms,
+        Controls, and Dialogs</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  The bane of every designer, forms are nonetheless the
+          cornerstone of any web application. In this chapter, we’ll learn
+          what jQuery has to offer us in terms of simplifying our form-related
+          scripting. We’ll learn how to validate forms on the fly, offer
+          assistance to our users, and manipulate checkboxes, radio buttons,
+          and select lists with ease. Then we’ll have a look at some less
+          conventional ways of allowing a site’s users to interact with it: a
+          variety of advanced controls like date pickers, sliders, and drag
+          and drop. We’ll round it off with a look at modal dialogs in the
+          post-popup world, as well as a few original nonmodal notification
+          styles. What a chapter!
+        
+               </dd><dt class="toc"><span>
+                  <a href="ch08.html" title="Chapter 8Lists, Trees, and Tables">Chapter 8: <em class="calibre8">Lists,
+        Trees, and Tables</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  No matter how “Web 2.0” your application may be, chances are
+          you’ll still need to fall back on the everyday list, the humdrum
+          tree, or even the oft-derided table to present information to your
+          users. This chapter will show how jQuery can make even the boring
+          stuff fun, as we’ll learn how to transform lists into dynamic,
+          sortable data, and tables into data grids with sophisticated
+          functionality.
+        
+               </dd><dt class="toc"><span>
+                  <a href="ch09.html" title="Chapter 9Plugins, Themes, and Advanced Topics">Chapter 9: <em class="calibre8">Plugins,
+        Themes, and Advanced Topics</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  jQuery is more than just cool DOM manipulation, easy Ajax
+          requests, and funky UI components. It has a wealth of functionality
+          aimed at the more <span><em class="calibre8">ninja-level</em></span> developer: a
+          fantastic plugin architecture, a highly extensible and flexible
+          core, customizable events, and a whole lot more. In this chapter,
+          we’ll cover the jQuery UI theme system, which lets you easily tailor
+          the appearance of jQuery UI widgets to suit your site, and even make
+          your own plugins skinnable with themes. We’ll also take a look at
+          using the brand new jQuery Mobile framework, so that you can deploy
+          your ninja skills on handheld devices.
+        
+               </dd><dt class="toc"><span>
+                  <a href="apa.html" title="Appendix A. Reference Material">Appendix A:
+        <em class="calibre8">Reference Material</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  jQuery is a library that aims for flexibility, with many
+          options for usage across a range of applications. Whether it’s
+          mastering Ajax, underpinning broad browser support, or handling all
+          kinds of events, there’s a range of core functions and plugins to
+          suit any developer’s needs.
+        
+               </dd><dt class="toc"><span>
+                  <a href="apb.html" title="Appendix B. JavaScript Tidbits">Appendix B:
+        <em class="calibre8">JavaScript Tidbits</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  Okay, so we know jQuery is really just JavaScript underneath
+          the hood, and here’s where you’ll get a crash course in vanilla
+          JavaScript. It pays to know the mechanics of the jQuery library, and
+          here we’ll cover the basics. Feel free to go off on your own
+          JavaScript tangent after reading this appendix.
+        
+               </dd><dt class="toc"><span>
+                  <a href="apc.html" title="Appendix C. Plugin Helpers">Appendix C: <em class="calibre8">Plugin
+        Helpers</em>
+                  </a>
+               </span></dt><dd class="calibre10">
+          
+                  When it comes to developing your own plugin, there’s an
+          arsenal of actions and properties that will make building your
+          project simpler and more fun. From the jQuery stack to minifying
+          your files, we’ll take a quick look at them here.
+        
+               </dd><dt class="toc"><span>Take the jQuery Quiz</span></dt><dd class="calibre10">
+          
+                  Now that you’ve reached the end of the book, put your jQuery
+          ninja skills to the test with our simple online quiz. We’ve created
+          a series of multiple choice questions based on the book’s content
+          that you can use to assess your learning. The quiz is on the
+          SitePoint website at
+          <span>http://www.sitepoint.com/quiz-jquery</span>.
+                  
+        
+               </dd></dl></div>
+  
+      </div>
+
+  
+      <div class="toc" title="Where to Find Help"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e191" class="calibre5"></a>Where to Find Help</h2></div></div></div>
+    
+         
+
+    
+         jQuery is under active development, so chances are good that, by the
+    time you read this, some minor detail or other of these technologies will
+    have changed from what’s described in this book. Thankfully, SitePoint has
+    a thriving community of JavaScript and jQuery developers ready and waiting
+    to help you out if you run into trouble. We also maintain a list of known
+    errata for this book, which you can consult for the latest updates; the
+    details follow.
+
+    
+         <div class="toc" title="The SitePoint Forums"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e194" class="calibre5"></a>The SitePoint Forums</h3></div></div></div>
+      
+            
+
+      
+            The <a href="http://www.sitepoint.com/forums/">SitePoint
+      Forums</a> are discussion forums where you can ask questions about
+      anything related to web development. You may, of course, answer
+      questions too. That’s how a discussion forum site works: some people
+      ask, some people answer, and most people do a bit of both. Sharing your
+      knowledge benefits others and strengthens the community. A lot of
+      interesting and experienced web designers and developers hang out there.
+      It’s a good way to learn new stuff, have questions answered in a hurry,
+      and have a blast.
+
+      
+            The <a href="http://www.sitepoint.com/forums/forumdisplay.php?f=15">JavaScript
+      Forum</a> is where you’ll want to head to ask any questions about
+      jQuery.
+    
+         </div>
+
+    
+         <div class="toc" title="The Book’s Website"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e200" class="calibre5"></a>The Book’s Website</h3></div></div></div>
+      
+            
+
+      
+            Located at <a href="http://www.sitepoint.com/books/jquery2/">http://www.sitepoint.com/books/jquery2/</a>, the website that
+      supports this book will give you access to the following
+      facilities:
+
+      
+            <div class="toc" title="The Code Archive"><div class="toc"><div class="toc"><div class="toc"><h4 class="title3"><a xmlns:saxon="http://icl.com/saxon" id="d4e204"></a>The Code Archive</h4></div></div></div>
+        
+               
+
+        
+               As you progress through this book, you’ll note a number of
+        references to the code archive. This is a downloadable ZIP archive
+        that contains each and every line of example source code that’s
+        printed in this book. If you want to cheat (or save yourself from
+        carpal tunnel syndrome), go ahead and <a href="http://www.sitepoint.com/books/jquery2/code.php">download the
+        archive.</a>
+               
+      
+            </div>
+
+      
+            <div class="toc" title="Updates and Errata"><div class="toc"><div class="toc"><div class="toc"><h4 class="title3"><a xmlns:saxon="http://icl.com/saxon" id="d4e208"></a>Updates and Errata</h4></div></div></div>
+        
+               
+
+        
+               No book is perfect, and we expect that watchful readers will be
+        able to spot at least one or two mistakes in this one. The <a href="http://www.sitepoint.com/books/jquery2/errata.php">Errata
+        page</a> on the book’s website will always have the latest
+        information about known typographical and code errors.
+      
+            </div>
+    
+         </div>
+  
+      </div>
+
+  
+      <div class="toc" title="The SitePoint Newsletters"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e212" class="calibre5"></a>The SitePoint Newsletters</h2></div></div></div>
+    
+         
+
+    
+         In addition to books like this one, SitePoint publishes free email
+    newsletters, such as the <em class="calibre8">SitePoint</em> newsletter,
+    <em class="calibre8">PHPMaster</em>, and <em class="calibre8">BuildMobile</em>,
+    to name a few. In them, you’ll read about the latest news, product
+    releases, trends, tips, and techniques for all aspects of web development.
+    Sign up to one or more of these newsletters at <a href="http://www.sitepoint.com/newsletter/">http://www.sitepoint.com/newsletter/</a>.
+  
+      </div>
+
+  
+      <div class="toc" title="The SitePoint Podcast"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e219" class="calibre5"></a>The SitePoint Podcast</h2></div></div></div>
+    
+         
+
+    
+         Join the SitePoint Podcast team for news, interviews, opinion, and
+    fresh thinking for web developers and designers. We discuss the latest web
+    industry topics, present guest speakers, and interview some of the best
+    minds in the industry. You can catch up on the latest and previous
+    podcasts at <a href="http://www.sitepoint.com/podcast/">http://www.sitepoint.com/podcast/</a>, or
+    subscribe via iTunes.
+  
+      </div>
+
+  
+      <div class="toc" title="Your Feedback"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e223" class="calibre5"></a>Your Feedback</h2></div></div></div>
+    
+         
+
+    
+         If you’re unable to find an answer through the forums, or if you
+    wish to contact us for any other reason, the best place to write is
+    <code class="email"><a href="mailto:books@sitepoint.com">books@sitepoint.com</a></code>. We have a well-staffed email support
+    system set up to track your inquiries, and if our support team members are
+    unable to answer your question, they’ll send it straight to us.
+    Suggestions for improvements, as well as notices of any mistakes you may
+    find, are especially welcome.
+  
+      </div>
+
+  
+      <div class="toc" title="Acknowledgments"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e227" class="calibre5"></a>Acknowledgments</h2></div></div></div>
+    
+         
+
+    
+         <div class="toc" title="Earle Castledine"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e229" class="calibre5"></a>Earle Castledine</h3></div></div></div>
+      
+            
+
+      
+            I’d like to thank Zenexity for teaching me everything I need to
+      know about both Paris and functional programming, Stuart Horton-Stephens
+      for showing me how to find beauty in even the most disturbing internet
+      meme, the SitePoint gang for turning pages of rambling nonsense into
+      English, the Sydney and Paris JavaScript community (who both truly
+      rock), the jQuery team (and related fellows) for being a
+      JavaScript-fueled inspiration to us all, and, finally, my awesome Mum
+      and Dad for getting me a Spectravideo 318 instead of a Commodore 64—thus
+      forcing me to read the manuals instead of playing games, all those years
+      ago.
+    
+         </div>
+
+    
+         <div class="toc" title="Craig Sharkie"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e232" class="calibre5"></a>Craig Sharkie</h3></div></div></div>
+      
+            
+
+      
+            In the acknowledgements from our first edition, I thanked my
+      wonderful wife, Jennifer, for allowing me to type into the wee small
+      hours and my parents for allowing me to read into the wee small hours
+      when I was wee. Now Jennifer and I have a wee one of our own, Jemima,
+      and I want to thank her for making every day so much more than a wee bit
+      wonderful. Together with Earle and SitePoint, I’m privileged to be able
+      to bring jQuery to a new generation of coders, but as good as it was to
+      work with Earle and SitePoint once again, it’s only a wee privilege
+      compared to watching Jemima grow.
+    
+         </div>
+  
+      </div>
+
+  
+      <div class="toc" title="Conventions Used in This Book"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e235" class="calibre5"></a>Conventions Used in This Book</h2></div></div></div>
+    
+         
+
+    
+         You’ll notice that we’ve used certain typographic and layout styles
+    throughout the book to signify different types of information. Look out
+    for the following items.
+
+    
+         <div class="toc" title="Code Samples"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e238" class="calibre5"></a>Code Samples</h3></div></div></div>
+      
+            
+
+      
+            Code in this book will be displayed using a fixed-width font, like
+      so:
+
+      
+            <pre class="programlisting">&lt;h1&gt;A Perfect Summer's Day&lt;/h1&gt;
+&lt;p&gt;It was a lovely day for a walk in the park. The birds 
+were singing and the kids were all back at school.&lt;/p&gt;</pre>
+
+      
+            If the code is to be found in the book’s code archive, the name of
+      the file will appear at the top of the program listing, like
+      this:
+
+      
+            <div class="toc"><a xmlns:saxon="http://icl.com/saxon" id="d4e243"></a><div xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0" xmlns:d="http://docbook.org/ns/docbook" class="sitepoint-formal-example-heading"><em class="calibre8" title="example.css">
+		
+                  <span class="sitepoint-formal-example-filename"><span>example.css</span></span>
+               
+	</em></div><div class="toc">
+        
+               
+
+        
+               <pre class="programlisting">.footer {
+  background-color: #CCC;
+  border-top: 1px solid #333;
+}</pre>
+      
+            </div></div>
+
+      
+            If only part of the file is displayed, this is indicated by the
+      word <span><em class="calibre8">excerpt</em></span>:
+
+      
+            <div class="toc"><a xmlns:saxon="http://icl.com/saxon" id="d4e249"></a><div xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0" xmlns:d="http://docbook.org/ns/docbook" class="sitepoint-formal-example-heading"><em class="calibre8" title="example.css (excerpt)">
+		
+                  <span class="sitepoint-formal-example-filename"><span>example.css</span></span> (excerpt)
+	</em></div><div class="toc">
+        
+               
+
+        
+               <pre class="programlisting">  border-top: 1px solid #333;</pre>
+      
+            </div></div>
+
+      
+            If additional code is to be inserted into an existing example, the
+      new code will be displayed in bold:
+
+      
+            <pre class="programlisting">function animate() {
+  <span><strong class="calibre9">new_variable = "Hello";</strong></span>
+}</pre>
+
+      
+
+      
+            Also, where existing code is required for context, rather than
+      repeat all the code, a vertical ellipsis (…) will be displayed:
+
+      
+            <pre class="programlisting">function animate() {
+  …
+  <span><strong class="calibre9">return new_variable;</strong></span>
+}</pre>
+
+      
+            Some lines of code are intended to be entered on one line, but
+      we’ve had to wrap them because of page constraints. A ↵ indicates a line
+      break that exists for formatting purposes only, and should be
+      ignored:
+
+      
+            <pre class="programlisting">URL.open("http://www.sitepoint.com/blogs/2007/05/28/user-style-she
+↵ets-come-of-age/");</pre>
+    
+         </div>
+
+    
+         <div class="toc" title="Tips, Notes, and Warnings"><div class="toc"><div class="toc"><div class="toc"><h3 class="title2"><a xmlns:saxon="http://icl.com/saxon" id="d4e261" class="calibre5"></a>Tips, Notes, and Warnings</h3></div></div></div>
+      
+            
+
+      
+            <div class="tip" title="Tip: Hey, You!"><h3 class="title2">Tip: Hey, You!</h3>
+        
+               
+
+        
+               Tips will give you helpful little pointers.
+      
+            </div>
+
+      
+            <div class="tip" title="Note: Ahem, Excuse Me …"><h3 class="title2">Note: Ahem, Excuse Me …</h3>
+        
+               
+
+        
+               Notes are useful asides that are related—but not critical—to the
+        topic at hand. Think of them as extra tidbits of information.
+      
+            </div>
+
+      
+            <div class="tip" title="Important: Make Sure You Always …"><h3 class="title2">Important: Make Sure You Always …</h3>
+        
+               
+
+        
+               … pay attention to these important points.
+      
+            </div>
+
+      
+            <div class="tip" title="Warning: Watch Out!"><h3 class="title2">Warning: Watch Out!</h3>
+        
+               
+
+        
+               Warnings will highlight any gotchas that are likely to trip you
+        up along the way.
+      
+            </div>
+    
+         </div>
+  
+      </div>
+
+   </div></div>
+
+{% endraw %}
+

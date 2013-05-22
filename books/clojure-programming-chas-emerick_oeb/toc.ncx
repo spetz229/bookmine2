@@ -1,0 +1,2307 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="aca20ffb-ac97-462a-81cc-555d0380b540" name="dtb:uid"/>
+    <meta content="6" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Clojure Programming</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Clojure Programming</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos109"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Preface</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos2808"/>
+      <navPoint class="chapter" id="num_3" playOrder="3">
+        <navLabel>
+          <text>Who Is This Book For?</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos4892"/>
+        <navPoint class="chapter" id="num_4" playOrder="4">
+          <navLabel>
+            <text>Engaged Java Developers</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos5859"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_5" playOrder="5">
+          <navLabel>
+            <text>Ruby, Python, and Other Developers</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos7027"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_6" playOrder="6">
+        <navLabel>
+          <text>How to Read This Book</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos8871"/>
+        <navPoint class="chapter" id="num_7" playOrder="7">
+          <navLabel>
+            <text>Start with Practical Applications of Clojure</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos10236"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_8" playOrder="8">
+          <navLabel>
+            <text>Start from the Ground Up with Clojure’s Foundational Concepts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos11120"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_9" playOrder="9">
+        <navLabel>
+          <text>Who’s “We”?</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos12050"/>
+        <navPoint class="chapter" id="num_10" playOrder="10">
+          <navLabel>
+            <text>Chas Emerick</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos12443"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_11" playOrder="11">
+          <navLabel>
+            <text>Brian Carper</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos13573"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_12" playOrder="12">
+          <navLabel>
+            <text>Christophe Grand</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos14402"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_13" playOrder="13">
+        <navLabel>
+          <text>Acknowledgments</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos15480"/>
+        <navPoint class="chapter" id="num_14" playOrder="14">
+          <navLabel>
+            <text>And Last, but Certainly Far from Least</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos17518"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_15" playOrder="15">
+        <navLabel>
+          <text>Conventions Used in This Book</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos21058"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_16" playOrder="16">
+        <navLabel>
+          <text>Using Code Examples</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos23066"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_17" playOrder="17">
+        <navLabel>
+          <text>Safari® Books Online</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos24450"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_18" playOrder="18">
+        <navLabel>
+          <text>How to Contact Us</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos25784"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_19" playOrder="19">
+      <navLabel>
+        <text>1. Down the Rabbit Hole</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos28661"/>
+      <navPoint class="chapter" id="num_20" playOrder="20">
+        <navLabel>
+          <text>Why Clojure?</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos29903"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_21" playOrder="21">
+        <navLabel>
+          <text>Obtaining Clojure</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos34110"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_22" playOrder="22">
+        <navLabel>
+          <text>The Clojure REPL</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos37449"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_23" playOrder="23">
+        <navLabel>
+          <text>No, Parentheses Actually Won’t Make You Go Blind</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos49081"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_24" playOrder="24">
+        <navLabel>
+          <text>Expressions, Operators, Syntax, and Precedence</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos53327"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_25" playOrder="25">
+        <navLabel>
+          <text>Homoiconicity</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos69475"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_26" playOrder="26">
+        <navLabel>
+          <text>The Reader</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos76368"/>
+        <navPoint class="chapter" id="num_27" playOrder="27">
+          <navLabel>
+            <text>Scalar Literals</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos79505"/>
+          <navPoint class="chapter" id="num_28" playOrder="28">
+            <navLabel>
+              <text>Strings</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos79919"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_29" playOrder="29">
+            <navLabel>
+              <text>Booleans</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos80622"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_30" playOrder="30">
+            <navLabel>
+              <text>nil</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos80894"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_31" playOrder="31">
+            <navLabel>
+              <text>Characters</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos81200"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_32" playOrder="32">
+            <navLabel>
+              <text>Keywords</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos82628"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_33" playOrder="33">
+            <navLabel>
+              <text>Symbols</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos85406"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_34" playOrder="34">
+            <navLabel>
+              <text>Numbers</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos86771"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_35" playOrder="35">
+            <navLabel>
+              <text>Regular expressions</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos94923"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_36" playOrder="36">
+          <navLabel>
+            <text>Comments</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos96859"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_37" playOrder="37">
+          <navLabel>
+            <text>Whitespace and Commas</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos100630"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_38" playOrder="38">
+          <navLabel>
+            <text>Collection Literals</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos102257"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_39" playOrder="39">
+          <navLabel>
+            <text>Miscellaneous Reader Sugar</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos103135"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_40" playOrder="40">
+        <navLabel>
+          <text>Namespaces</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos109342"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_41" playOrder="41">
+        <navLabel>
+          <text>Symbol Evaluation</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos118507"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_42" playOrder="42">
+        <navLabel>
+          <text>Special Forms</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos121508"/>
+        <navPoint class="chapter" id="num_43" playOrder="43">
+          <navLabel>
+            <text>Suppressing Evaluation: quote</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos123823"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_44" playOrder="44">
+          <navLabel>
+            <text>Code Blocks: do</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos126892"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_45" playOrder="45">
+          <navLabel>
+            <text>Defining Vars: def</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos128989"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_46" playOrder="46">
+          <navLabel>
+            <text>Local Bindings: let</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos130417"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_47" playOrder="47">
+          <navLabel>
+            <text>Destructuring (let, Part 2)</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos137243"/>
+          <navPoint class="chapter" id="num_48" playOrder="48">
+            <navLabel>
+              <text>Sequential destructuring</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos141464"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_49" playOrder="49">
+            <navLabel>
+              <text>Map destructuring</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos148997"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_50" playOrder="50">
+          <navLabel>
+            <text>Creating Functions: fn</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos161395"/>
+          <navPoint class="chapter" id="num_51" playOrder="51">
+            <navLabel>
+              <text>Destructuring function arguments</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos168988"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_52" playOrder="52">
+            <navLabel>
+              <text>Function literals</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos176636"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_53" playOrder="53">
+          <navLabel>
+            <text>Conditionals: if</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos181360"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_54" playOrder="54">
+          <navLabel>
+            <text>Looping: loop and recur</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos184954"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_55" playOrder="55">
+          <navLabel>
+            <text>Referring to Vars: var</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos189489"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_56" playOrder="56">
+          <navLabel>
+            <text>Java Interop: . and new</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos190560"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_57" playOrder="57">
+          <navLabel>
+            <text>Exception Handling: try and throw</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos196843"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_58" playOrder="58">
+          <navLabel>
+            <text>Specialized Mutation: set!</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos197231"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_59" playOrder="59">
+          <navLabel>
+            <text>Primitive Locking: monitor-enter and monitor-exit</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos198508"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_60" playOrder="60">
+        <navLabel>
+          <text>Putting It All Together</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos206399"/>
+        <navPoint class="chapter" id="num_61" playOrder="61">
+          <navLabel>
+            <text>eval</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos208576"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_62" playOrder="62">
+        <navLabel>
+          <text>This Is Just the Beginning</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos212898"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_63" playOrder="63">
+      <navLabel>
+        <text>I. Functional Programming and Concurrency</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos215548"/>
+      <navPoint class="chapter" id="num_64" playOrder="64">
+        <navLabel>
+          <text>2. Functional Programming</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos215673"/>
+        <navPoint class="chapter" id="num_65" playOrder="65">
+          <navLabel>
+            <text>What Does Functional Programming Mean?</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos218380"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_66" playOrder="66">
+          <navLabel>
+            <text>On the Importance of Values</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos221848"/>
+          <navPoint class="chapter" id="num_67" playOrder="67">
+            <navLabel>
+              <text>About Values</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos224492"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_68" playOrder="68">
+            <navLabel>
+              <text>Comparing Values to Mutable Objects</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos226156"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_69" playOrder="69">
+            <navLabel>
+              <text>A Critical Choice</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos240323"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_70" playOrder="70">
+          <navLabel>
+            <text>First-Class and Higher-Order Functions</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos250238"/>
+          <navPoint class="chapter" id="num_71" playOrder="71">
+            <navLabel>
+              <text>Applying Ourselves Partially</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos268007"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_72" playOrder="72">
+          <navLabel>
+            <text>Composition of Function(ality)</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos284265"/>
+          <navPoint class="chapter" id="num_73" playOrder="73">
+            <navLabel>
+              <text>Writing Higher-Order Functions</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos294075"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_74" playOrder="74">
+            <navLabel>
+              <text>Building a Primitive Logging System with Composable Higher-Order Functions</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos296083"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_75" playOrder="75">
+          <navLabel>
+            <text>Pure Functions</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos316677"/>
+          <navPoint class="chapter" id="num_76" playOrder="76">
+            <navLabel>
+              <text>Why Are Pure Functions Interesting?</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos322001"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_77" playOrder="77">
+          <navLabel>
+            <text>Functional Programming in the Real World</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos332912"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_78" playOrder="78">
+        <navLabel>
+          <text>3. Collections and Data Structures</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos335797"/>
+        <navPoint class="chapter" id="num_79" playOrder="79">
+          <navLabel>
+            <text>Abstractions over Implementations</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos337805"/>
+          <navPoint class="chapter" id="num_80" playOrder="80">
+            <navLabel>
+              <text>Collection</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos347205"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_81" playOrder="81">
+            <navLabel>
+              <text>Sequences</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos354167"/>
+            <navPoint class="chapter" id="num_82" playOrder="82">
+              <navLabel>
+                <text>Sequences are not iterators</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos361409"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_83" playOrder="83">
+              <navLabel>
+                <text>Sequences are not lists</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos363075"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_84" playOrder="84">
+              <navLabel>
+                <text>Creating seqs</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos366032"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_85" playOrder="85">
+              <navLabel>
+                <text>Lazy seqs</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos368238"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_86" playOrder="86">
+              <navLabel>
+                <text>Head retention</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos385225"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_87" playOrder="87">
+            <navLabel>
+              <text>Associative</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos387941"/>
+            <navPoint class="chapter" id="num_88" playOrder="88">
+              <navLabel>
+                <text>Beware of nil values</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos396484"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_89" playOrder="89">
+            <navLabel>
+              <text>Indexed</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos399483"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_90" playOrder="90">
+            <navLabel>
+              <text>Stack</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos403580"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_91" playOrder="91">
+            <navLabel>
+              <text>Set</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos405763"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_92" playOrder="92">
+            <navLabel>
+              <text>Sorted</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos407075"/>
+            <navPoint class="chapter" id="num_93" playOrder="93">
+              <navLabel>
+                <text>Comparators and predicates to define ordering</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos412578"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_94" playOrder="94">
+          <navLabel>
+            <text>Concise Collection Access</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos438207"/>
+          <navPoint class="chapter" id="num_95" playOrder="95">
+            <navLabel>
+              <text>Idiomatic Usage</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos441214"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_96" playOrder="96">
+            <navLabel>
+              <text>Collections and Keys and Higher-Order Functions</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos443204"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_97" playOrder="97">
+          <navLabel>
+            <text>Data Structure Types</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos447245"/>
+          <navPoint class="chapter" id="num_98" playOrder="98">
+            <navLabel>
+              <text>Lists</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos447909"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_99" playOrder="99">
+            <navLabel>
+              <text>Vectors</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos450909"/>
+            <navPoint class="chapter" id="num_100" playOrder="100">
+              <navLabel>
+                <text>Vectors as tuples</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos452246"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_101" playOrder="101">
+            <navLabel>
+              <text>Sets</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos455372"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_102" playOrder="102">
+            <navLabel>
+              <text>Maps</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos457623"/>
+            <navPoint class="chapter" id="num_103" playOrder="103">
+              <navLabel>
+                <text>Maps as ad-hoc structs</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos459863"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_104" playOrder="104">
+              <navLabel>
+                <text>Other usages of maps</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos462899"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_105" playOrder="105">
+          <navLabel>
+            <text>Immutability and Persistence</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos473960"/>
+          <navPoint class="chapter" id="num_106" playOrder="106">
+            <navLabel>
+              <text>Persistence and Structural Sharing</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos477515"/>
+            <navPoint class="chapter" id="num_107" playOrder="107">
+              <navLabel>
+                <text>Visualizing persistence: lists</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos479774"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_108" playOrder="108">
+              <navLabel>
+                <text>Visualizing persistence: maps (and vectors and sets)</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos483122"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_109" playOrder="109">
+              <navLabel>
+                <text>Tangible benefits</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos489242"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_110" playOrder="110">
+            <navLabel>
+              <text>Transients</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos492461"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_111" playOrder="111">
+          <navLabel>
+            <text>Metadata</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos512813"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_112" playOrder="112">
+          <navLabel>
+            <text>Putting Clojure’s Collections to Work</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos518281"/>
+          <navPoint class="chapter" id="num_113" playOrder="113">
+            <navLabel>
+              <text>Identifiers and Cycles</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos519938"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_114" playOrder="114">
+            <navLabel>
+              <text>Thinking Different: From Imperative to Functional</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos525195"/>
+            <navPoint class="chapter" id="num_115" playOrder="115">
+              <navLabel>
+                <text>Revisiting a classic: Conway’s Game of Life</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos525789"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_116" playOrder="116">
+              <navLabel>
+                <text>Maze generation</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos547026"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_117" playOrder="117">
+            <navLabel>
+              <text>Navigation, Update, and Zippers</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos569560"/>
+            <navPoint class="chapter" id="num_118" playOrder="118">
+              <navLabel>
+                <text>Manipulating zippers</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos570771"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_119" playOrder="119">
+              <navLabel>
+                <text>Custom zippers</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos575442"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_120" playOrder="120">
+              <navLabel>
+                <text>Ariadne’s zipper</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos578595"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_121" playOrder="121">
+          <navLabel>
+            <text>In Summary</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos593244"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_122" playOrder="122">
+        <navLabel>
+          <text>4. Concurrency and Parallelism</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos593810"/>
+        <navPoint class="chapter" id="num_123" playOrder="123">
+          <navLabel>
+            <text>Shifting Computation Through Time and Space</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos596870"/>
+          <navPoint class="chapter" id="num_124" playOrder="124">
+            <navLabel>
+              <text>Delays</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos597315"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_125" playOrder="125">
+            <navLabel>
+              <text>Futures</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos603325"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_126" playOrder="126">
+            <navLabel>
+              <text>Promises</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos608843"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_127" playOrder="127">
+          <navLabel>
+            <text>Parallelism on the Cheap</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos618299"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_128" playOrder="128">
+          <navLabel>
+            <text>State and Identity</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos627984"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_129" playOrder="129">
+          <navLabel>
+            <text>Clojure Reference Types</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos636143"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_130" playOrder="130">
+          <navLabel>
+            <text>Classifying Concurrent Operations</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos640580"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_131" playOrder="131">
+          <navLabel>
+            <text>Atoms</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos646665"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_132" playOrder="132">
+          <navLabel>
+            <text>Notifications and Constraints</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos655203"/>
+          <navPoint class="chapter" id="num_133" playOrder="133">
+            <navLabel>
+              <text>Watches</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos655851"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_134" playOrder="134">
+            <navLabel>
+              <text>Validators</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos663915"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_135" playOrder="135">
+          <navLabel>
+            <text>Refs</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos668316"/>
+          <navPoint class="chapter" id="num_136" playOrder="136">
+            <navLabel>
+              <text>Software Transactional Memory</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos669439"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_137" playOrder="137">
+            <navLabel>
+              <text>The Mechanics of Ref Change</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos672522"/>
+            <navPoint class="chapter" id="num_138" playOrder="138">
+              <navLabel>
+                <text>Understanding alter</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos681623"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_139" playOrder="139">
+              <navLabel>
+                <text>Minimizing transaction conflict with commute</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos686617"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_140" playOrder="140">
+              <navLabel>
+                <text>Clobbering ref state with ref-set</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos699770"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_141" playOrder="141">
+              <navLabel>
+                <text>Enforcing local consistency by using validators</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos701002"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_142" playOrder="142">
+            <navLabel>
+              <text>The Sharp Corners of Software Transactional Memory</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos709711"/>
+            <navPoint class="chapter" id="num_143" playOrder="143">
+              <navLabel>
+                <text>Side-effecting functions strictly verboten</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos710236"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_144" playOrder="144">
+              <navLabel>
+                <text>Minimize the scope of each transaction</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos713926"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_145" playOrder="145">
+              <navLabel>
+                <text>Readers may retry</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos718774"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_146" playOrder="146">
+              <navLabel>
+                <text>Write skew</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos723576"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_147" playOrder="147">
+          <navLabel>
+            <text>Vars</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos735003"/>
+          <navPoint class="chapter" id="num_148" playOrder="148">
+            <navLabel>
+              <text>Defining Vars</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos736662"/>
+            <navPoint class="chapter" id="num_149" playOrder="149">
+              <navLabel>
+                <text>Private vars</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos737596"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_150" playOrder="150">
+              <navLabel>
+                <text>Docstrings</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos739715"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_151" playOrder="151">
+              <navLabel>
+                <text>Constants</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos741888"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_152" playOrder="152">
+            <navLabel>
+              <text>Dynamic Scope</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos744558"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_153" playOrder="153">
+            <navLabel>
+              <text>Vars Are Not Variables</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos759240"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_154" playOrder="154">
+            <navLabel>
+              <text>Forward Declarations</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos763063"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_155" playOrder="155">
+          <navLabel>
+            <text>Agents</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos768750"/>
+          <navPoint class="chapter" id="num_156" playOrder="156">
+            <navLabel>
+              <text>Dealing with Errors in Agent Actions</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos779110"/>
+            <navPoint class="chapter" id="num_157" playOrder="157">
+              <navLabel>
+                <text>Agent error handlers and modes</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos784066"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_158" playOrder="158">
+            <navLabel>
+              <text>I/O, Transactions, and Nested Sends</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos787357"/>
+            <navPoint class="chapter" id="num_159" playOrder="159">
+              <navLabel>
+                <text>Persisting reference states with an agent-based write-behind log</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos790173"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_160" playOrder="160">
+              <navLabel>
+                <text>Using agents to parallelize workloads</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos799080"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_161" playOrder="161">
+          <navLabel>
+            <text>Using Java’s Concurrency Primitives</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos826361"/>
+          <navPoint class="chapter" id="num_162" playOrder="162">
+            <navLabel>
+              <text>Locking</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos829168"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_163" playOrder="163">
+          <navLabel>
+            <text>Final Thoughts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos830923"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_164" playOrder="164">
+      <navLabel>
+        <text>II. Building Abstractions</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos831397"/>
+      <navPoint class="chapter" id="num_165" playOrder="165">
+        <navLabel>
+          <text>5. Macros</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos831506"/>
+        <navPoint class="chapter" id="num_166" playOrder="166">
+          <navLabel>
+            <text>What Is a Macro?</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos833173"/>
+          <navPoint class="chapter" id="num_167" playOrder="167">
+            <navLabel>
+              <text>What Macros Are Not</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos838619"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_168" playOrder="168">
+            <navLabel>
+              <text>What Can Macros Do that Functions Cannot?</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos840872"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_169" playOrder="169">
+            <navLabel>
+              <text>Macros Versus Ruby eval</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos846315"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_170" playOrder="170">
+          <navLabel>
+            <text>Writing Your First Macro</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos852324"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_171" playOrder="171">
+          <navLabel>
+            <text>Debugging Macros</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos857150"/>
+          <navPoint class="chapter" id="num_172" playOrder="172">
+            <navLabel>
+              <text>Macroexpansion</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos858993"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_173" playOrder="173">
+          <navLabel>
+            <text>Syntax</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos864832"/>
+          <navPoint class="chapter" id="num_174" playOrder="174">
+            <navLabel>
+              <text>quote Versus syntax-quote</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos867246"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_175" playOrder="175">
+            <navLabel>
+              <text>unquote and unquote-splicing</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos869714"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_176" playOrder="176">
+          <navLabel>
+            <text>When to Use Macros</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos876175"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_177" playOrder="177">
+          <navLabel>
+            <text>Hygiene</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos881435"/>
+          <navPoint class="chapter" id="num_178" playOrder="178">
+            <navLabel>
+              <text>Gensyms to the Rescue</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos885897"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_179" playOrder="179">
+            <navLabel>
+              <text>Letting the User Pick Names</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos894757"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_180" playOrder="180">
+            <navLabel>
+              <text>Double Evaluation</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos896511"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_181" playOrder="181">
+          <navLabel>
+            <text>Common Macro Idioms and Patterns</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos901078"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_182" playOrder="182">
+          <navLabel>
+            <text>The Implicit Arguments: &amp;env and &amp;form</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos905889"/>
+          <navPoint class="chapter" id="num_183" playOrder="183">
+            <navLabel>
+              <text>&amp;env</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos906323"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_184" playOrder="184">
+            <navLabel>
+              <text>&amp;form</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos913413"/>
+            <navPoint class="chapter" id="num_185" playOrder="185">
+              <navLabel>
+                <text>Producing useful macro error messages</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos914343"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_186" playOrder="186">
+              <navLabel>
+                <text>Preserving user-provided type hints</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos921546"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_187" playOrder="187">
+            <navLabel>
+              <text>Testing Contextual Macros</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos927709"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_188" playOrder="188">
+          <navLabel>
+            <text>In Detail: -&gt; and -&gt;&gt;</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos935751"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_189" playOrder="189">
+          <navLabel>
+            <text>Final Thoughts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos944637"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_190" playOrder="190">
+        <navLabel>
+          <text>6. Datatypes and Protocols</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos945443"/>
+        <navPoint class="chapter" id="num_191" playOrder="191">
+          <navLabel>
+            <text>Protocols</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos948323"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_192" playOrder="192">
+          <navLabel>
+            <text>Extending to Existing Types</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos955552"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_193" playOrder="193">
+          <navLabel>
+            <text>Defining Your Own Types</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos967758"/>
+          <navPoint class="chapter" id="num_194" playOrder="194">
+            <navLabel>
+              <text>Records</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos977618"/>
+            <navPoint class="chapter" id="num_195" playOrder="195">
+              <navLabel>
+                <text>Constructors and factory functions</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos988434"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_196" playOrder="196">
+              <navLabel>
+                <text>When to use maps or records</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos993043"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_197" playOrder="197">
+            <navLabel>
+              <text>Types</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos995374"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_198" playOrder="198">
+          <navLabel>
+            <text>Implementing Protocols</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1007944"/>
+          <navPoint class="chapter" id="num_199" playOrder="199">
+            <navLabel>
+              <text>Inline Implementation</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1011033"/>
+            <navPoint class="chapter" id="num_200" playOrder="200">
+              <navLabel>
+                <text>Inline implementations of Java interfaces</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1015392"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_201" playOrder="201">
+              <navLabel>
+                <text>Defining anonymous types with reify</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1019348"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_202" playOrder="202">
+            <navLabel>
+              <text>Reusing Implementations</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1023003"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_203" playOrder="203">
+          <navLabel>
+            <text>Protocol Introspection</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1036465"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_204" playOrder="204">
+          <navLabel>
+            <text>Protocol Dispatch Edge Cases</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1039878"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_205" playOrder="205">
+          <navLabel>
+            <text>Participating in Clojure’s Collection Abstractions</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1046777"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_206" playOrder="206">
+          <navLabel>
+            <text>Final Thoughts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1072817"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_207" playOrder="207">
+        <navLabel>
+          <text>7. Multimethods</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1073489"/>
+        <navPoint class="chapter" id="num_208" playOrder="208">
+          <navLabel>
+            <text>Multimethods Basics</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1074974"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_209" playOrder="209">
+          <navLabel>
+            <text>Toward Hierarchies</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1084633"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_210" playOrder="210">
+          <navLabel>
+            <text>Hierarchies</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1091657"/>
+          <navPoint class="chapter" id="num_211" playOrder="211">
+            <navLabel>
+              <text>Independent Hierarchies</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1099597"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_212" playOrder="212">
+          <navLabel>
+            <text>Making It Really Multiple!</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1112040"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_213" playOrder="213">
+          <navLabel>
+            <text>A Few More Things</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1118426"/>
+          <navPoint class="chapter" id="num_214" playOrder="214">
+            <navLabel>
+              <text>Multiple Inheritance</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1118504"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_215" playOrder="215">
+            <navLabel>
+              <text>Introspecting Multimethods</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1121420"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_216" playOrder="216">
+            <navLabel>
+              <text>type Versus class; or, the Revenge of the Map</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1123608"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_217" playOrder="217">
+            <navLabel>
+              <text>The Range of Dispatch Functions Is Unlimited</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1126997"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_218" playOrder="218">
+          <navLabel>
+            <text>Final Thoughts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1131345"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_219" playOrder="219">
+      <navLabel>
+        <text>III. Tools, Platform, and Projects</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos1132485"/>
+      <navPoint class="chapter" id="num_220" playOrder="220">
+        <navLabel>
+          <text>8. Organizing and Building Clojure Projects</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1132603"/>
+        <navPoint class="chapter" id="num_221" playOrder="221">
+          <navLabel>
+            <text>Project Geography</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1134167"/>
+          <navPoint class="chapter" id="num_222" playOrder="222">
+            <navLabel>
+              <text>Defining and Using Namespaces</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1134534"/>
+            <navPoint class="chapter" id="num_223" playOrder="223">
+              <navLabel>
+                <text>Namespaces and files</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1160956"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_224" playOrder="224">
+              <navLabel>
+                <text>A classpath primer</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1168529"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_225" playOrder="225">
+            <navLabel>
+              <text>Location, Location, Location</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1173679"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_226" playOrder="226">
+            <navLabel>
+              <text>The Functional Organization of Clojure Codebases</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1177845"/>
+            <navPoint class="chapter" id="num_227" playOrder="227">
+              <navLabel>
+                <text>Basic project organization principles</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1180795"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_228" playOrder="228">
+          <navLabel>
+            <text>Build</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1192042"/>
+          <navPoint class="chapter" id="num_229" playOrder="229">
+            <navLabel>
+              <text>Ahead-of-Time Compilation</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1199448"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_230" playOrder="230">
+            <navLabel>
+              <text>Dependency Management</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1205713"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_231" playOrder="231">
+            <navLabel>
+              <text>The Maven Dependency Management Model</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1207197"/>
+            <navPoint class="chapter" id="num_232" playOrder="232">
+              <navLabel>
+                <text>Artifacts and coordinates</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1208273"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_233" playOrder="233">
+              <navLabel>
+                <text>Repositories</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1213411"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_234" playOrder="234">
+              <navLabel>
+                <text>Dependencies</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1216038"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_235" playOrder="235">
+            <navLabel>
+              <text>Build Tools and Configuration Patterns</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1228252"/>
+            <navPoint class="chapter" id="num_236" playOrder="236">
+              <navLabel>
+                <text>Maven</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1230538"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_237" playOrder="237">
+              <navLabel>
+                <text>Leiningen</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1238499"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_238" playOrder="238">
+              <navLabel>
+                <text>AOT compilation configuration</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1247107"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_239" playOrder="239">
+              <navLabel>
+                <text>Building mixed-source projects</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1252908"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_240" playOrder="240">
+          <navLabel>
+            <text>Final Thoughts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1273658"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_241" playOrder="241">
+        <navLabel>
+          <text>9. Java and JVM Interoperability</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1274079"/>
+        <navPoint class="chapter" id="num_242" playOrder="242">
+          <navLabel>
+            <text>The JVM Is Clojure’s Foundation</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1276887"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_243" playOrder="243">
+          <navLabel>
+            <text>Using Java Classes, Methods, and Fields</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1282446"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_244" playOrder="244">
+          <navLabel>
+            <text>Handy Interop Utilities</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1300556"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_245" playOrder="245">
+          <navLabel>
+            <text>Exceptions and Error Handling</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1306175"/>
+          <navPoint class="chapter" id="num_246" playOrder="246">
+            <navLabel>
+              <text>Escaping Checked Exceptions</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1313278"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_247" playOrder="247">
+            <navLabel>
+              <text>with-open, finally’s Lament</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1315176"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_248" playOrder="248">
+          <navLabel>
+            <text>Type Hinting for Performance</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1324665"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_249" playOrder="249">
+          <navLabel>
+            <text>Arrays</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1336318"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_250" playOrder="250">
+          <navLabel>
+            <text>Defining Classes and Implementing Interfaces</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1343728"/>
+          <navPoint class="chapter" id="num_251" playOrder="251">
+            <navLabel>
+              <text>Instances of Anonymous Classes: proxy</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1352402"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_252" playOrder="252">
+            <navLabel>
+              <text>Defining Named Classes</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1362472"/>
+            <navPoint class="chapter" id="num_253" playOrder="253">
+              <navLabel>
+                <text>gen-class</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1364637"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_254" playOrder="254">
+            <navLabel>
+              <text>Annotations</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1389148"/>
+            <navPoint class="chapter" id="num_255" playOrder="255">
+              <navLabel>
+                <text>Producing annotated JUnit tests</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1391036"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_256" playOrder="256">
+              <navLabel>
+                <text>Implementing JAX-RS web service endpoints</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1396434"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_257" playOrder="257">
+          <navLabel>
+            <text>Using Clojure from Java</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1408219"/>
+          <navPoint class="chapter" id="num_258" playOrder="258">
+            <navLabel>
+              <text>Using deftype and defrecord Classes</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1420028"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_259" playOrder="259">
+            <navLabel>
+              <text>Implementing Protocol Interfaces</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1429258"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_260" playOrder="260">
+          <navLabel>
+            <text>Collaborating Partners</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1437114"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_261" playOrder="261">
+        <navLabel>
+          <text>10. REPL-Oriented Programming</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1437663"/>
+        <navPoint class="chapter" id="num_262" playOrder="262">
+          <navLabel>
+            <text>Interactive Development</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1439418"/>
+          <navPoint class="chapter" id="num_263" playOrder="263">
+            <navLabel>
+              <text>The Persistent, Evolving Environment</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1451167"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_264" playOrder="264">
+          <navLabel>
+            <text>Tooling</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1458065"/>
+          <navPoint class="chapter" id="num_265" playOrder="265">
+            <navLabel>
+              <text>The Bare REPL</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1460286"/>
+            <navPoint class="chapter" id="num_266" playOrder="266">
+              <navLabel>
+                <text>Introspecting namespaces</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1464944"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_267" playOrder="267">
+            <navLabel>
+              <text>Eclipse</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1470103"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_268" playOrder="268">
+            <navLabel>
+              <text>Emacs</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1474302"/>
+            <navPoint class="chapter" id="num_269" playOrder="269">
+              <navLabel>
+                <text>clojure-mode and paredit</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1479259"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_270" playOrder="270">
+              <navLabel>
+                <text>inferior-lisp</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1480365"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_271" playOrder="271">
+              <navLabel>
+                <text>SLIME</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1486252"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_272" playOrder="272">
+          <navLabel>
+            <text>Debugging, Monitoring, and Patching Production in the REPL</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1502723"/>
+          <navPoint class="chapter" id="num_273" playOrder="273">
+            <navLabel>
+              <text>Special Considerations for “Deployed” REPLs</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1514374"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_274" playOrder="274">
+          <navLabel>
+            <text>Limitations to Redefining Constructs</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1518975"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_275" playOrder="275">
+          <navLabel>
+            <text>In Summary</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1526786"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_276" playOrder="276">
+      <navLabel>
+        <text>IV. Practicums</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos1527345"/>
+      <navPoint class="chapter" id="num_277" playOrder="277">
+        <navLabel>
+          <text>11. Numerics and Mathematics</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1527443"/>
+        <navPoint class="chapter" id="num_278" playOrder="278">
+          <navLabel>
+            <text>Clojure Numerics</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1528941"/>
+          <navPoint class="chapter" id="num_279" playOrder="279">
+            <navLabel>
+              <text>Clojure Prefers 64-bit (or Larger) Representations</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1537800"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_280" playOrder="280">
+            <navLabel>
+              <text>Clojure Has a Mixed Numerics Model</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1538811"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_281" playOrder="281">
+            <navLabel>
+              <text>Rationals</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1546739"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_282" playOrder="282">
+            <navLabel>
+              <text>The Rules of Numeric Contagion</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1549226"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_283" playOrder="283">
+          <navLabel>
+            <text>Clojure Mathematics</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1556474"/>
+          <navPoint class="chapter" id="num_284" playOrder="284">
+            <navLabel>
+              <text>Bounded Versus Arbitrary Precision</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1557089"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_285" playOrder="285">
+            <navLabel>
+              <text>Unchecked Ops</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1564954"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_286" playOrder="286">
+            <navLabel>
+              <text>Scale and Rounding Modes for Arbitrary-Precision Decimals Ops</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1570537"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_287" playOrder="287">
+          <navLabel>
+            <text>Equality and Equivalence</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1575967"/>
+          <navPoint class="chapter" id="num_288" playOrder="288">
+            <navLabel>
+              <text>Object Identity (identical?)</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1576207"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_289" playOrder="289">
+            <navLabel>
+              <text>Reference Equality (=)</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1578328"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_290" playOrder="290">
+            <navLabel>
+              <text>Numeric Equivalence (==)</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1581236"/>
+            <navPoint class="chapter" id="num_291" playOrder="291">
+              <navLabel>
+                <text>Equivalence can preserve your sanity</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1583249"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_292" playOrder="292">
+          <navLabel>
+            <text>Optimizing Numeric Performance</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1588398"/>
+          <navPoint class="chapter" id="num_293" playOrder="293">
+            <navLabel>
+              <text>Declare Functions to Take and Return Primitives</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1591810"/>
+            <navPoint class="chapter" id="num_294" playOrder="294">
+              <navLabel>
+                <text>Type errors and warnings</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1599929"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="num_295" playOrder="295">
+            <navLabel>
+              <text>Use Primitive Arrays Judiciously</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1605156"/>
+            <navPoint class="chapter" id="num_296" playOrder="296">
+              <navLabel>
+                <text>The mechanics of primitive arrays</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1610684"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_297" playOrder="297">
+              <navLabel>
+                <text>Automating type hinting of multidimensional array operations</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1623398"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_298" playOrder="298">
+          <navLabel>
+            <text>Visualizing the Mandelbrot Set in Clojure</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1634180"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_299" playOrder="299">
+        <navLabel>
+          <text>12. Design Patterns</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1656269"/>
+        <navPoint class="chapter" id="num_300" playOrder="300">
+          <navLabel>
+            <text>Dependency Injection</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1662597"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_301" playOrder="301">
+          <navLabel>
+            <text>Strategy Pattern</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1671945"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_302" playOrder="302">
+          <navLabel>
+            <text>Chain of Responsibility</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1674973"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_303" playOrder="303">
+          <navLabel>
+            <text>Aspect-Oriented Programming</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1682627"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_304" playOrder="304">
+          <navLabel>
+            <text>Final Thoughts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1695309"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_305" playOrder="305">
+        <navLabel>
+          <text>13. Testing</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1695949"/>
+        <navPoint class="chapter" id="num_306" playOrder="306">
+          <navLabel>
+            <text>Immutable Values and Pure Functions</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1696947"/>
+          <navPoint class="chapter" id="num_307" playOrder="307">
+            <navLabel>
+              <text>Mocking</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1698179"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_308" playOrder="308">
+          <navLabel>
+            <text>clojure.test</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1703991"/>
+          <navPoint class="chapter" id="num_309" playOrder="309">
+            <navLabel>
+              <text>Defining Tests</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1708891"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_310" playOrder="310">
+            <navLabel>
+              <text>Test “Suites”</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1715417"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_311" playOrder="311">
+            <navLabel>
+              <text>Fixtures</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1720516"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_312" playOrder="312">
+          <navLabel>
+            <text>Growing an HTML DSL</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1733007"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_313" playOrder="313">
+          <navLabel>
+            <text>Relying upon Assertions</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1745054"/>
+          <navPoint class="chapter" id="num_314" playOrder="314">
+            <navLabel>
+              <text>Preconditions and Postconditions</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1750353"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_315" playOrder="315">
+        <navLabel>
+          <text>14. Using Relational Databases</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1757595"/>
+        <navPoint class="chapter" id="num_316" playOrder="316">
+          <navLabel>
+            <text>clojure.java.jdbc</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1758793"/>
+          <navPoint class="chapter" id="num_317" playOrder="317">
+            <navLabel>
+              <text>with-query-results Explained</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1767974"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_318" playOrder="318">
+            <navLabel>
+              <text>Transactions</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1773112"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_319" playOrder="319">
+            <navLabel>
+              <text>Connection Pooling</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1776310"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_320" playOrder="320">
+          <navLabel>
+            <text>Korma</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1782878"/>
+          <navPoint class="chapter" id="num_321" playOrder="321">
+            <navLabel>
+              <text>Prelude</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1783806"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_322" playOrder="322">
+            <navLabel>
+              <text>Queries</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1788119"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_323" playOrder="323">
+            <navLabel>
+              <text>Why Bother with a DSL?</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1791091"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_324" playOrder="324">
+          <navLabel>
+            <text>Hibernate</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1798802"/>
+          <navPoint class="chapter" id="num_325" playOrder="325">
+            <navLabel>
+              <text>Setup</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1799580"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_326" playOrder="326">
+            <navLabel>
+              <text>Persisting Data</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1807482"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_327" playOrder="327">
+            <navLabel>
+              <text>Running Queries</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1809055"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_328" playOrder="328">
+            <navLabel>
+              <text>Removing Boilerplate</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1811316"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_329" playOrder="329">
+          <navLabel>
+            <text>Final Thoughts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1819329"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_330" playOrder="330">
+        <navLabel>
+          <text>15. Using Nonrelational Databases</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1819820"/>
+        <navPoint class="chapter" id="num_331" playOrder="331">
+          <navLabel>
+            <text>Getting Set Up with CouchDB and Clutch</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1822730"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_332" playOrder="332">
+          <navLabel>
+            <text>Basic CRUD Operations</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1825622"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_333" playOrder="333">
+          <navLabel>
+            <text>Views</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1832599"/>
+          <navPoint class="chapter" id="num_334" playOrder="334">
+            <navLabel>
+              <text>A Simple (JavaScript) View</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1835139"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_335" playOrder="335">
+            <navLabel>
+              <text>Views in Clojure</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1841485"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_336" playOrder="336">
+          <navLabel>
+            <text>_changes: Abusing CouchDB as a Message Queue</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1857861"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_337" playOrder="337">
+          <navLabel>
+            <text>À la Carte Message Queues</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1864725"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_338" playOrder="338">
+          <navLabel>
+            <text>Final Thoughts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1878169"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_339" playOrder="339">
+        <navLabel>
+          <text>16. Clojure and the Web</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1878886"/>
+        <navPoint class="chapter" id="num_340" playOrder="340">
+          <navLabel>
+            <text>The “Clojure Stack”</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1879854"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_341" playOrder="341">
+          <navLabel>
+            <text>The Foundation: Ring</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1887246"/>
+          <navPoint class="chapter" id="num_342" playOrder="342">
+            <navLabel>
+              <text>Requests and Responses</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1888755"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_343" playOrder="343">
+            <navLabel>
+              <text>Adapters</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1902382"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_344" playOrder="344">
+            <navLabel>
+              <text>Handlers</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1905776"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_345" playOrder="345">
+            <navLabel>
+              <text>Middleware</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1910180"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_346" playOrder="346">
+          <navLabel>
+            <text>Routing Requests with Compojure</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1918631"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_347" playOrder="347">
+          <navLabel>
+            <text>Templating</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1955537"/>
+          <navPoint class="chapter" id="num_348" playOrder="348">
+            <navLabel>
+              <text>Enlive: Selector-Based HTML Transformation</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos1958790"/>
+            <navPoint class="chapter" id="num_349" playOrder="349">
+              <navLabel>
+                <text>Testing the waters</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1960239"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_350" playOrder="350">
+              <navLabel>
+                <text>Selectors</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1964711"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_351" playOrder="351">
+              <navLabel>
+                <text>Iterating and branching</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1969748"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_352" playOrder="352">
+              <navLabel>
+                <text>Putting everything together</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos1974573"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_353" playOrder="353">
+          <navLabel>
+            <text>Final Thoughts</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1987734"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_354" playOrder="354">
+        <navLabel>
+          <text>17. Deploying Clojure Web Applications</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos1991497"/>
+        <navPoint class="chapter" id="num_355" playOrder="355">
+          <navLabel>
+            <text>Java and Clojure Web Architecture</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos1992351"/>
+          <navPoint class="chapter" id="num_356" playOrder="356">
+            <navLabel>
+              <text>Web Application Packaging</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos2000202"/>
+            <navPoint class="chapter" id="num_357" playOrder="357">
+              <navLabel>
+                <text>Building .war files with Maven</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos2006010"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_358" playOrder="358">
+              <navLabel>
+                <text>Building .war files with Leiningen</text>
+              </navLabel>
+              <content src="Clojure_Programming.html#filepos2012970"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_359" playOrder="359">
+          <navLabel>
+            <text>Running Web Apps Locally</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2022780"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_360" playOrder="360">
+          <navLabel>
+            <text>Web Application Deployment</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2025690"/>
+          <navPoint class="chapter" id="num_361" playOrder="361">
+            <navLabel>
+              <text>Deploying Clojure Apps to Amazon’s Elastic Beanstalk</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos2027663"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_362" playOrder="362">
+          <navLabel>
+            <text>Going Beyond Simple Web Application Deployment</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2041187"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_363" playOrder="363">
+      <navLabel>
+        <text>V. Miscellanea</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos2042755"/>
+      <navPoint class="chapter" id="num_364" playOrder="364">
+        <navLabel>
+          <text>18. Choosing Clojure Type Definition Forms Wisely</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos2042853"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_365" playOrder="365">
+        <navLabel>
+          <text>19. Introducing Clojure into Your Workplace</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos2048261"/>
+        <navPoint class="chapter" id="num_366" playOrder="366">
+          <navLabel>
+            <text>Just the Facts…</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2049520"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_367" playOrder="367">
+          <navLabel>
+            <text>Emphasize Productivity</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2056378"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_368" playOrder="368">
+          <navLabel>
+            <text>Emphasize Community</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2060884"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_369" playOrder="369">
+          <navLabel>
+            <text>Be Prudent</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2068030"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_370" playOrder="370">
+        <navLabel>
+          <text>20. What’s Next?</text>
+        </navLabel>
+        <content src="Clojure_Programming.html#filepos2070122"/>
+        <navPoint class="chapter" id="num_371" playOrder="371">
+          <navLabel>
+            <text>(dissoc Clojure 'JVM)</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2071096"/>
+          <navPoint class="chapter" id="num_372" playOrder="372">
+            <navLabel>
+              <text>ClojureCLR</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos2071445"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_373" playOrder="373">
+            <navLabel>
+              <text>ClojureScript</text>
+            </navLabel>
+            <content src="Clojure_Programming.html#filepos2072318"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_374" playOrder="374">
+          <navLabel>
+            <text>4Clojure</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2076265"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_375" playOrder="375">
+          <navLabel>
+            <text>Overtone</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2077191"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_376" playOrder="376">
+          <navLabel>
+            <text>core.logic</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2079334"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_377" playOrder="377">
+          <navLabel>
+            <text>Pallet</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2083987"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_378" playOrder="378">
+          <navLabel>
+            <text>Avout</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2085824"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_379" playOrder="379">
+          <navLabel>
+            <text>Clojure on Heroku</text>
+          </navLabel>
+          <content src="Clojure_Programming.html#filepos2086843"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_380" playOrder="380">
+      <navLabel>
+        <text>Index</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos2088829"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_381" playOrder="381">
+      <navLabel>
+        <text>About the Authors</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos2350943"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_382" playOrder="382">
+      <navLabel>
+        <text>Colophon</text>
+      </navLabel>
+      <content src="Clojure_Programming.html#filepos2352120"/>
+    </navPoint>
+  </navMap>
+</ncx>

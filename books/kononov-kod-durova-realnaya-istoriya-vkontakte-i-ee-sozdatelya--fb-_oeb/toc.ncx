@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="rus">
+  <head>
+    <meta content="c704abb1-31ed-4c15-8518-349ea816e823" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Код Дурова. Реальная история «ВКонтакте» и ее создателя</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Предисловие</text>
+      </navLabel>
+      <content src="text/part0002.html#id1"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Пролог</text>
+      </navLabel>
+      <content src="text/part0003.html#id2"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Глава 1 Ботанический сад</text>
+      </navLabel>
+      <content src="text/part0004.html#id3"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Глава 2 Архитектор</text>
+      </navLabel>
+      <content src="text/part0005.html#id4"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Глава 3 Мафия открывает глаза</text>
+      </navLabel>
+      <content src="text/part0007.html#id5"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Глава 4 Сок черешни</text>
+      </navLabel>
+      <content src="text/part0008.html#id6"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="7">
+      <navLabel>
+        <text>Глава 5 Стена</text>
+      </navLabel>
+      <content src="text/part0010.html#id7"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="8">
+      <navLabel>
+        <text>Глава 6 Запрещенный прием</text>
+      </navLabel>
+      <content src="text/part0011.html#id8"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_9" playOrder="9">
+      <navLabel>
+        <text>Глава 7 Пятно Роршаха</text>
+      </navLabel>
+      <content src="text/part0012.html#id9"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_10" playOrder="10">
+      <navLabel>
+        <text>Об авторе</text>
+      </navLabel>
+      <content src="text/part0013.html#id10"/>
+    </navPoint>
+  </navMap>
+</ncx>

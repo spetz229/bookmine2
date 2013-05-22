@@ -1,0 +1,62 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch03.html
+next: OEBPS/ch03s03.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Routing"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect13_d1e882" class="calibre1"></a>Routing</h1></div></div></div><p class="calibre7">Like most modern web frameworks, Yesod follows a <a class="ulink" href="http://en.wikipedia.org/wiki/Front_Controller_pattern">front controller pattern</a>. This means that every request to a
+            Yesod application enters at the same point and is routed from there. As a contrast, in
+            systems like PHP and ASP you usually create a number of different files, and the web
+            server automatically directs requests to the relevant file.</p><p class="calibre7">In addition, Yesod uses a declarative style for specifying routes. In our example above,
+            this looked like:</p><a id="I_programlisting3_d1e892" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">mkYesod</code> <code class="s">"HelloWorld"</code> <code class="p">[</code><code class="n">parseRoutes</code><code class="o">|</code>
+<code class="o">/</code> <code class="kt">HomeR</code> <code class="kt">GET</code>
+<code class="o">|</code><code class="p">]</code>
+</pre><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7"><code class="literal">mkYesod</code> is a Template Haskell function, and
+                <code class="literal">parseRoutes</code> is a QuasiQuoter.</p></div><p class="calibre7">In English, all this means is: <span class="firstname">“<span class="firstname">In the HelloWorld application, create one route. I’d
+        like to call it <code class="literal">HomeR</code>, it should listen for requests to
+          <code class="literal">/</code> (the root of the application), and should answer
+          <code class="literal">GET</code> requests.</span>”</span> We call <code class="literal">HomeR</code> a <em class="calibre4">resource</em>, which is where the “R” suffix comes from.</p><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7">The R suffix on resource names is simply convention, but it’s a fairly universally
+          followed convention. It makes it just a bit easier to read and understand code.</p></div><p class="calibre7">The <code class="literal">mkYesod</code> TH function generates quite a bit of code
+            here: a route data type, a dispatch function, and a render function. We’ll look at this
+            in more detail in the routing chapter. But by using the <code class="literal">-ddump-splices</code> GHC option, we can get an immediate look at the generated
+            code. A much cleaned up version of it is:</p><a id="I_programlisting3_d1e933" class="firstname"></a><pre class="programlistinghaskell"><code class="kr">instance</code> <code class="kt">RenderRoute</code> <code class="kt">HelloWorld</code> <code class="kr">where</code>
+  <code class="kr">data</code> <code class="kt">Route</code> <code class="kt">HelloWorld</code> <code class="ow">=</code> <code class="kt">HomeR</code>
+    <code class="kr">deriving</code> <code class="p">(</code><code class="kt">Show</code><code class="p">,</code> <code class="kt">Eq</code><code class="p">,</code> <code class="kt">Read</code><code class="p">)</code>
+  <code class="n">renderRoute</code> <code class="kt">HomeR</code> <code class="ow">=</code> <code class="p">(</code><code class="kt">[]</code><code class="p">,</code> <code class="kt">[]</code><code class="p">)</code>
+
+<code class="kr">instance</code> <code class="kt">YesodDispatch</code> <code class="kt">HelloWorld</code> <code class="kt">HelloWorld</code> <code class="kr">where</code>
+    <code class="n">yesodDispatch</code> <code class="n">master</code> <code class="n">sub</code> <code class="n">toMaster</code> <code class="n">app404</code> <code class="n">app405</code> <code class="n">method</code> <code class="n">pieces</code> <code class="ow">=</code>
+        <code class="kr">case</code> <code class="n">dispatch</code> <code class="n">pieces</code> <code class="kr">of</code>
+            <code class="kt">Just</code> <code class="n">f</code> <code class="ow">-&gt;</code> <code class="n">f</code>
+                <code class="n">master</code>
+                <code class="n">sub</code>
+                <code class="n">toMaster</code>
+                <code class="n">app404</code>
+                <code class="n">app405</code>
+                <code class="n">method</code>
+            <code class="kt">Nothing</code> <code class="ow">-&gt;</code> <code class="n">app404</code>
+      <code class="kr">where</code>
+        <code class="n">dispatch</code> <code class="ow">=</code> <code class="kt">Yesod</code><code class="o">.</code><code class="kt">Routes</code><code class="o">.</code><code class="kt">Dispatch</code><code class="o">.</code><code class="n">toDispatch</code>
+            <code class="p">[</code> <code class="kt">Yesod</code><code class="o">.</code><code class="kt">Routes</code><code class="o">.</code><code class="kt">Dispatch</code><code class="o">.</code><code class="kt">Route</code> <code class="kt">[]</code> <code class="kt">False</code> <code class="n">onHome</code>
+            <code class="p">]</code>
+        <code class="n">onHome</code> <code class="kt">[]</code> <code class="ow">=</code> <code class="kt">Just</code> <code class="o">$</code> <code class="nf">\</code><code class="n">master</code> <code class="n">sub</code> <code class="n">toMaster</code> <code class="n">_app404</code> <code class="n">app405</code> <code class="n">method</code> <code class="ow">-&gt;</code>
+            <code class="kr">case</code> <code class="n">method</code> <code class="kr">of</code>
+                <code class="s">"GET"</code> <code class="ow">-&gt;</code> <code class="n">yesodRunner</code>
+                    <code class="p">(</code><code class="n">fmap</code> <code class="n">chooseRep</code> <code class="n">getHomeR</code><code class="p">)</code>
+                    <code class="n">master</code>
+                    <code class="n">sub</code>
+                    <code class="p">(</code><code class="kt">Just</code> <code class="kt">HomeR</code><code class="p">)</code>
+                    <code class="n">toMaster</code>
+                <code class="kr">_</code> <code class="ow">-&gt;</code> <code class="n">app405</code> <code class="kt">HomeR</code>
+</pre><p class="calibre7">Some of that will likely not make sense yet. In particular, the implementation of <code class="literal">yesodDispatch</code> is a bit hairy to accomodate different
+            dispatch approaches and fit the model necessary for our high-performance routing
+            structures. However, the <code class="literal">RenderRoute</code> implementation
+            with its associated data type should already give you a good feel for what’s going on
+            under the surface.</p></div></div>
+
+{% endraw %}
+

@@ -1,0 +1,2541 @@
+---
+layout: book
+contributor: calibre (0.9.28) [http://calibre-ebook.com]
+title: "Clojure Programming"
+language: en
+identifier: aca20ffb-ac97-462a-81cc-555d0380b540
+tags: ["COMPUTERS / Programming Languages / LISP"]
+creator: ['Christophe Grand']
+cover: images/calibre_cover.jpg
+subject: COMPUTERS / Programming Languages / LISP
+publisher: O'Reilly Media
+book_date: 2012-03-29T20:00:00+00:00
+book_path: books/clojure-programming-chas-emerick_oeb/
+perface: |
+    <p>The Clojure language is a practical alternative for everyday programming that offers expressivity rivaling other dynamic languages like Ruby and Python, but allows one to seamlessly take advantage of Java libraries, services, and all of the resources of the JVM ecosystem. This book helps you learn the fundamentals of Clojure with examples relating it to the languages you know already—whether you're focused on data modeling, concurrency and parallelism, web programming, statistics and data analysis, and more.</p>
+category: clojure
+formats:
+manifest:
+  - Clojure_Programming.html
+---
+
+<h3>Clojure Programming</h3>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos109">
+Clojure Programming
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2808">
+Preface
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos4892">
+Who Is This Book For?
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos5859">
+Engaged Java Developers
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos7027">
+Ruby, Python, and Other Developers
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos8871">
+How to Read This Book
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos10236">
+Start with Practical Applications of Clojure
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos11120">
+Start from the Ground Up with Clojure’s Foundational Concepts
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos12050">
+Who’s “We”?
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos12443">
+Chas Emerick
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos13573">
+Brian Carper
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos14402">
+Christophe Grand
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos15480">
+Acknowledgments
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos17518">
+And Last, but Certainly Far from Least
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos21058">
+Conventions Used in This Book
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos23066">
+Using Code Examples
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos24450">
+Safari® Books Online
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos25784">
+How to Contact Us
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos28661">
+1. Down the Rabbit Hole
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos29903">
+Why Clojure?
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos34110">
+Obtaining Clojure
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos37449">
+The Clojure REPL
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos49081">
+No, Parentheses Actually Won’t Make You Go Blind
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos53327">
+Expressions, Operators, Syntax, and Precedence
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos69475">
+Homoiconicity
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos76368">
+The Reader
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos79505">
+Scalar Literals
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos79919">
+Strings
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos80622">
+Booleans
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos80894">
+nil
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos81200">
+Characters
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos82628">
+Keywords
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos85406">
+Symbols
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos86771">
+Numbers
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos94923">
+Regular expressions
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos96859">
+Comments
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos100630">
+Whitespace and Commas
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos102257">
+Collection Literals
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos103135">
+Miscellaneous Reader Sugar
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos109342">
+Namespaces
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos118507">
+Symbol Evaluation
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos121508">
+Special Forms
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos123823">
+Suppressing Evaluation: quote
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos126892">
+Code Blocks: do
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos128989">
+Defining Vars: def
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos130417">
+Local Bindings: let
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos137243">
+Destructuring (let, Part 2)
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos141464">
+Sequential destructuring
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos148997">
+Map destructuring
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos161395">
+Creating Functions: fn
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos168988">
+Destructuring function arguments
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos176636">
+Function literals
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos181360">
+Conditionals: if
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos184954">
+Looping: loop and recur
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos189489">
+Referring to Vars: var
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos190560">
+Java Interop: . and new
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos196843">
+Exception Handling: try and throw
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos197231">
+Specialized Mutation: set!
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos198508">
+Primitive Locking: monitor-enter and monitor-exit
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos206399">
+Putting It All Together
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos208576">
+eval
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos212898">
+This Is Just the Beginning
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos215548">
+I. Functional Programming and Concurrency
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos215673">
+2. Functional Programming
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos218380">
+What Does Functional Programming Mean?
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos221848">
+On the Importance of Values
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos224492">
+About Values
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos226156">
+Comparing Values to Mutable Objects
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos240323">
+A Critical Choice
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos250238">
+First-Class and Higher-Order Functions
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos268007">
+Applying Ourselves Partially
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos284265">
+Composition of Function(ality)
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos294075">
+Writing Higher-Order Functions
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos296083">
+Building a Primitive Logging System with Composable Higher-Order Functions
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos316677">
+Pure Functions
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos322001">
+Why Are Pure Functions Interesting?
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos332912">
+Functional Programming in the Real World
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos335797">
+3. Collections and Data Structures
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos337805">
+Abstractions over Implementations
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos347205">
+Collection
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos354167">
+Sequences
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos361409">
+Sequences are not iterators
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos363075">
+Sequences are not lists
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos366032">
+Creating seqs
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos368238">
+Lazy seqs
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos385225">
+Head retention
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos387941">
+Associative
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos396484">
+Beware of nil values
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos399483">
+Indexed
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos403580">
+Stack
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos405763">
+Set
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos407075">
+Sorted
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos412578">
+Comparators and predicates to define ordering
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos438207">
+Concise Collection Access
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos441214">
+Idiomatic Usage
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos443204">
+Collections and Keys and Higher-Order Functions
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos447245">
+Data Structure Types
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos447909">
+Lists
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos450909">
+Vectors
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos452246">
+Vectors as tuples
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos455372">
+Sets
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos457623">
+Maps
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos459863">
+Maps as ad-hoc structs
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos462899">
+Other usages of maps
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos473960">
+Immutability and Persistence
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos477515">
+Persistence and Structural Sharing
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos479774">
+Visualizing persistence: lists
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos483122">
+Visualizing persistence: maps (and vectors and sets)
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos489242">
+Tangible benefits
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos492461">
+Transients
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos512813">
+Metadata
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos518281">
+Putting Clojure’s Collections to Work
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos519938">
+Identifiers and Cycles
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos525195">
+Thinking Different: From Imperative to Functional
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos525789">
+Revisiting a classic: Conway’s Game of Life
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos547026">
+Maze generation
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos569560">
+Navigation, Update, and Zippers
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos570771">
+Manipulating zippers
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos575442">
+Custom zippers
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos578595">
+Ariadne’s zipper
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos593244">
+In Summary
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos593810">
+4. Concurrency and Parallelism
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos596870">
+Shifting Computation Through Time and Space
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos597315">
+Delays
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos603325">
+Futures
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos608843">
+Promises
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos618299">
+Parallelism on the Cheap
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos627984">
+State and Identity
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos636143">
+Clojure Reference Types
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos640580">
+Classifying Concurrent Operations
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos646665">
+Atoms
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos655203">
+Notifications and Constraints
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos655851">
+Watches
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos663915">
+Validators
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos668316">
+Refs
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos669439">
+Software Transactional Memory
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos672522">
+The Mechanics of Ref Change
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos681623">
+Understanding alter
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos686617">
+Minimizing transaction conflict with commute
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos699770">
+Clobbering ref state with ref-set
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos701002">
+Enforcing local consistency by using validators
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos709711">
+The Sharp Corners of Software Transactional Memory
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos710236">
+Side-effecting functions strictly verboten
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos713926">
+Minimize the scope of each transaction
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos718774">
+Readers may retry
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos723576">
+Write skew
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos735003">
+Vars
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos736662">
+Defining Vars
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos737596">
+Private vars
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos739715">
+Docstrings
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos741888">
+Constants
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos744558">
+Dynamic Scope
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos759240">
+Vars Are Not Variables
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos763063">
+Forward Declarations
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos768750">
+Agents
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos779110">
+Dealing with Errors in Agent Actions
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos784066">
+Agent error handlers and modes
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos787357">
+I/O, Transactions, and Nested Sends
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos790173">
+Persisting reference states with an agent-based write-behind log
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos799080">
+Using agents to parallelize workloads
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos826361">
+Using Java’s Concurrency Primitives
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos829168">
+Locking
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos830923">
+Final Thoughts
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos831397">
+II. Building Abstractions
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos831506">
+5. Macros
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos833173">
+What Is a Macro?
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos838619">
+What Macros Are Not
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos840872">
+What Can Macros Do that Functions Cannot?
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos846315">
+Macros Versus Ruby eval
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos852324">
+Writing Your First Macro
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos857150">
+Debugging Macros
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos858993">
+Macroexpansion
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos864832">
+Syntax
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos867246">
+quote Versus syntax-quote
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos869714">
+unquote and unquote-splicing
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos876175">
+When to Use Macros
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos881435">
+Hygiene
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos885897">
+Gensyms to the Rescue
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos894757">
+Letting the User Pick Names
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos896511">
+Double Evaluation
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos901078">
+Common Macro Idioms and Patterns
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos905889">
+The Implicit Arguments: &amp;env and &amp;form
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos906323">
+&amp;env
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos913413">
+&amp;form
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos914343">
+Producing useful macro error messages
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos921546">
+Preserving user-provided type hints
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos927709">
+Testing Contextual Macros
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos935751">
+In Detail: -&gt; and -&gt;&gt;
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos944637">
+Final Thoughts
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos945443">
+6. Datatypes and Protocols
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos948323">
+Protocols
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos955552">
+Extending to Existing Types
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos967758">
+Defining Your Own Types
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos977618">
+Records
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos988434">
+Constructors and factory functions
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos993043">
+When to use maps or records
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos995374">
+Types
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1007944">
+Implementing Protocols
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1011033">
+Inline Implementation
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1015392">
+Inline implementations of Java interfaces
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1019348">
+Defining anonymous types with reify
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1023003">
+Reusing Implementations
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1036465">
+Protocol Introspection
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1039878">
+Protocol Dispatch Edge Cases
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1046777">
+Participating in Clojure’s Collection Abstractions
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1072817">
+Final Thoughts
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1073489">
+7. Multimethods
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1074974">
+Multimethods Basics
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1084633">
+Toward Hierarchies
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1091657">
+Hierarchies
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1099597">
+Independent Hierarchies
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1112040">
+Making It Really Multiple!
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1118426">
+A Few More Things
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1118504">
+Multiple Inheritance
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1121420">
+Introspecting Multimethods
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1123608">
+type Versus class; or, the Revenge of the Map
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1126997">
+The Range of Dispatch Functions Is Unlimited
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1131345">
+Final Thoughts
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1132485">
+III. Tools, Platform, and Projects
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1132603">
+8. Organizing and Building Clojure Projects
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1134167">
+Project Geography
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1134534">
+Defining and Using Namespaces
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1160956">
+Namespaces and files
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1168529">
+A classpath primer
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1173679">
+Location, Location, Location
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1177845">
+The Functional Organization of Clojure Codebases
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1180795">
+Basic project organization principles
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1192042">
+Build
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1199448">
+Ahead-of-Time Compilation
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1205713">
+Dependency Management
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1207197">
+The Maven Dependency Management Model
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1208273">
+Artifacts and coordinates
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1213411">
+Repositories
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1216038">
+Dependencies
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1228252">
+Build Tools and Configuration Patterns
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1230538">
+Maven
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1238499">
+Leiningen
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1247107">
+AOT compilation configuration
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1252908">
+Building mixed-source projects
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1273658">
+Final Thoughts
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1274079">
+9. Java and JVM Interoperability
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1276887">
+The JVM Is Clojure’s Foundation
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1282446">
+Using Java Classes, Methods, and Fields
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1300556">
+Handy Interop Utilities
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1306175">
+Exceptions and Error Handling
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1313278">
+Escaping Checked Exceptions
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1315176">
+with-open, finally’s Lament
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1324665">
+Type Hinting for Performance
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1336318">
+Arrays
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1343728">
+Defining Classes and Implementing Interfaces
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1352402">
+Instances of Anonymous Classes: proxy
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1362472">
+Defining Named Classes
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1364637">
+gen-class
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1389148">
+Annotations
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1391036">
+Producing annotated JUnit tests
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1396434">
+Implementing JAX-RS web service endpoints
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1408219">
+Using Clojure from Java
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1420028">
+Using deftype and defrecord Classes
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1429258">
+Implementing Protocol Interfaces
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1437114">
+Collaborating Partners
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1437663">
+10. REPL-Oriented Programming
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1439418">
+Interactive Development
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1451167">
+The Persistent, Evolving Environment
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1458065">
+Tooling
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1460286">
+The Bare REPL
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1464944">
+Introspecting namespaces
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1470103">
+Eclipse
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1474302">
+Emacs
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1479259">
+clojure-mode and paredit
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1480365">
+inferior-lisp
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1486252">
+SLIME
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1502723">
+Debugging, Monitoring, and Patching Production in the REPL
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1514374">
+Special Considerations for “Deployed” REPLs
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1518975">
+Limitations to Redefining Constructs
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1526786">
+In Summary
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1527345">
+IV. Practicums
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1527443">
+11. Numerics and Mathematics
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1528941">
+Clojure Numerics
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1537800">
+Clojure Prefers 64-bit (or Larger) Representations
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1538811">
+Clojure Has a Mixed Numerics Model
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1546739">
+Rationals
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1549226">
+The Rules of Numeric Contagion
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1556474">
+Clojure Mathematics
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1557089">
+Bounded Versus Arbitrary Precision
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1564954">
+Unchecked Ops
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1570537">
+Scale and Rounding Modes for Arbitrary-Precision Decimals Ops
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1575967">
+Equality and Equivalence
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1576207">
+Object Identity (identical?)
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1578328">
+Reference Equality (=)
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1581236">
+Numeric Equivalence (==)
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1583249">
+Equivalence can preserve your sanity
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1588398">
+Optimizing Numeric Performance
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1591810">
+Declare Functions to Take and Return Primitives
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1599929">
+Type errors and warnings
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1605156">
+Use Primitive Arrays Judiciously
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1610684">
+The mechanics of primitive arrays
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1623398">
+Automating type hinting of multidimensional array operations
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1634180">
+Visualizing the Mandelbrot Set in Clojure
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1656269">
+12. Design Patterns
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1662597">
+Dependency Injection
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1671945">
+Strategy Pattern
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1674973">
+Chain of Responsibility
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1682627">
+Aspect-Oriented Programming
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1695309">
+Final Thoughts
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1695949">
+13. Testing
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1696947">
+Immutable Values and Pure Functions
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1698179">
+Mocking
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1703991">
+clojure.test
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1708891">
+Defining Tests
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1715417">
+Test “Suites”
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1720516">
+Fixtures
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1733007">
+Growing an HTML DSL
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1745054">
+Relying upon Assertions
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1750353">
+Preconditions and Postconditions
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1757595">
+14. Using Relational Databases
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1758793">
+clojure.java.jdbc
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1767974">
+with-query-results Explained
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1773112">
+Transactions
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1776310">
+Connection Pooling
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1782878">
+Korma
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1783806">
+Prelude
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1788119">
+Queries
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1791091">
+Why Bother with a DSL?
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1798802">
+Hibernate
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1799580">
+Setup
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1807482">
+Persisting Data
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1809055">
+Running Queries
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1811316">
+Removing Boilerplate
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1819329">
+Final Thoughts
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1819820">
+15. Using Nonrelational Databases
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1822730">
+Getting Set Up with CouchDB and Clutch
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1825622">
+Basic CRUD Operations
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1832599">
+Views
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1835139">
+A Simple (JavaScript) View
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1841485">
+Views in Clojure
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1857861">
+_changes: Abusing CouchDB as a Message Queue
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1864725">
+À la Carte Message Queues
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1878169">
+Final Thoughts
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1878886">
+16. Clojure and the Web
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1879854">
+The “Clojure Stack”
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1887246">
+The Foundation: Ring
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1888755">
+Requests and Responses
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1902382">
+Adapters
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1905776">
+Handlers
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1910180">
+Middleware
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1918631">
+Routing Requests with Compojure
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1955537">
+Templating
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1958790">
+Enlive: Selector-Based HTML Transformation
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1960239">
+Testing the waters
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1964711">
+Selectors
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1969748">
+Iterating and branching
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1974573">
+Putting everything together
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1987734">
+Final Thoughts
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1991497">
+17. Deploying Clojure Web Applications
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos1992351">
+Java and Clojure Web Architecture
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2000202">
+Web Application Packaging
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2006010">
+Building .war files with Maven
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2012970">
+Building .war files with Leiningen
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2022780">
+Running Web Apps Locally
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2025690">
+Web Application Deployment
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2027663">
+Deploying Clojure Apps to Amazon’s Elastic Beanstalk
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2041187">
+Going Beyond Simple Web Application Deployment
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2042755">
+V. Miscellanea
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2042853">
+18. Choosing Clojure Type Definition Forms Wisely
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2048261">
+19. Introducing Clojure into Your Workplace
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2049520">
+Just the Facts…
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2056378">
+Emphasize Productivity
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2060884">
+Emphasize Community
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2068030">
+Be Prudent
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2070122">
+20. What’s Next?
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2071096">
+(dissoc Clojure &#39;JVM)
+</a>
+<ul>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2071445">
+ClojureCLR
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2072318">
+ClojureScript
+</a>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2076265">
+4Clojure
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2077191">
+Overtone
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2079334">
+core.logic
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2083987">
+Pallet
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2085824">
+Avout
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2086843">
+Clojure on Heroku
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2088829">
+Index
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2350943">
+About the Authors
+</a>
+</li>
+<li>
+<i class="icon-folder-open"></i>
+<a href="../../books/clojure-programming-chas-emerick_oeb//Clojure_Programming.html#filepos2352120">
+Colophon
+</a>
+</li>
+</ul>
+

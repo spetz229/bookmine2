@@ -1,0 +1,414 @@
+---
+layout: page
+title: "Developing Backbone.js Applications"
+prev: OEBPS/ch05s04.html
+next: OEBPS/ch06.html
+book_path: books/developing-backbone-js-applications-addy-osmani--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Practical"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="practical-3" class="calibre1"></a>Practical</h1></div></div></div><p class="calibre6">
+    We can now begin writing test specs for our Todo application, which
+    are listed and separated by component (e.g Models, Collections
+    etc.). It’s useful to pay attention to the name of the test, the
+    logic being tested and most importantly the assertions being made as
+    this will give you some insight into how what we’ve learned can be
+    applied to a complete application.
+  </p><p class="calibre6">
+    To get the most out of this section, I recommend looking at the
+    QUnit Koans included in the
+    <code class="literal">practicals\qunit-koans</code> folder - this is a port of
+    the Backbone.js Jasmine Koans over to QUnit that I converted for
+    this post.
+  </p><p class="calibre6">
+    <span class="firstname"><em class="calibre9">In case you haven’t had a chance to try out one of the
+    Koans kits as yet, they are a set of unit tests using a specific
+    testing framework that both demonstrate how a set of specs for an
+    application may be written, but also leave some tests unfilled so
+    that you can complete them as an exercise.</em></span>
+  </p><div class="book" title="Models"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="models-3" class="calibre1"></a>Models</h2></div></div></div><p class="calibre6">
+      For our models we want to at minimum test that:
+    </p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre6">
+          New instances can be created with the expected default values
+        </p></li><li class="listitem"><p class="calibre6">
+          Attributes can be set and retrieved correctly
+        </p></li><li class="listitem"><p class="calibre6">
+          Changes to state correctly fire off custom events where needed
+        </p></li><li class="listitem"><p class="calibre6">
+          Validation rules are correctly enforced
+        </p></li></ul></div><pre class="programlistingjavascript"><code class="nx">module</code><code class="p">(</code> <code class="s">'About Backbone.Model'</code><code class="p">);</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Can be created with default values for its attributes.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">1</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">todo</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">Todo</code><code class="p">();</code>
+
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">todo</code><code class="p">.</code><code class="nx">get</code><code class="p">(</code><code class="s">'text'</code><code class="p">),</code> <code class="s">""</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Will set attributes on the model instance when created.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">3</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">todo</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">Todo</code><code class="p">(</code> <code class="p">{</code> <code class="nx">text</code><code class="o">:</code> <code class="s">'Get oil change for car.'</code> <code class="p">}</code> <code class="p">);</code>
+
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">todo</code><code class="p">.</code><code class="nx">get</code><code class="p">(</code><code class="s">'text'</code><code class="p">),</code> <code class="s">"Get oil change for car."</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">todo</code><code class="p">.</code><code class="nx">get</code><code class="p">(</code><code class="s">'done'</code><code class="p">),</code> <code class="kd">false</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">todo</code><code class="p">.</code><code class="nx">get</code><code class="p">(</code><code class="s">'order'</code><code class="p">),</code> <code class="mi">0</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Will call a custom initialize function on the model instance when created.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">1</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">toot</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">Todo</code><code class="p">({</code> <code class="nx">text</code><code class="o">:</code> <code class="s">'Stop monkeys from throwing their own crap!'</code> <code class="p">});</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">toot</code><code class="p">.</code><code class="nx">get</code><code class="p">(</code><code class="s">'text'</code><code class="p">),</code> <code class="s">'Stop monkeys from throwing their own rainbows!'</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Fires a custom event when the state changes.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">1</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">spy</code> <code class="o">=</code> <code class="kd">this</code><code class="p">.</code><code class="nx">spy</code><code class="p">();</code>
+    <code class="kd">var</code> <code class="nx">todo</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">Todo</code><code class="p">();</code>
+
+    <code class="nx">todo</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'change'</code><code class="p">,</code> <code class="nx">spy</code> <code class="p">);</code>
+    <code class="c">// How would you update a property on the todo here?</code>
+    <code class="c">// Hint: http://documentcloud.github.com/backbone/#Model-set</code>
+    <code class="nx">todo</code><code class="p">.</code><code class="nx">set</code><code class="p">(</code> <code class="p">{</code> <code class="nx">text</code><code class="o">:</code> <code class="s">"new text"</code> <code class="p">}</code> <code class="p">);</code>
+
+    <code class="nx">ok</code><code class="p">(</code> <code class="nx">spy</code><code class="p">.</code><code class="nx">calledOnce</code><code class="p">,</code> <code class="s">"A change event callback was correctly triggered"</code> <code class="p">);</code>
+<code class="p">});</code>
+
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Can contain custom validation rules, and will trigger an error event on failed validation.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">3</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">errorCallback</code> <code class="o">=</code> <code class="kd">this</code><code class="p">.</code><code class="nx">spy</code><code class="p">();</code>
+    <code class="kd">var</code> <code class="nx">todo</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">Todo</code><code class="p">();</code>
+
+    <code class="nx">todo</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code><code class="s">'error'</code><code class="p">,</code> <code class="nx">errorCallback</code><code class="p">);</code>
+    <code class="c">// What would you need to set on the todo properties to cause validation to fail?</code>
+    <code class="nx">todo</code><code class="p">.</code><code class="nx">set</code><code class="p">(</code> <code class="p">{</code> <code class="nx">done</code><code class="o">:</code> <code class="s">"not a boolean"</code> <code class="p">}</code> <code class="p">);</code>
+
+    <code class="nx">ok</code><code class="p">(</code> <code class="nx">errorCallback</code><code class="p">.</code><code class="nx">called</code><code class="p">,</code> <code class="s">'A failed validation correctly triggered an error'</code> <code class="p">);</code>
+    <code class="nx">notEqual</code><code class="p">(</code> <code class="nx">errorCallback</code><code class="p">.</code><code class="nx">getCall</code><code class="p">(</code><code class="mi">0</code><code class="p">),</code> <code class="kd">undefined</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">errorCallback</code><code class="p">.</code><code class="nx">getCall</code><code class="p">(</code><code class="mi">0</code><code class="p">).</code><code class="nx">args</code><code class="p">[</code><code class="mi">1</code><code class="p">],</code> <code class="s">'Todo.done must be a boolean value.'</code> <code class="p">);</code>
+
+<code class="p">});</code>
+</pre></div><div class="book" title="Collections"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="collections-3" class="calibre1"></a>Collections</h2></div></div></div><p class="calibre6">
+      For our collection we’ll want to test that:
+    </p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre6">
+          New model instances can be added as both objects and arrays
+        </p></li><li class="listitem"><p class="calibre6">
+          Changes to models result in any necessary custom events being
+          fired
+        </p></li><li class="listitem"><p class="calibre6">
+          A <code class="literal">url</code> property for defining the URL
+          structure for models is correctly defined
+        </p></li></ul></div><pre class="programlistingjavascript"><code class="nx">module</code><code class="p">(</code> <code class="s">'About Backbone.Collection'</code><code class="p">);</code>
+
+<code class="nx">test</code><code class="p">(</code> <code class="s">'Can add Model instances as objects and arrays.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">3</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">todos</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">TodoList</code><code class="p">();</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">todos</code><code class="p">.</code><code class="nx">length</code><code class="p">,</code> <code class="mi">0</code> <code class="p">);</code>
+
+    <code class="nx">todos</code><code class="p">.</code><code class="nx">add</code><code class="p">(</code> <code class="p">{</code> <code class="nx">text</code><code class="o">:</code> <code class="s">'Clean the kitchen'</code> <code class="p">}</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">todos</code><code class="p">.</code><code class="nx">length</code><code class="p">,</code> <code class="mi">1</code> <code class="p">);</code>
+
+    <code class="nx">todos</code><code class="p">.</code><code class="nx">add</code><code class="p">([</code>
+        <code class="p">{</code> <code class="nx">text</code><code class="o">:</code> <code class="s">'Do the laundry'</code><code class="p">,</code> <code class="nx">done</code><code class="o">:</code> <code class="kd">true</code> <code class="p">},</code> 
+        <code class="p">{</code> <code class="nx">text</code><code class="o">:</code> <code class="s">'Go to the gym'</code> <code class="p">}</code>
+    <code class="p">]);</code>
+
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">todos</code><code class="p">.</code><code class="nx">length</code><code class="p">,</code> <code class="mi">3</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code> <code class="s">'Can have a url property to define the basic url structure for all contained models.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">1</code> <code class="p">);</code>
+    <code class="kd">var</code> <code class="nx">todos</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">TodoList</code><code class="p">();</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">todos</code><code class="p">.</code><code class="nx">url</code><code class="p">,</code> <code class="s">'/todos/'</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Fires custom named events when the models change.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code><code class="mi">2</code><code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">todos</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">TodoList</code><code class="p">();</code>
+    <code class="kd">var</code> <code class="nx">addModelCallback</code> <code class="o">=</code> <code class="kd">this</code><code class="p">.</code><code class="nx">spy</code><code class="p">();</code>
+    <code class="kd">var</code> <code class="nx">removeModelCallback</code> <code class="o">=</code> <code class="kd">this</code><code class="p">.</code><code class="nx">spy</code><code class="p">();</code>
+
+    <code class="nx">todos</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'add'</code><code class="p">,</code> <code class="nx">addModelCallback</code> <code class="p">);</code>
+    <code class="nx">todos</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'remove'</code><code class="p">,</code> <code class="nx">removeModelCallback</code> <code class="p">);</code>
+
+    <code class="c">// How would you get the 'add' event to trigger?</code>
+    <code class="nx">todos</code><code class="p">.</code><code class="nx">add</code><code class="p">(</code> <code class="p">{</code><code class="nx">text</code><code class="o">:</code><code class="s">"New todo"</code><code class="p">}</code> <code class="p">);</code>
+
+    <code class="nx">ok</code><code class="p">(</code> <code class="nx">addModelCallback</code><code class="p">.</code><code class="nx">called</code> <code class="p">);</code>
+
+    <code class="c">// How would you get the 'remove' callback to trigger?</code>
+    <code class="nx">todos</code><code class="p">.</code><code class="nx">remove</code><code class="p">(</code> <code class="nx">todos</code><code class="p">.</code><code class="nx">last</code><code class="p">()</code> <code class="p">);</code>
+
+    <code class="nx">ok</code><code class="p">(</code> <code class="nx">removeModelCallback</code><code class="p">.</code><code class="nx">called</code> <code class="p">);</code>
+<code class="p">});</code>
+</pre></div><div class="book" title="Views"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="views-4" class="calibre1"></a>Views</h2></div></div></div><p class="calibre6">
+      For our views we want to ensure:
+    </p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre6">
+          They are being correctly tied to a DOM element when created
+        </p></li><li class="listitem"><p class="calibre6">
+          They can render, after which the DOM representation of the
+          view should be visible
+        </p></li><li class="listitem"><p class="calibre6">
+          They support wiring up view methods to DOM elements
+        </p></li></ul></div><p class="calibre6">
+      One could also take this further and test that user interactions
+      with the view correctly result in any models that need to be
+      changed being updated correctly.
+    </p><pre class="programlistingjavascript"><code class="nx">module</code><code class="p">(</code> <code class="s">'About Backbone.View'</code><code class="p">,</code> <code class="p">{</code>
+    <code class="nx">setup</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+        <code class="nx">$</code><code class="p">(</code><code class="s">'body'</code><code class="p">).</code><code class="nx">append</code><code class="p">(</code><code class="s">'&lt;ul id="todoList"&gt;&lt;/ul&gt;'</code><code class="p">);</code>
+        <code class="kd">this</code><code class="p">.</code><code class="nx">todoView</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">TodoView</code><code class="p">({</code> <code class="nx">model</code><code class="o">:</code> <code class="kd">new</code> <code class="nx">Todo</code><code class="p">()</code> <code class="p">});</code>
+    <code class="p">},</code>
+    <code class="nx">teardown</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+        <code class="kd">this</code><code class="p">.</code><code class="nx">todoView</code><code class="p">.</code><code class="nx">remove</code><code class="p">();</code>
+        <code class="nx">$</code><code class="p">(</code><code class="s">'#todoList'</code><code class="p">).</code><code class="nx">remove</code><code class="p">();</code>
+    <code class="p">}</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Should be tied to a DOM element when created, based off the property provided.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">1</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="kd">this</code><code class="p">.</code><code class="nx">todoView</code><code class="p">.</code><code class="nx">el</code><code class="p">.</code><code class="nx">tagName</code><code class="p">.</code><code class="nx">toLowerCase</code><code class="p">(),</code> <code class="s">'li'</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Is backed by a model instance, which provides the data.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">2</code> <code class="p">);</code>
+    <code class="nx">notEqual</code><code class="p">(</code> <code class="kd">this</code><code class="p">.</code><code class="nx">todoView</code><code class="p">.</code><code class="nx">model</code><code class="p">,</code> <code class="kd">undefined</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="kd">this</code><code class="p">.</code><code class="nx">todoView</code><code class="p">.</code><code class="nx">model</code><code class="p">.</code><code class="nx">get</code><code class="p">(</code><code class="s">'done'</code><code class="p">),</code> <code class="kd">false</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Can render, after which the DOM representation of the view will be visible.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+   <code class="kd">this</code><code class="p">.</code><code class="nx">todoView</code><code class="p">.</code><code class="nx">render</code><code class="p">();</code>
+
+    <code class="c">// Hint: render() just builds the DOM representation of the view, but doesn't insert it into the DOM.</code>
+    <code class="c">//       How would you append it to the ul#todoList? </code>
+    <code class="c">//       How do you access the view's DOM representation?</code>
+    <code class="c">//</code>
+    <code class="c">// Hint: http://documentcloud.github.com/backbone/#View-el</code>
+
+    <code class="nx">$</code><code class="p">(</code><code class="s">'ul#todoList'</code><code class="p">).</code><code class="nx">append</code><code class="p">(</code><code class="kd">this</code><code class="p">.</code><code class="nx">todoView</code><code class="p">.</code><code class="nx">el</code><code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code><code class="nx">$</code><code class="p">(</code><code class="s">'#todoList'</code><code class="p">).</code><code class="nx">find</code><code class="p">(</code><code class="s">'li'</code><code class="p">).</code><code class="nx">length</code><code class="p">,</code> <code class="mi">1</code><code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">asyncTest</code><code class="p">(</code><code class="s">'Can wire up view methods to DOM elements.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">2</code> <code class="p">);</code>
+    <code class="kd">var</code> <code class="nx">viewElt</code><code class="p">;</code>    
+
+    <code class="nx">$</code><code class="p">(</code><code class="s">'#todoList'</code><code class="p">).</code><code class="nx">append</code><code class="p">(</code> <code class="kd">this</code><code class="p">.</code><code class="nx">todoView</code><code class="p">.</code><code class="nx">render</code><code class="p">().</code><code class="nx">el</code> <code class="p">);</code>
+
+    <code class="nx">setTimeout</code><code class="p">(</code><code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+        <code class="nx">viewElt</code> <code class="o">=</code> <code class="nx">$</code><code class="p">(</code><code class="s">'#todoList li input.check'</code><code class="p">).</code><code class="nx">filter</code><code class="p">(</code><code class="s">':first'</code><code class="p">);</code>
+
+        <code class="nx">equal</code><code class="p">(</code><code class="nx">viewElt</code><code class="p">.</code><code class="nx">length</code> <code class="o">&gt;</code> <code class="mi">0</code><code class="p">,</code> <code class="kd">true</code><code class="p">);</code>
+
+        <code class="c">// Make sure that QUnit knows we can continue</code>
+        <code class="nx">start</code><code class="p">();</code>
+    <code class="p">},</code> <code class="mi">1000</code><code class="p">,</code> <code class="s">'Expected DOM Elt to exist'</code><code class="p">);</code>
+
+
+    <code class="c">// Hint: How would you trigger the view, via a DOM Event, to toggle the 'done' status.</code>
+    <code class="c">//       (See todos.js line 70, where the events hash is defined.)</code>
+    <code class="c">//</code>
+    <code class="c">// Hint: http://api.jquery.com/click</code>
+
+    <code class="nx">$</code><code class="p">(</code><code class="s">'#todoList li input.check'</code><code class="p">).</code><code class="nx">click</code><code class="p">();</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="kd">this</code><code class="p">.</code><code class="nx">todoView</code><code class="p">.</code><code class="nx">model</code><code class="p">.</code><code class="nx">get</code><code class="p">(</code><code class="s">'done'</code><code class="p">),</code> <code class="kd">true</code> <code class="p">);</code>
+<code class="p">});</code>
+</pre></div><div class="book" title="Events"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="events" class="calibre1"></a>Events</h2></div></div></div><p class="calibre6">
+      For events, we may want to test a few different use cases:
+    </p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre6">
+          Extending plain objects to support custom events
+        </p></li><li class="listitem"><p class="calibre6">
+          Binding and triggering custom events on objects
+        </p></li><li class="listitem"><p class="calibre6">
+          Passing along arguments to callbacks when events are triggered
+        </p></li><li class="listitem"><p class="calibre6">
+          Binding a passed context to an event callback
+        </p></li><li class="listitem"><p class="calibre6">
+          Removing custom events
+        </p></li></ul></div><p class="calibre6">
+      and a few others that will be detailed in our module below:
+    </p><pre class="programlistingjavascript"><code class="nx">module</code><code class="p">(</code> <code class="s">'About Backbone.Events'</code><code class="p">,</code> <code class="p">{</code>
+    <code class="nx">setup</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+        <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code> <code class="o">=</code> <code class="p">{};</code>
+        <code class="nx">_</code><code class="p">.</code><code class="nx">extend</code><code class="p">(</code> <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">,</code> <code class="nx">Backbone</code><code class="p">.</code><code class="nx">Events</code> <code class="p">);</code>
+        <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">off</code><code class="p">();</code> <code class="c">// remove all custom events before each spec is run.</code>
+    <code class="p">}</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Can extend JavaScript objects to support custom events.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code><code class="mi">3</code><code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">basicObject</code> <code class="o">=</code> <code class="p">{};</code>
+
+    <code class="c">// How would you give basicObject these functions?</code>
+    <code class="c">// Hint: http://documentcloud.github.com/backbone/#Events</code>
+    <code class="nx">_</code><code class="p">.</code><code class="nx">extend</code><code class="p">(</code> <code class="nx">basicObject</code><code class="p">,</code> <code class="nx">Backbone</code><code class="p">.</code><code class="nx">Events</code> <code class="p">);</code>
+
+    <code class="nx">equal</code><code class="p">(</code> <code class="kd">typeof</code> <code class="nx">basicObject</code><code class="p">.</code><code class="nx">on</code><code class="p">,</code> <code class="s">'function'</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="kd">typeof</code> <code class="nx">basicObject</code><code class="p">.</code><code class="nx">off</code><code class="p">,</code> <code class="s">'function'</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="kd">typeof</code> <code class="nx">basicObject</code><code class="p">.</code><code class="nx">trigger</code><code class="p">,</code> <code class="s">'function'</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Allows us to bind and trigger custom named events on an object.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">1</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">callback</code> <code class="o">=</code> <code class="kd">this</code><code class="p">.</code><code class="nx">spy</code><code class="p">();</code>
+
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'basic event'</code><code class="p">,</code> <code class="nx">callback</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">trigger</code><code class="p">(</code> <code class="s">'basic event'</code> <code class="p">);</code>
+
+    <code class="c">// How would you cause the callback for this custom event to be called?</code>
+    <code class="nx">ok</code><code class="p">(</code> <code class="nx">callback</code><code class="p">.</code><code class="nx">called</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Also passes along any arguments to the callback when an event is triggered.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">1</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">passedArgs</code> <code class="o">=</code> <code class="p">[];</code>
+
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code><code class="s">'some event'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+        <code class="kd">for</code> <code class="p">(</code><code class="kd">var</code> <code class="nx">i</code> <code class="o">=</code> <code class="mi">0</code><code class="p">;</code> <code class="nx">i</code> <code class="o">&lt;</code> <code class="nx">arguments</code><code class="p">.</code><code class="nx">length</code><code class="p">;</code> <code class="nx">i</code><code class="o">++</code><code class="p">)</code> <code class="p">{</code>
+            <code class="nx">passedArgs</code><code class="p">.</code><code class="nx">push</code><code class="p">(</code> <code class="nx">arguments</code><code class="p">[</code><code class="nx">i</code><code class="p">]</code> <code class="p">);</code>
+        <code class="p">}</code>
+    <code class="p">});</code>
+
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">trigger</code><code class="p">(</code> <code class="s">'some event'</code><code class="p">,</code> <code class="s">'arg1'</code><code class="p">,</code> <code class="s">'arg2'</code> <code class="p">);</code>
+
+    <code class="nx">deepEqual</code><code class="p">(</code> <code class="nx">passedArgs</code><code class="p">,</code> <code class="p">[</code><code class="s">'arg1'</code><code class="p">,</code> <code class="s">'arg2'</code><code class="p">]</code> <code class="p">);</code>
+<code class="p">});</code>
+
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Can also bind the passed context to the event callback.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">1</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">foo</code> <code class="o">=</code> <code class="p">{</code> <code class="nx">color</code><code class="o">:</code> <code class="s">'blue'</code> <code class="p">};</code>
+    <code class="kd">var</code> <code class="nx">changeColor</code> <code class="o">=</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+        <code class="kd">this</code><code class="p">.</code><code class="nx">color</code> <code class="o">=</code> <code class="s">'red'</code><code class="p">;</code>
+    <code class="p">};</code>
+
+    <code class="c">// How would you get 'this.color' to refer to 'foo' in the changeColor function?</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'an event'</code><code class="p">,</code> <code class="nx">changeColor</code><code class="p">,</code> <code class="nx">foo</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">trigger</code><code class="p">(</code> <code class="s">'an event'</code> <code class="p">);</code>
+
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">foo</code><code class="p">.</code><code class="nx">color</code><code class="p">,</code> <code class="s">'red'</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code> <code class="s">"Uses 'all' as a special event name to capture all events bound to the object."</code> <code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">2</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">callback</code> <code class="o">=</code> <code class="kd">this</code><code class="p">.</code><code class="nx">spy</code><code class="p">();</code>
+
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'all'</code><code class="p">,</code> <code class="nx">callback</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">trigger</code><code class="p">(</code> <code class="s">"custom event 1"</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">trigger</code><code class="p">(</code> <code class="s">"custom event 2"</code> <code class="p">);</code>
+
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">callback</code><code class="p">.</code><code class="nx">callCount</code><code class="p">,</code> <code class="mi">2</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">callback</code><code class="p">.</code><code class="nx">getCall</code><code class="p">(</code><code class="mi">0</code><code class="p">).</code><code class="nx">args</code><code class="p">[</code><code class="mi">0</code><code class="p">],</code> <code class="s">'custom event 1'</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Also can remove custom events from objects.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">5</code> <code class="p">);</code>
+
+    <code class="kd">var</code> <code class="nx">spy1</code> <code class="o">=</code> <code class="kd">this</code><code class="p">.</code><code class="nx">spy</code><code class="p">();</code>
+    <code class="kd">var</code> <code class="nx">spy2</code> <code class="o">=</code> <code class="kd">this</code><code class="p">.</code><code class="nx">spy</code><code class="p">();</code>
+    <code class="kd">var</code> <code class="nx">spy3</code> <code class="o">=</code> <code class="kd">this</code><code class="p">.</code><code class="nx">spy</code><code class="p">();</code>
+
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'foo'</code><code class="p">,</code> <code class="nx">spy1</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'bar'</code><code class="p">,</code> <code class="nx">spy1</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'foo'</code><code class="p">,</code> <code class="nx">spy2</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code> <code class="s">'foo'</code><code class="p">,</code> <code class="nx">spy3</code> <code class="p">);</code>
+
+    <code class="c">// How do you unbind just a single callback for the event?</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">off</code><code class="p">(</code> <code class="s">'foo'</code><code class="p">,</code> <code class="nx">spy1</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">trigger</code><code class="p">(</code> <code class="s">'foo'</code> <code class="p">);</code>
+
+    <code class="nx">ok</code><code class="p">(</code> <code class="nx">spy2</code><code class="p">.</code><code class="nx">called</code> <code class="p">);</code>
+
+    <code class="c">// How do you unbind all callbacks tied to the event with a single method</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">off</code><code class="p">(</code> <code class="s">'foo'</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">trigger</code><code class="p">(</code> <code class="s">'foo'</code> <code class="p">);</code>
+
+    <code class="nx">ok</code><code class="p">(</code> <code class="nx">spy2</code><code class="p">.</code><code class="nx">callCount</code><code class="p">,</code> <code class="mi">1</code> <code class="p">);</code>
+    <code class="nx">ok</code><code class="p">(</code> <code class="nx">spy2</code><code class="p">.</code><code class="nx">calledOnce</code><code class="p">,</code> <code class="s">"Spy 2 called once"</code> <code class="p">);</code>
+    <code class="nx">ok</code><code class="p">(</code> <code class="nx">spy3</code><code class="p">.</code><code class="nx">calledOnce</code><code class="p">,</code> <code class="s">"Spy 3 called once"</code> <code class="p">);</code>
+
+    <code class="c">// How do you unbind all callbacks and events tied to the object with a single method?</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">off</code><code class="p">(</code> <code class="s">'bar'</code> <code class="p">);</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">obj</code><code class="p">.</code><code class="nx">trigger</code><code class="p">(</code> <code class="s">'bar'</code> <code class="p">);</code>
+
+    <code class="nx">equal</code><code class="p">(</code> <code class="nx">spy1</code><code class="p">.</code><code class="nx">callCount</code><code class="p">,</code> <code class="mi">0</code> <code class="p">);</code>
+<code class="p">});</code>
+</pre></div><div class="book" title="App"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="app" class="calibre1"></a>App</h2></div></div></div><p class="calibre6">
+      It can also be useful to write specs for any application bootstrap
+      you may have in place. For the following module, our setup
+      initiates and appends a TodoApp view and we can test anything from
+      local instances of views being correctly defined to application
+      interactions correctly resulting in changes to instances of local
+      collections.
+    </p><pre class="programlistingjavascript"><code class="nx">module</code><code class="p">(</code> <code class="s">'About Backbone Applications'</code> <code class="p">,</code> <code class="p">{</code>
+    <code class="nx">setup</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+        <code class="nx">Backbone</code><code class="p">.</code><code class="nx">localStorageDB</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">Store</code><code class="p">(</code><code class="s">'testTodos'</code><code class="p">);</code>
+        <code class="nx">$</code><code class="p">(</code><code class="s">'#qunit-fixture'</code><code class="p">).</code><code class="nx">append</code><code class="p">(</code><code class="s">'&lt;div id="app"&gt;&lt;/div&gt;'</code><code class="p">);</code>   
+        <code class="kd">this</code><code class="p">.</code><code class="nx">App</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">TodoApp</code><code class="p">({</code> <code class="nx">appendTo</code><code class="o">:</code> <code class="nx">$</code><code class="p">(</code><code class="s">'#app'</code><code class="p">)</code> <code class="p">});</code>
+    <code class="p">},</code>
+
+    <code class="nx">teardown</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+        <code class="kd">this</code><code class="p">.</code><code class="nx">App</code><code class="p">.</code><code class="nx">todos</code><code class="p">.</code><code class="nx">reset</code><code class="p">();</code>
+        <code class="nx">$</code><code class="p">(</code><code class="s">'#app'</code><code class="p">).</code><code class="nx">remove</code><code class="p">();</code>
+    <code class="p">}</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code><code class="s">'Should bootstrap the application by initializing the Collection.'</code><code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="nx">expect</code><code class="p">(</code> <code class="mi">2</code> <code class="p">);</code>
+
+    <code class="nx">notEqual</code><code class="p">(</code> <code class="kd">this</code><code class="p">.</code><code class="nx">App</code><code class="p">.</code><code class="nx">todos</code><code class="p">,</code> <code class="kd">undefined</code> <code class="p">);</code>
+    <code class="nx">equal</code><code class="p">(</code> <code class="kd">this</code><code class="p">.</code><code class="nx">App</code><code class="p">.</code><code class="nx">todos</code><code class="p">.</code><code class="nx">length</code><code class="p">,</code> <code class="mi">0</code> <code class="p">);</code>
+<code class="p">});</code>
+
+<code class="nx">test</code><code class="p">(</code> <code class="s">'Should bind Collection events to View creation.'</code> <code class="p">,</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+      <code class="nx">$</code><code class="p">(</code><code class="s">'#new-todo'</code><code class="p">).</code><code class="nx">val</code><code class="p">(</code> <code class="s">'Foo'</code> <code class="p">);</code>
+      <code class="nx">$</code><code class="p">(</code><code class="s">'#new-todo'</code><code class="p">).</code><code class="nx">trigger</code><code class="p">(</code><code class="kd">new</code> <code class="nx">$</code><code class="p">.</code><code class="nx">Event</code><code class="p">(</code> <code class="s">'keypress'</code><code class="p">,</code> <code class="p">{</code> <code class="nx">keyCode</code><code class="o">:</code> <code class="mi">13</code> <code class="p">}</code> <code class="p">));</code>
+
+      <code class="nx">equal</code><code class="p">(</code> <code class="kd">this</code><code class="p">.</code><code class="nx">App</code><code class="p">.</code><code class="nx">todos</code><code class="p">.</code><code class="nx">length</code><code class="p">,</code> <code class="mi">1</code> <code class="p">);</code>
+ <code class="p">});</code>
+</pre></div><div class="book" title="Further Reading &amp; Resources"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="further-reading-resources" class="calibre1"></a>Further Reading &amp; Resources</h2></div></div></div><p class="calibre6">
+      That’s it for this section on testing applications with QUnit and
+      SinonJS. I encourage you to try out the
+      <a class="ulink" href="https://github.com/addyosmani/backbone-koans-qunit">QUnit
+      Backbone.js Koans</a> and see if you can extend some of the
+      examples. For further reading consider looking at some of the
+      additional resources below:
+    </p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre6">
+          <span class="firstname"><strong class="calibre8"><a class="ulink" href="http://tddjs.com/">Test-driven
+          JavaScript Development (book)</a></strong></span>
+        </p></li><li class="listitem"><p class="calibre6">
+          <span class="firstname"><strong class="calibre8"><a class="ulink" href="http://sinonjs.org/qunit/">SinonJS/QUnit
+          Adapter</a></strong></span>
+        </p></li><li class="listitem"><p class="calibre6">
+          <span class="firstname"><strong class="calibre8"><a class="ulink" href="http://cjohansen.no/en/javascript/using_sinon_js_with_qunit">SinonJS
+          and QUnit</a></strong></span>
+        </p></li><li class="listitem"><p class="calibre6">
+          <span class="firstname"><strong class="calibre8"><a class="ulink" href="http://msdn.microsoft.com/en-us/scriptjunkie/gg749824">Automating
+          JavaScript Testing With QUnit</a></strong></span>
+        </p></li><li class="listitem"><p class="calibre6">
+          <span class="firstname"><strong class="calibre8"><a class="ulink" href="http://benalman.com/talks/unit-testing-qunit.html">Ben
+          Alman’s Unit Testing With QUnit</a></strong></span>
+        </p></li><li class="listitem"><p class="calibre6">
+          <span class="firstname"><strong class="calibre8"><a class="ulink" href="https://github.com/jc00ke/qunit-backbone">Another
+          QUnit/Backbone.js demo
+          project</a></strong></span></p><div class="book"><p class="calibre6"></p></div><p class="calibre6">
+        </p></li><li class="listitem"><p class="calibre6">
+          <span class="firstname"><strong class="calibre8"><a class="ulink" href="http://devblog.supportbee.com/2012/02/10/helpers-for-testing-backbone-js-apps-using-jasmine-and-sinon-js/">SinonJS
+          helpers for Backbone</a></strong></span>
+        </p></li></ul></div></div></div></div>
+
+{% endraw %}
+

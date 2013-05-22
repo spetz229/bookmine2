@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>O'Reilly Media</dc:publisher>
+    <dc:description>&lt;p&gt;This book will be an introduction and guide to using ClojureScript, targeted at developers who know JavaScript and are willing to learn Clojure.&lt;/p&gt;</dc:description>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Stuart Sierra</dc:creator>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Luke VanderHart</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:56:54.211040+00:00"/>
+    <dc:title>ClojureScript: Up and Running</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2012-10-24T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">9781449327385</dc:identifier>
+    <dc:identifier opf:scheme="MOBI-ASIN">d32707c0-bf5c-4aac-b3cd-116d6e63fd62</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">02ceaca6-66e1-4271-b75f-28ebc10f4532</dc:identifier>
+    <dc:subject>COMPUTERS / Programming Languages / JavaScript</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="images/calibre_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="ClojureScript__Up_and_Running.html" id="id1" media-type="application/xhtml+xml"/>
+    <item href="images/00001.jpg" id="id3" media-type="image/jpeg"/>
+    <item href="images/00002.jpg" id="id4" media-type="image/jpeg"/>
+    <item href="images/00003.jpg" id="id5" media-type="image/jpeg"/>
+    <item href="images/00004.jpg" id="id6" media-type="image/jpeg"/>
+    <item href="images/00007.jpg" id="id9" media-type="image/jpeg"/>
+    <item href="images/00008.jpg" id="id10" media-type="image/jpeg"/>
+    <item href="images/00009.jpg" id="id11" media-type="image/jpeg"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id1"/>
+  </spine>
+  <guide>
+    <reference href="ClojureScript__Up_and_Running.html#filepos304761" type="toc" title="Table of Contents"/>
+    <reference href="images/calibre_cover.jpg" type="cover" title="Cover"/>
+  </guide>
+</package>

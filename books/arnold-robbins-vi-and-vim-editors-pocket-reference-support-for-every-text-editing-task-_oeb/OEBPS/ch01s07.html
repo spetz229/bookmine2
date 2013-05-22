@@ -1,0 +1,125 @@
+---
+layout: page
+title: "vi and Vim Editors Pocket Reference"
+prev: OEBPS/ch01s06.html
+next: OEBPS/ch01s08.html
+book_path: books/arnold-robbins-vi-and-vim-editors-pocket-reference-support-for-every-text-editing-task-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Substitution and Regular Expressions"><div class="book"><div class="book"><div class="book"><h1 class="title1"><a id="viref2-ch-1-sect-6" class="calibre1"></a>Substitution and Regular Expressions</h1></div></div></div><p class="copyright">Regular expressions<a id="sec7regularexpressions"></a>, and their use with the substitute command, are what give
+    <em class="calibre3">vi</em> most of its significant editing power.</p><div class="book" title="The Substitute Command"><div class="book"><div class="book"><div class="book"><h2 class="title2"><a id="viref2-ch-1-sect-6.1" class="calibre1"></a>The Substitute Command</h2></div></div></div><p class="copyright">The general form of the <a id="I_indexterm1_d1e2305"></a><a id="I_indexterm1_d1e2308"></a><a id="I_indexterm1_d1e2313"></a>substitute command is:</p><pre class="screen">:[<em class="calibre9"><code class="calibre9">addr1</code></em>[,<em class="calibre9"><code class="calibre9">addr2</code></em>]]s/<em class="calibre9"><code class="calibre9">old</code></em>/<em class="calibre9"><code class="calibre9">new</code></em>/[<em class="calibre9"><code class="calibre9">flags</code></em>]</pre><p class="copyright">Omitting the search pattern
+      (<code class="literal">:s//</code><em class="calibre3"><code class="calibre9">replacement</code></em><code class="literal">/</code>)
+      uses the last search or substitution regular expression.</p><p class="copyright">An empty replacement part
+      (<code class="literal">:s/</code><em class="calibre3"><code class="calibre9">pattern</code></em><code class="literal">//</code>)
+      “replaces” the matched text with nothing, effectively deleting it from
+      the line.</p><div class="book" title="Substitution flags"><div class="book"><div class="book"><div class="book"><h3 class="title3"><a id="viref2-ch-1-sect-6.1.1" class="calibre1"></a>Substitution flags</h3></div></div></div><div class="book"><a id="viref-ch-1-tab-8"></a><table class="calibre10"><colgroup class="calibre11"><col class="calibre12"/><col width="3.1in" class="calibre12"/></colgroup><thead class="calibre13"><tr class="calibre14"><th class="calibre15"><p class="copyright">Flag</p></th><th class="calibre16"><p class="copyright">Meaning</p></th></tr></thead><tbody class="calibre17"><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">c</code> </p></td><td class="calibre20"><p class="copyright">Confirm each substitution</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">g</code> </p></td><td class="calibre20"><p class="copyright">Change all occurrences of
+                <span><em class="calibre3">old</em></span> to <span><em class="calibre3">new</em></span> on each
+                line (globally)</p></td></tr><tr class="calibre14"><td class="calibre21"><p class="copyright"> <code class="literal1">p</code> </p></td><td class="calibre22"><p class="copyright">Print the line after the change is
+                made</p></td></tr></tbody></table></div><p class="copyright">It’s often useful to combine the substitute command with the
+        <em class="calibre3">ex</em> global command, <code class="literal">:g</code>:</p><pre class="screen">
+:g/Object Oriented/s//Buzzword compliant/g</pre></div></div><div class="book" title="vi Regular Expressions"><div class="book"><div class="book"><div class="book"><h2 class="title2"><a id="viref2-ch-1-sect-6.2" class="calibre1"></a>vi Regular Expressions</h2></div></div></div><div class="book"><dl class="calibre7"><dt class="book"><span><code class="literal">.</code></span></dt><dd class="calibre8"><p class="copyright">(period) Matches any <span><em class="calibre3">single</em></span> character
+            except a newline. Remember that spaces are treated as
+            characters.</p></dd><dt class="book"><span><code class="literal">*</code></span></dt><dd class="calibre8"><p class="copyright">Matches zero or more (as many as there are) of the single
+            character that immediately precedes it.</p><p class="copyright">The <code class="literal">*</code> can follow a metacharacter, such as
+            <code class="literal">.</code>, or a range in brackets.</p></dd><dt class="book"><span><code class="literal">^</code></span></dt><dd class="calibre8"><p class="copyright">When used at the start of a regular expression,
+            <code class="literal">^</code> requires that the following regular
+            expression be found at the beginning of the line. When not at the
+            beginning of a regular expression, <code class="literal">^</code> stands for
+            itself.</p></dd><dt class="book"><span><code class="literal">$</code></span></dt><dd class="calibre8"><p class="copyright">When used at the end of a regular expression,
+            <code class="literal">$</code> requires that the preceding regular
+            expression be found at the end of the line. When not at the end of
+            a regular expression, <code class="literal">$</code> stands for
+            itself.</p></dd><dt class="book"><span><code class="literal">\</code></span></dt><dd class="calibre8"><p class="copyright">Treats the following special character as an ordinary
+            character. Use <code class="literal">\\</code> to get a literal
+            backslash.</p></dd><dt class="book"><span><code class="literal">~</code></span></dt><dd class="calibre8"><p class="copyright">Matches whatever regular expression was used in the
+            <span><em class="calibre3">last</em></span> search.</p></dd></dl></div><div class="book"><dl class="calibre7"><dt class="book"><span><code class="literal">[ ]</code></span></dt><dd class="calibre8"><p class="copyright">Matches any <span><em class="calibre3">one</em></span> of the characters
+            enclosed between the brackets. A range of consecutive characters
+            can be specified by separating the first and last characters in
+            the range with a hyphen.</p><p class="copyright">You can include more than one range inside brackets and
+            specify a mix of ranges and separate characters.</p><p class="copyright">Most metacharacters lose their special meaning inside
+            brackets, so you don’t need to escape them if you want to use them
+            as ordinary characters. Within brackets, the three metacharacters
+            you still need to escape are <code class="literal">\</code>
+            <code class="literal">-</code> <code class="literal">]</code>. The hyphen
+            (<code class="literal">-</code>) acquires meaning as a range specifier; to
+            use an actual hyphen, you can also place it as the first character
+            inside the brackets.</p><p class="copyright">A caret (<code class="literal">^</code>) has special meaning only when
+            it’s the first character inside the brackets, but in this case,
+            the meaning differs from that of the normal <code class="literal">^</code>
+            metacharacter. As the first character within brackets, a
+            <code class="literal">^</code> reverses their sense: the brackets match any
+            one character <span><em class="calibre3">not</em></span> in the list. For <span>example</span>, <code class="literal">[^a-z]</code>
+            matches any character that’s not a lowercase letter.</p><div class="caution" title="Caution"><h3 class="pcalibre title4">Caution</h3><p class="calibre25">On modern systems, the <a id="I_indexterm1_d1e2544"></a><em class="calibre3">locale</em> can affect the
+              interpretation of ranges within brackets, causing
+              <em class="calibre3">vi</em> to match letters in a surprising fashion.
+              It is better to use POSIX bracket expressions (see <a href="ch01s07.html#viref2-ch-1-sect-6.3" title="POSIX Bracket Expressions">POSIX Bracket Expressions</a>) to match specific kinds of
+              characters, such as all lowercase or all <span>uppercase</span> characters.</p></div></dd><dt class="book"><span><code class="literal">\(...\)</code></span></dt><dd class="calibre8"><p class="copyright">Saves the pattern enclosed between <code class="literal">\(</code> and
+            <code class="literal">\)</code> into a special holding space or “hold
+            buffer.” You can save up to nine patterns in this way on a single
+            line.</p><p class="copyright">You can also use the
+            <code class="literal">\</code><em class="calibre3"><code class="calibre9">n</code></em> notation within a
+            search or substitute string: </p><pre class="screen">:s/\(abcd\)\1/alphabet-soup/</pre><p class="copyright">
+            changes <code class="literal">abcdabcd</code> into
+            <code class="literal">alphabet-soup</code>.<sup class="calibre24">[<a id="viref2-ch-1-note-3" href="#ftn.viref2-ch-1-note-3">3</a>]</sup></p></dd><dt class="book"><span><code class="literal">\&lt;  \&gt;</code></span></dt><dd class="calibre8"><p class="copyright">Matches characters at the beginning
+            (<code class="literal">\&lt;</code>) or end (<code class="literal">\&gt;</code>) of a
+            word. The end or beginning of a word is determined either by a
+            punctuation mark or by a space. Unlike <code class="literal">\(...\)</code>,
+            these don’t have to be used in matched pairs.</p></dd></dl></div></div><div class="book" title="POSIX Bracket Expressions"><div class="book"><div class="book"><div class="book"><h2 class="title2"><a id="viref2-ch-1-sect-6.3" class="calibre1"></a>POSIX Bracket Expressions</h2></div></div></div><p class="copyright">POSIX <a id="I_indexterm1_d1e2623"></a><a id="I_indexterm1_d1e2626"></a><a id="I_indexterm1_d1e2629"></a>bracket expressions may contain the following:</p><div class="book"><dl class="calibre7"><dt class="book"><span><span><em class="calibre3">Character classes</em></span></span></dt><dd class="calibre8"><p class="copyright">A POSIX <a id="I_indexterm1_d1e2643"></a>character class consists of keywords bracketed by
+            <code class="literal">[:</code> and <code class="literal">:]</code>. The keywords
+            describe different classes of characters, such as alphabetic
+            characters, control characters, and so on (see the following
+            table).</p></dd><dt class="book"><span><span><em class="calibre3">Collating symbols</em></span></span></dt><dd class="calibre8"><p class="copyright">A <a id="I_indexterm1_d1e2660"></a>collating symbol is a multicharacter sequence that
+            should be treated as a unit. It consists of the characters
+            bracketed by <code class="literal">[.</code> and
+            <code class="literal">.]</code>.</p></dd><dt class="book"><span><span><em class="calibre3">Equivalence classes</em></span></span></dt><dd class="calibre8"><p class="copyright">An <a id="I_indexterm1_d1e2677"></a>equivalence class lists a set of characters that
+            should be considered equivalent, such as <code class="literal">e</code> and
+            <code class="literal">è</code>. It consists of a named element from the
+            locale, bracketed by <code class="literal">[=</code> and
+            <code class="literal">=]</code>.</p></dd></dl></div><p class="copyright">All three constructs must appear <span><em class="calibre3">inside</em></span> the
+      square brackets of a bracket expression.</p><div class="book" title="POSIX character classes"><div class="book"><div class="book"><div class="book"><h3 class="title3"><a id="viref2-ch-1-sect-6.3.1" class="calibre1"></a>POSIX character classes</h3></div></div></div><div class="book"><a id="viref-ch-1-tab-9"></a><table class="calibre10"><colgroup class="calibre11"><col class="calibre12"/><col width="2.45in" class="calibre12"/></colgroup><thead class="calibre13"><tr class="calibre14"><th class="calibre15"><p class="copyright">Class</p></th><th class="calibre16"><p class="copyright">Matching characters</p></th></tr></thead><tbody class="calibre17"><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:alnum:]</code> </p></td><td class="calibre20"><p class="copyright">Alphanumeric characters</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:alpha:]</code> </p></td><td class="calibre20"><p class="copyright">Alphabetic characters</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:blank:]</code> </p></td><td class="calibre20"><p class="copyright">Space and tab characters</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:cntrl:]</code> </p></td><td class="calibre20"><p class="copyright">Control characters</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:digit:]</code> </p></td><td class="calibre20"><p class="copyright">Numeric characters</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:graph:]</code> </p></td><td class="calibre20"><p class="copyright">Printable and visible (nonspace)
+                characters</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:lower:]</code> </p></td><td class="calibre20"><p class="copyright">Lowercase characters</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:print:]</code> </p></td><td class="calibre20"><p class="copyright">Printable characters (includes
+                whitespace)</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:punct:]</code> </p></td><td class="calibre20"><p class="copyright">Punctuation characters</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:space:]</code> </p></td><td class="calibre20"><p class="copyright">Whitespace characters</p></td></tr><tr class="calibre14"><td class="calibre18"><p class="copyright"> <code class="literal1">[:upper:]</code> </p></td><td class="calibre20"><p class="copyright">Uppercase characters</p></td></tr><tr class="calibre14"><td class="calibre21"><p class="copyright"> <code class="literal1">[:xdigit:]</code> </p></td><td class="calibre22"><p class="copyright">Hexadecimal digits</p></td></tr></tbody></table></div></div></div><div class="book" title="Metacharacters Used in Replacement Strings"><div class="book"><div class="book"><div class="book"><h2 class="title2"><a id="viref2-ch-1-sect-6.4" class="calibre1"></a>Metacharacters Used in Replacement Strings</h2></div></div></div><div class="book"><dl class="calibre7"><dt class="book"><span><code class="literal">\</code><em class="calibre3"><code class="calibre9">n</code></em></span></dt><dd class="calibre8"><p class="copyright">Is <a id="I_indexterm1_d1e2850"></a><a id="I_indexterm1_d1e2853"></a>replaced with the text matched by the
+            <span><em class="calibre3">n</em></span>th pattern previously saved by
+            <code class="literal">\(</code> and <code class="literal">\)</code>, where
+            <span><em class="calibre3">n</em></span> is a number from one to nine, and
+            previously saved patterns (kept in hold buffers) are counted from
+            the left on the line.</p></dd><dt class="book"><span><code class="literal">\</code></span></dt><dd class="calibre8"><p class="copyright">Treats the following special character as an ordinary
+            character. To specify a real backslash, type two in a row
+            (<code class="literal">\\</code>).</p></dd><dt class="book"><span><code class="literal">&amp;</code></span></dt><dd class="calibre8"><p class="copyright">Is replaced with the entire text matched by the search
+            pattern when used in a replacement string. This is useful when you
+            want to avoid retyping text.</p></dd><dt class="book"><span><code class="literal">~</code></span></dt><dd class="calibre8"><p class="copyright">The string found is replaced with the replacement text
+            specified in the last substitute command. This is useful for
+            repeating an edit.</p></dd></dl></div><div class="book"><dl class="calibre7"><dt class="book"><span><code class="literal">\u</code> or <code class="literal">\l</code></span></dt><dd class="calibre8"><p class="copyright">Changes the next character in the replacement string to
+            uppercase or lowercase, respectively.</p></dd><dt class="book"><span><code class="literal">\U</code> or <code class="literal">\L</code> and <code class="literal">\e</code> or <code class="literal">\E</code></span></dt><dd class="calibre8"><p class="copyright"><code class="literal">\U</code> and <code class="literal">\L</code> are similar
+            to <code class="literal">\u</code> or <code class="literal">\l</code>, but all
+            following characters are converted to uppercase or lowercase until
+            the end of the replacement string or until <code class="literal">\e</code>
+            or <code class="literal">\E</code> is reached. If there is no
+            <code class="literal">\e</code> or <code class="literal">\E</code>, all characters of
+            the replacement text are affected by the <code class="literal">\U</code> or
+            <code class="literal">\L</code>.</p></dd></dl></div></div><div class="book" title="More Substitution Tricks"><div class="book"><div class="book"><div class="book"><h2 class="title2"><a id="viref2-ch-1-sect-6.5" class="calibre1"></a>More Substitution Tricks</h2></div></div></div><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="copyright">You <a id="I_indexterm1_d1e2959"></a>can instruct <em class="calibre3">vi</em> to ignore case by
+          typing <code class="literal">:set</code> <code class="literal">ic</code>.</p></li><li class="listitem"><p class="copyright">A simple <code class="literal">:s</code> is the same as
+          <code class="literal">:s//~/</code>.</p></li><li class="listitem"><p class="copyright"><code class="literal">:&amp;</code> is the same as
+          <code class="literal">:s</code>. You can follow the <code class="literal">&amp;</code>
+          with <code class="literal">g</code> to make the substitution globally on the
+          line, and even use it with a line range.</p></li><li class="listitem"><p class="copyright">You can use the <span class="keycap">&amp;</span> key as a
+          <em class="calibre3">vi</em> command to perform the
+          <code class="literal">:&amp;</code> command, i.e., to repeat the last
+          substitution.</p></li><li class="listitem"><p class="copyright">The <code class="literal">:~</code> command is similar to the
+          <code class="literal">:&amp;</code> command, but with a subtle difference. The
+          search pattern used is the last regular expression used in
+          <span><em class="calibre3">any</em></span> command, not necessarily the one used in
+          the last substitute command.</p></li><li class="listitem"><p class="copyright">Besides the <code class="literal">/</code> character, you may use any
+          nonalphanumeric, nonwhitespace character as your delimiter, except
+          backslash, double quote, and the vertical bar (<code class="literal">\</code>,
+          <code class="literal">"</code>, and <code class="literal">|</code>).</p></li><li class="listitem"><p class="copyright">When the <code class="literal">edcompatible</code> option is enabled,
+          <em class="calibre3">vi</em> remembers the flags (<code class="literal">g</code> for
+          global and <code class="literal">c</code> for confirmation) used on the last
+          substitution and applies them to the next one<a id="I_indexterm1_d1e3049"></a>.</p></li></ul></div></div><div class="book"><br class="book"/><hr class="calibre5"/><div class="book"><p class="copyright"><sup class="calibre24">[<a id="ftn.viref2-ch-1-note-3" href="#viref2-ch-1-note-3">3</a>] </sup>This works with <em class="calibre3">vi</em>,
+                <em class="calibre3">nvi</em>, and Vim, but not with
+                <em class="calibre3">elvis</em> or <em class="calibre3">vile</em>.</p></div></div></div></div>
+
+{% endraw %}
+

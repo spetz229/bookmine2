@@ -1,0 +1,23 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch03s08.html
+next: OEBPS/ch04.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Summary"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect13_d1e1191" class="calibre1"></a>Summary</h1></div></div></div><p class="calibre7">Every Yesod application is built around a foundation data type. We associate some
+      resources with that data type and define some handler functions, and Yesod handles all of the
+      routing. These resources are also data constructors, which lets us have type-safe URLs.</p><p class="calibre7">By being built on top of WAI, Yesod applications can run with a number of different
+            backends. <code class="literal">warpDebug</code> is an easy way to get started, as
+            it’s included with Yesod. For rapid development, you can use <code class="literal">yesod devel</code>. And when you’re ready to move to production, you have Warp
+            as a high-performance option.</p><p class="calibre7">When developing in Yesod, we get a number of choices for coding style: quasi-quotation or
+      external files, <code class="literal">warpDebug</code> or <code class="literal">yesod
+        devel</code>, and so on. The examples in this book will tend toward using the choices
+      that are easiest to copy and paste, but the more powerful options will be available when you
+      start building real Yesod applications.</p></div></div>
+
+{% endraw %}
+

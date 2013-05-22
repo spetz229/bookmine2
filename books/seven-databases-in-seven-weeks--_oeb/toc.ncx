@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="5eb49dba-d649-4e73-83de-a4c146b89720" name="dtb:uid"/>
+    <meta content="3" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Seven Databases in Seven Weeks</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos109"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Table of Contents</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos2777"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>What Readers Are Saying About Seven Databases in Seven Weeks</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos19271"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Foreword</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos22447"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Acknowledgments</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos26802"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Preface</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos29870"/>
+      <navPoint class="chapter" id="num_7" playOrder="7">
+        <navLabel>
+          <text>Why Seven Databases</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos30646"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_8" playOrder="8">
+        <navLabel>
+          <text>What’s in This Book</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos31696"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_9" playOrder="9">
+        <navLabel>
+          <text>What This Book Is Not</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos33638"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_10" playOrder="10">
+        <navLabel>
+          <text>Code Examples and Conventions</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos36210"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_11" playOrder="11">
+        <navLabel>
+          <text>Online Resources</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos37174"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="12">
+      <navLabel>
+        <text>Chapter 1: Introduction</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos39023"/>
+      <navPoint class="chapter" id="num_13" playOrder="13">
+        <navLabel>
+          <text>1.1 It Starts with a Question</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos40204"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_14" playOrder="14">
+        <navLabel>
+          <text>1.2 The Genres</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos44921"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_15" playOrder="15">
+        <navLabel>
+          <text>1.3 Onward and Upward</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos57340"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_16" playOrder="16">
+      <navLabel>
+        <text>Chapter 2: PostgreSQL</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos58938"/>
+      <navPoint class="chapter" id="num_17" playOrder="17">
+        <navLabel>
+          <text>2.1 That’s Post-greS-Q-L</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos60523"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_18" playOrder="18">
+        <navLabel>
+          <text>2.2 Day 1: Relations, CRUD, and Joins</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos64303"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_19" playOrder="19">
+        <navLabel>
+          <text>2.3 Day 2: Advanced Queries, Code, and Rules</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos137427"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_20" playOrder="20">
+        <navLabel>
+          <text>2.4 Day 3: Full-Text and Multidimensions</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos248189"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_21" playOrder="21">
+        <navLabel>
+          <text>2.5 Wrap-Up</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos352192"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_22" playOrder="22">
+      <navLabel>
+        <text>Chapter 3: Riak</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos359256"/>
+      <navPoint class="chapter" id="num_23" playOrder="23">
+        <navLabel>
+          <text>3.1 Riak Loves the Web</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos361053"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_24" playOrder="24">
+        <navLabel>
+          <text>3.2 Day 1: CRUD, Links, and MIMEs</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos363242"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_25" playOrder="25">
+        <navLabel>
+          <text>3.3 Day 2: Mapreduce and Server Clusters</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos436188"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_26" playOrder="26">
+        <navLabel>
+          <text>3.4 Day 3: Resolving Conflicts and Extending Riak</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos533694"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_27" playOrder="27">
+        <navLabel>
+          <text>3.5 Wrap-Up</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos607083"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_28" playOrder="28">
+      <navLabel>
+        <text>Chapter 4: HBase</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos618168"/>
+      <navPoint class="chapter" id="num_29" playOrder="29">
+        <navLabel>
+          <text>4.1 Introducing HBase</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos620659"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_30" playOrder="30">
+        <navLabel>
+          <text>4.2 Day 1: CRUD and Table Administration</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos623040"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_31" playOrder="31">
+        <navLabel>
+          <text>4.3 Day 2: Working with Big Data</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos676096"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_32" playOrder="32">
+        <navLabel>
+          <text>4.4 Day 3: Taking It to the Cloud</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos801639"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_33" playOrder="33">
+        <navLabel>
+          <text>4.5 Wrap-Up</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos850166"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_34" playOrder="34">
+      <navLabel>
+        <text>Chapter 5: MongoDB</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos860648"/>
+      <navPoint class="chapter" id="num_35" playOrder="35">
+        <navLabel>
+          <text>5.1 Hu(mongo)us</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos862224"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_36" playOrder="36">
+        <navLabel>
+          <text>5.2 Day 1: CRUD and Nesting</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos865181"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_37" playOrder="37">
+        <navLabel>
+          <text>5.3 Day 2: Indexing, Grouping, Mapreduce</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos988577"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_38" playOrder="38">
+        <navLabel>
+          <text>5.4 Day 3: Replica Sets, Sharding, GeoSpatial, and GridFS</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1088290"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_39" playOrder="39">
+        <navLabel>
+          <text>5.5 Wrap-Up</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1139630"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_40" playOrder="40">
+      <navLabel>
+        <text>Chapter 6: CouchDB</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1144182"/>
+      <navPoint class="chapter" id="num_41" playOrder="41">
+        <navLabel>
+          <text>6.1 Relaxing on the Couch</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1145777"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_42" playOrder="42">
+        <navLabel>
+          <text>6.2 Day 1: CRUD, Futon, and cURL Redux</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1148249"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_43" playOrder="43">
+        <navLabel>
+          <text>6.3 Day 2: Creating and Querying Views</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1195654"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_44" playOrder="44">
+        <navLabel>
+          <text>6.4 Day 3: Advanced Views, Changes API, and Replicating Data</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1308826"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_45" playOrder="45">
+        <navLabel>
+          <text>6.5 Wrap-Up</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1424545"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_46" playOrder="46">
+      <navLabel>
+        <text>Chapter 7: Neo4J</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1431208"/>
+      <navPoint class="chapter" id="num_47" playOrder="47">
+        <navLabel>
+          <text>7.1 Neo4J Is Whiteboard Friendly</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1432790"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_48" playOrder="48">
+        <navLabel>
+          <text>7.2 Day 1: Graphs, Groovy, and CRUD</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1435517"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_49" playOrder="49">
+        <navLabel>
+          <text>7.3 Day 2: REST, Indexes, and Algorithms</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1539544"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_50" playOrder="50">
+        <navLabel>
+          <text>7.4 Day 3: Distributed High Availability</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1626812"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_51" playOrder="51">
+        <navLabel>
+          <text>7.5 Wrap-Up</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1661845"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_52" playOrder="52">
+      <navLabel>
+        <text>Chapter 8: Redis</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1669053"/>
+      <navPoint class="chapter" id="num_53" playOrder="53">
+        <navLabel>
+          <text>8.1 Data Structure Server Store</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1670371"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_54" playOrder="54">
+        <navLabel>
+          <text>8.2 Day 1: CRUD and Datatypes</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1672748"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_55" playOrder="55">
+        <navLabel>
+          <text>8.3 Day 2: Advanced Usage, Distribution</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1748754"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_56" playOrder="56">
+        <navLabel>
+          <text>8.4 Day 3: Playing with Other Databases</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1853801"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_57" playOrder="57">
+        <navLabel>
+          <text>8.5 Wrap-Up</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1942580"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_58" playOrder="58">
+      <navLabel>
+        <text>Chapter 9: Wrapping Up</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1949345"/>
+      <navPoint class="chapter" id="num_59" playOrder="59">
+        <navLabel>
+          <text>9.1 Genres Redux</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1950544"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_60" playOrder="60">
+        <navLabel>
+          <text>9.2 Making a Choice</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1960346"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_61" playOrder="61">
+        <navLabel>
+          <text>9.3 Where Do We Go from Here?</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1963415"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_62" playOrder="62">
+      <navLabel>
+        <text>Appendix 1: Database Overview Tables</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1964832"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_63" playOrder="63">
+      <navLabel>
+        <text>Appendix 2: The CAP Theorem</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos1996596"/>
+      <navPoint class="chapter" id="num_64" playOrder="64">
+        <navLabel>
+          <text>A2.1 Eventual Consistency</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos2001009"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_65" playOrder="65">
+        <navLabel>
+          <text>A2.2 CAP in the Wild</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos2004060"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_66" playOrder="66">
+        <navLabel>
+          <text>A2.3 The Latency Trade-Off</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos2005732"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_67" playOrder="67">
+      <navLabel>
+        <text>Bibliography</text>
+      </navLabel>
+      <content src="Seven_Databases_in_Seven_Weeks_.html#filepos2007959"/>
+      <navPoint class="chapter" id="num_68" playOrder="68">
+        <navLabel>
+          <text>You May Be Interested In…</text>
+        </navLabel>
+        <content src="Seven_Databases_in_Seven_Weeks_.html#filepos2008935"/>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

@@ -1,0 +1,160 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: I_sect116_d1e36850.html
+next: I_sect116_d1e36989.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect116_d1e36850.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect116_d1e36989.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="applicative_urlencoded" class="calibre27" id="applicative_urlencoded"></a><h3 id="title-IDATNIUD" class="docSection1Title">16.6. Parsing a URL-Encoded Query String</h3><a name="x_Xj" class="calibre27" id="x_Xj"></a><p class="docText">When we<a name="I_indexterm16_d1e36891" class="calibre27" id="I_indexterm16_d1e36891"></a> <a name="I_indexterm16_d1e36895" class="calibre27" id="I_indexterm16_d1e36895"></a>introduced <tt class="calibre34">application/x-www-form-urlencoded</tt>
+    text in <a class="docLink" href="monadcase_urlencoded.html#monadcase_urlencoded">Section 15.1</a>, we mentioned that we'd
+    write a parser for these strings. We can quickly and easily do this using
+    Parsec.</p><a name="x_Yj" class="calibre27" id="x_Yj"></a><p class="docText">Each key-value pair <a name="I_indexterm16_d1e36906" class="calibre27" id="I_indexterm16_d1e36906"></a>is separated by the <tt class="calibre34">&amp;</tt>
+    character:</p><pre class="calibre39">-- file: ch16/FormParse.hs
+p_query :: CharParser () [(String, Maybe String)]
+p_query = p_pair `sepBy` char '&amp;'</pre><br class="calibre48"/>
+<a name="x_Zj" class="calibre27" id="x_Zj"></a><p class="docText">Notice that in the type signature, we're using
+    Maybe to represent a value: the HTTP specification is unclear
+    about whether a key <span class="docEmphasis">must</span> have an associated value,
+    and we'd like to be able to distinguish between "no value"
+    and "empty value":</p><pre class="calibre39">-- file: ch16/FormParse.hs
+p_pair :: CharParser () (String, Maybe String)
+p_pair = do
+  name &lt;- many1 p_char
+  value &lt;- optionMaybe (char '=' &gt;&gt; many p_char)
+  return (name, value)</pre><br class="calibre48"/>
+<a name="x_aj" class="calibre27" id="x_aj"></a><p class="docText">The <i class="docEmphasis">many1</i> function is
+    similar to <i class="docEmphasis">many</i>: it applies its
+    parser repeatedly, returning a list of results. While <i class="docEmphasis">many</i> will succeed and return an empty list if
+    its parser never succeeds, <i class="docEmphasis">many1</i> will
+    fail if its parser never succeeds and will otherwise return a list of at
+    least one element.</p><a name="x_bj" class="calibre27" id="x_bj"></a><p class="docText">The <i class="docEmphasis">optionMaybe</i>
+    function modifies the behavior of a parser. If the parser fails, <i class="docEmphasis">optionMaybe</i> doesn't: it returns
+    <tt class="calibre34">Nothing</tt>. Otherwise, it wraps the parser's successful result
+    with <tt class="calibre34">Just</tt>. This gives us the ability to distinguish between
+    "no value" and "empty value," as we mentioned earlier.</p><a name="x_cj" class="calibre27" id="x_cj"></a><p class="docText">Individual characters can be encoded in one of several
+    ways:</p><pre class="calibre39">-- file: ch16/FormParse.hs
+p_char :: CharParser () Char
+p_char = oneOf urlBaseChars
+     &lt;|&gt; (char '+' &gt;&gt; return ' ')
+     &lt;|&gt; p_hex
+
+urlBaseChars = ['a'..'z']++['A'..'Z']++['0'..'9']++"$-_.!*'(),"
+
+p_hex :: CharParser () Char
+p_hex = do
+  char '%'
+  a &lt;- hexDigit
+  b &lt;- hexDigit
+  let ((d, _):_) = readHex [a,b]
+  return . toEnum $ d</pre><br class="calibre48"/>
+<a name="x_dj" class="calibre27" id="x_dj"></a><p class="docText">Some characters can be represented literally. Spaces are
+    treated specially, using a <tt class="calibre34">+</tt> character. Other characters must
+    be encoded as a <tt class="calibre34">%</tt> character followed by two hexadecimal
+    digits. The <tt class="calibre34">Numeric</tt> module's <i class="docEmphasis">readHex</i> parses a hex string as a number:</p><pre class="calibre39">ghci&gt; <b class="calibre40">parseTest p_query "foo=bar&amp;a%21=b+c"</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+[("foo",Just "bar"),("a!",Just "b c")]
+</pre><a name="x_ej" class="calibre27" id="x_ej"></a><p class="docText">As appealing and readable as this parser is, we can profit
+    from stepping back and taking another look at some of our building
+    blocks.</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="I_sect116_d1e36850.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="I_sect116_d1e36989.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

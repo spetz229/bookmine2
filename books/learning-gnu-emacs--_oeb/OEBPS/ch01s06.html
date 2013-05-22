@@ -1,0 +1,83 @@
+---
+layout: page
+title: "Learning GNU Emacs, 3rd Edition"
+prev: OEBPS/ch01s05.html
+next: OEBPS/ch01s07.html
+book_path: books/learning-gnu-emacs--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" xml:lang="en"><div class="book"><div class="book"><div class="book"><h1 class="title"><a id="gnu3-CHP-1-SECT-6" class="calibre1"></a>Emacs Commands</h1></div></div></div><p class="copyright">You're about to start
+<a id="gnu3-CHP-1-ITERM-1588" class="calibre2"></a>learning some Emacs
+commands, so let's discuss them a bit first. How do
+you give commands? Each command has a formal name, which (if
+you're fastidious) is the name of a Lisp routine.
+Some command names are quite long; you usually
+wouldn't want to type the whole thing. As a result,
+we need some way to abbreviate commands.</p><p class="copyright">Emacs ties a command name to a short sequence
+<a id="gnu3-CHP-1-ITERM-1589" class="calibre2"></a>
+            <a id="gnu3-CHP-1-ITERM-1590" class="calibre2"></a>of
+keystrokes. This tying of commands to keystrokes is
+<a id="gnu3-CHP-1-ITERM-1591" class="calibre2"></a>known as
+<span><em class="calibre7">binding</em></span>. Even things you don't
+normally think about as commands, such as inserting the characters
+that you type, are handled through the binding mechanism. Keys like
+"A" are bound to the Emacs command
+<span><strong class="calibre5">self-insert-command</strong></span>, which inserts
+them into the buffer you are editing.<sup class="calibre6">[<a id="gnu3-CHP-1-FNOTE-4" href="#ftn.gnu3-CHP-1-FNOTE-4" class="calibre2">4</a>]</sup> Most actions that you would normally think
+of as editor commands are bound to keystroke sequences starting with
+<span><strong class="calibre5">Ctrl</strong></span> or <span><strong class="calibre5">Meta</strong></span>. Emacs also binds some commands to mouse
+clicks (alone or modified by <span><strong class="calibre5">Shift</strong></span>
+or <span><strong class="calibre5">Ctrl</strong></span>) and to options on menus.</p><p class="copyright">The authors of Emacs try to bind the most frequently used commands to
+the key sequences that are the easiest to reach. Here are the
+varieties of key sequences you'll encounter:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="copyright">The <a id="gnu3-CHP-1-ITERM-1593" class="calibre2"></a>
+                  <a id="gnu3-CHP-1-ITERM-1594" class="calibre2"></a>
+                  <a id="gnu3-CHP-1-ITERM-1595" class="calibre2"></a>most commonly used commands (such as
+cursor movement commands) are bound to <span><strong class="calibre5">C-</strong></span>
+                  <span><em class="calibre7">n</em></span> (where
+<span><em class="calibre7">n</em></span> is any character). To press <span><strong class="calibre5">C-</strong></span>
+                  <span><em class="calibre7">n</em></span>, press and hold the
+<span><strong class="calibre5">Ctrl</strong></span> key and press
+<span><em class="calibre7">n</em></span>, then release both keys.</p></li><li class="listitem"><p class="copyright">Slightly <a id="gnu3-CHP-1-ITERM-1596" class="calibre2"></a>
+                  <a id="gnu3-CHP-1-ITERM-1597" class="calibre2"></a>less commonly
+used commands are bound to <span><strong class="calibre5">M-</strong></span>
+                  <span><em class="calibre7">n</em></span>. To press <span><strong class="calibre5">M-</strong></span>
+                  <span><em class="calibre7">n</em></span>, press and hold the
+<span><strong class="calibre5">Meta</strong></span> key (usually next to the space
+bar), then press <span><em class="calibre7">n</em></span>.</p></li><li class="listitem"><p class="copyright">Other commonly used
+<a id="gnu3-CHP-1-ITERM-1598" class="calibre2"></a>
+                  <a id="gnu3-CHP-1-ITERM-1599" class="calibre2"></a>commands are bound to <span><strong class="calibre5">C-x</strong></span> 
+                  <span><em class="calibre7">something</em></span> (<span><strong class="calibre5">C-x</strong></span> followed by something else—one or
+more characters or another control sequence). Among other types of
+commands, file manipulation commands, like the ones you are about to
+learn, are generally bound to <span><strong class="calibre5">C-x</strong></span>
+                  <span><em class="calibre7">something</em></span>.</p></li><li class="listitem"><p class="copyright">Some
+<a id="gnu3-CHP-1-ITERM-1600" class="calibre2"></a>
+                  <a id="gnu3-CHP-1-ITERM-1601" class="calibre2"></a>specialized commands are bound to
+<span><strong class="calibre5">C-c</strong></span> 
+                  <span><em class="calibre7">something</em></span>.
+These commands often relate to one of the more specialized modes,
+such as Java mode or HTML mode. You won't encounter
+them until later in this book.</p></li><li class="listitem"><p class="copyright">This list still doesn't take care of all the
+possibilities. You can get at the remaining commands by typing
+<span><strong class="calibre5">M-x</strong></span>
+                  <span><em class="calibre7">long-command-name</em></span> 
+                  <span><strong class="calibre5">Enter</strong></span>. (This works for any command really,
+but the keystrokes are usually easier to learn.)</p></li></ul></div><p class="copyright">You can define your own <a id="gnu3-CHP-1-ITERM-1602" class="calibre2"></a>key
+bindings, too, and you should do so if you find yourself using the
+long form of a command all the time. More on this topic in <a class="calibre2" href="ch10.html" title="Chapter 10. Customizing Emacs">Chapter 10</a>.</p><p class="copyright">You can also access common commands through menus, but for maximum
+productivity, we recommend you learn the keystrokes, often given in
+parentheses following the menu option.</p><div class="book"><br class="book"/><hr class="calibre4"/><div class="book"><p class="copyright"><sup class="calibre6">[<a id="ftn.gnu3-CHP-1-FNOTE-4" href="#gnu3-CHP-1-FNOTE-4" class="calibre2">4</a>] </sup>In certain
+special <a id="gnu3-CHP-1-ITERM-1592" class="calibre2"></a>editing
+modes, such as <span><strong class="calibre5">dired-mode</strong></span> for
+viewing and manipulating directories on your computer, the normal
+typing keys don't insert themselves. They are
+instead bound to special commands that do things like opening and
+renaming files. This flexibility in defining and changing
+<span><em class="calibre7">keymaps</em></span>, while it might seem somewhat arbitrary
+and overwhelming at first, is one of the great sources of power in
+Emacs.</p></div></div></div></div>
+
+{% endraw %}
+

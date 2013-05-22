@@ -1,0 +1,127 @@
+---
+layout: page
+title: "CoffeeScript (for jay muratore)"
+prev: f_0005.html
+next: f_0007.html
+book_path: books/coffeescript-accelerated-javascript-development-pragmatic--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<h2 id="sec.theNewKid" class="calibre13">The New Kid in Town</h2>
+<p id="N10118" class="calibre5"> On Christmas Day 2009, Jeremy Ashkenas first released CoffeeScript, a little language he touted as “JavaScript’s less ostentatious kid brother.” The project quickly attracted hundreds of followers on GitHub as Ashkenas and other contributors added a bevy of new features each month. The language’s compiler, originally written in Ruby, was replaced in March 2010 by one written in CoffeeScript. </p>
+<p id="N10120" class="calibre5"> After its 1.0 release on Christmas 2010, CoffeeScript became one of Github’s “most-watched” projects. And the language attracted another flurry of attention in April 2011, when David Heinemeier Hansson confirmed rumors that CoffeeScript support would be included in Ruby on Rails 3.1. </p>
+<p id="N10128" class="calibre5"> Why did this little language catch on so quickly? Three reasons come to mind: familiarity, safety, and readability. </p>
+<h3 id="sec.familiar" class="calibre14">The Good Parts Are Still There</h3>
+<p id="N10130" class="calibre5"> JavaScript is vast. It contains multitudes. JavaScript offers many of the best features of functional languages while retaining the feel of an imperative language. This subtle power is one of the reasons that JavaScript tends to confound newcomers: functions can be passed around as arguments and returned from other functions; objects can have new methods added at any time; in short, <span class="emph">functions are first-class objects</span>. </p>
+<p id="N1013B" class="calibre5"> All that power is still there in CoffeeScript, along with a syntax that encourages you to use it wisely. </p>
+<h3 id="sec.safe" class="calibre14">The Compiler Is Here to Help</h3>
+<p id="N10143" class="calibre5"> Imagine a language with no syntax errors, a language where the computer forgives you your typos and tries as best it can to comprehend the code you give it. What a wonderful world that would be! Sure, the program wouldn’t always run the way you expected, but that’s what testing is for. </p>
+<p id="N10146" class="calibre5"> Now imagine that you write that code once and send it out to the world, typos and all, and millions of computers work around your small mistakes in subtly different ways. Suddenly statements that your computer silently skipped over are crashing your entire app for thousands of users. </p>
+<p id="N10149" class="calibre5"> Sadly, that’s the world we live in. JavaScript doesn’t have a standard interpreter. Instead, hundreds of browsers and server-side frameworks run JavaScript in their own way. Debugging cross-platform inconsistencies is a huge pain. </p>
+<p id="N1014C" class="calibre5"> CoffeeScript can’t cure all of these ills, but the compiler tries its best to generate JavaScript Lint-compliant output<a id="FNPTR-4" href="f_0010.html#FOOTNOTE-4">[4]</a>, which is a great filter for common human errors and nonstandard idioms. And if you type something that just doesn’t make any sense, such as <code class="cf">2 = 3</code>, the CoffeeScript compiler will tell you. Better to find out sooner than later. </p>
+<h3 id="sec.readable" class="calibre14">It’s All So Clear Now</h3>
+<p id="N10160" class="calibre5"> Writing CoffeeScript can be highly addictive. Why? Take this piece of JavaScript: </p>
+<table class="processedcode">
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">
+<strong class="prompt">function</strong> cube(num) {</code>
+</td>
+</tr>
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">  <strong class="prompt">return</strong> Math.pow(num, 3);</code>
+</td>
+</tr>
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">}</code>
+</td>
+</tr>
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">
+<strong class="prompt">var</strong> list = [1, 2, 3, 4, 5];</code>
+</td>
+</tr>
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">
+<strong class="prompt">var</strong> cubedList = [];</code>
+</td>
+</tr>
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">
+<strong class="prompt">for</strong> (<strong class="prompt">var</strong> i = 0; i &lt; list.length; i++) {</code>
+</td>
+</tr>
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">  cubedList.push(cube(list[i]));</code>
+</td>
+</tr>
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">}</code>
+</td>
+</tr>
+</table>
+<p id="N10191" class="calibre5"> Now here’s an equivalent snippet of CoffeeScript: </p>
+<table class="processedcode">
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">cube = (num) <strong class="prompt">-&gt;</strong> Math.pow num, 3</code>
+</td>
+</tr>
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">list = [1, 2, 3, 4, 5]</code>
+</td>
+</tr>
+<tr class="calibre15">
+<td class="codeprefix"> </td>
+<td class="codeline">
+<code class="calibre16">cubedList = (cube num <strong class="prompt">for</strong> num <strong class="prompt">in</strong> list)</code>
+</td>
+</tr>
+</table>
+<p id="N101AE" class="calibre5"> For those of you keeping score, that’s half the character count and less than half the line count! Those kinds of gains are common in CoffeeScript. And as Paul Graham once put it, “Succinctness is power.”<a id="FNPTR-5" href="f_0010.html#FOOTNOTE-5">[5]</a>
+</p>
+<p id="N101BE" class="calibre5"> Shorter code is easier to read, easier to write, and, perhaps most critically, easier to change. Gigantic heaps of code tend to lumber along, as any significant modifications require a Herculean effort. But bite-sized pieces of code can be revamped in a few swift keystrokes, encouraging a more agile, iterative development style. </p>
+<p id="N101C1" class="calibre5"> It’s worth adding that switching to CoffeeScript isn’t an all-or-nothing proposition—CoffeeScript code and JavaScript code can interact freely. CoffeeScript’s strings are just JavaScript strings, and its numbers are just JavaScript numbers; even its classes work in JavaScript frameworks like Backbone.js.<a id="FNPTR-6" href="f_0010.html#FOOTNOTE-6">[6]</a> So don’t be afraid of calling JavaScript code from CoffeeScript code or vice versa. As an example, we’ll talk about using CoffeeScript with one of JavaScript’s most popular libraries in Chapter 5, <a href="f_0045.html#chp.jquery">​<em class="emph">Web Interactivity with jQuery</em>​</a>. </p>
+<div class="sidebar" id="sb.backtickEscapes">
+<div class="sidebar-title">Embedding JavaScript in CoffeeScript</div>
+<div class="calibre1">
+<p id="N101D1" class="calibre5"> This is as good a place as any to mention that you can stick JavaScript inside of CoffeeScript code by surrounding it with backticks, like so: </p>
+<table class="processedcode">
+<tr class="calibre15">
+<td class="codeprefix1"> </td>
+<td class="codeline1">
+<code class="calibre16">console.log <em class="string">`impatient ? useBackticks() : learnCoffeeScript()`</em>
+</code>
+</td>
+</tr>
+</table>
+<p id="N101EB" class="calibre5"> The CoffeeScript compiler simply ignores everything between the backticks. That means that if, for instance, you declare a variable between the backticks, that variable won’t obey conventional CoffeeScript scope rules. </p>
+<p id="N101EE" class="calibre5"> In all my time writing CoffeeScript, I’ve never once needed to use backtick escapes. They’re an eyesore at best and dangerous at worst. So in the immortal words of Troy McClure: “Now that you know how it’s done—don’t do it.” </p>
+</div>
+</div>
+<p id="N101F1" class="calibre5"> But enough ancient history. Coding is believing, everything else is just meta, and as Jeff Atwood once said,“Meta is murder.”<a id="FNPTR-7" href="f_0010.html#FOOTNOTE-7">[7]</a> So let’s talk a little bit about the book you’re reading now, and then—in just a few pages, I promise!—we’ll start banging out some hot code. </p>
+<script src="scripts/book_local.js" type="text/javascript" class="calibre2"/>
+</div>
+
+{% endraw %}
+

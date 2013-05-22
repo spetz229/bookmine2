@@ -1,0 +1,28 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: DroidSansMono;
+    font-weight: normal;
+    font-style: normal;
+    src: url(fonts/DroidSansMono.ttf)
+    }
+@font-face {
+    font-family: DroidSansMono;
+    font-weight: bold;
+    font-style: normal;
+    src: url(fonts/DroidSansMono.ttf)
+    }
+@font-face {
+    font-family: DroidSans;
+    font-weight: normal;
+    font-style: normal;
+    src: url(fonts/DroidSans.ttf)
+    }
+@font-face {
+    font-family: DroidSans;
+    font-weight: bold;
+    font-style: normal;
+    src: url(fonts/DroidSans-Bold.ttf)
+    }

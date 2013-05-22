@@ -1,0 +1,41 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch01s03.html
+next: OEBPS/ch01s05.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Flow Control"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e666" class="calibre2"></a>Flow Control</h1></div></div></div><p class="calibre8">The convention of optional parentheses continues with CoffeeScript’s
+    <code class="literal">if</code> and <code class="literal">else</code> <span class="firstname">keywords</span>:</p><pre class="screen">if true == true
+  "We're ok"
+
+if true != true then "Panic"
+
+# Equivalent to:
+#  (1 &gt; 0) ? "Ok" : "Y2K!"
+if 1 &gt; 0 then "Ok" else "Y2K!"</pre><p class="calibre8">As you can see above, if the <code class="literal">if</code>
+    statement is on one line, you’ll need to use the <code class="literal">then</code> keyword so CoffeeScript knows when the
+    block begins. Conditional operators (<code class="literal">?:</code>) are not supported; instead you should use a
+    single line <code class="literal">if/else</code> statement.</p><p class="calibre8">CoffeeScript also includes a Ruby idiom of allowing suffixed
+    <code class="literal">if</code> statements:</p><pre class="screen">alert "It's cold!" if heat &lt; 5</pre><p class="calibre8">Instead of using the exclamation mark (<code class="literal">!</code>) for negation, you can also use the <code class="literal">not</code> keyword—which can sometimes make your code
+    more readable, as exclamation marks can be easy to miss:</p><pre class="screen">if not true then "Panic"</pre><p class="calibre8">In the example above, we could also use the CoffeeScript’s <code class="literal">unless</code> statement, the opposite of <code class="literal">if</code>:</p><pre class="screen">unless true
+  "Panic"</pre><p class="calibre8">In a similar fashion to <code class="literal">not</code>,
+    CoffeeScript also introduces the <code class="literal">is</code>
+    statement, which translates to
+    <code class="literal">===</code>:</p><pre class="screen">if true is 1
+  "Type coercion fail!"</pre><p class="calibre8">As an alternative to <code class="literal">is not</code>, you
+    can use <code class="literal">isnt</code>:</p><pre class="screen">if true isnt true
+  alert "Opposite day!"</pre><p class="calibre8">You may have noticed in these examples that CoffeeScript is
+    converting <code class="literal">==</code> operators into <code class="literal">===</code> and <code class="literal">!=</code>
+    into <code class="literal">!==</code>. This is one of my favorite
+    features of the language, and yet one of the most simple. What’s the
+    reasoning behind this? Well, frankly, JavaScript’s type coercion is a bit
+    odd, and its equality operator coerces types in order to compare them,
+    leading to some confusing behaviors and the source of many bugs. There’s a
+    longer discussion on this topic in <a class="ulink" href="ch06.html" title="Chapter 6. The Little Conclusion">Chapter 6</a>.</p></div></div>
+
+{% endraw %}
+

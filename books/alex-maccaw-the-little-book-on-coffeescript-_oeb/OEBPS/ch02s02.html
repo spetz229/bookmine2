@@ -1,0 +1,23 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch02.html
+next: OEBPS/ch02s03.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Static Properties"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect12_d1e1042" class="calibre2"></a>Static Properties</h1></div></div></div><p class="calibre8">How about defining class (i.e., static) properties? Well, it turns
+    out that inside a class definition, <code class="literal">this</code> refers to the class object. In other words,
+    you can set class properties by setting them directly on <code class="literal">this</code>.</p><pre class="screen">class Animal
+  this.find = (name) -&gt;      
+
+Animal.find("Parrot")</pre><p class="calibre8">In fact, as you may remember, CoffeeScript aliases <code class="literal">this</code> to <code class="literal">@</code>,
+    which lets you write static properties even more succinctly:</p><pre class="screen">class Animal
+  @find: (name) -&gt;
+
+Animal.find("Parrot")</pre></div></div>
+
+{% endraw %}
+

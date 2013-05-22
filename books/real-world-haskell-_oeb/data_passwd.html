@@ -1,0 +1,249 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: data_funcs.html
+next: data_num_split_000.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="data_funcs.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="data_num_split_000.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="data_passwd" class="calibre27" id="data_passwd"></a><h3 id="title-IDAV1H5H" class="docSection1Title">13.4. Extended Example: /etc/passwd</h3><a name="x_AJ" class="calibre27" id="x_AJ"></a><p class="docText">In order<a name="ch13-ectpasswd" class="calibre27" id="ch13-ectpasswd"></a> to illustrate the usage of a number of different data
+    structures together, we've prepared an extended example. This example
+    parses and stores entries from files in the format of a typical
+    <i class="docEmphasis">/etc/passwd</i> file:</p><pre class="calibre39">-- file: ch13/passwdmap.hs
+import Data.List
+import qualified Data.Map as Map
+import System.IO
+import Text.Printf(printf)
+import System.Environment(getArgs)
+import System.Exit
+import Control.Monad(when)
+
+{- | The primary piece of data this program will store.
+   It represents the fields in a POSIX /etc/passwd file -}
+data PasswdEntry = PasswdEntry {
+    userName :: String,
+    password :: String,
+    uid :: Integer,
+    gid :: Integer,
+    gecos :: String,
+    homeDir :: String,
+    shell :: String}
+    deriving (Eq, Ord)
+
+{- | Define how we get data to a 'PasswdEntry'. -}
+instance Show PasswdEntry where
+    show pe = printf "%s:%s:%d:%d:%s:%s:%s" 
+                (userName pe) (password pe) (uid pe) (gid pe)
+                (gecos pe) (homeDir pe) (shell pe)
+
+{- | Converting data back out of a 'PasswdEntry'. -}
+instance Read PasswdEntry where
+    readsPrec _ value =
+        case split ':' value of
+             [f1, f2, f3, f4, f5, f6, f7] -&gt;
+                 -- Generate a 'PasswdEntry' the shorthand way:
+                 -- using the positional fields.  We use 'read' to convert
+                 -- the numeric fields to Integers.
+                 [(PasswdEntry f1 f2 (read f3) (read f4) f5 f6 f7, [])]
+             x -&gt; error $ "Invalid number of fields in input: " ++ show x
+        where 
+        {- | Takes a delimiter and a list.  Break up the list based on the
+        -  delimiter. -}
+        split :: Eq a =&gt; a -&gt; [a] -&gt; [[a]]
+
+        -- If the input is empty, the result is a list of empty lists.
+        split _ [] = [[]]
+        split delim str =
+            let -- Find the part of the list before delim and put it in
+                -- "before".  The rest of the list, including the leading 
+                -- delim, goes in "remainder".
+                (before, remainder) = span (/= delim) str
+                in
+                before : case remainder of
+                              [] -&gt; []
+                              x -&gt; -- If there is more data to process,
+                                   -- call split recursively to process it
+                                   split delim (tail x)
+
+-- Convenience aliases; we'll have two maps: one from UID to entries
+-- and the other from username to entries
+type UIDMap = Map.Map Integer PasswdEntry
+type UserMap = Map.Map String PasswdEntry
+
+{- | Converts input data to maps.  Returns UID and User maps. -}
+inputToMaps :: String -&gt; (UIDMap, UserMap)
+inputToMaps inp =
+    (uidmap, usermap)
+    where
+    -- fromList converts a [(key, value)] list into a Map
+    uidmap = Map.fromList . map (\pe -&gt; (uid pe, pe)) $ entries
+    usermap = Map.fromList . 
+              map (\pe -&gt; (userName pe, pe)) $ entries
+    -- Convert the input String to [PasswdEntry]
+    entries = map read (lines inp)
+
+main = do
+    -- Load the command-line arguments
+    args &lt;- getArgs
+
+    -- If we don't have the right number of args,
+    -- give an error and abort
+
+    when (length args /= 1) $ do
+        putStrLn "Syntax: passwdmap filename"
+        exitFailure
+
+    -- Read the file lazily
+    content &lt;- readFile (head args)
+    let maps = inputToMaps content
+    mainMenu maps
+
+mainMenu maps@(uidmap, usermap) = do
+    putStr optionText
+    hFlush stdout
+    sel &lt;- getLine
+    -- See what they want to do.  For every option except 4,
+    -- return them to the main menu afterwards by calling
+    -- mainMenu recursively
+    case sel of
+         "1" -&gt; lookupUserName &gt;&gt; mainMenu maps
+         "2" -&gt; lookupUID &gt;&gt; mainMenu maps
+         "3" -&gt; displayFile &gt;&gt; mainMenu maps
+         "4" -&gt; return ()
+         _ -&gt; putStrLn "Invalid selection" &gt;&gt; mainMenu maps
+
+    where 
+    lookupUserName = do
+        putStrLn "Username: "
+        username &lt;- getLine
+        case Map.lookup username usermap of
+             Nothing -&gt; putStrLn "Not found."
+             Just x -&gt; print x
+    lookupUID = do
+        putStrLn "UID: "
+        uidstring &lt;- getLine
+        case Map.lookup (read uidstring) uidmap of
+             Nothing -&gt; putStrLn "Not found."
+             Just x -&gt; print x
+    displayFile = 
+        putStr . unlines . map (show . snd) . Map.toList $ uidmap
+    optionText = 
+          "\npasswdmap options:\n\
+           \\n\
+           \1   Look up a user name\n\
+           \2   Look up a UID\n\
+           \3   Display entire file\n\
+           \4   Quit\n\n\
+           \Your selection: "</pre><br class="calibre48"/>
+<a name="x_BJ" class="calibre27" id="x_BJ"></a><p class="docText">This example maintains two maps: one from username to
+    <tt class="calibre34">PasswdEntry</tt> and another one from UID to
+    <tt class="calibre34">PasswdEntry</tt>. Database developers may
+    find it convenient to think of this as having two different indices into
+    the data to speed searching on different fields.</p><a name="x_CJ" class="calibre27" id="x_CJ"></a><p class="docText">Take a look at the <tt class="calibre34">Show</tt>
+    and <tt class="calibre34">Read</tt> instances for <tt class="calibre34">PasswdEntry</tt>. There is already a standard format
+    for rendering data of this type as a string: the colon-separated version
+    the system already uses. So our <tt class="calibre34">Show</tt>
+    function displays a <tt class="calibre34">PasswdEntry</tt> in the
+    format, and <tt class="calibre34">Read</tt> parses that
+    format.</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="data_funcs.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="data_num_split_000.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

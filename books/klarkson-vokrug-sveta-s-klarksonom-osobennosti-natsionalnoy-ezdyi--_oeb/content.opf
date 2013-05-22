@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:description>Знаменитый британский журналист, циник и острослов Джереми Кларксон (ведущий программы TopGear на телеканале Би-би-си) совершил путешествие вокруг света и в своей неповторимой манере рассказал, как обстоят дела с автомобилями (а заодно и со многими другими вещами) в одиннадцати странах мира. Книга станет захватывающим чтением как для тех, кто интересуется автомобилями, так и для тех, кто просто предпочитает здравый взгляд на жизнь.</dc:description>
+    <dc:language>ru</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Джереми  Кларксон</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T22:00:07.599229+00:00"/>
+    <dc:title>Вокруг света с Кларксоном. Особенности национальной езды</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">aa0be73e-120f-4307-bd5c-4fbdfefdd082</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="images/calibre_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="CUQWZJ_XILYG-OUTGRITUP_LNKH.html" id="id1" media-type="application/xhtml+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id1"/>
+  </spine>
+  <guide>
+    <reference href="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos109" type="toc" title="Table of Contents"/>
+    <reference href="images/calibre_cover.jpg" type="cover" title="Cover"/>
+  </guide>
+</package>

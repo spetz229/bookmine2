@@ -1,0 +1,376 @@
+.calibre {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 0;
+    margin-left: 5pt;
+    margin-right: 5pt;
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0
+    }
+.calibre1 {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.67em
+    }
+.calibre10 {
+    display: block;
+    margin-left: 40px;
+    margin-top: 1em
+    }
+.calibre11 {
+    display: block;
+    line-height: 1.2
+    }
+.calibre12 {
+    height: auto;
+    width: auto
+    }
+.calibre13 {
+    border-collapse: separate;
+    border-spacing: 2px;
+    display: table;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-indent: 0
+    }
+.calibre14 {
+    display: table-row;
+    vertical-align: middle
+    }
+.calibre15 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: inherit
+    }
+.calibre16 {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0
+    }
+.calibre17 {
+    display: block;
+    margin-left: 40px
+    }
+.calibre18 {
+    display: block;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0
+    }
+.calibre2 {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.calibre3 {
+    display: block;
+    page-break-after: always
+    }
+.calibre4 {
+    height: 78px;
+    width: 250px
+    }
+.calibre5 {
+    line-height: 1.2
+    }
+.calibre6 {
+    border: 1px inset;
+    color: gray;
+    display: block;
+    height: 2px;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em
+    }
+.calibre7 {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    text-align: left
+    }
+.calibre8 {
+    font-style: italic
+    }
+.calibre9 {
+    font-weight: bold
+    }
+.email {
+    font-family: monospace
+    }
+.figure-contents {
+    display: block;
+    text-align: center
+    }
+.itemizedlist {
+    display: block;
+    list-style-type: disc;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.listitem {
+    display: list-item;
+    margin-top: 1em
+    }
+.literal {
+    font-family: monospace;
+    line-height: 1.2
+    }
+.literallayout {
+    display: block;
+    text-align: left
+    }
+.orderedlist {
+    display: block;
+    list-style-type: decimal;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.programlisting {
+    background-color: rgb(214, 222, 235);
+    color: #000;
+    display: block;
+    font-family: monospace;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0.25em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    padding-top: 0.25em;
+    white-space: pre-wrap
+    }
+.sitepoint-aboutpage-authorblurb-title {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.83em;
+    text-align: left
+    }
+.sitepoint-callout-bug {
+    font-family: sans-serif;
+    font-weight: bold
+    }
+.sitepoint-chapter-titlepage-label {
+    color: rgb(247, 142, 29);
+    display: block;
+    font-size: 0.5em;
+    text-align: right
+    }
+.sitepoint-chapter-titlepage-number {
+    color: rgb(0, 82, 136);
+    font-size: 2em;
+    line-height: 1.2;
+    vertical-align: text-top
+    }
+.sitepoint-creditspage-contrib {
+    font-family: sans-serif;
+    font-size: 0.77778em;
+    font-weight: bold
+    }
+.sitepoint-creditspage-credits {
+    display: block;
+    font-size: 0.75em
+    }
+.sitepoint-creditspage-legalnotice-title {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    text-align: left
+    }
+.sitepoint-creditspage-publisher {
+    display: block;
+    font-size: 0.77778em;
+    text-align: center
+    }
+.sitepoint-creditspage-title {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    text-align: left
+    }
+.sitepoint-dedicationpage-dedication {
+    display: block;
+    margin-bottom: 0;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 2em
+    }
+.sitepoint-dedicationpage-dedication-title {
+    display: block;
+    text-align: right
+    }
+.sitepoint-formal-example-filename {
+    font-style: normal
+    }
+.sitepoint-formal-example-heading {
+    background-color: rgb(186, 201, 224);
+    color: #000;
+    display: block;
+    font-family: sans-serif;
+    font-size: 0.75em;
+    margin-bottom: 0;
+    padding-bottom: 0.25em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    padding-top: 0.25em;
+    text-align: right
+    }
+.sitepoint-titlepage-author {
+    color: rgb(247, 142, 29);
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.125em;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    text-align: right
+    }
+.sitepoint-titlepage-authorname {
+    font-weight: bold;
+    line-height: 1.2
+    }
+.sitepoint-titlepage-authors {
+    display: block;
+    margin-top: 1em
+    }
+.sitepoint-titlepage-logo {
+    display: block;
+    margin-bottom: 2em;
+    text-align: right
+    }
+.sitepoint-titlepage-title {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    text-align: right
+    }
+.tip {
+    display: block;
+    margin-left: 0.5in;
+    margin-right: 0.5in
+    }
+.title {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.67em;
+    text-align: left
+    }
+.title1 {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.41667em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.83em
+    }
+.title2 {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.title3 {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1.33em
+    }
+.title4 {
+    display: block;
+    font-family: sans-serif;
+    font-size: 0.75em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    text-align: center
+    }
+.title5 {
+    color: rgb(0, 82, 136);
+    display: block;
+    font-family: sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1.67em
+    }
+.toc {
+    display: block
+    }

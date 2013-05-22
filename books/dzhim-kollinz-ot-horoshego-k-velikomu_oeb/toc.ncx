@@ -1,0 +1,627 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="65753852-fa67-4272-a8cf-e836706c5171" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Джим Коллинз – От хорошего к великому</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Предисловие</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos19474"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Члены исследовательской группы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos21541"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Предисловие к русскому изданию</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos37743"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Глава 1. Хорошее - враг великого</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos42586"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Бесстрашная любознательность</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos58770"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Модель "от хорошего к великому"</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos96088"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="7">
+      <navLabel>
+        <text>Вневременная «физика» «от хорошего к великому»</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos107582"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="8">
+      <navLabel>
+        <text>Примечания к главе 1</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos115912"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_9" playOrder="9">
+      <navLabel>
+        <text>Глава 2 Руководители 5 уровня</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos129393"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_10" playOrder="10">
+      <navLabel>
+        <text>Не то, чего мы ждали</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos140109"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_11" playOrder="11">
+      <navLabel>
+        <text>5 уровней иерархии</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos146690"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="12">
+      <navLabel>
+        <text>Скромность + воля = 5 уровень</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos148680"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_13" playOrder="13">
+      <navLabel>
+        <text>Компания - это прежде всего воспитание преемника</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos160928"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_14" playOrder="14">
+      <navLabel>
+        <text>Скромность украшает</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos169850"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_15" playOrder="15">
+      <navLabel>
+        <text>Неколебимая решимость... сделать то, что должно быть сделано</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos185315"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_16" playOrder="16">
+      <navLabel>
+        <text>Окно и зеркало</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos200897"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_17" playOrder="17">
+      <navLabel>
+        <text>Как достичь 5 уровня</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos215562"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_18" playOrder="18">
+      <navLabel>
+        <text>Основные выводы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos228412"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_19" playOrder="19">
+      <navLabel>
+        <text>Неожиданные выводы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos234254"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_20" playOrder="20">
+      <navLabel>
+        <text>Примечания к главе 2</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos235876"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_21" playOrder="21">
+      <navLabel>
+        <text>Глава 3 Сначала кто... затем что</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos250407"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_22" playOrder="22">
+      <navLabel>
+        <text>Не «гений с 1000 помощников»</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos270660"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_23" playOrder="23">
+      <navLabel>
+        <text>Важно, кому вы платите, а не то, как вы платите</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos283840"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_24" playOrder="24">
+      <navLabel>
+        <text>Строгий, но не безжалостный</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos299368"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_25" playOrder="25">
+      <navLabel>
+        <text>Как стать строгим</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos311353"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_26" playOrder="26">
+      <navLabel>
+        <text>«Сначала кто», великие компании, великая жизнь</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos341411"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_27" playOrder="27">
+      <navLabel>
+        <text>Основные выводы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos350392"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_28" playOrder="28">
+      <navLabel>
+        <text>Неожиданные выводы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos355115"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_29" playOrder="29">
+      <navLabel>
+        <text>Примечания к главе 3</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos356330"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_30" playOrder="30">
+      <navLabel>
+        <text>Глава 4 Смотрите суровым фактам в лицо</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos371826"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_31" playOrder="31">
+      <navLabel>
+        <text>«Факты лучше, чем сны»</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos389088"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_32" playOrder="32">
+      <navLabel>
+        <text>Атмосфера, в которой правда бывает услышана</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos407794"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_33" playOrder="33">
+      <navLabel>
+        <text>Неколебимая вера перед лицом суровых фактов</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos438244"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_34" playOrder="34">
+      <navLabel>
+        <text>Основные выводы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos470747"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_35" playOrder="35">
+      <navLabel>
+        <text>Неожиданные заключения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos474220"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_36" playOrder="36">
+      <navLabel>
+        <text>Примечания к главе 4</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos475856"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_37" playOrder="37">
+      <navLabel>
+        <text>Глава 5 «Концепция ежа», или три пересекающихся круга</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos496378"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_38" playOrder="38">
+      <navLabel>
+        <text>Три круга</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos513337"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_39" playOrder="39">
+      <navLabel>
+        <text>Три  круга "концепции ежа"</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos521238"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_40" playOrder="40">
+      <navLabel>
+        <text>Понимание того, что вы можете (или не можете) делать лучше всех</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos524166"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_41" playOrder="41">
+      <navLabel>
+        <text>Заглянем в ваш экономический двигатель что у вас в знаменателе?</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos556461"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_42" playOrder="42">
+      <navLabel>
+        <text>Понять, к чему вы испытываете настоящую страсть</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos578015"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_43" playOrder="43">
+      <navLabel>
+        <text>Победа ясного понимания ситуации над бравадой</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos588753"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_44" playOrder="44">
+      <navLabel>
+        <text>Основные выводы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos615629"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_45" playOrder="45">
+      <navLabel>
+        <text>Неожиданные заключения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos619405"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_46" playOrder="46">
+      <navLabel>
+        <text>Примечания к главе 5</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos621014"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_47" playOrder="47">
+      <navLabel>
+        <text>Глава 6 Культура дисциплины</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos629768"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_48" playOrder="48">
+      <navLabel>
+        <text>Свобода и ответственность как принцип</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos649347"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_49" playOrder="49">
+      <navLabel>
+        <text>Полощите творог</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos662327"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_50" playOrder="50">
+      <navLabel>
+        <text>Культура, а не тирания</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos674113"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_51" playOrder="51">
+      <navLabel>
+        <text>Фанатичная верность  «концепции ежа»</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos689994"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_52" playOrder="52">
+      <navLabel>
+        <text>Перечислите то, что надо перестать делать</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos720619"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_53" playOrder="53">
+      <navLabel>
+        <text>Основные выводы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos732177"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_54" playOrder="54">
+      <navLabel>
+        <text>Неожиданные заключения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos735833"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_55" playOrder="55">
+      <navLabel>
+        <text>Примечания к главе 6</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos737887"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_56" playOrder="56">
+      <navLabel>
+        <text>Глава 7 Технологии как акселераторы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos752686"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_57" playOrder="57">
+      <navLabel>
+        <text>Технологии и «концепция ежа»</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos766316"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_58" playOrder="58">
+      <navLabel>
+        <text>Технологии — это акселератор, а не причина развития</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos790654"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_59" playOrder="59">
+      <navLabel>
+        <text>Технологическая ловушка</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos799720"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_60" playOrder="60">
+      <navLabel>
+        <text>Технологии и страх отстать от других</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos825008"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_61" playOrder="61">
+      <navLabel>
+        <text>Основные выводы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos835752"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_62" playOrder="62">
+      <navLabel>
+        <text>Неожиданные заключения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos839432"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_63" playOrder="63">
+      <navLabel>
+        <text>Примечания к главе 7</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos841065"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_64" playOrder="64">
+      <navLabel>
+        <text>Глава 8 Маховик и порочный круг</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos850212"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_65" playOrder="65">
+      <navLabel>
+        <text>Наращивание потенциала и стремительный рост[56]</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos854534"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_66" playOrder="66">
+      <navLabel>
+        <text>Не просто удачное стечение обстоятельств</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos884262"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_67" playOrder="67">
+      <navLabel>
+        <text>Эффект маховика</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos892798"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_68" playOrder="68">
+      <navLabel>
+        <text>Порочный круг</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos905096"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_69" playOrder="69">
+      <navLabel>
+        <text>Беспорядочные поглощения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos912401"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_70" playOrder="70">
+      <navLabel>
+        <text>Руководители, которые остановили маховик</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos916631"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_71" playOrder="71">
+      <navLabel>
+        <text>Концепция маховика как обобщающая идея</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos922172"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_72" playOrder="72">
+      <navLabel>
+        <text>Основные выводы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos936184"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_73" playOrder="73">
+      <navLabel>
+        <text>Неожиданные заключения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos940225"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_74" playOrder="74">
+      <navLabel>
+        <text>Примечания к главе 8</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos942370"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_75" playOrder="75">
+      <navLabel>
+        <text>Глава 9 ОТ «От хорошего к великому» к «построенным навечно»</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos951044"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_76" playOrder="76">
+      <navLabel>
+        <text>«От хорошего к великому» как первый шаг к «построенным навечно»</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos962205"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_77" playOrder="77">
+      <navLabel>
+        <text>Ключевая идеология: дополнительное измерение устойчивого величия</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos974025"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_78" playOrder="78">
+      <navLabel>
+        <text>Хорошие бихаги, плохие бихаги и прочие связи между двумя концепциями</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos987424"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_79" playOrder="79">
+      <navLabel>
+        <text>Зачем становиться великим?</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1013169"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_80" playOrder="80">
+      <navLabel>
+        <text>Примечания к главе 9</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1038784"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_81" playOrder="81">
+      <navLabel>
+        <text>Эпилог</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1044697"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_82" playOrder="82">
+      <navLabel>
+        <text>Часто задаваемые вопросы</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1044764"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_83" playOrder="83">
+      <navLabel>
+        <text>Приложение 1.А Проект «от хорошего к великому»</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1079380"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_84" playOrder="84">
+      <navLabel>
+        <text>Отбор компаний, которые добились выдающихся результатов</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1085138"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_85" playOrder="85">
+      <navLabel>
+        <text>I этап. От полного перечня к списку из 1435 компаний</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1085665"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_86" playOrder="86">
+      <navLabel>
+        <text>II этап. От 1435 к 126 компаниям</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1088513"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_87" playOrder="87">
+      <navLabel>
+        <text>III этап. От 126 к 19 компаниям</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1093009"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_88" playOrder="88">
+      <navLabel>
+        <text>IV этап. От 19 к 11 компаниям, которые добились выдающихся результатов</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1155186"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_89" playOrder="89">
+      <navLabel>
+        <text>Приложение 1.В Проект «от хорошего к великому» отбор компаний для прямого сравнения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1159390"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_90" playOrder="90">
+      <navLabel>
+        <text>процесс отбора компаний для прямого сравнения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1159598"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_91" playOrder="91">
+      <navLabel>
+        <text>Приложение 1.С проект «от хорошего к великому» несостоявшиеся великие компании</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1173525"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_92" playOrder="92">
+      <navLabel>
+        <text>Приложение 1.D «От хорошего к великому» обзор хода исследования</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1179573"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_93" playOrder="93">
+      <navLabel>
+        <text>Принципы сравнительного анализа</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1232022"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_94" playOrder="94">
+      <navLabel>
+        <text>ПРИЛОЖЕНИЕ 2.А Главы компаний, выбранные среди сотрудников фирмы, против приглашенных со стороны</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1234526"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_95" playOrder="95">
+      <navLabel>
+        <text>СВОДНЫЙ АНАЛИЗ</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1253101"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_96" playOrder="96">
+      <navLabel>
+        <text>ПРИЛОЖЕНИЕ 5.А Ранжирование отраслей</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1259676"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_97" playOrder="97">
+      <navLabel>
+        <text>ПРИЛОЖЕНИЕ 8.А Порочный круг в компаниях прямого сравнения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1269288"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_98" playOrder="98">
+      <navLabel>
+        <text>Компании прямого сравнения</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1269450"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_99" playOrder="99">
+      <navLabel>
+        <text>Несостоявшиеся великие компании</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1283116"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_100" playOrder="100">
+      <navLabel>
+        <text>ПРИЛОЖЕНИЕ 8.А Примечания</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1290352"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_101" playOrder="101">
+      <navLabel>
+        <text>ПРИЛОЖЕНИЕ 8. В Анализ поглощений</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1304128"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_102" playOrder="102">
+      <navLabel>
+        <text>Сноски</text>
+      </navLabel>
+      <content src="Dzhim_Kollinz_-_Ot_khoroshiegho.html#filepos1325971"/>
+    </navPoint>
+  </navMap>
+</ncx>

@@ -1,0 +1,222 @@
+.a {
+    font-size: 0.75em;
+    line-height: 1.2;
+    vertical-align: super
+    }
+.calibre {
+    font-style: italic
+    }
+.calibre1 {
+    font-weight: bold;
+    line-height: 1.2
+    }
+.calibre2 {
+    font-style: italic;
+    line-height: 1.2
+    }
+.calibre3 {
+    font-weight: bold
+    }
+.calibre4 {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 0;
+    margin-left: 5pt;
+    margin-right: 5pt;
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0
+    }
+.calibre5 {
+    display: block;
+    list-style-type: disc;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.calibre6 {
+    display: list-item
+    }
+.cite {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    margin-right: 0;
+    margin-top: 0.5em
+    }
+.empty-line {
+    display: block;
+    height: 1em;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0
+    }
+.epigraph {
+    display: block;
+    font-style: italic;
+    margin-bottom: 2em;
+    margin-left: 30%;
+    margin-right: 1em;
+    margin-top: 1em;
+    text-align: left
+    }
+.image {
+    display: block;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    text-align: center
+    }
+.p {
+    display: block;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    text-align: inherit;
+    text-indent: 0
+    }
+.p1 {
+    display: block;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    text-align: justify;
+    text-indent: 1.5em
+    }
+.poem {
+    display: block;
+    margin-bottom: 0.5em;
+    margin-left: 2em;
+    margin-right: 0;
+    margin-top: 0.5em
+    }
+.stanza {
+    display: block;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.5em;
+    page-break-inside: avoid
+    }
+.subtitle {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 0.5em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center;
+    text-indent: 0
+    }
+.sup {
+    font-size: 0.75em;
+    line-height: 1.2;
+    vertical-align: sub
+    }
+.text-author {
+    display: block;
+    margin-bottom: 0;
+    margin-left: 3em;
+    margin-right: 0;
+    margin-top: 0.2em;
+    text-indent: 0
+    }
+.title {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.title1 {
+    display: block;
+    font-size: 1.83333em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.title2 {
+    display: block;
+    font-size: 1.41667em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    margin-left: 1.563em;
+    margin-right: 0;
+    margin-top: 1em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: left
+    }
+.title3 {
+    display: block;
+    font-size: 1.41667em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    margin-left: 1.923em;
+    margin-right: 0;
+    margin-top: 1em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: left
+    }
+.title4 {
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    margin-left: 2.083em;
+    margin-right: 0;
+    margin-top: 1em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: left
+    }
+.v {
+    display: block;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-left: 1em;
+    text-indent: -1em
+    }
+.z {
+    display: block;
+    font-family: "Liberation Serif", serif;
+    font-size: 1em;
+    margin-bottom: 0;
+    margin-left: 5pt;
+    margin-right: 5pt;
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0
+    }
+.z1 {
+    height: auto;
+    width: auto
+    }

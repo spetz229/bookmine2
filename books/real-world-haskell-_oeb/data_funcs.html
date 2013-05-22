@@ -1,0 +1,190 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: data_map.html
+next: data_passwd.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="data_map.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="data_passwd.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="data_funcs" class="calibre27" id="data_funcs"></a><h3 id="title-IDAMTFIL" class="docSection1Title">13.3. Functions Are Data, Too</h3><a name="x_rL" class="calibre27" id="x_rL"></a><p class="docText">Part<a name="I_indexterm13_d1e29377" class="calibre27" id="I_indexterm13_d1e29377"></a><a name="I_indexterm13_d1e29378" class="calibre27" id="I_indexterm13_d1e29378"></a> of Haskell's<a name="I_indexterm13_d1e29380" class="calibre27" id="I_indexterm13_d1e29380"></a><a name="I_indexterm13_d1e29385" class="calibre27" id="I_indexterm13_d1e29385"></a> power is the ease with which it lets us create and
+    manipulate functions. Let's take a look at a record that stores a function
+    as one of its fields:</p><pre class="calibre39">-- file: ch13/funcrecs.hs
+{- | Our usual CustomColor type to play with -}
+data CustomColor =
+  CustomColor {red :: Int,
+               green :: Int,
+               blue :: Int}
+  deriving (Eq, Show, Read)
+
+{- | A new type that stores a name and a function.
+
+The function takes an Int, applies some computation to it, and returns
+an Int along with a CustomColor -}
+data FuncRec =
+    FuncRec {name :: String,
+             colorCalc :: Int -&gt; (CustomColor, Int)}
+
+plus5func color x = (color, x + 5)
+
+purple = CustomColor 255 0 255
+
+plus5 = FuncRec {name = "plus5", colorCalc = plus5func purple}
+always0 = FuncRec {name = "always0", colorCalc = \_ -&gt; (purple, 0)}</pre><br class="calibre48"/>
+<a name="x_sL" class="calibre27" id="x_sL"></a><p class="docText">Notice the type of the <tt class="calibre34">colorCalc</tt> field: it's a function. It takes an
+    <tt class="calibre34">Int</tt> and returns a tuple of <tt class="calibre34">(CustomColor, Int)</tt>. We create two <tt class="calibre34">FuncRec</tt> records: <tt class="calibre34">plus5</tt> and <tt class="calibre34">always0</tt>. Notice that the <tt class="calibre34">colorCalc</tt> for both of them will always return
+    the color purple. <tt class="calibre34">FuncRec</tt> itself has no
+    field to store the color in, yet that value somehow becomes part of the
+    function itself. This is called a <span class="docEmphasis">closure</span>. Let's play
+    with this a bit:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:l funcrecs.hs</b>
+[1 of 1] Compiling Main             ( funcrecs.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">:t plus5</b>
+plus5 :: FuncRec
+ghci&gt; <b class="calibre40">name plus5</b>
+"plus5"
+ghci&gt; <b class="calibre40">:t colorCalc plus5</b>
+colorCalc plus5 :: Int -&gt; (CustomColor, Int)
+ghci&gt; <b class="calibre40">(colorCalc plus5) 7</b>
+(CustomColor {red = 255, green = 0, blue = 255},12)
+ghci&gt; <b class="calibre40">:t colorCalc always0</b>
+colorCalc always0 :: Int -&gt; (CustomColor, Int)
+ghci&gt; <b class="calibre40">(colorCalc always0) 7</b>
+(CustomColor {red = 255, green = 0, blue = 255},0)</pre><a name="x_tL" class="calibre27" id="x_tL"></a><p class="docText">That worked well enough, but you might wonder how to do
+    something more advanced, such as making a piece of data available in
+    multiple places. A type construction function can be helpful. Here's an
+    example:</p><pre class="calibre39">-- file: ch13/funcrecs2.hs
+data FuncRec =
+    FuncRec {name :: String,
+             calc :: Int -&gt; Int,
+             namedCalc :: Int -&gt; (String, Int)}
+
+mkFuncRec :: String -&gt; (Int -&gt; Int) -&gt; FuncRec
+mkFuncRec name calcfunc =
+    FuncRec {name = name,
+             calc = calcfunc,
+             namedCalc = \x -&gt; (name, calcfunc x)}
+
+plus5 = mkFuncRec "plus5" (+ 5)
+always0 = mkFuncRec "always0" (\_ -&gt; 0)</pre><br class="calibre48"/>
+<a name="x_uL" class="calibre27" id="x_uL"></a><p class="docText">Here we have a function called <tt class="calibre34">mkFuncRec</tt> that takes a <tt class="calibre34">String</tt> and another function as parameters, and
+    then returns a new <tt class="calibre34">FuncRec</tt> record.
+    Notice how both parameters to <tt class="calibre34">mkFuncRec</tt>
+    are used in multiple places. Let's try it out:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:l funcrecs2.hs</b>
+[1 of 1] Compiling Main             ( funcrecs2.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">:t plus5</b>
+plus5 :: FuncRec
+ghci&gt; <b class="calibre40">name plus5</b>
+"plus5"
+ghci&gt; <b class="calibre40">(calc plus5) 5</b>
+10
+ghci&gt; <b class="calibre40">(namedCalc plus5) 5</b>
+("plus5",10)
+ghci&gt; <b class="calibre40">let plus5a = plus5 {name = "PLUS5A"}</b>
+ghci&gt; <b class="calibre40">name plus5a</b>
+"PLUS5A"
+ghci&gt; <b class="calibre40">(namedCalc plus5a) 5</b>
+("plus5",10)</pre><a name="x_vL" class="calibre27" id="x_vL"></a><p class="docText">Notice the creation of <tt class="calibre34">plus5a</tt>. We changed the <tt class="calibre34">name</tt> field, but not the <tt class="calibre34">namedCalc</tt> field. That's why <tt class="calibre34">name</tt> has the new name, but <tt class="calibre34">namedCalc</tt> still returns the name that was passed
+    to <tt class="calibre34">mkFuncRec</tt>; it doesn't change unless
+    we explicitly change it.</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="data_map.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="data_passwd.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

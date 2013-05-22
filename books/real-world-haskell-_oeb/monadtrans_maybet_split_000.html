@@ -1,0 +1,186 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: I_sect118_d1e39964.html
+next: monadtrans_maybet_split_001.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect118_d1e39964.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect118_d1e40515.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="monadtrans_maybet" class="calibre27" id="monadtrans_maybet"></a><h3 id="title-IDAYCIYG" class="docSection1Title">18.6. Understanding Monad Transformers by Building One</h3><a name="x_Qu" class="calibre27" id="x_Qu"></a><p class="docText">To<a name="I_indexterm18_d1e40200" class="calibre27" id="I_indexterm18_d1e40200"></a><a name="I_indexterm18_d1e40201" class="calibre27" id="I_indexterm18_d1e40201"></a> give<a name="ch18-monadsunderstanding" class="calibre27" id="ch18-monadsunderstanding"></a> ourselves some insight into how monad transformers in
+    general work, we will create one and describe its machinery as we go. Our
+    target is simple and useful: <tt class="calibre34">MaybeT</tt>.
+    Surprisingly, though, it is missing from the <tt class="calibre34">mtl</tt> <a name="I_indexterm18_d1e40217" class="calibre27" id="I_indexterm18_d1e40217"></a>library.</p><a name="x_Ru" class="calibre27" id="x_Ru"></a><p class="docText">This monad transformer modifies the behavior of an
+    underlying monad m a by wrapping its type parameter with
+    Maybe, in order to get m (Maybe a). As with the
+    Maybe monad, if we call <i class="docEmphasis">fail</i> in the MaybeT monad
+    transformer, execution terminates early.</p><a name="x_Su" class="calibre27" id="x_Su"></a><p class="docText">In order to turn m (Maybe a) into a
+    Monad instance, we must make it a distinct type, via a
+    <tt class="calibre34">newtype</tt> declaration:</p><pre class="calibre39">-- file: ch18/MaybeT.hs
+newtype MaybeT m a = MaybeT {
+      runMaybeT :: m (Maybe a)
+    }</pre><br class="calibre48"/>
+<a name="x_Tu" class="calibre27" id="x_Tu"></a><p class="docText">We now need to define the three standard monad functions.
+    The most complex is <i class="docEmphasis">(&gt;&gt;=)</i>, and
+    its innards shed the most light on what we are actually doing. Before we
+    delve into its operation, let us first take a look at its type:</p><pre class="calibre39">-- file: ch18/MaybeT.hs
+bindMT :: (Monad m) =&gt; MaybeT m a -&gt; (a -&gt; MaybeT m b) -&gt; MaybeT m b</pre><br class="calibre48"/>
+<a name="x_Uu" class="calibre27" id="x_Uu"></a><p class="docText">To understand this type signature, hark back to our
+    discussion of multiparameter typeclasses in <a class="docLink" href="I_sect115_d1e34892.html#monadcase_mptc">Section 15.5.1</a>. The thing that we intend to make a
+    Monad instance is the <span class="docEmphasis">partial type</span>
+    MaybeT m; this <a name="I_indexterm18_d1e40275" class="calibre27" id="I_indexterm18_d1e40275"></a>has the usual single type <span class="docEmphasis">parameter</span>, <span class="docMonofont">a</span>, that
+    satisfies the requirements of the Monad typeclass.</p><a name="x_Vu" class="calibre27" id="x_Vu"></a><p class="docText">The trick to understanding the body of our <i class="docEmphasis">(&gt;&gt;=)</i> implementation is that everything
+    inside the <tt class="calibre34">do</tt> block executes in the
+    <span class="docEmphasis">underlying</span> monad m, whatever that
+    is:</p><pre class="calibre39">-- file: ch18/MaybeT.hs
+x `bindMT` f = MaybeT $ do
+                 unwrapped &lt;- runMaybeT x
+                 case unwrapped of
+                   Nothing -&gt; return Nothing
+                   Just y -&gt; runMaybeT (f y)</pre><br class="calibre48"/>
+<a name="x_Wu" class="calibre27" id="x_Wu"></a><p class="docText">Our <i class="docEmphasis">runMaybeT</i>
+    function unwraps the result contained in <span class="docMonofont">x</span>. Next,
+    recall that the <tt class="calibre34">&lt;-</tt> symbol desugars to <i class="docEmphasis">(&gt;&gt;=)</i>: a monad transformer's <i class="docEmphasis">(&gt;&gt;=)</i> must use the underlying monad's
+    <i class="docEmphasis">(&gt;&gt;=)</i>. The final bit of case
+    analysis determines whether we short-circuit or chain our computation.
+    Finally, look back at the top of the body. Here, we must wrap the result
+    with the MaybeT constructor, in order to once again hide the
+    underlying monad.</p><a name="x_Xu" class="calibre27" id="x_Xu"></a><p class="docText">The <tt class="calibre34">do</tt> notation just
+    shown might be pleasant to read, but it hides the fact that we are relying
+    on the underlying monad's <i class="docEmphasis">(&gt;&gt;=)</i>
+    implementation. Here is a more idiomatic version of <i class="docEmphasis">(&gt;&gt;=)</i> for MaybeT that makes
+    this clearer:</p><pre class="calibre39">-- file: ch18/MaybeT.hs
+x `altBindMT` f =
+    MaybeT $ runMaybeT x &gt;&gt;= maybe (return Nothing) (runMaybeT . f)</pre><br class="calibre48"/>
+<a name="x_Yu" class="calibre27" id="x_Yu"></a><p class="docText">Now that we understand what <i class="docEmphasis">(&gt;&gt;=)</i> is doing, our implementations of
+    <i class="docEmphasis">return</i> and <i class="docEmphasis">fail</i> need no explanation, and neither does our
+    Monad instance<a name="ch18-stackmoving" class="calibre27" id="ch18-stackmoving"></a>:</p><pre class="calibre39">-- file: ch18/MaybeT.hs
+returnMT :: (Monad m) =&gt; a -&gt; MaybeT m a
+returnMT a = MaybeT $ return (Just a)
+
+failMT :: (Monad m) =&gt; t -&gt; MaybeT m a
+failMT _ = MaybeT $ return Nothing
+ 
+instance (Monad m) =&gt; Monad (MaybeT m) where
+  return = returnMT
+  (&gt;&gt;=) = bindMT
+  fail = failMT</pre><br class="calibre48"/>
+<a name="monadtrans_maybetd1e40692" class="calibre27" id="monadtrans_maybetd1e40692"></a><h4 id="title-IDAAJIYG" class="docSection1Title">18.6.1. Creating a Monad Transformer</h4><a name="x_Zu" class="calibre27" id="x_Zu"></a><p class="docText">To turn our type into<a name="I_indexterm18_d1e40369" class="calibre27" id="I_indexterm18_d1e40369"></a> a monad transformer, we must provide an instance
+      of<a name="I_indexterm18_d1e40377" class="calibre27" id="I_indexterm18_d1e40377"></a> the MonadTrans class so that a user can
+      access the underlying monad:</p><pre class="calibre39">-- file: ch18/MaybeT.hs
+instance MonadTrans MaybeT where
+    lift m = MaybeT (Just `liftM` m)</pre><br class="calibre48"/>
+<a name="x_au" class="calibre27" id="x_au"></a><p class="docText">The underlying monad starts out with a type parameter of
+      a: we "inject" the <tt class="calibre34">Just</tt>
+      constructor so that it will acquire the type that we need, Maybe
+      a. We then hide the monad with our MaybeT
+      constructor.</p><a name="monadtrans_maybetd1e40731" class="calibre27" id="monadtrans_maybetd1e40731"></a><h4 id="title-IDAGKIYG" class="docSection1Title">18.6.2. More Typeclass Instances</h4><a name="x_bu" class="calibre27" id="x_bu"></a><p class="docText">Once we have<a name="I_indexterm18_d1e40408" class="calibre27" id="I_indexterm18_d1e40408"></a><a name="I_indexterm18_d1e40413" class="calibre27" id="I_indexterm18_d1e40413"></a> an instance for MonadTrans defined, we can
+      use it to define instances for the umpteen other <tt class="calibre34">mtl</tt>
+      typeclasses:</p><pre class="calibre39">-- file: ch18/MaybeT.hs
+instance (MonadIO m) =&gt; MonadIO (MaybeT m) where
+  liftIO m = lift (liftIO m)
+
+instance (MonadState s m) =&gt; MonadState s (MaybeT m) where
+  get = lift get
+  put k = lift (put k)
+
+-- ... and so on for MonadReader, MonadWriter, etc ...</pre><br class="calibre48"/>
+<a name="x_cu" class="calibre27" id="x_cu"></a><p class="docText">Because several of the <tt class="calibre34">mtl</tt> typeclasses use
+      functional dependencies, some of our instance declarations require us to
+      considerably relax <span class="docMonofont">GHC</span>'s
+      usual strict type checking rules. (If we were to forget any of these
+      directives, the compiler would helpfully advise us which ones we needed
+      in its error messages.)</p><pre class="calibre39">-- file: ch18/MaybeT.hs
+{-# LANGUAGE FlexibleInstances, MultiParamTypeClasses,
+             UndecidableInstances #-}</pre><br class="calibre48"/>
+<a name="x_du" class="calibre27" id="x_du"></a><p class="docText">Is it better to use <i class="docEmphasis">lift</i> explicitly or to spend time writing
+      these boilerplate instances? That depends on what we expect to do with
+      our monad transformer. If we're going to use it in just a few restricted
+      situations, we can get away with providing an instance for
+      MonadTrans alone. In this case, a few more instances might
+      still make sense, such as MonadIO. On the other hand, if
+      our transformer is going to pop up in diverse situations throughout a
+      body of code, spending a dull hour to write those instances might be a
+      good investment.</p><a name="monadtrans_maybetd1e40776" class="calibre27" id="monadtrans_maybetd1e40776"></a><h4 id="title-IDAYLIYG" class="docSection1Title">18.6.3. Replacing the Parse Type with a Monad Stack</h4><a name="x_eu" class="calibre27" id="x_eu"></a><p class="docText">Now that we have developed a monad transformer<a name="I_indexterm18_d1e40453" class="calibre27" id="I_indexterm18_d1e40453"></a> that can exit early, we can use it to bail if, for
+      example, a parse fails partway through. We could thus replace the
+      Parse type that we developed in <a class="docLink" href="binary_implicit.html#binary_implicit">Section 10.4</a> with a monad customized to our
+      needs:</p><pre class="calibre39">-- file: ch18/MaybeTParse.hs
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+
+module MaybeTParse
+    (
+      Parse
+    , evalParse
+    ) where
+
+import MaybeT
+import Control.Monad.State
+import Data.Int (Int64)
+import qualified Data.ByteString.Lazy as L
+
+data ParseState = ParseState {
+      string :: L.ByteString
+    , offset :: Int64
+    } deriving (Show)
+
+newtype Parse a = P {
+      runP :: MaybeT (State ParseState) a
+    } deriving (Monad, MonadState ParseState)
+
+evalParse :: Parse a -&gt; L.ByteString -&gt; Maybe a
+evalParse m s = evalState (runMaybeT (runP m)) (ParseState s 0)</pre><br class="calibre48"/>
+<a name="I_sidebar18_d1e40466" class="calibre27" id="I_sidebar18_d1e40466"></a></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

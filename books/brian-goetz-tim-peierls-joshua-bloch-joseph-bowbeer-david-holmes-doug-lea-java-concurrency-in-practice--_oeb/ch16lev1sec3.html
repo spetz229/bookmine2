@@ -1,0 +1,51 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: ch16lev1sec2.html
+next: ch16lev1sec4.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<a name="ch16lev1sec3" class="calibre18" id="ch16lev1sec3"></a>
+<h3 id="647011-967" class="docSection1Title">16.3. Initialization Safety</h3>
+<p class="docText1">The guarantee of <span class="docEmphasis">initialization safety</span> allows properly constructed <span class="docEmphasis">immutable</span> objects to be safely shared across threads without synchronization, regardless of how they are publishedeven if published using a data race. (This means that <tt class="calibre25">UnsafeLazyInitialization</tt> is actually safe <span class="docEmphasis">if</span> <tt class="calibre25">Resource</tt> is immutable.)</p>
+<p class="docText1">Without initialization safety, supposedly immutable objects like <tt class="calibre25">String</tt> can appear to change their value if synchronization is not used by both the publishing and consuming threads. The security architecture relies on the immutability of <tt class="calibre25">String</tt>; the lack of initialization safety could create security vulnerabilities that allow malicious code to bypass security checks.</p>
+<a name="ch16sb03" class="calibre18" id="ch16sb03"></a><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<p class="docText1">Initialization safety guarantees that for <span class="docEmphasis">properly constructed</span> objects, all threads will see the correct values of final fields that were set by the constructor, regardless of how the object is published. Further, any variables that can be <span class="docEmphasis">reached</span> through a final field of a properly constructed object (such as the elements of a final array or the contents of a <tt class="calibre25">HashMap</tt> referenced by a final field) are also guaranteed to be visible to other threads. <sup class="docFootnote"><a class="calibre2" href="#ch16fn06">[6]</a></sup></p>
+</td></tr></table></p><p class="calibre1"> </p><blockquote class="calibre19"><p class="docFootnote1"><sup class="calibre27"><a name="ch16fn06" class="calibre18" id="ch16fn06">[6]</a></sup> This applies only to objects that are reachable <span class="docEmphasis">only</span> through <tt class="calibre35">final</tt> fields of the object under construction.</p></blockquote>
+<p class="docText1"><a name="iddle2172" class="calibre18" id="iddle2172"></a><a name="iddle2536" class="calibre18" id="iddle2536"></a><a name="iddle2710" class="calibre18" id="iddle2710"></a><a name="iddle3853" class="calibre18" id="iddle3853"></a>For objects with final fields, initialization safety prohibits reordering any part of construction with the initial load of a reference to that object. All writes to final fields made by the constructor, as well as to any variables reachable through those fields, become "frozen" when the constructor completes, and any thread that obtains a reference to that object is guaranteed to see a value that is at least as up to date as the frozen value. Writes that initialize variables reachable through final fields are not reordered with operations following the post-construction freeze.</p>
+<p class="docText1">Initialization safety means that <tt class="calibre25">SafeStates</tt> in <a class="calibre2" href="#ch16list08">Listing 16.8</a> could be safely published even through unsafe lazy initialization or stashing a reference to a <tt class="calibre25">SafeStates</tt> in a public static field with no synchronization, even though it uses no synchronization and relies on the non-thread-safe <tt class="calibre25">HashSet</tt>.</p>
+<a name="ch16list08" class="calibre18" id="ch16list08"></a><h5 id="title-IDAT2GPH" class="docExampleTitle">Listing 16.8. Initialization Safety for Immutable Objects.</h5><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<pre class="calibre30">@ThreadSafe
+public class SafeStates {
+    private  <span class="docEmphStrong">final</span>  Map&lt;String, String&gt; states;
+
+    public SafeStates() {
+        states = new HashMap&lt;String, String&gt;();
+        states.put("alaska", "AK");
+        states.put("alabama", "AL");
+        ...
+        states.put("wyoming", "WY");
+    }
+
+    public String getAbbreviation(String s) {
+        return states.get(s);
+    }
+}
+</pre><br class="calibre11"/>
+</td></tr></table></p>
+<p class="docText1">However, a number of small changes to <tt class="calibre25">SafeStates</tt> would take away its thread safety. If <tt class="calibre25">states</tt> were not final, or if any method other than the constructor modified its contents, initialization safety would not be strong enough to safely access <tt class="calibre25">SafeStates</tt> without synchronization. If <tt class="calibre25">SafeStates</tt> had other nonfinal fields, other threads might still see incorrect values of those fields. And allowing the object to escape during construction invalidates the initialization-safety guarantee.</p>
+<a name="ch16sb04" class="calibre18" id="ch16sb04"></a><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<p class="docText1">Initialization safety makes visibility guarantees only for the values that are reachable through final fields as of the time the constructor finishes. For values reachable through nonfinal fields, or values that may change after construction, you must use synchronization to ensure visibility.</p>
+</td></tr></table></p><p class="calibre1"> </p>
+
+<p class="calibre1"> </p>
+
+</div>
+
+{% endraw %}
+

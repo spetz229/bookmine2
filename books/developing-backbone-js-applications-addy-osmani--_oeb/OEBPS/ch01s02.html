@@ -1,0 +1,80 @@
+---
+layout: page
+title: "Developing Backbone.js Applications"
+prev: OEBPS/ch01.html
+next: OEBPS/ch01s03.html
+book_path: books/developing-backbone-js-applications-addy-osmani--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="MVC"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="mvc" class="calibre1"></a>MVC</h1></div></div></div><p class="calibre6">
+    MVC (Model-View-Controller) is an architectural design pattern that
+    encourages improved application organization through a separation of
+    concerns. It enforces the isolation of business data (Models) from
+    user interfaces (Views), with a third component (Controllers)
+    traditionally present to manage logic, user-input and the
+    coordination of models and views. The pattern was originally
+    designed by
+    <a class="ulink" href="http://en.wikipedia.org/wiki/Trygve_Reenskaug">Trygve
+    Reenskaug</a> while working on Smalltalk-80 (1979), where it was
+    initially called Model-View-Controller-Editor. MVC was described in
+    depth in
+    <a class="ulink" href="http://www.amazon.co.uk/Design-patterns-elements-reusable-object-oriented/dp/0201633612"><span class="firstname">“<span class="firstname">Design
+    Patterns: Elements of Reusable Object-Oriented
+    Software</span>”</span></a> (The <span class="firstname">“<span class="firstname">GoF</span>”</span> or <span class="firstname">“<span class="firstname">Gang of
+    Four</span>”</span> book) in 1994, which played a role in popularizing its
+    use.
+  </p><div class="book" title="Smalltalk-80 MVC"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="smalltalk-80-mvc" class="calibre1"></a>Smalltalk-80 MVC</h2></div></div></div><p class="calibre6">
+      It’s important to understand what the original MVC pattern was
+      aiming to solve as it has changed quite heavily since the days of
+      its origin. Back in the 70’s, graphical user-interfaces were far
+      and few between. An approach known as
+      <a class="ulink" href="http://martinfowler.com/eaaDev/uiArchs.html">Separated
+      Presentation</a> began to be used as a means to make a clear
+      division between domain objects which modeled concepts in the real
+      world (e.g a photo, a person) and the presentation objects which
+      were rendered to the user’s screen.
+    </p><p class="calibre6">
+      The Smalltalk-80 implementation of MVC took this concept further
+      and had an objective of separating out the application logic from
+      the user interface. The idea was that decoupling these parts of
+      the application would also allow the reuse of models for other
+      interfaces in the application. There are some interesting points
+      worth noting about Smalltalk-80’s MVC architecture:
+    </p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre6">
+          A Domain element was known as a Model and were ignorant of the
+          user-interface (Views and Controllers)
+        </p></li><li class="listitem"><p class="calibre6">
+          Presentation was taken care of by the View and the Controller,
+          but there wasn’t just a single view and controller. A
+          View-Controller pair was required for each element being
+          displayed on the screen and so there was no true separation
+          between them
+        </p></li><li class="listitem"><p class="calibre6">
+          The Controller’s role in this pair was handling user input
+          (such as key-presses and click events), doing something
+          sensible with them.
+        </p></li><li class="listitem"><p class="calibre6">
+          The Observer pattern was relied upon for updating the View
+          whenever the Model changed
+        </p></li></ul></div><p class="calibre6">
+      Developers are sometimes surprised when they learn that the
+      Observer pattern (nowadays commonly implemented as a
+      Publish/Subscribe system) was included as a part of MVC’s
+      architecture decades ago. In Smalltalk-80’s MVC, the View and
+      Controller both observe the Model: anytime the Model changes, the
+      Views react. A simple example of this is an application backed by
+      stock market data - for the application to show real-time
+      information, any change to the data in its Models should result in
+      the View being refreshed instantly.
+    </p><p class="calibre6">
+      Martin Fowler has done an excellent job of writing about the
+      <a class="ulink" href="http://martinfowler.com/eaaDev/uiArchs.html">origins</a>
+      of MVC over the years and if you are interested in further
+      historical information about Smalltalk-80’s MVC, I recommend
+      reading his work.
+    </p></div></div></div>
+
+{% endraw %}
+

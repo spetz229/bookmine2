@@ -1,0 +1,173 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: install_split_001.html
+next: installing_haskell_software.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="install_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="installing_haskell_software.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="I_sect1_d1e52828" class="calibre27" id="I_sect1_d1e52828"></a><h3 id="title-IDAHLLVD" class="docSection1Title">A.1. Installing GHC</h3><a name="x_m" class="calibre27" id="x_m"></a><p class="docText">Because <span class="docMonofont">GHC</span> runs
+    on a large number of platforms, we focus on a handful of the most
+    popular.</p><a name="install_win" class="calibre27" id="install_win"></a><h4 id="title-IDASLLVD" class="docSection1Title">A.1.1. Windows</h4><a name="x_n" class="calibre27" id="x_n"></a><p class="docText">The prebuilt binary packages of <span class="docMonofont">GHC</span> should work on<a name="I_indexterm_d1e52844" class="calibre27" id="I_indexterm_d1e52844"></a> Windows Vista and XP (even Windows 2000). We have
+      installed <span class="docMonofont">GHC</span> 6.8.3 under
+      Windows XP Service Pack 2; the following paragraphs detail the steps we
+      followed.</p><a name="install_wind1e53117" class="calibre27" id="install_wind1e53117"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_o" class="calibre27" id="x_o"></a></p><p class="docText">On Windows, <span class="docMonofont">GHC</span> requires about 400 MB of disk space.
+        The exact amount will vary from release to release.</p></div><a name="x_p" class="calibre27" id="x_p"></a><p class="docText">Our first step is to visit the <span class="docMonofont">GHC at </span>
+      (see <a class="docLink" href="#firefoxscreenshot">Figure A-1</a>) and follow the link to the
+      current stable release. Scroll down to the section entitled
+      "Binary packages," and then again to the subsection for
+      Windows. Download the installer; in our case, it's named <i class="docEmphasis">ghc-6.8.3-i386-windows.exe</i>.</p><a name="firefoxscreenshot" class="calibre27" id="firefoxscreenshot"></a><p class="calibre37"><div class="calibre61"><h5 class="docTableTitle">Figure A-1. Screenshot of Firefox, displaying the GHC download page</h5><a name="I_mediaobject_d1e52876" class="calibre27" id="I_mediaobject_d1e52876"></a></div></p><p class="docText"><img border="0" alt="" src="img39.png" class="calibre45"/></p><br class="calibre48"/><a name="x_q" class="calibre27" id="x_q"></a><p class="docText">After the installer has downloaded, double-click it to
+      start the installation process. This involves stepping through a normal
+      Windows installer wizard (see <a class="docLink" href="#GHC_installation">Figure A-2</a>).</p><a name="GHC_installation" class="calibre27" id="GHC_installation"></a><p class="calibre37"><div class="calibre61"><h5 class="docTableTitle">Figure A-2. Screenshot of the GHC installation wizard on Windows</h5><a name="I_mediaobject_d1e52888" class="calibre27" id="I_mediaobject_d1e52888"></a></div></p><p class="docText"><img border="0" alt="" src="img41.png" class="calibre45"/></p><br class="calibre48"/><a name="x_r" class="calibre27" id="x_r"></a><p class="docText">Once the installer has finished, the Start Menu's
+      "All Programs" submenu (see <a class="docLink" href="#XP_start_menu">Figure A-3</a>) should have a <span class="docMonofont">GHC</span> folder, inside which you'll find an
+      icon that you can use to run <i class="docEmphasis">ghci</i>.</p><a name="XP_start_menu" class="calibre27" id="XP_start_menu"></a><p class="calibre37"><div class="calibre61"><h5 class="docTableTitle">Figure A-3. Screenshot of the Windows XP Start menu, showing the GHC
+        submenu</h5><a name="I_mediaobject_d1e52909" class="calibre27" id="I_mediaobject_d1e52909"></a></div></p><p class="docText"><img border="0" alt="" src="img43.png" class="calibre45"/></p><br class="calibre48"/><a name="x_s" class="calibre27" id="x_s"></a><p class="docText">Clicking the <i class="docEmphasis">ghci</i> icon
+      brings up a normal Windows console window that is running <i class="docEmphasis">ghci</i> (see <a class="docLink" href="#GHC_interpreter">Figure A-4</a>).</p><a name="GHC_interpreter" class="calibre27" id="GHC_interpreter"></a><p class="calibre37"><div class="calibre61"><h5 class="docTableTitle">Figure A-4. Screenshot of the ghci interpreter running on Windows</h5><a name="I_mediaobject_d1e52927" class="calibre27" id="I_mediaobject_d1e52927"></a></div></p><p class="docText"><img border="0" alt="" src="img45.png" class="calibre45"/></p><br class="calibre48"/><a name="install_wind1e53199" class="calibre27" id="install_wind1e53199"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_t" class="calibre27" id="x_t"></a></p><p class="docText">The <span class="docMonofont">GHC</span>
+        installer automatically modifies your user account's
+        PATH <span class="docEmphasis">environment</span>
+        variable so that commands such as <i class="docEmphasis">ghc</i> will be present in the command shell's
+        search path (i.e., you can type a <span class="docMonofont">GHC</span> command name without typing its
+        complete path). This change will take effect the next time you open a
+        command shell.</p></div><a name="install_mac" class="calibre27" id="install_mac"></a><h4 id="title-IDARQLVD" class="docSection1Title">A.1.2. Mac OS X</h4><a name="x_u" class="calibre27" id="x_u"></a><p class="docText">We have<a name="I_indexterm_d1e52958" class="calibre27" id="I_indexterm_d1e52958"></a> installed <span class="docMonofont">GHC</span>
+      6.8.3 under Mac OS X 10.5 (Leopard), on an Intel-based MacBook. Before
+      installing <span class="docMonofont">GHC</span>, the Xcode
+      development system must already be installed.</p><a name="x_A1" class="calibre27" id="x_A1"></a><p class="docText">The Xcode software installer may have come bundled on a
+      DVD with your Mac. If not (or you can't find it), you should be able to
+      download it from Apple. Once you've finished installing Xcode, continue
+      on to download <span class="docMonofont">GHC</span>
+      itself.</p><a name="x_v" class="calibre27" id="x_v"></a><p class="docText">Visit the <span class="docMonofont">GHC</span>
+<a class="docLink" target="_blank" href="http://www.haskell.org/ghc/download.html">download
+      page</a> and follow the link to the current stable release. Scroll
+      down to the section entitled "Binary packages," and then
+      again to the subsection for Mac OS X. There is a single installer
+      package available. Download and run it.</p><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><p class="docNormalTitle">Terminal at your fingertips yet?</p><a name="x_F1" class="calibre27" id="x_F1"></a><p class="docText">Since most of your interactions with <span class="docMonofont">GHC</span> will be through a <span class="docMonofont">Terminal</span> window, this might be a good
+        time to add the <span class="docMonofont">Terminal</span>
+        application to your dock (if you haven't already done so). You can
+        find it in the system's <i class="docEmphasis">/Applications/Utilities</i> folder.</p></td></tr></table></td></tr></table></p><br class="calibre48"/><a name="x_I1" class="calibre27" id="x_I1"></a><p class="docText">The installation process should take a minute or two.
+      Finally, you should be able to successfully run the <i class="docEmphasis">ghci</i> command from your shell prompt (see <a class="docLink" href="#screenshot_ghci">Figure A-5</a>).</p><a name="screenshot_ghci" class="calibre27" id="screenshot_ghci"></a><p class="calibre37"><div class="calibre61"><h5 class="docTableTitle">Figure A-5. Screenshot of the ghci interpreter running in a Terminal window
+        on Mac OS X</h5><a name="I_mediaobject_d1e53011" class="calibre27" id="I_mediaobject_d1e53011"></a></div></p><p class="docText"><img border="0" alt="" src="img47.png" class="calibre45"/></p><br class="calibre48"/><a name="install_macd1e53282" class="calibre27" id="install_macd1e53282"></a><h5 id="title-IDAFTLVD" class="docSection3Title">A.1.2.1. Alternatives</h5><a name="x_WN1" class="calibre27" id="x_WN1"></a><p class="docText">Both the MacPorts and Fink projects provide builds of
+        <span class="docMonofont">GHC</span>.</p><a name="install_debian" class="calibre27" id="install_debian"></a><h4 id="title-IDAQTLVD" class="docSection1Title">A.1.3. Ubuntu and Debian Linux</h4><a name="x_XN1" class="calibre27" id="x_XN1"></a><p class="docText">Under both Ubuntu <a name="I_indexterm_d1e53029" class="calibre27" id="I_indexterm_d1e53029"></a><a name="I_indexterm_d1e53032" class="calibre27" id="I_indexterm_d1e53032"></a>and Debian, you can install a minimal working version of
+      <span class="docMonofont">GHC</span> by running <i class="docEmphasis">sudo aptitude install ghc6</i> from a shell
+      prompt.</p><a name="x_YN1" class="calibre27" id="x_YN1"></a><p class="docText">These distros maintain a small core <span class="docMonofont">GHC</span> package, which is insufficient for
+      much practical development. However, they make a number of additional
+      prebuilt packages available; run <i class="docEmphasis">apt-cache
+      search libghc6</i> to find a complete list of these prebuilt
+      packages. We recommend that you install at least the <tt class="calibre34">mtl</tt>
+      package, using <i class="docEmphasis">sudo aptitude install
+      libghc6-mtl-dev</i>.</p><a name="x_ZN1" class="calibre27" id="x_ZN1"></a><p class="docText">Since you will probably want to profile the performance
+      of your Haskell programs at some point, you should also install the
+      <tt class="calibre34">ghc6-prof</tt> package.</p><a name="install_fedora" class="calibre27" id="install_fedora"></a><h4 id="title-IDA4ULVD" class="docSection1Title">A.1.4. Fedora Linux</h4><a name="x_J1" class="calibre27" id="x_J1"></a><p class="docText"><span class="docMonofont">GHC</span> is
+      available<a name="I_indexterm_d1e53068" class="calibre27" id="I_indexterm_d1e53068"></a> as a standard Fedora binary package. From a shell, all
+      you need to do is run the following command:</p><pre class="calibre39"> <b class="calibre40">sudo yum -y install ghc ghc-doc ghc683-prof</b></pre><a name="x_aN1" class="calibre27" id="x_aN1"></a><p class="docText">The <tt class="calibre34">base</tt> package, containing the <i class="docEmphasis">ghc</i> and <i class="docEmphasis">ghci</i> commands and libraries, is <i class="docEmphasis">ghc</i>. The <tt class="calibre34">ghc-doc</tt> package
+      contains the <span class="docMonofont">GHC</span> user guide,
+      and command and library documentation. The <tt class="calibre34">ghc683</tt>-prof
+      package contains profiling-capable versions of the standard <span class="docEmphasis">libraries</span> (its version number may have
+      changed by the time you read this).</p><a name="x_K1" class="calibre27" id="x_K1"></a><p class="docText">Once installation has finished, you should be able to
+      run <i class="docEmphasis">ghci</i> from the shell immediately.
+      You won't need to change your shell's search path or set any environment
+      <span class="docEmphasis">variables</span>.</p><a name="I_sect1_d1e52828d1e53377" class="calibre27" id="I_sect1_d1e52828d1e53377"></a><h4 id="title-IDA1WLVD" class="docSection1Title">A.1.5. FreeBSD</h4><a name="x_bN1" class="calibre27" id="x_bN1"></a><p class="docText">Under FreeBSD, run<a name="I_indexterm_d1e53115" class="calibre27" id="I_indexterm_d1e53115"></a> the following commands:</p><pre class="calibre39">          $
+          <b class="calibre40">cd /usr/ports/lang/ghc</b>
+          $
+          <b class="calibre40">sudo make install clean</b></pre><a name="x_cN1" class="calibre27" id="x_cN1"></a><p class="docText">This will download and build <span class="docMonofont">GHC</span> from source. You should expect the
+      process to take several hours.</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="install_split_000.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="installing_haskell_software.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

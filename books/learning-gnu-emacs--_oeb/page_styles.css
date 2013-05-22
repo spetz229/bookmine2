@@ -1,0 +1,10 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: "DejaVu Serif";
+    font-style: normal;
+    font-weight: normal;
+    src: url(OEBPS/DejaVuSerif.otf)
+    }

@@ -1,0 +1,101 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: monads_state_split_000.html
+next: I_sect114_d1e33514.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<p class="calibre37"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="sfbody1"><tr class="calibre16"><td class="v3"><h2 class="docSidebarTitle" id="calibre_pb_0">Exercise</h2><div class="calibre15"><ol class="docList2" type="1"><li class="calibre19"><div class="calibre15"><p class="docText">Rewrite <i class="docEmphasis">getRandom</i> to
+            use <tt class="calibre34">do</tt> notation.</p></div></li></ol></div></td></tr></table></p><br class="calibre20"/><a name="monads_stated1e33707" class="calibre5" id="monads_stated1e33707"></a><h4 id="title-IDAK24SI" class="docSection1Title">14.13.7. Running the State Monad</h4><a name="x_Ca" class="calibre5" id="x_Ca"></a><p class="docText">As we've<a name="I_indexterm14_d1e33377" class="calibre27" id="I_indexterm14_d1e33377"></a><a name="I_indexterm14_d1e33382" class="calibre27" id="I_indexterm14_d1e33382"></a> already mentioned, each monad has its own specialized
+      evaluation functions. In the case of the <tt class="calibre34">State</tt> monad, we
+      have several to choose from:</p><dl class="docList"><dt class="calibre20"><br class="calibre20"/><p class="calibre37"><span class="docPubcolor">
+<i class="docEmphasis">runState</i>
+</span></p></dt><dd class="calibre38"><p class="docText">Returns both the result and the final state</p></dd><dt class="calibre20"><br class="calibre20"/><p class="calibre37"><span class="docPubcolor">
+<i class="docEmphasis">evalState</i>
+</span></p></dt><dd class="calibre38"><p class="docText">Returns only the result, throwing away the final
+            state</p></dd><dt class="calibre20"><br class="calibre20"/><p class="calibre37"><span class="docPubcolor">
+<i class="docEmphasis">execState</i>
+</span></p></dt><dd class="calibre38"><p class="docText">Throws the result away, returning only the final
+            state</p></dd></dl><a name="x_Ga" class="calibre5" id="x_Ga"></a><p class="docText">The <i class="docEmphasis">evalState</i> and
+      <i class="docEmphasis">execState</i> functions are simply
+      compositions of <i class="docEmphasis">fst</i> and <i class="docEmphasis">snd</i> with <i class="docEmphasis">runState</i>, respectively. Thus, of the three,
+      <i class="docEmphasis">runState</i> is the one most worth
+      remembering.</p><a name="x_Th" class="calibre5" id="x_Th"></a><p class="docText">Here's a complete example of how to implement our
+      <i class="docEmphasis">getTwoRandoms</i> function:</p><pre class="calibre35">-- file: ch14/Random.hs
+runTwoRandoms :: IO (Int, Int)
+runTwoRandoms = do
+  oldState &lt;- getStdGen
+  let (result, newState) = runState getTwoRandoms oldState
+  setStdGen newState
+  return result</pre><br class="calibre20"/>
+<a name="x_Uh" class="calibre5" id="x_Uh"></a><p class="docText">The call to <i class="docEmphasis">runState</i> follows a standard pattern: we pass
+      it a function in the <tt class="calibre34">State</tt> monad and an initial state. It
+      returns the result of the function and the final state.</p><a name="x_Vh" class="calibre5" id="x_Vh"></a><p class="docText">The code surrounding the call to <i class="docEmphasis">runState</i> merely obtains the current global
+      StdGen value, and then replaces it afterwards so that
+      subsequent calls to <i class="docEmphasis">runTwoRandoms</i>
+      or other random generation functions will pick up the updated
+      state.</p><a name="monads_stated1e33803" class="calibre5" id="monads_stated1e33803"></a><h4 id="title-IDAX54SI" class="docSection1Title">14.13.8. What About a Bit More State?</h4><a name="x_Wh" class="calibre5" id="x_Wh"></a><p class="docText">It's a little hard to imagine writing much interesting
+      code in which there's only a single state value to pass around. When we
+      want to track multiple pieces of state at once, the usual trick is to
+      maintain them in a data type. The following is an example of keeping
+      track of how many of random numbers we are handing out:</p><pre class="calibre35">-- file: ch14/Random.hs
+data CountedRandom = CountedRandom {
+      crGen :: StdGen
+    , crCount :: Int
+    }
+
+type CRState = State CountedRandom
+
+getCountedRandom :: Random a =&gt; CRState a
+getCountedRandom = do
+  st &lt;- get
+  let (val, gen') = random (crGen st)
+  put CountedRandom { crGen = gen', crCount = crCount st + 1 }
+  return val</pre><br class="calibre20"/>
+<a name="x_Xh" class="calibre5" id="x_Xh"></a><p class="docText">This example happens to consume both elements of the
+      state, and it constructs a completely new state, every time we call into
+      it. More frequently, we're likely to read or modify only part of a
+      state. This function gets the number of random values generated so
+      far:</p><pre class="calibre35">-- file: ch14/Random.hs
+getCount :: CRState Int
+getCount = crCount `liftM` get</pre><br class="calibre20"/>
+<a name="x_Yh" class="calibre5" id="x_Yh"></a><p class="docText">This example illustrates why we used record syntax to
+      define our CountedRandom state. It gives us accessor
+      functions that we can glue together with <i class="docEmphasis">get</i> to read specific pieces of the
+      state.</p><a name="x_Zh" class="calibre5" id="x_Zh"></a><p class="docText">If we want to partially update a state, the code doesn't
+      come out quite so appealingly:</p><pre class="calibre35">-- file: ch14/Random.hs
+putCount :: Int -&gt; CRState ()
+putCount a = do
+  st &lt;- get
+  put st { crCount = a }</pre><br class="calibre20"/>
+<a name="x_ah" class="calibre5" id="x_ah"></a><p class="docText">Here, instead of a function, we're using record update
+      syntax. The expression <tt class="calibre34">st { crCount = a
+      }</tt> creates a new value that's an identical copy of
+      <span class="docMonofont">st</span>, except in its <tt class="calibre34">crCount</tt> field, which
+      is given the value <span class="docMonofont">a</span>. Because this is a syntactic
+      hack, we don't get the same kind of flexibility as with a function.
+      Record syntax may not exhibit Haskell's usual elegance, but it at least
+      gets the job done.</p><a name="x_bh" class="calibre5" id="x_bh"></a><p class="docText">There is a function named <i class="docEmphasis">modify</i> that combines the <i class="docEmphasis">get</i> and <i class="docEmphasis">put</i> steps. It takes as argument a state
+      transformation function, but it's hardly more satisfactory—we still
+      can't escape from the clumsiness of record update syntax:</p><pre class="calibre35">-- file: ch14/Random.hs
+putCountModify :: Int -&gt; CRState ()
+putCountModify a = modify $ \st -&gt; st { crCount = a }</pre><br class="calibre20"/>
+<a href="21061538.html" class="calibre13"><img src="pixel.gif" alt="" border="0" class="calibre26"/></a><ul class="calibre28"></ul><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="middle" class="v1" height="5"><img src="pixel.gif" alt="" border="0" class="calibre8"/></td></tr><tr class="calibre6"><td valign="middle" class="v1"><table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody"><tr class="calibre6"><td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td></tr></table></td><td class="v1"/><td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="monads_do.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect114_d1e33514.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="top" class="v2"><span class="calibre9"></span></td></tr></table><!--IP User 2--><td class="calibre7">
+                         
+                      </td><tr class="calibre6"><td colspan="3" valign="bottom" class="calibre7"><br class="calibre20"/><p class="v4"></p><br class="calibre20"/></td></tr></div>
+
+{% endraw %}
+

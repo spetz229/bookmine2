@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>HarperCollins</dc:publisher>
+    <dc:rights>Copyright © 1985 by Peter F. Drucker.</dc:rights>
+    <dc:description>&lt;P&gt;The first book to present innovation and entrepreneurship as purposeful and systematic discipline which explains and analyzes the challenges and opportunities of America&amp;#39;s new entrepreneurial economy. A superbly practical book that explains what established businesses, public survey institutions, and new yentures have to know, have to learn, and have to do in today's economy and marketplace.</dc:description>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Peter F. Drucker</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T22:01:33.175176+00:00"/>
+    <dc:title>Innovation and Entrepreneurship</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>1985-05-21T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">07631f3b-299d-4924-b8c7-0086cfc16473</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="OEBPS/001-coverpage.html" id="my-html-cover" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/002-titlepage.html" id="tp01" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/003-TOC.html" id="TOC" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/004-prefacepage.html" id="prefacepage" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/005-introductionpage.html" id="introductionpage" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/006-part01.html" id="part01" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/007-chapter01.html" id="chapter01" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/008-chapter02.html" id="chapter02" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/009-chapter03.html" id="chapter03" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/010-chapter04.html" id="chapter04" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/011-chapter05.html" id="chapter05" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/012-chapter06.html" id="chapter06" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/013-chapter07.html" id="chapter07" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/014-chapter08.html" id="chapter08" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/015-chapter09.html" id="chapter09" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/016-chapter10.html" id="chapter10" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/017-chapter11.html" id="chapter11" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/018-part02.html" id="part02" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/019-chapter12.html" id="chapter12" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/020-chapter13.html" id="chapter13" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/021-chapter14.html" id="chapter14" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/022-chapter15.html" id="chapter15" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/023-part03.html" id="part03" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/024-chapter16.html" id="chapter16" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/025-chapter17.html" id="chapter17" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/026-chapter18.html" id="chapter18" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/027-chapter19.html" id="chapter19" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/028-backmatterpage01.html" id="backmatterpage01" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/029-backmatterpage02.html" id="backmatterpage02" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/030-indexpage.html" id="indexpage" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/031-aboutauthorpage.html" id="aboutauthorpage" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/032-reviewpage.html" id="reviewpage" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/033-adcardpage.html" id="adcardpage" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/034-creditspage.html" id="creditspage" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/035-copyrightpage.html" id="copyrightpage" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/036-aboutpublisherpage.html" id="aboutpublisherpage" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/Images/cover.jpg" id="my-cover-image" media-type="image/jpeg"/>
+    <item href="OEBPS/Images/logo.jpg" id="image_0001" media-type="image/jpeg"/>
+    <item href="OEBPS/footnote1.html" id="footnote1" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote10.html" id="footnote10" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote11.html" id="footnote11" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote12.html" id="footnote12" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote13.html" id="footnote13" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote14.html" id="footnote14" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote15.html" id="footnote15" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote16.html" id="footnote16" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote17.html" id="footnote17" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote18.html" id="footnote18" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote19.html" id="footnote19" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote2.html" id="footnote2" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote20.html" id="footnote20" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote21.html" id="footnote21" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote22.html" id="footnote22" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote23.html" id="footnote23" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote24.html" id="footnote24" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote25.html" id="footnote25" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote26.html" id="footnote26" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote27.html" id="footnote27" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote28.html" id="footnote28" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote29.html" id="footnote29" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote3.html" id="footnote3" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote30.html" id="footnote30" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote31.html" id="footnote31" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote4.html" id="footnote4" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote5.html" id="footnote5" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote6.html" id="footnote6" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote7.html" id="footnote7" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote8.html" id="footnote8" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/footnote9.html" id="footnote9" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/page-template.xpgt" id="pt" media-type="application/vnd.adobe.page-template+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="tp01"/>
+    <itemref idref="TOC"/>
+    <itemref idref="prefacepage"/>
+    <itemref idref="introductionpage"/>
+    <itemref idref="part01"/>
+    <itemref idref="chapter01"/>
+    <itemref idref="chapter02"/>
+    <itemref idref="chapter03"/>
+    <itemref idref="chapter04"/>
+    <itemref idref="chapter05"/>
+    <itemref idref="chapter06"/>
+    <itemref idref="chapter07"/>
+    <itemref idref="chapter08"/>
+    <itemref idref="chapter09"/>
+    <itemref idref="chapter10"/>
+    <itemref idref="chapter11"/>
+    <itemref idref="part02"/>
+    <itemref idref="chapter12"/>
+    <itemref idref="chapter13"/>
+    <itemref idref="chapter14"/>
+    <itemref idref="chapter15"/>
+    <itemref idref="part03"/>
+    <itemref idref="chapter16"/>
+    <itemref idref="chapter17"/>
+    <itemref idref="chapter18"/>
+    <itemref idref="chapter19"/>
+    <itemref idref="backmatterpage01"/>
+    <itemref idref="backmatterpage02"/>
+    <itemref idref="indexpage"/>
+    <itemref idref="aboutauthorpage"/>
+    <itemref idref="reviewpage"/>
+    <itemref idref="adcardpage"/>
+    <itemref idref="creditspage"/>
+    <itemref idref="copyrightpage"/>
+    <itemref idref="aboutpublisherpage"/>
+    <itemref idref="footnote1"/>
+    <itemref idref="footnote2"/>
+    <itemref idref="footnote3"/>
+    <itemref idref="footnote4"/>
+    <itemref idref="footnote5"/>
+    <itemref idref="footnote6"/>
+    <itemref idref="footnote7"/>
+    <itemref idref="footnote8"/>
+    <itemref idref="footnote9"/>
+    <itemref idref="footnote10"/>
+    <itemref idref="footnote11"/>
+    <itemref idref="footnote12"/>
+    <itemref idref="footnote13"/>
+    <itemref idref="footnote14"/>
+    <itemref idref="footnote15"/>
+    <itemref idref="footnote16"/>
+    <itemref idref="footnote17"/>
+    <itemref idref="footnote18"/>
+    <itemref idref="footnote19"/>
+    <itemref idref="footnote20"/>
+    <itemref idref="footnote21"/>
+    <itemref idref="footnote22"/>
+    <itemref idref="footnote23"/>
+    <itemref idref="footnote24"/>
+    <itemref idref="footnote25"/>
+    <itemref idref="footnote26"/>
+    <itemref idref="footnote27"/>
+    <itemref idref="footnote28"/>
+    <itemref idref="footnote29"/>
+    <itemref idref="footnote30"/>
+    <itemref idref="footnote31"/>
+  </spine>
+  <guide>
+    <reference href="OEBPS/003-TOC.html" type="toc" title="Table of Contents"/>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="Cover Image"/>
+    <reference href="OEBPS/001-coverpage.html" type="other.titlepage" title="Title Page"/>
+  </guide>
+</package>

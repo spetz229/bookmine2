@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="rus">
+  <head>
+    <meta content="aa0be73e-120f-4307-bd5c-4fbdfefdd082" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Вокруг света с Кларксоном. Особенности национальной езды</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Италия</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos3014"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Куба</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos52326"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Детройт</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos101597"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Исландия</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos155418"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Япония</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos211477"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Швейцария</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos266286"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="7">
+      <navLabel>
+        <text>Вьетнам</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos312120"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="8">
+      <navLabel>
+        <text>Австралия</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos361447"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_9" playOrder="9">
+      <navLabel>
+        <text>Техас</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos399433"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_10" playOrder="10">
+      <navLabel>
+        <text>Монако</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos447046"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_11" playOrder="11">
+      <navLabel>
+        <text>Индия</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos484605"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="12">
+      <navLabel>
+        <text>Дубаи</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos530837"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_13" playOrder="13">
+      <navLabel>
+        <text>Эпилог: Великобритания</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos580092"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_14" playOrder="14">
+      <navLabel>
+        <text>Приложение</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos596810"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_15" playOrder="15">
+      <navLabel>
+        <text>В пролете над Невадой</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos597187"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_16" playOrder="16">
+      <navLabel>
+        <text>Быстрый, как смерть</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos603689"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_17" playOrder="17">
+      <navLabel>
+        <text>Кларксон-гонщик</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos615550"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_18" playOrder="18">
+      <navLabel>
+        <text>Сто миль в час по камням</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos621411"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_19" playOrder="19">
+      <navLabel>
+        <text>1</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos636103"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_20" playOrder="20">
+      <navLabel>
+        <text>2</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos636694"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_21" playOrder="21">
+      <navLabel>
+        <text>3</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos636883"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_22" playOrder="22">
+      <navLabel>
+        <text>4</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos637498"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_23" playOrder="23">
+      <navLabel>
+        <text>5</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos637813"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_24" playOrder="24">
+      <navLabel>
+        <text>6</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos638102"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_25" playOrder="25">
+      <navLabel>
+        <text>7</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos638368"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_26" playOrder="26">
+      <navLabel>
+        <text>8</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos638708"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_27" playOrder="27">
+      <navLabel>
+        <text>9</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos639047"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_28" playOrder="28">
+      <navLabel>
+        <text>10</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos639472"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_29" playOrder="29">
+      <navLabel>
+        <text>11</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos639880"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_30" playOrder="30">
+      <navLabel>
+        <text>12</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos640458"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_31" playOrder="31">
+      <navLabel>
+        <text>13</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos640802"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_32" playOrder="32">
+      <navLabel>
+        <text>14</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos641068"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_33" playOrder="33">
+      <navLabel>
+        <text>15</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos641501"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_34" playOrder="34">
+      <navLabel>
+        <text>16</text>
+      </navLabel>
+      <content src="CUQWZJ_XILYG-OUTGRITUP_LNKH.html#filepos641761"/>
+    </navPoint>
+  </navMap>
+</ncx>

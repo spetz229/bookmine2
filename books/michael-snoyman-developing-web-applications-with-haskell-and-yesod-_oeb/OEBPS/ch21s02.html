@@ -1,0 +1,100 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch21.html
+next: OEBPS/ch21s03.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Basic Yesod Setup"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect14_d1e8412" class="calibre1"></a>Basic Yesod Setup</h1></div></div></div><p class="calibre7"></p><p class="calibre7">Let’s get our basic Yesod setup going. We’re going to have a single table in the database
+            for holding documents, which consist of a title and content. We’ll store this in a
+            SQLite database, and provide routes for searching, adding documents, viewing documents,
+            and providing the xmlpipe file to Sphinx.</p><a id="I_programlisting4_d1e8418" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">share</code> <code class="p">[</code><code class="n">mkPersist</code> <code class="n">sqlSettings</code><code class="p">,</code> <code class="n">mkMigrate</code> <code class="s">"migrateAll"</code><code class="p">]</code> <code class="p">[</code><code class="n">persist</code><code class="o">|</code>
+<code class="kt">Doc</code>
+    <code class="n">title</code> <code class="kt">Text</code>
+    <code class="n">content</code> <code class="kt">Textarea</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="kr">data</code> <code class="kt">Searcher</code> <code class="ow">=</code> <code class="kt">Searcher</code> <code class="kt">ConnectionPool</code>
+
+<code class="nf">mkYesod</code> <code class="s">"Searcher"</code> <code class="p">[</code><code class="n">parseRoutes</code><code class="o">|</code>
+<code class="o">/</code> <code class="kt">RootR</code> <code class="kt">GET</code>
+<code class="o">/</code><code class="n">doc</code><code class="o">/#</code><code class="kt">DocId</code> <code class="kt">DocR</code> <code class="kt">GET</code>
+<code class="o">/</code><code class="n">add</code><code class="o">-</code><code class="n">doc</code> <code class="kt">AddDocR</code> <code class="kt">POST</code>
+<code class="o">/</code><code class="n">search</code> <code class="kt">SearchR</code> <code class="kt">GET</code>
+<code class="o">/</code><code class="n">search</code><code class="o">/</code><code class="n">xmlpipe</code> <code class="kt">XmlpipeR</code> <code class="kt">GET</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="kr">instance</code> <code class="kt">Yesod</code> <code class="kt">Searcher</code>
+
+<code class="kr">instance</code> <code class="kt">YesodPersist</code> <code class="kt">Searcher</code> <code class="kr">where</code>
+    <code class="kr">type</code> <code class="kt">YesodPersistBackend</code> <code class="kt">Searcher</code> <code class="ow">=</code> <code class="kt">SqlPersist</code>
+
+    <code class="n">runDB</code> <code class="n">action</code> <code class="ow">=</code> <code class="kr">do</code>
+        <code class="kt">Searcher</code> <code class="n">pool</code> <code class="ow">&lt;-</code> <code class="n">getYesod</code>
+        <code class="n">runSqlPool</code> <code class="n">action</code> <code class="n">pool</code>
+
+<code class="kr">instance</code> <code class="kt">RenderMessage</code> <code class="kt">Searcher</code> <code class="kt">FormMessage</code> <code class="kr">where</code>
+    <code class="n">renderMessage</code> <code class="kr">_</code> <code class="kr">_</code> <code class="ow">=</code> <code class="n">defaultFormMessage</code>
+</pre><p class="calibre7">Hopefully all of this looks pretty familiar by now. Next we’ll define some forms: one for
+   creating documents, and one for searching:</p><a id="I_programlisting4_d1e8422" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">addDocForm</code> <code class="ow">::</code> <code class="kt">Html</code> <code class="ow">-&gt;</code> <code class="kt">MForm</code> <code class="kt">Searcher</code> <code class="kt">Searcher</code> <code class="p">(</code><code class="kt">FormResult</code> <code class="kt">Doc</code><code class="p">,</code> <code class="kt">Widget</code><code class="p">)</code>
+<code class="nf">addDocForm</code> <code class="ow">=</code> <code class="n">renderTable</code> <code class="o">$</code> <code class="kt">Doc</code>
+    <code class="o">&lt;$&gt;</code> <code class="n">areq</code> <code class="n">textField</code> <code class="s">"Title"</code> <code class="kt">Nothing</code>
+    <code class="o">&lt;*&gt;</code> <code class="n">areq</code> <code class="n">textareaField</code> <code class="s">"Contents"</code> <code class="kt">Nothing</code>
+
+<code class="nf">searchForm</code> <code class="ow">::</code> <code class="kt">Html</code> <code class="ow">-&gt;</code> <code class="kt">MForm</code> <code class="kt">Searcher</code> <code class="kt">Searcher</code> <code class="p">(</code><code class="kt">FormResult</code> <code class="kt">Text</code><code class="p">,</code> <code class="kt">Widget</code><code class="p">)</code>
+<code class="nf">searchForm</code> <code class="ow">=</code> <code class="n">renderDivs</code> <code class="o">$</code> <code class="n">areq</code> <code class="p">(</code><code class="n">searchField</code> <code class="kt">True</code><code class="p">)</code> <code class="s">"Query"</code> <code class="kt">Nothing</code>
+</pre><p class="calibre7">The <code class="literal">True</code> parameter to searchField makes the field auto-focus on page load.
+   Finally, we have some standard handlers for the homepage (shows the add document form and the
+   search form), the document display, and adding a document.</p><a id="I_programlisting4_d1e8429" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">getRootR</code> <code class="ow">::</code> <code class="kt">Handler</code> <code class="kt">RepHtml</code>
+<code class="nf">getRootR</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="n">docCount</code> <code class="ow">&lt;-</code> <code class="n">runDB</code> <code class="o">$</code> <code class="n">count</code> <code class="p">(</code><code class="kt">[]</code> <code class="ow">::</code> <code class="p">[</code><code class="kt">Filter</code> <code class="kt">Doc</code><code class="p">])</code>
+    <code class="p">((</code><code class="kr">_</code><code class="p">,</code> <code class="n">docWidget</code><code class="p">),</code> <code class="kr">_</code><code class="p">)</code> <code class="ow">&lt;-</code> <code class="n">runFormPost</code> <code class="n">addDocForm</code>
+    <code class="p">((</code><code class="kr">_</code><code class="p">,</code> <code class="n">searchWidget</code><code class="p">),</code> <code class="kr">_</code><code class="p">)</code> <code class="ow">&lt;-</code> <code class="n">runFormGet</code> <code class="n">searchForm</code>
+    <code class="kr">let</code> <code class="n">docs</code> <code class="ow">=</code> <code class="kr">if</code> <code class="n">docCount</code> <code class="o">==</code> <code class="mi">1</code>
+                <code class="kr">then</code> <code class="s">"There is currently 1 document."</code>
+                <code class="kr">else</code> <code class="s">"There are currently "</code> <code class="o">++</code> <code class="n">show</code> <code class="n">docCount</code> <code class="o">++</code> <code class="s">" documents."</code>
+    <code class="n">defaultLayout</code> <code class="p">[</code><code class="n">whamlet</code><code class="o">|</code>
+<code class="o">&lt;</code><code class="n">p</code><code class="o">&gt;</code><code class="kt">Welcome</code> <code class="n">to</code> <code class="n">the</code> <code class="n">search</code> <code class="n">application</code><code class="o">.</code> <code class="o">#</code><code class="p">{</code><code class="n">docs</code><code class="p">}</code>
+<code class="o">&lt;</code><code class="n">form</code> <code class="n">method</code><code class="ow">=</code><code class="n">post</code> <code class="n">action</code><code class="o">=@</code><code class="p">{</code><code class="kt">AddDocR</code><code class="p">}</code><code class="o">&gt;</code>
+    <code class="o">&lt;</code><code class="n">table</code><code class="o">&gt;</code>
+        <code class="o">^</code><code class="p">{</code><code class="n">docWidget</code><code class="p">}</code>
+        <code class="o">&lt;</code><code class="n">tr</code><code class="o">&gt;</code>
+            <code class="o">&lt;</code><code class="n">td</code> <code class="n">colspan</code><code class="ow">=</code><code class="mi">3</code><code class="o">&gt;</code>
+                <code class="o">&lt;</code><code class="n">input</code> <code class="kr">type</code><code class="ow">=</code><code class="n">submit</code> <code class="n">value</code><code class="ow">=</code><code class="s">"Add document"</code><code class="o">&gt;</code>
+<code class="o">&lt;</code><code class="n">form</code> <code class="n">method</code><code class="ow">=</code><code class="n">get</code> <code class="n">action</code><code class="o">=@</code><code class="p">{</code><code class="kt">SearchR</code><code class="p">}</code><code class="o">&gt;</code>
+    <code class="o">^</code><code class="p">{</code><code class="n">searchWidget</code><code class="p">}</code>
+    <code class="o">&lt;</code><code class="n">input</code> <code class="kr">type</code><code class="ow">=</code><code class="n">submit</code> <code class="n">value</code><code class="ow">=</code><code class="kt">Search</code><code class="o">&gt;</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="nf">postAddDocR</code> <code class="ow">::</code> <code class="kt">Handler</code> <code class="kt">RepHtml</code>
+<code class="nf">postAddDocR</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="p">((</code><code class="n">res</code><code class="p">,</code> <code class="n">docWidget</code><code class="p">),</code> <code class="kr">_</code><code class="p">)</code> <code class="ow">&lt;-</code> <code class="n">runFormPost</code> <code class="n">addDocForm</code>
+    <code class="kr">case</code> <code class="n">res</code> <code class="kr">of</code>
+        <code class="kt">FormSuccess</code> <code class="n">doc</code> <code class="ow">-&gt;</code> <code class="kr">do</code>
+            <code class="n">docid</code> <code class="ow">&lt;-</code> <code class="n">runDB</code> <code class="o">$</code> <code class="n">insert</code> <code class="n">doc</code>
+            <code class="n">setMessage</code> <code class="s">"Document added"</code>
+            <code class="n">redirect</code> <code class="o">$</code> <code class="kt">DocR</code> <code class="n">docid</code>
+        <code class="kr">_</code> <code class="ow">-&gt;</code> <code class="n">defaultLayout</code> <code class="p">[</code><code class="n">whamlet</code><code class="o">|</code>
+<code class="o">&lt;</code><code class="n">form</code> <code class="n">method</code><code class="ow">=</code><code class="n">post</code> <code class="n">action</code><code class="o">=@</code><code class="p">{</code><code class="kt">AddDocR</code><code class="p">}</code><code class="o">&gt;</code>
+    <code class="o">&lt;</code><code class="n">table</code><code class="o">&gt;</code>
+        <code class="o">^</code><code class="p">{</code><code class="n">docWidget</code><code class="p">}</code>
+        <code class="o">&lt;</code><code class="n">tr</code><code class="o">&gt;</code>
+            <code class="o">&lt;</code><code class="n">td</code> <code class="n">colspan</code><code class="ow">=</code><code class="mi">3</code><code class="o">&gt;</code>
+                <code class="o">&lt;</code><code class="n">input</code> <code class="kr">type</code><code class="ow">=</code><code class="n">submit</code> <code class="n">value</code><code class="ow">=</code><code class="s">"Add document"</code><code class="o">&gt;</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="nf">getDocR</code> <code class="ow">::</code> <code class="kt">DocId</code> <code class="ow">-&gt;</code> <code class="kt">Handler</code> <code class="kt">RepHtml</code>
+<code class="nf">getDocR</code> <code class="n">docid</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="n">doc</code> <code class="ow">&lt;-</code> <code class="n">runDB</code> <code class="o">$</code> <code class="n">get404</code> <code class="n">docid</code>
+    <code class="n">defaultLayout</code> <code class="o">$</code>
+        <code class="p">[</code><code class="n">whamlet</code><code class="o">|</code>
+<code class="o">&lt;</code><code class="n">h1</code><code class="o">&gt;#</code><code class="p">{</code><code class="n">docTitle</code> <code class="n">doc</code><code class="p">}</code>
+<code class="o">&lt;</code><code class="n">div</code> <code class="o">.</code><code class="n">content</code><code class="o">&gt;#</code><code class="p">{</code><code class="n">docContent</code> <code class="n">doc</code><code class="p">}</code>
+<code class="o">|</code><code class="p">]</code>
+</pre></div></div>
+
+{% endraw %}
+

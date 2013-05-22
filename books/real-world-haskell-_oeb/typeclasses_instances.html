@@ -1,0 +1,132 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: typeclasses_whatarethey.html
+next: typeclasses_wellknown.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="typeclasses_whatarethey.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="typeclasses_wellknown.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="typeclasses_instances" class="calibre27" id="typeclasses_instances"></a><h3 id="title-IDAODDUD" class="docSection1Title">6.3. Declaring Typeclass Instances</h3><a name="x_GB" class="calibre27" id="x_GB"></a><p class="docText">Now that <a name="I_indexterm6_d1e15180" class="calibre27" id="I_indexterm6_d1e15180"></a>you know how to define typeclasses, it's time to learn how
+    to define instances of typeclasses. Recall that types are made instances
+    of a particular typeclass by implementing the functions necessary for that
+    typeclass.</p><a name="x_HB" class="calibre27" id="x_HB"></a><p class="docText">Recall our attempt to create a test for equality over a
+    <tt class="calibre34">Color</tt> type back in <a class="docLink" href="typeclasses_need.html#typeclasses_need">Section 6.1</a>. Now let's see how we could make that same
+    <tt class="calibre34">Color</tt> type a member of the <tt class="calibre34">BasicEq3</tt> class:</p><pre class="calibre39">-- file: ch06/eqclasses.hs
+instance BasicEq3 Color where
+    isEqual3 Red Red = True
+    isEqual3 Green Green = True
+    isEqual3 Blue Blue = True
+    isEqual3 _ _ = False</pre><br class="calibre48"/>
+<a name="x_IB" class="calibre27" id="x_IB"></a><p class="docText">Notice that we provide essentially the same function as we
+    used in <a class="docLink" href="typeclasses_need.html#typeclasses_need">Section 6.1</a>. In fact, the implementation
+    is identical. However, in this case, we can use <tt class="calibre34">isEqual3</tt> on <span class="docEmphasis">any</span> type that
+    we declare is an instance of <tt class="calibre34">BasicEq3</tt>,
+    not just this one color type. We could define equality tests for anything
+    from numbers to graphics using the same basic pattern. In fact, as you
+    will see in <a class="docLink" href="typeclasses_wellknown.html#typeclasses_wellknown_equality">Section 6.4.5</a>, this is
+    exactly how you can make Haskell's <tt class="calibre34">==</tt>
+    operator work for your own custom types.</p><a name="x_JB" class="calibre27" id="x_JB"></a><p class="docText">Note also that the <tt class="calibre34">BasicEq3</tt> class defined both <tt class="calibre34">isEqual3</tt> and <tt class="calibre34">isNotEqual3</tt>, but we <span class="docEmphasis">implemented</span> only one of them in the <tt class="calibre34">Color</tt> instance. That's because of the default
+    implementation contained in <tt class="calibre34">BasicEq3</tt>.
+    Since we didn't explicitly define <tt class="calibre34">isNotEqual3</tt>, the compiler automatically uses the
+    default implementation given in the <tt class="calibre34">BasicEq3</tt> <span class="docEmphasis">declaration</span>.</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="typeclasses_whatarethey.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="typeclasses_wellknown.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="07631f3b-299d-4924-b8c7-0086cfc16473" name="dtb:uid"/>
+    <meta content="3" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Innovation and Entrepreneurship</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="navpoint-2" playOrder="1">
+      <navLabel>
+        <text>Title Page</text>
+      </navLabel>
+      <content src="OEBPS/002-titlepage.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-3" playOrder="2">
+      <navLabel>
+        <text>Contents</text>
+      </navLabel>
+      <content src="OEBPS/003-TOC.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-4" playOrder="3">
+      <navLabel>
+        <text>Preface</text>
+      </navLabel>
+      <content src="OEBPS/004-prefacepage.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-5" playOrder="4">
+      <navLabel>
+        <text>Introduction</text>
+      </navLabel>
+      <content src="OEBPS/005-introductionpage.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-6" playOrder="5">
+      <navLabel>
+        <text>I</text>
+      </navLabel>
+      <content src="OEBPS/006-part01.html#part01"/>
+      <navPoint class="chapter" id="navpoint-7" playOrder="6">
+        <navLabel>
+          <text>1</text>
+        </navLabel>
+        <content src="OEBPS/007-chapter01.html#chapter01"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-8" playOrder="7">
+        <navLabel>
+          <text>2</text>
+        </navLabel>
+        <content src="OEBPS/008-chapter02.html#chapter02"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-9" playOrder="8">
+        <navLabel>
+          <text>3</text>
+        </navLabel>
+        <content src="OEBPS/009-chapter03.html#chapter03"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-10" playOrder="9">
+        <navLabel>
+          <text>4</text>
+        </navLabel>
+        <content src="OEBPS/010-chapter04.html#chapter04"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-11" playOrder="10">
+        <navLabel>
+          <text>5</text>
+        </navLabel>
+        <content src="OEBPS/011-chapter05.html#chapter05"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-12" playOrder="11">
+        <navLabel>
+          <text>6</text>
+        </navLabel>
+        <content src="OEBPS/012-chapter06.html#chapter06"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-13" playOrder="12">
+        <navLabel>
+          <text>7</text>
+        </navLabel>
+        <content src="OEBPS/013-chapter07.html#chapter07"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-14" playOrder="13">
+        <navLabel>
+          <text>8</text>
+        </navLabel>
+        <content src="OEBPS/014-chapter08.html#chapter08"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-15" playOrder="14">
+        <navLabel>
+          <text>9</text>
+        </navLabel>
+        <content src="OEBPS/015-chapter09.html#chapter09"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-16" playOrder="15">
+        <navLabel>
+          <text>10</text>
+        </navLabel>
+        <content src="OEBPS/016-chapter10.html#chapter10"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-17" playOrder="16">
+        <navLabel>
+          <text>11</text>
+        </navLabel>
+        <content src="OEBPS/017-chapter11.html#chapter11"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-18" playOrder="17">
+      <navLabel>
+        <text>II</text>
+      </navLabel>
+      <content src="OEBPS/018-part02.html#part02"/>
+      <navPoint class="chapter" id="navpoint-19" playOrder="18">
+        <navLabel>
+          <text>12</text>
+        </navLabel>
+        <content src="OEBPS/019-chapter12.html#chapter12"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-20" playOrder="19">
+        <navLabel>
+          <text>13</text>
+        </navLabel>
+        <content src="OEBPS/020-chapter13.html#chapter13"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-21" playOrder="20">
+        <navLabel>
+          <text>14</text>
+        </navLabel>
+        <content src="OEBPS/021-chapter14.html#chapter14"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-22" playOrder="21">
+        <navLabel>
+          <text>15</text>
+        </navLabel>
+        <content src="OEBPS/022-chapter15.html#chapter15"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-23" playOrder="22">
+      <navLabel>
+        <text>III</text>
+      </navLabel>
+      <content src="OEBPS/023-part03.html#part03"/>
+      <navPoint class="chapter" id="navpoint-24" playOrder="23">
+        <navLabel>
+          <text>16</text>
+        </navLabel>
+        <content src="OEBPS/024-chapter16.html#chapter16"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-25" playOrder="24">
+        <navLabel>
+          <text>17</text>
+        </navLabel>
+        <content src="OEBPS/025-chapter17.html#chapter17"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-26" playOrder="25">
+        <navLabel>
+          <text>18</text>
+        </navLabel>
+        <content src="OEBPS/026-chapter18.html#chapter18"/>
+      </navPoint>
+      <navPoint class="chapter" id="navpoint-27" playOrder="26">
+        <navLabel>
+          <text>19</text>
+        </navLabel>
+        <content src="OEBPS/027-chapter19.html#chapter19"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-28" playOrder="27">
+      <navLabel>
+        <text>Conclusion</text>
+      </navLabel>
+      <content src="OEBPS/028-backmatterpage01.html#backmatterpage01"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-29" playOrder="28">
+      <navLabel>
+        <text>Suggested Readings</text>
+      </navLabel>
+      <content src="OEBPS/029-backmatterpage02.html#backmatterpage02"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-30" playOrder="29">
+      <navLabel>
+        <text>Searchable Terms</text>
+      </navLabel>
+      <content src="OEBPS/030-indexpage.html#indexpage"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-31" playOrder="30">
+      <navLabel>
+        <text>About the Author</text>
+      </navLabel>
+      <content src="OEBPS/031-aboutauthorpage.html#aboutauthorpage"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-32" playOrder="31">
+      <navLabel>
+        <text>Praise</text>
+      </navLabel>
+      <content src="OEBPS/032-reviewpage.html#reviewpage"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-33" playOrder="32">
+      <navLabel>
+        <text>Other Books by Peter F. Drucker</text>
+      </navLabel>
+      <content src="OEBPS/033-adcardpage.html#adcardpage"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-34" playOrder="33">
+      <navLabel>
+        <text>Credits</text>
+      </navLabel>
+      <content src="OEBPS/034-creditspage.html#creditspage"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-35" playOrder="34">
+      <navLabel>
+        <text>Copyright</text>
+      </navLabel>
+      <content src="OEBPS/035-copyrightpage.html#copyrightpage"/>
+    </navPoint>
+    <navPoint class="chapter" id="navpoint-36" playOrder="35">
+      <navLabel>
+        <text>About the Publisher</text>
+      </navLabel>
+      <content src="OEBPS/036-aboutpublisherpage.html#aboutpublisherpage"/>
+    </navPoint>
+  </navMap>
+</ncx>

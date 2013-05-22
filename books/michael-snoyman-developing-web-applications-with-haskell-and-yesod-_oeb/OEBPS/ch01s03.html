@@ -1,0 +1,25 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch01s02.html
+next: OEBPS/ch01s04.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Performance"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e351" class="calibre1"></a>Performance</h1></div></div></div><p class="calibre7">Haskell’s main compiler, the GHC, has amazing performance characteristics, and is
+      improving all the time. This choice of language by itself gives Yesod a large performance
+      advantage over other offerings. But that’s not enough: we need an architecture designed for
+      performance.</p><p class="calibre7">Our approach to templates is one example: by allowing HTML, CSS, and JavaScript to be
+      analyzed at compile time, Yesod both avoids costly disk I/O at runtime and can optimize the
+      rendering of this code. But the architectural decisions go deeper: we use advanced techniques
+      such as conduits and builders in the underlying libraries to make sure our code runs in
+      constant memory, without exhausting precious file handles and other resources. By offering
+      high-level abstractions, you can get highly compressed and properly cached CSS and
+      JavaScript.</p><p class="calibre7">Yesod’s flagship web server, Warp, is the fastest Haskell web server around. When these
+      two pieces of technology are combined, it produces one of the fastest web application
+      deployment solutions available.</p></div></div>
+
+{% endraw %}
+

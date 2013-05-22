@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>ДМК Пресс</dc:publisher>
+    <dc:description>Эта книга представляет собой перевод третьего издания американского бестселлера Effective C++ и является руководством по грамотному использованию языка C++. Она поможет сделать ваши программы более понятными, простыми в сопровождении и эффективными. Помимо материала, описывающего общую стратегию проектирования, книга включает в себя главы по программированию с применением шаблонов и по управлению ресурсами, а также множество советов, которые позволят усовершенствовать ваши программы и сделать работу более интересной и творческой. Книга также включает новый материал по принципам обработки исключений, паттернам проектирования и библиотечным средствам.  Издание ориентировано на программистов, знакомых с основами C++ и имеющих навыки его практического применения.</dc:description>
+    <dc:language>ru</dc:language>
+    <dc:creator opf:file-as="Майерс, Скотт" opf:role="aut">Скотт Майерс</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:58:28.400083+00:00"/>
+    <dc:title>Эффективное использование C++. 55 верных способов улучшить структуру и код ваших программ</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2006-05-21T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">5-94074-304-8</dc:identifier>
+    <dc:identifier opf:scheme="URI">urn|uuid|3bad977e-f80e-11df-8c7e-ec5afce481d9</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">6650ef7d-4e36-4d1c-8942-ce3dbcf66aa1</dc:identifier>
+    <dc:subject>comp_programming</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="OEBPS/about.xhtml" id="about" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/annotation.xhtml" id="annotation" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/cover.xhtml" id="u9f386b84-fe23-4219-82b8-a1845f64996a" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/fb2info.xhtml" id="bookcontent100_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/fonts/LiberationSerif-Bold.ttf" id="LiberationSerif-Bold" media-type="application/x-font-ttf"/>
+    <item href="OEBPS/fonts/LiberationSerif-BoldItalic.ttf" id="LiberationSerif-BoldItalic" media-type="application/x-font-ttf"/>
+    <item href="OEBPS/fonts/LiberationSerif-Italic.ttf" id="LiberationSerif-Italic" media-type="application/x-font-ttf"/>
+    <item href="OEBPS/fonts/LiberationSerif-Regular.ttf" id="LiberationSerif-Regular" media-type="application/x-font-ttf"/>
+    <item href="OEBPS/images/cover.jpg" id="cover.jpg" media-type="image/jpeg"/>
+    <item href="OEBPS/images/i_001.png" id="i_001.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_002.png" id="i_002.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_003.png" id="i_003.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_004.png" id="i_004.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_005.png" id="i_005.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_006.png" id="i_006.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_007.png" id="i_007.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_008.png" id="i_008.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_009.png" id="i_009.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_010.png" id="i_010.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_011.png" id="i_011.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_012.png" id="i_012.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_013.png" id="i_013.png" media-type="image/png"/>
+    <item href="OEBPS/images/i_014.png" id="i_014.png" media-type="image/png"/>
+    <item href="OEBPS/section1.xhtml" id="bookcontent1_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section10.xhtml" id="bookcontent10_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section11.xhtml" id="bookcontent11_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section12.xhtml" id="bookcontent12_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section13.xhtml" id="bookcontent13_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section14.xhtml" id="bookcontent14_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section15.xhtml" id="bookcontent15_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section16.xhtml" id="bookcontent16_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section17.xhtml" id="bookcontent17_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section18.xhtml" id="bookcontent18_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section19.xhtml" id="bookcontent19_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section2.xhtml" id="bookcontent2_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section20.xhtml" id="bookcontent20_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section21.xhtml" id="bookcontent21_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section22.xhtml" id="bookcontent22_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section23.xhtml" id="bookcontent23_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section24.xhtml" id="bookcontent24_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section25.xhtml" id="bookcontent25_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section26.xhtml" id="bookcontent26_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section27.xhtml" id="bookcontent27_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section28.xhtml" id="bookcontent28_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section29.xhtml" id="bookcontent29_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section3.xhtml" id="bookcontent3_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section30.xhtml" id="bookcontent30_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section31.xhtml" id="bookcontent31_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section32.xhtml" id="bookcontent32_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section33.xhtml" id="bookcontent33_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section34.xhtml" id="bookcontent34_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section35.xhtml" id="bookcontent35_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section36.xhtml" id="bookcontent36_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section37.xhtml" id="bookcontent37_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section38.xhtml" id="bookcontent38_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section39.xhtml" id="bookcontent39_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section4.xhtml" id="bookcontent4_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section40.xhtml" id="bookcontent40_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section41.xhtml" id="bookcontent41_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section42.xhtml" id="bookcontent42_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section43.xhtml" id="bookcontent43_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section44.xhtml" id="bookcontent44_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section45.xhtml" id="bookcontent45_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section46.xhtml" id="bookcontent46_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section47.xhtml" id="bookcontent47_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section48.xhtml" id="bookcontent48_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section49.xhtml" id="bookcontent49_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section5.xhtml" id="bookcontent5_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section50.xhtml" id="bookcontent50_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section51.xhtml" id="bookcontent51_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section52.xhtml" id="bookcontent52_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section53.xhtml" id="bookcontent53_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section54.xhtml" id="bookcontent54_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section55.xhtml" id="bookcontent55_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section56.xhtml" id="bookcontent56_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section57.xhtml" id="bookcontent57_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section58.xhtml" id="bookcontent58_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section59.xhtml" id="bookcontent59_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section6.xhtml" id="bookcontent6_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section60.xhtml" id="bookcontent60_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section61.xhtml" id="bookcontent61_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section62.xhtml" id="bookcontent62_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section63.xhtml" id="bookcontent63_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section64.xhtml" id="bookcontent64_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section65.xhtml" id="bookcontent65_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section66.xhtml" id="bookcontent66_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section67.xhtml" id="bookcontent67_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section68.xhtml" id="bookcontent68_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section69.xhtml" id="bookcontent69_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section7.xhtml" id="bookcontent7_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section70.xhtml" id="bookcontent70_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section71.xhtml" id="bookcontent71_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section72.xhtml" id="bookcontent72_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section73.xhtml" id="bookcontent73_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section74.xhtml" id="bookcontent74_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section75.xhtml" id="bookcontent75_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section76.xhtml" id="bookcontent76_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section77.xhtml" id="bookcontent77_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section78.xhtml" id="bookcontent78_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section79.xhtml" id="bookcontent79_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section8.xhtml" id="bookcontent8_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section80.xhtml" id="bookcontent80_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section81.xhtml" id="bookcontent81_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section82.xhtml" id="bookcontent82_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section83.xhtml" id="bookcontent83_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section84.xhtml" id="bookcontent84_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section85.xhtml" id="bookcontent85_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section86.xhtml" id="bookcontent86_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section87.xhtml" id="bookcontent87_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section88.xhtml" id="bookcontent88_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section89.xhtml" id="bookcontent89_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section9.xhtml" id="bookcontent9_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section90.xhtml" id="bookcontent90_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section91.xhtml" id="bookcontent91_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section92.xhtml" id="bookcontent92_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section93.xhtml" id="bookcontent93_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section94.xhtml" id="bookcontent94_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section95.xhtml" id="bookcontent95_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section96.xhtml" id="bookcontent96_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section97.xhtml" id="bookcontent97_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section98.xhtml" id="bookcontent98_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/section99.xhtml" id="bookcontent99_0" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/title.xhtml" id="title" media-type="application/xhtml+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="title"/>
+    <itemref idref="annotation"/>
+    <itemref idref="bookcontent1_0"/>
+    <itemref idref="bookcontent2_0"/>
+    <itemref idref="bookcontent3_0"/>
+    <itemref idref="bookcontent4_0"/>
+    <itemref idref="bookcontent5_0"/>
+    <itemref idref="bookcontent6_0"/>
+    <itemref idref="bookcontent7_0"/>
+    <itemref idref="bookcontent8_0"/>
+    <itemref idref="bookcontent9_0"/>
+    <itemref idref="bookcontent10_0"/>
+    <itemref idref="bookcontent11_0"/>
+    <itemref idref="bookcontent12_0"/>
+    <itemref idref="bookcontent13_0"/>
+    <itemref idref="bookcontent14_0"/>
+    <itemref idref="bookcontent15_0"/>
+    <itemref idref="bookcontent16_0"/>
+    <itemref idref="bookcontent17_0"/>
+    <itemref idref="bookcontent18_0"/>
+    <itemref idref="bookcontent19_0"/>
+    <itemref idref="bookcontent20_0"/>
+    <itemref idref="bookcontent21_0"/>
+    <itemref idref="bookcontent22_0"/>
+    <itemref idref="bookcontent23_0"/>
+    <itemref idref="bookcontent24_0"/>
+    <itemref idref="bookcontent25_0"/>
+    <itemref idref="bookcontent26_0"/>
+    <itemref idref="bookcontent27_0"/>
+    <itemref idref="bookcontent28_0"/>
+    <itemref idref="bookcontent29_0"/>
+    <itemref idref="bookcontent30_0"/>
+    <itemref idref="bookcontent31_0"/>
+    <itemref idref="bookcontent32_0"/>
+    <itemref idref="bookcontent33_0"/>
+    <itemref idref="bookcontent34_0"/>
+    <itemref idref="bookcontent35_0"/>
+    <itemref idref="bookcontent36_0"/>
+    <itemref idref="bookcontent37_0"/>
+    <itemref idref="bookcontent38_0"/>
+    <itemref idref="bookcontent39_0"/>
+    <itemref idref="bookcontent40_0"/>
+    <itemref idref="bookcontent41_0"/>
+    <itemref idref="bookcontent42_0"/>
+    <itemref idref="bookcontent43_0"/>
+    <itemref idref="bookcontent44_0"/>
+    <itemref idref="bookcontent45_0"/>
+    <itemref idref="bookcontent46_0"/>
+    <itemref idref="bookcontent47_0"/>
+    <itemref idref="bookcontent48_0"/>
+    <itemref idref="bookcontent49_0"/>
+    <itemref idref="bookcontent50_0"/>
+    <itemref idref="bookcontent51_0"/>
+    <itemref idref="bookcontent52_0"/>
+    <itemref idref="bookcontent53_0"/>
+    <itemref idref="bookcontent54_0"/>
+    <itemref idref="bookcontent55_0"/>
+    <itemref idref="bookcontent56_0"/>
+    <itemref idref="bookcontent57_0"/>
+    <itemref idref="bookcontent58_0"/>
+    <itemref idref="bookcontent59_0"/>
+    <itemref idref="bookcontent60_0"/>
+    <itemref idref="bookcontent61_0"/>
+    <itemref idref="bookcontent62_0"/>
+    <itemref idref="bookcontent63_0"/>
+    <itemref idref="bookcontent64_0"/>
+    <itemref idref="bookcontent65_0"/>
+    <itemref idref="bookcontent66_0"/>
+    <itemref idref="bookcontent67_0"/>
+    <itemref idref="bookcontent68_0"/>
+    <itemref idref="bookcontent69_0"/>
+    <itemref idref="bookcontent70_0"/>
+    <itemref idref="bookcontent71_0"/>
+    <itemref idref="bookcontent72_0"/>
+    <itemref idref="bookcontent73_0"/>
+    <itemref idref="bookcontent74_0"/>
+    <itemref idref="bookcontent75_0"/>
+    <itemref idref="bookcontent76_0"/>
+    <itemref idref="bookcontent77_0"/>
+    <itemref idref="bookcontent78_0"/>
+    <itemref idref="bookcontent79_0"/>
+    <itemref idref="bookcontent80_0"/>
+    <itemref idref="bookcontent81_0"/>
+    <itemref idref="bookcontent82_0"/>
+    <itemref idref="bookcontent83_0"/>
+    <itemref idref="bookcontent84_0"/>
+    <itemref idref="bookcontent85_0"/>
+    <itemref idref="bookcontent86_0"/>
+    <itemref idref="bookcontent87_0"/>
+    <itemref idref="bookcontent88_0"/>
+    <itemref idref="bookcontent89_0"/>
+    <itemref idref="bookcontent90_0"/>
+    <itemref idref="bookcontent91_0"/>
+    <itemref idref="bookcontent92_0"/>
+    <itemref idref="bookcontent93_0"/>
+    <itemref idref="bookcontent94_0"/>
+    <itemref idref="bookcontent95_0"/>
+    <itemref idref="bookcontent96_0"/>
+    <itemref idref="bookcontent97_0"/>
+    <itemref idref="bookcontent98_0"/>
+    <itemref idref="bookcontent99_0"/>
+    <itemref idref="bookcontent100_0"/>
+    <itemref idref="about"/>
+  </spine>
+  <guide>
+    <reference href="OEBPS/cover.xhtml" type="other.titlepage" title="Title Page"/>
+    <reference href="OEBPS/section2.xhtml" type="text" title="bookcontent2_0"/>
+    <reference href="OEBPS/about.xhtml" type="copyright-page" title="about"/>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="cover"/>
+    <reference href="OEBPS/title.xhtml" type="title-page" title="title"/>
+  </guide>
+</package>

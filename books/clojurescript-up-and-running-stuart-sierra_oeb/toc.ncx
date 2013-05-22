@@ -1,0 +1,1041 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="02ceaca6-66e1-4271-b75f-28ebc10f4532" name="dtb:uid"/>
+    <meta content="6" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>ClojureScript: Up and Running</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>ClojureScript: Up and Running</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos109"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Preface</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos829"/>
+      <navPoint class="chapter" id="num_3" playOrder="3">
+        <navLabel>
+          <text>Who Should Read This Book</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos897"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_4" playOrder="4">
+        <navLabel>
+          <text>How to Use This Book</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos2107"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_5" playOrder="5">
+        <navLabel>
+          <text>Conventions Used in This Book</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos6795"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_6" playOrder="6">
+        <navLabel>
+          <text>Using Code Examples</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos8341"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_7" playOrder="7">
+        <navLabel>
+          <text>Safari® Books Online</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos9689"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_8" playOrder="8">
+        <navLabel>
+          <text>How to Contact Us</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos11928"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_9" playOrder="9">
+        <navLabel>
+          <text>Acknowledgments</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos14315"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_10" playOrder="10">
+      <navLabel>
+        <text>1. Introduction: Why ClojureScript?</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos14967"/>
+      <navPoint class="chapter" id="num_11" playOrder="11">
+        <navLabel>
+          <text>The Rise of Browser Applications</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos15329"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_12" playOrder="12">
+        <navLabel>
+          <text>The Rise of JavaScript</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos17144"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_13" playOrder="13">
+        <navLabel>
+          <text>The Need for a Better Language</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos19098"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_14" playOrder="14">
+        <navLabel>
+          <text>Introducing ClojureScript</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos21253"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_15" playOrder="15">
+      <navLabel>
+        <text>2. Hello World</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos23106"/>
+      <navPoint class="chapter" id="num_16" playOrder="16">
+        <navLabel>
+          <text>Leiningen</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos25528"/>
+        <navPoint class="chapter" id="num_17" playOrder="17">
+          <navLabel>
+            <text>Installing Leiningen on OS X and Linux</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos27299"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_18" playOrder="18">
+          <navLabel>
+            <text>Installing Leiningen on Windows</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos29274"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_19" playOrder="19">
+        <navLabel>
+          <text>Using lein-cljsbuild</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos30507"/>
+        <navPoint class="chapter" id="num_20" playOrder="20">
+          <navLabel>
+            <text>Getting Started with the REPL</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos33210"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_21" playOrder="21">
+          <navLabel>
+            <text>Compiling a ClojureScript File to JavaScript</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos38045"/>
+          <navPoint class="chapter" id="num_22" playOrder="22">
+            <navLabel>
+              <text>Structuring the Leiningen project</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos38180"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_23" playOrder="23">
+            <navLabel>
+              <text>Updating the project configuration</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos40008"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_24" playOrder="24">
+            <navLabel>
+              <text>Writing a ClojureScript file</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos41308"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_25" playOrder="25">
+            <navLabel>
+              <text>Compiling</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos42074"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_26" playOrder="26">
+          <navLabel>
+            <text>Running ClojureScript in the Browser</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos43458"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_27" playOrder="27">
+          <navLabel>
+            <text>Other Capabilities of lein-cljsbuild</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos44571"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_28" playOrder="28">
+      <navLabel>
+        <text>3. The Compilation Process</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos45583"/>
+      <navPoint class="chapter" id="num_29" playOrder="29">
+        <navLabel>
+          <text>Architecture</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos45905"/>
+        <navPoint class="chapter" id="num_30" playOrder="30">
+          <navLabel>
+            <text>Google Closure Compiler</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos46618"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_31" playOrder="31">
+          <navLabel>
+            <text>The Google Closure Library</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos50922"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_32" playOrder="32">
+          <navLabel>
+            <text>ClojureScript and Google Closure</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos54613"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_33" playOrder="33">
+          <navLabel>
+            <text>The Compilation Pipeline</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos55959"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_34" playOrder="34">
+        <navLabel>
+          <text>How to Compile</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos58093"/>
+        <navPoint class="chapter" id="num_35" playOrder="35">
+          <navLabel>
+            <text>Compiling ClojureScript</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos60650"/>
+          <navPoint class="chapter" id="num_36" playOrder="36">
+            <navLabel>
+              <text>Hello, Compiler</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos61518"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_37" playOrder="37">
+            <navLabel>
+              <text>The Clojure REPL</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos63342"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_38" playOrder="38">
+        <navLabel>
+          <text>Compilation in Depth</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos64923"/>
+        <navPoint class="chapter" id="num_39" playOrder="39">
+          <navLabel>
+            <text>Compilation Sources</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos65452"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_40" playOrder="40">
+          <navLabel>
+            <text>Compilation and Optimization Options</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos66061"/>
+          <navPoint class="chapter" id="num_41" playOrder="41">
+            <navLabel>
+              <text>:optimizations</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos66837"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_42" playOrder="42">
+            <navLabel>
+              <text>Where do the files go?</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos69096"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_43" playOrder="43">
+            <navLabel>
+              <text>Compiling with optimizations</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos70021"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_44" playOrder="44">
+            <navLabel>
+              <text>Loading optimized code in a browser</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos71408"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_45" playOrder="45">
+            <navLabel>
+              <text>Compiling without optimizations</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos72664"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_46" playOrder="46">
+            <navLabel>
+              <text>Loading unoptimized code in a browser</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos74330"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_47" playOrder="47">
+            <navLabel>
+              <text>An alternative: pretty-printing</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos76382"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_48" playOrder="48">
+          <navLabel>
+            <text>Other Compilation Options</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos77593"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_49" playOrder="49">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos78585"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_50" playOrder="50">
+      <navLabel>
+        <text>4. ClojureScript Basics</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos83077"/>
+      <navPoint class="chapter" id="num_51" playOrder="51">
+        <navLabel>
+          <text>ClojureScript versus Clojure</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos83583"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_52" playOrder="52">
+        <navLabel>
+          <text>Expressions and Side Effects</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos86123"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_53" playOrder="53">
+        <navLabel>
+          <text>Syntax and Data Structures</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos87895"/>
+        <navPoint class="chapter" id="num_54" playOrder="54">
+          <navLabel>
+            <text>Symbols and Keywords</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos88837"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_55" playOrder="55">
+          <navLabel>
+            <text>Data Structures</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos90047"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_56" playOrder="56">
+        <navLabel>
+          <text>Special Forms and Definitions</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos93016"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_57" playOrder="57">
+        <navLabel>
+          <text>Functions</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos94494"/>
+        <navPoint class="chapter" id="num_58" playOrder="58">
+          <navLabel>
+            <text>Multi-Arity Functions</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos97666"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_59" playOrder="59">
+          <navLabel>
+            <text>Variadic Functions</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos98958"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_60" playOrder="60">
+        <navLabel>
+          <text>Local Bindings</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos100359"/>
+        <navPoint class="chapter" id="num_61" playOrder="61">
+          <navLabel>
+            <text>Destructuring</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos101802"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_62" playOrder="62">
+        <navLabel>
+          <text>Closures</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos103146"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_63" playOrder="63">
+        <navLabel>
+          <text>Flow Control</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos104179"/>
+        <navPoint class="chapter" id="num_64" playOrder="64">
+          <navLabel>
+            <text>Conditional Branching</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos104976"/>
+          <navPoint class="chapter" id="num_65" playOrder="65">
+            <navLabel>
+              <text>cond</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos108969"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_66" playOrder="66">
+            <navLabel>
+              <text>do</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos112027"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_67" playOrder="67">
+            <navLabel>
+              <text>when</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos114282"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_68" playOrder="68">
+        <navLabel>
+          <text>JavaScript Interop</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos115138"/>
+        <navPoint class="chapter" id="num_69" playOrder="69">
+          <navLabel>
+            <text>The js Namespace</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos115707"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_70" playOrder="70">
+          <navLabel>
+            <text>Methods and Fields</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos116939"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_71" playOrder="71">
+          <navLabel>
+            <text>Constructor Functions</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos119582"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_72" playOrder="72">
+          <navLabel>
+            <text>Scope of this</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos121197"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_73" playOrder="73">
+          <navLabel>
+            <text>Exceptions</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos123763"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_74" playOrder="74">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos126049"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_75" playOrder="75">
+      <navLabel>
+        <text>5. Data and State</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos127395"/>
+      <navPoint class="chapter" id="num_76" playOrder="76">
+        <navLabel>
+          <text>Primitives</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos128996"/>
+        <navPoint class="chapter" id="num_77" playOrder="77">
+          <navLabel>
+            <text>Strings</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos129471"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_78" playOrder="78">
+          <navLabel>
+            <text>Keywords</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos130095"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_79" playOrder="79">
+          <navLabel>
+            <text>Symbols</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos131893"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_80" playOrder="80">
+          <navLabel>
+            <text>Characters</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos132943"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_81" playOrder="81">
+          <navLabel>
+            <text>Numbers</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos133415"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_82" playOrder="82">
+          <navLabel>
+            <text>Booleans</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos134202"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_83" playOrder="83">
+          <navLabel>
+            <text>Functions</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos135643"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_84" playOrder="84">
+          <navLabel>
+            <text>nil</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos136622"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_85" playOrder="85">
+        <navLabel>
+          <text>Data Structures</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos141264"/>
+        <navPoint class="chapter" id="num_86" playOrder="86">
+          <navLabel>
+            <text>Collection Types</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos144713"/>
+          <navPoint class="chapter" id="num_87" playOrder="87">
+            <navLabel>
+              <text>Lists</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos144820"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_88" playOrder="88">
+            <navLabel>
+              <text>Vectors</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos146319"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_89" playOrder="89">
+            <navLabel>
+              <text>Maps</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos148047"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_90" playOrder="90">
+            <navLabel>
+              <text>Sets</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos151364"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_91" playOrder="91">
+          <navLabel>
+            <text>Immutability</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos152595"/>
+          <navPoint class="chapter" id="num_92" playOrder="92">
+            <navLabel>
+              <text>Why immutability?</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos154873"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_93" playOrder="93">
+          <navLabel>
+            <text>Persistence</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos156731"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_94" playOrder="94">
+        <navLabel>
+          <text>Identity and State</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos158612"/>
+        <navPoint class="chapter" id="num_95" playOrder="95">
+          <navLabel>
+            <text>Atoms</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos160743"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_96" playOrder="96">
+      <navLabel>
+        <text>6. Sequences</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos164179"/>
+      <navPoint class="chapter" id="num_97" playOrder="97">
+        <navLabel>
+          <text>The Sequence Abstraction</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos166061"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_98" playOrder="98">
+        <navLabel>
+          <text>Lazy Sequences</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos168645"/>
+        <navPoint class="chapter" id="num_99" playOrder="99">
+          <navLabel>
+            <text>Letting Go of the Head</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos171235"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_100" playOrder="100">
+        <navLabel>
+          <text>The Sequence API</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos172321"/>
+        <navPoint class="chapter" id="num_101" playOrder="101">
+          <navLabel>
+            <text>map</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos172832"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_102" playOrder="102">
+          <navLabel>
+            <text>reduce</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos174257"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_103" playOrder="103">
+          <navLabel>
+            <text>filter</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos175507"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_104" playOrder="104">
+          <navLabel>
+            <text>Other Useful Sequence Functions</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos176336"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_105" playOrder="105">
+      <navLabel>
+        <text>7. Namespaces, Libraries, and Google Closure</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos179627"/>
+      <navPoint class="chapter" id="num_106" playOrder="106">
+        <navLabel>
+          <text>Namespaces</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos180838"/>
+        <navPoint class="chapter" id="num_107" playOrder="107">
+          <navLabel>
+            <text>Using Namespaces</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos182184"/>
+          <navPoint class="chapter" id="num_108" playOrder="108">
+            <navLabel>
+              <text>Using namespaces at the REPL</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos186315"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="num_109" playOrder="109">
+          <navLabel>
+            <text>Using Namespaces Effectively</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos187647"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_110" playOrder="110">
+          <navLabel>
+            <text>The Implementation of Namespaces</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos188748"/>
+          <navPoint class="chapter" id="num_111" playOrder="111">
+            <navLabel>
+              <text>Namespaces and *.js files</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos189018"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_112" playOrder="112">
+            <navLabel>
+              <text>Namespaces and variable names</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos193097"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_113" playOrder="113">
+        <navLabel>
+          <text>Advanced Compilation Mode</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos194177"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_114" playOrder="114">
+        <navLabel>
+          <text>Consuming Libraries</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos197268"/>
+        <navPoint class="chapter" id="num_115" playOrder="115">
+          <navLabel>
+            <text>ClojureScript Libraries</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos197985"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_116" playOrder="116">
+          <navLabel>
+            <text>JavaScript Libraries</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos198721"/>
+          <navPoint class="chapter" id="num_117" playOrder="117">
+            <navLabel>
+              <text>Google Closure libraries</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos199466"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_118" playOrder="118">
+            <navLabel>
+              <text>Plain old JavaScript libraries</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos202281"/>
+            <navPoint class="chapter" id="num_119" playOrder="119">
+              <navLabel>
+                <text>With Advanced mode</text>
+              </navLabel>
+              <content src="ClojureScript__Up_and_Running.html#filepos203950"/>
+            </navPoint>
+            <navPoint class="chapter" id="num_120" playOrder="120">
+              <navLabel>
+                <text>Without Advanced mode</text>
+              </navLabel>
+              <content src="ClojureScript__Up_and_Running.html#filepos206032"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_121" playOrder="121">
+        <navLabel>
+          <text>Creating Libraries</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos210817"/>
+        <navPoint class="chapter" id="num_122" playOrder="122">
+          <navLabel>
+            <text>For Consumption by ClojureScript</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos211674"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_123" playOrder="123">
+          <navLabel>
+            <text>For Consumption by JavaScript</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos212385"/>
+          <navPoint class="chapter" id="num_124" playOrder="124">
+            <navLabel>
+              <text>^:export metadata</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos213851"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_125" playOrder="125">
+      <navLabel>
+        <text>8. Macros</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos215466"/>
+      <navPoint class="chapter" id="num_126" playOrder="126">
+        <navLabel>
+          <text>Code as Data</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos216035"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_127" playOrder="127">
+        <navLabel>
+          <text>Writing Macros</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos216904"/>
+        <navPoint class="chapter" id="num_128" playOrder="128">
+          <navLabel>
+            <text>Syntax-Quote</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos220872"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_129" playOrder="129">
+          <navLabel>
+            <text>Auto-Gensyms</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos222475"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_130" playOrder="130">
+        <navLabel>
+          <text>Using Macros</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos224474"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_131" playOrder="131">
+        <navLabel>
+          <text>When to Write Macros</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos225966"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_132" playOrder="132">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos227657"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_133" playOrder="133">
+      <navLabel>
+        <text>9. Development Process and Workflow</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos228815"/>
+      <navPoint class="chapter" id="num_134" playOrder="134">
+        <navLabel>
+          <text>Installing ClojureScript</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos229793"/>
+        <navPoint class="chapter" id="num_135" playOrder="135">
+          <navLabel>
+            <text>Checking Out from Source Control</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos230968"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_136" playOrder="136">
+          <navLabel>
+            <text>Downloading a Compressed Archive</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos232380"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_137" playOrder="137">
+          <navLabel>
+            <text>Installing Dependencies</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos234089"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_138" playOrder="138">
+        <navLabel>
+          <text>The Built-In Tools</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos235486"/>
+        <navPoint class="chapter" id="num_139" playOrder="139">
+          <navLabel>
+            <text>Command-Line Compilation</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos235565"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_140" playOrder="140">
+          <navLabel>
+            <text>Clojure REPL</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos237008"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_141" playOrder="141">
+          <navLabel>
+            <text>ClojureScript REPL</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos237523"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_142" playOrder="142">
+        <navLabel>
+          <text>The Browser REPL</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos238123"/>
+        <navPoint class="chapter" id="num_143" playOrder="143">
+          <navLabel>
+            <text>Setting Up the Browser REPL</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos240373"/>
+          <navPoint class="chapter" id="num_144" playOrder="144">
+            <navLabel>
+              <text>Serving your HTML via Ring and Compojure</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos242576"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_145" playOrder="145">
+            <navLabel>
+              <text>Starting the bREPL server</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos244894"/>
+          </navPoint>
+          <navPoint class="chapter" id="num_146" playOrder="146">
+            <navLabel>
+              <text>Configuring the bREPL client</text>
+            </navLabel>
+            <content src="ClojureScript__Up_and_Running.html#filepos246489"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_147" playOrder="147">
+        <navLabel>
+          <text>Additional lein-cljsbuild Features</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos251212"/>
+        <navPoint class="chapter" id="num_148" playOrder="148">
+          <navLabel>
+            <text>Launching a Browser REPL</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos251441"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_149" playOrder="149">
+          <navLabel>
+            <text>Custom bREPL Launch Commands</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos252677"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_150" playOrder="150">
+          <navLabel>
+            <text>Hooking Into Default Leiningen Tasks</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos254431"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_151" playOrder="151">
+          <navLabel>
+            <text>Testing ClojureScript Code</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos255936"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_152" playOrder="152">
+          <navLabel>
+            <text>Including ClojureScript in JAR Files</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos259227"/>
+        </navPoint>
+        <navPoint class="chapter" id="num_153" playOrder="153">
+          <navLabel>
+            <text>Compiling the Same Code as Clojure and ClojureScript</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos261019"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_154" playOrder="154">
+      <navLabel>
+        <text>10. Integration with Clojure</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos264235"/>
+      <navPoint class="chapter" id="num_155" playOrder="155">
+        <navLabel>
+          <text>AJAX</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos264792"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_156" playOrder="156">
+        <navLabel>
+          <text>The Reader and Printer</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos266873"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_157" playOrder="157">
+        <navLabel>
+          <text>Example Client-Server Application</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos274040"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_158" playOrder="158">
+        <navLabel>
+          <text>Extending the Reader</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos284441"/>
+        <navPoint class="chapter" id="num_159" playOrder="159">
+          <navLabel>
+            <text>User-Defined Tagged Literals</text>
+          </navLabel>
+          <content src="ClojureScript__Up_and_Running.html#filepos286143"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="num_160" playOrder="160">
+        <navLabel>
+          <text>Sharing Code</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos287620"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_161" playOrder="161">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos291011"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_162" playOrder="162">
+      <navLabel>
+        <text>A. Libraries</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos292999"/>
+      <navPoint class="chapter" id="num_163" playOrder="163">
+        <navLabel>
+          <text>ClojureScript’s Standard Library</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos294185"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_164" playOrder="164">
+        <navLabel>
+          <text>Google Closure Library</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos295596"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_165" playOrder="165">
+        <navLabel>
+          <text>Domina</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos297060"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_166" playOrder="166">
+        <navLabel>
+          <text>Enfocus</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos298137"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_167" playOrder="167">
+        <navLabel>
+          <text>Jayq</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos298760"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_168" playOrder="168">
+        <navLabel>
+          <text>C2</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos299296"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_169" playOrder="169">
+        <navLabel>
+          <text>core.logic</text>
+        </navLabel>
+        <content src="ClojureScript__Up_and_Running.html#filepos300154"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_170" playOrder="170">
+      <navLabel>
+        <text>About the Authors</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos301268"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_171" playOrder="171">
+      <navLabel>
+        <text>Copyright</text>
+      </navLabel>
+      <content src="ClojureScript__Up_and_Running.html#filepos301736"/>
+    </navPoint>
+  </navMap>
+</ncx>

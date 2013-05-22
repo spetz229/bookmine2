@@ -1,0 +1,52 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: "Liberation Serif";
+    font-style: italic;
+    font-weight: bold;
+    src: url(fonts/00002.dat)
+    }
+@font-face {
+    font-family: "Liberation Serif";
+    font-style: normal;
+    font-weight: bold;
+    src: url(fonts/00003.dat)
+    }
+@font-face {
+    font-family: "Liberation Serif";
+    font-style: italic;
+    font-weight: normal;
+    src: url(fonts/00004.dat)
+    }
+@font-face {
+    font-family: "Liberation Serif";
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/00005.dat)
+    }
+@font-face {
+    font-family: "Liberation Serif";
+    font-style: italic;
+    font-weight: bold;
+    src: url(fonts/00002.dat)
+    }
+@font-face {
+    font-family: "Liberation Serif";
+    font-style: normal;
+    font-weight: bold;
+    src: url(fonts/00003.dat)
+    }
+@font-face {
+    font-family: "Liberation Serif";
+    font-style: italic;
+    font-weight: normal;
+    src: url(fonts/00004.dat)
+    }
+@font-face {
+    font-family: "Liberation Serif";
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/00005.dat)
+    }

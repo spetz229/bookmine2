@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="rus">
+  <head>
+    <meta content="d11d38f1-5797-4331-b529-7c05c6d10cff" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Путь камикадзе [Смертельный марш]</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>ПРЕДИСЛОВИЕ</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos10251"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>ГЛАВА 1.</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos33765"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="3">
+      <navLabel>
+        <text>1.1 Определение безнадёжного проекта</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos37773"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="4">
+      <navLabel>
+        <text>1.2 Категории безнадёжных проектов</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos46138"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="5">
+      <navLabel>
+        <text>1.3 Почему существуют безнадёжные проекты?</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos57376"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="6">
+      <navLabel>
+        <text>1.3.1 Политика, политика, политика</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos60558"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_9" playOrder="7">
+      <navLabel>
+        <text>1.3.2 Наивные представления маркетинговых служб, высшего руководства, менеджеров проекта и др.</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos65888"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_10" playOrder="8">
+      <navLabel>
+        <text>1.3.3 Наивный оптимизм юности: «Мы сможем сделать это за выходные!»</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos74439"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_11" playOrder="9">
+      <navLabel>
+        <text>1.3.4 Менталитет первопроходцев у неопытных предпринимателей</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos79268"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="10">
+      <navLabel>
+        <text>1.3.5 Менталитет «Морского Корпуса» (Marine Corps): Настоящие программисты не нуждаются в сне!</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos84821"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_13" playOrder="11">
+      <navLabel>
+        <text>1.3.6 Высокая конкуренция, порождённая глобализацией рынков</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos89466"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_14" playOrder="12">
+      <navLabel>
+        <text>1.3.7 Высокая конкуренция, вызванная появлением новых технологий</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos92248"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_15" playOrder="13">
+      <navLabel>
+        <text>1.3.8 Сильное воздействие неожиданных правительственных решений</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos98003"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_16" playOrder="14">
+      <navLabel>
+        <text>1.3.9 Неожиданный и/или незапланированный кризис</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos102257"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_17" playOrder="15">
+      <navLabel>
+        <text>1.4 Почему люди участвуют в безнадёжных проектах?</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos109522"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_19" playOrder="16">
+      <navLabel>
+        <text>1.4.1 Риск высок, но вознаграждение тоже</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos127200"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_20" playOrder="17">
+      <navLabel>
+        <text>1.4.2 Синдром покорителей Эвереста</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos134163"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_21" playOrder="18">
+      <navLabel>
+        <text>1.4.3 Наивность и оптимизм молодости</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos150557"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_22" playOrder="19">
+      <navLabel>
+        <text>1.4.4 Альтернатива – безработица</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos156051"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_23" playOrder="20">
+      <navLabel>
+        <text>1.4.5 Возможность будущей карьеры</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos169982"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_24" playOrder="21">
+      <navLabel>
+        <text>1.4.6 Альтернатива – банкротство или прочие разные бедствия</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos174362"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_25" playOrder="22">
+      <navLabel>
+        <text>1.4.7 Возможность победить бюрократию</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos180345"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_26" playOrder="23">
+      <navLabel>
+        <text>1.4.8 Месть</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos184903"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_27" playOrder="24">
+      <navLabel>
+        <text>1.5 Заключение</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos189036"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_28" playOrder="25">
+      <navLabel>
+        <text>ГЛАВА 2.</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos194329"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_30" playOrder="26">
+      <navLabel>
+        <text>2.1 Идентификация «игроков», вовлечённых в проект</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos197240"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_31" playOrder="27">
+      <navLabel>
+        <text>2.1.1 Владелец</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos201572"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_33" playOrder="28">
+      <navLabel>
+        <text>2.1.2 Заказчики</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos211739"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_34" playOrder="29">
+      <navLabel>
+        <text>2.1.3 Акционеры</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos216413"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_35" playOrder="30">
+      <navLabel>
+        <text>2.1.4 Заинтересованные лица</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos222259"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_36" playOrder="31">
+      <navLabel>
+        <text>2.1.5 Защитники</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos230359"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_37" playOrder="32">
+      <navLabel>
+        <text>2.2 Определение сущности проекта</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos237195"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_38" playOrder="33">
+      <navLabel>
+        <text>2.3 Отношение участников к проекту</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos259879"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_39" playOrder="34">
+      <navLabel>
+        <text>2.4 Заключение</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos268347"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_40" playOrder="35">
+      <navLabel>
+        <text>ГЛАВА 3.</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos269899"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_42" playOrder="36">
+      <navLabel>
+        <text>3.1 Нормальные переговоры</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos275218"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_43" playOrder="37">
+      <navLabel>
+        <text>3.2 Допустимые компромиссы</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos285807"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_44" playOrder="38">
+      <navLabel>
+        <text>3.3 Переговорные игры</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos296347"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_45" playOrder="39">
+      <navLabel>
+        <text>3.4 Стратегии переговоров</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos319582"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_46" playOrder="40">
+      <navLabel>
+        <text>3.5 Что делать в случае провала переговоров</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos337291"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_47" playOrder="41">
+      <navLabel>
+        <text>ГЛАВА 4.</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos363672"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_49" playOrder="42">
+      <navLabel>
+        <text>4.1 Кадровые вопросы</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos369193"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_50" playOrder="43">
+      <navLabel>
+        <text>4.2 Лояльность, отношение, мотивация и вознаграждения</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos383896"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_52" playOrder="44">
+      <navLabel>
+        <text>4.2.1 Стимулирование участников проекта</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos389735"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_53" playOrder="45">
+      <navLabel>
+        <text>4.2.2 Сверхурочная работа</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos414971"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_54" playOrder="46">
+      <navLabel>
+        <text>4.3 Значение коммуникации</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos426641"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_55" playOrder="47">
+      <navLabel>
+        <text>4.4 Проблемы формирования проектной команды</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos431575"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_56" playOrder="48">
+      <navLabel>
+        <text>4.5 Условия работы</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos456077"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_57" playOrder="49">
+      <navLabel>
+        <text>4.6 Заключение</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos470371"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_58" playOrder="50">
+      <navLabel>
+        <text>ГЛАВА 5.</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos472725"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_60" playOrder="51">
+      <navLabel>
+        <text>5.1 Концепция «triage»</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos476362"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_61" playOrder="52">
+      <navLabel>
+        <text>5.2 Важность управления требованиями</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos505872"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_62" playOrder="53">
+      <navLabel>
+        <text>5.3 SEI, ISO-9000. Формальные процессы против неформальных</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos534079"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_63" playOrder="54">
+      <navLabel>
+        <text>5.4 «Достаточно хорошее» программное обеспечение</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos546847"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_64" playOrder="55">
+      <navLabel>
+        <text>5.5 Наилучшая практика и наихудшая практика</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos561503"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_65" playOrder="56">
+      <navLabel>
+        <text>5.6 Принцип «ежедневной сборки проекта»</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos590830"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_66" playOrder="57">
+      <navLabel>
+        <text>5.7 Управление рисками</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos604121"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_67" playOrder="58">
+      <navLabel>
+        <text>5.8 Заключение</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos625148"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_68" playOrder="59">
+      <navLabel>
+        <text>ГЛАВА 6.</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos631762"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_70" playOrder="60">
+      <navLabel>
+        <text>6.1 Минимально необходимый набор средств</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos638587"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_71" playOrder="61">
+      <navLabel>
+        <text>6.2 Средства и процессы</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos660579"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_72" playOrder="62">
+      <navLabel>
+        <text>6.3 Риск выбора новых средств</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos674906"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_73" playOrder="63">
+      <navLabel>
+        <text>6.4 Заключение</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos685975"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_74" playOrder="64">
+      <navLabel>
+        <text>ГЛАВА 7.</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos692367"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_76" playOrder="65">
+      <navLabel>
+        <text>7.1 Почему безнадёжные проекты становятся нормой</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos697765"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_77" playOrder="66">
+      <navLabel>
+        <text>7.2 Учреждение «культуры» безнадёжных проектов</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos711255"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_78" playOrder="67">
+      <navLabel>
+        <text>7.3 Обучение участников безнадёжных проектов</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos722992"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_79" playOrder="68">
+      <navLabel>
+        <text>7.4 Концепция «военных игр»</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos726733"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_80" playOrder="69">
+      <navLabel>
+        <text>7.5 Заключение</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos740222"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_81" playOrder="70">
+      <navLabel>
+        <text>ГЛОССАРИЙ, СОКРАЩЕНИЯ</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos746881"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_82" playOrder="71">
+      <navLabel>
+        <text>Сведения об авторе</text>
+      </navLabel>
+      <content src="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos749065"/>
+    </navPoint>
+  </navMap>
+</ncx>

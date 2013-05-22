@@ -1,0 +1,543 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="c1f998ce-dbdc-44b5-ad52-6c003e12dabf" name="dtb:uid"/>
+    <meta content="3" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Programming Clojure (for Roman Fäckl)</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Programming Clojure</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos109"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>​</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos2595"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Table of Contents</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos2886"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>What Readers Are Saying About Programming Clojure, Second Edition</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos11096"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Foreword for the Second Edition</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos13531"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Foreword for the First Edition</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos15113"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="7">
+      <navLabel>
+        <text>Acknowledgments</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos17636"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="8">
+      <navLabel>
+        <text>Preface</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos20640"/>
+      <navPoint class="chapter" id="num_9" playOrder="9">
+        <navLabel>
+          <text>Who This Book Is For</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos22931"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_10" playOrder="10">
+        <navLabel>
+          <text>What Is in This Book</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos24342"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_11" playOrder="11">
+        <navLabel>
+          <text>How to Read This Book</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos27472"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_12" playOrder="12">
+        <navLabel>
+          <text>Notation Conventions</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos32041"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_13" playOrder="13">
+        <navLabel>
+          <text>Web Resources and Feedback</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos40345"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_14" playOrder="14">
+        <navLabel>
+          <text>Downloading Sample Code</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos40949"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_15" playOrder="15">
+      <navLabel>
+        <text>Chapter 1: Getting Started</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos45104"/>
+      <navPoint class="chapter" id="num_16" playOrder="16">
+        <navLabel>
+          <text>1.1 Why Clojure?</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos47357"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_17" playOrder="17">
+        <navLabel>
+          <text>1.2 Clojure Coding Quick Start</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos94711"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_18" playOrder="18">
+        <navLabel>
+          <text>1.3 Exploring Clojure Libraries</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos121815"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_19" playOrder="19">
+        <navLabel>
+          <text>1.4 Wrapping Up</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos150081"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_20" playOrder="20">
+      <navLabel>
+        <text>Chapter 2: Exploring Clojure</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos154108"/>
+      <navPoint class="chapter" id="num_21" playOrder="21">
+        <navLabel>
+          <text>2.1 Forms</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos156033"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_22" playOrder="22">
+        <navLabel>
+          <text>2.2 Reader Macros</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos208768"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_23" playOrder="23">
+        <navLabel>
+          <text>2.3 Functions</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos215638"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_24" playOrder="24">
+        <navLabel>
+          <text>2.4 Vars, Bindings, and Namespaces</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos245180"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_25" playOrder="25">
+        <navLabel>
+          <text>2.5 Calling Java</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos281250"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_26" playOrder="26">
+        <navLabel>
+          <text>2.6 Flow Control</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos292238"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_27" playOrder="27">
+        <navLabel>
+          <text>2.7 Where’s My for Loop?</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos311519"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_28" playOrder="28">
+        <navLabel>
+          <text>2.8 Metadata</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos334070"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_29" playOrder="29">
+        <navLabel>
+          <text>2.9 Wrapping Up</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos344821"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_30" playOrder="30">
+      <navLabel>
+        <text>Chapter 3: Unifying Data with Sequences</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos350588"/>
+      <navPoint class="chapter" id="num_31" playOrder="31">
+        <navLabel>
+          <text>3.1 Everything Is a Sequence</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos354001"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_32" playOrder="32">
+        <navLabel>
+          <text>3.2 Using the Sequence Library</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos381095"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_33" playOrder="33">
+        <navLabel>
+          <text>3.3 Lazy and Infinite Sequences</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos428764"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_34" playOrder="34">
+        <navLabel>
+          <text>3.4 Clojure Makes Java Seq-able</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos443494"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_35" playOrder="35">
+        <navLabel>
+          <text>3.5 Calling Structure-Specific Functions</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos484006"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_36" playOrder="36">
+        <navLabel>
+          <text>3.6 Wrapping Up</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos537038"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_37" playOrder="37">
+      <navLabel>
+        <text>Chapter 4: Functional Programming</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos539895"/>
+      <navPoint class="chapter" id="num_38" playOrder="38">
+        <navLabel>
+          <text>4.1 Functional Programming Concepts</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos542049"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_39" playOrder="39">
+        <navLabel>
+          <text>4.2 How to Be Lazy</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos555532"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_40" playOrder="40">
+        <navLabel>
+          <text>4.3 Lazier Than Lazy</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos599478"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_41" playOrder="41">
+        <navLabel>
+          <text>4.4 Recursion Revisited</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos635309"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_42" playOrder="42">
+        <navLabel>
+          <text>4.5 Wrapping Up</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos694806"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_43" playOrder="43">
+      <navLabel>
+        <text>Chapter 5: State</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos699699"/>
+      <navPoint class="chapter" id="num_44" playOrder="44">
+        <navLabel>
+          <text>5.1 Concurrency, Parallelism, and Locking</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos702197"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_45" playOrder="45">
+        <navLabel>
+          <text>5.2 Refs and Software Transactional Memory</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos706924"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_46" playOrder="46">
+        <navLabel>
+          <text>5.3 Use Atoms for Uncoordinated, Synchronous Updates</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos741361"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_47" playOrder="47">
+        <navLabel>
+          <text>5.4 Use Agents for Asynchronous Updates</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos749782"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_48" playOrder="48">
+        <navLabel>
+          <text>5.5 Managing Per-Thread State with Vars</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos773305"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_49" playOrder="49">
+        <navLabel>
+          <text>5.6 A Clojure Snake</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos798340"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_50" playOrder="50">
+        <navLabel>
+          <text>5.7 Wrapping Up</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos863368"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_51" playOrder="51">
+      <navLabel>
+        <text>Chapter 6: Protocols and Datatypes</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos867195"/>
+      <navPoint class="chapter" id="num_52" playOrder="52">
+        <navLabel>
+          <text>6.1 Programming to Abstractions</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos869565"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_53" playOrder="53">
+        <navLabel>
+          <text>6.2 Interfaces</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos896919"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_54" playOrder="54">
+        <navLabel>
+          <text>6.3 Protocols</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos901252"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_55" playOrder="55">
+        <navLabel>
+          <text>6.4 Datatypes</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos937760"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_56" playOrder="56">
+        <navLabel>
+          <text>6.5 Records</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos984443"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_57" playOrder="57">
+        <navLabel>
+          <text>6.6 reify</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1020728"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_58" playOrder="58">
+        <navLabel>
+          <text>6.7 Wrapping Up</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1027275"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_59" playOrder="59">
+      <navLabel>
+        <text>Chapter 7: Macros</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos1030215"/>
+      <navPoint class="chapter" id="num_60" playOrder="60">
+        <navLabel>
+          <text>7.1 When to Use Macros</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1031838"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_61" playOrder="61">
+        <navLabel>
+          <text>7.2 Writing a Control Flow Macro</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1033097"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_62" playOrder="62">
+        <navLabel>
+          <text>7.3 Making Macros Simpler</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1065738"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_63" playOrder="63">
+        <navLabel>
+          <text>7.4 Taxonomy of Macros</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1098591"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_64" playOrder="64">
+        <navLabel>
+          <text>7.5 Wrapping Up</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1147465"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_65" playOrder="65">
+      <navLabel>
+        <text>Chapter 8: Multimethods</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos1149215"/>
+      <navPoint class="chapter" id="num_66" playOrder="66">
+        <navLabel>
+          <text>8.1 Living Without Multimethods</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1150910"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_67" playOrder="67">
+        <navLabel>
+          <text>8.2 Defining Multimethods</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1164941"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_68" playOrder="68">
+        <navLabel>
+          <text>8.3 Moving Beyond Simple Dispatch</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1183130"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_69" playOrder="69">
+        <navLabel>
+          <text>8.4 Creating Ad Hoc Taxonomies</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1194210"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_70" playOrder="70">
+        <navLabel>
+          <text>8.5 When Should I Use Multimethods?</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1221606"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_71" playOrder="71">
+        <navLabel>
+          <text>8.6 Wrapping Up</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1241035"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_72" playOrder="72">
+      <navLabel>
+        <text>Chapter 9: Java Down and Dirty</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos1242160"/>
+      <navPoint class="chapter" id="num_73" playOrder="73">
+        <navLabel>
+          <text>9.1 Exception Handling</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1244409"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_74" playOrder="74">
+        <navLabel>
+          <text>9.2 Wrestling with the Integers</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1265505"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_75" playOrder="75">
+        <navLabel>
+          <text>9.3 Optimizing for Performance</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1273018"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_76" playOrder="76">
+        <navLabel>
+          <text>9.4 Creating Java Classes in Clojure</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1300752"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_77" playOrder="77">
+        <navLabel>
+          <text>9.5 A Real-World Example</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1333384"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_78" playOrder="78">
+        <navLabel>
+          <text>9.6 Wrapping Up</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1385428"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_79" playOrder="79">
+      <navLabel>
+        <text>Chapter 10: Building an Application</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos1386949"/>
+      <navPoint class="chapter" id="num_80" playOrder="80">
+        <navLabel>
+          <text>10.1 Scoring a Clojurebreaker Game</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1389971"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_81" playOrder="81">
+        <navLabel>
+          <text>10.2 Testing the Scorer</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1411011"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_82" playOrder="82">
+        <navLabel>
+          <text>10.3 test.generative</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1430311"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_83" playOrder="83">
+        <navLabel>
+          <text>10.4 Creating an Interface</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1474525"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_84" playOrder="84">
+        <navLabel>
+          <text>10.5 Deploying Your Code</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1511234"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_85" playOrder="85">
+        <navLabel>
+          <text>10.6 Farewell</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1527483"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_86" playOrder="86">
+      <navLabel>
+        <text>Appendix 1: Editor Support</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos1530798"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_87" playOrder="87">
+      <navLabel>
+        <text>Appendix 2: Bibliography</text>
+      </navLabel>
+      <content src="Programming_Clojure_%28for_Roman_.html#filepos1535852"/>
+      <navPoint class="chapter" id="num_88" playOrder="88">
+        <navLabel>
+          <text>You May Be Interested In…</text>
+        </navLabel>
+        <content src="Programming_Clojure_%28for_Roman_.html#filepos1537118"/>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

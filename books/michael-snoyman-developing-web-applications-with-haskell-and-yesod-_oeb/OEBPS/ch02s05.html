@@ -1,0 +1,50 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch02s04.html
+next: OEBPS/ch02s06.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Type Families"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect12_d1e753" class="calibre1"></a>Type Families</h1></div></div></div><p class="calibre7">The basic idea of a type family is to state some association between two different types.
+      Suppose we want to write a function that will safely take the first element of a list. But we
+      don’t want it to work just on lists; we’d like it to treat a <code class="literal">ByteString</code> like a list of <code class="literal">Word8</code>s. To do so, we
+      need to introduce some <em class="calibre4">associated type</em> to specify what the contents of
+      a certain type are.</p><a id="I_programlisting2_d1e767" class="firstname"></a><pre class="programlistinghaskell"><code class="cm">{-# LANGUAGE TypeFamilies, OverloadedStrings #-}</code>
+<code class="kr">import</code> <code class="nn">Data.Word</code> <code class="p">(</code><code class="kt">Word8</code><code class="p">)</code>
+<code class="kr">import</code> <code class="kr">qualified</code> <code class="nn">Data.ByteString</code> <code class="kr">as</code> <code class="n">S</code>
+<code class="kr">import</code> <code class="nn">Data.ByteString.Char8</code> <code class="p">()</code> <code class="cm">-- get an orphan IsString instance</code>
+
+<code class="kr">class</code> <code class="kt">SafeHead</code> <code class="n">a</code> <code class="kr">where</code>
+    <code class="kr">type</code> <code class="kt">Content</code> <code class="n">a</code>
+    <code class="n">safeHead</code> <code class="ow">::</code> <code class="n">a</code> <code class="ow">-&gt;</code> <code class="kt">Maybe</code> <code class="p">(</code><code class="kt">Content</code> <code class="n">a</code><code class="p">)</code>
+
+<code class="kr">instance</code> <code class="kt">SafeHead</code> <code class="p">[</code><code class="n">a</code><code class="p">]</code> <code class="kr">where</code>
+    <code class="kr">type</code> <code class="kt">Content</code> <code class="p">[</code><code class="n">a</code><code class="p">]</code> <code class="ow">=</code> <code class="n">a</code>
+    <code class="n">safeHead</code> <code class="kt">[]</code> <code class="ow">=</code> <code class="kt">Nothing</code>
+    <code class="n">safeHead</code> <code class="p">(</code><code class="n">x</code><code class="kt">:</code><code class="kr">_</code><code class="p">)</code> <code class="ow">=</code> <code class="kt">Just</code> <code class="n">x</code>
+
+<code class="kr">instance</code> <code class="kt">SafeHead</code> <code class="kt">S</code><code class="o">.</code><code class="kt">ByteString</code> <code class="kr">where</code>
+    <code class="kr">type</code> <code class="kt">Content</code> <code class="kt">S</code><code class="o">.</code><code class="kt">ByteString</code> <code class="ow">=</code> <code class="kt">Word8</code>
+    <code class="n">safeHead</code> <code class="n">bs</code>
+        <code class="o">|</code> <code class="kt">S</code><code class="o">.</code><code class="n">null</code> <code class="n">bs</code> <code class="ow">=</code> <code class="kt">Nothing</code>
+        <code class="o">|</code> <code class="n">otherwise</code> <code class="ow">=</code> <code class="kt">Just</code> <code class="o">$</code> <code class="kt">S</code><code class="o">.</code><code class="n">head</code> <code class="n">bs</code>
+
+<code class="nf">main</code> <code class="ow">::</code> <code class="kt">IO</code> <code class="nb">()</code>
+<code class="nf">main</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="n">print</code> <code class="o">$</code> <code class="n">safeHead</code> <code class="p">(</code><code class="s">""</code> <code class="ow">::</code> <code class="kt">String</code><code class="p">)</code>
+    <code class="n">print</code> <code class="o">$</code> <code class="n">safeHead</code> <code class="p">(</code><code class="s">"hello"</code> <code class="ow">::</code> <code class="kt">String</code><code class="p">)</code>
+
+    <code class="n">print</code> <code class="o">$</code> <code class="n">safeHead</code> <code class="p">(</code><code class="s">""</code> <code class="ow">::</code> <code class="kt">S</code><code class="o">.</code><code class="kt">ByteString</code><code class="p">)</code>
+    <code class="n">print</code> <code class="o">$</code> <code class="n">safeHead</code> <code class="p">(</code><code class="s">"hello"</code> <code class="ow">::</code> <code class="kt">S</code><code class="o">.</code><code class="kt">ByteString</code><code class="p">)</code>
+</pre><p class="calibre7">The new syntax is the ability to place a <code class="literal">type</code> inside of
+      a <code class="literal">class</code> and <code class="literal">instance</code>. We
+      can also use <code class="literal">data</code> instead, which will create a new data
+      type instead of reference an existing one.</p><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7">There are other ways to use associated types outside the context of a typeclass. However, in
+   Yesod, all of our associated types are in fact part of a type class. For more information on type
+   families, see <a class="ulink" href="http://www.haskell.org/haskellwiki/GHC/Type_families">the Haskell wiki page</a>.</p></div></div></div>
+
+{% endraw %}
+

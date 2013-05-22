@@ -1,0 +1,1683 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="c362f56a-aab0-4dba-af64-1adbf359fb48" name="dtb:uid"/>
+    <meta content="6" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Structure and Interpretation of Computer Programs</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="navPoint-1" playOrder="1">
+      <navLabel>
+        <text>Structure and Interpretation of Computer Programs</text>
+      </navLabel>
+      <content src="OEBPS/book-Z-H-1.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-2" playOrder="2">
+      <navLabel>
+        <text>Chapter 1</text>
+      </navLabel>
+      <content src="OEBPS/book-Z-H-9.html"/>
+      <navPoint class="chapter" id="navPoint-3" playOrder="2">
+        <navLabel>
+          <text>Programming in Lisp</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-9.html#heading_id_3"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-4" playOrder="3">
+        <navLabel>
+          <text>1.1 The Elements of Programming</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-10.html"/>
+        <navPoint class="chapter" id="navPoint-5" playOrder="4">
+          <navLabel>
+            <text>1.1.1 Expressions</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-10.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-6" playOrder="5">
+          <navLabel>
+            <text>1.1.2 Naming and the Environment</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-10.html#heading_id_4"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-7" playOrder="6">
+          <navLabel>
+            <text>1.1.3 Evaluating Combinations</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-10.html#heading_id_5"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-8" playOrder="7">
+          <navLabel>
+            <text>1.1.4 Compound Procedures</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-10.html#heading_id_6"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-9" playOrder="8">
+          <navLabel>
+            <text>1.1.5 The Substitution Model for Procedure Application</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-10.html#heading_id_7"/>
+          <navPoint class="chapter" id="navPoint-10" playOrder="9">
+            <navLabel>
+              <text>Applicative order versus normal order</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-10.html#heading_id_8"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-11" playOrder="10">
+          <navLabel>
+            <text>1.1.6 Conditional Expressions and Predicates</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-10.html#heading_id_9"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-12" playOrder="11">
+          <navLabel>
+            <text>1.1.7 Example: Square Roots by Newton's Method</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-10.html#heading_id_10"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-13" playOrder="12">
+          <navLabel>
+            <text>1.1.8 Procedures as Black-Box Abstractions</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-10.html#heading_id_11"/>
+          <navPoint class="chapter" id="navPoint-14" playOrder="13">
+            <navLabel>
+              <text>Local names</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-10.html#heading_id_12"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-15" playOrder="14">
+            <navLabel>
+              <text>Internal definitions and block structure</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-10.html#heading_id_13"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-16" playOrder="4">
+        <navLabel>
+          <text>1.2 Procedures and the Processes They Generate</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-11.html"/>
+        <navPoint class="chapter" id="navPoint-17" playOrder="16">
+          <navLabel>
+            <text>1.2.1 Linear Recursion and Iteration</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-11.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-18" playOrder="17">
+          <navLabel>
+            <text>1.2.2 Tree Recursion</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-11.html#heading_id_4"/>
+          <navPoint class="chapter" id="navPoint-19" playOrder="18">
+            <navLabel>
+              <text>Example: Counting change</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-11.html#heading_id_5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-20" playOrder="19">
+          <navLabel>
+            <text>1.2.3 Orders of Growth</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-11.html#heading_id_6"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-21" playOrder="20">
+          <navLabel>
+            <text>1.2.4 Exponentiation</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-11.html#heading_id_7"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-22" playOrder="21">
+          <navLabel>
+            <text>1.2.5 Greatest Common Divisors</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-11.html#heading_id_8"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-23" playOrder="22">
+          <navLabel>
+            <text>1.2.6 Example: Testing for Primality</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-11.html#heading_id_9"/>
+          <navPoint class="chapter" id="navPoint-24" playOrder="23">
+            <navLabel>
+              <text>Searching for divisors</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-11.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-25" playOrder="24">
+            <navLabel>
+              <text>The Fermat test</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-11.html#heading_id_11"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-26" playOrder="25">
+            <navLabel>
+              <text>Probabilistic methods</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-11.html#heading_id_12"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-27" playOrder="5">
+        <navLabel>
+          <text>1.3 Formulating Abstractions with Higher-Order Procedures</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-12.html"/>
+        <navPoint class="chapter" id="navPoint-28" playOrder="27">
+          <navLabel>
+            <text>1.3.1 Procedures as Arguments</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-12.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-29" playOrder="28">
+          <navLabel>
+            <text>1.3.2 Constructing Procedures Using Lambda</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-12.html#heading_id_4"/>
+          <navPoint class="chapter" id="navPoint-30" playOrder="29">
+            <navLabel>
+              <text>Using let to create local variables</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-12.html#heading_id_5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-31" playOrder="30">
+          <navLabel>
+            <text>1.3.3 Procedures as General Methods</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-12.html#heading_id_6"/>
+          <navPoint class="chapter" id="navPoint-32" playOrder="31">
+            <navLabel>
+              <text>Finding roots of equations by the half-interval method</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-12.html#heading_id_7"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-33" playOrder="32">
+            <navLabel>
+              <text>Finding fixed points of functions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-12.html#heading_id_8"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-34" playOrder="33">
+          <navLabel>
+            <text>1.3.4 Procedures as Returned Values</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-12.html#heading_id_9"/>
+          <navPoint class="chapter" id="navPoint-35" playOrder="34">
+            <navLabel>
+              <text>Newton's method</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-12.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-36" playOrder="35">
+            <navLabel>
+              <text>Abstractions and first-class procedures</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-12.html#heading_id_11"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-37" playOrder="6">
+      <navLabel>
+        <text>Chapter 2</text>
+      </navLabel>
+      <content src="OEBPS/book-Z-H-13.html"/>
+      <navPoint class="chapter" id="navPoint-38" playOrder="7">
+        <navLabel>
+          <text>2.1 Introduction to Data Abstraction</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-14.html"/>
+        <navPoint class="chapter" id="navPoint-39" playOrder="38">
+          <navLabel>
+            <text>2.1.1 Example: Arithmetic Operations for Rational Numbers</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-14.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-40" playOrder="39">
+            <navLabel>
+              <text>Pairs</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-14.html#heading_id_4"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-41" playOrder="40">
+            <navLabel>
+              <text>Representing rational numbers</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-14.html#heading_id_5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-42" playOrder="41">
+          <navLabel>
+            <text>2.1.2 Abstraction Barriers</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-14.html#heading_id_6"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-43" playOrder="42">
+          <navLabel>
+            <text>2.1.3 What Is Meant by Data?</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-14.html#heading_id_7"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-44" playOrder="43">
+          <navLabel>
+            <text>2.1.4 Extended Exercise: Interval Arithmetic</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-14.html#heading_id_8"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-45" playOrder="8">
+        <navLabel>
+          <text>2.2 Hierarchical Data and the Closure Property</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-15.html"/>
+        <navPoint class="chapter" id="navPoint-46" playOrder="45">
+          <navLabel>
+            <text>2.2.1 Representing Sequences</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-15.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-47" playOrder="46">
+            <navLabel>
+              <text>List operations</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_4"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-48" playOrder="47">
+            <navLabel>
+              <text>Mapping over lists</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-49" playOrder="48">
+          <navLabel>
+            <text>2.2.2 Hierarchical Structures</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-15.html#heading_id_6"/>
+          <navPoint class="chapter" id="navPoint-50" playOrder="49">
+            <navLabel>
+              <text>Mapping over trees</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_7"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-51" playOrder="50">
+          <navLabel>
+            <text>2.2.3 Sequences as Conventional Interfaces</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-15.html#heading_id_8"/>
+          <navPoint class="chapter" id="navPoint-52" playOrder="51">
+            <navLabel>
+              <text>Sequence Operations</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_9"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-53" playOrder="52">
+            <navLabel>
+              <text>Nested Mappings</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_10"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-54" playOrder="53">
+          <navLabel>
+            <text>2.2.4 Example: A Picture Language</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-15.html#heading_id_11"/>
+          <navPoint class="chapter" id="navPoint-55" playOrder="54">
+            <navLabel>
+              <text>The picture language</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_12"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-56" playOrder="55">
+            <navLabel>
+              <text>Higher-order operations</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_13"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-57" playOrder="56">
+            <navLabel>
+              <text>Frames</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_14"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-58" playOrder="57">
+            <navLabel>
+              <text>Painters</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_15"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-59" playOrder="58">
+            <navLabel>
+              <text>Transforming and combining painters</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_16"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-60" playOrder="59">
+            <navLabel>
+              <text>Levels of language for robust design</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-15.html#heading_id_17"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-61" playOrder="9">
+        <navLabel>
+          <text>2.3 Symbolic Data</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-16.html"/>
+        <navPoint class="chapter" id="navPoint-62" playOrder="61">
+          <navLabel>
+            <text>2.3.1 Quotation</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-16.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-63" playOrder="62">
+          <navLabel>
+            <text>2.3.2 Example: Symbolic Differentiation</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-16.html#heading_id_4"/>
+          <navPoint class="chapter" id="navPoint-64" playOrder="63">
+            <navLabel>
+              <text>The differentiation program with abstract data</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_5"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-65" playOrder="64">
+            <navLabel>
+              <text>Representing algebraic expressions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-66" playOrder="65">
+          <navLabel>
+            <text>2.3.3 Example: Representing Sets</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-16.html#heading_id_7"/>
+          <navPoint class="chapter" id="navPoint-67" playOrder="66">
+            <navLabel>
+              <text>Sets as unordered lists</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_8"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-68" playOrder="67">
+            <navLabel>
+              <text>Sets as ordered lists</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_9"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-69" playOrder="68">
+            <navLabel>
+              <text>Sets as binary trees</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-70" playOrder="69">
+            <navLabel>
+              <text>Sets and information retrieval</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_11"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-71" playOrder="70">
+          <navLabel>
+            <text>2.3.4 Example: Huffman Encoding Trees</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-16.html#heading_id_12"/>
+          <navPoint class="chapter" id="navPoint-72" playOrder="71">
+            <navLabel>
+              <text>Generating Huffman trees</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_13"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-73" playOrder="72">
+            <navLabel>
+              <text>Representing Huffman trees</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_14"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-74" playOrder="73">
+            <navLabel>
+              <text>The decoding procedure</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_15"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-75" playOrder="74">
+            <navLabel>
+              <text>Sets of weighted elements</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-16.html#heading_id_16"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-76" playOrder="10">
+        <navLabel>
+          <text>2.4 Multiple Representations for Abstract Data</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-17.html"/>
+        <navPoint class="chapter" id="navPoint-77" playOrder="76">
+          <navLabel>
+            <text>2.4.1 Representations for Complex Numbers</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-17.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-78" playOrder="77">
+          <navLabel>
+            <text>2.4.2 Tagged data</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-17.html#heading_id_4"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-79" playOrder="78">
+          <navLabel>
+            <text>2.4.3 Data-Directed Programming and Additivity</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-17.html#heading_id_5"/>
+          <navPoint class="chapter" id="navPoint-80" playOrder="79">
+            <navLabel>
+              <text>Message passing</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-17.html#heading_id_6"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-81" playOrder="11">
+        <navLabel>
+          <text>2.5 Systems with Generic Operations</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-18.html"/>
+        <navPoint class="chapter" id="navPoint-82" playOrder="81">
+          <navLabel>
+            <text>2.5.1 Generic Arithmetic Operations</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-18.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-83" playOrder="82">
+          <navLabel>
+            <text>2.5.2 Combining Data of Different Types</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-18.html#heading_id_4"/>
+          <navPoint class="chapter" id="navPoint-84" playOrder="83">
+            <navLabel>
+              <text>Coercion</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-18.html#heading_id_5"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-85" playOrder="84">
+            <navLabel>
+              <text>Hierarchies of types</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-18.html#heading_id_6"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-86" playOrder="85">
+            <navLabel>
+              <text>Inadequacies of hierarchies</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-18.html#heading_id_7"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-87" playOrder="86">
+          <navLabel>
+            <text>2.5.3 Example: Symbolic Algebra</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-18.html#heading_id_8"/>
+          <navPoint class="chapter" id="navPoint-88" playOrder="87">
+            <navLabel>
+              <text>Arithmetic on polynomials</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-18.html#heading_id_9"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-89" playOrder="88">
+            <navLabel>
+              <text>Representing term lists</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-18.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-90" playOrder="89">
+            <navLabel>
+              <text>Hierarchies of types in symbolic algebra</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-18.html#heading_id_11"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-91" playOrder="90">
+            <navLabel>
+              <text>Extended exercise: Rational functions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-18.html#heading_id_12"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-92" playOrder="12">
+      <navLabel>
+        <text>Chapter 3</text>
+      </navLabel>
+      <content src="OEBPS/book-Z-H-19.html"/>
+      <navPoint class="chapter" id="navPoint-93" playOrder="13">
+        <navLabel>
+          <text>3.1 Assignment and Local State</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-20.html"/>
+        <navPoint class="chapter" id="navPoint-94" playOrder="93">
+          <navLabel>
+            <text>3.1.1 Local State Variables</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-20.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-95" playOrder="94">
+          <navLabel>
+            <text>3.1.2 The Benefits of Introducing Assignment</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-20.html#heading_id_4"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-96" playOrder="95">
+          <navLabel>
+            <text>3.1.3 The Costs of Introducing Assignment</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-20.html#heading_id_5"/>
+          <navPoint class="chapter" id="navPoint-97" playOrder="96">
+            <navLabel>
+              <text>Sameness and change</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-20.html#heading_id_6"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-98" playOrder="97">
+            <navLabel>
+              <text>Pitfalls of imperative programming</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-20.html#heading_id_7"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-99" playOrder="14">
+        <navLabel>
+          <text>3.2 The Environment Model of Evaluation</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-21.html"/>
+        <navPoint class="chapter" id="navPoint-100" playOrder="99">
+          <navLabel>
+            <text>3.2.1 The Rules for Evaluation</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-21.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-101" playOrder="100">
+          <navLabel>
+            <text>3.2.2 Applying Simple Procedures</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-21.html#heading_id_4"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-102" playOrder="101">
+          <navLabel>
+            <text>3.2.3 Frames as the Repository of Local State</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-21.html#heading_id_5"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-103" playOrder="102">
+          <navLabel>
+            <text>3.2.4 Internal Definitions</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-21.html#heading_id_6"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-104" playOrder="15">
+        <navLabel>
+          <text>3.3 Modeling with Mutable Data</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-22.html"/>
+        <navPoint class="chapter" id="navPoint-105" playOrder="104">
+          <navLabel>
+            <text>3.3.1 Mutable List Structure</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-22.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-106" playOrder="105">
+            <navLabel>
+              <text>Sharing and identity</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_4"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-107" playOrder="106">
+            <navLabel>
+              <text>Mutation is just assignment</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-108" playOrder="107">
+          <navLabel>
+            <text>3.3.2 Representing Queues</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-22.html#heading_id_6"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-109" playOrder="108">
+          <navLabel>
+            <text>3.3.3 Representing Tables</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-22.html#heading_id_7"/>
+          <navPoint class="chapter" id="navPoint-110" playOrder="109">
+            <navLabel>
+              <text>Two-dimensional tables</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_8"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-111" playOrder="110">
+            <navLabel>
+              <text>Creating local tables</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_9"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-112" playOrder="111">
+          <navLabel>
+            <text>3.3.4 A Simulator for Digital Circuits</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-22.html#heading_id_10"/>
+          <navPoint class="chapter" id="navPoint-113" playOrder="112">
+            <navLabel>
+              <text>Primitive function boxes</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_11"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-114" playOrder="113">
+            <navLabel>
+              <text>Representing wires</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_12"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-115" playOrder="114">
+            <navLabel>
+              <text>The agenda</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_13"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-116" playOrder="115">
+            <navLabel>
+              <text>A sample simulation</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_14"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-117" playOrder="116">
+            <navLabel>
+              <text>Implementing the agenda</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_15"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-118" playOrder="117">
+          <navLabel>
+            <text>3.3.5 Propagation of Constraints</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-22.html#heading_id_16"/>
+          <navPoint class="chapter" id="navPoint-119" playOrder="118">
+            <navLabel>
+              <text>Using the constraint system</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_17"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-120" playOrder="119">
+            <navLabel>
+              <text>Implementing the constraint system</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_18"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-121" playOrder="120">
+            <navLabel>
+              <text>Representing connectors</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-22.html#heading_id_19"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-122" playOrder="16">
+        <navLabel>
+          <text>3.4 Concurrency: Time Is of the Essence</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-23.html"/>
+        <navPoint class="chapter" id="navPoint-123" playOrder="122">
+          <navLabel>
+            <text>3.4.1 The Nature of Time in Concurrent Systems</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-23.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-124" playOrder="123">
+            <navLabel>
+              <text>Correct behavior of concurrent programs</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-23.html#heading_id_4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-125" playOrder="124">
+          <navLabel>
+            <text>3.4.2 Mechanisms for Controlling Concurrency</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-23.html#heading_id_5"/>
+          <navPoint class="chapter" id="navPoint-126" playOrder="125">
+            <navLabel>
+              <text>Serializing access to shared state</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-23.html#heading_id_6"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-127" playOrder="126">
+            <navLabel>
+              <text>Serializers in Scheme</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-23.html#heading_id_7"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-128" playOrder="127">
+            <navLabel>
+              <text>Complexity of using multiple shared resources</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-23.html#heading_id_8"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-129" playOrder="128">
+            <navLabel>
+              <text>Implementing serializers</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-23.html#heading_id_9"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-130" playOrder="129">
+            <navLabel>
+              <text>Deadlock</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-23.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-131" playOrder="130">
+            <navLabel>
+              <text>Concurrency, time, and communication</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-23.html#heading_id_11"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-132" playOrder="17">
+        <navLabel>
+          <text>3.5 Streams</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-24.html"/>
+        <navPoint class="chapter" id="navPoint-133" playOrder="132">
+          <navLabel>
+            <text>3.5.1 Streams Are Delayed Lists</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-24.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-134" playOrder="133">
+            <navLabel>
+              <text>The stream implementation in action</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-24.html#heading_id_4"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-135" playOrder="134">
+            <navLabel>
+              <text>Implementing delay and force</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-24.html#heading_id_5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-136" playOrder="135">
+          <navLabel>
+            <text>3.5.2 Infinite Streams</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-24.html#heading_id_6"/>
+          <navPoint class="chapter" id="navPoint-137" playOrder="136">
+            <navLabel>
+              <text>Defining streams implicitly</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-24.html#heading_id_7"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-138" playOrder="137">
+          <navLabel>
+            <text>3.5.3 Exploiting the Stream Paradigm</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-24.html#heading_id_8"/>
+          <navPoint class="chapter" id="navPoint-139" playOrder="138">
+            <navLabel>
+              <text>Formulating iterations as stream processes</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-24.html#heading_id_9"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-140" playOrder="139">
+            <navLabel>
+              <text>Infinite streams of pairs</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-24.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-141" playOrder="140">
+            <navLabel>
+              <text>Streams as signals</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-24.html#heading_id_11"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-142" playOrder="141">
+          <navLabel>
+            <text>3.5.4 Streams and Delayed Evaluation</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-24.html#heading_id_12"/>
+          <navPoint class="chapter" id="navPoint-143" playOrder="142">
+            <navLabel>
+              <text>Normal-order evaluation</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-24.html#heading_id_13"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-144" playOrder="143">
+          <navLabel>
+            <text>3.5.5 Modularity of Functional Programs and Modularity of Objects</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-24.html#heading_id_14"/>
+          <navPoint class="chapter" id="navPoint-145" playOrder="144">
+            <navLabel>
+              <text>A functional-programming view of time</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-24.html#heading_id_15"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-146" playOrder="18">
+      <navLabel>
+        <text>Chapter 4</text>
+      </navLabel>
+      <content src="OEBPS/book-Z-H-25.html"/>
+      <navPoint class="chapter" id="navPoint-147" playOrder="19">
+        <navLabel>
+          <text>4.1 The Metacircular Evaluator</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-26.html"/>
+        <navPoint class="chapter" id="navPoint-148" playOrder="147">
+          <navLabel>
+            <text>4.1.1 The Core of the Evaluator</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-26.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-149" playOrder="148">
+            <navLabel>
+              <text>Eval</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_4"/>
+            <navPoint class="chapter" id="navPoint-150" playOrder="149">
+              <navLabel>
+                <text>Primitive expressions</text>
+              </navLabel>
+              <content src="OEBPS/book-Z-H-26.html#heading_id_5"/>
+            </navPoint>
+            <navPoint class="chapter" id="navPoint-151" playOrder="150">
+              <navLabel>
+                <text>Special forms</text>
+              </navLabel>
+              <content src="OEBPS/book-Z-H-26.html#heading_id_6"/>
+            </navPoint>
+            <navPoint class="chapter" id="navPoint-152" playOrder="151">
+              <navLabel>
+                <text>Combinations</text>
+              </navLabel>
+              <content src="OEBPS/book-Z-H-26.html#heading_id_7"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-153" playOrder="152">
+            <navLabel>
+              <text>Apply</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_8"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-154" playOrder="153">
+            <navLabel>
+              <text>Procedure arguments</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_9"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-155" playOrder="154">
+            <navLabel>
+              <text>Conditionals</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-156" playOrder="155">
+            <navLabel>
+              <text>Sequences</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_11"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-157" playOrder="156">
+            <navLabel>
+              <text>Assignments and definitions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_12"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-158" playOrder="157">
+          <navLabel>
+            <text>4.1.2 Representing Expressions</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-26.html#heading_id_13"/>
+          <navPoint class="chapter" id="navPoint-159" playOrder="158">
+            <navLabel>
+              <text>Derived expressions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_14"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-160" playOrder="159">
+          <navLabel>
+            <text>4.1.3 Evaluator Data Structures</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-26.html#heading_id_15"/>
+          <navPoint class="chapter" id="navPoint-161" playOrder="160">
+            <navLabel>
+              <text>Testing of predicates</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_16"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-162" playOrder="161">
+            <navLabel>
+              <text>Representing procedures</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_17"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-163" playOrder="162">
+            <navLabel>
+              <text>Operations on Environments</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-26.html#heading_id_18"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-164" playOrder="163">
+          <navLabel>
+            <text>4.1.4 Running the Evaluator as a Program</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-26.html#heading_id_19"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-165" playOrder="164">
+          <navLabel>
+            <text>4.1.5 Data as Programs</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-26.html#heading_id_20"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-166" playOrder="165">
+          <navLabel>
+            <text>4.1.6 Internal Definitions</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-26.html#heading_id_21"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-167" playOrder="166">
+          <navLabel>
+            <text>4.1.7 Separating Syntactic Analysis from Execution</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-26.html#heading_id_22"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-168" playOrder="20">
+        <navLabel>
+          <text>4.2 Variations on a Scheme – Lazy Evaluation</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-27.html"/>
+        <navPoint class="chapter" id="navPoint-169" playOrder="168">
+          <navLabel>
+            <text>4.2.1 Normal Order and Applicative Order</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-27.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-170" playOrder="169">
+          <navLabel>
+            <text>4.2.2 An Interpreter with Lazy Evaluation</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-27.html#heading_id_4"/>
+          <navPoint class="chapter" id="navPoint-171" playOrder="170">
+            <navLabel>
+              <text>Modifying the evaluator</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-27.html#heading_id_5"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-172" playOrder="171">
+            <navLabel>
+              <text>Representing thunks</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-27.html#heading_id_6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-173" playOrder="172">
+          <navLabel>
+            <text>4.2.3 Streams as Lazy Lists</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-27.html#heading_id_7"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-174" playOrder="21">
+        <navLabel>
+          <text>4.3 Variations on a Scheme – Nondeterministic Computing</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-28.html"/>
+        <navPoint class="chapter" id="navPoint-175" playOrder="174">
+          <navLabel>
+            <text>4.3.1 Amb and Search</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-28.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-176" playOrder="175">
+            <navLabel>
+              <text>Driver loop</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-177" playOrder="176">
+          <navLabel>
+            <text>4.3.2 Examples of Nondeterministic Programs</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-28.html#heading_id_5"/>
+          <navPoint class="chapter" id="navPoint-178" playOrder="177">
+            <navLabel>
+              <text>Logic Puzzles</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_6"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-179" playOrder="178">
+            <navLabel>
+              <text>Parsing natural language</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_7"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-180" playOrder="179">
+          <navLabel>
+            <text>4.3.3 Implementing the Amb Evaluator</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-28.html#heading_id_8"/>
+          <navPoint class="chapter" id="navPoint-181" playOrder="180">
+            <navLabel>
+              <text>Execution procedures and continuations</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_9"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-182" playOrder="181">
+            <navLabel>
+              <text>Structure of the evaluator</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-183" playOrder="182">
+            <navLabel>
+              <text>Simple expressions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_11"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-184" playOrder="183">
+            <navLabel>
+              <text>Conditionals and sequences</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_12"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-185" playOrder="184">
+            <navLabel>
+              <text>Definitions and assignments</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_13"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-186" playOrder="185">
+            <navLabel>
+              <text>Procedure applications</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_14"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-187" playOrder="186">
+            <navLabel>
+              <text>Evaluating amb expressions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_15"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-188" playOrder="187">
+            <navLabel>
+              <text>Driver loop</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-28.html#heading_id_16"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-189" playOrder="22">
+        <navLabel>
+          <text>4.4 Logic Programming</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-29.html"/>
+        <navPoint class="chapter" id="navPoint-190" playOrder="189">
+          <navLabel>
+            <text>4.4.1 Deductive Information Retrieval</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-29.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-191" playOrder="190">
+            <navLabel>
+              <text>A sample data base</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_4"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-192" playOrder="191">
+            <navLabel>
+              <text>Simple queries</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_5"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-193" playOrder="192">
+            <navLabel>
+              <text>Compound queries</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_6"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-194" playOrder="193">
+            <navLabel>
+              <text>Rules</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_7"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-195" playOrder="194">
+            <navLabel>
+              <text>Logic as programs</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_8"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-196" playOrder="195">
+          <navLabel>
+            <text>4.4.2 How the Query System Works</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-29.html#heading_id_9"/>
+          <navPoint class="chapter" id="navPoint-197" playOrder="196">
+            <navLabel>
+              <text>Pattern matching</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-198" playOrder="197">
+            <navLabel>
+              <text>Streams of frames</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_11"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-199" playOrder="198">
+            <navLabel>
+              <text>Compound queries</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_12"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-200" playOrder="199">
+            <navLabel>
+              <text>Unification</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_13"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-201" playOrder="200">
+            <navLabel>
+              <text>Applying rules</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_14"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-202" playOrder="201">
+            <navLabel>
+              <text>Simple queries</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_15"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-203" playOrder="202">
+            <navLabel>
+              <text>The query evaluator and the driver loop</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_16"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-204" playOrder="203">
+          <navLabel>
+            <text>4.4.3 Is Logic Programming Mathematical Logic?</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-29.html#heading_id_17"/>
+          <navPoint class="chapter" id="navPoint-205" playOrder="204">
+            <navLabel>
+              <text>Infinite loops</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_18"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-206" playOrder="205">
+            <navLabel>
+              <text>Problems with not</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_19"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-207" playOrder="206">
+          <navLabel>
+            <text>4.4.4 Implementing the Query System</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-29.html#heading_id_20"/>
+          <navPoint class="chapter" id="navPoint-208" playOrder="207">
+            <navLabel>
+              <text>4.4.4.1 The Driver Loop and Instantiation</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_21"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-209" playOrder="208">
+            <navLabel>
+              <text>4.4.4.2 The Evaluator</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_22"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-210" playOrder="209">
+            <navLabel>
+              <text>Simple queries</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_23"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-211" playOrder="210">
+            <navLabel>
+              <text>Compound queries</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_24"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-212" playOrder="211">
+            <navLabel>
+              <text>Filters</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_25"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-213" playOrder="212">
+            <navLabel>
+              <text>4.4.4.3 Finding Assertions by Pattern Matching</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_26"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-214" playOrder="213">
+            <navLabel>
+              <text>Patterns with dotted tails</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_27"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-215" playOrder="214">
+            <navLabel>
+              <text>4.4.4.4 Rules and Unification</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_28"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-216" playOrder="215">
+            <navLabel>
+              <text>4.4.4.5 Maintaining the Data Base</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_29"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-217" playOrder="216">
+            <navLabel>
+              <text>4.4.4.6 Stream Operations</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_30"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-218" playOrder="217">
+            <navLabel>
+              <text>4.4.4.7 Query Syntax Procedures</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_31"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-219" playOrder="218">
+            <navLabel>
+              <text>4.4.4.8 Frames and Bindings</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-29.html#heading_id_32"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-220" playOrder="23">
+      <navLabel>
+        <text>Chapter 5</text>
+      </navLabel>
+      <content src="OEBPS/book-Z-H-30.html"/>
+      <navPoint class="chapter" id="navPoint-221" playOrder="24">
+        <navLabel>
+          <text>5.1 Designing Register Machines</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-31.html"/>
+        <navPoint class="chapter" id="navPoint-222" playOrder="221">
+          <navLabel>
+            <text>5.1.1 A Language for Describing Register Machines</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-31.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-223" playOrder="222">
+            <navLabel>
+              <text>Actions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-31.html#heading_id_4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-224" playOrder="223">
+          <navLabel>
+            <text>5.1.2 Abstraction in Machine Design</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-31.html#heading_id_5"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-225" playOrder="224">
+          <navLabel>
+            <text>5.1.3 Subroutines</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-31.html#heading_id_6"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-226" playOrder="225">
+          <navLabel>
+            <text>5.1.4 Using a Stack to Implement Recursion</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-31.html#heading_id_7"/>
+          <navPoint class="chapter" id="navPoint-227" playOrder="226">
+            <navLabel>
+              <text>A double recursion</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-31.html#heading_id_8"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-228" playOrder="227">
+          <navLabel>
+            <text>5.1.5 Instruction Summary</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-31.html#heading_id_9"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-229" playOrder="25">
+        <navLabel>
+          <text>5.2 A Register-Machine Simulator</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-32.html"/>
+        <navPoint class="chapter" id="navPoint-230" playOrder="229">
+          <navLabel>
+            <text>5.2.1 The Machine Model</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-32.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-231" playOrder="230">
+            <navLabel>
+              <text>Registers</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-32.html#heading_id_4"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-232" playOrder="231">
+            <navLabel>
+              <text>The stack</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-32.html#heading_id_5"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-233" playOrder="232">
+            <navLabel>
+              <text>The basic machine</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-32.html#heading_id_6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-234" playOrder="233">
+          <navLabel>
+            <text>5.2.2 The Assembler</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-32.html#heading_id_7"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-235" playOrder="234">
+          <navLabel>
+            <text>5.2.3 Generating Execution Procedures for Instructions</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-32.html#heading_id_8"/>
+          <navPoint class="chapter" id="navPoint-236" playOrder="235">
+            <navLabel>
+              <text>Assign instructions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-32.html#heading_id_9"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-237" playOrder="236">
+            <navLabel>
+              <text>Test, branch, and goto instructions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-32.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-238" playOrder="237">
+            <navLabel>
+              <text>Other instructions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-32.html#heading_id_11"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-239" playOrder="238">
+            <navLabel>
+              <text>Execution procedures for subexpressions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-32.html#heading_id_12"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-240" playOrder="239">
+          <navLabel>
+            <text>5.2.4 Monitoring Machine Performance</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-32.html#heading_id_13"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-241" playOrder="26">
+        <navLabel>
+          <text>5.3 Storage Allocation and Garbage Collection</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-33.html"/>
+        <navPoint class="chapter" id="navPoint-242" playOrder="241">
+          <navLabel>
+            <text>5.3.1 Memory as Vectors</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-33.html#heading_id_3"/>
+          <navPoint class="chapter" id="navPoint-243" playOrder="242">
+            <navLabel>
+              <text>Representing Lisp data</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-33.html#heading_id_4"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-244" playOrder="243">
+            <navLabel>
+              <text>Implementing the primitive list operations</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-33.html#heading_id_5"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-245" playOrder="244">
+            <navLabel>
+              <text>Implementing stacks</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-33.html#heading_id_6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-246" playOrder="245">
+          <navLabel>
+            <text>5.3.2 Maintaining the Illusion of Infinite Memory</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-33.html#heading_id_7"/>
+          <navPoint class="chapter" id="navPoint-247" playOrder="246">
+            <navLabel>
+              <text>Implementation of a stop-and-copy garbage collector</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-33.html#heading_id_8"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-248" playOrder="27">
+        <navLabel>
+          <text>5.4 The Explicit-Control Evaluator</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-34.html"/>
+        <navPoint class="chapter" id="navPoint-249" playOrder="248">
+          <navLabel>
+            <text>Registers and operations</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-34.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-250" playOrder="249">
+          <navLabel>
+            <text>5.4.1 The Core of the Explicit-Control Evaluator</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-34.html#heading_id_4"/>
+          <navPoint class="chapter" id="navPoint-251" playOrder="250">
+            <navLabel>
+              <text>Evaluating simple expressions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-34.html#heading_id_5"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-252" playOrder="251">
+            <navLabel>
+              <text>Evaluating procedure applications</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-34.html#heading_id_6"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-253" playOrder="252">
+            <navLabel>
+              <text>Procedure application</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-34.html#heading_id_7"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-254" playOrder="253">
+          <navLabel>
+            <text>5.4.2 Sequence Evaluation and Tail Recursion</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-34.html#heading_id_8"/>
+          <navPoint class="chapter" id="navPoint-255" playOrder="254">
+            <navLabel>
+              <text>Tail recursion</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-34.html#heading_id_9"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-256" playOrder="255">
+          <navLabel>
+            <text>5.4.3 Conditionals, Assignments, and Definitions</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-34.html#heading_id_10"/>
+          <navPoint class="chapter" id="navPoint-257" playOrder="256">
+            <navLabel>
+              <text>Assignments and definitions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-34.html#heading_id_11"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-258" playOrder="257">
+          <navLabel>
+            <text>5.4.4 Running the Evaluator</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-34.html#heading_id_12"/>
+          <navPoint class="chapter" id="navPoint-259" playOrder="258">
+            <navLabel>
+              <text>Monitoring the performance of the evaluator</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-34.html#heading_id_13"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-260" playOrder="28">
+        <navLabel>
+          <text>5.5 Compilation</text>
+        </navLabel>
+        <content src="OEBPS/book-Z-H-35.html"/>
+        <navPoint class="chapter" id="navPoint-261" playOrder="260">
+          <navLabel>
+            <text>An overview of the compiler</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-35.html#heading_id_3"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-262" playOrder="261">
+          <navLabel>
+            <text>5.5.1 Structure of the Compiler</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-35.html#heading_id_4"/>
+          <navPoint class="chapter" id="navPoint-263" playOrder="262">
+            <navLabel>
+              <text>Targets and linkages</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_5"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-264" playOrder="263">
+            <navLabel>
+              <text>Instruction sequences and stack usage</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-265" playOrder="264">
+          <navLabel>
+            <text>5.5.2 Compiling Expressions</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-35.html#heading_id_7"/>
+          <navPoint class="chapter" id="navPoint-266" playOrder="265">
+            <navLabel>
+              <text>Compiling linkage code</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_8"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-267" playOrder="266">
+            <navLabel>
+              <text>Compiling simple expressions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_9"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-268" playOrder="267">
+            <navLabel>
+              <text>Compiling conditional expressions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_10"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-269" playOrder="268">
+            <navLabel>
+              <text>Compiling sequences</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_11"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-270" playOrder="269">
+            <navLabel>
+              <text>Compiling lambda expressions</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_12"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-271" playOrder="270">
+          <navLabel>
+            <text>5.5.3 Compiling Combinations</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-35.html#heading_id_13"/>
+          <navPoint class="chapter" id="navPoint-272" playOrder="271">
+            <navLabel>
+              <text>Applying procedures</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_14"/>
+          </navPoint>
+          <navPoint class="chapter" id="navPoint-273" playOrder="272">
+            <navLabel>
+              <text>Applying compiled procedures</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_15"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-274" playOrder="273">
+          <navLabel>
+            <text>5.5.4 Combining Instruction Sequences</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-35.html#heading_id_16"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-275" playOrder="274">
+          <navLabel>
+            <text>5.5.5 An Example of Compiled Code</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-35.html#heading_id_17"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-276" playOrder="275">
+          <navLabel>
+            <text>5.5.6 Lexical Addressing</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-35.html#heading_id_18"/>
+        </navPoint>
+        <navPoint class="chapter" id="navPoint-277" playOrder="276">
+          <navLabel>
+            <text>5.5.7 Interfacing Compiled Code to the Evaluator</text>
+          </navLabel>
+          <content src="OEBPS/book-Z-H-35.html#heading_id_19"/>
+          <navPoint class="chapter" id="navPoint-278" playOrder="277">
+            <navLabel>
+              <text>Interpretation and compilation</text>
+            </navLabel>
+            <content src="OEBPS/book-Z-H-35.html#heading_id_20"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

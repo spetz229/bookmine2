@@ -1,0 +1,56 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: ch02_split_001.html
+next: ch02lev1sec2.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<a name="ch02lev1sec1" class="calibre18" id="ch02lev1sec1"></a>
+<h3 id="631532-827" class="docSection1Title">2.1. What is Thread Safety?</h3>
+<p class="docText1">Defining thread safety is surprisingly tricky. The more formal attempts are so complicated as to offer little practical guidance or intuitive understanding, and the rest are informal descriptions that can seem downright circular. A quick Google search turns up numerous "definitions" like these:</p>
+<blockquote class="calibre19">
+<p class="docText1">. . . can be called from multiple program threads without unwanted interactions between the threads.</p>
+<p class="docText1">. . .may be called by more than one thread at a time without requiring any other action on the caller's part.</p>
+</blockquote>
+<p class="docText1">Given definitions like these, it's no wonder we find thread safety confusing! They sound suspiciously like "a class is thread-safe if it can be used safely from multiple threads." You can't really argue with such a statement, but it doesn't offer much practical help either. How do we tell a thread-safe class from an unsafe one? What do we even mean by "safe"?</p>
+<p class="docText1">At the heart of any reasonable definition of thread safety is the concept of <span class="docEmphasis">correctness</span>. If our definition of thread safety is fuzzy, it is because we lack a clear definition of correctness.</p>
+<p class="docText1">Correctness means that a class <span class="docEmphasis">conforms to its specification</span>. A good specification defines <span class="docEmphasis">invariants</span> constraining an object's state and <span class="docEmphasis">postconditions</span> describing the effects of its operations. Since we often don't write adequate specifications for our classes, how can we possibly know they are correct? We can't, but that doesn't stop us from using them anyway once we've convinced ourselves that "the code works". This "code confidence" is about as close as many of us get to correctness, so let's just assume that single-threaded correctness is something that "we know it when we see it". Having optimistically defined "correctness" as something that can be recognized, we can now define thread safety in a somewhat less circular way: a class is thread-safe when it continues to behave correctly when accessed from multiple threads.</p>
+<a name="ch02sb03" class="calibre18" id="ch02sb03"></a><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<p class="docText1">A class is <span class="docEmphasis">thread-safe</span> if it behaves correctly when accessed from multiple threads, regardless of the scheduling or interleaving of the execution of those threads by the runtime environment, and with no additional synchronization or other coordination on the part of the calling code.</p>
+</td></tr></table></p><p class="calibre1"> </p>
+<p class="docText1">Since any single-threaded program is also a valid multithreaded program, it cannot be thread-safe if it is not even correct in a single-threaded environment. <sup class="docFootnote"><a class="calibre2" href="#ch02fn02">[2]</a></sup> If an object is correctly implemented, no sequence of operationscalls to public methods and reads or writes of public fieldsshould be able to violate any of its invariants or postconditions. <span class="docEmphasis">No set of operations performed sequentially or concurrently on instances of a thread-safe class can cause an instance to be in an invalid state.</span></p><blockquote class="calibre19"><p class="docFootnote1"><sup class="calibre27"><a name="ch02fn02" class="calibre18" id="ch02fn02">[2]</a></sup> If the loose use of "correctness" here bothers you, you may prefer to think of a thread-safe class as one that is no more broken in a concurrent environment than in a single-threaded environment.</p></blockquote>
+<a name="ch02sb04" class="calibre18" id="ch02sb04"></a><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<p class="docText1">Thread-safe classes encapsulate any needed synchronization so that clients need not provide their own.</p>
+</td></tr></table></p><p class="calibre1"> </p>
+<a name="ch02lev2sec1" class="calibre18" id="ch02lev2sec1"></a>
+<h4 id="title-IDAE0PTM" class="docSection2Title">2.1.1. Example: A Stateless Servlet</h4>
+<p class="docText1">In <a class="calibre2" href="ch01.html#ch01">Chapter 1</a>, we listed a number of frameworks that create threads and call your components from those threads, leaving you with the responsibility of making your components thread-safe. Very often, thread-safety requirements stem not from a decision to use threads directly but from a decision to use a facility like the Servlets framework. We're going to develop a simple examplea servlet-based factorization serviceand slowly extend it to add features while preserving its thread safety.</p>
+<p class="docText1"><a class="calibre2" href="#ch02list01">Listing 2.1</a> shows our simple factorization servlet. It unpacks the number to be factored from the servlet request, factors it, and packages the results into the servlet response.</p>
+<a name="ch02list01" class="calibre18" id="ch02list01"></a><h5 id="title-IDAB1PTM" class="docExampleTitle">Listing 2.1. A Stateless Servlet.</h5><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<pre class="calibre30">@ThreadSafe
+public class StatelessFactorizer implements Servlet {
+    public void service(ServletRequest req, ServletResponse resp) {
+        BigInteger i = extractFromRequest(req);
+        BigInteger[] factors = factor(i);
+        encodeIntoResponse(resp, factors);
+    }
+}
+</pre><br class="calibre11"/>
+</td></tr></table></p>
+<p class="docText1"><a name="iddle2185" class="calibre18" id="iddle2185"></a><a name="iddle2571" class="calibre18" id="iddle2571"></a><a name="iddle2572" class="calibre18" id="iddle2572"></a><a name="iddle2608" class="calibre18" id="iddle2608"></a><a name="iddle2779" class="calibre18" id="iddle2779"></a><a name="iddle2780" class="calibre18" id="iddle2780"></a><a name="iddle4208" class="calibre18" id="iddle4208"></a><a name="iddle4209" class="calibre18" id="iddle4209"></a><a name="iddle4422" class="calibre18" id="iddle4422"></a><a name="iddle4423" class="calibre18" id="iddle4423"></a><a name="iddle4551" class="calibre18" id="iddle4551"></a><a name="iddle4728" class="calibre18" id="iddle4728"></a><a name="iddle1166" class="calibre18" id="iddle1166"></a><a name="iddle1167" class="calibre18" id="iddle1167"></a><a name="iddle2210" class="calibre18" id="iddle2210"></a><a name="iddle2556" class="calibre18" id="iddle2556"></a><a name="iddle2557" class="calibre18" id="iddle2557"></a><a name="iddle2591" class="calibre18" id="iddle2591"></a><a name="iddle2592" class="calibre18" id="iddle2592"></a><a name="iddle2719" class="calibre18" id="iddle2719"></a><a name="iddle2720" class="calibre18" id="iddle2720"></a><a name="iddle4204" class="calibre18" id="iddle4204"></a><a name="iddle4205" class="calibre18" id="iddle4205"></a><a name="iddle4417" class="calibre18" id="iddle4417"></a><a name="iddle4418" class="calibre18" id="iddle4418"></a><a name="iddle4737" class="calibre18" id="iddle4737"></a><tt class="calibre25">StatelessFactorizer</tt> is, like most servlets, stateless: it has no fields and references no fields from other classes. The transient state for a particular computation exists solely in local variables that are stored on the thread's stack and are accessible only to the executing thread. One thread accessing a <tt class="calibre25">StatelessFactorizer</tt> cannot influence the result of another thread accessing the same <tt class="calibre25">StatelessFactorizer</tt>; because the two threads do not share state, it is as if they were accessing different instances. Since the actions of a thread accessing a stateless object cannot affect the correctness of operations in other threads, stateless objects are thread-safe.</p>
+<a name="ch02sb05" class="calibre18" id="ch02sb05"></a><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<p class="docText1">Stateless objects are always thread-safe.</p>
+</td></tr></table></p><p class="calibre1"> </p>
+<p class="docText1">The fact that most servlets can be implemented with no state greatly reduces the burden of making servlets thread-safe. It is only when servlets want to remember things from one request to another that the thread safety requirement becomes an issue.</p>
+
+<p class="calibre1"> </p>
+
+</div>
+
+{% endraw %}
+

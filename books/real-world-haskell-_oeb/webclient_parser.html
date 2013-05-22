@@ -1,0 +1,264 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: webclient_db.html
+next: webclient_download.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="webclient_db.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="webclient_download.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="webclient_parser" class="calibre27" id="webclient_parser"></a><h3 id="643999-850" class="docSection1Title">22.3. The Parser</h3><a name="x_iv" class="calibre27" id="x_iv"></a><p class="docText">Now that we have the database component, we need to have
+    code to parse the podcast feeds. These are XML files that contain various
+    information. Here's an example XML file to show you what they look
+    like:</p><pre class="calibre39">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;rss xmlns:itunes="http://www.itunes.com/DTDs/Podcast-1.0.dtd" version="2.0"&gt;
+  &lt;channel&gt;
+    &lt;title&gt;Haskell Radio&lt;/title&gt;
+    &lt;link&gt;http://www.example.com/radio/&lt;/link&gt;
+    &lt;description&gt;Description of this podcast&lt;/description&gt;
+    &lt;item&gt;
+      &lt;title&gt;Episode 2: Lambdas&lt;/title&gt;
+      &lt;link&gt;http://www.example.com/radio/lambdas&lt;/link&gt;
+      &lt;enclosure url="http://www.example.com/radio/lambdas.mp3"
+       type="audio/mpeg" length="10485760"/&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;title&gt;Episode 1: Parsec&lt;/title&gt;
+      &lt;link&gt;http://www.example.com/radio/parsec&lt;/link&gt;
+      &lt;enclosure url="http://www.example.com/radio/parsec.mp3"
+       type="audio/mpeg" length="10485150"/&gt;
+    &lt;/item&gt;
+  &lt;/channel&gt;
+&lt;/rss&gt;</pre><br class="calibre48"/>
+<a name="x_jv" class="calibre27" id="x_jv"></a><p class="docText">Out of these files, we are mainly interested in two
+    things: the podcast title and the enclosure URLs. We use the <a class="docLink" target="_blank" href="http://www.cs.york.ac.uk/fp/HaXml/">HaXml toolkit</a> to parse
+    the XML file. Here's the source code for this component:</p><pre class="calibre39">-- file: ch22/PodParser.hs
+module PodParser where
+
+import PodTypes
+import Text.XML.HaXml
+import Text.XML.HaXml.Parse
+import Text.XML.HaXml.Html.Generate(showattr)
+import Data.Char
+import Data.List
+
+data PodItem = PodItem {itemtitle :: String,
+                  enclosureurl :: String
+                  }
+          deriving (Eq, Show, Read)
+
+data Feed = Feed {channeltitle :: String,
+                  items :: [PodItem]}
+            deriving (Eq, Show, Read)
+
+{- | Given a podcast and an PodItem, produce an Episode -}
+item2ep :: Podcast -&gt; PodItem -&gt; Episode
+item2ep pc item =
+    Episode {epId = 0,
+             epCast = pc,
+             epURL = enclosureurl item,
+             epDone = False}
+
+{- | Parse the data from a given string, with the given name to use
+in error messages. -}
+parse :: String -&gt; String -&gt; Feed
+parse content name = 
+    Feed {channeltitle = getTitle doc,
+          items = getEnclosures doc}
+
+    where parseResult = xmlParse name (stripUnicodeBOM content)
+          doc = getContent parseResult
+
+          getContent :: Document -&gt; Content
+          getContent (Document _ _ e _) = CElem e
+          
+          {- | Some Unicode documents begin with a binary sequence;
+             strip it off before processing. -}
+          stripUnicodeBOM :: String -&gt; String
+          stripUnicodeBOM ('\xef':'\xbb':'\xbf':x) = x
+          stripUnicodeBOM x = x
+
+{- | Pull out the channel part of the document.
+
+Note that HaXml defines CFilter as:
+
+&gt; type CFilter = Content -&gt; [Content]
+-}
+channel :: CFilter
+channel = tag "rss" /&gt; tag "channel"
+
+getTitle :: Content -&gt; String
+getTitle doc =
+    contentToStringDefault "Untitled Podcast" 
+        (channel /&gt; tag "title" /&gt; txt $ doc)
+
+getEnclosures :: Content -&gt; [PodItem]
+getEnclosures doc =
+    concatMap procPodItem $ getPodItems doc
+    where procPodItem :: Content -&gt; [PodItem]
+          procPodItem item = concatMap (procEnclosure title) enclosure
+              where title = contentToStringDefault "Untitled Episode"
+                               (keep /&gt; tag "title" /&gt; txt $ item)
+                    enclosure = (keep /&gt; tag "enclosure") item
+
+          getPodItems :: CFilter
+          getPodItems = channel /&gt; tag "item"
+
+          procEnclosure :: String -&gt; Content -&gt; [PodItem]
+          procEnclosure title enclosure =
+              map makePodItem (showattr "url" enclosure)
+              where makePodItem :: Content -&gt; PodItem
+                    makePodItem x = PodItem {itemtitle = title,
+                                       enclosureurl = contentToString [x]}
+
+{- | Convert [Content] to a printable String, with a default if the 
+passed-in [Content] is [], signifying a lack of a match. -}
+contentToStringDefault :: String -&gt; [Content] -&gt; String
+contentToStringDefault msg [] = msg
+contentToStringDefault _ x = contentToString x
+
+{- | Convert [Content] to a printable string, taking care to unescape it.
+
+An implementation without unescaping would simply be:
+
+&gt; contentToString = concatMap (show . content)
+
+Because HaXml's unescaping works only on Elements, we must make sure that
+whatever Content we have is wrapped in an Element, then use txt to
+pull the insides back out. -}
+contentToString :: [Content] -&gt; String
+contentToString = 
+    concatMap procContent
+    where procContent x = 
+              verbatim $ keep /&gt; txt $ CElem (unesc (fakeElem x))
+
+          fakeElem :: Content -&gt; Element
+          fakeElem x = Elem "fake" [] [x]
+
+          unesc :: Element -&gt; Element
+          unesc = xmlUnEscape stdXmlEscaper</pre><br class="calibre48"/>
+<a name="x_kv" class="calibre27" id="x_kv"></a><p class="docText">Let's look at this code. First, we declare two types:
+    <tt class="calibre34">PodItem</tt> and <tt class="calibre34">Feed</tt>. We will be transforming the XML document
+    into a <tt class="calibre34">Feed</tt>, which then contains items.
+    We also provide a function to convert an <tt class="calibre34">PodItem</tt> into an <tt class="calibre34">Episode</tt> as defined in
+    <i class="docEmphasis">PodTypes.hs</i>.</p><a name="x_lv" class="calibre27" id="x_lv"></a><p class="docText">Next, it is on to parsing. The <tt class="calibre34">parse</tt> function takes a <tt class="calibre34">String</tt> representing the XML content as well as a
+    <tt class="calibre34">String</tt> representing a name to use in
+    error messages, and then returns a <tt class="calibre34">Feed</tt>.</p><a name="x_mv" class="calibre27" id="x_mv"></a><p class="docText">HaXml is designed as a "filter" converting data of one
+    type to another. It can be a simple straightforward conversion of XML to
+    XML, or of XML to Haskell data, or of Haskell data to XML. HaXml has a
+    data type called <tt class="calibre34">CFilter</tt>, which is
+    defined like this:</p><pre class="calibre39">type CFilter = Content -&gt; [Content]</pre><br class="calibre48"/>
+<a name="x_nv" class="calibre27" id="x_nv"></a><p class="docText">That is, a <tt class="calibre34">CFilter</tt>
+    takes a fragment of an XML document and returns 0 or more fragments. A
+    <tt class="calibre34">CFilter</tt> might be asked to find all
+    children of a specified tag, all tags with a certain name, the literal
+    text contained within a part of an XML document, or any of a number of
+    other things. There is also an operator <tt class="calibre34">(/&gt;)</tt> that chains <tt class="calibre34">CFilter</tt> functions together. All of the data that
+    we're interested in occurs within the <tt class="calibre34">&lt;channel&gt;</tt> tag, so first we want to get at
+    that. We define a simple <tt class="calibre34">CFilter</tt>:</p><pre class="calibre39">channel = tag "rss" /&gt; tag "channel"</pre><br class="calibre48"/>
+<a name="x_ov" class="calibre27" id="x_ov"></a><p class="docText">When we pass a document to <tt class="calibre34">channel</tt>, it will search the top level for the
+    tag named <tt class="calibre34">rss</tt>. Then, within that, it
+    will look for the <tt class="calibre34">channel</tt> tag.</p><a name="x_pv" class="calibre27" id="x_pv"></a><p class="docText">The rest of the program follows this basic approach.
+    <tt class="calibre34">txt</tt> exTRacts the literal text from a
+    tag, and by using <tt class="calibre34">CFilter</tt> functions, we
+    can get at any part of the document.</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="webclient_db.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="webclient_download.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

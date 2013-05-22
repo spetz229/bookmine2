@@ -1,0 +1,27 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch03s03.html
+next: OEBPS/ch03s05.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="The Foundation"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect13_d1e997" class="calibre1"></a>The Foundation</h1></div></div></div><p class="calibre7">The word “HelloWorld” shows up a number of times in our example. Every Yesod application
+                        has a <em class="calibre4">foundation</em> data type. This data type must be an
+                        instance of the Yesod typeclass, which provides a central place for
+                        declaring a number of different settings controlling the execution of our
+                        application.</p><p class="calibre7">In our case, this data type is pretty boring: it doesn’t contain any information.
+                        Nonetheless, the foundation is central to how our example runs: it ties
+                        together the routes with the instance declaration and lets it all be run.
+                        We’ll see throughout this book that the foundation pops up in a whole bunch
+                        of places.</p><p class="calibre7">But foundations don’t have to be boring: they can be used to store lots of useful
+            information, usually stuff that needs to be initialized at program launch and used
+            throughout. Some very common examples are:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7">A database connection pool</p></li><li class="listitem"><p class="calibre7">Settings loaded from a config file</p></li><li class="listitem"><p class="calibre7">An HTTP connection manager</p></li></ul></div><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7">
+            By the way, the word Yesod (יסוד) means <span class="firstname"><em class="calibre4">foundation</em></span> in
+                Hebrew.
+        </p></div></div></div>
+
+{% endraw %}
+

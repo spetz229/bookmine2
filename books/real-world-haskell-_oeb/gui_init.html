@@ -1,0 +1,276 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: gui_event.html
+next: gui_add.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="gui_event.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="gui_add.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="gui_init" class="calibre27" id="gui_init"></a><h3 id="title-IDA5E2NB" class="docSection1Title">23.5. Initializing the GUI</h3><a name="x_Xw" class="calibre27" id="x_Xw"></a><p class="docText">Our first<a name="ch23-guiinitializing" class="calibre27" id="ch23-guiinitializing"></a> steps are going to involve initializing the GUI for our
+    program. For reasons that we'll explain later in this chapter in <a class="docLink" href="gui_cabal_split_000.html#gui_cabal">Section 23.8</a>, we're going to have a small file called
+    <i class="docEmphasis">PodLocalMain.hs</i> that loads <tt class="calibre34">PodMain</tt> and passes to it the path to
+    <i class="docEmphasis">podresources.glade</i>, which is the XML file saved by
+    Glade that gives the information about our GUI widgets:</p><pre class="calibre39">-- file: ch23/PodLocalMain.hs
+module Main where
+
+import qualified PodMainGUI
+
+main = PodMainGUI.main "podresources.glade"</pre><br class="calibre48"/>
+<a name="x_Yw" class="calibre27" id="x_Yw"></a><p class="docText">Now, let's consider <i class="docEmphasis">PodMainGUI.hs</i>.
+    This file is the only Haskell source file that we had to modify from the
+    example in <a class="docLink" href="webclient_split_000.html#webclient">Chapter 22</a> to make it work as a GUI. Let's
+    begin by looking at the start of our new
+    <i class="docEmphasis">PodMainGUI.hs</i> file—we've renamed it from <i class="docEmphasis">PodMain.hs</i> for clarity:</p><pre class="calibre39">-- file: ch23/PodMainGUI.hs
+module PodMainGUI where
+
+import PodDownload
+import PodDB
+import PodTypes
+import System.Environment
+import Database.HDBC
+import Network.Socket(withSocketsDo)
+
+-- GUI libraries
+
+import Graphics.UI.Gtk hiding (disconnect)
+import Graphics.UI.Gtk.Glade
+
+-- Threading
+
+import Control.Concurrent</pre><br class="calibre48"/>
+<a name="x_Zw" class="calibre27" id="x_Zw"></a><p class="docText">This first part of <i class="docEmphasis">PodMainGUI.hs</i> is
+    similar to our non-GUI version. We import three additional components,
+    however. First, we have <tt class="calibre34">Graphics.UI.Gtk</tt>, which<a name="I_indexterm23_d1e45888" class="calibre27" id="I_indexterm23_d1e45888"></a> provides most of the GTK+ functions we will be using. Both
+    this module and <tt class="calibre34">Database.HDBC</tt> provide
+    <a name="I_indexterm23_d1e45895" class="calibre27" id="I_indexterm23_d1e45895"></a>a function named <tt class="calibre34">disconnect</tt>. Since we'll be using the HDBC
+    version, but not the <span class="docEmphasis">GTK+</span> version,
+    we don't import that function from <tt class="calibre34">Graphics.UI.Gtk</tt>. <tt class="calibre34">Graphics.UI.Gtk.Glade</tt> contains<a name="I_indexterm23_d1e45912" class="calibre27" id="I_indexterm23_d1e45912"></a> functions needed for loading and working with our Glade
+    file.</p><a name="x_aw" class="calibre27" id="x_aw"></a><p class="docText">We also import <tt class="calibre34">Control.Concurrent</tt>, which<a name="I_indexterm23_d1e45921" class="calibre27" id="I_indexterm23_d1e45921"></a> has the basics needed for multithreaded programming. We'll
+    use a few functions from here as just described once we get into the guts
+    of the program. Next, let's define a type to store information about our
+    GUI:</p><pre class="calibre39">-- file: ch23/PodMainGUI.hs
+-- | Our main GUI type
+data GUI = GUI {
+      mainWin :: Window,
+      mwAddBt :: Button,
+      mwUpdateBt :: Button,
+      mwDownloadBt :: Button,
+      mwFetchBt :: Button,
+      mwExitBt :: Button,
+      statusWin :: Dialog,
+      swOKBt :: Button,
+      swCancelBt :: Button,
+      swLabel :: Label,
+      addWin :: Dialog,
+      awOKBt :: Button,
+      awCancelBt :: Button,
+      awEntry :: Entry}</pre><br class="calibre48"/>
+<a name="x_bw" class="calibre27" id="x_bw"></a><p class="docText">Our new <tt class="calibre34">GUI</tt> type stores
+    all the widgets we will care about in the entire program. Large programs
+    may not wish to have a monolithic type like this. For this small example,
+    it makes sense because it can be easily passed around to different
+    functions, and we'll know that we always have the information we need
+    available.</p><a name="x_cw" class="calibre27" id="x_cw"></a><p class="docText">Within this record, we have fields for a <tt class="calibre34">Window</tt> (a top-level window), <tt class="calibre34">Dialog</tt> (dialog window), <tt class="calibre34">Button</tt> (clickable button), <tt class="calibre34">Label</tt> (piece of text), and <tt class="calibre34">EnTRy</tt> (place for the user to enter text). Let's
+    now look at our <tt class="calibre34">main</tt> function:</p><pre class="calibre39">-- file: ch23/PodMainGUI.hs
+main :: FilePath -&gt; IO ()
+main gladepath = withSocketsDo $ handleSqlError $
+    do initGUI                  -- Initialize GTK+ engine
+
+       -- Every so often, we try to run other threads.
+       timeoutAddFull (yield &gt;&gt; return True)
+                      priorityDefaultIdle 100
+
+       -- Load the GUI from the Glade file
+       gui &lt;- loadGlade gladepath
+
+       -- Connect to the database
+       dbh &lt;- connect "pod.db"
+
+       -- Set up our events 
+       connectGui gui dbh
+
+       -- Run the GTK+ main loop; exits after GUI is done
+       mainGUI
+       
+       -- Disconnect from the database at the end
+       disconnect dbh</pre><br class="calibre48"/>
+<a name="x_dw" class="calibre27" id="x_dw"></a><p class="docText">Remember that the type of this <tt class="calibre34">main</tt> function is a little different than usual
+    because it is being called by <tt class="calibre34">main</tt> in
+    <i class="docEmphasis">PodLocalMain.hs</i>. We start by calling <tt class="calibre34">initGUI</tt>, which initializes the GTK+ system.
+    Next, we have a call to <tt class="calibre34">timeoutAddFull</tt>.
+    This call is only needed for multithreaded GTK+ programs. It tells the
+    GTK+ main loop to pause to give other threads a chance to run every so
+    often.</p><a name="x_ew" class="calibre27" id="x_ew"></a><p class="docText">After that, we call our <tt class="calibre34">loadGlade</tt> function (see the following code) to
+    load the widgets from our Glade XML file. Next, we connect to our database
+    and call our <tt class="calibre34">connectGui</tt> function to set
+    up our callback functions. Then, we fire up the GTK+ main loop. We expect
+    it could be minutes, hours, or even days before <tt class="calibre34">mainGUI</tt> returns. When it does, it means the user
+    has closed the main window or clicked the Exit button. After that, we
+    disconnect from the database and close the program. Now, let's look at our
+    <tt class="calibre34">loadGlade</tt> <span class="docEmphasis">function</span>:</p><pre class="calibre39">-- file: ch23/PodMainGUI.hs
+loadGlade gladepath =
+    do -- Load XML from glade path.
+       -- Note: crashes with a runtime error on console if fails!
+       Just xml &lt;- xmlNew gladepath
+
+       -- Load main window
+       mw &lt;- xmlGetWidget xml castToWindow "mainWindow"
+
+       -- Load all buttons
+
+       [mwAdd, mwUpdate, mwDownload, mwFetch, mwExit, swOK, swCancel,
+        auOK, auCancel] &lt;-
+           mapM (xmlGetWidget xml castToButton)
+           ["addButton", "updateButton", "downloadButton",
+            "fetchButton", "exitButton", "okButton", "cancelButton",
+            "auOK", "auCancel"]
+       
+       sw &lt;- xmlGetWidget xml castToDialog "statusDialog"
+       swl &lt;- xmlGetWidget xml castToLabel "statusLabel"
+
+       au &lt;- xmlGetWidget xml castToDialog "addDialog"
+       aue &lt;- xmlGetWidget xml castToEntry "auEntry"
+
+       return $ GUI mw mwAdd mwUpdate mwDownload mwFetch mwExit
+              sw swOK swCancel swl au auOK auCancel aue</pre><br class="calibre48"/>
+<a name="x_fw" class="calibre27" id="x_fw"></a><p class="docText">This function starts by calling <tt class="calibre34">xmlNew</tt>, which loads the Glade XML file. It
+    returns <tt class="calibre34">Nothing</tt> on
+    error. Here we are using pattern matching to extract the result value on
+    success. If it fails, there will be a console (not graphical) exception
+    displayed; one of the exercises at the end of this chapter addresses
+    this.</p><a name="x_gw" class="calibre27" id="x_gw"></a><p class="docText">Now that we have Glade's XML file loaded, you will see a
+    bunch of calls to <tt class="calibre34">xmlGetWidget</tt>. This Glade function is used
+    to load the XML definition of a widget and return a GTK+ widget type for
+    that widget. We have to pass along to that function a value indicating
+    what GTK+ type we expect—we'll get a runtime error if these don't
+    match.</p><a name="x_hw" class="calibre27" id="x_hw"></a><p class="docText">We start by creating a widget for the main window. It is
+    loaded from the XML widget defined with name <tt class="calibre34">"mainWindow"</tt> and stored in the <tt class="calibre34">mw</tt> variable. We then use pattern matching and
+    <tt class="calibre34">mapM</tt> to load up all the buttons. Then,
+    we have two dialogs, a label, and an entry to load. Finally, we use all of
+    these to build up the GUI type and return it. Next, we need to set up our
+    callback functions as event handlers:</p><pre class="calibre39">-- file: ch23/PodMainGUI.hs
+connectGui gui dbh =
+    do -- When the close button is clicked, terminate the GUI loop
+       -- by calling GTK mainQuit function
+       onDestroy (mainWin gui) mainQuit
+       
+       -- Main window buttons
+       onClicked (mwAddBt gui) (guiAdd gui dbh)
+       onClicked (mwUpdateBt gui) (guiUpdate gui dbh)
+       onClicked (mwDownloadBt gui) (guiDownload gui dbh)
+       onClicked (mwFetchBt gui) (guiFetch gui dbh)
+       onClicked (mwExitBt gui) mainQuit
+
+       -- We leave the status window buttons for later</pre><br class="calibre48"/>
+<a name="x_iw" class="calibre27" id="x_iw"></a><p class="docText">We start out the <tt class="calibre34">connectGui</tt> function by calling <tt class="calibre34">onDestroy</tt>. This<a name="I_indexterm23_d1e46026" class="calibre27" id="I_indexterm23_d1e46026"></a> means that when somebody clicks on the operating system's
+    close button (typically an X in the titlebar on Windows or Linux, or a red
+    circle on Mac OS X), we call the <tt class="calibre34">mainQuit</tt> function on the main window. <tt class="calibre34">mainQuit</tt> closes all GUI windows and terminates
+    the GTK+ main loop.</p><a name="x_jw" class="calibre27" id="x_jw"></a><p class="docText">Next, we call <tt class="calibre34">onClicked</tt>
+    to register<a name="I_indexterm23_d1e46041" class="calibre27" id="I_indexterm23_d1e46041"></a> event handlers for clicking on our five different buttons.
+    For buttons, these handlers are also called if the user selects the button
+    via the keyboard. Clicking on these buttons will call our functions such
+    as <tt class="calibre34">guiAdd</tt>, passing along the GUI record
+    as well as a database handle.</p><a name="x_kw" class="calibre27" id="x_kw"></a><p class="docText">At this point, we have completely defined the main window
+    for the GUI podcatcher. It looks like the screenshot in <a class="docLink" href="#main_window">Figure 23-2</a>.</p><a name="main_window" class="calibre27" id="main_window"></a><p class="calibre37"><div class="calibre61"><h5 class="docTableTitle">Figure 23-2. Screenshot of the main window of the podcatcher
+      application</h5><a name="I_mediaobject23_d1e46055" class="calibre27" id="I_mediaobject23_d1e46055"></a></div></p><p class="docText"><img border="0" alt="" src="img25.png" class="calibre45"/></p><br class="calibre48"/>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="gui_event.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="gui_add.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

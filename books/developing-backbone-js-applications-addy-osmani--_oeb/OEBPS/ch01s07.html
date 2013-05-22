@@ -1,0 +1,123 @@
+---
+layout: page
+title: "Developing Backbone.js Applications"
+prev: OEBPS/ch01s06.html
+next: OEBPS/ch01s08.html
+book_path: books/developing-backbone-js-applications-addy-osmani--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="MVC, MVP and Backbone.js"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="mvc-mvp-and-backbone.js" class="calibre1"></a>MVC, MVP and Backbone.js</h1></div></div></div><p class="calibre6">
+    There are very few, if any architectural JavaScript frameworks that
+    claim to implement the MVC or MVP patterns in their classical form
+    as many JavaScript developers don’t view MVC and MVP as being
+    mutually exclusive (we are actually more likely to see MVP strictly
+    implemented when looking at web frameworks such as ASP.net or GWT).
+    This is because it’s possible to have additional presenter/view
+    logic in your application and yet still consider it a flavor of MVC.
+  </p><p class="calibre6">
+    Backbone contributor <a class="ulink" href="http://ireneros.com/">Irene
+    Ros</a> subscribes to this way of thinking as when she separates
+    Backbone views out into their own distinct components, she needs
+    something to actually assemble them for her. This could either be a
+    controller route (such as a <code class="literal">Backbone.Router</code>,
+    covered later in the book) or a callback in response to data being
+    fetched.
+  </p><p class="calibre6">
+    That said, some developers do however feel that Backbone.js better
+    fits the description of MVP than it does MVC . Their view is that:
+  </p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre6">
+        The presenter in MVP better describes the
+        <code class="literal">Backbone.View</code> (the layer between View
+        templates and the data bound to it) than a controller does
+      </p></li><li class="listitem"><p class="calibre6">
+        The model fits <code class="literal">Backbone.Model</code> (it isn’t that
+        different from the classical MVC
+        <span class="firstname">“<span class="firstname">Model</span>”</span>)</p><div class="book"><p class="calibre6"></p></div><p class="calibre6">
+      </p></li><li class="listitem"><p class="calibre6">
+        The views best represent templates (e.g Handlebars/Mustache
+        markup templates)
+      </p></li></ul></div><p class="calibre6">
+    A response to this could be that the view can also just be a View
+    (as per MVC) because Backbone is flexible enough to let it be used
+    for multiple purposes. The V in MVC and the P in MVP can both be
+    accomplished by <code class="literal">Backbone.View</code> because they’re
+    able to achieve two purposes: both rendering atomic components and
+    assembling those components rendered by other views.
+  </p><p class="calibre6">
+    We’ve also seen that in Backbone the responsibility of a controller
+    is shared with both the Backbone.View and Backbone.Router and in the
+    following example we can actually see that aspects of that are
+    certainly true.
+  </p><p class="calibre6">
+    Here, our Backbone <code class="literal">PhotoView</code> uses the Observer
+    pattern to <span class="firstname">“<span class="firstname">subscribe</span>”</span> to changes to a View’s model in
+    the line <code class="literal">this.model.on('change',...)</code>. It also
+    handles templating in the <code class="literal">render()</code> method, but
+    unlike some other implementations, user interaction is also handled
+    in the View (see <code class="literal">events</code>).
+  </p><pre class="programlistingjavascript"><code class="kd">var</code> <code class="nx">PhotoView</code> <code class="o">=</code> <code class="nx">Backbone</code><code class="p">.</code><code class="nx">View</code><code class="p">.</code><code class="nx">extend</code><code class="p">({</code>
+
+    <code class="c">//... is a list tag.</code>
+    <code class="nx">tagName</code><code class="o">:</code>  <code class="s">"li"</code><code class="p">,</code>
+
+    <code class="c">// Pass the contents of the photo template through a templating</code>
+    <code class="c">// function, cache it for a single photo</code>
+    <code class="nx">template</code><code class="o">:</code> <code class="nx">_</code><code class="p">.</code><code class="nx">template</code><code class="p">(</code><code class="nx">$</code><code class="p">(</code><code class="s">'#photo-template'</code><code class="p">).</code><code class="nx">html</code><code class="p">()),</code>
+
+    <code class="c">// The DOM events specific to an item.</code>
+    <code class="nx">events</code><code class="o">:</code> <code class="p">{</code>
+      <code class="s">"click img"</code> <code class="o">:</code> <code class="s">"toggleViewed"</code>
+    <code class="p">},</code>
+
+    <code class="c">// The PhotoView listens for changes to its model, re-rendering. Since there's</code>
+    <code class="c">// a one-to-one correspondence between a **Photo** and a **PhotoView** in this</code>
+    <code class="c">// app, we set a direct reference on the model for convenience.</code>
+
+    <code class="nx">initialize</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+      <code class="nx">_</code><code class="p">.</code><code class="nx">bindAll</code><code class="p">(</code><code class="kd">this</code><code class="p">,</code> <code class="s">'render'</code><code class="p">);</code>
+      <code class="kd">this</code><code class="p">.</code><code class="nx">model</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code><code class="s">'change'</code><code class="p">,</code> <code class="kd">this</code><code class="p">.</code><code class="nx">render</code><code class="p">);</code>
+      <code class="kd">this</code><code class="p">.</code><code class="nx">model</code><code class="p">.</code><code class="nx">on</code><code class="p">(</code><code class="s">'destroy'</code><code class="p">,</code> <code class="kd">this</code><code class="p">.</code><code class="nx">remove</code><code class="p">);</code>
+    <code class="p">},</code>
+
+    <code class="c">// Re-render the photo entry</code>
+    <code class="nx">render</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+      <code class="kd">this</code><code class="p">.</code><code class="nx">$el</code><code class="p">.</code><code class="nx">html</code><code class="p">(</code><code class="kd">this</code><code class="p">.</code><code class="nx">template</code><code class="p">(</code><code class="kd">this</code><code class="p">.</code><code class="nx">model</code><code class="p">.</code><code class="nx">toJSON</code><code class="p">()));</code>
+      <code class="kd">return</code> <code class="kd">this</code><code class="p">;</code>
+    <code class="p">},</code>
+
+    <code class="c">// Toggle the `"viewed"` state of the model.</code>
+    <code class="nx">toggleViewed</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+      <code class="kd">this</code><code class="p">.</code><code class="nx">model</code><code class="p">.</code><code class="nx">viewed</code><code class="p">();</code>
+    <code class="p">}</code>
+
+<code class="p">});</code>
+</pre><p class="calibre6">
+    Another (quite different) opinion is that Backbone more closely
+    resembles
+    <a class="ulink" href="http://martinfowler.com/eaaDev/uiArchs.html#ModelViewController">Smalltalk-80
+    MVC</a>, which we went through earlier.
+  </p><p class="calibre6">
+    As regular Backbone user Derick Bailey has
+    <a class="ulink" href="http://lostechies.com/derickbailey/2011/12/23/backbone-js-is-not-an-mvc-framework/">written</a>,
+    it’s ultimately best not to force Backbone to fit any specific
+    design patterns. Design patterns should be considered flexible
+    guides to how applications may be structured and in this respect,
+    Backbone doesn’t fit either MVC nor MVP perfectly. Instead, it
+    borrows some of the best concepts from multiple architectural
+    patterns and creates a flexible framework that just works well. Call
+    it <span class="firstname"><strong class="calibre8">the Backbone way</strong></span>, MV* or
+    whatever helps reference its flavor of application architecture.
+  </p><p class="calibre6">
+    It <span class="firstname"><em class="calibre9">is</em></span> however worth understanding where and why
+    these concepts originated, so I hope that my explanations of MVC and
+    MVP have been of help. Most structural JavaScript frameworks will
+    adopt their own take on classical patterns, either intentionally or
+    by accident, but the important thing is that they help us develop
+    applications which are organized, clean and can be easily
+    maintained.
+  </p></div></div>
+
+{% endraw %}
+

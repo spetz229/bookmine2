@@ -1,0 +1,61 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/pr01s06.html
+next: OEBPS/ch01s02.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="calibre1"></div><div class="book" title="Chapter 1. CoffeeScript Syntax"><div class="book"><div class="book"><div class="book"><div class="calibre1"></div><h1 class="title1"><a id="coffeescript_syntax" class="calibre2"></a>Chapter 1. CoffeeScript Syntax</h1></div></div></div><p class="calibre8">Firstly, before we get any further into this section, I want to
+  reiterate that while CoffeeScript’s
+  syntax is often identical with JavaScript’s, it’s not a superset, and
+  therefore some JavaScript keywords,
+  such as <code class="literal">function</code> and <code class="literal">var</code>, aren’t permitted, and will throw syntax
+  errors. If you’re writing a CoffeeScript file, it needs to be pure CoffeeScript; you can’t intermingle the two
+  languages.</p><p class="calibre8">Why isn’t CoffeeScript a superset? Well, the very fact that white
+  space is significant in CoffeeScript programs prevents it from being a
+  superset. And, once that decision’s been made, the team decided you might as
+  well go the full hog and deprecate some JavaScript keywords and features in
+  the name of simplicity and in an effort to reduce many commonly occurring bugs.</p><p class="calibre8">What I find mind-blowing, in a meta sort of way, is that the
+  CoffeeScript interpreter itself is actually written in CoffeeScript. It
+  looks like the chicken or egg paradox has finally been solved!</p><p class="calibre8">Right, so firstly let’s tackle the basic stuff. There are no
+  semicolons in CoffeeScript, it’ll add them automatically for you upon
+  compilation. Semicolons were the cause of much debate in the JavaScript
+  community, and behind some weird interpreter <a class="ulink" href="http://bonsaiden.github.com/JavaScript-Garden/#core.semicolon">behavior</a>.
+  Anyway, CoffeeScript resolves this problem for you by simply removing
+  semicolons from its syntax, adding them as needed behind the scenes.</p><p class="calibre8">Comments are in the same format as Ruby comments, starting with a hash
+  character:</p><pre class="screen"># A comment</pre><p class="calibre8">Multiline comments are also supported, and are brought forward to the
+  generated JavaScript. They’re enclosed by three hash characters:</p><pre class="screen">###
+  A multiline comment, perhaps a LICENSE.
+###</pre><p class="calibre8">As you’re going through this book’s examples, it may be worth pasting
+  the CoffeeScript into the <a class="ulink" href="http://jashkenas.github.com/coffee-script/">online compiler</a>
+  showing you the generated JavaScript.</p><p class="calibre8">As I briefly alluded to, white space is significant in CoffeeScript.
+  In practice, this means that you can replace curly brackets (<code class="literal">{}</code>) with a tab. This takes inspiration from
+  Python’s syntax, and has the excellent side effect of ensuring that your
+  script is formatted in a sane manner; otherwise it won’t even
+  compile!</p><div class="book" title="Variables and Scope"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e464" class="calibre2"></a>Variables and Scope</h1></div></div></div><p class="calibre8">CoffeeScript fixes one of the major bugbears with JavaScript, global
+    variables. In JavaScript, it’s all
+    too easy to accidentally declare a global variable by forgetting to
+    include <code class="literal">var</code> before the variable
+    assignment. CoffeeScript solves this by simply removing global variables.
+    Behind the scenes, CoffeeScript wraps up scripts with an anonymous
+    function, keeping the local context, and automatically prefixes all
+    variable assignments with <code class="literal">var</code>. For
+    example, take this simple variable assignment in CoffeeScript:</p><pre class="screen">myVariable = "test"</pre><p class="calibre8">As you can see, the variable assignment is kept completely local;
+    it’s impossible to accidentally create a global variable. CoffeeScript
+    actually takes this a step further, and makes it difficult to shadow a
+    higher-level variable. This goes a great deal to prevent some of the most
+    common mistakes developers make in JavaScript.</p><p class="calibre8">However, sometimes it’s useful to create global variables. You can
+    either do this by directly setting them as properties on the global object
+    (<code class="literal">window</code> in browsers), or with the
+    following pattern:</p><pre class="screen">exports = this
+exports.MyVariable = "foo-bar"</pre><p class="calibre8">In the root context, <code class="literal">this</code> is
+    equal to the global object, and by creating a local <code class="literal">exports</code> variable you’re making it really obvious
+    to anyone reading your code exactly which global variables a script is
+    creating. Additionally, it paves the way for CommonJS modules, which we’re going to cover later in
+    the book.</p></div></div></div>
+
+{% endraw %}
+

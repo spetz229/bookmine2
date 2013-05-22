@@ -1,0 +1,388 @@
+---
+layout: page
+title: "Developing Backbone.js Applications"
+prev: OEBPS/ch01s02.html
+next: OEBPS/ch01s04.html
+book_path: books/developing-backbone-js-applications-addy-osmani--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="MVC As We Know It"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="mvc-as-we-know-it" class="calibre1"></a>MVC As We Know It</h1></div></div></div><p class="calibre6">
+    We’ve reviewed the 70’s, but let us now return to the here and now.
+    The MVC pattern has been applied to a diverse range of programming
+    languages. For example, the popular Ruby on Rails is an
+    implementation of a web application framework based on MVC for the
+    Ruby language. JavaScript now has a number of MVC frameworks,
+    including Ember.js, JavaScriptMVC, and of course Backbone.js. Given
+    the importance of avoiding <span class="firstname">“<span class="firstname">spaghetti</span>”</span> code, a term
+    which describes code that is very difficult to read or maintain due
+    to its lack of structure, let’s look at what the MVC pattern enables
+    the Javascript developer to do.
+  </p><p class="calibre6">
+    MVC is composed of three core components:
+  </p><div class="book" title="Models"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="models" class="calibre1"></a>Models</h2></div></div></div><p class="calibre6">
+      Models manage the data for an application. They are concerned with
+      neither the user-interface nor presentation layers, but instead
+      represent structured data that an application may require. When a
+      model changes (e.g when it is updated), it will typically notify
+      its observers (e.g views, a concept we will cover shortly) that a
+      change has occurred so that they may react accordingly.
+    </p><p class="calibre6">
+      To understand models better, let us imagine we have a JavaScript
+      photo gallery application. In a photo gallery, a photo would merit
+      its own model, as it represents a unique kind of domain-specific
+      data. The Photo model may represent attributes such as a caption,
+      image source and additional meta-data. A specific photo would be
+      stored in an instance of a model. Here’s an example of a simple
+      Photo model implemented with Backbone.js:
+    </p><pre class="programlistingjavascript"><code class="kd">var</code> <code class="nx">Photo</code> <code class="o">=</code> <code class="nx">Backbone</code><code class="p">.</code><code class="nx">Model</code><code class="p">.</code><code class="nx">extend</code><code class="p">({</code>
+
+    <code class="c">// Default attributes for the photo</code>
+    <code class="nx">defaults</code><code class="o">:</code> <code class="p">{</code>
+      <code class="c">// Ensure that each photo created has an `src`.</code>
+      <code class="nx">src</code><code class="o">:</code> <code class="s">"placeholder.jpg"</code><code class="p">,</code>
+      <code class="nx">caption</code><code class="o">:</code> <code class="s">"A default image"</code><code class="p">,</code>
+      <code class="nx">viewed</code><code class="o">:</code> <code class="kd">false</code>
+    <code class="p">},</code>
+
+    <code class="nx">initialize</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+    <code class="p">}</code>
+
+<code class="p">});</code>
+</pre><p class="calibre6">
+      The built-in capabilities of models vary across frameworks,
+      however it’s common for them to support validation of attributes,
+      where attributes represent the properties of the model, such as a
+      model identifier. When using models in real-world applications we
+      generally also need a way of persisting models. Persistence allows
+      us to edit and update models with the knowledge that their most
+      recent states will be saved somewhere, for example in a web
+      browser’s localStorage data-store or synchronized with a database.
+    </p><p class="calibre6">
+      A model may also have multiple views observing it. Imagine our
+      Photo model contained meta-data such as the longitude and latitude
+      where the photo was taken, a list of people present in the photo,
+      and a list of tags. A developer could create a single view that
+      displayed all these attributes, or might create three separate
+      views to display each attribute. The important detail is that the
+      Photo model doesn’t care how these views are organized, it simply
+      announces updates to its data as necessary. We’ll come back to
+      Views in more detail later.
+    </p><p class="calibre6">
+      It is not uncommon for modern MVC/MV* frameworks to provide a
+      means to group models together. In Backbone, these groups are
+      called <span class="firstname">“<span class="firstname">Collections</span>”</span>. Managing models in groups
+      allows us to write application logic based on notifications from
+      the group, should any model it contains change. This avoids the
+      need to manually observe individual model instances.
+    </p><p class="calibre6">
+      Here’s how we might group Photo models into a simplified Backbone
+      Collection:
+    </p><pre class="programlistingjavascript"><code class="kd">var</code> <code class="nx">PhotoGallery</code> <code class="o">=</code> <code class="nx">Backbone</code><code class="p">.</code><code class="nx">Collection</code><code class="p">.</code><code class="nx">extend</code><code class="p">({</code>
+
+    <code class="c">// Reference to this collection's model.</code>
+    <code class="nx">model</code><code class="o">:</code> <code class="nx">Photo</code><code class="p">,</code>
+
+    <code class="c">// Filter down the list of all photos that have been viewed</code>
+    <code class="nx">viewed</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+      <code class="kd">return</code> <code class="kd">this</code><code class="p">.</code><code class="nx">filter</code><code class="p">(</code><code class="kd">function</code><code class="p">(</code><code class="nx">photo</code><code class="p">){</code> <code class="kd">return</code> <code class="nx">photo</code><code class="p">.</code><code class="nx">get</code><code class="p">(</code><code class="s">'viewed'</code><code class="p">);</code> <code class="p">});</code>
+    <code class="p">},</code>
+
+    <code class="c">// Filter down the list to only photos that have not yet been viewed</code>
+    <code class="nx">unviewed</code><code class="o">:</code> <code class="kd">function</code><code class="p">()</code> <code class="p">{</code>
+      <code class="kd">return</code> <code class="kd">this</code><code class="p">.</code><code class="nx">without</code><code class="p">.</code><code class="nx">apply</code><code class="p">(</code><code class="kd">this</code><code class="p">,</code> <code class="kd">this</code><code class="p">.</code><code class="nx">viewed</code><code class="p">());</code>
+    <code class="p">}</code>
+
+<code class="p">});</code>
+</pre><p class="calibre6">
+      If you read older texts on MVC, you may come across a description
+      of models as also managing application <span class="firstname">“<span class="firstname">state</span>”</span>. In
+      JavaScript applications <span class="firstname">“<span class="firstname">state</span>”</span> has a specific
+      meaning, typically referring to the current <span class="firstname">“<span class="firstname">state</span>”</span>
+      of a view or sub-view on a user’s screen at a fixed time. State is
+      a topic which is regularly discussed when looking at Single-page
+      applications, where the concept of state needs to be simulated.
+    </p></div><div class="book" title="Views"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="views" class="calibre1"></a>Views</h2></div></div></div><p class="calibre6">
+      Views are a visual representation of models that present a
+      filtered view of their current state. A view typically observes a
+      model and is notified when the model changes, allowing the view to
+      update itself accordingly. Design pattern literature commonly
+      refers to views as <span class="firstname">“<span class="firstname">dumb</span>”</span>, given that their knowledge
+      of models and controllers in an application is limited.
+    </p><p class="calibre6">
+      Users interact with views, which usually means reading and editing
+      model data. For example, in our photo gallery application example,
+      model viewing might happen in a user interface with a big image, a
+      caption, and a list of tags. Model editing could be done through
+      an <span class="firstname">“<span class="firstname">edit</span>”</span> view where a user who has selected a
+      specific photo could edit its caption, tags, or other metadata in
+      a form.
+    </p><p class="calibre6">
+      In MVC, the actual task of updating the Model falls to
+      Controllers, which we’ll be covering shortly.
+    </p><p class="calibre6">
+      Let’s explore Views a little further using a simple JavaScript
+      example. Below we can see a function that creates a single Photo
+      view, consuming both a model instance and a controller instance.
+    </p><p class="calibre6">
+      We define a <code class="literal">render()</code> utility within our view
+      which is responsible for rendering the contents of the
+      <code class="literal">photoModel</code> using a JavaScript templating engine
+      (Underscore templating) and updating the contents of our view,
+      referenced by <code class="literal">photoEl</code>.
+    </p><p class="calibre6">
+      The <code class="literal">photoModel</code> then adds our
+      <code class="literal">render()</code> callback as one of its subscribers, so
+      that through the Observer pattern it can trigger the view to
+      update when the model changes.
+    </p><p class="calibre6">
+      You may wonder where user interaction comes into play here. When
+      users click on any elements within the view, it’s not the view’s
+      responsibility to know what to do next. A Controller makes this
+      decision. In our sample implementation, this is achieved by adding
+      an event listener to <code class="literal">photoEl</code> which will
+      delegate handling the click behavior back to the controller,
+      passing the model information along with it in case it’s needed.
+    </p><p class="calibre6">
+      The benefit of this architecture is that each component plays its
+      own separate role in making the application function as needed.
+    </p><pre class="programlistingjavascript"><code class="kd">var</code> <code class="nx">buildPhotoView</code> <code class="o">=</code> <code class="kd">function</code><code class="p">(</code> <code class="nx">photoModel</code><code class="p">,</code> <code class="nx">photoController</code> <code class="p">){</code>
+
+    <code class="kd">var</code> <code class="nx">base</code>        <code class="o">=</code> <code class="nb">document</code><code class="p">.</code><code class="nx">createElement</code><code class="p">(</code><code class="s">'div'</code><code class="p">),</code>
+        <code class="nx">photoEl</code>     <code class="o">=</code> <code class="nb">document</code><code class="p">.</code><code class="nx">createElement</code><code class="p">(</code><code class="s">'div'</code><code class="p">);</code>
+
+     <code class="nx">base</code><code class="p">.</code><code class="nx">appendChild</code><code class="p">(</code><code class="nx">photoEl</code><code class="p">);</code>
+
+     <code class="kd">var</code> <code class="nx">render</code><code class="o">=</code> <code class="kd">function</code><code class="p">(){</code>
+        <code class="c">// We use a templating library such as Underscore</code>
+        <code class="c">// templating which generates the HTML for our </code>
+        <code class="c">// photo entry</code>
+        <code class="nx">photoEl</code><code class="p">.</code><code class="nx">innerHTML</code> <code class="o">=</code> <code class="nx">_</code><code class="p">.</code><code class="nx">template</code><code class="p">(</code><code class="s">'photoTemplate'</code><code class="p">,</code> <code class="p">{</code><code class="nx">src</code><code class="o">:</code> <code class="nx">photoModel</code><code class="p">.</code><code class="nx">getSrc</code><code class="p">()});</code>
+     <code class="p">}</code>
+
+     <code class="nx">photoModel</code><code class="p">.</code><code class="nx">addSubscriber</code><code class="p">(</code> <code class="nx">render</code> <code class="p">);</code>
+
+     <code class="nx">photoEl</code><code class="p">.</code><code class="nx">addEventListener</code><code class="p">(</code><code class="s">'click'</code><code class="p">,</code> <code class="kd">function</code><code class="p">(){</code>
+        <code class="nx">photoController</code><code class="p">.</code><code class="nx">handleEvent</code><code class="p">(</code><code class="s">'click'</code><code class="p">,</code> <code class="nx">photoModel</code> <code class="p">);</code>
+     <code class="p">});</code>
+
+     <code class="kd">var</code> <code class="nx">show</code> <code class="o">=</code> <code class="kd">function</code><code class="p">(){</code>
+        <code class="nx">photoEl</code><code class="p">.</code><code class="nx">style</code><code class="p">.</code><code class="nx">display</code>  <code class="o">=</code> <code class="s">''</code><code class="p">;</code>
+     <code class="p">}</code>
+
+     <code class="kd">var</code> <code class="nx">hide</code> <code class="o">=</code> <code class="kd">function</code><code class="p">(){</code>
+        <code class="nx">photoEl</code><code class="p">.</code><code class="nx">style</code><code class="p">.</code><code class="nx">display</code>  <code class="o">=</code> <code class="s">'none'</code><code class="p">;</code>
+     <code class="p">}</code>
+
+
+     <code class="kd">return</code><code class="p">{</code>
+        <code class="nx">showView</code><code class="o">:</code> <code class="nx">show</code><code class="p">,</code>
+        <code class="nx">hideView</code><code class="o">:</code> <code class="nx">hide</code>
+     <code class="p">}</code>
+
+<code class="p">}</code>
+</pre><p class="calibre6">
+      <span class="firstname"><strong class="calibre8">Templating</strong></span>
+    </p><p class="calibre6">
+      In the context of JavaScript frameworks that support MVC/MV*, it
+      is worth looking more closely at JavaScript templating and its
+      relationship to Views.
+    </p><p class="calibre6">
+      It has long been considered bad practice (and computationally
+      expensive) to manually create large blocks of HTML markup
+      in-memory through string concatenation. Developers using this
+      technique often find themselves iterating through their data,
+      wrapping it in nested divs and using outdated techniques such as
+      <code class="literal">document.write</code> to inject the
+      <span class="firstname">“<span class="firstname">template</span>”</span> into the DOM. This approach often means
+      keeping scripted markup inline with standard markup, which can
+      quickly become difficult to read and maintain, especially when
+      building large applications.
+    </p><p class="calibre6">
+      JavaScript templating libraries (such as Handlebars.js or
+      Mustache) are often used to define templates for views as HTML
+      markup containing template variables. These template blocks can be
+      either stored externally or within script tags with a custom type
+      (e.g <span class="firstname">“<span class="firstname">text/template</span>”</span>). Variables are delimited using
+      a variable syntax (e.g {{name}}). Javascript template libraries
+      typically accept data in JSON, and the grunt work of populating
+      templates with data is taken care of by the framework itself. This
+      has a several benefits, particularly when opting to store
+      templates externally as this can let applications load templates
+      dynamically on an as-needed basis.
+    </p><p class="calibre6">
+      Let’s compare two examples of HTML templates. One is implemented
+      using the popular Handlebars.js library, and the other uses
+      Underscore’s <span class="firstname">“<span class="firstname">microtemplates</span>”</span>.
+    </p><p class="calibre6">
+      <span class="firstname"><strong class="calibre8">Handlebars.js:</strong></span>
+    </p><pre class="programlistingjavascript"><code class="nt">&lt;li</code> <code class="na">class=</code><code class="s">"photo"</code><code class="nt">&gt;</code>
+  <code class="nt">&lt;h2&gt;</code>{{caption}}<code class="nt">&lt;/h2&gt;</code>
+  <code class="nt">&lt;img</code> <code class="na">class=</code><code class="s">"source"</code> <code class="na">src=</code><code class="s">"{{src}}"</code><code class="nt">/&gt;</code>
+  <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"meta-data"</code><code class="nt">&gt;</code> 
+    {{metadata}}
+  <code class="nt">&lt;/div&gt;</code>
+<code class="nt">&lt;/li&gt;</code>
+</pre><p class="calibre6">
+      <span class="firstname"><strong class="calibre8">Underscore.js Microtemplates:</strong></span>
+    </p><pre class="programlistingjavascript"><code class="nt">&lt;li</code> <code class="na">class=</code><code class="s">"photo"</code><code class="nt">&gt;</code>
+  <code class="nt">&lt;h2&gt;</code><code class="err">&lt;</code>%= caption %&gt;<code class="nt">&lt;/h2&gt;</code>
+  <code class="nt">&lt;img</code> <code class="na">class=</code><code class="s">"source"</code> <code class="na">src=</code><code class="s">"&lt;%= src %&gt;"</code><code class="nt">/&gt;</code>
+  <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"meta-data"</code><code class="nt">&gt;</code> 
+    <code class="err">&lt;</code>%= metadata %&gt;
+  <code class="nt">&lt;/div&gt;</code>
+<code class="nt">&lt;/li&gt;</code>
+</pre><p class="calibre6">
+      You may also use double curly brackets (i.e
+      <code class="literal">{{}}</code>) (or any other tag you feel comfortable
+      with) in Microtemplates. In the case of curly brackets, this can
+      be done by setting the Underscore
+      <code class="literal">templateSettings</code> attribute as follows:
+    </p><pre class="programlistingjavascript"><code class="nx">_</code><code class="p">.</code><code class="nx">templateSettings</code> <code class="o">=</code> <code class="p">{</code> <code class="nx">interpolate</code> <code class="o">:</code> <code class="sr">/\{\{(.+?)\}\}/g</code> <code class="p">};</code>
+</pre><p class="calibre6">
+      <span class="firstname"><strong class="calibre8">A note on navigation and state</strong></span>
+    </p><p class="calibre6">
+      It is also worth noting that in classical web development,
+      navigating between independent views required the use of a page
+      refresh. In single-page JavaScript applications, however, once
+      data is fetched from a server via Ajax, it can be dynamically
+      rendered in a new view within the same page. Since this doesn’t
+      automatically update the URL, the role of navigation thus falls to
+      a <span class="firstname">“<span class="firstname">router</span>”</span>, which assists in managing application
+      state (e.g allowing users to bookmark a particular view they have
+      navigated to). As routers are however neither a part of MVC nor
+      present in every MVC-like framework, I will not be going into them
+      in greater detail in this section.
+    </p></div><div class="book" title="Controllers"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="controllers" class="calibre1"></a>Controllers</h2></div></div></div><p class="calibre6">
+      Controllers are an intermediary between models and views which are
+      classically responsible for two tasks: they both update the view
+      when the model changes and update the model when the user
+      manipulates the view.
+    </p><p class="calibre6">
+      In our photo gallery application, a controller would be
+      responsible for handling changes the user made to the edit view
+      for a particular photo, updating a specific photo model when a
+      user has finished editing.
+    </p><p class="calibre6">
+      It’s with controllers that most JavaScript MVC frameworks depart
+      from this interpretation of the MVC pattern. The reasons for this
+      vary, but in my opinion, Javascript framework authors likely
+      initially looked at server-side interpretations of MVC (such as
+      Ruby on Rails), realized that that approach didn’t translate 1:1
+      on the client-side, and so re-interpreted the C in MVC to solve
+      their state management problem. This was a clever approach, but it
+      can make it hard for developers coming to MVC for the first time
+      to understand both the classical MVC pattern and the
+      <span class="firstname">“<span class="firstname">proper</span>”</span> role of controllers in other non-Javascript
+      frameworks.
+    </p><p class="calibre6">
+      So does Backbone.js have Controllers? Not really. Backbone’s Views
+      typically contain <span class="firstname">“<span class="firstname">controller</span>”</span> logic, and Routers
+      (discussed below) are used to help manage application state, but
+      neither are true Controllers according to classical MVC.
+    </p><p class="calibre6">
+      In this respect, contrary to what might be mentioned in the
+      official documentation or in blog posts, Backbone is neither a
+      truly MVC/MVP nor MVVM framework. It’s in fact better to see it a
+      member of the MV* family which approaches architecture in its own
+      way. There is of course nothing wrong with this, but it is
+      important to distinguish between classical MVC and MV* should you
+      be relying on discussions of MVC to help with your Backbone
+      projects.
+    </p></div><div class="book" title="Controllers in Spine.js vs Backbone.js"><div class="book"><div class="book"><div class="book"><h2 class="title3"><a id="controllers-in-spine.js-vs-backbone.js" class="calibre1"></a>Controllers in Spine.js vs Backbone.js</h2></div></div></div><p class="calibre6">
+      <span class="firstname"><strong class="calibre8">Spine.js</strong></span>
+    </p><p class="calibre6">
+      We now know that controllers are traditionally responsible for
+      updating the view when the model changes (and similarly the model
+      when the user updates the view). Since Backbone doesn’t have its
+      <span class="firstname"><strong class="calibre8">own</strong></span> explicit controllers, it’s
+      useful to review the controller from another MVC framework to
+      appreciate the difference in implementations. Let’s take a look at
+      <a class="ulink" href="http://spinejs.com/">Spine.js</a>:
+    </p><p class="calibre6">
+      In this example, we’re going to have a controller called
+      <code class="literal">PhotosController</code> which will be in charge of
+      individual photos in the application. It will ensure that when the
+      view updates (e.g a user edited the photo meta-data) the
+      corresponding model does too.
+    </p><p class="calibre6">
+      (Note: We won’t be delving heavily into Spine.js beyond this
+      example, but it’s worth looking at it to learn more about
+      Javascript frameworks in general.)
+    </p><pre class="programlistingjavascript"><code class="c">// Controllers in Spine are created by inheriting from Spine.Controller</code>
+
+<code class="kd">var</code> <code class="nx">PhotosController</code> <code class="o">=</code> <code class="nx">Spine</code><code class="p">.</code><code class="nx">Controller</code><code class="p">.</code><code class="nx">sub</code><code class="p">({</code>      
+  <code class="nx">init</code><code class="o">:</code> <code class="kd">function</code><code class="p">(){</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">item</code><code class="p">.</code><code class="nx">bind</code><code class="p">(</code><code class="s">"update"</code><code class="p">,</code> <code class="kd">this</code><code class="p">.</code><code class="nx">proxy</code><code class="p">(</code><code class="kd">this</code><code class="p">.</code><code class="nx">render</code><code class="p">));</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">item</code><code class="p">.</code><code class="nx">bind</code><code class="p">(</code><code class="s">"destroy"</code><code class="p">,</code> <code class="kd">this</code><code class="p">.</code><code class="nx">proxy</code><code class="p">(</code><code class="kd">this</code><code class="p">.</code><code class="nx">remove</code><code class="p">));</code>
+  <code class="p">},</code>
+
+  <code class="nx">render</code><code class="o">:</code> <code class="kd">function</code><code class="p">(){</code>
+    <code class="c">// Handle templating</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">replace</code><code class="p">(</code><code class="nx">$</code><code class="p">(</code><code class="s">"#photoTemplate"</code><code class="p">).</code><code class="nx">tmpl</code><code class="p">(</code><code class="kd">this</code><code class="p">.</code><code class="nx">item</code><code class="p">));</code>
+    <code class="kd">return</code> <code class="kd">this</code><code class="p">;</code>
+  <code class="p">},</code>
+
+  <code class="nx">remove</code><code class="o">:</code> <code class="kd">function</code><code class="p">(){</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">$el</code><code class="p">.</code><code class="nx">remove</code><code class="p">();</code>
+    <code class="kd">this</code><code class="p">.</code><code class="nx">release</code><code class="p">();</code>
+  <code class="p">}</code>
+<code class="p">});</code>
+</pre><p class="calibre6">
+      In Spine, controllers are considered the glue for an application,
+      adding and responding to DOM events, rendering templates and
+      ensuring that views and models are kept in sync (which makes sense
+      in the context of what we know to be a controller).
+    </p><p class="calibre6">
+      What we’re doing in the above example is setting up listeners in
+      the <code class="literal">update</code> and <code class="literal">destroy</code>
+      events using <code class="literal">render()</code> and
+      <code class="literal">remove()</code>. When a photo entry gets updated, we
+      re-render the view to reflect the changes to the meta-data.
+      Similarly, if the photo gets deleted from the gallery, we remove
+      it from the view. In case you were wondering about the
+      <code class="literal">tmpl()</code> function in the code snippet: in the
+      <code class="literal">render()</code> function, we’re using this to render a
+      JavaScript template called #photoTemplate which simply returns a
+      HTML string used to replace the controller’s current element.
+    </p><p class="calibre6">
+      What this provides us with is a very lightweight, simple way to
+      manage changes between the model and the view.
+    </p><p class="calibre6">
+      <span class="firstname"><strong class="calibre8">Backbone.js</strong></span>
+    </p><p class="calibre6">
+      Later on in this section we’re going to revisit the differences
+      between Backbone and traditional MVC, but for now let’s focus on
+      controllers.
+    </p><p class="calibre6">
+      In Backbone, controller logic is shared between Backbone.View and
+      Backbone.Router. Earlier releases of Backbone contained something
+      called Backbone.Controller, but it was renamed to Router to
+      clarify its role.
+    </p><p class="calibre6">
+      A Router’s main purpose is to translate URL requests into
+      application states. When a user browses to the URL
+      www.example.com/photos/42, a Router could be used to show the
+      photo with that ID, and to define what application behavior should
+      be run in response to that request. Routers
+      <span class="firstname"><em class="calibre9">can</em></span> contain traditional controller
+      responsibilities, such as binding the events between models and
+      views, or rendering parts of the page. However, Backbone
+      contributor Tim Branyen has pointed out that it’s possible to get
+      away without needing Backbone.Router at all for this, so a way to
+      think about it using the Router paradigm is probably:
+    </p><pre class="programlistingjavascript"><code class="kd">var</code> <code class="nx">PhotoRouter</code> <code class="o">=</code> <code class="nx">Backbone</code><code class="p">.</code><code class="nx">Router</code><code class="p">.</code><code class="nx">extend</code><code class="p">({</code>
+  <code class="nx">routes</code><code class="o">:</code> <code class="p">{</code> <code class="s">"photos/:id"</code><code class="o">:</code> <code class="s">"route"</code> <code class="p">},</code>
+
+  <code class="nx">route</code><code class="o">:</code> <code class="kd">function</code><code class="p">(</code><code class="nx">id</code><code class="p">)</code> <code class="p">{</code>
+    <code class="kd">var</code> <code class="nx">item</code> <code class="o">=</code> <code class="nx">photoCollection</code><code class="p">.</code><code class="nx">get</code><code class="p">(</code><code class="nx">id</code><code class="p">);</code>
+    <code class="kd">var</code> <code class="nx">view</code> <code class="o">=</code> <code class="kd">new</code> <code class="nx">PhotoView</code><code class="p">({</code> <code class="nx">model</code><code class="o">:</code> <code class="nx">item</code> <code class="p">});</code>
+
+    <code class="nx">something</code><code class="p">.</code><code class="nx">html</code><code class="p">(</code> <code class="nx">view</code><code class="p">.</code><code class="nx">render</code><code class="p">().</code><code class="nx">el</code> <code class="p">);</code>
+  <code class="p">}</code>
+<code class="p">})</code><code class="o">:</code>
+</pre></div></div></div>
+
+{% endraw %}
+

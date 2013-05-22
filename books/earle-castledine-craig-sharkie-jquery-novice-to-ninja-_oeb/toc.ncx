@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="ddd85a56-9a50-4d89-9f08-bdef914ab9db" name="dtb:uid"/>
+    <meta content="3" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>jQuery: Novice to Ninja</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="d4e1" playOrder="1">
+      <navLabel>
+        <text>jQuery: Novice to Ninja</text>
+      </navLabel>
+      <content src="OEBPS/index.html"/>
+      <navPoint class="chapter" id="d4e94" playOrder="2">
+        <navLabel>
+          <text>Preface</text>
+        </navLabel>
+        <content src="OEBPS/pr01.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e275" playOrder="3">
+        <navLabel>
+          <text>1. Falling in Love with jQuery</text>
+        </navLabel>
+        <content src="OEBPS/ch01.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e756" playOrder="4">
+        <navLabel>
+          <text>2. Selecting, Decorating, and Enhancing</text>
+        </navLabel>
+        <content src="OEBPS/ch02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e2077" playOrder="5">
+        <navLabel>
+          <text>3. Animating, Scrolling, and Resizing</text>
+        </navLabel>
+        <content src="OEBPS/ch03.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e3361" playOrder="6">
+        <navLabel>
+          <text>4. Images and Slideshows</text>
+        </navLabel>
+        <content src="OEBPS/ch04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e4808" playOrder="7">
+        <navLabel>
+          <text>5. Menus, Tabs, Tooltips, and Panels</text>
+        </navLabel>
+        <content src="OEBPS/ch05.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e6223" playOrder="8">
+        <navLabel>
+          <text>6. Construction, Ajax, and Interactivity</text>
+        </navLabel>
+        <content src="OEBPS/ch06.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e8076" playOrder="9">
+        <navLabel>
+          <text>7. Forms, Controls, and Dialogs</text>
+        </navLabel>
+        <content src="OEBPS/ch07.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e10333" playOrder="10">
+        <navLabel>
+          <text>8. Lists, Trees, and Tables</text>
+        </navLabel>
+        <content src="OEBPS/ch08.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e11597" playOrder="11">
+        <navLabel>
+          <text>9. Plugins, Themes, and Advanced Topics</text>
+        </navLabel>
+        <content src="OEBPS/ch09.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e13530" playOrder="12">
+        <navLabel>
+          <text>A. Reference Material</text>
+        </navLabel>
+        <content src="OEBPS/apa.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e14475" playOrder="13">
+        <navLabel>
+          <text>B. JavaScript Tidbits</text>
+        </navLabel>
+        <content src="OEBPS/apb.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e14732" playOrder="14">
+        <navLabel>
+          <text>C. Plugin Helpers</text>
+        </navLabel>
+        <content src="OEBPS/apc.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="d4e14887" playOrder="15">
+        <navLabel>
+          <text>Index</text>
+        </navLabel>
+        <content src="OEBPS/ix01.html"/>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

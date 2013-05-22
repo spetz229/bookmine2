@@ -1,0 +1,324 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: sockets_basics.html
+next: sockets_tcp.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="sockets_basics.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="sockets_tcp.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="sockets_udp" class="calibre27" id="sockets_udp"></a><h3 id="643999-831" class="docSection1Title">27.2. Communicating with UDP</h3><a name="x_Rd" class="calibre27" id="x_Rd"></a><p class="docText">UDP<a name="ch27-udpcommunicating" class="calibre27" id="ch27-udpcommunicating"></a> breaks data down into packets. It does not ensure that the
+    data reaches its destination or it reaches it only once. It does use
+    checksumming to ensure that packets that arrive have not been corrupted.
+    UDP tends to be used in applications that are <span class="docEmphasis">performance</span>- or latency-sensitive, in which
+    each individual packet of data is less important than the overall
+    performance of the system. It may also be used where the TCP behavior
+    isn't the most efficient, such as ones that send short, discrete messages.
+    Examples of systems that tend to use UDP include audio and video
+    conferencing, time synchronization, network-based filesystems, and logging
+    systems.</p><a name="sockets_udp_client" class="calibre27" id="sockets_udp_client"></a><h4 id="title-IDAGPRUD" class="docSection1Title">27.2.1. UDP Client Example: syslog</h4><a name="x_Sd" class="calibre27" id="x_Sd"></a><p class="docText">The traditional Unix syslog service allows programs to
+      send log messages over a network to a central server that records them.
+      Some programs are quite performance-sensitive and may generate a large
+      volume of messages. In these programs, it could be more important to
+      have the logging impose a minimal performance overhead than to guarantee
+      every message is logged. Moreover, it may be desirable to continue
+      program operation even if the logging server is unreachable. For this
+      reason, UDP is one of the protocols syslog supports for the transmission
+      of log messages. The protocol is simple; we present a Haskell
+      implementation of a client here:</p><pre class="calibre39">-- file: ch27/syslogclient.hs
+import Data.Bits
+import Network.Socket
+import Network.BSD
+import Data.List
+import SyslogTypes
+
+data SyslogHandle = 
+    SyslogHandle {slSocket :: Socket,
+                  slProgram :: String,
+                  slAddress :: SockAddr}
+
+openlog :: HostName             -- ^ Remote hostname, or localhost
+        -&gt; String               -- ^ Port number or name; 514 is default
+        -&gt; String               -- ^ Name to log under
+        -&gt; IO SyslogHandle      -- ^ Handle to use for logging
+openlog hostname port progname =
+    do -- Look up the hostname and port.  Either raises an exception
+       -- or returns a nonempty list.  First element in that list
+       -- is supposed to be the best option.
+       addrinfos &lt;- getAddrInfo Nothing (Just hostname) (Just port)
+       let serveraddr = head addrinfos
+
+       -- Establish a socket for communication
+       sock &lt;- socket (addrFamily serveraddr) Datagram defaultProtocol
+
+       -- Save off the socket, program name, and server address in a handle
+       return $ SyslogHandle sock progname (addrAddress serveraddr)
+
+syslog :: SyslogHandle -&gt; Facility -&gt; Priority -&gt; String -&gt; IO ()
+syslog syslogh fac pri msg =
+    sendstr sendmsg
+    where code = makeCode fac pri
+          sendmsg = "&lt;" ++ show code ++ "&gt;" ++ (slProgram syslogh) ++
+                    ": " ++ msg
+
+          -- Send until everything is done
+          sendstr :: String -&gt; IO ()
+          sendstr [] = return ()
+          sendstr omsg = do sent &lt;- sendTo (slSocket syslogh) omsg
+                                    (slAddress syslogh)
+                            sendstr (genericDrop sent omsg)
+          
+closelog :: SyslogHandle -&gt; IO ()
+closelog syslogh = sClose (slSocket syslogh)
+
+{- | Convert a facility and a priority into a syslog code -}
+makeCode :: Facility -&gt; Priority -&gt; Int
+makeCode fac pri =
+    let faccode = codeOfFac fac
+        pricode = fromEnum pri 
+        in
+          (faccode `shiftL` 3) .|. pricode</pre><br class="calibre48"/>
+<a name="x_nk" class="calibre27" id="x_nk"></a><p class="docText">This also requires <i class="docEmphasis">SyslogTypes.hs</i>,
+      shown here:</p><pre class="calibre39">-- file: ch27/SyslogTypes.hs
+module SyslogTypes where
+{- | Priorities define how important a log message is. -}
+
+data Priority = 
+            DEBUG                   -- ^ Debug messages
+          | INFO                    -- ^ Information
+          | NOTICE                  -- ^ Normal runtime conditions
+          | WARNING                 -- ^ General Warnings
+          | ERROR                   -- ^ General Errors
+          | CRITICAL                -- ^ Severe situations
+          | ALERT                   -- ^ Take immediate action
+          | EMERGENCY               -- ^ System is unusable
+                    deriving (Eq, Ord, Show, Read, Enum)
+
+{- | Facilities are used by the system to determine where messages
+are sent. -}
+
+data Facility = 
+              KERN                      -- ^ Kernel messages
+              | USER                    -- ^ General userland messages
+              | MAIL                    -- ^ E-Mail system
+              | DAEMON                  -- ^ Daemon (server process) messages
+              | AUTH                    -- ^ Authentication or security messages
+              | SYSLOG                  -- ^ Internal syslog messages
+              | LPR                     -- ^ Printer messages
+              | NEWS                    -- ^ Usenet news
+              | UUCP                    -- ^ UUCP messages
+              | CRON                    -- ^ Cron messages
+              | AUTHPRIV                -- ^ Private authentication messages
+              | FTP                     -- ^ FTP messages
+              | LOCAL0                  
+              | LOCAL1
+              | LOCAL2
+              | LOCAL3
+              | LOCAL4
+              | LOCAL5
+              | LOCAL6
+              | LOCAL7
+                deriving (Eq, Show, Read)
+
+facToCode = [ 
+                       (KERN, 0),
+                       (USER, 1),
+                       (MAIL, 2),
+                       (DAEMON, 3),
+                       (AUTH, 4),
+                       (SYSLOG, 5),
+                       (LPR, 6),
+                       (NEWS, 7),
+                       (UUCP, 8),
+                       (CRON, 9),
+                       (AUTHPRIV, 10),
+                       (FTP, 11),
+                       (LOCAL0, 16),
+                       (LOCAL1, 17),
+                       (LOCAL2, 18),
+                       (LOCAL3, 19),
+                       (LOCAL4, 20),
+                       (LOCAL5, 21),
+                       (LOCAL6, 22),
+                       (LOCAL7, 23)
+           ]
+
+codeToFac = map (\(x, y) -&gt; (y, x)) facToCode
+
+
+{- | We can't use enum here because the numbering is discontiguous -}
+codeOfFac :: Facility -&gt; Int
+codeOfFac f = case lookup f facToCode of
+                Just x -&gt; x
+                _ -&gt; error $ "Internal error in codeOfFac"
+
+facOfCode :: Int -&gt; Facility
+facOfCode f = case lookup f codeToFac of
+                Just x -&gt; x
+                _ -&gt; error $ "Invalid code in facOfCode"</pre><br class="calibre48"/>
+<a name="x_ok" class="calibre27" id="x_ok"></a><p class="docText">With <i class="docEmphasis">ghci</i>, you can
+      send a message to a local syslog server. You can use either the example
+      syslog server presented in this chapter or an existing syslog server
+      like you would typically find on Linux or other POSIX systems. Note that
+      most of these disable the UDP port by default, and you may need to
+      enable UDP before your vendor-supplied syslog daemon will display
+      received messages.</p><a name="x_pk" class="calibre27" id="x_pk"></a><p class="docText">If you were sending a message to a syslog server on the
+      local system, you might use a command such as this:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:load syslogclient.hs</b>
+[1 of 2] Compiling SyslogTypes      ( SyslogTypes.hs, interpreted )
+[2 of 2] Compiling Main             ( syslogclient.hs, interpreted )
+Ok, modules loaded: SyslogTypes, Main.
+ghci&gt; <b class="calibre40">h &lt;- openlog "localhost" "514" "testprog"</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+Loading package network-2.2.0.0 ... linking ... done.
+ghci&gt; <b class="calibre40">syslog h USER INFO "This is my message"</b>ghci&gt; <b class="calibre40">closelog h</b></pre><a name="sockets_udp_server" class="calibre27" id="sockets_udp_server"></a><h4 id="title-IDA2QRUD" class="docSection1Title">27.2.2. UDP Syslog Server</h4><a name="x_Td" class="calibre27" id="x_Td"></a><p class="docText">UDP servers will bind to a specific port on the server
+      machine. They will accept packets directed to that port and process
+      them. Since UDP is a stateless, packet-oriented protocol, programmers
+      normally use a call such as <tt class="calibre34">recvFrom</tt>
+      to receive both the data and information about the machine that sent it,
+      which is used for sending back a response:</p><pre class="calibre39">-- file: ch27/syslogserver.hs
+import Data.Bits
+import Network.Socket
+import Network.BSD
+import Data.List
+
+type HandlerFunc = SockAddr -&gt; String -&gt; IO ()
+
+serveLog :: String              -- ^ Port number or name; 514 is default
+         -&gt; HandlerFunc         -- ^ Function to handle incoming messages
+         -&gt; IO ()
+serveLog port handlerfunc = withSocketsDo $
+    do -- Look up the port.  Either raises an exception or returns
+       -- a nonempty list.  
+       addrinfos &lt;- getAddrInfo 
+                    (Just (defaultHints {addrFlags = [AI_PASSIVE]}))
+                    Nothing (Just port)
+       let serveraddr = head addrinfos
+
+       -- Create a socket
+       sock &lt;- socket (addrFamily serveraddr) Datagram defaultProtocol
+
+       -- Bind it to the address we're listening to
+       bindSocket sock (addrAddress serveraddr)
+
+       -- Loop forever processing incoming data.  Ctrl-C to abort.
+       procMessages sock
+    where procMessages sock =
+              do -- Receive one UDP packet, maximum length 1024 bytes,
+                 -- and save its content into msg and its source
+                 -- IP and port into addr
+                 (msg, _, addr) &lt;- recvFrom sock 1024
+                 -- Handle it
+                 handlerfunc addr msg
+                 -- And process more messages
+                 procMessages sock
+
+-- A simple handler that prints incoming packets
+plainHandler :: HandlerFunc
+plainHandler addr msg = 
+    putStrLn $ "From " ++ show addr ++ ": " ++ msg</pre><br class="calibre48"/>
+<a name="x_qk" class="calibre27" id="x_qk"></a><p class="docText">You can run this in <i class="docEmphasis">ghci</i>. A call to <tt class="calibre34">serveLog "1514" plainHandler</tt> will set up a UDP
+      server on port 1514 that will use <tt class="calibre34">plainHandler</tt> to print out every incoming UDP
+      packet on that port. Ctrl-C will terminate the program.</p><a name="sockets_udp_serverd1e51828" class="calibre27" id="sockets_udp_serverd1e51828"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_rk" class="calibre27" id="x_rk"></a></p><p class="docText">Getting <tt class="calibre34">bind: permission
+        denied</tt> when testing this? Make sure you use a port number
+        greater than 1024. Some operating systems only allow the <tt class="calibre34">root</tt> user to bind to ports less than
+        1024.</p></div>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="sockets_basics.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="sockets_tcp.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

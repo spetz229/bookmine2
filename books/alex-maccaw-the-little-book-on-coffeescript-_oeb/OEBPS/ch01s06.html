@@ -1,0 +1,31 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch01s05.html
+next: OEBPS/ch01s07.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Loops and Comprehensions"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e790" class="calibre2"></a>Loops and Comprehensions</h1></div></div></div><p class="calibre8">Array iteration in JavaScript has a rather archaic syntax,
+    reminiscent of an older language
+    like C rather than a modern object-orientated one. The introduction of ES5
+    improved that situation somewhat, with the <code class="literal">forEach()</code> function, but that still requires a
+    function call every iteration and is therefore much slower. Again,
+    CoffeeScript comes to the rescue, with a beautiful syntax:</p><pre class="screen">for name in ["Roger", "Roderick", "Brian"]
+  alert "Release #{name}"</pre><p class="calibre8">If you need the current iteration index, just pass an extra
+    argument:</p><pre class="screen">for name, i in ["Roger the pickpocket", "Roderick the robber"]
+  alert "#{i} - Release #{name}"</pre><p class="calibre8">You can also iterate on one line, using the postfix form:</p><pre class="screen">release prisoner for prisoner in ["Roger", "Roderick", "Brian"]</pre><p class="calibre8">As with Python comprehensions, you can filter them:</p><pre class="screen">prisoners = ["Roger", "Roderick", "Brian"]
+release prisoner for prisoner in prisoners when prisoner[0] is "R"</pre><p class="calibre8">You can also use comprehensions for iterating over properties in
+    objects. Instead of the <code class="literal">in</code> keyword, use
+    <code class="literal">of</code>:</p><pre class="screen">names = sam: seaborn, donna: moss
+alert("#{first} #{last}") for first, last of names</pre><p class="calibre8">The only low-level loop that CoffeeScript exposes is the <code class="literal">while</code> loop. This has similar behavior to the
+    <code class="literal">while</code> loop in pure JavaScript, but has
+    the added advantage that it returns an array of results (i.e. like the
+    <code class="literal">Array.prototype.map()</code> function):</p><pre class="screen">num = 6
+minstrel = while num -= 1
+  num + " Brave Sir Robin ran away"</pre></div></div>
+
+{% endraw %}
+

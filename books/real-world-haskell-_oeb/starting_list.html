@@ -1,0 +1,176 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: starting_ghci_edit.html
+next: starting_string.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="starting_ghci_edit.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="starting_string.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="starting_list" class="calibre27" id="starting_list"></a><h3 id="title-IDAMEFG" class="docSection1Title">1.5. Lists</h3><a name="x_K2" class="calibre27" id="x_K2"></a><p class="docText">A list<a name="I_indexterm1_d1e2013" class="calibre27" id="I_indexterm1_d1e2013"></a><a name="ch01-lists" class="calibre27" id="ch01-lists"></a> is surrounded<a name="I_indexterm1_d1e2018" class="calibre27" id="I_indexterm1_d1e2018"></a><a name="I_indexterm1_d1e2023" class="calibre27" id="I_indexterm1_d1e2023"></a> by square brackets; the elements are separated by
+    commas:</p><pre class="calibre39">ghci&gt; <b class="calibre40">[1, 2, 3]</b>
+[1,2,3]
+</pre><a name="starting_listd1e2070" class="calibre27" id="starting_listd1e2070"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_qM" class="calibre27" id="x_qM"></a></p><p class="docText">Some<a name="I_indexterm1_d1e2040" class="calibre27" id="I_indexterm1_d1e2040"></a><a name="I_indexterm1_d1e2043" class="calibre27" id="I_indexterm1_d1e2043"></a> languages permit the last element in a list to be
+      followed by an optional trailing comma before a closing bracket, but
+      Haskell doesn't allow this. If you leave in a trailing comma (e.g.,
+      <tt class="calibre34">[1,2,]</tt>), you'll get a parse error.</p></div><a name="x_L2" class="calibre27" id="x_L2"></a><p class="docText">A list can be of any length. An empty list is written
+    <tt class="calibre34">[]</tt>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">[]</b>
+[]
+ghci&gt; <b class="calibre40">["foo", "bar", "baz", "quux", "fnord", "xyzzy"]</b>
+["foo","bar","baz","quux","fnord","xyzzy"]</pre><a name="x_M2" class="calibre27" id="x_M2"></a><p class="docText">All elements of a list must be of the same type. Here, we
+    violate this rule. Our list starts with two Bool values, but
+    ends with a string:</p><pre class="calibre39">ghci&gt; <b class="calibre40">[True, False, "testing"]</b>
+
+&lt;interactive&gt;:1:14:
+    Couldn't match expected type `Bool' against inferred type `[Char]'
+    In the expression: "testing"
+    In the expression: [True, False, "testing"]
+    In the definition of `it': it = [True, False, "testing"]
+</pre><a name="x_N2" class="calibre27" id="x_N2"></a><p class="docText">Once again, <i class="docEmphasis">ghci</i>'s
+    error message is verbose, but it's simply telling us that there is no way
+    to turn the string into a Boolean value, so the list expression isn't
+    properly typed.</p><a name="x_O2" class="calibre27" id="x_O2"></a><p class="docText">If we write a series of elements using
+    <span class="docEmphasis">enumeration notation</span>, Haskell<a name="I_indexterm1_d1e2087" class="calibre27" id="I_indexterm1_d1e2087"></a> will fill in the contents of the list for us:</p><pre class="calibre39">ghci&gt; <b class="calibre40">[1..10]</b>
+[1,2,3,4,5,6,7,8,9,10]
+</pre><a name="x_rM" class="calibre27" id="x_rM"></a><p class="docText">Here, the <tt class="calibre34">..</tt>
+    characters<a name="I_indexterm1_d1e2103" class="calibre27" id="I_indexterm1_d1e2103"></a> denote an <span class="docEmphasis">enumeration</span>. We can only use
+    this notation for types whose elements we can enumerate. It makes no sense
+    for text strings, for instance—there is not any sensible, general way to
+    enumerate <tt class="calibre34">["foo".."quux"]</tt>.</p><a name="x_vK" class="calibre27" id="x_vK"></a><p class="docText">By the way, notice that the preceding use of range
+    notation gives us a <span class="docEmphasis">closed interval</span>; the list
+    contains both endpoints.</p><a name="x_P2" class="calibre27" id="x_P2"></a><p class="docText">When we write an enumeration, we can optionally specify
+    the size of the step to use by providing the first two elements, followed
+    by the value at which to stop generating the enumeration:</p><pre class="calibre39">ghci&gt; <b class="calibre40">[1.0,1.25..2.0]</b>
+[1.0,1.25,1.5,1.75,2.0]
+ghci&gt; <b class="calibre40">[1,4..15]</b>
+[1,4,7,10,13]
+ghci&gt; <b class="calibre40">[10,9..1]</b>
+[10,9,8,7,6,5,4,3,2,1]</pre><a name="x_wK" class="calibre27" id="x_wK"></a><p class="docText">In the latter case, the list is quite sensibly missing the
+    endpoint of the enumeration, because it isn't an element of the series we
+    defined.</p><a name="x_sM" class="calibre27" id="x_sM"></a><p class="docText">We can omit the endpoint of an enumeration. If a type
+    doesn't have a natural "upper bound," this will produce
+    values indefinitely. For example, if you type <tt class="calibre34">[1..]</tt> at the <i class="docEmphasis">ghci</i> prompt, you'll have to interrupt or kill
+    <i class="docEmphasis">ghci</i> to stop it from printing an
+    infinite succession of ever-larger numbers. If you are tempted to do this,
+    hit C to halt the enumeration. We will find later on that infinite lists
+    are often useful in Haskell.</p><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="warning_yellow.gif" alt="" class="calibre44"/></td><td valign="top" class="v3"><p class="docCautionsTitle">Beware of enumerating floating-point numbers</p><a name="x_tM" class="calibre27" id="x_tM"></a><p class="docText">Here's a <a name="I_indexterm1_d1e2157" class="calibre27" id="I_indexterm1_d1e2157"></a>nonintuitive bit of behavior:</p><pre class="calibre39">ghci&gt; <b class="calibre40">[1.0..1.8]</b>
+[1.0,2.0]
+</pre><a name="x_uM" class="calibre27" id="x_uM"></a><p class="docText">Behind the scenes, to avoid floating-point roundoff
+      problems, the Haskell implementation enumerates from <tt class="calibre34">1.0</tt> to
+      <tt class="calibre34">1.8+0.5</tt>.</p><a name="x_wM" class="calibre27" id="x_wM"></a><p class="docText">Using enumeration notation over floating-point numbers
+      can pack more than a few surprises, so if you use it at all, be careful.
+      Floating-point behavior is quirky in all programming languages; there is
+      nothing unique to Haskell here.</p></td></tr></table></td></tr></table></p><br class="calibre48"/><a name="starting_list_op" class="calibre27" id="starting_list_op"></a><h4 id="title-IDAYKFG" class="docSection1Title">1.5.1. Operators on Lists</h4><a name="x_xM" class="calibre27" id="x_xM"></a><p class="docText">There are two ubiquitous operators for working with
+      lists. We concatenate<a name="I_indexterm1_d1e2184" class="calibre27" id="I_indexterm1_d1e2184"></a> two lists using the <i class="docEmphasis">(++)</i> operator:</p><pre class="calibre39">ghci&gt; <b class="calibre40">[3,1,3] ++ [3,7]</b>
+[3,1,3,3,7]
+ghci&gt; <b class="calibre40">[] ++ [False,True] ++ [True]</b>
+[False,True,True]</pre><a name="x_yM" class="calibre27" id="x_yM"></a><p class="docText">More basic is the <i class="docEmphasis">(:)</i> operator, which adds an element to the
+      front of a list (this is pronounced "cons" [short for
+      "construct"]):</p><pre class="calibre39">ghci&gt; <b class="calibre40">1 : [2,3]</b>
+[1,2,3]
+ghci&gt; <b class="calibre40">1 : []</b>
+[1]</pre><a name="x_zA1" class="calibre27" id="x_zA1"></a><p class="docText">You might be tempted to try writing
+      <tt class="calibre34">[1,2]:3</tt> to add an element to the end of a list, but
+      <i class="docEmphasis">ghci</i> will reject this with an error
+      message, because the first argument of <i class="docEmphasis">(:)</i> must be an element, and the second must
+      be a list.</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="starting_ghci_edit.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="starting_string.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

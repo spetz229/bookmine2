@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="rus">
+  <head>
+    <meta content="dd2a30b5-1d77-4d53-bd90-060d5674f0ce" name="dtb:uid"/>
+    <meta content="3" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Самый богатый человек в Вавилоне</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>ПРЕДИСЛОВИЕ</text>
+      </navLabel>
+      <content src="text/part0002.html#id1"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>ЧЕЛОВЕК, KOTOPЫЙ МЕЧТАЛ О БОГАТСТВЕ</text>
+      </navLabel>
+      <content src="text/part0003.html#id2"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>САМЫЙ БОГАТЫЙ ЧЕЛОВЕК В ВАВИЛОНЕ</text>
+      </navLabel>
+      <content src="text/part0004.html#id3"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>СЕМЬ ПРАВИЛ ОБОГАЩЕНИЯ</text>
+      </navLabel>
+      <content src="text/part0005.html#id4"/>
+      <navPoint class="chapter" id="num_5" playOrder="5">
+        <navLabel>
+          <text>ПРАВИЛО ПЕРВОЕ Начните пополнять кошелек</text>
+        </navLabel>
+        <content src="text/part0005.html#id5"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_6" playOrder="6">
+        <navLabel>
+          <text>ПРАВИЛО ВТОРОЕ Контролируй свои расходы</text>
+        </navLabel>
+        <content src="text/part0005.html#id6"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_7" playOrder="7">
+        <navLabel>
+          <text>ПРАВИЛО ТРЕТЬЕ Преумножай богатство</text>
+        </navLabel>
+        <content src="text/part0005.html#id7"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_8" playOrder="8">
+        <navLabel>
+          <text>ПРАВИЛО ЧЕТВЕРТОЕ Береги свое богатство от потерь</text>
+        </navLabel>
+        <content src="text/part0005.html#id8"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_9" playOrder="9">
+        <navLabel>
+          <text>ПРАВИЛО ПЯТОЕ Превратите свое жилище в прибыльное предприятие</text>
+        </navLabel>
+        <content src="text/part0005.html#id9"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_10" playOrder="10">
+        <navLabel>
+          <text>ПРАВИЛО ШЕСТОЕ Обеспечь доход на будущее</text>
+        </navLabel>
+        <content src="text/part0005.html#id10"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_11" playOrder="11">
+        <navLabel>
+          <text>ПРАВИЛО СЕДЬМОЕ Совершенствуй умение зарабатывать</text>
+        </navLabel>
+        <content src="text/part0005.html#id11"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="12">
+      <navLabel>
+        <text>ВСТРЕЧА С ЕЕ ВЕЛИЧЕСТВОМ УДАЧЕЙ</text>
+      </navLabel>
+      <content src="text/part0006.html#id12"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_13" playOrder="13">
+      <navLabel>
+        <text>ПЯТЬ ЗАКОНОВ БОГАТСТВА</text>
+      </navLabel>
+      <content src="text/part0007.html#id13"/>
+      <navPoint class="chapter" id="num_14" playOrder="14">
+        <navLabel>
+          <text>ПЕРВЫЙ ЗАКОН БОГАТСТВА</text>
+        </navLabel>
+        <content src="text/part0008.html#id14"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_15" playOrder="15">
+        <navLabel>
+          <text>ВТОРОЙ ЗАКОН БОГАТСТВА</text>
+        </navLabel>
+        <content src="text/part0008.html#id15"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_16" playOrder="16">
+        <navLabel>
+          <text>ТРЕТИЙ ЗАКОН БОГАТСТВА</text>
+        </navLabel>
+        <content src="text/part0008.html#id16"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_17" playOrder="17">
+        <navLabel>
+          <text>ЧЕТВЕРТЫЙ ЗАКОН БОГАТСТВА</text>
+        </navLabel>
+        <content src="text/part0008.html#id17"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_18" playOrder="18">
+        <navLabel>
+          <text>ПЯТЫЙ ЗАКОН БОГАТСТВА</text>
+        </navLabel>
+        <content src="text/part0008.html#id18"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_19" playOrder="19">
+      <navLabel>
+        <text>РОСТОВЩИК И3 ВАВИЛОНА</text>
+      </navLabel>
+      <content src="text/part0009.html#id19"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_20" playOrder="20">
+      <navLabel>
+        <text>СТЕНЫ ВАВИЛОНА</text>
+      </navLabel>
+      <content src="text/part0010.html#id20"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_21" playOrder="21">
+      <navLabel>
+        <text>ТОРГОВЕЦ ВЕРБЛЮДАМИ ИЗ ВАВИЛОНА</text>
+      </navLabel>
+      <content src="text/part0011.html#id21"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_22" playOrder="22">
+      <navLabel>
+        <text>ГЛИНЯНЫЕ ДОЩЕЧКИ ИЗ ВАВИЛОНА</text>
+      </navLabel>
+      <content src="text/part0012.html#id22"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_23" playOrder="23">
+      <navLabel>
+        <text>СЧАСТЛИВЧИК ИЗ ВАВИЛОНА</text>
+      </navLabel>
+      <content src="text/part0013.html#id23"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_24" playOrder="24">
+      <navLabel>
+        <text>ИСТОРИЧЕСКАЯ СПРАВКА О ВАВИЛОНЕ</text>
+      </navLabel>
+      <content src="text/part0014.html#id24"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_25" playOrder="25">
+      <navLabel>
+        <text>ОБ АВТОРЕ И ЕГО КНИГЕ</text>
+      </navLabel>
+      <content src="text/part0015.html#id25"/>
+    </navPoint>
+  </navMap>
+</ncx>

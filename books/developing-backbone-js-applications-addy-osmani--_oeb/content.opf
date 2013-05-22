@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>O'Reilly Media</dc:publisher>
+    <dc:rights>Copyright © 2012 Adnan Osmani</dc:rights>
+    <dc:description>&lt;p&gt;Get a complete run-down of the popular Backbone.js framework for structuring JavaScript applications. This practical guide takes you through Model&amp;#8211;view&amp;#8211;controller (MVC) theory, and shows you how to build applications using Backbone's models, views, collections and routers. You&amp;#8217;ll also learn advanced topics such as modular development with Backbone.js and RequireJS.&lt;/p&gt;</dc:description>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Addy Osmani" opf:role="aut">Addy Osmani</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:57:12.317005+00:00"/>
+    <dc:title>Developing Backbone.js Applications</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2012-04-30T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">9781449336035</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">555a102c-5021-4fcc-9c4e-51d1c7e2113b</dc:identifier>
+    <dc:subject>COMPUTERS / Programming Languages / JavaScript</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="OEBPS/FreeSansBold.otf" id="epub.embedded.font.6" media-type="font/opentype"/>
+    <item href="OEBPS/FreeSerif.otf" id="epub.embedded.font.5" media-type="font/opentype"/>
+    <item href="OEBPS/UbuntuMono-B.ttf" id="epub.embedded.font.1" media-type="font/truetype"/>
+    <item href="OEBPS/UbuntuMono-BI.ttf" id="epub.embedded.font.2" media-type="font/truetype"/>
+    <item href="OEBPS/UbuntuMono-R.ttf" id="epub.embedded.font.3" media-type="font/truetype"/>
+    <item href="OEBPS/UbuntuMono-RI.ttf" id="epub.embedded.font.4" media-type="font/truetype"/>
+    <item href="OEBPS/author_bios.html" id="id2785888" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01.html" id="id2507679" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s02.html" id="id2634486" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s03.html" id="id2358180" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s04.html" id="id2689622" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s05.html" id="id2370654" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s06.html" id="id2507909" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s07.html" id="id2756251" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s08.html" id="id2756364" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02.html" id="id2603742" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s02.html" id="id2694958" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s03.html" id="id2376145" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s04.html" id="id2756579" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s05.html" id="id2541614" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s06.html" id="id2658372" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s07.html" id="id2725071" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s08.html" id="id2465708" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s09.html" id="id2604909" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03.html" id="id2486867" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s02.html" id="id2695480" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s03.html" id="id2679521" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s04.html" id="id2774582" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s05.html" id="id2774774" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04.html" id="id2775887" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s02.html" id="id2775967" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s03.html" id="id2776410" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s04.html" id="id2776654" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s05.html" id="id2776999" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s06.html" id="id2777862" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s07.html" id="id2778631" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s08.html" id="id2778790" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s09.html" id="id2778834" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s10.html" id="id2778903" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s11.html" id="id2779022" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s12.html" id="id2779458" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s13.html" id="id2779763" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s14.html" id="id2779892" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05.html" id="id2780404" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s02.html" id="id2783045" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s03.html" id="id2783122" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s04.html" id="id2784477" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s05.html" id="id2784998" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06.html" id="id2785727" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07.html" id="id2785853" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/cover.html" id="u9d4697e3-e5a2-46a8-b7ba-d141268809ad" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/img/3e5545.png" id="id2783389" media-type="image/png"/>
+    <item href="OEBPS/img/7d4de12.png" id="id2783328" media-type="image/png"/>
+    <item href="OEBPS/img/9df4.png" id="id2783360" media-type="image/png"/>
+    <item href="OEBPS/img/clientPager.png.jpg" id="id2778974" media-type="image/jpeg"/>
+    <item href="OEBPS/img/infinitepager.png.jpg" id="id2779010" media-type="image/jpeg"/>
+    <item href="OEBPS/img/requestPager.png.jpg" id="id2778940" media-type="image/jpeg"/>
+    <item href="OEBPS/index.html" id="id2678302" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/oreilly_large.gif" id="id2538119" media-type="image/gif"/>
+    <item href="OEBPS/orm_front_cover.jpg" id="cover-image" media-type="image/jpeg"/>
+    <item href="OEBPS/pr01.html" id="id2425244" media-type="application/xhtml+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id2678302"/>
+    <itemref idref="id2425244"/>
+    <itemref idref="id2507679"/>
+    <itemref idref="id2634486"/>
+    <itemref idref="id2358180"/>
+    <itemref idref="id2689622"/>
+    <itemref idref="id2370654"/>
+    <itemref idref="id2507909"/>
+    <itemref idref="id2756251"/>
+    <itemref idref="id2756364"/>
+    <itemref idref="id2603742"/>
+    <itemref idref="id2694958"/>
+    <itemref idref="id2376145"/>
+    <itemref idref="id2756579"/>
+    <itemref idref="id2541614"/>
+    <itemref idref="id2658372"/>
+    <itemref idref="id2725071"/>
+    <itemref idref="id2465708"/>
+    <itemref idref="id2604909"/>
+    <itemref idref="id2486867"/>
+    <itemref idref="id2695480"/>
+    <itemref idref="id2679521"/>
+    <itemref idref="id2774582"/>
+    <itemref idref="id2774774"/>
+    <itemref idref="id2775887"/>
+    <itemref idref="id2775967"/>
+    <itemref idref="id2776410"/>
+    <itemref idref="id2776654"/>
+    <itemref idref="id2776999"/>
+    <itemref idref="id2777862"/>
+    <itemref idref="id2778631"/>
+    <itemref idref="id2778790"/>
+    <itemref idref="id2778834"/>
+    <itemref idref="id2778903"/>
+    <itemref idref="id2779022"/>
+    <itemref idref="id2779458"/>
+    <itemref idref="id2779763"/>
+    <itemref idref="id2779892"/>
+    <itemref idref="id2780404"/>
+    <itemref idref="id2783045"/>
+    <itemref idref="id2783122"/>
+    <itemref idref="id2784477"/>
+    <itemref idref="id2784998"/>
+    <itemref idref="id2785727"/>
+    <itemref idref="id2785853"/>
+    <itemref idref="id2785888"/>
+  </spine>
+  <guide>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="Cover"/>
+    <reference href="OEBPS/cover.html" type="other.titlepage" title="Title Page"/>
+  </guide>
+</package>

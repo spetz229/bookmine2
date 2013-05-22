@@ -1,0 +1,318 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: I_sect110_d1e25091.html
+next: binary_functor.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect110_d1e25091.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="binary_functor.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="binary_implicit" class="calibre27" id="binary_implicit"></a><h3 id="title-IDAW11VD" class="docSection1Title">10.4. Implicit State</h3><a name="x_RR" class="calibre27" id="x_RR"></a><p class="docText">We're<a name="ch10-implicitstate" class="calibre27" id="ch10-implicitstate"></a><a name="ch10-binparsing" class="calibre27" id="ch10-binparsing"></a> not yet out of the woods. Our code explicitly passes pairs
+    around, using one element for an intermediate part of the parsed result
+    and the other for the current residual ByteString. If we want
+    to extend the code, for example, to track the number of bytes we've
+    consumed so that we can report the location of a parse failure, we already
+    have eight different spots that we will need to modify, just to pass a
+    three-tuple around.</p><a name="x_EF1" class="calibre27" id="x_EF1"></a><p class="docText">This approach makes even a small body of code difficult
+    to change. The problem lies with our use of pattern matching to pull
+    values out of each pair: we have embedded the knowledge that we are always
+    working with pairs straight into our code. As pleasant and helpful as
+    pattern matching is, it can lead us in some undesirable directions if we
+    do not use it carefully.</p><a name="x_TR" class="calibre27" id="x_TR"></a><p class="docText">Let's do something to address the inflexibility of our new
+    code. First, we will change the type of state that our parser uses:</p><pre class="calibre39">-- file: ch10/Parse.hs
+data ParseState = ParseState {
+      string :: L.ByteString
+    , offset :: Int64           -- imported from Data.Int
+    } deriving (Show)</pre><br class="calibre48"/>
+<a name="x_UR" class="calibre27" id="x_UR"></a><p class="docText">In our switch to an algebraic data type, we added the
+    ability to track both the current residual string and the offset into the
+    original string since we started parsing. The more important change was
+    our use of record syntax: we can now <span class="docEmphasis">avoid</span> pattern
+    matching on the pieces of state that we pass around and use the accessor
+    functions <i class="docEmphasis">string</i> and <i class="docEmphasis">offset</i> instead.</p><a name="x_FF1" class="calibre27" id="x_FF1"></a><p class="docText">We have given our parsing state a name. When we name
+    something, it can become easier to reason about. For example, we can now
+    look at parsing as a kind of function: it consumes a parsing state and
+    produces both a new parsing state and some other piece of information. We
+    can directly represent this as a Haskell type:</p><pre class="calibre39">-- file: ch10/Parse.hs
+simpleParse :: ParseState -&gt; (a, ParseState)
+simpleParse = undefined</pre><br class="calibre48"/>
+<a name="x_GF1" class="calibre27" id="x_GF1"></a><p class="docText">To provide more help to our users, we would like to
+    report an error message if parsing fails. This requires only a minor tweak
+    to the type of our parser:</p><pre class="calibre39">-- file: ch10/Parse.hs
+betterParse :: ParseState -&gt; Either String (a, ParseState)
+betterParse = undefined</pre><br class="calibre48"/>
+<a name="x_HF1" class="calibre27" id="x_HF1"></a><p class="docText">In order to future-proof our code, it is best if we do
+    not expose the implementation of our parser to our users. When we
+    explicitly used pairs for state earlier, we found ourselves in trouble
+    almost immediately, once we considered extending the capabilities of our
+    parser. To stave off a repeat of that difficulty, we will hide the details
+    of our parser type using a <tt class="calibre34">newtype</tt> declaration:</p><pre class="calibre39">-- file: ch10/Parse.hs
+newtype Parse a = Parse {
+      runParse :: ParseState -&gt; Either String (a, ParseState)
+    }</pre><br class="calibre48"/>
+<a name="x_IF1" class="calibre27" id="x_IF1"></a><p class="docText">Remember that the <tt class="calibre34">newtype</tt> definition is just
+    a compile-time wrapper around a function, so it has no runtime overhead.
+    When we want to use the function, we will apply the <i class="docEmphasis">runParser</i> accessor.</p><a name="x_VR" class="calibre27" id="x_VR"></a><p class="docText">If we do not export the <tt class="calibre34">Parse</tt> value
+    constructor from our module, we can ensure that nobody else will be able
+    to accidentally create a parser, nor will they be able to inspect its
+    internals via pattern matching.</p><a name="binary_implicitd1e25624" class="calibre27" id="binary_implicitd1e25624"></a><h4 id="title-IDAH41VD" class="docSection1Title">10.4.1. The Identity Parser</h4><a name="x_XR" class="calibre27" id="x_XR"></a><p class="docText">Let's try to define a simple parser, the
+      <span class="docEmphasis">identity</span> parser.<a name="I_indexterm10_d1e25276" class="calibre27" id="I_indexterm10_d1e25276"></a> All it does is turn whatever it is passed into the result
+      of the parse. In this way, it somewhat resembles the <i class="docEmphasis">id</i> function:</p><pre class="calibre39">-- file: ch10/Parse.hs
+identity :: a -&gt; Parse a
+identity a = Parse (\s -&gt; Right (a, s))</pre><br class="calibre48"/>
+<a name="x_YR" class="calibre27" id="x_YR"></a><p class="docText">This function leaves the parse state untouched and uses
+      its argument as the result of the parse. We wrap the body of the
+      function in our Parse type to satisfy the type checker. How
+      can we use this wrapped function to parse something?</p><a name="x_ZR" class="calibre27" id="x_ZR"></a><p class="docText">The first thing we must do is peel off the <i class="docEmphasis">Parse</i> wrapper <a name="I_indexterm10_d1e25295" class="calibre27" id="I_indexterm10_d1e25295"></a>so that we can get at the function inside. We do so using
+      the <i class="docEmphasis">runParse</i> function.<a name="I_indexterm10_d1e25302" class="calibre27" id="I_indexterm10_d1e25302"></a> We also need to construct a ParseState, and
+      then run our parsing function on it. Finally, we'd like to separate the
+      result of the parse from the final ParseState:</p><pre class="calibre39">-- file: ch10/Parse.hs
+parse :: Parse a -&gt; L.ByteString -&gt; Either String a
+parse parser initState
+    = case runParse parser (ParseState initState 0) of
+        Left err          -&gt; Left err
+        Right (result, _) -&gt; Right result</pre><br class="calibre48"/>
+<a name="x_aR" class="calibre27" id="x_aR"></a><p class="docText">Because neither the <i class="docEmphasis">identity</i> parser nor the <i class="docEmphasis">parse</i> function examines the parse state, we
+      don't even need to create an input string in order to try our
+      code:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:load Parse</b>
+[1 of 2] Compiling PNM              ( PNM.hs, interpreted )
+[2 of 2] Compiling Parse            ( Parse.hs, interpreted )
+Ok, modules loaded: Parse, PNM.
+ghci&gt; <b class="calibre40">:type parse (identity 1) undefined</b>
+parse (identity 1) undefined :: (Num t) =&gt; Either String t
+ghci&gt; <b class="calibre40">parse (identity 1) undefined</b>
+Loading package array-0.1.0.0 ... linking ... done.
+Loading package bytestring-0.9.0.1.1 ... linking ... done.
+Right 1
+ghci&gt; <b class="calibre40">parse (identity "foo") undefined</b>
+Right "foo"</pre><a name="x_bR" class="calibre27" id="x_bR"></a><p class="docText">A parser that doesn't even inspect its input might not
+      seem interesting, but we will see shortly that in fact it is useful.
+      Meanwhile, we have gained confidence that our types are correct and that
+      we understand the basic workings of our code.</p><a name="binary_implicitd1e25702" class="calibre27" id="binary_implicitd1e25702"></a><h4 id="title-IDAEB2VD" class="docSection1Title">10.4.2. Record Syntax, Updates, and Pattern Matching</h4><a name="x_JF1" class="calibre27" id="x_JF1"></a><p class="docText">Record syntax is<a name="I_indexterm10_d1e25351" class="calibre27" id="I_indexterm10_d1e25351"></a><a name="I_indexterm10_d1e25354" class="calibre27" id="I_indexterm10_d1e25354"></a> useful for more than just accessor functions—we can use
+      it to copy and partly change an existing value. In use, the notation
+      looks like this:</p><pre class="calibre39">-- file: ch10/Parse.hs
+modifyOffset :: ParseState -&gt; Int64 -&gt; ParseState
+modifyOffset initState newOffset =
+    initState { offset = newOffset }</pre><br class="calibre48"/>
+<a name="x_KF1" class="calibre27" id="x_KF1"></a><p class="docText">This creates a new ParseState value
+      identical to <span class="docMonofont">initState</span>, but with its
+      <tt class="calibre34">offset</tt> field set to whatever value we specify for
+      <tt class="calibre34">newOffset</tt>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let before = ParseState (L8.pack "foo") 0</b>ghci&gt; <b class="calibre40">let after = modifyOffset before 3</b>ghci&gt; <b class="calibre40">before</b>
+ParseState {string = Chunk "foo" Empty, offset = 0}
+ghci&gt; <b class="calibre40">after</b>
+ParseState {string = Chunk "foo" Empty, offset = 3}</pre><a name="x_LF1" class="calibre27" id="x_LF1"></a><p class="docText">We can set as many fields as we want inside the curly
+      braces, separating them using commas.</p><a name="binary_implicitd1e25753" class="calibre27" id="binary_implicitd1e25753"></a><h4 id="title-IDA1C2VD" class="docSection1Title">10.4.3. A More Interesting Parser</h4><a name="x_MF1" class="calibre27" id="x_MF1"></a><p class="docText">Let's focus now on writing a parser that does something
+      meaningful. We're not going to get too ambitious yet—all we want to do
+      is parse a single byte:</p><pre class="calibre39">-- file: ch10/Parse.hs
+-- import the Word8 type from Data.Word
+parseByte :: Parse Word8
+parseByte =
+    getState ==&gt; \initState -&gt;
+    case L.uncons (string initState) of
+      Nothing -&gt;
+          bail "no more input"
+      Just (byte,remainder) -&gt;
+          putState newState ==&gt; \_ -&gt;
+          identity byte
+        where newState = initState { string = remainder,
+                                     offset = newOffset }
+              newOffset = offset initState + 1</pre><br class="calibre48"/>
+<a name="x_cR" class="calibre27" id="x_cR"></a><p class="docText">There are a number of new functions in our
+      definition.</p><a name="x_NF1" class="calibre27" id="x_NF1"></a><p class="docText">The <i class="docEmphasis">L8.uncons</i>
+      function takes the first element from a ByteString:</p><pre class="calibre39">ghci&gt; <b class="calibre40">L8.uncons (L8.pack "foo")</b>
+Just ('f',Chunk "oo" Empty)
+ghci&gt; <b class="calibre40">L8.uncons L8.empty</b>
+Nothing</pre><a name="x_OF1" class="calibre27" id="x_OF1"></a><p class="docText">Our <i class="docEmphasis">getState</i>
+      function retrieves the current parsing state, while <i class="docEmphasis">putState</i> replaces it. The <i class="docEmphasis">bail</i> function terminates parsing and reports
+      an error. The <i class="docEmphasis">(==&gt;)</i>
+      function<a name="I_indexterm10_d1e25441" class="calibre27" id="I_indexterm10_d1e25441"></a> chains parsers together. We will cover each of these
+      functions shortly.</p><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><p class="docNormalTitle">Hanging lambdas</p><a name="x_qS" class="calibre27" id="x_qS"></a><p class="docText">The definition of <i class="docEmphasis">parseByte</i> has a visual style that we
+        haven't discussed before. It contains anonymous functions in which the
+        parameters and <tt class="calibre34">-&gt;</tt> sit at the end of a line, with the
+        function's body following on the next line.</p><a name="x_rS" class="calibre27" id="x_rS"></a><p class="docText">This style of laying out an anonymous function doesn't
+        have an official name, so let's call it a "hanging lambda." Its
+        <a name="I_indexterm10_d1e25458" class="calibre27" id="I_indexterm10_d1e25458"></a>main use is to make room for more text in the body of
+        the function. It also makes it more visually clear that there's a
+        relationship between a function and the one that follows it. Often,
+        for instance, the result of the first function is being passed as a
+        parameter to the second.</p></td></tr></table></td></tr></table></p><br class="calibre48"/><a name="binary_implicitd1e25816" class="calibre27" id="binary_implicitd1e25816"></a><h4 id="title-IDAMF2VD" class="docSection1Title">10.4.4. Obtaining and Modifying the Parse State</h4><a name="x_fR" class="calibre27" id="x_fR"></a><p class="docText">Our <i class="docEmphasis">parseByte</i>
+      function <a name="I_indexterm10_d1e25470" class="calibre27" id="I_indexterm10_d1e25470"></a>doesn't take the parse state as an argument. Instead, it
+      has to call <i class="docEmphasis">getState</i> to get a copy
+      of the state and <i class="docEmphasis">putState</i> to
+      replace the current state with a new one:</p><pre class="calibre39">-- file: ch10/Parse.hs
+getState :: Parse ParseState
+getState = Parse (\s -&gt; Right (s, s))
+
+putState :: ParseState -&gt; Parse ()
+putState s = Parse (\_ -&gt; Right ((), s))</pre><br class="calibre48"/>
+<a name="x_gR" class="calibre27" id="x_gR"></a><p class="docText">When reading these functions, recall that the left
+      element of the tuple is the result of a Parse, while the
+      right is the current ParseState. This makes it easier to
+      follow what these functions are doing.</p><a name="x_hR" class="calibre27" id="x_hR"></a><p class="docText">The <i class="docEmphasis">getState</i>
+      function extracts the current parsing state so that the caller can
+      access the string. The <i class="docEmphasis">putState</i>
+      function replaces the current parsing state with a new one. This becomes
+      the state that will be seen by the next function in the <i class="docEmphasis">(==&gt;)</i> chain.</p><a name="x_iR" class="calibre27" id="x_iR"></a><p class="docText">These functions let us move explicit state handling into
+      the bodies of only those functions that need it. Many functions don't
+      need to know what the current state is, and so they'll never call
+      <i class="docEmphasis">getState</i> or <i class="docEmphasis">putState</i>. This lets us write more compact
+      code than our earlier parser, which had to pass tuples around by hand.
+      We will see the effect in some of the code that follows.</p><a name="x_jR" class="calibre27" id="x_jR"></a><p class="docText">We've packaged up the details of the parsing state into
+      the ParseState type, and we work with it using accessors
+      instead of pattern matching. Now that the parsing state is passed around
+      implicitly, we gain a further benefit. If we want to add more
+      information to the parsing state, all we need to do is modify the
+      definition of ParseState and the bodies of whatever
+      functions need the new information. Compared to our earlier parsing
+      code, where all of our state was exposed through pattern matching, this
+      is much more modular: the only code we affect is code that needs the new
+      information.</p><a name="binary_implicitd1e25871" class="calibre27" id="binary_implicitd1e25871"></a><h4 id="title-IDAQH2VD" class="docSection1Title">10.4.5. Reporting Parse Errors</h4><a name="x_kR" class="calibre27" id="x_kR"></a><p class="docText">We carefully defined our Parse
+      type<a name="I_indexterm10_d1e25525" class="calibre27" id="I_indexterm10_d1e25525"></a> to accommodate the possibility of failure. The <i class="docEmphasis">(==&gt;)</i> combinator checks for a parse
+      failure and stops parsing if it runs into a failure. But we haven't yet
+      introduced the <i class="docEmphasis">bail</i> function, which
+      we use to report a parse error:</p><pre class="calibre39">-- file: ch10/Parse.hs
+bail :: String -&gt; Parse a
+bail err = Parse $ \s -&gt; Left $
+           "byte offset " ++ show (offset s) ++ ": " ++ err</pre><br class="calibre48"/>
+<a name="x_lR" class="calibre27" id="x_lR"></a><p class="docText">After we call <i class="docEmphasis">bail</i>,
+      <i class="docEmphasis">(==&gt;)</i> will successfully pattern
+      match on the <tt class="calibre34">Left</tt> constructor that it wraps the error
+      message with, and it will not invoke the next parser in the chain. This
+      will cause the error message to percolate back through the chain of
+      prior callers.</p><a name="binary_implicitd1e25902" class="calibre27" id="binary_implicitd1e25902"></a><h4 id="title-IDA0I2VD" class="docSection1Title">10.4.6. Chaining Parsers Together</h4><a name="x_PF1" class="calibre27" id="x_PF1"></a><p class="docText">The <i class="docEmphasis">(==&gt;)</i>
+      function serves a similar purpose to our earlier <i class="docEmphasis">(&gt;&gt;?)</i> function—it is
+      "glue" that lets us chain functions together:</p><pre class="calibre39">-- file: ch10/Parse.hs
+(==&gt;) :: Parse a -&gt; (a -&gt; Parse b) -&gt; Parse b
+
+firstParser ==&gt; secondParser  =  Parse chainedParser
+  where chainedParser initState   =
+          case runParse firstParser initState of
+            Left errMessage -&gt;
+                Left errMessage
+            Right (firstResult, newState) -&gt;
+                runParse (secondParser firstResult) newState</pre><br class="calibre48"/>
+<a name="x_dR" class="calibre27" id="x_dR"></a><p class="docText">The body of <i class="docEmphasis">(==&gt;)</i> is interesting and ever so slightly
+      tricky. Recall that the Parse type represents really a
+      function inside a wrapper. Since <i class="docEmphasis">(==&gt;)</i> lets us chain two Parse
+      values to produce a third, it must return a function, in a
+      wrapper.</p><a name="x_QF1" class="calibre27" id="x_QF1"></a><p class="docText">The function doesn't really "do" much, it
+      just creates a <span class="docEmphasis">closure</span> to remember the values of
+      <span class="docMonofont">firstParser</span> and
+      <span class="docMonofont">secondParser</span>.</p><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><a name="x_RF1" class="calibre27" id="x_RF1"></a><p class="docText">A closure is simply the pairing of a function with
+        its <span class="docEmphasis">environment</span>, the bound variables that it can
+        see. Closures are commonplace in Haskell. For instance, the section
+        <i class="docEmphasis">(+5)</i> is a closure. An
+        implementation must record the value <tt class="calibre34">5</tt> as the second
+        argument to the <i class="docEmphasis">(+)</i> operator so
+        that the resulting function can add <tt class="calibre34">5</tt> to whatever value
+        it is passed.</p></td></tr></table></td></tr></table></p><br class="calibre48"/><a name="x_SF1" class="calibre27" id="x_SF1"></a><p class="docText">This closure will not be unwrapped and applied until we
+      apply <i class="docEmphasis">parse</i>. At that point, it will
+      be applied with a ParseState. It will apply
+      <span class="docMonofont">firstParser</span> and inspect its result. If that parse
+      fails, the closure will fail too. Otherwise, it will pass the result of
+      the parse and the new ParseState to
+      <span class="docMonofont">secondParser</span>.</p><a name="x_eR" class="calibre27" id="x_eR"></a><p class="docText">This is really quite fancy and subtle stuff. We're
+      effectively passing the ParseState down the chain of
+      Parse values in a hidden argument. (We'll be revisiting
+      this kind of code in a few chapters, so don't fret if this description
+      seems dense.)</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="I_sect110_d1e25091.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="binary_functor.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

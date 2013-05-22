@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Школа Программирования</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T22:02:11.193436+00:00"/>
+    <dc:title>Путь программиста: от 100$ до 10000$ в месяц</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2012-10-28T10:33:12.451000+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="MOBI-ASIN">4c80fc8a-c02f-4aa8-a059-8d8cd5322c1a</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">feec4787-7888-4a08-943a-32a1d19eac7c</dc:identifier>
+    <dc:subject>comp_programming</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="images/calibre_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="Put'_proghrammista__ot_100$_do_.html" id="id1" media-type="application/xhtml+xml"/>
+    <item href="images/00001.jpg" id="id3" media-type="image/jpeg"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id1"/>
+  </spine>
+  <guide>
+    <reference href="Put'_proghrammista__ot_100$_do_.html#filepos165657" type="toc" title="Table of Contents"/>
+    <reference href="images/calibre_cover.jpg" type="cover" title="Cover"/>
+  </guide>
+</package>

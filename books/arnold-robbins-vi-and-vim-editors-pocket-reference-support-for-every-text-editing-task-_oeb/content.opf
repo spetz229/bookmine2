@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>O'Reilly Media</dc:publisher>
+    <dc:rights>Copyright © 2011 Arnold Robbins</dc:rights>
+    <dc:description>&lt;p&gt;Many Unix, Linux, and Mac OS X geeks enjoy using the powerful, platform-agnostic text editors vi and Vim, but there are far too many commands for anyone to remember. Author Arnold Robbins has chosen the most valuable commands for vi, Vim, and vi's main clones&amp;#8212;vile, elvis, and nvi&amp;#8212;and packed them into this easy-to-browse pocket reference. You'll find commands for all kinds of editing tasks, including programming, modifying system files, writing and marking up articles, and more.&lt;/p&gt;</dc:description>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Arnold Robbins" opf:role="aut">Arnold Robbins</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:55:39.875428+00:00"/>
+    <dc:title>vi and Vim Editors Pocket Reference</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2011-01-10T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">9781449392185</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">07b101f8-0fcf-46c4-abf8-6abdcc675aec</dc:identifier>
+    <dc:subject>COMPUTERS / Programming / General</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="OEBPS/DejaVuSansMono-Bold.otf" id="epub.embedded.font.2" media-type="font/opentype"/>
+    <item href="OEBPS/DejaVuSansMono-BoldOblique.otf" id="epub.embedded.font.3" media-type="font/opentype"/>
+    <item href="OEBPS/DejaVuSansMono-Oblique.otf" id="epub.embedded.font.4" media-type="font/opentype"/>
+    <item href="OEBPS/DejaVuSansMono.otf" id="epub.embedded.font.1" media-type="font/opentype"/>
+    <item href="OEBPS/DejaVuSerif-Bold.otf" id="epub.embedded.font.6" media-type="font/opentype"/>
+    <item href="OEBPS/DejaVuSerif-BoldItalic.otf" id="epub.embedded.font.7" media-type="font/opentype"/>
+    <item href="OEBPS/DejaVuSerif-Italic.otf" id="epub.embedded.font.8" media-type="font/opentype"/>
+    <item href="OEBPS/DejaVuSerif.otf" id="epub.embedded.font.5" media-type="font/opentype"/>
+    <item href="OEBPS/author_bios.html" id="id2844655" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01.html" id="id2734853" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s02.html" id="id2667328" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s03.html" id="id2753158" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s04.html" id="id2642277" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s05.html" id="id2712653" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s06.html" id="id2819720" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s07.html" id="id2820300" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s08.html" id="id2821612" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s09.html" id="id2823710" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s10.html" id="id2823862" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s11.html" id="id2823916" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s12.html" id="id2824820" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s13.html" id="id2824904" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s14.html" id="id2825503" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s15.html" id="id2836665" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s16.html" id="id2838103" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s17.html" id="id2841230" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s18.html" id="id2844159" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s19.html" id="id2844338" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/cover.html" id="uc3da455e-6dd3-44b5-a83f-57ed8f4f3f05" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages766603.jpg" id="cover-image" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages766608.png" id="id2833595" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages766610.png" id="id2844332" media-type="image/png"/>
+    <item href="OEBPS/index.html" id="id2734713" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ix01.html" id="id2844643" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/oreilly_large.gif" id="id2717908" media-type="image/gif"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id2734713"/>
+    <itemref idref="id2734853"/>
+    <itemref idref="id2667328"/>
+    <itemref idref="id2753158"/>
+    <itemref idref="id2642277"/>
+    <itemref idref="id2712653"/>
+    <itemref idref="id2819720"/>
+    <itemref idref="id2820300"/>
+    <itemref idref="id2821612"/>
+    <itemref idref="id2823710"/>
+    <itemref idref="id2823862"/>
+    <itemref idref="id2823916"/>
+    <itemref idref="id2824820"/>
+    <itemref idref="id2824904"/>
+    <itemref idref="id2825503"/>
+    <itemref idref="id2836665"/>
+    <itemref idref="id2838103"/>
+    <itemref idref="id2841230"/>
+    <itemref idref="id2844159"/>
+    <itemref idref="id2844338"/>
+    <itemref idref="id2844643"/>
+    <itemref idref="id2844655"/>
+  </spine>
+  <guide>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="Cover"/>
+    <reference href="OEBPS/cover.html" type="other.titlepage" title="Title Page"/>
+  </guide>
+</package>

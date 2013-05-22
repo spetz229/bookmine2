@@ -1,0 +1,39 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch05s03.html
+next: OEBPS/ch06s02.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="calibre1"></div><div class="book" title="Chapter 6. The Little Conclusion"><div class="book"><div class="book"><div class="book"><div class="calibre1"></div><h1 class="title1"><a id="the_little_conclusion" class="calibre2"></a>Chapter 6. The Little Conclusion</h1></div></div></div><p class="calibre8"><span class="firstname"><em class="calibre5">By Jeremy Ashkenas</em></span><sup class="calibre14">[<a id="id2871249" href="#ftn.id2871249" class="firstname">1</a>]</sup></p><p class="calibre8">You’ve reached the end of <span class="firstname"><em class="calibre5">The Little Book on
+  CoffeeScript</em></span>, and now you know just about everything you’ll need.
+  CoffeeScript is a little language at heart, and if you know JavaScript and
+  have a sense of the philosophy behind the changes that CoffeeScript makes to
+  JavaScript, you should be able to get up and running very quickly
+  indeed.</p><div class="book" title="Philosophy"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect16_d1e2817" class="calibre2"></a>Philosophy</h1></div></div></div><p class="calibre8">Unlike most programming languages, CoffeeScript was never designed
+    from the ground up. It has always been an attempt to express core
+    JavaScript concepts in as simple and minimal a syntax as we can find for
+    them.</p><p class="calibre8">Let’s take a simple function. To produce the square of <code class="literal">x</code>, we multiply <code class="literal">x</code> by itself. In JavaScript:</p><pre class="screen">var square = function(x) {
+  return x * x;
+};</pre><p class="calibre8">To derive the CoffeeScript for this, let’s think through the steps
+    it would take to reduce this function to its essential features.</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre8">We can understand the code perfectly well without the
+        semicolons, so let’s drop those.</p></li><li class="listitem"><p class="calibre8">Instead of using <code class="literal">{</code> and
+        <code class="literal">}</code> to delimit the body of the
+        function, let’s use the indentation that’s already present on the
+        page.</p></li><li class="listitem"><p class="calibre8">It’s clear that we’re defining a new function, so let’s drop the
+        redundant <code class="literal">var</code> in front of the
+        assignment.</p></li><li class="listitem"><p class="calibre8">Every construct in CoffeeScript should be an expression with a
+        value, so the natural value of a function body is the last line of
+        code it executes ... allowing us to omit the <code class="literal">return</code>.</p></li><li class="listitem"><p class="calibre8">Finally, we replace <code class="literal">function( input ){
+        output }</code> with a function literal that visually represents
+        the idea that the input of a function “points to” the output: <code class="literal">(input) -&gt; output</code>.</p></li></ul></div><p class="calibre8">Voilá, the CoffeeScript version:</p><pre class="screen">square = (x) -&gt; x * x</pre><p class="calibre8">Every language feature in CoffeeScript has been designed using this
+    kind of process: attempt to take the beautiful dynamic semantics of
+    JavaScript—object literals, function expressions, prototypal
+    inheritance—and express them in a clean, readable, minimal way.</p></div><div class="book"><br class="calibre15"/><hr class="calibre16"/><div class="legalnotice"><p class="calibre8"><sup class="calibre17">[<a id="ftn.id2871249" href="#id2871249" class="firstname">1</a>] </sup>This last chapter was kindly contributed by Jeremy Ashkenas, the
+      author of CoffeeScript.</p></div></div></div></div>
+
+{% endraw %}
+

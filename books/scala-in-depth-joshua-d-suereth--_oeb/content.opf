@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>Manning Publications</dc:publisher>
+    <dc:description>Summary</dc:description>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Joshua D. Suereth, Foreword by: Martin Odersky</dc:creator>
+    <meta name="calibre:timestamp" content="2012-05-18T17:14:26.921000+00:00"/>
+    <dc:title>Scala in Depth</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">837cadbe-4230-419f-b7d6-c14911d0f28e</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="01list03_alt.jpg" id="added15" media-type="image/jpeg"/>
+    <item href="02fig01_alt.jpg" id="added16" media-type="image/jpeg"/>
+    <item href="02fig02_alt.jpg" id="added25" media-type="image/jpeg"/>
+    <item href="02fig03_alt.jpg" id="added26" media-type="image/jpeg"/>
+    <item href="02list01_alt.jpg" id="added17" media-type="image/jpeg"/>
+    <item href="02list03_alt.jpg" id="added20" media-type="image/jpeg"/>
+    <item href="02list04_alt.jpg" id="added21" media-type="image/jpeg"/>
+    <item href="02list05_alt.jpg" id="added22" media-type="image/jpeg"/>
+    <item href="02list16_alt.jpg" id="added27" media-type="image/jpeg"/>
+    <item href="02list17_alt.jpg" id="added28" media-type="image/jpeg"/>
+    <item href="02list19_alt.jpg" id="added29" media-type="image/jpeg"/>
+    <item href="02list23_alt.jpg" id="added34" media-type="image/jpeg"/>
+    <item href="03fig01_alt.jpg" id="added43" media-type="image/jpeg"/>
+    <item href="03list01_alt.jpg" id="added41" media-type="image/jpeg"/>
+    <item href="03list02_alt.jpg" id="added42" media-type="image/jpeg"/>
+    <item href="03list06_alt.jpg" id="added44" media-type="image/jpeg"/>
+    <item href="03list07_alt.jpg" id="added45" media-type="image/jpeg"/>
+    <item href="03list12_alt.jpg" id="added54" media-type="image/jpeg"/>
+    <item href="03list18_alt.jpg" id="added56" media-type="image/jpeg"/>
+    <item href="04fig01_alt.jpg" id="added57" media-type="image/jpeg"/>
+    <item href="04fig02_alt.jpg" id="added61" media-type="image/jpeg"/>
+    <item href="04fig03.jpg" id="added68" media-type="image/jpeg"/>
+    <item href="04list04_alt.jpg" id="added58" media-type="image/jpeg"/>
+    <item href="04list07_alt.jpg" id="added64" media-type="image/jpeg"/>
+    <item href="04list13_alt.jpg" id="added65" media-type="image/jpeg"/>
+    <item href="06fig01_alt.jpg" id="added82" media-type="image/jpeg"/>
+    <item href="06fig02.jpg" id="added83" media-type="image/jpeg"/>
+    <item href="06fig03.jpg" id="added85" media-type="image/jpeg"/>
+    <item href="06list03_alt.jpg" id="added73" media-type="image/jpeg"/>
+    <item href="06list08_alt.jpg" id="added84" media-type="image/jpeg"/>
+    <item href="07fig01.jpg" id="added94" media-type="image/jpeg"/>
+    <item href="07fig02.jpg" id="added96" media-type="image/jpeg"/>
+    <item href="07fig03_alt.jpg" id="added97" media-type="image/jpeg"/>
+    <item href="07list05_alt.jpg" id="added89" media-type="image/jpeg"/>
+    <item href="07list06_alt.jpg" id="added90" media-type="image/jpeg"/>
+    <item href="07list09_alt.jpg" id="added93" media-type="image/jpeg"/>
+    <item href="07list10_alt.jpg" id="added95" media-type="image/jpeg"/>
+    <item href="07list12_alt.jpg" id="added98" media-type="image/jpeg"/>
+    <item href="08fig01_alt.jpg" id="added100" media-type="image/jpeg"/>
+    <item href="08fig02.jpg" id="added103" media-type="image/jpeg"/>
+    <item href="08fig03.jpg" id="added104" media-type="image/jpeg"/>
+    <item href="08fig04.jpg" id="added105" media-type="image/jpeg"/>
+    <item href="08fig05.jpg" id="added106" media-type="image/jpeg"/>
+    <item href="08fig06.jpg" id="added107" media-type="image/jpeg"/>
+    <item href="08fig07.jpg" id="added108" media-type="image/jpeg"/>
+    <item href="08fig08.jpg" id="added109" media-type="image/jpeg"/>
+    <item href="09fig01.jpg" id="added110" media-type="image/jpeg"/>
+    <item href="09fig02.jpg" id="added111" media-type="image/jpeg"/>
+    <item href="09fig03.jpg" id="added112" media-type="image/jpeg"/>
+    <item href="09fig04_alt.jpg" id="added114" media-type="image/jpeg"/>
+    <item href="09fig05_alt.jpg" id="added116" media-type="image/jpeg"/>
+    <item href="09fig06.jpg" id="added118" media-type="image/jpeg"/>
+    <item href="09list01_alt.jpg" id="added115" media-type="image/jpeg"/>
+    <item href="09list02_alt.jpg" id="added117" media-type="image/jpeg"/>
+    <item href="11fig01.jpg" id="added123" media-type="image/jpeg"/>
+    <item href="ch01list2-0.jpg" id="added11" media-type="image/jpeg"/>
+    <item href="ch01list2-1.jpg" id="added12" media-type="image/jpeg"/>
+    <item href="ch02list10-0.jpg" id="added23" media-type="image/jpeg"/>
+    <item href="ch02list10-1.jpg" id="added24" media-type="image/jpeg"/>
+    <item href="ch02list2-0.jpg" id="added18" media-type="image/jpeg"/>
+    <item href="ch02list2-1.jpg" id="added19" media-type="image/jpeg"/>
+    <item href="ch02list21-0.jpg" id="added30" media-type="image/jpeg"/>
+    <item href="ch02list21-1.jpg" id="added31" media-type="image/jpeg"/>
+    <item href="ch02list22-0.jpg" id="added32" media-type="image/jpeg"/>
+    <item href="ch02list22-1.jpg" id="added33" media-type="image/jpeg"/>
+    <item href="ch02list24-0.jpg" id="added35" media-type="image/jpeg"/>
+    <item href="ch02list24-1.jpg" id="added36" media-type="image/jpeg"/>
+    <item href="ch02list25-0.jpg" id="added37" media-type="image/jpeg"/>
+    <item href="ch02list25-1.jpg" id="added38" media-type="image/jpeg"/>
+    <item href="ch02list26-0.jpg" id="added39" media-type="image/jpeg"/>
+    <item href="ch02list26-1.jpg" id="added40" media-type="image/jpeg"/>
+    <item href="ch03list10-0.jpg" id="added50" media-type="image/jpeg"/>
+    <item href="ch03list10-1.jpg" id="added51" media-type="image/jpeg"/>
+    <item href="ch03list11-0.jpg" id="added52" media-type="image/jpeg"/>
+    <item href="ch03list11-1.jpg" id="added53" media-type="image/jpeg"/>
+    <item href="ch03list8-0.jpg" id="added46" media-type="image/jpeg"/>
+    <item href="ch03list8-1.jpg" id="added47" media-type="image/jpeg"/>
+    <item href="ch03list9-0.jpg" id="added48" media-type="image/jpeg"/>
+    <item href="ch03list9-1.jpg" id="added49" media-type="image/jpeg"/>
+    <item href="ch04list17-0.jpg" id="added66" media-type="image/jpeg"/>
+    <item href="ch04list17-1.jpg" id="added67" media-type="image/jpeg"/>
+    <item href="ch04list5-0.jpg" id="added59" media-type="image/jpeg"/>
+    <item href="ch04list5-1.jpg" id="added60" media-type="image/jpeg"/>
+    <item href="ch04list6-0.jpg" id="added62" media-type="image/jpeg"/>
+    <item href="ch04list6-1.jpg" id="added63" media-type="image/jpeg"/>
+    <item href="ch06list1-0.jpg" id="added69" media-type="image/jpeg"/>
+    <item href="ch06list1-1.jpg" id="added70" media-type="image/jpeg"/>
+    <item href="ch06list2-0.jpg" id="added71" media-type="image/jpeg"/>
+    <item href="ch06list2-1.jpg" id="added72" media-type="image/jpeg"/>
+    <item href="ch06list4-0.jpg" id="added74" media-type="image/jpeg"/>
+    <item href="ch06list4-1.jpg" id="added75" media-type="image/jpeg"/>
+    <item href="ch06list5-0.jpg" id="added76" media-type="image/jpeg"/>
+    <item href="ch06list5-1.jpg" id="added77" media-type="image/jpeg"/>
+    <item href="ch06list6-0.jpg" id="added78" media-type="image/jpeg"/>
+    <item href="ch06list6-1.jpg" id="added79" media-type="image/jpeg"/>
+    <item href="ch06list7-0.jpg" id="added80" media-type="image/jpeg"/>
+    <item href="ch06list7-1.jpg" id="added81" media-type="image/jpeg"/>
+    <item href="ch07list4-0.jpg" id="added87" media-type="image/jpeg"/>
+    <item href="ch07list4-1.jpg" id="added88" media-type="image/jpeg"/>
+    <item href="ch07list8-0.jpg" id="added91" media-type="image/jpeg"/>
+    <item href="ch07list8-1.jpg" id="added92" media-type="image/jpeg"/>
+    <item href="cover.jpg" id="u1d7fe793-b31c-4689-a959-a56925a7fd41" media-type="image/jpeg"/>
+    <item href="f0004-01_alt.jpg" id="added3" media-type="image/jpeg"/>
+    <item href="f0005-01_alt.jpg" id="added4" media-type="image/jpeg"/>
+    <item href="f0005-02_alt.jpg" id="added5" media-type="image/jpeg"/>
+    <item href="f0006-01_alt.jpg" id="added6" media-type="image/jpeg"/>
+    <item href="f0007-01_alt.jpg" id="added7" media-type="image/jpeg"/>
+    <item href="f0007-02_alt.jpg" id="added8" media-type="image/jpeg"/>
+    <item href="f0009-01_alt.jpg" id="added9" media-type="image/jpeg"/>
+    <item href="f0010-01_alt.jpg" id="added10" media-type="image/jpeg"/>
+    <item href="f0013-01_alt.jpg" id="added13" media-type="image/jpeg"/>
+    <item href="f0013-02_alt.jpg" id="added14" media-type="image/jpeg"/>
+    <item href="f0062-01_alt.jpg" id="added55" media-type="image/jpeg"/>
+    <item href="f0145-01_alt.jpg" id="added86" media-type="image/jpeg"/>
+    <item href="f0176-01_alt.jpg" id="added99" media-type="image/jpeg"/>
+    <item href="f0183-01_alt.jpg" id="added101" media-type="image/jpeg"/>
+    <item href="f0184-01_alt.jpg" id="added102" media-type="image/jpeg"/>
+    <item href="f0220-01_alt.jpg" id="added113" media-type="image/jpeg"/>
+    <item href="f0236-01_alt.jpg" id="added119" media-type="image/jpeg"/>
+    <item href="f0236-02_alt.jpg" id="added120" media-type="image/jpeg"/>
+    <item href="f0241-01_alt.jpg" id="added121" media-type="image/jpeg"/>
+    <item href="f0250-01_alt.jpg" id="added122" media-type="image/jpeg"/>
+    <item href="infin.jpg" id="added1" media-type="image/jpeg"/>
+    <item href="kindle_split_000.html" id="html24" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_001.html" id="html23" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_002.html" id="html22" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_003.html" id="html21" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_004.html" id="html20" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_005.html" id="html19" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_006.html" id="html18" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_007.html" id="html17" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_008.html" id="html16" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_009.html" id="html15" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_010.html" id="html14" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_011.html" id="html13" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_012.html" id="html12" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_013.html" id="html11" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_014.html" id="html10" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_015.html" id="html9" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_016.html" id="html8" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_017.html" id="html7" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_018.html" id="html6" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_019.html" id="html5" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_020.html" id="html4" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_021.html" id="html3" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_022.html" id="html2" media-type="application/xhtml+xml"/>
+    <item href="kindle_split_023.html" id="html1" media-type="application/xhtml+xml"/>
+    <item href="logo.jpg" id="added" media-type="image/jpeg"/>
+    <item href="manning.jpg" id="added2" media-type="image/jpeg"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="titlepage.xhtml" id="titlepage" media-type="application/xhtml+xml"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="html24"/>
+    <itemref idref="html23"/>
+    <itemref idref="html22"/>
+    <itemref idref="html21"/>
+    <itemref idref="html20"/>
+    <itemref idref="html19"/>
+    <itemref idref="html18"/>
+    <itemref idref="html17"/>
+    <itemref idref="html16"/>
+    <itemref idref="html15"/>
+    <itemref idref="html14"/>
+    <itemref idref="html13"/>
+    <itemref idref="html12"/>
+    <itemref idref="html11"/>
+    <itemref idref="html10"/>
+    <itemref idref="html9"/>
+    <itemref idref="html8"/>
+    <itemref idref="html7"/>
+    <itemref idref="html6"/>
+    <itemref idref="html5"/>
+    <itemref idref="html4"/>
+    <itemref idref="html3"/>
+    <itemref idref="html2"/>
+    <itemref idref="html1"/>
+  </spine>
+  <guide>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="Cover"/>
+    <reference href="titlepage.xhtml" type="other.titlepage" title="Title Page"/>
+  </guide>
+</package>

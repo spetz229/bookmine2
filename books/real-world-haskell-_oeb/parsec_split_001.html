@@ -1,0 +1,40 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: parsec_split_000.html
+next: parsec_firststeps.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<div class="calibre47"></div><h2 id="title-IDA3TEVD" class="docPrefaceTitle">Chapter 16. Using Parsec</h2><a name="x_DJ" class="calibre5" id="x_DJ"></a><p class="docText">Parsing <a name="ch16-parsec" class="calibre27" id="ch16-parsec"></a> a file, or data of various types, is a common task for
+  programmers. We already learned about Haskell's support for regular
+  expressions back in <a class="docLink" href="glob_regex.html#glob_regex">Section 8.3</a>. <a name="I_indexterm16_d1e35977" class="calibre27" id="I_indexterm16_d1e35977"></a>Regular expressions are nice for many tasks, but they rapidly
+  become unwieldy, or cannot be used at all, when dealing with a complex data
+  format. For instance, we cannot use regular expressions to parse source code
+  from most programming languages.</p><a name="x_EJ" class="calibre5" id="x_EJ"></a><p class="docText">Parsec is a useful parser combinator library, with which we
+  combine small parsing functions to build more sophisticated parsers. Parsec
+  provides some simple parsing functions, as well as functions to tie them all
+  together. It should come as no surprise that this parser library for Haskell
+  is built around the notion of functions.</p><a name="x_FJ" class="calibre5" id="x_FJ"></a><p class="docText">It's helpful to know where Parsec fits compared to the tools
+  used for parsing in other languages. Parsing is sometimes divided into two
+  stages: lexical analysis (the domain of tools such<a name="I_indexterm16_d1e35987" class="calibre27" id="I_indexterm16_d1e35987"></a><a name="I_indexterm16_d1e35990" class="calibre27" id="I_indexterm16_d1e35990"></a> as <i class="docEmphasis">flex</i>) and parsing
+  itself (performed by programs such as <i class="docEmphasis">bison</i>). Parsec can perform both lexical analysis
+  and parsing.</p>
+<a href="21061538.html" class="calibre13"><img src="pixel.gif" alt="" border="0" class="calibre26"/></a><ul class="calibre28"></ul><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="middle" class="v1" height="5"><img src="pixel.gif" alt="" border="0" class="calibre8"/></td></tr><tr class="calibre6"><td valign="middle" class="v1"><table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody"><tr class="calibre6"><td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td></tr></table></td><td class="v1"/><td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect115_d1e35473_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="parsec_firststeps.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="top" class="v2"><span class="calibre9"></span></td></tr></table><!--IP User 2--><td class="calibre7">
+                         
+                      </td><tr class="calibre6"><td colspan="3" valign="bottom" class="calibre7"><br class="calibre20"/><p class="v4"></p><br class="calibre20"/></td></tr></div>
+
+{% endraw %}
+

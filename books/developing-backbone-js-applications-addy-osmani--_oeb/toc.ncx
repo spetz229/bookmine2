@@ -1,0 +1,1137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="555a102c-5021-4fcc-9c4e-51d1c7e2113b" name="dtb:uid"/>
+    <meta content="6" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Developing Backbone.js Applications</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="id2678302" playOrder="1">
+      <navLabel>
+        <text>Developing Backbone.js Applications</text>
+      </navLabel>
+      <content src="OEBPS/index.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="id2425244" playOrder="2">
+      <navLabel>
+        <text>Prelude</text>
+      </navLabel>
+      <content src="OEBPS/pr01.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="id2507679" playOrder="3">
+      <navLabel>
+        <text>1. Introduction</text>
+      </navLabel>
+      <content src="OEBPS/ch01.html"/>
+      <navPoint class="chapter" id="id2424088" playOrder="4">
+        <navLabel>
+          <text>Fundamentals</text>
+        </navLabel>
+        <content src="OEBPS/ch01.html#fundamentals"/>
+        <navPoint class="chapter" id="id2424217" playOrder="5">
+          <navLabel>
+            <text>MVC, MVP &amp; Backbone.js</text>
+          </navLabel>
+          <content src="OEBPS/ch01.html#mvc-mvp-backbone.js"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2634486" playOrder="6">
+        <navLabel>
+          <text>MVC</text>
+        </navLabel>
+        <content src="OEBPS/ch01s02.html"/>
+        <navPoint class="chapter" id="id2725852" playOrder="7">
+          <navLabel>
+            <text>Smalltalk-80 MVC</text>
+          </navLabel>
+          <content src="OEBPS/ch01s02.html#smalltalk-80-mvc"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2358180" playOrder="8">
+        <navLabel>
+          <text>MVC As We Know It</text>
+        </navLabel>
+        <content src="OEBPS/ch01s03.html"/>
+        <navPoint class="chapter" id="id2488047" playOrder="9">
+          <navLabel>
+            <text>Models</text>
+          </navLabel>
+          <content src="OEBPS/ch01s03.html#models"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2564248" playOrder="10">
+          <navLabel>
+            <text>Views</text>
+          </navLabel>
+          <content src="OEBPS/ch01s03.html#views"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2466349" playOrder="11">
+          <navLabel>
+            <text>Controllers</text>
+          </navLabel>
+          <content src="OEBPS/ch01s03.html#controllers"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2541236" playOrder="12">
+          <navLabel>
+            <text>Controllers in Spine.js vs Backbone.js</text>
+          </navLabel>
+          <content src="OEBPS/ch01s03.html#controllers-in-spine.js-vs-backbone.js"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2689622" playOrder="13">
+        <navLabel>
+          <text>What does MVC give us?</text>
+        </navLabel>
+        <content src="OEBPS/ch01s04.html"/>
+        <navPoint class="chapter" id="id2579567" playOrder="14">
+          <navLabel>
+            <text>Delving deeper</text>
+          </navLabel>
+          <content src="OEBPS/ch01s04.html#delving-deeper"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2471723" playOrder="15">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch01s04.html#summary"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2370654" playOrder="16">
+        <navLabel>
+          <text>MVP</text>
+        </navLabel>
+        <content src="OEBPS/ch01s05.html"/>
+        <navPoint class="chapter" id="id2391653" playOrder="17">
+          <navLabel>
+            <text>Models, Views &amp; Presenters</text>
+          </navLabel>
+          <content src="OEBPS/ch01s05.html#models-views-presenters"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2507909" playOrder="18">
+        <navLabel>
+          <text>MVP or MVC?</text>
+        </navLabel>
+        <content src="OEBPS/ch01s06.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2756251" playOrder="19">
+        <navLabel>
+          <text>MVC, MVP and Backbone.js</text>
+        </navLabel>
+        <content src="OEBPS/ch01s07.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2756364" playOrder="20">
+        <navLabel>
+          <text>Fast facts</text>
+        </navLabel>
+        <content src="OEBPS/ch01s08.html"/>
+        <navPoint class="chapter" id="id2756370" playOrder="21">
+          <navLabel>
+            <text>Backbone.js</text>
+          </navLabel>
+          <content src="OEBPS/ch01s08.html#backbone.js"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id2603742" playOrder="22">
+      <navLabel>
+        <text>2. The Basics</text>
+      </navLabel>
+      <content src="OEBPS/ch02.html"/>
+      <navPoint class="chapter" id="id2618659" playOrder="23">
+        <navLabel>
+          <text>What is Backbone?</text>
+        </navLabel>
+        <content src="OEBPS/ch02.html#what-is-backbone"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2694958" playOrder="24">
+        <navLabel>
+          <text>Why should you consider using it?</text>
+        </navLabel>
+        <content src="OEBPS/ch02s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2376145" playOrder="25">
+        <navLabel>
+          <text>The Basics</text>
+        </navLabel>
+        <content src="OEBPS/ch02s03.html"/>
+        <navPoint class="chapter" id="id2438501" playOrder="26">
+          <navLabel>
+            <text>Models</text>
+          </navLabel>
+          <content src="OEBPS/ch02s03.html#models-1"/>
+          <navPoint class="chapter" id="id2709304" playOrder="27">
+            <navLabel>
+              <text>Initialization</text>
+            </navLabel>
+            <content src="OEBPS/ch02s03.html#initialization"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2486363" playOrder="28">
+            <navLabel>
+              <text>Getters &amp; Setters</text>
+            </navLabel>
+            <content src="OEBPS/ch02s03.html#getters-setters"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2544815" playOrder="29">
+            <navLabel>
+              <text>Model.set()</text>
+            </navLabel>
+            <content src="OEBPS/ch02s03.html#model.set"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2756579" playOrder="30">
+        <navLabel>
+          <text>Views</text>
+        </navLabel>
+        <content src="OEBPS/ch02s04.html"/>
+        <navPoint class="chapter" id="id2619127" playOrder="31">
+          <navLabel>
+            <text>Creating new views</text>
+          </navLabel>
+          <content src="OEBPS/ch02s04.html#creating-new-views"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2518605" playOrder="32">
+          <navLabel>
+            <text>What is el?</text>
+          </navLabel>
+          <content src="OEBPS/ch02s04.html#what-is-el"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2541614" playOrder="33">
+        <navLabel>
+          <text>Collections</text>
+        </navLabel>
+        <content src="OEBPS/ch02s05.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2658372" playOrder="34">
+        <navLabel>
+          <text>Underscore utility functions</text>
+        </navLabel>
+        <content src="OEBPS/ch02s06.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2725071" playOrder="35">
+        <navLabel>
+          <text>Routers</text>
+        </navLabel>
+        <content src="OEBPS/ch02s07.html"/>
+        <navPoint class="chapter" id="id2443571" playOrder="36">
+          <navLabel>
+            <text>Backbone.history</text>
+          </navLabel>
+          <content src="OEBPS/ch02s07.html#backbone.history"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2465708" playOrder="37">
+        <navLabel>
+          <text>Namespacing</text>
+        </navLabel>
+        <content src="OEBPS/ch02s08.html"/>
+        <navPoint class="chapter" id="id2756756" playOrder="38">
+          <navLabel>
+            <text>What is namespacing?</text>
+          </navLabel>
+          <content src="OEBPS/ch02s08.html#what-is-namespacing"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2604909" playOrder="39">
+        <navLabel>
+          <text>Additional Tips</text>
+        </navLabel>
+        <content src="OEBPS/ch02s09.html"/>
+        <navPoint class="chapter" id="id2603928" playOrder="40">
+          <navLabel>
+            <text>Automated Backbone Scaffolding</text>
+          </navLabel>
+          <content src="OEBPS/ch02s09.html#automated-backbone-scaffolding"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2518630" playOrder="41">
+          <navLabel>
+            <text>Is there a limit to the number of routers I should be using?</text>
+          </navLabel>
+          <content src="OEBPS/ch02s09.html#is-there-a-limit-to-the-number-of-routers-i-should-be-using"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2574183" playOrder="42">
+          <navLabel>
+            <text>Is Backbone too small for my application’s needs?</text>
+          </navLabel>
+          <content src="OEBPS/ch02s09.html#is-backbone-too-small-for-my-applications-needs"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id2486867" playOrder="43">
+      <navLabel>
+        <text>3. RESTful Applications</text>
+      </navLabel>
+      <content src="OEBPS/ch03.html"/>
+      <navPoint class="chapter" id="id2565068" playOrder="44">
+        <navLabel>
+          <text>Building RESTful applications with Backbone</text>
+        </navLabel>
+        <content src="OEBPS/ch03.html#building-restful-applications-with-backbone"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2695480" playOrder="45">
+        <navLabel>
+          <text>Stack 1: Building A Backbone App With Node.js, Express, Mongoose and MongoDB</text>
+        </navLabel>
+        <content src="OEBPS/ch03s02.html"/>
+        <navPoint class="chapter" id="id2524472" playOrder="46">
+          <navLabel>
+            <text>Reviewing the stack</text>
+          </navLabel>
+          <content src="OEBPS/ch03s02.html#reviewing-the-stack"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2580335" playOrder="47">
+          <navLabel>
+            <text>Practical</text>
+          </navLabel>
+          <content src="OEBPS/ch03s02.html#practical"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2428307" playOrder="48">
+          <navLabel>
+            <text>Practical Setup</text>
+          </navLabel>
+          <content src="OEBPS/ch03s02.html#practical-setup"/>
+          <navPoint class="chapter" id="id2541131" playOrder="49">
+            <navLabel>
+              <text>MongoDB</text>
+            </navLabel>
+            <content src="OEBPS/ch03s02.html#mongodb"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2679880" playOrder="50">
+            <navLabel>
+              <text>Express and Mongoose</text>
+            </navLabel>
+            <content src="OEBPS/ch03s02.html#express-and-mongoose"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2679521" playOrder="51">
+        <navLabel>
+          <text>Building Backbone.js Apps With Ruby, Sinatra, MongoDB and Haml</text>
+        </navLabel>
+        <content src="OEBPS/ch03s03.html"/>
+        <navPoint class="chapter" id="id2679440" playOrder="52">
+          <navLabel>
+            <text>Introduction</text>
+          </navLabel>
+          <content src="OEBPS/ch03s03.html#introduction-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2438819" playOrder="53">
+          <navLabel>
+            <text>What Is Sinatra?</text>
+          </navLabel>
+          <content src="OEBPS/ch03s03.html#what-is-sinatra"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2659109" playOrder="54">
+          <navLabel>
+            <text>Getting Started With Sinatra</text>
+          </navLabel>
+          <content src="OEBPS/ch03s03.html#getting-started-with-sinatra"/>
+          <navPoint class="chapter" id="id2719626" playOrder="55">
+            <navLabel>
+              <text>Routes</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#routes"/>
+            <navPoint class="chapter" id="id2774208" playOrder="56">
+              <navLabel>
+                <text>Redirection</text>
+              </navLabel>
+              <content src="OEBPS/ch03s03.html#redirection"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2774240" playOrder="57">
+              <navLabel>
+                <text>Halting</text>
+              </navLabel>
+              <content src="OEBPS/ch03s03.html#halting"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2774264" playOrder="58">
+              <navLabel>
+                <text>Passing</text>
+              </navLabel>
+              <content src="OEBPS/ch03s03.html#passing"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2774342" playOrder="59">
+          <navLabel>
+            <text>Templating And HAML</text>
+          </navLabel>
+          <content src="OEBPS/ch03s03.html#templating-and-haml"/>
+          <navPoint class="chapter" id="id2774443" playOrder="60">
+            <navLabel>
+              <text>ERB</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#erb"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2774459" playOrder="61">
+            <navLabel>
+              <text>Haml</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#haml"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2774582" playOrder="62">
+        <navLabel>
+          <text>MongoDB Ruby Driver</text>
+        </navLabel>
+        <content src="OEBPS/ch03s04.html"/>
+        <navPoint class="chapter" id="id2774588" playOrder="63">
+          <navLabel>
+            <text>Getting started</text>
+          </navLabel>
+          <content src="OEBPS/ch03s04.html#getting-started"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2774774" playOrder="64">
+        <navLabel>
+          <text>Practical</text>
+        </navLabel>
+        <content src="OEBPS/ch03s05.html"/>
+        <navPoint class="chapter" id="id2774813" playOrder="65">
+          <navLabel>
+            <text>Installing The Prerequisites</text>
+          </navLabel>
+          <content src="OEBPS/ch03s05.html#installing-the-prerequisites"/>
+          <navPoint class="chapter" id="id2774821" playOrder="66">
+            <navLabel>
+              <text>Ruby</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#ruby"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2774862" playOrder="67">
+            <navLabel>
+              <text>Ruby Gems</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#ruby-gems"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2774919" playOrder="68">
+            <navLabel>
+              <text>Sinatra</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#sinatra"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2774955" playOrder="69">
+            <navLabel>
+              <text>Haml</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#haml-1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2775003" playOrder="70">
+            <navLabel>
+              <text>MongoDB</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#mongodb-1"/>
+            <navPoint class="chapter" id="id2775035" playOrder="71">
+              <navLabel>
+                <text>1.Data directories</text>
+              </navLabel>
+              <content src="OEBPS/ch03s05.html#data-directories"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2775059" playOrder="72">
+              <navLabel>
+                <text>2.Running and connecting to your server</text>
+              </navLabel>
+              <content src="OEBPS/ch03s05.html#running-and-connecting-to-your-server"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2775093" playOrder="73">
+            <navLabel>
+              <text>MongoDB Ruby Driver</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#mongodb-ruby-driver-1"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2775142" playOrder="74">
+          <navLabel>
+            <text>Tutorial</text>
+          </navLabel>
+          <content src="OEBPS/ch03s05.html#tutorial"/>
+          <navPoint class="chapter" id="id2775156" playOrder="75">
+            <navLabel>
+              <text>Application Files</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#application-files"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2775281" playOrder="76">
+            <navLabel>
+              <text>Backbone</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#backbone"/>
+            <navPoint class="chapter" id="id2775288" playOrder="77">
+              <navLabel>
+                <text>Views</text>
+              </navLabel>
+              <content src="OEBPS/ch03s05.html#views-2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2775367" playOrder="78">
+            <navLabel>
+              <text>Collections</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#collections-1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2775438" playOrder="79">
+            <navLabel>
+              <text>Model</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#model"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2775475" playOrder="80">
+            <navLabel>
+              <text>Ruby/Sinatra</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#rubysinatra"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2775497" playOrder="81">
+            <navLabel>
+              <text>app.rb</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#app.rb"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2775724" playOrder="82">
+            <navLabel>
+              <text>Haml/Templates</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#hamltemplates"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2775772" playOrder="83">
+            <navLabel>
+              <text>index.haml</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#index.haml"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2775813" playOrder="84">
+            <navLabel>
+              <text>todo.haml</text>
+            </navLabel>
+            <content src="OEBPS/ch03s05.html#todo.haml"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2775859" playOrder="85">
+          <navLabel>
+            <text>Conclusions</text>
+          </navLabel>
+          <content src="OEBPS/ch03s05.html#conclusions"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id2775887" playOrder="86">
+      <navLabel>
+        <text>4. Advanced</text>
+      </navLabel>
+      <content src="OEBPS/ch04.html"/>
+      <navPoint class="chapter" id="id2775894" playOrder="87">
+        <navLabel>
+          <text>Modular JavaScript</text>
+        </navLabel>
+        <content src="OEBPS/ch04.html#modular-javascript"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2775967" playOrder="88">
+        <navLabel>
+          <text>Organizing modules with RequireJS and AMD</text>
+        </navLabel>
+        <content src="OEBPS/ch04s02.html"/>
+        <navPoint class="chapter" id="id2776139" playOrder="89">
+          <navLabel>
+            <text>Writing AMD modules with RequireJS</text>
+          </navLabel>
+          <content src="OEBPS/ch04s02.html#writing-amd-modules-with-requirejs"/>
+          <navPoint class="chapter" id="id2776247" playOrder="90">
+            <navLabel>
+              <text>Alternate syntax</text>
+            </navLabel>
+            <content src="OEBPS/ch04s02.html#alternate-syntax"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2776410" playOrder="91">
+        <navLabel>
+          <text>Keeping Your Templates External Using RequireJS And The Text Plugin</text>
+        </navLabel>
+        <content src="OEBPS/ch04s03.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2776654" playOrder="92">
+        <navLabel>
+          <text>Optimizing Backbone apps for production with the RequireJS Optimizer</text>
+        </navLabel>
+        <content src="OEBPS/ch04s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2776999" playOrder="93">
+        <navLabel>
+          <text>Practical: Building a modular Backbone app with AMD &amp; RequireJS</text>
+        </navLabel>
+        <content src="OEBPS/ch04s05.html"/>
+        <navPoint class="chapter" id="id2777073" playOrder="94">
+          <navLabel>
+            <text>Overview</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#overview"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2777167" playOrder="95">
+          <navLabel>
+            <text>Markup</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#markup"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2777218" playOrder="96">
+          <navLabel>
+            <text>Configuration options</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#configuration-options"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2777364" playOrder="97">
+          <navLabel>
+            <text>Modularizing our models, views and collections</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#modularizing-our-models-views-and-collections"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2777862" playOrder="98">
+        <navLabel>
+          <text>Decoupling Backbone with the Mediator and Facade patterns</text>
+        </navLabel>
+        <content src="OEBPS/ch04s06.html"/>
+        <navPoint class="chapter" id="id2777885" playOrder="99">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch04s06.html#summary-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2778137" playOrder="100">
+          <navLabel>
+            <text>Practical</text>
+          </navLabel>
+          <content src="OEBPS/ch04s06.html#practical-2"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2778631" playOrder="101">
+        <navLabel>
+          <text>Paginating Backbone.js Requests &amp; Collections</text>
+        </navLabel>
+        <content src="OEBPS/ch04s07.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2778790" playOrder="102">
+        <navLabel>
+          <text>Paginator’s pieces</text>
+        </navLabel>
+        <content src="OEBPS/ch04s08.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2778834" playOrder="103">
+        <navLabel>
+          <text>Downloads And Source Code</text>
+        </navLabel>
+        <content src="OEBPS/ch04s09.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2778903" playOrder="104">
+        <navLabel>
+          <text>Live Examples</text>
+        </navLabel>
+        <content src="OEBPS/ch04s10.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2779022" playOrder="105">
+        <navLabel>
+          <text>Paginator.requestPager</text>
+        </navLabel>
+        <content src="OEBPS/ch04s11.html"/>
+        <navPoint class="chapter" id="id2779037" playOrder="106">
+          <navLabel>
+            <text>1. Create a new Paginated collection</text>
+          </navLabel>
+          <content src="OEBPS/ch04s11.html#create-a-new-paginated-collection"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779064" playOrder="107">
+          <navLabel>
+            <text>2: Set the model and base URL for the collection as normal</text>
+          </navLabel>
+          <content src="OEBPS/ch04s11.html#set-the-model-and-base-url-for-the-collection-as-normal"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779091" playOrder="108">
+          <navLabel>
+            <text>3. Map the attributes supported by your API (URL)</text>
+          </navLabel>
+          <content src="OEBPS/ch04s11.html#map-the-attributes-supported-by-your-api-url"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779189" playOrder="109">
+          <navLabel>
+            <text>4. Configure the default pagination, query and sort details for the paginator</text>
+          </navLabel>
+          <content src="OEBPS/ch04s11.html#configure-the-default-pagination-query-and-sort-details-for-the-paginator"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779315" playOrder="110">
+          <navLabel>
+            <text>5. Finally, configure Collection.parse() and we’re done</text>
+          </navLabel>
+          <content src="OEBPS/ch04s11.html#finally-configure-collection.parse-and-were-done"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779385" playOrder="111">
+          <navLabel>
+            <text>Convenience methods:</text>
+          </navLabel>
+          <content src="OEBPS/ch04s11.html#convenience-methods"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2779458" playOrder="112">
+        <navLabel>
+          <text>Paginator.clientPager</text>
+        </navLabel>
+        <content src="OEBPS/ch04s12.html"/>
+        <navPoint class="chapter" id="id2779490" playOrder="113">
+          <navLabel>
+            <text>1. Create a new paginated collection with a model and URL</text>
+          </navLabel>
+          <content src="OEBPS/ch04s12.html#create-a-new-paginated-collection-with-a-model-and-url"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779529" playOrder="114">
+          <navLabel>
+            <text>2. Map the attributes supported by your API (URL)</text>
+          </navLabel>
+          <content src="OEBPS/ch04s12.html#map-the-attributes-supported-by-your-api-url-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779559" playOrder="115">
+          <navLabel>
+            <text>3. Configure how to paginate data at a UI-level</text>
+          </navLabel>
+          <content src="OEBPS/ch04s12.html#configure-how-to-paginate-data-at-a-ui-level"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779605" playOrder="116">
+          <navLabel>
+            <text>4. Configure the rest of the request parameter default values</text>
+          </navLabel>
+          <content src="OEBPS/ch04s12.html#configure-the-rest-of-the-request-parameter-default-values"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779638" playOrder="117">
+          <navLabel>
+            <text>5. Finally, configure Collection.parse() and we’re done</text>
+          </navLabel>
+          <content src="OEBPS/ch04s12.html#finally-configure-collection.parse-and-were-done-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2779676" playOrder="118">
+          <navLabel>
+            <text>Convenience methods:</text>
+          </navLabel>
+          <content src="OEBPS/ch04s12.html#convenience-methods-1"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2779763" playOrder="119">
+        <navLabel>
+          <text>Views/Templates</text>
+        </navLabel>
+        <content src="OEBPS/ch04s13.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2779892" playOrder="120">
+        <navLabel>
+          <text>Backbone &amp; jQuery Mobile</text>
+        </navLabel>
+        <content src="OEBPS/ch04s14.html"/>
+        <navPoint class="chapter" id="id2779901" playOrder="121">
+          <navLabel>
+            <text>Resolving the routing conflicts</text>
+          </navLabel>
+          <content src="OEBPS/ch04s14.html#resolving-the-routing-conflicts"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2780086" playOrder="122">
+          <navLabel>
+            <text>Practical: A Backbone, RequireJS/AMD app with jQuery Mobile</text>
+          </navLabel>
+          <content src="OEBPS/ch04s14.html#practical-a-backbone-requirejsamd-app-with-jquery-mobile"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2780112" playOrder="123">
+          <navLabel>
+            <text>Getting started</text>
+          </navLabel>
+          <content src="OEBPS/ch04s14.html#getting-started-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2780310" playOrder="124">
+          <navLabel>
+            <text>jQuery Mobile: Going beyond mobile application development</text>
+          </navLabel>
+          <content src="OEBPS/ch04s14.html#jquery-mobile-going-beyond-mobile-application-development"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id2780404" playOrder="125">
+      <navLabel>
+        <text>5. Unit Testing</text>
+      </navLabel>
+      <content src="OEBPS/ch05.html"/>
+      <navPoint class="chapter" id="id2780412" playOrder="126">
+        <navLabel>
+          <text>Unit Testing Backbone Applications With Jasmine</text>
+        </navLabel>
+        <content src="OEBPS/ch05.html#unit-testing-backbone-applications-with-jasmine"/>
+        <navPoint class="chapter" id="id2780421" playOrder="127">
+          <navLabel>
+            <text>Introduction</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#introduction-2"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2780497" playOrder="128">
+          <navLabel>
+            <text>Jasmine</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#jasmine"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2780716" playOrder="129">
+          <navLabel>
+            <text>Suites, Specs &amp; Spies</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#suites-specs-spies"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2781114" playOrder="130">
+          <navLabel>
+            <text>beforeEach and afterEach()</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#beforeeach-and-aftereach"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2781187" playOrder="131">
+          <navLabel>
+            <text>Shared scope</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#shared-scope"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2781235" playOrder="132">
+          <navLabel>
+            <text>Getting setup</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#getting-setup"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2781383" playOrder="133">
+          <navLabel>
+            <text>TDD With Backbone</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#tdd-with-backbone"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2781416" playOrder="134">
+          <navLabel>
+            <text>Models</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#models-2"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2781701" playOrder="135">
+          <navLabel>
+            <text>Collections</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#collections-2"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2781912" playOrder="136">
+          <navLabel>
+            <text>Views</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#views-3"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2782153" playOrder="137">
+          <navLabel>
+            <text>Initial setup</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#initial-setup"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2782354" playOrder="138">
+          <navLabel>
+            <text>View rendering</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#view-rendering"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2782691" playOrder="139">
+          <navLabel>
+            <text>Rendering with a templating system</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#rendering-with-a-templating-system"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2782939" playOrder="140">
+          <navLabel>
+            <text>Conclusions</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#conclusions-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2782984" playOrder="141">
+          <navLabel>
+            <text>Exercise</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#exercise"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2783007" playOrder="142">
+          <navLabel>
+            <text>Further reading</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#further-reading"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2783045" playOrder="143">
+        <navLabel>
+          <text>Unit Testing Backbone Applications With QUnit And SinonJS</text>
+        </navLabel>
+        <content src="OEBPS/ch05s02.html"/>
+        <navPoint class="chapter" id="id2783055" playOrder="144">
+          <navLabel>
+            <text>Introduction</text>
+          </navLabel>
+          <content src="OEBPS/ch05s02.html#introduction-3"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2783122" playOrder="145">
+        <navLabel>
+          <text>QUnit</text>
+        </navLabel>
+        <content src="OEBPS/ch05s03.html"/>
+        <navPoint class="chapter" id="id2783129" playOrder="146">
+          <navLabel>
+            <text>Getting Setup</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html#getting-setup-1"/>
+          <navPoint class="chapter" id="id2783204" playOrder="147">
+            <navLabel>
+              <text>Sample HTML with QUnit-compatible markup:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#sample-html-with-qunit-compatible-markup"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2783403" playOrder="148">
+          <navLabel>
+            <text>Assertions</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html#assertions"/>
+          <navPoint class="chapter" id="id2783563" playOrder="149">
+            <navLabel>
+              <text>Basic test case using test( name, callback ):</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#basic-test-case-using-test-name-callback"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2783659" playOrder="150">
+            <navLabel>
+              <text>Comparing the actual output of a function against the expected output:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#comparing-the-actual-output-of-a-function-against-the-expected-output"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2783706" playOrder="151">
+          <navLabel>
+            <text>Adding structure to assertions</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html#adding-structure-to-assertions"/>
+          <navPoint class="chapter" id="id2783728" playOrder="152">
+            <navLabel>
+              <text>Basic QUnit Modules:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#basic-qunit-modules"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2783775" playOrder="153">
+            <navLabel>
+              <text>Using setup() and teardown() :</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#using-setup-and-teardown"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2783814" playOrder="154">
+            <navLabel>
+              <text>Using setup() and teardown() for instantiation and clean-up:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#using-setup-and-teardown-for-instantiation-and-clean-up"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2783870" playOrder="155">
+          <navLabel>
+            <text>Assertion examples</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html#assertion-examples"/>
+          <navPoint class="chapter" id="id2783888" playOrder="156">
+            <navLabel>
+              <text>equal - a comparison assertion. It passes if actual == expected</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#equal---a-comparison-assertion.-it-passes-if-actual-expected"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2783909" playOrder="157">
+            <navLabel>
+              <text>notEqual - a comparison assertion. It passes if actual != expected</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#notequal---a-comparison-assertion.-it-passes-if-actual-expected"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2783930" playOrder="158">
+            <navLabel>
+              <text>strictEqual - a comparison assertion. It passes if actual === expected.</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#strictequal---a-comparison-assertion.-it-passes-if-actual-expected."/>
+          </navPoint>
+          <navPoint class="chapter" id="id2783951" playOrder="159">
+            <navLabel>
+              <text>notStrictEqual - a comparison assertion. It passes if actual !== expected.</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#notstrictequal---a-comparison-assertion.-it-passes-if-actual-expected."/>
+          </navPoint>
+          <navPoint class="chapter" id="id2783973" playOrder="160">
+            <navLabel>
+              <text>deepEqual - a recursive comparison assertion. Unlike strictEqual(), it works on objects, arrays and primitives.</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#deepequal---a-recursive-comparison-assertion.-unlike-strictequal-it-works-on-objects-arrays-and-primitives."/>
+          </navPoint>
+          <navPoint class="chapter" id="id2784000" playOrder="161">
+            <navLabel>
+              <text>notDeepEqual - a comparison assertion. This returns the opposite of deepEqual</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#notdeepequal---a-comparison-assertion.-this-returns-the-opposite-of-deepequal"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2784022" playOrder="162">
+            <navLabel>
+              <text>raises - an assertion which tests if a callback throws any exceptions</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#raises---an-assertion-which-tests-if-a-callback-throws-any-exceptions"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2784044" playOrder="163">
+          <navLabel>
+            <text>Fixtures</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html#fixtures"/>
+          <navPoint class="chapter" id="id2784064" playOrder="164">
+            <navLabel>
+              <text>Fixture markup:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#fixture-markup"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2784115" playOrder="165">
+            <navLabel>
+              <text>Fixtures example:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s03.html#fixtures-example"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2784349" playOrder="166">
+          <navLabel>
+            <text>Asynchronous code</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html#asynchronous-code"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2784477" playOrder="167">
+        <navLabel>
+          <text>SinonJS</text>
+        </navLabel>
+        <content src="OEBPS/ch05s04.html"/>
+        <navPoint class="chapter" id="id2784510" playOrder="168">
+          <navLabel>
+            <text>What is SinonJS?</text>
+          </navLabel>
+          <content src="OEBPS/ch05s04.html#what-is-sinonjs"/>
+          <navPoint class="chapter" id="id2784605" playOrder="169">
+            <navLabel>
+              <text>Basic Spies:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s04.html#basic-spies"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2784645" playOrder="170">
+            <navLabel>
+              <text>Spying On Existing Functions:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s04.html#spying-on-existing-functions"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2784681" playOrder="171">
+            <navLabel>
+              <text>Matching arguments: test a spy was called with a specific set of arguments:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s04.html#matching-arguments-test-a-spy-was-called-with-a-specific-set-of-arguments"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2784704" playOrder="172">
+            <navLabel>
+              <text>Stricter argument matching: test a spy was called at least once with specific arguments and no others:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s04.html#stricter-argument-matching-test-a-spy-was-called-at-least-once-with-specific-arguments-and-no-others"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2784730" playOrder="173">
+            <navLabel>
+              <text>Testing call order: testing if a spy was called before or after another spy:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s04.html#testing-call-order-testing-if-a-spy-was-called-before-or-after-another-spy"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2784755" playOrder="174">
+            <navLabel>
+              <text>Match execution counts: test a spy was called a specific number of times:</text>
+            </navLabel>
+            <content src="OEBPS/ch05s04.html#match-execution-counts-test-a-spy-was-called-a-specific-number-of-times"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2784783" playOrder="175">
+          <navLabel>
+            <text>Stubs and mocks</text>
+          </navLabel>
+          <content src="OEBPS/ch05s04.html#stubs-and-mocks"/>
+          <navPoint class="chapter" id="id2784798" playOrder="176">
+            <navLabel>
+              <text>Stubs</text>
+            </navLabel>
+            <content src="OEBPS/ch05s04.html#stubs"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2784951" playOrder="177">
+            <navLabel>
+              <text>Mocks</text>
+            </navLabel>
+            <content src="OEBPS/ch05s04.html#mocks"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2784998" playOrder="178">
+        <navLabel>
+          <text>Practical</text>
+        </navLabel>
+        <content src="OEBPS/ch05s05.html"/>
+        <navPoint class="chapter" id="id2785055" playOrder="179">
+          <navLabel>
+            <text>Models</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html#models-3"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2785139" playOrder="180">
+          <navLabel>
+            <text>Collections</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html#collections-3"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2785211" playOrder="181">
+          <navLabel>
+            <text>Views</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html#views-4"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2785315" playOrder="182">
+          <navLabel>
+            <text>Events</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html#events"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2785523" playOrder="183">
+          <navLabel>
+            <text>App</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html#app"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2785578" playOrder="184">
+          <navLabel>
+            <text>Further Reading &amp; Resources</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html#further-reading-resources"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id2785727" playOrder="185">
+      <navLabel>
+        <text>6. Resources</text>
+      </navLabel>
+      <content src="OEBPS/ch06.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="id2785853" playOrder="186">
+      <navLabel>
+        <text>7. Conclusions</text>
+      </navLabel>
+      <content src="OEBPS/ch07.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="id2785888" playOrder="187">
+      <navLabel>
+        <text>About the Author</text>
+      </navLabel>
+      <content src="OEBPS/author_bios.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

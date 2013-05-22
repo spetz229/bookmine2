@@ -1,0 +1,27 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch02s02.html
+next: OEBPS/ch02s04.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Language Pragmas"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect12_d1e628" class="calibre1"></a>Language Pragmas</h1></div></div></div><p class="calibre7">GHC will run by default in something very close to Haskell98 mode. It also ships with a
+      large number of language extensions, allowing more powerful type classes, syntax changes, and
+      more. There are multiple ways to tell GHC to turn on these extensions. For most of the code
+      snippets in this book, you’ll see <em class="calibre4">language pragmas</em>, which look like
+      this:</p><a id="I_programlisting2_d1e636" class="firstname"></a><pre class="programlistinghaskell"><code class="cm">{-# LANGUAGE MyLanguageExtension #-}</code>
+</pre><p class="calibre7">These should always appear at the top of your source file. Additionally, there are two
+   other common approaches:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7">On the GHC command line, pass an extra argument
+    <strong class="userinput"><code class="userinput">-XMyLanguageExtension</code></strong>.</p></li><li class="listitem"><p class="calibre7">In your <code class="literal">cabal</code> file, add an <code class="literal">extensions</code> block.</p></li></ul></div><p class="calibre7">I personally never use the GHC command line argument approach. It’s a personal preference,
+      but I like to have my settings clearly stated in a file. In general it’s recommended to avoid
+      putting extensions in your <code class="literal">cabal</code> file; however, in the
+      Yesod scaffolded site we specifically use this approach to avoid the boilerplate of specifying
+      the same language pragmas in every source file.</p><p class="calibre7">We’ll end up using quite a few language extensions in this book (the scaffolding uses 11).
+      We will not cover the meaning of all of them. Instead, please see the <a class="ulink" href="http://www.haskell.org/ghc/docs/latest/html/users_guide/ghc-language-features.html">GHC
+        documentation</a>.</p></div></div>
+
+{% endraw %}
+

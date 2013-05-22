@@ -1,0 +1,1689 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="08edd381-5323-466e-b0d5-32c7e00c0e96" name="dtb:uid"/>
+    <meta content="6" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Developing Web Applications with Haskell and Yesod</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="id2914620" playOrder="1">
+      <navLabel>
+        <text>Developing Web Applications with Haskell and Yesod</text>
+      </navLabel>
+      <content src="OEBPS/index.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="id2992200" playOrder="2">
+      <navLabel>
+        <text>Preface</text>
+      </navLabel>
+      <content src="OEBPS/pr01.html"/>
+      <navPoint class="chapter" id="id3025593" playOrder="3">
+        <navLabel>
+          <text>Who This Book Is For</text>
+        </navLabel>
+        <content src="OEBPS/pr01.html#I_sect1_d1e135"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2888643" playOrder="4">
+        <navLabel>
+          <text>Conventions Used in This Book</text>
+        </navLabel>
+        <content src="OEBPS/pr01s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2840939" playOrder="5">
+        <navLabel>
+          <text>Using Code Examples</text>
+        </navLabel>
+        <content src="OEBPS/pr01s03.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3076098" playOrder="6">
+        <navLabel>
+          <text>Safari® Books Online</text>
+        </navLabel>
+        <content src="OEBPS/pr01s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2912076" playOrder="7">
+        <navLabel>
+          <text>How to Contact Us</text>
+        </navLabel>
+        <content src="OEBPS/pr01s05.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2853430" playOrder="8">
+        <navLabel>
+          <text>Acknowledgements</text>
+        </navLabel>
+        <content src="OEBPS/pr01s06.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id2977275" playOrder="9">
+      <navLabel>
+        <text>I. Basics</text>
+      </navLabel>
+      <content src="OEBPS/pt01.html"/>
+      <navPoint class="chapter" id="id2993127" playOrder="10">
+        <navLabel>
+          <text>1. Introduction</text>
+        </navLabel>
+        <content src="OEBPS/ch01.html"/>
+        <navPoint class="chapter" id="id3023099" playOrder="11">
+          <navLabel>
+            <text>Type Safety</text>
+          </navLabel>
+          <content src="OEBPS/ch01.html#I_sect11_d1e325"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2943321" playOrder="12">
+          <navLabel>
+            <text>Concise</text>
+          </navLabel>
+          <content src="OEBPS/ch01s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3046211" playOrder="13">
+          <navLabel>
+            <text>Performance</text>
+          </navLabel>
+          <content src="OEBPS/ch01s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3046248" playOrder="14">
+          <navLabel>
+            <text>Modular</text>
+          </navLabel>
+          <content src="OEBPS/ch01s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3026338" playOrder="15">
+          <navLabel>
+            <text>A Solid Foundation</text>
+          </navLabel>
+          <content src="OEBPS/ch01s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3021359" playOrder="16">
+          <navLabel>
+            <text>Introduction to Haskell</text>
+          </navLabel>
+          <content src="OEBPS/ch01s06.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2977141" playOrder="17">
+        <navLabel>
+          <text>2. Haskell</text>
+        </navLabel>
+        <content src="OEBPS/ch02.html"/>
+        <navPoint class="chapter" id="id3045516" playOrder="18">
+          <navLabel>
+            <text>Terminology</text>
+          </navLabel>
+          <content src="OEBPS/ch02.html#I_sect12_d1e423"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3045656" playOrder="19">
+          <navLabel>
+            <text>Tools</text>
+          </navLabel>
+          <content src="OEBPS/ch02s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3022583" playOrder="20">
+          <navLabel>
+            <text>Language Pragmas</text>
+          </navLabel>
+          <content src="OEBPS/ch02s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3045791" playOrder="21">
+          <navLabel>
+            <text>Overloaded Strings</text>
+          </navLabel>
+          <content src="OEBPS/ch02s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2994983" playOrder="22">
+          <navLabel>
+            <text>Type Families</text>
+          </navLabel>
+          <content src="OEBPS/ch02s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3076634" playOrder="23">
+          <navLabel>
+            <text>Template Haskell</text>
+          </navLabel>
+          <content src="OEBPS/ch02s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3016226" playOrder="24">
+          <navLabel>
+            <text>QuasiQuotes</text>
+          </navLabel>
+          <content src="OEBPS/ch02s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2948614" playOrder="25">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch02s08.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3045997" playOrder="26">
+        <navLabel>
+          <text>3. Basics</text>
+        </navLabel>
+        <content src="OEBPS/ch03.html"/>
+        <navPoint class="chapter" id="id3046004" playOrder="27">
+          <navLabel>
+            <text>Hello World</text>
+          </navLabel>
+          <content src="OEBPS/ch03.html#I_sect13_d1e861"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2911896" playOrder="28">
+          <navLabel>
+            <text>Routing</text>
+          </navLabel>
+          <content src="OEBPS/ch03s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3014232" playOrder="29">
+          <navLabel>
+            <text>Handler Function</text>
+          </navLabel>
+          <content src="OEBPS/ch03s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2839897" playOrder="30">
+          <navLabel>
+            <text>The Foundation</text>
+          </navLabel>
+          <content src="OEBPS/ch03s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3021372" playOrder="31">
+          <navLabel>
+            <text>Running</text>
+          </navLabel>
+          <content src="OEBPS/ch03s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3044070" playOrder="32">
+          <navLabel>
+            <text>Resources and Type-Safe URLs</text>
+          </navLabel>
+          <content src="OEBPS/ch03s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2853602" playOrder="33">
+          <navLabel>
+            <text>The Scaffolded Site</text>
+          </navLabel>
+          <content src="OEBPS/ch03s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3044123" playOrder="34">
+          <navLabel>
+            <text>Development Server</text>
+          </navLabel>
+          <content src="OEBPS/ch03s08.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2972052" playOrder="35">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch03s09.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2990960" playOrder="36">
+        <navLabel>
+          <text>4. Shakespearean Templates</text>
+        </navLabel>
+        <content src="OEBPS/ch04.html"/>
+        <navPoint class="chapter" id="id2963881" playOrder="37">
+          <navLabel>
+            <text>Synopsis</text>
+          </navLabel>
+          <content src="OEBPS/ch04.html#I_sect14_d1e1237"/>
+          <navPoint class="chapter" id="id3022117" playOrder="38">
+            <navLabel>
+              <text>Hamlet (HTML)</text>
+            </navLabel>
+            <content src="OEBPS/ch04.html#id3022117"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2965499" playOrder="39">
+            <navLabel>
+              <text>Cassius (CSS)</text>
+            </navLabel>
+            <content src="OEBPS/ch04.html#id2965499"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3023307" playOrder="40">
+            <navLabel>
+              <text>Lucius (CSS)</text>
+            </navLabel>
+            <content src="OEBPS/ch04.html#id3023307"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2948765" playOrder="41">
+            <navLabel>
+              <text>Julius (JavaScript)</text>
+            </navLabel>
+            <content src="OEBPS/ch04.html#id2948765"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3023125" playOrder="42">
+          <navLabel>
+            <text>Types</text>
+          </navLabel>
+          <content src="OEBPS/ch04s02.html"/>
+          <navPoint class="chapter" id="id3044260" playOrder="43">
+            <navLabel>
+              <text>Type-Safe URLs</text>
+            </navLabel>
+            <content src="OEBPS/ch04s02.html#id3044260"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3044478" playOrder="44">
+          <navLabel>
+            <text>Syntax</text>
+          </navLabel>
+          <content src="OEBPS/ch04s03.html"/>
+          <navPoint class="chapter" id="id3044490" playOrder="45">
+            <navLabel>
+              <text>Hamlet Syntax</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#id3044490"/>
+            <navPoint class="chapter" id="id3044499" playOrder="46">
+              <navLabel>
+                <text>Tags</text>
+              </navLabel>
+              <content src="OEBPS/ch04s03.html#id3044499"/>
+            </navPoint>
+            <navPoint class="chapter" id="id3044621" playOrder="47">
+              <navLabel>
+                <text>Interpolation</text>
+              </navLabel>
+              <content src="OEBPS/ch04s03.html#id3044621"/>
+            </navPoint>
+            <navPoint class="chapter" id="id3044736" playOrder="48">
+              <navLabel>
+                <text>Attributes</text>
+              </navLabel>
+              <content src="OEBPS/ch04s03.html#id3044736"/>
+            </navPoint>
+            <navPoint class="chapter" id="id3044798" playOrder="49">
+              <navLabel>
+                <text>Conditionals</text>
+              </navLabel>
+              <content src="OEBPS/ch04s03.html#id3044798"/>
+            </navPoint>
+            <navPoint class="chapter" id="id3044846" playOrder="50">
+              <navLabel>
+                <text>Maybe</text>
+              </navLabel>
+              <content src="OEBPS/ch04s03.html#id3044846"/>
+            </navPoint>
+            <navPoint class="chapter" id="id3044904" playOrder="51">
+              <navLabel>
+                <text>Forall</text>
+              </navLabel>
+              <content src="OEBPS/ch04s03.html#id3044904"/>
+            </navPoint>
+            <navPoint class="chapter" id="id3044920" playOrder="52">
+              <navLabel>
+                <text>Case</text>
+              </navLabel>
+              <content src="OEBPS/ch04s03.html#id3044920"/>
+            </navPoint>
+            <navPoint class="chapter" id="id3044945" playOrder="53">
+              <navLabel>
+                <text>With</text>
+              </navLabel>
+              <content src="OEBPS/ch04s03.html#id3044945"/>
+            </navPoint>
+            <navPoint class="chapter" id="id3044970" playOrder="54">
+              <navLabel>
+                <text>Doctype</text>
+              </navLabel>
+              <content src="OEBPS/ch04s03.html#id3044970"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id3045022" playOrder="55">
+            <navLabel>
+              <text>Cassius Syntax</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#id3045022"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3045040" playOrder="56">
+            <navLabel>
+              <text>Lucius Syntax</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#id3045040"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3064076" playOrder="57">
+            <navLabel>
+              <text>Julius Syntax</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#id3064076"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3064104" playOrder="58">
+          <navLabel>
+            <text>Calling Shakespeare</text>
+          </navLabel>
+          <content src="OEBPS/ch04s04.html"/>
+          <navPoint class="chapter" id="id3064358" playOrder="59">
+            <navLabel>
+              <text>Alternate Hamlet Types</text>
+            </navLabel>
+            <content src="OEBPS/ch04s04.html#id3064358"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3064578" playOrder="60">
+          <navLabel>
+            <text>Other Shakespeare</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3064678" playOrder="61">
+          <navLabel>
+            <text>General Recommendations</text>
+          </navLabel>
+          <content src="OEBPS/ch04s06.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3064732" playOrder="62">
+        <navLabel>
+          <text>5. Widgets</text>
+        </navLabel>
+        <content src="OEBPS/ch05.html"/>
+        <navPoint class="chapter" id="id3064772" playOrder="63">
+          <navLabel>
+            <text>Synopsis</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#I_sect15_d1e1996"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3064824" playOrder="64">
+          <navLabel>
+            <text>What’s in a Widget?</text>
+          </navLabel>
+          <content src="OEBPS/ch05s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3064940" playOrder="65">
+          <navLabel>
+            <text>Constructing Widgets</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3065095" playOrder="66">
+          <navLabel>
+            <text>Combining Widgets</text>
+          </navLabel>
+          <content src="OEBPS/ch05s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3065171" playOrder="67">
+          <navLabel>
+            <text>Generate IDs</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3065254" playOrder="68">
+          <navLabel>
+            <text>whamlet</text>
+          </navLabel>
+          <content src="OEBPS/ch05s06.html"/>
+          <navPoint class="chapter" id="id3065356" playOrder="69">
+            <navLabel>
+              <text>Types</text>
+            </navLabel>
+            <content src="OEBPS/ch05s06.html#id3065356"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3065579" playOrder="70">
+          <navLabel>
+            <text>Using Widgets</text>
+          </navLabel>
+          <content src="OEBPS/ch05s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3065832" playOrder="71">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch05s08.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3065860" playOrder="72">
+        <navLabel>
+          <text>6. Yesod Typeclass</text>
+        </navLabel>
+        <content src="OEBPS/ch06.html"/>
+        <navPoint class="chapter" id="id3065905" playOrder="73">
+          <navLabel>
+            <text>Rendering and Parsing URLs</text>
+          </navLabel>
+          <content src="OEBPS/ch06.html#I_sect16_d1e2468"/>
+          <navPoint class="chapter" id="id3066105" playOrder="74">
+            <navLabel>
+              <text>joinPath</text>
+            </navLabel>
+            <content src="OEBPS/ch06.html#id3066105"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3066185" playOrder="75">
+            <navLabel>
+              <text>cleanPath</text>
+            </navLabel>
+            <content src="OEBPS/ch06.html#id3066185"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3066359" playOrder="76">
+          <navLabel>
+            <text>defaultLayout</text>
+          </navLabel>
+          <content src="OEBPS/ch06s02.html"/>
+          <navPoint class="chapter" id="id3066439" playOrder="77">
+            <navLabel>
+              <text>getMessage</text>
+            </navLabel>
+            <content src="OEBPS/ch06s02.html#id3066439"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3066539" playOrder="78">
+          <navLabel>
+            <text>Custom Error Pages</text>
+          </navLabel>
+          <content src="OEBPS/ch06s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3066638" playOrder="79">
+          <navLabel>
+            <text>External CSS and JavaScript</text>
+          </navLabel>
+          <content src="OEBPS/ch06s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3066841" playOrder="80">
+          <navLabel>
+            <text>Smarter Static Files</text>
+          </navLabel>
+          <content src="OEBPS/ch06s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3066892" playOrder="81">
+          <navLabel>
+            <text>Authentication/Authorization</text>
+          </navLabel>
+          <content src="OEBPS/ch06s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3067033" playOrder="82">
+          <navLabel>
+            <text>Some Simple Settings</text>
+          </navLabel>
+          <content src="OEBPS/ch06s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3081622" playOrder="83">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch06s08.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3081657" playOrder="84">
+        <navLabel>
+          <text>7. Routing and Handlers</text>
+        </navLabel>
+        <content src="OEBPS/ch07.html"/>
+        <navPoint class="chapter" id="id3081713" playOrder="85">
+          <navLabel>
+            <text>Route Syntax</text>
+          </navLabel>
+          <content src="OEBPS/ch07.html#I_sect17_d1e3028"/>
+          <navPoint class="chapter" id="id3081752" playOrder="86">
+            <navLabel>
+              <text>Pieces</text>
+            </navLabel>
+            <content src="OEBPS/ch07.html#id3081752"/>
+            <navPoint class="chapter" id="id3081814" playOrder="87">
+              <navLabel>
+                <text>Types of Pieces</text>
+              </navLabel>
+              <content src="OEBPS/ch07.html#id3081814"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id3082005" playOrder="88">
+            <navLabel>
+              <text>Resource Name</text>
+            </navLabel>
+            <content src="OEBPS/ch07.html#id3082005"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3082144" playOrder="89">
+            <navLabel>
+              <text>Handler Specification</text>
+            </navLabel>
+            <content src="OEBPS/ch07.html#id3082144"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3082290" playOrder="90">
+          <navLabel>
+            <text>Dispatch</text>
+          </navLabel>
+          <content src="OEBPS/ch07s02.html"/>
+          <navPoint class="chapter" id="id3082328" playOrder="91">
+            <navLabel>
+              <text>Return Type</text>
+            </navLabel>
+            <content src="OEBPS/ch07s02.html#id3082328"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3082422" playOrder="92">
+            <navLabel>
+              <text>Arguments</text>
+            </navLabel>
+            <content src="OEBPS/ch07s02.html#id3082422"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3082482" playOrder="93">
+          <navLabel>
+            <text>The Handler Monad</text>
+          </navLabel>
+          <content src="OEBPS/ch07s03.html"/>
+          <navPoint class="chapter" id="id3082652" playOrder="94">
+            <navLabel>
+              <text>Application Information</text>
+            </navLabel>
+            <content src="OEBPS/ch07s03.html#id3082652"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3082719" playOrder="95">
+            <navLabel>
+              <text>Request Information</text>
+            </navLabel>
+            <content src="OEBPS/ch07s03.html#id3082719"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3082781" playOrder="96">
+            <navLabel>
+              <text>Short Circuiting</text>
+            </navLabel>
+            <content src="OEBPS/ch07s03.html#id3082781"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3082881" playOrder="97">
+            <navLabel>
+              <text>Response Headers</text>
+            </navLabel>
+            <content src="OEBPS/ch07s03.html#id3082881"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3082975" playOrder="98">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch07s04.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3083000" playOrder="99">
+        <navLabel>
+          <text>8. Forms</text>
+        </navLabel>
+        <content src="OEBPS/ch08.html"/>
+        <navPoint class="chapter" id="id3083071" playOrder="100">
+          <navLabel>
+            <text>Synopsis</text>
+          </navLabel>
+          <content src="OEBPS/ch08.html#I_sect18_d1e3728"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3083146" playOrder="101">
+          <navLabel>
+            <text>Kinds of Forms</text>
+          </navLabel>
+          <content src="OEBPS/ch08s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3083269" playOrder="102">
+          <navLabel>
+            <text>Types</text>
+          </navLabel>
+          <content src="OEBPS/ch08s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3083603" playOrder="103">
+          <navLabel>
+            <text>Converting</text>
+          </navLabel>
+          <content src="OEBPS/ch08s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3083668" playOrder="104">
+          <navLabel>
+            <text>Create AForms</text>
+          </navLabel>
+          <content src="OEBPS/ch08s05.html"/>
+          <navPoint class="chapter" id="id3083823" playOrder="105">
+            <navLabel>
+              <text>Optional Fields</text>
+            </navLabel>
+            <content src="OEBPS/ch08s05.html#id3083823"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3083881" playOrder="106">
+          <navLabel>
+            <text>Validation</text>
+          </navLabel>
+          <content src="OEBPS/ch08s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3084078" playOrder="107">
+          <navLabel>
+            <text>More Sophisticated Fields</text>
+          </navLabel>
+          <content src="OEBPS/ch08s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3084216" playOrder="108">
+          <navLabel>
+            <text>Running Forms</text>
+          </navLabel>
+          <content src="OEBPS/ch08s08.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3084348" playOrder="109">
+          <navLabel>
+            <text>i18n</text>
+          </navLabel>
+          <content src="OEBPS/ch08s09.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3084438" playOrder="110">
+          <navLabel>
+            <text>Monadic Forms</text>
+          </navLabel>
+          <content src="OEBPS/ch08s10.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3084733" playOrder="111">
+          <navLabel>
+            <text>Input Forms</text>
+          </navLabel>
+          <content src="OEBPS/ch08s11.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3084830" playOrder="112">
+          <navLabel>
+            <text>Custom Fields</text>
+          </navLabel>
+          <content src="OEBPS/ch08s12.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3085005" playOrder="113">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch08s13.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3085069" playOrder="114">
+        <navLabel>
+          <text>9. Sessions</text>
+        </navLabel>
+        <content src="OEBPS/ch09.html"/>
+        <navPoint class="chapter" id="id3085101" playOrder="115">
+          <navLabel>
+            <text>Clientsession</text>
+          </navLabel>
+          <content src="OEBPS/ch09.html#I_sect19_d1e4600"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3085155" playOrder="116">
+          <navLabel>
+            <text>Controlling Sessions</text>
+          </navLabel>
+          <content src="OEBPS/ch09s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3085263" playOrder="117">
+          <navLabel>
+            <text>Session Operations</text>
+          </navLabel>
+          <content src="OEBPS/ch09s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3085342" playOrder="118">
+          <navLabel>
+            <text>Messages</text>
+          </navLabel>
+          <content src="OEBPS/ch09s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3085551" playOrder="119">
+          <navLabel>
+            <text>Ultimate Destination</text>
+          </navLabel>
+          <content src="OEBPS/ch09s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3085667" playOrder="120">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch09s06.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3085695" playOrder="121">
+        <navLabel>
+          <text>10. Persistent</text>
+        </navLabel>
+        <content src="OEBPS/ch10.html"/>
+        <navPoint class="chapter" id="id3085765" playOrder="122">
+          <navLabel>
+            <text>Synopsis</text>
+          </navLabel>
+          <content src="OEBPS/ch10.html#I_sect110_d1e4819"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3085798" playOrder="123">
+          <navLabel>
+            <text>Solving the Boundary Issue</text>
+          </navLabel>
+          <content src="OEBPS/ch10s02.html"/>
+          <navPoint class="chapter" id="id3085888" playOrder="124">
+            <navLabel>
+              <text>Types</text>
+            </navLabel>
+            <content src="OEBPS/ch10s02.html#id3085888"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3086018" playOrder="125">
+            <navLabel>
+              <text>Code Generation</text>
+            </navLabel>
+            <content src="OEBPS/ch10s02.html#id3086018"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3086224" playOrder="126">
+            <navLabel>
+              <text>PersistStore</text>
+            </navLabel>
+            <content src="OEBPS/ch10s02.html#id3086224"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3086368" playOrder="127">
+          <navLabel>
+            <text>Migrations</text>
+          </navLabel>
+          <content src="OEBPS/ch10s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3086632" playOrder="128">
+          <navLabel>
+            <text>Uniqueness</text>
+          </navLabel>
+          <content src="OEBPS/ch10s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3086769" playOrder="129">
+          <navLabel>
+            <text>Queries</text>
+          </navLabel>
+          <content src="OEBPS/ch10s05.html"/>
+          <navPoint class="chapter" id="id3086796" playOrder="130">
+            <navLabel>
+              <text>Fetching by ID</text>
+            </navLabel>
+            <content src="OEBPS/ch10s05.html#id3086796"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3086857" playOrder="131">
+            <navLabel>
+              <text>Fetching by Unique Constraint</text>
+            </navLabel>
+            <content src="OEBPS/ch10s05.html#id3086857"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3086909" playOrder="132">
+            <navLabel>
+              <text>Select Functions</text>
+            </navLabel>
+            <content src="OEBPS/ch10s05.html#id3086909"/>
+            <navPoint class="chapter" id="id3087180" playOrder="133">
+              <navLabel>
+                <text>SelectOpt</text>
+              </navLabel>
+              <content src="OEBPS/ch10s05.html#id3087180"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3087286" playOrder="134">
+          <navLabel>
+            <text>Manipulation</text>
+          </navLabel>
+          <content src="OEBPS/ch10s06.html"/>
+          <navPoint class="chapter" id="id3087296" playOrder="135">
+            <navLabel>
+              <text>Insert</text>
+            </navLabel>
+            <content src="OEBPS/ch10s06.html#id3087296"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3087540" playOrder="136">
+            <navLabel>
+              <text>Update</text>
+            </navLabel>
+            <content src="OEBPS/ch10s06.html#id3087540"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3087732" playOrder="137">
+            <navLabel>
+              <text>Delete</text>
+            </navLabel>
+            <content src="OEBPS/ch10s06.html#id3087732"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3087794" playOrder="138">
+          <navLabel>
+            <text>Attributes</text>
+          </navLabel>
+          <content src="OEBPS/ch10s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3087960" playOrder="139">
+          <navLabel>
+            <text>Relations</text>
+          </navLabel>
+          <content src="OEBPS/ch10s08.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3088034" playOrder="140">
+          <navLabel>
+            <text>Closer Look at Types</text>
+          </navLabel>
+          <content src="OEBPS/ch10s09.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3088424" playOrder="141">
+          <navLabel>
+            <text>Custom Fields</text>
+          </navLabel>
+          <content src="OEBPS/ch10s10.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3088479" playOrder="142">
+          <navLabel>
+            <text>Persistent: Raw SQL</text>
+          </navLabel>
+          <content src="OEBPS/ch10s11.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3088551" playOrder="143">
+          <navLabel>
+            <text>Integration with Yesod</text>
+          </navLabel>
+          <content src="OEBPS/ch10s12.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3088750" playOrder="144">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch10s13.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3088794" playOrder="145">
+        <navLabel>
+          <text>11. Deploying Your Webapp</text>
+        </navLabel>
+        <content src="OEBPS/ch11.html"/>
+        <navPoint class="chapter" id="id3088829" playOrder="146">
+          <navLabel>
+            <text>Compiling</text>
+          </navLabel>
+          <content src="OEBPS/ch11.html#I_sect111_d1e5999"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3088862" playOrder="147">
+          <navLabel>
+            <text>Warp</text>
+          </navLabel>
+          <content src="OEBPS/ch11s02.html"/>
+          <navPoint class="chapter" id="id3088964" playOrder="148">
+            <navLabel>
+              <text>Configuration</text>
+            </navLabel>
+            <content src="OEBPS/ch11s02.html#id3088964"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3089080" playOrder="149">
+            <navLabel>
+              <text>Server Process</text>
+            </navLabel>
+            <content src="OEBPS/ch11s02.html#id3089080"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3089128" playOrder="150">
+          <navLabel>
+            <text>FastCGI</text>
+          </navLabel>
+          <content src="OEBPS/ch11s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3089216" playOrder="151">
+          <navLabel>
+            <text>Desktop</text>
+          </navLabel>
+          <content src="OEBPS/ch11s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3089285" playOrder="152">
+          <navLabel>
+            <text>CGI on Apache</text>
+          </navLabel>
+          <content src="OEBPS/ch11s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3089356" playOrder="153">
+          <navLabel>
+            <text>FastCGI on lighttpd</text>
+          </navLabel>
+          <content src="OEBPS/ch11s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3089396" playOrder="154">
+          <navLabel>
+            <text>CGI on lighttpd</text>
+          </navLabel>
+          <content src="OEBPS/ch11s07.html"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3089419" playOrder="155">
+      <navLabel>
+        <text>II. Advanced</text>
+      </navLabel>
+      <content src="OEBPS/pt02.html"/>
+      <navPoint class="chapter" id="id3089425" playOrder="156">
+        <navLabel>
+          <text>12. RESTful Content</text>
+        </navLabel>
+        <content src="OEBPS/ch12.html"/>
+        <navPoint class="chapter" id="id3089476" playOrder="157">
+          <navLabel>
+            <text>Request Methods</text>
+          </navLabel>
+          <content src="OEBPS/ch12.html#I_sect11_d1e6240"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3089583" playOrder="158">
+          <navLabel>
+            <text>Representations</text>
+          </navLabel>
+          <content src="OEBPS/ch12s02.html"/>
+          <navPoint class="chapter" id="id3089851" playOrder="159">
+            <navLabel>
+              <text>RepHtmlJson</text>
+            </navLabel>
+            <content src="OEBPS/ch12s02.html#id3089851"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3090021" playOrder="160">
+            <navLabel>
+              <text>News Feeds</text>
+            </navLabel>
+            <content src="OEBPS/ch12s02.html#id3090021"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3090098" playOrder="161">
+          <navLabel>
+            <text>Other Request Headers</text>
+          </navLabel>
+          <content src="OEBPS/ch12s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3090145" playOrder="162">
+          <navLabel>
+            <text>Stateless</text>
+          </navLabel>
+          <content src="OEBPS/ch12s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3090225" playOrder="163">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch12s05.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3090258" playOrder="164">
+        <navLabel>
+          <text>13. Yesod’s Monads</text>
+        </navLabel>
+        <content src="OEBPS/ch13.html"/>
+        <navPoint class="chapter" id="id3090371" playOrder="165">
+          <navLabel>
+            <text>Monad Transformers</text>
+          </navLabel>
+          <content src="OEBPS/ch13.html#I_sect12_d1e6609"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3090561" playOrder="166">
+          <navLabel>
+            <text>The Three Transformers</text>
+          </navLabel>
+          <content src="OEBPS/ch13s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3090862" playOrder="167">
+          <navLabel>
+            <text>Example: Database-Driven Navbar</text>
+          </navLabel>
+          <content src="OEBPS/ch13s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3091044" playOrder="168">
+          <navLabel>
+            <text>Example: Request Information</text>
+          </navLabel>
+          <content src="OEBPS/ch13s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3091120" playOrder="169">
+          <navLabel>
+            <text>Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch13s05.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3091147" playOrder="170">
+        <navLabel>
+          <text>14. Authentication and Authorization</text>
+        </navLabel>
+        <content src="OEBPS/ch14.html"/>
+        <navPoint class="chapter" id="id3091209" playOrder="171">
+          <navLabel>
+            <text>Overview</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#I_sect13_d1e6939"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3091352" playOrder="172">
+          <navLabel>
+            <text>Authenticate Me</text>
+          </navLabel>
+          <content src="OEBPS/ch14s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3091758" playOrder="173">
+          <navLabel>
+            <text>Email</text>
+          </navLabel>
+          <content src="OEBPS/ch14s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3091980" playOrder="174">
+          <navLabel>
+            <text>Authorization</text>
+          </navLabel>
+          <content src="OEBPS/ch14s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3092162" playOrder="175">
+          <navLabel>
+            <text>Conclusion</text>
+          </navLabel>
+          <content src="OEBPS/ch14s05.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3092178" playOrder="176">
+        <navLabel>
+          <text>15. Scaffolding and the Site Template</text>
+        </navLabel>
+        <content src="OEBPS/ch15.html"/>
+        <navPoint class="chapter" id="id3092241" playOrder="177">
+          <navLabel>
+            <text>How to Scaffold</text>
+          </navLabel>
+          <content src="OEBPS/ch15.html#I_sect14_d1e7282"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3092383" playOrder="178">
+          <navLabel>
+            <text>File Structure</text>
+          </navLabel>
+          <content src="OEBPS/ch15s02.html"/>
+          <navPoint class="chapter" id="id3092395" playOrder="179">
+            <navLabel>
+              <text>Cabal File</text>
+            </navLabel>
+            <content src="OEBPS/ch15s02.html#id3092395"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3092571" playOrder="180">
+            <navLabel>
+              <text>Routes and Entities</text>
+            </navLabel>
+            <content src="OEBPS/ch15s02.html#id3092571"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3092673" playOrder="181">
+            <navLabel>
+              <text>Foundation and Application Modules</text>
+            </navLabel>
+            <content src="OEBPS/ch15s02.html#id3092673"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3092882" playOrder="182">
+            <navLabel>
+              <text>Import</text>
+            </navLabel>
+            <content src="OEBPS/ch15s02.html#id3092882"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3093001" playOrder="183">
+            <navLabel>
+              <text>Handler Modules</text>
+            </navLabel>
+            <content src="OEBPS/ch15s02.html#id3093001"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3093102" playOrder="184">
+          <navLabel>
+            <text>widgetFile</text>
+          </navLabel>
+          <content src="OEBPS/ch15s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3093219" playOrder="185">
+          <navLabel>
+            <text>defaultLayout</text>
+          </navLabel>
+          <content src="OEBPS/ch15s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3093291" playOrder="186">
+          <navLabel>
+            <text>Static Files</text>
+          </navLabel>
+          <content src="OEBPS/ch15s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3093391" playOrder="187">
+          <navLabel>
+            <text>Conclusion</text>
+          </navLabel>
+          <content src="OEBPS/ch15s06.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3093411" playOrder="188">
+        <navLabel>
+          <text>16. Internationalization</text>
+        </navLabel>
+        <content src="OEBPS/ch16.html"/>
+        <navPoint class="chapter" id="id3093474" playOrder="189">
+          <navLabel>
+            <text>Synopsis</text>
+          </navLabel>
+          <content src="OEBPS/ch16.html#I_sect15_d1e7905"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3093536" playOrder="190">
+          <navLabel>
+            <text>Overview</text>
+          </navLabel>
+          <content src="OEBPS/ch16s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3093653" playOrder="191">
+          <navLabel>
+            <text>Message Files</text>
+          </navLabel>
+          <content src="OEBPS/ch16s03.html"/>
+          <navPoint class="chapter" id="id3093768" playOrder="192">
+            <navLabel>
+              <text>Specifying Types</text>
+            </navLabel>
+            <content src="OEBPS/ch16s03.html#id3093768"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3093835" playOrder="193">
+          <navLabel>
+            <text>RenderMessage Typeclass</text>
+          </navLabel>
+          <content src="OEBPS/ch16s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3093996" playOrder="194">
+          <navLabel>
+            <text>Interpolation</text>
+          </navLabel>
+          <content src="OEBPS/ch16s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3094065" playOrder="195">
+          <navLabel>
+            <text>Phrases, Not Words</text>
+          </navLabel>
+          <content src="OEBPS/ch16s06.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3094134" playOrder="196">
+        <navLabel>
+          <text>17. Creating a Subsite</text>
+        </navLabel>
+        <content src="OEBPS/ch17.html"/>
+        <navPoint class="chapter" id="id3094165" playOrder="197">
+          <navLabel>
+            <text>Hello World</text>
+          </navLabel>
+          <content src="OEBPS/ch17.html#I_sect16_d1e8138"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3094383" playOrder="198">
+      <navLabel>
+        <text>III. Examples</text>
+      </navLabel>
+      <content src="OEBPS/pt03.html"/>
+      <navPoint class="chapter" id="id3094389" playOrder="199">
+        <navLabel>
+          <text>18. Blog: i18n, Authentication, Authorization, and Database</text>
+        </navLabel>
+        <content src="OEBPS/ch18.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3094689" playOrder="200">
+        <navLabel>
+          <text>19. Wiki: Markdown, Chat Subsite, Event Source</text>
+        </navLabel>
+        <content src="OEBPS/ch19.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3095003" playOrder="201">
+        <navLabel>
+          <text>20. JSON Web Service</text>
+        </navLabel>
+        <content src="OEBPS/ch20.html"/>
+        <navPoint class="chapter" id="id3095033" playOrder="202">
+          <navLabel>
+            <text>Server</text>
+          </navLabel>
+          <content src="OEBPS/ch20.html#I_sect13_d1e8271"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3095108" playOrder="203">
+          <navLabel>
+            <text>Client</text>
+          </navLabel>
+          <content src="OEBPS/ch20s02.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3095261" playOrder="204">
+        <navLabel>
+          <text>21. Case Study: Sphinx-Based Search</text>
+        </navLabel>
+        <content src="OEBPS/ch21.html"/>
+        <navPoint class="chapter" id="id3095323" playOrder="205">
+          <navLabel>
+            <text>Sphinx Setup</text>
+          </navLabel>
+          <content src="OEBPS/ch21.html#I_sect14_d1e8379"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3095426" playOrder="206">
+          <navLabel>
+            <text>Basic Yesod Setup</text>
+          </navLabel>
+          <content src="OEBPS/ch21s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3095556" playOrder="207">
+          <navLabel>
+            <text>Searching</text>
+          </navLabel>
+          <content src="OEBPS/ch21s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3095862" playOrder="208">
+          <navLabel>
+            <text>Streaming xmlpipe Output</text>
+          </navLabel>
+          <content src="OEBPS/ch21s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3096362" playOrder="209">
+          <navLabel>
+            <text>Full Code</text>
+          </navLabel>
+          <content src="OEBPS/ch21s05.html"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3096640" playOrder="210">
+      <navLabel>
+        <text>IV. Appendices</text>
+      </navLabel>
+      <content src="OEBPS/pt04.html"/>
+      <navPoint class="chapter" id="id3096646" playOrder="211">
+        <navLabel>
+          <text>A. monad-control</text>
+        </navLabel>
+        <content src="OEBPS/apa.html"/>
+        <navPoint class="chapter" id="id3096662" playOrder="212">
+          <navLabel>
+            <text>Overview</text>
+          </navLabel>
+          <content src="OEBPS/apa.html#I_sect1_d1e8727"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3096861" playOrder="213">
+          <navLabel>
+            <text>Intuition</text>
+          </navLabel>
+          <content src="OEBPS/apas02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3097042" playOrder="214">
+          <navLabel>
+            <text>Types</text>
+          </navLabel>
+          <content src="OEBPS/apas03.html"/>
+          <navPoint class="chapter" id="id3097281" playOrder="215">
+            <navLabel>
+              <text>MonadTransControl</text>
+            </navLabel>
+            <content src="OEBPS/apas03.html#id3097281"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3097517" playOrder="216">
+            <navLabel>
+              <text>MonadControlIO</text>
+            </navLabel>
+            <content src="OEBPS/apas03.html#id3097517"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3097648" playOrder="217">
+          <navLabel>
+            <text>Real Life Examples</text>
+          </navLabel>
+          <content src="OEBPS/apas04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3097717" playOrder="218">
+          <navLabel>
+            <text>Lost State</text>
+          </navLabel>
+          <content src="OEBPS/apas05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3097762" playOrder="219">
+          <navLabel>
+            <text>More Complicated Cases</text>
+          </navLabel>
+          <content src="OEBPS/apas06.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3097852" playOrder="220">
+        <navLabel>
+          <text>B. Conduit</text>
+        </navLabel>
+        <content src="OEBPS/apb.html"/>
+        <navPoint class="chapter" id="id3097895" playOrder="221">
+          <navLabel>
+            <text>Conduits in Five Minutes</text>
+          </navLabel>
+          <content src="OEBPS/apb.html#I_sect1_d1e9066"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3098128" playOrder="222">
+          <navLabel>
+            <text>Structure of This Chapter</text>
+          </navLabel>
+          <content src="OEBPS/apbs02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3098164" playOrder="223">
+          <navLabel>
+            <text>The Resource Monad Transformer</text>
+          </navLabel>
+          <content src="OEBPS/apbs03.html"/>
+          <navPoint class="chapter" id="id3098207" playOrder="224">
+            <navLabel>
+              <text>Goals</text>
+            </navLabel>
+            <content src="OEBPS/apbs03.html#id3098207"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3098367" playOrder="225">
+            <navLabel>
+              <text>How It Works</text>
+            </navLabel>
+            <content src="OEBPS/apbs03.html#id3098367"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3098577" playOrder="226">
+            <navLabel>
+              <text>Some Type Magic</text>
+            </navLabel>
+            <content src="OEBPS/apbs03.html#id3098577"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3098953" playOrder="227">
+            <navLabel>
+              <text>Definition of ResourceT</text>
+            </navLabel>
+            <content src="OEBPS/apbs03.html#id3098953"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3099103" playOrder="228">
+            <navLabel>
+              <text>Other Typeclasses</text>
+            </navLabel>
+            <content src="OEBPS/apbs03.html#id3099103"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3099183" playOrder="229">
+            <navLabel>
+              <text>Forking</text>
+            </navLabel>
+            <content src="OEBPS/apbs03.html#id3099183"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3099305" playOrder="230">
+            <navLabel>
+              <text>Convenience Exports</text>
+            </navLabel>
+            <content src="OEBPS/apbs03.html#id3099305"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3099406" playOrder="231">
+          <navLabel>
+            <text>Source</text>
+          </navLabel>
+          <content src="OEBPS/apbs04.html"/>
+          <navPoint class="chapter" id="id3099559" playOrder="232">
+            <navLabel>
+              <text>State</text>
+            </navLabel>
+            <content src="OEBPS/apbs04.html#id3099559"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3099660" playOrder="233">
+            <navLabel>
+              <text>sourceState and sourceIO</text>
+            </navLabel>
+            <content src="OEBPS/apbs04.html#id3099660"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3099855" playOrder="234">
+          <navLabel>
+            <text>Sinks</text>
+          </navLabel>
+          <content src="OEBPS/apbs05.html"/>
+          <navPoint class="chapter" id="id3100021" playOrder="235">
+            <navLabel>
+              <text>Types</text>
+            </navLabel>
+            <content src="OEBPS/apbs05.html#id3100021"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3100160" playOrder="236">
+            <navLabel>
+              <text>Sinks: no helpers</text>
+            </navLabel>
+            <content src="OEBPS/apbs05.html#id3100160"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3100230" playOrder="237">
+            <navLabel>
+              <text>Sinks: with Helpers</text>
+            </navLabel>
+            <content src="OEBPS/apbs05.html#id3100230"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3100299" playOrder="238">
+            <navLabel>
+              <text>List Functions</text>
+            </navLabel>
+            <content src="OEBPS/apbs05.html#id3100299"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3100371" playOrder="239">
+            <navLabel>
+              <text>Connecting</text>
+            </navLabel>
+            <content src="OEBPS/apbs05.html#id3100371"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3100531" playOrder="240">
+          <navLabel>
+            <text>Conduit</text>
+          </navLabel>
+          <content src="OEBPS/apbs06.html"/>
+          <navPoint class="chapter" id="id3100543" playOrder="241">
+            <navLabel>
+              <text>Types</text>
+            </navLabel>
+            <content src="OEBPS/apbs06.html#id3100543"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3100642" playOrder="242">
+            <navLabel>
+              <text>Simple Conduits</text>
+            </navLabel>
+            <content src="OEBPS/apbs06.html#id3100642"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3100674" playOrder="243">
+            <navLabel>
+              <text>Stateful Conduits</text>
+            </navLabel>
+            <content src="OEBPS/apbs06.html#id3100674"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3100777" playOrder="244">
+            <navLabel>
+              <text>Using Conduits</text>
+            </navLabel>
+            <content src="OEBPS/apbs06.html#id3100777"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3100873" playOrder="245">
+            <navLabel>
+              <text>Data Loss</text>
+            </navLabel>
+            <content src="OEBPS/apbs06.html#id3100873"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3101086" playOrder="246">
+            <navLabel>
+              <text>SequencedSink</text>
+            </navLabel>
+            <content src="OEBPS/apbs06.html#id3101086"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3101282" playOrder="247">
+          <navLabel>
+            <text>Buffering</text>
+          </navLabel>
+          <content src="OEBPS/apbs07.html"/>
+          <navPoint class="chapter" id="id3101294" playOrder="248">
+            <navLabel>
+              <text>Inversion of Control</text>
+            </navLabel>
+            <content src="OEBPS/apbs07.html#id3101294"/>
+            <navPoint class="chapter" id="id3101509" playOrder="249">
+              <navLabel>
+                <text>A web server</text>
+              </navLabel>
+              <content src="OEBPS/apbs07.html#id3101509"/>
+            </navPoint>
+            <navPoint class="chapter" id="id3101747" playOrder="250">
+              <navLabel>
+                <text>Whither the request body?</text>
+              </navLabel>
+              <content src="OEBPS/apbs07.html#id3101747"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id3101916" playOrder="251">
+            <navLabel>
+              <text>BufferedSource</text>
+            </navLabel>
+            <content src="OEBPS/apbs07.html#id3101916"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3101993" playOrder="252">
+            <navLabel>
+              <text>Typeclass</text>
+            </navLabel>
+            <content src="OEBPS/apbs07.html#id3101993"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3102166" playOrder="253">
+            <navLabel>
+              <text>Recapping the Web Server</text>
+            </navLabel>
+            <content src="OEBPS/apbs07.html#id3102166"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3102248" playOrder="254">
+        <navLabel>
+          <text>C. Web Application Interface</text>
+        </navLabel>
+        <content src="OEBPS/apc.html"/>
+        <navPoint class="chapter" id="id3102381" playOrder="255">
+          <navLabel>
+            <text>The Interface</text>
+          </navLabel>
+          <content src="OEBPS/apc.html#I_sect1_d1e10781"/>
+          <navPoint class="chapter" id="id3102396" playOrder="256">
+            <navLabel>
+              <text>Response Body</text>
+            </navLabel>
+            <content src="OEBPS/apc.html#id3102396"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3102488" playOrder="257">
+            <navLabel>
+              <text>Request Body</text>
+            </navLabel>
+            <content src="OEBPS/apc.html#id3102488"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3102546" playOrder="258">
+          <navLabel>
+            <text>Hello World</text>
+          </navLabel>
+          <content src="OEBPS/apcs02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3102607" playOrder="259">
+          <navLabel>
+            <text>Middleware</text>
+          </navLabel>
+          <content src="OEBPS/apcs03.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3102689" playOrder="260">
+        <navLabel>
+          <text>D. Settings Types</text>
+        </navLabel>
+        <content src="OEBPS/apd.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3102973" playOrder="261">
+        <navLabel>
+          <text>E. http-conduit</text>
+        </navLabel>
+        <content src="OEBPS/ape.html"/>
+        <navPoint class="chapter" id="id3102998" playOrder="262">
+          <navLabel>
+            <text>Synopsis</text>
+          </navLabel>
+          <content src="OEBPS/ape.html#I_sect1_d1e11017"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3103048" playOrder="263">
+          <navLabel>
+            <text>Concepts</text>
+          </navLabel>
+          <content src="OEBPS/apes02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3103157" playOrder="264">
+          <navLabel>
+            <text>Request</text>
+          </navLabel>
+          <content src="OEBPS/apes03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3103333" playOrder="265">
+          <navLabel>
+            <text>Manager</text>
+          </navLabel>
+          <content src="OEBPS/apes04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3103452" playOrder="266">
+          <navLabel>
+            <text>Response</text>
+          </navLabel>
+          <content src="OEBPS/apes05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3103524" playOrder="267">
+          <navLabel>
+            <text>http and httpLbs</text>
+          </navLabel>
+          <content src="OEBPS/apes06.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3103591" playOrder="268">
+        <navLabel>
+          <text>F. xml-conduit</text>
+        </navLabel>
+        <content src="OEBPS/apf.html"/>
+        <navPoint class="chapter" id="id3103703" playOrder="269">
+          <navLabel>
+            <text>Synopsis</text>
+          </navLabel>
+          <content src="OEBPS/apf.html#I_sect1_d1e11322"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3103823" playOrder="270">
+          <navLabel>
+            <text>Types</text>
+          </navLabel>
+          <content src="OEBPS/apfs02.html"/>
+          <navPoint class="chapter" id="id3104045" playOrder="271">
+            <navLabel>
+              <text>The Four Types of Nodes</text>
+            </navLabel>
+            <content src="OEBPS/apfs02.html#id3104045"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3104233" playOrder="272">
+            <navLabel>
+              <text>Documents</text>
+            </navLabel>
+            <content src="OEBPS/apfs02.html#id3104233"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3104316" playOrder="273">
+            <navLabel>
+              <text>Events</text>
+            </navLabel>
+            <content src="OEBPS/apfs02.html#id3104316"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3104351" playOrder="274">
+          <navLabel>
+            <text>Text.XML</text>
+          </navLabel>
+          <content src="OEBPS/apfs03.html"/>
+          <navPoint class="chapter" id="id3104448" playOrder="275">
+            <navLabel>
+              <text>A Note About File Paths</text>
+            </navLabel>
+            <content src="OEBPS/apfs03.html#id3104448"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3104601" playOrder="276">
+          <navLabel>
+            <text>Cursor</text>
+          </navLabel>
+          <content src="OEBPS/apfs04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3105010" playOrder="277">
+          <navLabel>
+            <text>xml-hamlet</text>
+          </navLabel>
+          <content src="OEBPS/apfs05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3105221" playOrder="278">
+          <navLabel>
+            <text>xml2html</text>
+          </navLabel>
+          <content src="OEBPS/apfs06.html"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3105395" playOrder="279">
+      <navLabel>
+        <text>About the Author</text>
+      </navLabel>
+      <content src="OEBPS/author_bios.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

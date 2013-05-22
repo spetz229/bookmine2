@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>Слава</dc:publisher>
+    <dc:description>В ЭТОМ УВЛЕКАТЕЛЬНОМ БЕСТСЕЛЛЕРЕ СЕКРЕТЫ ДОСТИЖЕНИЯ САМЫХ АМБИЦИОЗНЫХ ЦЕЛЕЙ, КЛЮЧ К УСПЕХУ И БОГАТСТВУ. Знаменитые «Вавилонские притчи» помогли миллионам читателей, вдохновив их на поиски успеха и богатства. Эта книга учит планировать свои финансовые возможности, добывать деньги, сберегать их и преумножать накопленное богатство. ДРЕВНЕЙШИЕ СЕКРЕТЫ ФИНАНСОВОГО УСПЕХА</dc:description>
+    <dc:language>ru</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Джордж  Клейсон</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T22:00:09.440992+00:00"/>
+    <dc:title>Самый богатый человек в Вавилоне</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2009-05-21T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">dd2a30b5-1d77-4d53-bd90-060d5674f0ce</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="images/00006.jpeg" id="cover" media-type="image/jpeg"/>
+    <item href="fonts/00002.dat" id="id1" media-type="chemical/x-mopac-input"/>
+    <item href="fonts/00003.dat" id="id2" media-type="chemical/x-mopac-input"/>
+    <item href="fonts/00004.dat" id="id3" media-type="chemical/x-mopac-input"/>
+    <item href="fonts/00005.dat" id="id4" media-type="chemical/x-mopac-input"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="text/part0000.html" id="id8" media-type="application/xhtml+xml"/>
+    <item href="text/part0001.html" id="id9" media-type="application/xhtml+xml"/>
+    <item href="text/part0002.html" id="id10" media-type="application/xhtml+xml"/>
+    <item href="text/part0003.html" id="id11" media-type="application/xhtml+xml"/>
+    <item href="text/part0004.html" id="id12" media-type="application/xhtml+xml"/>
+    <item href="text/part0005.html" id="id13" media-type="application/xhtml+xml"/>
+    <item href="text/part0006.html" id="id14" media-type="application/xhtml+xml"/>
+    <item href="text/part0007.html" id="id15" media-type="application/xhtml+xml"/>
+    <item href="text/part0008.html" id="id16" media-type="application/xhtml+xml"/>
+    <item href="text/part0009.html" id="id17" media-type="application/xhtml+xml"/>
+    <item href="text/part0010.html" id="id18" media-type="application/xhtml+xml"/>
+    <item href="text/part0011.html" id="id19" media-type="application/xhtml+xml"/>
+    <item href="text/part0012.html" id="id20" media-type="application/xhtml+xml"/>
+    <item href="text/part0013.html" id="id21" media-type="application/xhtml+xml"/>
+    <item href="text/part0014.html" id="id22" media-type="application/xhtml+xml"/>
+    <item href="text/part0015.html" id="id23" media-type="application/xhtml+xml"/>
+    <item href="text/part0016.html" id="id24" media-type="application/xhtml+xml"/>
+    <item href="text/part0017.html" id="id25" media-type="application/xhtml+xml"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id8"/>
+    <itemref idref="id9"/>
+    <itemref idref="id10"/>
+    <itemref idref="id11"/>
+    <itemref idref="id12"/>
+    <itemref idref="id13"/>
+    <itemref idref="id14"/>
+    <itemref idref="id15"/>
+    <itemref idref="id16"/>
+    <itemref idref="id17"/>
+    <itemref idref="id18"/>
+    <itemref idref="id19"/>
+    <itemref idref="id20"/>
+    <itemref idref="id21"/>
+    <itemref idref="id22"/>
+    <itemref idref="id23"/>
+    <itemref idref="id24"/>
+    <itemref idref="id25"/>
+  </spine>
+  <guide>
+    <reference href="text/part0017.html" type="toc" title="Table of content"/>
+    <reference href="images/00006.jpeg" type="cover" title="Cover"/>
+  </guide>
+</package>

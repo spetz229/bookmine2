@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>MIT Press</dc:publisher>
+    <dc:rights>Creative Commons Attribution-Noncommercial 3.0 Unported License.</dc:rights>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Harold Abelson</dc:creator>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Gerald Jay Sussman</dc:creator>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Julie Sussman</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:59:05.595156+00:00"/>
+    <dc:title>Structure and Interpretation of Computer Programs</dc:title>
+    <meta name="cover" content="book"/>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">0-262-01153-0</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">c362f56a-aab0-4dba-af64-1adbf359fb48</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="OEBPS/images/cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="OEBPS/book-Z-H-1.html" id="book-Z-H-1" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-10.html" id="book-Z-H-10" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-11.html" id="book-Z-H-11" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-12.html" id="book-Z-H-12" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-13.html" id="book-Z-H-13" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-14.html" id="book-Z-H-14" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-15.html" id="book-Z-H-15" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-16.html" id="book-Z-H-16" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-17.html" id="book-Z-H-17" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-18.html" id="book-Z-H-18" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-19.html" id="book-Z-H-19" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-2.html" id="book-Z-H-2" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-20.html" id="book-Z-H-20" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-21.html" id="book-Z-H-21" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-22.html" id="book-Z-H-22" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-23.html" id="book-Z-H-23" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-24.html" id="book-Z-H-24" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-25.html" id="book-Z-H-25" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-26.html" id="book-Z-H-26" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-27.html" id="book-Z-H-27" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-28.html" id="book-Z-H-28" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-29.html" id="book-Z-H-29" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-3.html" id="book-Z-H-3" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-30.html" id="book-Z-H-30" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-31.html" id="book-Z-H-31" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-32.html" id="book-Z-H-32" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-33.html" id="book-Z-H-33" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-34.html" id="book-Z-H-34" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-35.html" id="book-Z-H-35" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-36.html" id="book-Z-H-36" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-37.html" id="book-Z-H-37" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-38.html" id="book-Z-H-38" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-4.html" id="added" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-5.html" id="book-Z-H-5" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-6.html" id="book-Z-H-6" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-7.html" id="book-Z-H-7" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-8.html" id="book-Z-H-8" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book-Z-H-9.html" id="book-Z-H-9" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/book.html" id="book" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/images/ch1-Z-G-1.gif" id="ch1-Z-G-1" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-10.gif" id="ch1-Z-G-10" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-12.gif" id="ch1-Z-G-12" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-13.gif" id="ch1-Z-G-13" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-17.gif" id="ch1-Z-G-17" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-19.gif" id="ch1-Z-G-19" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-2.gif" id="ch1-Z-G-2" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-26.gif" id="ch1-Z-G-26" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-27.gif" id="ch1-Z-G-27" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-28.gif" id="ch1-Z-G-28" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-29.gif" id="ch1-Z-G-29" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-3.gif" id="ch1-Z-G-3" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-30.gif" id="ch1-Z-G-30" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-31.gif" id="ch1-Z-G-31" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-32.gif" id="ch1-Z-G-32" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-33.gif" id="ch1-Z-G-33" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-34.gif" id="ch1-Z-G-34" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-35.gif" id="ch1-Z-G-35" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-36.gif" id="ch1-Z-G-36" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-37.gif" id="ch1-Z-G-37" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-38.gif" id="ch1-Z-G-38" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-4.gif" id="ch1-Z-G-4" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-5.gif" id="ch1-Z-G-5" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-6.gif" id="ch1-Z-G-6" media-type="image/gif"/>
+    <item href="OEBPS/images/ch1-Z-G-7.gif" id="ch1-Z-G-7" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-1.gif" id="ch2-Z-G-1" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-10.gif" id="ch2-Z-G-10" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-11.gif" id="ch2-Z-G-11" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-12.gif" id="ch2-Z-G-12" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-13.gif" id="ch2-Z-G-13" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-14.gif" id="ch2-Z-G-14" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-15.gif" id="ch2-Z-G-15" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-16.gif" id="ch2-Z-G-16" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-17.gif" id="ch2-Z-G-17" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-18.gif" id="ch2-Z-G-18" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-19.gif" id="ch2-Z-G-19" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-2.gif" id="ch2-Z-G-2" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-20.gif" id="ch2-Z-G-20" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-21.gif" id="ch2-Z-G-21" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-22.gif" id="ch2-Z-G-22" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-23.gif" id="ch2-Z-G-23" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-24.gif" id="ch2-Z-G-24" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-25.gif" id="ch2-Z-G-25" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-26.gif" id="ch2-Z-G-26" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-27.gif" id="ch2-Z-G-27" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-28.gif" id="ch2-Z-G-28" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-29.gif" id="ch2-Z-G-29" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-3.gif" id="ch2-Z-G-3" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-30.gif" id="ch2-Z-G-30" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-31.gif" id="ch2-Z-G-31" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-32.gif" id="ch2-Z-G-32" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-33.gif" id="ch2-Z-G-33" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-34.gif" id="ch2-Z-G-34" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-35.gif" id="ch2-Z-G-35" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-36.gif" id="ch2-Z-G-36" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-37.gif" id="ch2-Z-G-37" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-38.gif" id="ch2-Z-G-38" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-39.gif" id="ch2-Z-G-39" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-4.gif" id="ch2-Z-G-4" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-40.gif" id="ch2-Z-G-40" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-41.gif" id="ch2-Z-G-41" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-42.gif" id="ch2-Z-G-42" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-43.gif" id="ch2-Z-G-43" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-44.gif" id="ch2-Z-G-44" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-45.gif" id="ch2-Z-G-45" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-46.gif" id="ch2-Z-G-46" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-47.gif" id="ch2-Z-G-47" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-48.gif" id="ch2-Z-G-48" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-49.gif" id="ch2-Z-G-49" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-5.gif" id="ch2-Z-G-5" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-50.gif" id="ch2-Z-G-50" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-51.gif" id="ch2-Z-G-51" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-52.gif" id="ch2-Z-G-52" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-53.gif" id="ch2-Z-G-53" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-54.gif" id="ch2-Z-G-54" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-55.gif" id="ch2-Z-G-55" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-56.gif" id="ch2-Z-G-56" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-57.gif" id="ch2-Z-G-57" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-58.gif" id="ch2-Z-G-58" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-59.gif" id="ch2-Z-G-59" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-6.gif" id="ch2-Z-G-6" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-60.gif" id="ch2-Z-G-60" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-61.gif" id="ch2-Z-G-61" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-62.gif" id="ch2-Z-G-62" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-63.gif" id="ch2-Z-G-63" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-64.gif" id="ch2-Z-G-64" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-65.gif" id="ch2-Z-G-65" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-66.gif" id="ch2-Z-G-66" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-67.gif" id="ch2-Z-G-67" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-68.gif" id="ch2-Z-G-68" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-69.gif" id="ch2-Z-G-69" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-7.gif" id="ch2-Z-G-7" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-70.gif" id="ch2-Z-G-70" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-71.gif" id="ch2-Z-G-71" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-72.gif" id="ch2-Z-G-72" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-73.gif" id="ch2-Z-G-73" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-74.gif" id="ch2-Z-G-74" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-75.gif" id="ch2-Z-G-75" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-76.gif" id="ch2-Z-G-76" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-77.gif" id="ch2-Z-G-77" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-78.gif" id="ch2-Z-G-78" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-79.gif" id="ch2-Z-G-79" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-8.gif" id="ch2-Z-G-8" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-80.gif" id="ch2-Z-G-80" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-81.gif" id="ch2-Z-G-81" media-type="image/gif"/>
+    <item href="OEBPS/images/ch2-Z-G-9.gif" id="ch2-Z-G-9" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-1.gif" id="ch3-Z-G-1" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-10.gif" id="ch3-Z-G-10" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-11.gif" id="ch3-Z-G-11" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-12.gif" id="ch3-Z-G-12" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-13.gif" id="ch3-Z-G-13" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-14.gif" id="ch3-Z-G-14" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-15.gif" id="ch3-Z-G-15" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-16.gif" id="ch3-Z-G-16" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-17.gif" id="ch3-Z-G-17" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-18.gif" id="ch3-Z-G-18" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-19.gif" id="ch3-Z-G-19" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-2.gif" id="ch3-Z-G-2" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-20.gif" id="ch3-Z-G-20" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-21.gif" id="ch3-Z-G-21" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-22.gif" id="ch3-Z-G-22" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-23.gif" id="ch3-Z-G-23" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-24.gif" id="ch3-Z-G-24" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-25.gif" id="ch3-Z-G-25" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-26.gif" id="ch3-Z-G-26" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-27.gif" id="ch3-Z-G-27" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-28.gif" id="ch3-Z-G-28" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-29.gif" id="ch3-Z-G-29" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-3.gif" id="ch3-Z-G-3" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-30.gif" id="ch3-Z-G-30" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-31.gif" id="ch3-Z-G-31" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-32.gif" id="ch3-Z-G-32" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-33.gif" id="ch3-Z-G-33" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-35.gif" id="ch3-Z-G-35" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-36.gif" id="ch3-Z-G-36" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-37.gif" id="ch3-Z-G-37" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-38.gif" id="ch3-Z-G-38" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-39.gif" id="ch3-Z-G-39" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-4.gif" id="ch3-Z-G-4" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-40.gif" id="ch3-Z-G-40" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-41.gif" id="ch3-Z-G-41" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-42.gif" id="ch3-Z-G-42" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-43.gif" id="ch3-Z-G-43" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-44.gif" id="ch3-Z-G-44" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-45.gif" id="ch3-Z-G-45" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-46.gif" id="ch3-Z-G-46" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-47.gif" id="ch3-Z-G-47" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-48.gif" id="ch3-Z-G-48" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-49.gif" id="ch3-Z-G-49" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-5.gif" id="ch3-Z-G-5" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-50.gif" id="ch3-Z-G-50" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-51.gif" id="ch3-Z-G-51" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-52.gif" id="ch3-Z-G-52" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-53.gif" id="ch3-Z-G-53" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-54.gif" id="ch3-Z-G-54" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-55.gif" id="ch3-Z-G-55" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-56.gif" id="ch3-Z-G-56" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-57.gif" id="ch3-Z-G-57" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-58.gif" id="ch3-Z-G-58" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-59.gif" id="ch3-Z-G-59" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-6.gif" id="ch3-Z-G-6" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-60.gif" id="ch3-Z-G-60" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-7.gif" id="ch3-Z-G-7" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-8.gif" id="ch3-Z-G-8" media-type="image/gif"/>
+    <item href="OEBPS/images/ch3-Z-G-9.gif" id="ch3-Z-G-9" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-1.gif" id="ch4-Z-G-1" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-10.gif" id="ch4-Z-G-10" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-2.gif" id="ch4-Z-G-2" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-3.gif" id="ch4-Z-G-3" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-4.gif" id="ch4-Z-G-4" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-5.gif" id="ch4-Z-G-5" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-6.gif" id="ch4-Z-G-6" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-7.gif" id="ch4-Z-G-7" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-8.gif" id="ch4-Z-G-8" media-type="image/gif"/>
+    <item href="OEBPS/images/ch4-Z-G-9.gif" id="ch4-Z-G-9" media-type="image/gif"/>
+    <item href="OEBPS/images/ch5-Z-G-1.gif" id="ch5-Z-G-1" media-type="image/gif"/>
+    <item href="OEBPS/images/ch5-Z-G-2.gif" id="ch5-Z-G-2" media-type="image/gif"/>
+    <item href="OEBPS/images/ch5-Z-G-3.gif" id="ch5-Z-G-3" media-type="image/gif"/>
+    <item href="OEBPS/images/ch5-Z-G-4.gif" id="ch5-Z-G-4" media-type="image/gif"/>
+    <item href="OEBPS/images/ch5-Z-G-5.gif" id="ch5-Z-G-5" media-type="image/gif"/>
+    <item href="OEBPS/images/ch5-Z-G-6.gif" id="ch5-Z-G-6" media-type="image/gif"/>
+    <item href="OEBPS/images/ch5-Z-G-7.gif" id="ch5-Z-G-7" media-type="image/gif"/>
+    <item href="OEBPS/images/ch5-Z-G-8.gif" id="ch5-Z-G-8" media-type="image/gif"/>
+    <item href="OEBPS/images/ch5-Z-G-9.gif" id="ch5-Z-G-9" media-type="image/gif"/>
+    <item href="OEBPS/images/chip.jpg" id="chip" media-type="image/jpeg"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="book-Z-H-1"/>
+    <itemref idref="book-Z-H-2"/>
+    <itemref idref="book-Z-H-3"/>
+    <itemref idref="book-Z-H-5"/>
+    <itemref idref="book-Z-H-6"/>
+    <itemref idref="book-Z-H-7"/>
+    <itemref idref="book-Z-H-8"/>
+    <itemref idref="book-Z-H-9"/>
+    <itemref idref="book-Z-H-10"/>
+    <itemref idref="book-Z-H-11"/>
+    <itemref idref="book-Z-H-12"/>
+    <itemref idref="book-Z-H-13"/>
+    <itemref idref="book-Z-H-14"/>
+    <itemref idref="book-Z-H-15"/>
+    <itemref idref="book-Z-H-16"/>
+    <itemref idref="book-Z-H-17"/>
+    <itemref idref="book-Z-H-18"/>
+    <itemref idref="book-Z-H-19"/>
+    <itemref idref="book-Z-H-20"/>
+    <itemref idref="book-Z-H-21"/>
+    <itemref idref="book-Z-H-22"/>
+    <itemref idref="book-Z-H-23"/>
+    <itemref idref="book-Z-H-24"/>
+    <itemref idref="book-Z-H-25"/>
+    <itemref idref="book-Z-H-26"/>
+    <itemref idref="book-Z-H-27"/>
+    <itemref idref="book-Z-H-28"/>
+    <itemref idref="book-Z-H-29"/>
+    <itemref idref="book-Z-H-30"/>
+    <itemref idref="book-Z-H-31"/>
+    <itemref idref="book-Z-H-32"/>
+    <itemref idref="book-Z-H-33"/>
+    <itemref idref="book-Z-H-34"/>
+    <itemref idref="book-Z-H-35"/>
+    <itemref idref="book-Z-H-36"/>
+    <itemref idref="book-Z-H-37"/>
+    <itemref idref="book-Z-H-38"/>
+    <itemref idref="added" linear="no"/>
+  </spine>
+  <guide>
+    <reference href="OEBPS/book.html" type="cover" title="Cover"/>
+  </guide>
+</package>

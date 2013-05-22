@@ -1,0 +1,23 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: ch02lev1sec5.html
+next: ch03lev1sec1.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<a name="ch03" class="calibre18" id="ch03"></a>
+<div class="calibre32" id="calibre_pb_0"></div><div class="calibre32"></div><h2 id="title-IDA0UVRH" class="docPrefaceTitle">Chapter 3. Sharing Objects</h2>
+<p class="docText1"><a name="iddle1031" class="calibre18" id="iddle1031"></a><a name="iddle1753" class="calibre18" id="iddle1753"></a><a name="iddle3209" class="calibre18" id="iddle3209"></a><a name="iddle3211" class="calibre18" id="iddle3211"></a><a name="iddle3362" class="calibre18" id="iddle3362"></a><a name="iddle4237" class="calibre18" id="iddle4237"></a><a name="iddle4408" class="calibre18" id="iddle4408"></a><a name="iddle4409" class="calibre18" id="iddle4409"></a><a name="iddle4548" class="calibre18" id="iddle4548"></a><a name="iddle4560" class="calibre18" id="iddle4560"></a><a name="iddle5105" class="calibre18" id="iddle5105"></a><a name="iddle5107" class="calibre18" id="iddle5107"></a>We stated at the beginning of <a class="calibre2" href="ch02_split_000.html#ch02">Chapter 2</a> that writing correct concurrent programs is primarily about managing access to shared, mutable state. That chapter was about using synchronization to prevent multiple threads from accessing the same data at the same time; this chapter examines techniques for sharing and publishing objects so they can be safely accessed by multiple threads. Together, they lay the foundation for building thread-safe classes and safely structuring concurrent applications using the <tt class="calibre25">java.util.concurrent</tt> library classes.</p>
+<p class="docText1">We have seen how <tt class="calibre25">synchronized</tt> blocks and methods can ensure that operations execute atomically, but it is a common misconception that <tt class="calibre25">synchronized</tt> is <span class="docEmphasis">only</span> about atomicity or demarcating "critical sections". Synchronization also has another significant, and subtle, aspect: <span class="docEmphasis">memory visibility</span>. We want not only to prevent one thread from modifying the state of an object when another is using it, but also to ensure that when a thread modifies the state of an object, other threads can actually <span class="docEmphasis">see</span> the changes that were made. But without synchronization, this may not happen. You can ensure that objects are published safely either by using explicit synchronization or by taking advantage of the synchronization built into library classes.</p>
+
+<p class="calibre1"> </p>
+
+</div>
+
+{% endraw %}
+

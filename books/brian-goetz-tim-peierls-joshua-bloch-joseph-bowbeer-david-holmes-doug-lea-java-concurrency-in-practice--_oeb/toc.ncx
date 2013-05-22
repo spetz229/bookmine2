@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="2ccdf159-815d-4196-957f-fa61a482ed7b" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Java Concurrency in Practice</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="ea2d78c7-68da-45f3-8630-7f2df94aa4dd" playOrder="1">
+      <navLabel>
+        <text>Chapter 1. Introduction</text>
+      </navLabel>
+      <content src="ch01.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="3892adb0-a77a-485e-9bcf-4aee3663ac7b" playOrder="2">
+      <navLabel>
+        <text>Part I: Fundamentals</text>
+      </navLabel>
+      <content src="part01.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="0e0fd87f-b993-4532-91a7-64293c771cc6" playOrder="3">
+      <navLabel>
+        <text>Chapter 2. Thread Safety</text>
+      </navLabel>
+      <content src="ch02_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="f79c973f-edb9-447c-a379-2c4fd50217e9" playOrder="4">
+      <navLabel>
+        <text>Chapter 3. Sharing Objects</text>
+      </navLabel>
+      <content src="ch03.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="257f3de7-8993-4c43-8ac0-182adce689a8" playOrder="5">
+      <navLabel>
+        <text>Chapter 4. Composing Objects</text>
+      </navLabel>
+      <content src="ch04.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="f4deae78-8ba5-4bc4-be65-dbac60300ae9" playOrder="6">
+      <navLabel>
+        <text>Chapter 5. Building Blocks</text>
+      </navLabel>
+      <content src="ch05.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="4fbd8871-6c59-4c38-ad33-cb8164e36179" playOrder="7">
+      <navLabel>
+        <text>Part II: Structuring Concurrent Applications</text>
+      </navLabel>
+      <content src="part02.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="7849d09b-5fe5-4244-8f25-d5290dfac255" playOrder="8">
+      <navLabel>
+        <text>Chapter 6. Task Execution</text>
+      </navLabel>
+      <content src="ch06.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="8133e446-7cd9-4b0a-8a9b-40d9c945caa6" playOrder="9">
+      <navLabel>
+        <text>Chapter 7. Cancellation and Shutdown</text>
+      </navLabel>
+      <content src="ch07.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="46629923-9d5e-4114-8fd0-98db9b3ff2fb" playOrder="10">
+      <navLabel>
+        <text>Chapter 8. Applying Thread Pools</text>
+      </navLabel>
+      <content src="ch08.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="86a48d86-e64e-4c91-ae01-047d90f4f150" playOrder="11">
+      <navLabel>
+        <text>Chapter 9. GUI Applications</text>
+      </navLabel>
+      <content src="ch09.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="6b8675e4-0bf7-44ba-bd8e-5c1669f79c57" playOrder="12">
+      <navLabel>
+        <text>Part III: Liveness, Performance, and Testing</text>
+      </navLabel>
+      <content src="part03.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="896d3d9d-3333-49b5-93b1-4c1f565fb56a" playOrder="13">
+      <navLabel>
+        <text>Chapter 10. Avoiding Liveness Hazards</text>
+      </navLabel>
+      <content src="ch10.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="70c8abd3-f7ce-4634-815b-bb1d6dfd6f6d" playOrder="14">
+      <navLabel>
+        <text>Chapter 11. Performance and Scalability</text>
+      </navLabel>
+      <content src="ch11.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="e9da0c92-6178-4c88-b65a-ab4b6634e507" playOrder="15">
+      <navLabel>
+        <text>Chapter 12. Testing Concurrent Programs</text>
+      </navLabel>
+      <content src="ch12.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="e6725e65-c97b-4407-9b2f-55e08baae729" playOrder="16">
+      <navLabel>
+        <text>Part IV: Advanced Topics</text>
+      </navLabel>
+      <content src="part04.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="2e6da39b-e1ef-4e6c-a9eb-e26f0d4728e6" playOrder="17">
+      <navLabel>
+        <text>Chapter 13. Explicit Locks</text>
+      </navLabel>
+      <content src="ch13.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="b0c498f6-5f40-401b-9c25-f1c82eb1e9c8" playOrder="18">
+      <navLabel>
+        <text>Chapter 14. Building Custom Synchronizers</text>
+      </navLabel>
+      <content src="ch14.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="1a462334-512d-4154-a91a-a3b3b8706435" playOrder="19">
+      <navLabel>
+        <text>Chapter 15. Atomic Variables and Nonblocking Synchronization</text>
+      </navLabel>
+      <content src="ch15.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="cc734a28-612f-4990-90a5-8abb3ced55e3" playOrder="20">
+      <navLabel>
+        <text>Chapter 16. The Java Memory Model</text>
+      </navLabel>
+      <content src="ch16.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

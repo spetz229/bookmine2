@@ -1,0 +1,137 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: starting_list.html
+next: starting_types_split_000.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="starting_list.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="starting_types_split_000.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="starting_string" class="calibre27" id="starting_string"></a><h3 id="title-IDAVU0NB" class="docSection1Title">1.6. Strings and Characters</h3><a name="x_H2" class="calibre27" id="x_H2"></a><p class="docText">If<a name="I_indexterm1_d1e2240" class="calibre27" id="I_indexterm1_d1e2240"></a><a name="I_indexterm1_d1e2241" class="calibre27" id="I_indexterm1_d1e2241"></a><a name="I_indexterm1_d1e2244" class="calibre27" id="I_indexterm1_d1e2244"></a> you know a language such as Perl or C, you'll find
+    Haskell's notations for strings familiar.</p><a name="x_I2" class="calibre27" id="x_I2"></a><p class="docText">A text string is surrounded by<a name="I_indexterm1_d1e2250" class="calibre27" id="I_indexterm1_d1e2250"></a><a name="I_indexterm1_d1e2253" class="calibre27" id="I_indexterm1_d1e2253"></a> double quotes:</p><pre class="calibre39">ghci&gt; <b class="calibre40">"This is a string."</b>
+"This is a string."
+</pre><a name="x_J2" class="calibre27" id="x_J2"></a><p class="docText">As in <a name="I_indexterm1_d1e2265" class="calibre27" id="I_indexterm1_d1e2265"></a>many languages, we can represent hard-to-see characters by
+    "escaping" them. Haskell's escape characters and escaping
+    rules follow the widely used conventions <span class="docEmphasis">established</span> by the C language. For
+    <a name="I_indexterm1_d1e2275" class="calibre27" id="I_indexterm1_d1e2275"></a><a name="I_indexterm1_d1e2278" class="calibre27" id="I_indexterm1_d1e2278"></a><a name="I_indexterm1_d1e2281" class="calibre27" id="I_indexterm1_d1e2281"></a><a name="I_indexterm1_d1e2284" class="calibre27" id="I_indexterm1_d1e2284"></a>example, <tt class="calibre34">'\n'</tt> denotes a
+    newline character, and <tt class="calibre34">'\t'</tt> is a tab
+    character. For complete details, see <a class="docLink" href="escapes_split_000.html#escapes">Appendix B</a>.</p><pre class="calibre39">ghci&gt; <b class="calibre40">putStrLn "Here's a newline --&gt;\n&lt;-- See?"</b>
+Here's a newline --&gt;
+&lt;-- See?
+</pre><a name="x_AB1" class="calibre27" id="x_AB1"></a><p class="docText">The <i class="docEmphasis">putStrLn</i>
+    function<a name="I_indexterm1_d1e2308" class="calibre27" id="I_indexterm1_d1e2308"></a> prints a string.</p><a name="x_Q2" class="calibre27" id="x_Q2"></a><p class="docText">Haskell makes a distinction between single characters and
+    text strings. A single character is enclosed in single quotes:</p><pre class="calibre39">ghci&gt; <b class="calibre40">'a'</b>
+'a'
+</pre><a name="x_R2" class="calibre27" id="x_R2"></a><p class="docText">In fact, a text string is simply a list of individual
+    characters. Here's a painful way to write a short string, which <i class="docEmphasis">ghci</i> gives<a name="I_indexterm1_d1e2325" class="calibre27" id="I_indexterm1_d1e2325"></a> back to us in a more familiar form:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let a = ['l', 'o', 't', 's', ' ', 'o', 'f', ' ', 'w', 'o', 'r', 'k']</b>ghci&gt; <b class="calibre40">a</b>
+"lots of work"
+ghci&gt; <b class="calibre40">a == "lots of work"</b>
+True</pre><a name="x_BB1" class="calibre27" id="x_BB1"></a><p class="docText">The empty string is written
+    <tt class="calibre34"/><tt class="calibre34">""S</tt>, and is a synonym for
+    <tt class="calibre34">[]</tt>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">"" == []</b>
+True
+</pre><a name="x_CB1" class="calibre27" id="x_CB1"></a><p class="docText">Since a string is a list of characters, we can use the
+    regular list operators to construct new strings:</p><pre class="calibre39">ghci&gt; <b class="calibre40">'a':"bc"</b>
+"abc"
+ghci&gt; <b class="calibre40">"foo" ++ "bar"</b>
+"foobar"</pre>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="starting_list.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="starting_types_split_000.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

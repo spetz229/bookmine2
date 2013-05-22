@@ -1,0 +1,155 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: typeclasses_split_001.html
+next: typeclasses_whatarethey.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="typeclasses_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="typeclasses_whatarethey.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="typeclasses_need" class="calibre27" id="typeclasses_need"></a><h3 id="title-IDA5OZXD" class="docSection1Title">6.1. The Need for Typeclasses</h3><a name="x_jA" class="calibre27" id="x_jA"></a><p class="docText">Let's imagine that for some unfathomable<a name="I_indexterm6_d1e14911" class="calibre27" id="I_indexterm6_d1e14911"></a> reason, the designers of the Haskell language neglected to
+    implement the equality test <tt class="calibre34">==</tt>. Once
+    you get over your shock at hearing this, you resolve to implement your own
+    equality tests. Your application consists of a simple <tt class="calibre34">Color</tt> type, and so your first equality test is
+    for this type. Your first attempt might look like this:</p><pre class="calibre39">-- file: ch06/naiveeq.hs
+data Color = Red | Green | Blue
+
+colorEq :: Color -&gt; Color -&gt; Bool
+colorEq Red   Red   = True
+colorEq Green Green = True
+colorEq Blue  Blue  = True
+colorEq _     _     = False</pre><br class="calibre48"/>
+<a name="x_kA" class="calibre27" id="x_kA"></a><p class="docText">You can test this with <i class="docEmphasis">ghci</i>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:load naiveeq.hs</b>
+[1 of 1] Compiling Main             ( naiveeq.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">colorEq Red Red</b>
+True
+ghci&gt; <b class="calibre40">colorEq Red Green</b>
+False</pre><a name="x_lA" class="calibre27" id="x_lA"></a><p class="docText">Now, let's say that you want to add an equality test for
+    <tt class="calibre34">String</tt>s. Since a Haskell <tt class="calibre34">String</tt> is a list of characters, we can write a
+    simple function to perform that test. For simplicity, we cheat a bit and
+    use <a name="I_indexterm6_d1e14953" class="calibre27" id="I_indexterm6_d1e14953"></a>the <tt class="calibre34">==</tt> operator here to
+    illustrate:</p><pre class="calibre39">-- file: ch06/naiveeq.hs
+stringEq :: [Char] -&gt; [Char] -&gt; Bool
+
+-- Match if both are empty
+stringEq [] [] = True
+
+-- If both start with the same char, check the rest
+stringEq (x:xs) (y:ys) = x == y &amp;&amp; stringEq xs ys
+
+-- Everything else doesn't match
+stringEq _ _ = False</pre><br class="calibre48"/>
+<a name="x_mA" class="calibre27" id="x_mA"></a><p class="docText">You should now be able to see a problem: we have to use a
+    function with a different name for every different type that we want to be
+    able to compare. That's inefficient and annoying. It's much more
+    convenient to be able to just use <tt class="calibre34">==</tt> to
+    compare anything. It may also be useful to write generic functions such as
+    <tt class="calibre34">/=</tt> that could be implemented in terms
+    of <tt class="calibre34">==</tt>, and valid for almost anything.
+    By having a generic function that can compare anything, we can also make
+    our code generic: if a piece of code needs only to compare things, then it
+    ought to be able to accept any data type that the compiler knows how to
+    compare. What's more, if new data types are added later, the existing code
+    shouldn't have to be modified.</p><a name="x_jp" class="calibre27" id="x_jp"></a><p class="docText">Haskell's typeclasses are designed to address all of these
+    things.</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="typeclasses_split_000.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="typeclasses_whatarethey.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

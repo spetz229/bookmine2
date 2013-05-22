@@ -1,0 +1,377 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: I_sect111_d1e26537.html
+next: I_sect111_d1e27052.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect111_d1e26537.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect111_d1e27052.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="quickcheck_indepth" class="calibre27" id="quickcheck_indepth"></a><h3 id="title-IDA4F2VD" class="docSection1Title">11.2. Testing Case Study: Specifying a Pretty Printer</h3><a name="x_K21" class="calibre27" id="x_K21"></a><p class="docText">Testing<a name="I_indexterm11_d1e26748" class="calibre27" id="I_indexterm11_d1e26748"></a><a name="ch11-prettyprinttest" class="calibre27" id="ch11-prettyprinttest"></a> individual functions for their natural properties is one of
+    the basic building blocks that guides development of large systems in
+    Haskell. We'll look now at a more complicated scenario: taking the
+    pretty-printing library developed in earlier chapters and building a test
+    suite for it.</p><a name="quickcheck_indepthd1e27107" class="calibre27" id="quickcheck_indepthd1e27107"></a><h4 id="title-IDARG2VD" class="docSection1Title">11.2.1. Generating Test Data</h4><a name="x_L21" class="calibre27" id="x_L21"></a><p class="docText">Recall that the pretty printer is built around the
+      Doc, <a name="I_indexterm11_d1e26763" class="calibre27" id="I_indexterm11_d1e26763"></a>an algebraic data type that represents well-formed
+      documents:</p><pre class="calibre39">-- file: ch11/Prettify2.hs
+
+data Doc = Empty
+         | Char Char
+         | Text String
+         | Line
+         | Concat Doc Doc
+         | Union Doc Doc
+         deriving (Show,Eq)</pre><br class="calibre48"/>
+<a name="x_M21" class="calibre27" id="x_M21"></a><p class="docText">The library itself is implemented as a set of functions
+      that build and transform values of this document type, before finally
+      rendering the finished document to a string.</p><a name="x_N21" class="calibre27" id="x_N21"></a><p class="docText">QuickCheck encourages<a name="I_indexterm11_d1e26775" class="calibre27" id="I_indexterm11_d1e26775"></a> an approach to testing where the developer specifies
+      invariants that should hold for any data we can throw at the code. To
+      test the pretty-printing library, then, we'll need a source of input
+      data. To do this, we take advantage of the small combinator suite for
+      building random data that QuickCheck provides via the
+      Arbitrary class. The<a name="I_indexterm11_d1e26784" class="calibre27" id="I_indexterm11_d1e26784"></a><a name="I_indexterm11_d1e26787" class="calibre27" id="I_indexterm11_d1e26787"></a> class provides a function, <tt class="calibre34">arbitrary</tt>, to
+      generate data of each type. With it, we can define our data generator
+      for our custom data types:<sup class="docFootnote"><a class="docLink1" href="#x_N21d1e27146">[29]</a></sup></p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_N21d1e27146" class="calibre5" id="x_N21d1e27146">[29]</a></sup> The class also defines a method,
+          <tt class="calibre34">coarbitrary</tt>, which, given a value of some type, yields
+          a function for new generators. We can disregard for now, as it is
+          only needed for generating random values of function type. One
+          result of disregarding <tt class="calibre34">coarbitrary</tt> is that GHC will
+          warn about it not being defined. However, it is safe to ignore these
+          warnings.</p></blockquote><pre class="calibre39">-- file: ch11/Arbitrary.hs
+class Arbitrary a where
+  arbitrary   :: Gen a</pre><br class="calibre48"/>
+<a name="x_P21" class="calibre27" id="x_P21"></a><p class="docText">One thing to notice is that the generators run in a
+      Gen environment,<a name="I_indexterm11_d1e26810" class="calibre27" id="I_indexterm11_d1e26810"></a> indicated by the type. This is a simple state-passing
+      monad that is used to hide the random number generator state that is
+      threaded through the code. We'll look thoroughly at monads in later
+      chapters, but for now it suffices to know that, as Gen is
+      defined as a monad, we can use <tt class="calibre34">do</tt> syntax to write new
+      generators that access the implicit random number source. To actually
+      write generators for our custom type, we use any of a set of functions
+      defined in the library for introducing new random values and gluing them
+      together to build up data structures of the type we're interested in.
+      The types of the key functions are:</p><pre class="calibre39">-- file: ch11/Arbitrary.hs
+  elements :: [a] -&gt; Gen a
+  choose   :: Random a =&gt; (a, a) -&gt; Gen a
+  oneof    :: [Gen a] -&gt; Gen a</pre><br class="calibre48"/>
+<a name="x_Q21" class="calibre27" id="x_Q21"></a><p class="docText">The function <tt class="calibre34">elements</tt>, for<a name="I_indexterm11_d1e26827" class="calibre27" id="I_indexterm11_d1e26827"></a> example, takes a list of values and returns a generator
+      of random values from that list. (We'll use <tt class="calibre34">choose</tt> and
+      <tt class="calibre34">oneof</tt> later.) With it, we can start writing generators for
+      simple data types. For example, if we define a new data type for ternary
+      logic:</p><pre class="calibre39">-- file: ch11/Arbitrary.hs
+data Ternary
+    = Yes
+    | No
+    | Unknown
+    deriving (Eq,Show)</pre><br class="calibre48"/>
+<a name="x_VF1" class="calibre27" id="x_VF1"></a><p class="docText">we can write an Arbitrary instance for the
+      Ternary type<a name="I_indexterm11_d1e26848" class="calibre27" id="I_indexterm11_d1e26848"></a> by defining a function that picks elements from a list of
+      the possible values of the Ternary type:</p><pre class="calibre39">-- file: ch11/Arbitrary.hs
+instance Arbitrary Ternary where
+  arbitrary     = elements [Yes, No, Unknown]</pre><br class="calibre48"/>
+<a name="x_R21" class="calibre27" id="x_R21"></a><p class="docText">Another approach to data generation is to generate
+      values for one of the basic Haskell types and then translate those
+      values into the type we're actually interested in. We could have written
+      the Ternary instance by generating integer values from 0 to
+      2 instead, using <tt class="calibre34">choose</tt>, and then mapping them onto the
+      ternary values:</p><pre class="calibre39">-- file: ch11/Arbitrary2.hs
+instance Arbitrary Ternary where
+  arbitrary     = do
+      n &lt;- choose (0, 2) :: Gen Int
+      return $ case n of
+                    0 -&gt; Yes
+                    1 -&gt; No
+                    _ -&gt; Unknown</pre><br class="calibre48"/>
+<a name="x_S21" class="calibre27" id="x_S21"></a><p class="docText">For simple <span class="docEmphasis">sum</span> types,<a name="I_indexterm11_d1e26872" class="calibre27" id="I_indexterm11_d1e26872"></a><a name="I_indexterm11_d1e26875" class="calibre27" id="I_indexterm11_d1e26875"></a> this approach works well, as the integers map nicely onto
+      the constructors of the data type. For <span class="docEmphasis">product</span>
+      types (such as structures and tuples), we need to instead generate each
+      component of the product separately (and recursively for <span class="docEmphasis">nested</span> types), and then combine the
+      components. For example, to generate random pairs of random
+      values:</p><pre class="calibre39">-- file: ch11/Arbitrary.hs
+instance (Arbitrary a, Arbitrary b) =&gt; Arbitrary (a, b) where
+  arbitrary = do
+      x &lt;- arbitrary
+      y &lt;- arbitrary
+      return (x, y)</pre><br class="calibre48"/>
+<a name="x_T21" class="calibre27" id="x_T21"></a><p class="docText">So let's now write a generator for all the different
+      variants of the Doc type. We'll start by breaking the
+      problem down, first generating random constructors for each type, and
+      then, depending on the result, the components of each field. The most
+      complicated case are the union and concatenation variants.</p><a name="x_WF1" class="calibre27" id="x_WF1"></a><p class="docText">First, though, we need to write an instance for
+      generating random characters—<span class="docEmphasis">QuickCheck</span> doesn't have a default instance
+      for characters, due to the abundance of different text encodings we
+      might want to use for character tests. We'll write our own, and, as we
+      don't care about the actual text content of the document, a simple
+      generator of alphabetic characters and punctuation will suffice (richer
+      generators are simple extensions of this basic approach):</p><pre class="calibre39">-- file: ch11/QC.hs
+instance Arbitrary Char where
+    arbitrary = elements (['A'..'Z'] ++ ['a' .. 'z'] ++ " ~!@#$%^&amp;*()")</pre><br class="calibre48"/>
+<a name="x_U21" class="calibre27" id="x_U21"></a><p class="docText">With this in place, we can now write an instance for
+      documents by enumerating the constructors and filling in the fields. We
+      choose a random integer to represent which document variant to generate,
+      and then dispatch based on the result. To generate concat or union
+      document nodes, we just recurse on <tt class="calibre34">arbitrary</tt>, letting type
+      inference determine which instance of <tt class="calibre34">Arbitrary</tt> we
+      mean:</p><pre class="calibre39">-- file: ch11/QC.hs
+instance Arbitrary Doc where
+    arbitrary = do
+        n &lt;- choose (1,6) :: Gen Int
+        case n of
+             1 -&gt; return Empty
+
+             2 -&gt; do x &lt;- arbitrary
+                     return (Char x)
+
+             3 -&gt; do x &lt;- arbitrary
+                     return (Text x)
+
+             4 -&gt; return Line
+
+             5 -&gt; do x &lt;- arbitrary
+                     y &lt;- arbitrary
+                     return (Concat x y)
+
+             6 -&gt; do x &lt;- arbitrary
+                     y &lt;- arbitrary
+                     return (Union x y)</pre><br class="calibre48"/>
+<a name="x_V21" class="calibre27" id="x_V21"></a><p class="docText">That was fairly straightforward, and we can clean it up
+      some more by using the <tt class="calibre34">oneof</tt> function, whose type we saw
+      earlier, to pick between different generators in a list (we can also use
+      the monadic combinator, <tt class="calibre34">liftM</tt>, in order to avoid naming
+      intermediate results from each generator):</p><pre class="calibre39">-- file: ch11/QC.hs
+instance Arbitrary Doc where
+    arbitrary =
+        oneof [ return Empty
+              , liftM  Char   arbitrary
+              , liftM  Text   arbitrary
+              , return Line
+              , liftM2 Concat arbitrary arbitrary
+              , liftM2 Union  arbitrary arbitrary ]</pre><br class="calibre48"/>
+<a name="x_W21" class="calibre27" id="x_W21"></a><p class="docText">The latter is more concise—just picking between a list
+      of generators—but they describe the same data either way. We can check
+      that the output makes sense, by generating a list of random documents
+      (seeding the pseudorandom generator with an initial seed of 2):</p><pre class="calibre39">ghci&gt; <b class="calibre40">generate 10 (System.Random.mkStdGen 2) arbitrary :: [Doc]</b>
+[Line,Empty,Union Empty Line,Union (Char 'R') (Concat (Union Line (Concat 
+(Text "i@BmSu") (Char ')'))) (Union (Concat (Concat (Concat (Text "kqV!iN") 
+Line) Line) Line) Line)),Char 'M',Text "YdwVLrQOQh"]
+</pre><a name="x_X21" class="calibre27" id="x_X21"></a><p class="docText">Looking at the output, we see a good mix of simple base
+      cases and some more complicated nested documents. We'll be generating
+      hundreds of these each test run so that should do a pretty good job. We
+      can now write some generic properties for our document functions.</p><a name="quickcheck_indepthd1e27284" class="calibre27" id="quickcheck_indepthd1e27284"></a><h4 id="title-IDA4M2VD" class="docSection1Title">11.2.2. Testing Document Construction</h4><a name="x_Y21" class="calibre27" id="x_Y21"></a><p class="docText">Two of the basic functions on documents are the null
+      document constant (a nullary function), <tt class="calibre34">empty</tt>, and the
+      append function. Their types are:</p><pre class="calibre39">-- file: ch11/Prettify2.hs
+empty :: Doc
+(&lt;&gt;)  :: Doc -&gt; Doc -&gt; Doc</pre><br class="calibre48"/>
+<a name="x_Z21" class="calibre27" id="x_Z21"></a><p class="docText">Together, these should have a nice property: appending
+      or prepending the empty list onto a second list should leave the second
+      list unchanged. We can state this invariant as a property:</p><pre class="calibre39">-- file: ch11/QC.hs
+prop_empty_id x =
+    empty &lt;&gt; x == x
+  &amp;&amp;
+    x &lt;&gt; empty == x</pre><br class="calibre48"/>
+<a name="x_a21" class="calibre27" id="x_a21"></a><p class="docText">Confirming that this is indeed true, we're now underway
+      with our testing:</p><pre class="calibre39">ghci&gt; <b class="calibre40">quickCheck prop_empty_id</b>
+ passed 100 tests.
+</pre><a name="x_b21" class="calibre27" id="x_b21"></a><p class="docText">Use this in order to look at what actual test documents
+      were generated (by replacing <tt class="calibre34">quickCheck</tt> with
+      <tt class="calibre34">verboseCheck</tt>). If we look at a good mixture of both simple
+      and complicated cases, we see a good mixture being generated. We can
+      refine the data generation further, with constraints on the proportion
+      of generated data, if desirable.</p><a name="x_c21" class="calibre27" id="x_c21"></a><p class="docText">Other functions in the API are also simple enough to
+      have their behavior fully described via properties. By doing so we can
+      maintain an external, checkable description of the function's behavior,
+      so later changes won't break these basic invariants.</p><pre class="calibre39">-- file: ch11/QC.hs
+
+prop_char c   = char c   == Char c
+
+prop_text s   = text s   == if null s then Empty else Text s
+
+prop_line     = line     == Line
+
+prop_double d = double d == text (show d)</pre><br class="calibre48"/>
+<a name="x_d21" class="calibre27" id="x_d21"></a><p class="docText">These properties are enough to fully test the structure
+      returned by the basic document operators. Testing the rest of the
+      library will require more work.</p><a name="quickcheck_indepthd1e27322" class="calibre27" id="quickcheck_indepthd1e27322"></a><h4 id="title-IDAPO2VD" class="docSection1Title">11.2.3. Using Lists as a Model</h4><a name="x_e21" class="calibre27" id="x_e21"></a><p class="docText">Higher order <a name="I_indexterm11_d1e26975" class="calibre27" id="I_indexterm11_d1e26975"></a>functions are the basic glue of reusable programming, and
+      our pretty-printer library is no exception—a custom fold function is
+      used internally to implement both document concatenation and
+      interleaving separators between document chunks. The <tt class="calibre34">fold</tt>
+      defined for documents takes a list of document pieces and glues them all
+      together with a supplied combining function:</p><pre class="calibre39">-- file: ch11/Prettify2.hs
+fold :: (Doc -&gt; Doc -&gt; Doc) -&gt; [Doc] -&gt; Doc
+fold f = foldr f empty</pre><br class="calibre48"/>
+<a name="x_f21" class="calibre27" id="x_f21"></a><p class="docText">We can write tests in isolation for specific instances
+      of fold easily. Horizontal concatenation of documents, for example, is
+      easy to specify by writing a reference implementation on lists:</p><pre class="calibre39">-- file: ch11/QC.hs
+
+prop_hcat xs = hcat xs == glue xs
+    where
+        glue []     = empty
+        glue (d:ds) = d &lt;&gt; glue ds</pre><br class="calibre48"/>
+<a name="x_g21" class="calibre27" id="x_g21"></a><p class="docText">It is a similar story for <tt class="calibre34">punctuate</tt>, where
+      we can model inserting punctuation with list interspersion (from
+      <tt class="calibre34">Data.List</tt>, <tt class="calibre34">intersperse</tt> is a function that
+      takes an element and interleaves it between other elements of a
+      list):</p><pre class="calibre39">-- file: ch11/QC.hs
+
+prop_punctuate s xs = punctuate s xs == intersperse s xs</pre><br class="calibre48"/>
+<a name="x_h21" class="calibre27" id="x_h21"></a><p class="docText">While this looks fine, running it reveals a flaw in our
+      reasoning:</p><pre class="calibre39">ghci&gt; <b class="calibre40"> quickCheck prop_punctuate</b>
+Falsifiable, after 6 tests:
+Empty
+[Line,Text "",Line]
+</pre><a name="x_i21" class="calibre27" id="x_i21"></a><p class="docText">The pretty-printing library optimizes away redundant
+      empty documents, something the model implementation doesn't do, so we'll
+      need to augment our model to match reality. First, we can intersperse
+      the punctuation text throughout the document list, and then a little
+      loop to clean up the <tt class="calibre34">Empty</tt> documents scattered through,
+      like so:</p><pre class="calibre39">-- file: ch11/QC.hs
+prop_punctuate' s xs = punctuate s xs == combine (intersperse s xs)
+    where
+        combine []           = []
+        combine [x]          = [x]
+
+        combine (x:Empty:ys) = x : combine ys
+        combine (Empty:y:ys) = y : combine ys
+        combine (x:y:ys)     = x `Concat` y : combine ys</pre><br class="calibre48"/>
+<a name="x_j21" class="calibre27" id="x_j21"></a><p class="docText">Running this in GHCi, we can confirm the result. It is
+      reassuring to have the test framework spot the flaws in our reasoning
+      about the code—exactly what we're looking for:</p><pre class="calibre39">ghci&gt; <b class="calibre40">quickCheck prop_punctuate'</b>
+passed 100 tests.
+</pre><a name="quickcheck_indepthd1e27380" class="calibre27" id="quickcheck_indepthd1e27380"></a><h4 id="title-IDAYQ2VD" class="docSection1Title">11.2.4. Putting It All Together</h4><a name="x_k21" class="calibre27" id="x_k21"></a><p class="docText">We can put all these tests together in a single file
+      and run them simply using one of QuickCheck's driver functions. Several
+      exist, including elaborate parallel ones. The basic batch driver is
+      often good enough, however. All we need do is set up some default test
+      parameters, and then list the functions we want to test:</p><pre class="calibre39">-- file: ch11/Run.hs
+import Prettify2
+import Test.QuickCheck.Batch
+
+options = TestOptions
+      { no_of_tests         = 200
+      , length_of_tests     = 1
+      , debug_tests         = False }
+
+main = do
+    runTests "simple" options
+        [ run prop_empty_id
+        , run prop_char
+        , run prop_text
+        , run prop_line
+        , run prop_double
+        ]
+
+    runTests "complex" options
+        [ run prop_hcat
+        , run prop_puncutate'
+        ]</pre><br class="calibre48"/>
+<a name="x_l21" class="calibre27" id="x_l21"></a><p class="docText">We've structured the code here as a separate,
+      standalone test script, with instances and properties in their own file,
+      separate from the library source. This is typical for library projects,
+      where the tests are kept apart from the library itself, and where they
+      import the library via the module system. The test script can then be
+      compiled and executed:</p><pre class="calibre39">$ <b class="calibre40">ghc --make Run.hs</b>$ <b class="calibre40">./Run </b>
+                 simple : .....                            (1000)
+                complex : ..                               (400)</pre><a name="x_m21" class="calibre27" id="x_m21"></a><p class="docText">A total of 1,400 individual tests were created, which
+      is comforting. We can increase the depth easily enough, but to find out
+      exactly how well the code is being tested, we should turn to the
+      built-in code coverage tool, HPC, which can state precisely what is
+      going on.</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="I_sect111_d1e26537.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="I_sect111_d1e27052.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

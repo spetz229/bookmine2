@@ -1,0 +1,41 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: systems_split_000.html
+next: systems_running.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<div class="calibre47"></div><h2 id="title-IDAXMK1D" class="docPrefaceTitle">Chapter 20. Systems Programming in Haskell</h2><a name="x_Ia" class="calibre5" id="x_Ia"></a><p class="docText">So far, we've been<a name="ch20-systemprogramming" class="calibre27" id="ch20-systemprogramming"></a> talking mostly about high-level concepts. Haskell can also be
+  used for lower-level systems programming. It is quite possible to write
+  programs that interface with the operating system at a low level using
+  Haskell.</p><a name="x_Ja" class="calibre5" id="x_Ja"></a><p class="docText">In this chapter, we are going to attempt something
+  ambitious: a Perl-like "language" that is valid Haskell, implemented in pure
+  Haskell, that makes <a name="I_indexterm20_d1e42815" class="calibre27" id="I_indexterm20_d1e42815"></a>shell scripting easy. We are going to implement piping, easy
+  command invocation, and some simple tools to handle tasks that might
+  otherwise be performed with <tt class="calibre34">grep</tt> or
+  <tt class="calibre34">sed</tt>.</p><a name="x_Ka" class="calibre5" id="x_Ka"></a><p class="docText">Specialized modules exist for different operating systems.
+  In this chapter, we will use generic OS-independent modules as much as
+  possible. However, we will be focusing on the POSIX environment for much of
+  the chapter. POSIX is a standard for Unix-like operating systems such as
+  Linux, FreeBSD, MacOS X, or Solaris. Windows does not support POSIX by
+  default, but the Cygwin environment provides a POSIX compatibility layer for
+  Windows.</p>
+<ul class="calibre28"></ul><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="middle" class="v1" height="5"><img src="pixel.gif" alt="" border="0" class="calibre8"/></td></tr><tr class="calibre6"><td valign="middle" class="v1"><table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody"><tr class="calibre6"><td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td></tr></table></td><td class="v1"/><td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect119_d1e42478_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="systems_running.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="top" class="v2"><span class="calibre9"></span></td></tr></table><!--IP User 2--><td class="calibre7">
+                         
+                      </td><tr class="calibre6"><td colspan="3" valign="bottom" class="calibre7"><br class="calibre20"/><p class="v4"></p><br class="calibre20"/></td></tr></div>
+
+{% endraw %}
+

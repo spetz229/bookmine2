@@ -1,0 +1,2421 @@
+---
+layout: page
+title: "Learning GNU Emacs, 3rd Edition"
+prev: OEBPS/apd.html
+next: OEBPS/co01.html
+book_path: books/learning-gnu-emacs--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" xml:lang="en"><div class="book"><div class="book"><div class="book"><h1 class="title"><a id="gnu3-APP-E" class="calibre1"></a>Appendix E. Quick Reference</h1></div></div></div><p class="copyright">This quick reference is arranged topically, in roughly the same order
+as the commands were treated in the text. Unfortunately, it's
+impossible to be both "quick" and
+thorough, particularly with an editor as large and comprehensive as
+GNU Emacs. We've tried to take a middle road between
+completeness and quickness; we'll confess that, if
+we've erred, we've erred on the
+side of quickness.</p><div class="book"><a id="gnu3-APP-E-TABLE-1" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-1. File-handling commands (<a class="calibre2" href="ch01.html" title="Chapter 1. Emacs Basics">Chapter 1</a>)</b></p><div class="table-contents"><table summary="File-handling commands (Chapter 1)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-f</strong></span>
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Open File</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">find-file</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Find file and read it in a new buffer.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-v</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">find-alternate-file</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Read an alternate file, replacing the one read with <span><strong class="calibre5">C-x C-f</strong></span>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x i</strong></span>
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Insert File</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">insert-file</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Insert file at cursor position.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-s</strong></span> 
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Save (current buffer)</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">save-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Save file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-w</strong></span> 
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Save Buffer As</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">write-file</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Write buffer contents to file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-c</strong></span> 
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Exit Emacs</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">save-buffers-kill-emacs</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Exit Emacs.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-2" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-2. Cursor movement commands (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>)</b></p><div class="table-contents"><table summary="Cursor movement commands (Chapter 2)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-f</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">forward-char</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move <span><em class="calibre7">forward</em></span> one character (right).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-b</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">backward-char</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move <span><em class="calibre7">backward</em></span> one character (left).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-p</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">previous-line</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to <span><em class="calibre7">previous</em></span> line (up).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-n</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">next-line</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to <span><em class="calibre7">next</em></span> line (down).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-f</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">forward-word</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move one word <span><em class="calibre7">forward</em></span>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-b</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">backward-word</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move one word <span><em class="calibre7">backward</em></span>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-a</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">beginning-of-line</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to beginning of line.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-e</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">end-of-line</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to <span><em class="calibre7">end</em></span> of line.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-e</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">forward-sentence</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move forward one sentence.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-a</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">backward-sentence</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move backward one sentence.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-v</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">scroll-up</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move forward one screen.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-v</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">scroll-down</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move backward one screen.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-&lt;</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">beginning-of-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to beginning of file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-&gt;</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">end-of-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to end of file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)</p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">goto-line</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Go to line <span><em class="calibre7">n</em></span> of file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)</p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">goto-char</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Go to character <span><em class="calibre7">n</em></span> of file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-</strong></span>
+                        <span><em class="calibre7">n</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">digit-argument</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Repeat the next command <span><em class="calibre7">n</em></span> times.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-u</strong></span> 
+                        <span><em class="calibre7">n</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">universal-argument</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Repeat the next command <span><em class="calibre7">n</em></span> times (four times if
+you omit <span><em class="calibre7">n</em></span>).</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-3" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-3. Deleting, yanking, region, and clipboard commands(<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>)</b></p><div class="table-contents"><table summary="Deleting, yanking, region, and clipboard commands(Chapter 2)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-d</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">delete-char</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete character under cursor.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Del</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">delete-backward-char</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete previous character.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-d</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kill-word</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete next word.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-Del</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">backward-kill-word</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete previous word.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-y</strong></span>
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Paste Most Recent</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">yank</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Restore what you've deleted.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-w</strong></span> 
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Cut</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kill-region</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete a marked region (see next section).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-@</strong></span> 
+                        <span><em class="calibre7">or</em></span>
+                        <span><strong class="calibre5">C- Space</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">set-mark-command</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Mark the beginning (or end) of a region.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-x</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">exchange-point-and-mark</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Exchange location of cursor and mark.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-w</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kill-region</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete the region.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-y</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">yank</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Paste most recently killed or copied text.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-w</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kill-ring-save</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Copy the region (so it can be pasted with <span><strong class="calibre5">C-y</strong></span>).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x h</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">mark-whole-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Mark buffer.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-y</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">yank-pop</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">After <span><strong class="calibre5">C-y</strong></span>, pastes earlier deletion.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><em class="calibre7">(none)</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">clipboard-kill-region</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Cut region and place both in kill ring and on system clipboard.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><em class="calibre7">(none)</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">clipboard-yank</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Paste text from clipboard.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><em class="calibre7">(none)</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">clipboard-kill-ring-save</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Copy text to clipboard.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-4" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-4. Text filling and reformatting commands (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>)</b></p><div class="table-contents"><table summary="Text filling and reformatting commands (Chapter 2)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>) <span><em class="calibre7">Options</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Word Wrap in Text Modes</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">auto-fill-mode</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Toggle auto-fill mode, in which Emacs formats paragraphs as you type
+them.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-q</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">fill-paragraph</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Reformat paragraph.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>) <span><em class="calibre7">Edit</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Fill</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">fill-region</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Reformat individual paragraphs within a region.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-5" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-5. Stopping and undoing commands (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>)</b></p><div class="table-contents"><table summary="Stopping and undoing commands (Chapter 2)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Keystrokes</strong></span>
+                     </p>
+                  </th><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Command name</strong></span>
+                     </p>
+                  </th><th class="calibre27">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Action</strong></span>
+                     </p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-g</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">keyboard-quit</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Abort current command.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x u</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">advertised-undo</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Undo last edit (can be done repeatedly).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-_</strong></span>  
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Undo</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">undo</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Undo last edit.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)</p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">revert-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Restore buffer to the state it was in when the file was last saved
+(or auto-saved).</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-6" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-6. Search and replace commands (<a class="calibre2" href="ch03.html" title="Chapter 3. Search and Replace">Chapter 3</a>)</b></p><div class="table-contents"><table summary="Search and replace commands (Chapter 3)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-s</strong></span> 
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Search</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Incremental Search</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Forward
+String</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">isearch-forward</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Start incremental search forward; follow by search string. Also, find
+next occurrence (forward) of search string.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-r</strong></span> 
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Search</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Incremental Search</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Backward
+String</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">isearch-backward</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Start incremental search backward; follow by search string. Also,
+find next occurrence (backward) of search string.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-7" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-7. Regular expression search commands (<a class="calibre2" href="ch03.html" title="Chapter 3. Search and Replace">Chapter 3</a>)</b></p><div class="table-contents"><table summary="Regular expression search commands (Chapter 3)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-s Enter</strong></span> 
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Search</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Regexp Forward</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">re-search-forward</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Search for a regular expression forward.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-r Enter</strong></span> 
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Search</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Regexp Backwards</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">re-search-backward</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Search for a regular expression backward.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-s</strong></span> 
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Search</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Incremental Search</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Forward
+Regexp</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">isearch-forward-regexp</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Search incrementally forward for a regular expression.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-r</strong></span> 
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Search</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Incremental Search</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Backward
+Regexp</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">isearch-backward-regexp</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Search incrementally backward for a regular expression.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-%</strong></span> 
+                        <span><em class="calibre7">Edit</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Replace</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Replace Regexp</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">query-replace-regexp</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Query-replace a regular expression.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-8" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-8. Spell-checking commands (<a class="calibre2" href="ch03.html" title="Chapter 3. Search and Replace">Chapter 3</a>)</b></p><div class="table-contents"><table summary="Spell-checking commands (Chapter 3)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>) <span><em class="calibre7">Tools</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Spell Checking</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Spell-Check
+Buffer</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ispell-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Check spelling of the buffer.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>) <span><em class="calibre7">Tools</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Spell Checking</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Spell-Check
+Comments</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ispell-comments-and-strings</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Checks spelling of comments and strings in a program.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)
+<span><em class="calibre7">Tools</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Spell
+Checking</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Automatic Spell-Checking (Flyspell)</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">flyspell-mode</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Enter the flyspell minor mode, in which incorrectly spelled words are
+highlighted.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)</p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">flyspell-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Spell-check the current buffer, underlining all misspelled words. Use
+middle mouse button to correct.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-9" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-9. Buffer commands (<a class="calibre2" href="ch04.html" title="Chapter 4. Using Buffers, Windows, and Frames">Chapter 4</a>)</b></p><div class="table-contents"><table summary="Buffer commands (Chapter 4)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x b</strong></span> 
+                        <span><em class="calibre7">Buffers</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Select Named Buffer</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">switch-to-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the buffer specified.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x <span>→</span>
+                        </strong></span>
+                        <span><em class="calibre7">Buffers</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Next Buffer</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">next-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the next buffer in the buffer list.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x</strong></span> 
+                        <span><em class="calibre7">Buffers</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Previous Buffer</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">previous-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the previous buffer in the buffer list.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-b</strong></span> 
+                        <span><em class="calibre7">Buffers</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">List All Buffers</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">list-buffers</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Display the buffer list.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x k</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kill-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete the buffer specified.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><em class="calibre7">(none)</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kill-some-buffers</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Ask about deleting each buffer.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-10" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-10. Windows and frames (<a class="calibre2" href="ch04.html" title="Chapter 4. Using Buffers, Windows, and Frames">Chapter 4</a>)</b></p><div class="table-contents"><table summary="Windows and frames (Chapter 4)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 2</strong></span> 
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Split Window</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">split-window-vertically</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Divide current window into two windows, one above the other.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 3</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">split-window-horizontally</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Divide current window into two side-by-side windows.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x o</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">other-window</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the other window; if there are several, move to the next
+window.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 0</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">delete-window</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete the current window.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 1</strong></span> 
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Unsplit Windows</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">delete-other-windows</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete all windows but this one.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 4 f</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">find-file-other-window</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Find a file in the other window.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 4 b</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">switch-to-buffer-other-window</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Select a buffer in the other window.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>) <span><em class="calibre7">Tools</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Compare (Ediff)</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">This Window
+and Next Window</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">compare-windows</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Compare this window with the next window and show the first
+difference.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 5 o</strong></span> 
+                        <span><em class="calibre7">Buffers</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Frames</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">other-frame</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to other frame.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 5 0</strong></span> 
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Delete Frame</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">delete-frame</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete current frame.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 5 2</strong></span> 
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">New Frame</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">make-frame</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Create a new frame on the current buffer.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 5 f</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">find-file-other-frame</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Find file in a new frame.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 5 r</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">find-file-read-only-other-frame</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Finds a file in a new frame, but it is read-only.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x 5 b</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">switch-to-buffer-other-frame</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Make frame and display other buffer in it.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-11" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-11. Shell mode commands (<a class="calibre2" href="ch05.html" title="Chapter 5. Emacs as a Work Environment">Chapter 5</a>)</b></p><div class="table-contents"><table summary="Shell mode commands (Chapter 5)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)</p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">shell</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Enter shell mode.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-c</strong></span> 
+                        <span><em class="calibre7">Signals</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">BREAK</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">comint-interrupt-subjob</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Interrupt current job; equivalent to <span><strong class="calibre5">C-c</strong></span>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-z</strong></span> 
+                        <span><em class="calibre7">Signals</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">STOP</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">comint-stop-subjob</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Suspend or stop a job; <span><strong class="calibre5">C-z</strong></span> in Unix
+shells.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-p</strong></span> 
+                        <span><em class="calibre7">In/Out</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Previous Input</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">comint-previous-input</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Retrieve previous commands (can be repeated to find earlier
+commands).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-n</strong></span> 
+                        <span><em class="calibre7">In/Out</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Next Input</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">comint-next-input</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Retrieve subsequent commands (can be repeated to find more recent
+commands).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Enter</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">comint-send-input</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Send input on current line.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Tab</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">comint-dynamic-complete</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Complete current command, filename, or variable name.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-12" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-12. Dired commands (<a class="calibre2" href="ch05.html" title="Chapter 5. Emacs as a Work Environment">Chapter 5</a>)</b></p><div class="table-contents"><table summary="Dired commands (Chapter 5)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x d</strong></span> 
+                        <span><em class="calibre7">File</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Open Directory</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Start Dired.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C</strong></span> 
+                        <span><em class="calibre7">Operate</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Copy to</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-do-copy</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Copy file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">d</strong></span> 
+                        <span><em class="calibre7">Mark</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Flag</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-flag-file-deletion</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Flag for deletion.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">D</strong></span> 
+                        <span><em class="calibre7">Operate</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Delete</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-do-delete</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Query for immediate deletion.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">f</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-advertised-find-file</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Find (so you can edit).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">g</strong></span> 
+                        <span><em class="calibre7">Immediate</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Refresh</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">revert-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Reread the directory from disk.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">m</strong></span> or <span><strong class="calibre5">* m</strong></span>
+                        <span><em class="calibre7">Mark</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Mark</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-mark</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Mark with <span><strong class="calibre5">*</strong></span>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Q</strong></span> 
+                        <span><em class="calibre7">Operate</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Query Replace in Files</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-do-query-replace</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Query replace string in marked files.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">R</strong></span> 
+                        <span><em class="calibre7">Operate</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Rename to</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-do-rename</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Rename file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">s</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-sort-toggle-or-edit</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Sort the Dired display by date or by filename (toggles between
+these).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span> 
+                        <span><em class="calibre7">Mark</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Toggle Marks</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-toggle-marks</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Toggle marks on files and directories; pressing <span><strong class="calibre5">t</strong></span> once marks all unmarked files and
+directories; pressing <span><strong class="calibre5">t</strong></span> again
+restores original marks.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">u</strong></span> 
+                        <span><em class="calibre7">Mark</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Unmark</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-unmark</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Remove mark.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">+</strong></span> 
+                        <span><em class="calibre7">Immediate</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Create Directory</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-create-directory</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Create a directory.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">* !</strong></span> or <span><strong class="calibre5">M-Del</strong></span>
+                        <span><em class="calibre7">Mark</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Unmark
+All</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-unmark-all-files</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Remove all marks from all files.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-13" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-13. Macro commands (<a class="calibre2" href="ch06.html" title="Chapter 6. Writing Macros">Chapter 6</a>)</b></p><div class="table-contents"><table summary="Macro commands (Chapter 6)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x (</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kmacro-start-macro</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Start macro definition.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">F3</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kmacro-start-macro-or-insert-counter</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Start macro definition. If pressed while defining a macro, insert a
+counter.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x )</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kmacro-end-macro</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">End macro definition.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">F4</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kmacro-end-or-call-macro</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">End macro definition (if definition is in progress) or invoke last
+keyboard macro.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x e</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kmacro-end-and-call-macro</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Execute last keyboard macro defined. Can type <span><strong class="calibre5">e</strong></span> to repeat macro.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-k n</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">name-last-kbd-macro</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Name the last macro you created (before saving it).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-k e</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">edit-kbd-macro</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Edit a keyboard macro by typing C-x e for the last keyboard macro
+defined, M-x for a named macro, C-h l for lossage, or keystrokes for
+a macro bound to a key.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-k Enter</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kmacro-edit-macro</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Edit the last keyboard macro.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-14" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-14. Outline mode commands (<a class="calibre2" href="ch07.html" title="Chapter 7. Simple Text Formatting and Specialized Editing">Chapter 7</a>)</b></p><div class="table-contents"><table summary="Outline mode commands (Chapter 7)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(none)</p>
+                  </td><td class="calibre28">
+                     <p class="copyright">outline-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Toggle outline mode</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">C-c C-t <span><em class="calibre7">Hide</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Hide
+Body</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">hide-body</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Hide all body lines.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">C-c C-a <span><em class="calibre7">Show</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Show
+All</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">show-all</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Show everything that's hidden.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-15" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-15. Compilation mode commands (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</b></p><div class="table-contents"><table summary="Compilation mode commands (Chapter 9)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x `</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">next-error</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the next error message and visit the corresponding source
+code.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-n</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">compilation-next-error</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the next error message.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-p</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">compilation-previous-error</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the previous error message.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-c</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">compilation-goto-error</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Visit the source code for the current error message.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-16" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-16. Basic indentation commands (<a class="calibre2" href="ch07.html" title="Chapter 7. Simple Text Formatting and Specialized Editing">Chapter 7</a> and <a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</b></p><div class="table-contents"><table summary="Basic indentation commands (Chapter 7 and Chapter 9)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-\</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">indent-region</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Indent each line between the cursor and mark.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-m</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">back-to-indentation</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the first nonblank character on the line.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-^</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">delete-indentation</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Join this line to the previous one.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-17" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-17. C motion commands (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</b></p><div class="table-contents"><table summary="C motion commands (Chapter 9)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-a</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-beginning-of-statement</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the beginning of the current statement.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-e</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-end-of-statement</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the end of the current statement.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-q</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-fill-paragraph</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If in comment, fill the paragraph, preserving indentations and
+decorations.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-a</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">beginning-of-defun</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the beginning of the body of the function surrounding the
+point.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-e</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">end-of-defun</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the end of the function.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-h</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-mark-function</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Put the cursor at the beginning of the function, the mark at the end.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-q</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-indent-defun</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Indent the entire function according to indentation style.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-u</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-up-conditional</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the beginning of the current preprocessor conditional.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-p</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-backward-conditional</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the previous preprocessor conditional.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-n</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-forward-conditional</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Move to the next preprocessor conditional.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-18" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-18. SQL mode commands (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</b></p><div class="table-contents"><table summary="SQL mode commands (Chapter 9)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-c</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">sql-send-paragraph</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Send the paragraph the cursor is on. A paragraph is defined by the
+particular database client. For the <span><strong class="calibre5">sql-mysql</strong></span> process, for example, a paragraph
+begins with a statement like select or update and ends with a
+semicolon. Any number of lines can intervene.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-r</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">sql-send-region</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Send the marked region.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-b</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">sql-send-buffer</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Send the entire buffer.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-19" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-19. Lisp commands (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</b></p><div class="table-contents"><table summary="Lisp commands (Chapter 9)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-b</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">backward-sexp</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move backward by one S-expression.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-f</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">forward-sexp</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move forward by one S-expression.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-t</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">transpose-sexps</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Transpose the two S-expressions around the cursor.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-@</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">mark-sexp</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Set mark to the end of the current S-expression; set the cursor to
+the beginning.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-k</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kill-sexp</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete the S-expression following the cursor.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)</p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">backward-kill-sexp</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete the S-expression preceding the cursor.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-n</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">forward-list</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move forward by one list.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-p</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">backward-list</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move backward by one list.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-d</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">down-list</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move forward and down one parenthesis level.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)</p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">up-list</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move forward out of one parenthesis level.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-u</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">backward-up-list</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move backward out of one parenthesis level.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-a</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">beginning-of-defun</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the beginning of the current function.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-e</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">end-of-defun</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the end of the current function.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-M-h</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">mark-defun</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Put the cursor at the beginning of the function, put the mark at the
+end.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-20" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-20. VC commands (<a class="calibre2" href="ch12.html" title="Chapter 12. Version Control">Chapter 12</a>)</b></p><div class="table-contents"><table summary="VC commands (Chapter 12)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v v</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-next-action</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Go to the next logical version control state.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v d</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-directory</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Show all registered files beneath a directory.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v =</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-diff</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Generate a version difference report.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v u</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-revert-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Throw away changes since the last checked-in revision.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v ~</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-version-other-window</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Retrieve a given revision in another window.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v l</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-print-log</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Display a file's change comments and history.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v i</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-register</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Register a file for version control.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v h</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-insert-headers</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Insert version control headers in a file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v r</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-retrieve-snapshot</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Check out a named project snapshot.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v s</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-create-snapshot</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Create a named project snapshot.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v c</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-cancel-version</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Throw away a saved revision.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x v a</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-update-change-log</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Update a GNU-style ChangeLog file.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-21" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-21. Ediff commands (<a class="calibre2" href="ch12.html" title="Chapter 12. Version Control">Chapter 12</a>)</b></p><div class="table-contents"><table summary="Ediff commands (Chapter 12)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Space</strong></span> or <span><strong class="calibre5">n</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-next-difference</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the next difference between the files.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Del</strong></span> or <span><strong class="calibre5">p</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-previous-difference</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Move to the preceding difference between the files.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">j</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-jump-to-difference</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Go to the difference specified as a numeric prefix argument.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">a</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-copy-A-to-B</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Copy the version of the current difference found in buffer A to
+buffer B.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">b</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-copy-B-to-A</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Copy the version of the current difference found in buffer B to
+buffer A.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">r a</strong></span> or <span><strong class="calibre5">r
+b</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-restore-diff</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Restore the current difference in buffer A (or B) to the way it was
+before copying from the other buffer.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">A</strong></span> or <span><strong class="calibre5">B</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-toggle-read-only</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Switch the specified buffer into (or out of) read-only mode.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">g a</strong></span> or <span><strong class="calibre5">g
+b</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-jump-to-difference-at-point</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Recenter the comparison buffers on the difference nearest to your
+current location (point) in the specified buffer.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">!</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-update-diffs</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Recalculate and redisplay the highlighted regions; useful if
+you've manually made extensive changes to a buffer.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">w a</strong></span> or <span><strong class="calibre5">w
+b</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-save-buffer</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Save the specified buffer to disk.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">z</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-suspend</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Close the Ediff control window, but leave the session active so you
+can resume it later.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">q</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ediff-quit</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Close the Ediff window and end this comparison session.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-22" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-22. CUA mode commands (<a class="calibre2" href="ch13.html" title="Chapter 13. Platform-Specific Considerations">Chapter 13</a>)</b></p><div class="table-contents"><table summary="CUA mode commands (Chapter 13)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c C-x C-x</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">cua-exchange-point-and-mark</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Exchange location of cursor and mark.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x</strong></span> 
+                        <span><em class="calibre7">or</em></span> 
+                        <span><strong class="calibre5">C-w</strong></span> 
+                        <span><em class="calibre7">or</em></span> 
+                        <span><strong class="calibre5">S-Delete</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kill-region</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delete the region.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-v</strong></span> 
+                        <span><em class="calibre7">or</em></span> 
+                        <span><strong class="calibre5">C-y</strong></span> 
+                        <span><em class="calibre7">or</em></span> 
+                        <span><strong class="calibre5">S-Insert</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">cua-paste</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Paste most recently killed or copied text.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-c</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">copy-region-as-kill</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Copy the region.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-v</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">cua-repeat-replace-region</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">After highlighting and replacing a string, find the next string and
+replace it the same way.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">M-y</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">cua-paste-pop</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">After <span><strong class="calibre5">C-v</strong></span>, pastes earlier deletion.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-z</strong></span> 
+                        <span><em class="calibre7">or</em></span> 
+                        <span><strong class="calibre5">C-x u</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">cua-undo</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Undoes the last change.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-x C-z</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">iconify-frame</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Minimize the current frame (what <span><strong class="calibre5">C-z</strong></span>
+does outside CUA mode).</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-23" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-23. Help commands (<a class="calibre2" href="ch14.html" title="Chapter 14. The Help System">Chapter 14</a>)</b></p><div class="table-contents"><table summary="Help commands (Chapter 14)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Question answered</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h k</strong></span> 
+                        <span><em class="calibre7">Help</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Describe</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Describe Key</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">describe-key</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">What command does this keystroke sequence run, and what does it do?</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h f</strong></span> 
+                        <span><em class="calibre7">Help</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Describe</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Describe Function</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">describe-function</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">What does this function do?</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h v</strong></span> 
+                        <span><em class="calibre7">Help</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Describe</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Describe Variable</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">describe-variable</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">What does this variable mean, and what is its value?</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h m</strong></span> 
+                        <span><em class="calibre7">Help</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Describe</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Describe Buffer Modes</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">describe-mode</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Tell me about the modes the current buffer is in.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h b</strong></span> 
+                        <span><em class="calibre7">Help</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Describe</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">List Key Bindings</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">describe-bindings</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">What are all the key bindings for this buffer?</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h a</strong></span> 
+                        <span><em class="calibre7">Help</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Search Documentation</em></span>
+                        <span>→</span>  
+                        <span><em class="calibre7">Find Commands by Name</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">apropos-command</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">What commands include this word?</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)
+<span><em class="calibre7">Help</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Search
+Documentation</em></span> 
+                        <span>→</span>  
+                        <span><em class="calibre7">Find Options by
+Name</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">apropos-variable</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">What variables include this regular expression?</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)
+<span><em class="calibre7">Help</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Search
+Documentation</em></span> 
+                        <span>→</span>  
+                        <span><em class="calibre7">Find Any Object by
+Name</em></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">apropos</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">What functions and variables involve this regular expression?</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-24" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-24. Documentation help commands (<a class="calibre2" href="ch14.html" title="Chapter 14. The Help System">Chapter 14</a>)</b></p><div class="table-contents"><table summary="Documentation help commands (Chapter 14)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Keystrokes</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Command name</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Action</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h t</strong></span> 
+                        <span><em class="calibre7">Help</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Emacs Tutorial</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">help-with-tutorial</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Run the Emacs tutorial.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h i</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">info</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Start the Info documentation reader. If prefaced with <span><strong class="calibre5">C-u</strong></span>, reads an Info file of your choice.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h r</strong></span> 
+                        <span><em class="calibre7">Help</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">Read the Emacs Manual</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">info-emacs-manual</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Open the Emacs manual.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h K</strong></span> 
+                        <span><em class="calibre7">Help</em></span>
+                        <span>→</span> 
+                        <span><em class="calibre7">More Manuals</em></span> 
+                        <span>→</span>
+                        <span><em class="calibre7">Find Key in Manual</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Info-goto-emacs-key-command-node</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Start Info documentation reader at the node that discusses this key
+sequence.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">none</em></span>)
+<span><em class="calibre7">Help</em></span> 
+                        <span>→</span> 
+                        <span><em class="calibre7">Search
+Documentation</em></span> 
+                        <span>→</span>  
+                        <span><em class="calibre7">Look Up Subject in
+User Manual</em></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">emacs-index-search</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Search the index of the Emacs user manual.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">C-h p</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">finder-by-keyword</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Invoke a menu that lets you get information about Emacs Lisp packages
+available on your system.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-E-TABLE-25" class="calibre2"></a><p class="title2"><b class="calibre25">Table E-25. Important modes</b></p><div class="table-contents"><table summary="Important modes" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Mode</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Function</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">fundamental-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">The default mode</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">text-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for writing text (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">outline-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for writing outlines (<a class="calibre2" href="ch07.html" title="Chapter 7. Simple Text Formatting and Specialized Editing">Chapter 7</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">picture-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for creating ASCII drawings using the keyboard (<a class="calibre2" href="ch07.html" title="Chapter 7. Simple Text Formatting and Specialized Editing">Chapter 7</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">html-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for writing HTML (<a class="calibre2" href="ch08.html" title="Chapter 8. Markup Language Support">Chapter 8</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">sgml-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for writing SGML and XML (<a class="calibre2" href="ch08.html" title="Chapter 8. Markup Language Support">Chapter 8</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">latex-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for formatting files for TEX and LATEX (<a class="calibre2" href="ch08.html" title="Chapter 8. Markup Language Support">Chapter 8</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">c-mode, c++-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for writing C and C++, and Java programs (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">java-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for writing Java programs (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">perl-mode, cperl-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major modes for writing Perl programs (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">sql-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for interacting with databases using SQL (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">emacs-lisp-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for writing Emacs Lisp functions (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a> and <a class="calibre2" href="ch11.html" title="Chapter 11. Emacs Lisp Programming">Chapter 11</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">lisp-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for writing Lisp programs (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a> and <a class="calibre2" href="ch11.html" title="Chapter 11. Emacs Lisp Programming">Chapter 11</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">lisp-interaction-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Major mode for writing and evaluating Lisp expressions (
+<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a> and<a class="calibre2" href="ch11.html" title="Chapter 11. Emacs Lisp Programming">Chapter 11</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">auto-fill-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Minor mode that enables word wrap (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">overwrite-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Minor mode that replaces characters as you type instead of inserting
+them (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">flyspell-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Minor mode for flyspell spell-checker (<a class="calibre2" href="ch03.html" title="Chapter 3. Search and Replace">Chapter 3</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">flyspell-prog-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Minor mode for spell-checking programs with flyspell (<a class="calibre2" href="ch03.html" title="Chapter 3. Search and Replace">Chapter 3</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">abbrev-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Minor mode for word abbreviations (<a class="calibre2" href="ch03.html" title="Chapter 3. Search and Replace">Chapter 3</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">artist-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Minor mode for creating ASCII drawings using the mouse (<a class="calibre2" href="ch07.html" title="Chapter 7. Simple Text Formatting and Specialized Editing">Chapter 7</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">font-lock-mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Minor mode for highlighting text in colors and fonts (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">vc-mode</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Minor mode for using version control systems (<a class="calibre2" href="ch12.html" title="Chapter 12. Version Control">Chapter 12</a>)</p>
+                  </td></tr></tbody></table></div></div><br class="book"/></div></div>
+
+{% endraw %}
+

@@ -1,0 +1,39 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch06.html
+next: OEBPS/ch06s03.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="It’s Just JavaScript"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect16_d1e2874" class="calibre2"></a>It’s Just JavaScript</h1></div></div></div><p class="calibre8">CoffeeScript tries to be a deeply pragmatic language. To be honest,
+    it’s probably too pragmatic for its own good. The golden rule of
+    CoffeeScript is: “It’s just JavaScript.”</p><p class="calibre8">We want to embrace the limitations of compiling to JavaScript by
+    only implementing things that can be expressed in simple JS, and leaving
+    fancier compilations to <a class="ulink" href="https://github.com/jashkenas/coffee-script/wiki/List-of-languages-that-compile-to-JS">other
+    languages</a>. When you run a script, there is no CoffeeScript
+    interpreter running within the browser, no core library you have to
+    include on the page, and ideally (although we bend this rule in a few
+    places) no special helper functions generated alongside your code.</p><p class="calibre8">The downside of this approach is that more invasive improvements to
+    JavaScript are impossible. For example, it would be nice if <code class="literal">list[-1]</code> in CoffeeScript could return the last
+    item in the list. At first glance, it seems simple enough to implement,
+    and would be useful. Unfortunately, any expression may be used to index
+    into an array, so with negative array indices you would have to add a
+    special check to every <code class="literal">list[x]</code>
+    operation to ask if <code class="literal">x</code> is a positive
+    number or a negative one. This would take CoffeeScript away from
+    JavaScript semantics, and more importantly, JavaScript levels of performance—the array accesses in your inner
+    loops would slow down considerably. For this reason, CoffeeScript doesn’t
+    add negative array indices to the language.</p><p class="calibre8">The upside of this approach is that CoffeeScript is inherently
+    compatible with every JavaScript runtime. Because we can compile to
+    efficient, lowest-common-denominator code, CoffeeScript runs as well as
+    JavaScript in every browser, in Node.js, in Rhino, in Photoshop and
+    Illustrator—in short, everywhere JavaScript can run. If you want to use
+    CoffeeScript for a project, for a component, or even just for a single
+    file, you don’t have to sacrifice performance or compatibility with other
+    JavaScript libraries.</p></div></div>
+
+{% endraw %}
+

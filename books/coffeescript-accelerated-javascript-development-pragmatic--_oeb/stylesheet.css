@@ -1,0 +1,687 @@
+.acronym {
+    color: #333;
+    font-variant: small-caps;
+    font-weight: bold
+    }
+.backmatter-cover {
+    display: block;
+    float: left;
+    padding-bottom: 20px;
+    padding-right: 20px
+    }
+.backmatter-end {
+    border: 1px inset;
+    clear: both;
+    color: gray;
+    display: block;
+    height: 2px;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em
+    }
+.calibre {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 0;
+    margin-left: 5pt;
+    margin-right: 5pt;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0
+    }
+.calibre1 {
+    display: block
+    }
+.calibre10 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.calibre11 {
+    display: block;
+    line-height: 1.2
+    }
+.calibre12 {
+    clear: both;
+    color: #255;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.8ex;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.8em
+    }
+.calibre13 {
+    color: #445;
+    display: block;
+    font-size: 1.41667em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    text-align: left
+    }
+.calibre14 {
+    clear: both;
+    color: #255;
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.calibre15 {
+    display: table-row;
+    margin-bottom: 0;
+    margin-top: 0;
+    vertical-align: middle
+    }
+.calibre16 {
+    font-family: DroidSansMono;
+    font-size: 0.77778em;
+    white-space: pre-wrap
+    }
+.calibre17 {
+    display: block;
+    page-break-after: always
+    }
+.calibre18 {
+    height: auto;
+    width: auto
+    }
+.calibre19 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    text-align: center;
+    vertical-align: inherit
+    }
+.calibre2 {
+    display: none
+    }
+.calibre20 {
+    border: 1px inset;
+    color: gray;
+    display: block;
+    height: 2px;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em
+    }
+.calibre21 {
+    font-weight: bold
+    }
+.calibre22 {
+    background: #98a0a8;
+    display: table-cell;
+    font-size: 0.75em;
+    padding-bottom: 0.2em;
+    padding-left: 1em;
+    padding-right: 1px;
+    padding-top: 0.2em;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.calibre23 {
+    color: #eee8f0
+    }
+.calibre24 {
+    display: block;
+    list-style-type: decimal;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.calibre25 {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.calibre26 {
+    display: block;
+    margin-left: 40px
+    }
+.calibre27 {
+    background: #98a0a8;
+    display: table-cell;
+    font-size: 0.77778em;
+    padding-bottom: 0.2em;
+    padding-left: 1em;
+    padding-right: 1px;
+    padding-top: 0.2em;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.calibre28 {
+    display: table-header-group;
+    vertical-align: middle
+    }
+.calibre29 {
+    display: table-row;
+    vertical-align: inherit
+    }
+.calibre3 {
+    display: list-item
+    }
+.calibre30 {
+    display: table-row-group;
+    vertical-align: middle
+    }
+.calibre31 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top
+    }
+.calibre32 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top
+    }
+.calibre33 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 12%
+    }
+.calibre34 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 23%
+    }
+.calibre35 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 65%
+    }
+.calibre36 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 12%
+    }
+.calibre37 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 23%
+    }
+.calibre38 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 65%
+    }
+.calibre39 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 30%
+    }
+.calibre4 {
+    line-height: 1.2
+    }
+.calibre40 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 30%
+    }
+.calibre41 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 20%
+    }
+.calibre42 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 50%
+    }
+.calibre43 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 20%
+    }
+.calibre44 {
+    border-top: 1px solid #aad;
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 50%
+    }
+.calibre45 {
+    clear: left;
+    display: block;
+    float: left;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-align: left;
+    width: 3.5em
+    }
+.calibre46 {
+    display: block;
+    margin-bottom: 8px;
+    margin-left: 4em;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0
+    }
+.calibre47 {
+    color: #238;
+    font-style: italic;
+    font-weight: bold
+    }
+.calibre5 {
+    display: block;
+    line-height: 130%;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0
+    }
+.calibre6 {
+    border-collapse: separate;
+    border-spacing: 2px;
+    display: table;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-indent: 0
+    }
+.calibre7 {
+    display: table-column;
+    text-align: left
+    }
+.calibre8 {
+    display: table-row;
+    vertical-align: middle
+    }
+.calibre9 {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    text-align: inherit;
+    vertical-align: inherit;
+    width: 5%
+    }
+.cf {
+    color: #227;
+    font-family: "DroidSans";
+    font-size: 0.75em
+    }
+.cf1 {
+    color: #227;
+    font-family: "DroidSans";
+    font-size: 1em
+    }
+.chapter-name {
+    background: url(images/h1-underline.gif) repeat-x bottom;
+    color: #555;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex
+    }
+.chapter-number {
+    color: #999;
+    display: block;
+    font-size: 0.91667em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.chapter-title {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 2em;
+    text-align: right
+    }
+.codecalloutnumber {
+    font-size: 0.71429em
+    }
+.codeline {
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    line-height: 1.2;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.codeline1 {
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 1em;
+    line-height: 1.2;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.codeprefix {
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.codeprefix1 {
+    display: table-cell;
+    font-family: DroidSansMono;
+    font-size: 0.77778em;
+    font-weight: bold;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 0;
+    text-align: inherit;
+    vertical-align: inherit
+    }
+.comment {
+    color: #151;
+    font-style: italic
+    }
+.copyright {
+    background: #abb;
+    border-top: 1px #355 solid;
+    color: #355;
+    display: block;
+    font-size: 0.58333em;
+    margin-top: 3em;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    text-align: center
+    }
+.emph {
+    font-style: italic
+    }
+.figure {
+    border-collapse: separate;
+    border-color: #ddd;
+    border-spacing: 2px;
+    border-style: dotted;
+    border-width: 3px;
+    display: table;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 7px;
+    text-align: center;
+    text-indent: 0
+    }
+.footnote-number {
+    display: table-cell;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    text-align: inherit;
+    vertical-align: inherit;
+    white-space: nowrap;
+    width: 1.5em
+    }
+.footnotes {
+    border-color: #888;
+    border-style: solid none none none;
+    border-width: 2px 0 0 0;
+    display: block;
+    font-size: 0.75em;
+    margin-top: 2em
+    }
+.hlines {
+    background: #ddf;
+    border-bottom: 2px solid #aad;
+    display: table-cell;
+    font-weight: bold;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top
+    }
+.last-para-in-cell {
+    display: block;
+    line-height: 130%;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0
+    }
+.prefacesignoffdate {
+    display: block;
+    font-size: 0.75em
+    }
+.processedcode {
+    border-collapse: separate;
+    border-spacing: 2px;
+    display: table;
+    margin-bottom: 0.7em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.7em;
+    text-indent: 0
+    }
+.prompt {
+    color: rgb(144, 17, 125);
+    font-weight: bold
+    }
+.sidebar {
+    border: 3px solid #aaa;
+    display: block;
+    font-family: sans;
+    font-size: 0.75em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em
+    }
+.sidebar-title {
+    border-bottom: 1px solid #aaa;
+    display: block;
+    font-weight: bold;
+    text-align: center
+    }
+.simpletable {
+    border: 2px solid #aad;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    display: table;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    text-indent: 0
+    }
+.string {
+    color: #551;
+    font-style: italic
+    }
+.table-of-contents {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.67em
+    }
+.table-of-contents1 {
+    display: block;
+    list-style-type: disc;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.titlepage {
+    border-color: #888;
+    border-style: solid none;
+    border-width: 3px;
+    color: #555;
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center
+    }
+.titlepage1 {
+    clear: both;
+    color: #777;
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    text-align: center
+    }
+.titlepage2 {
+    clear: both;
+    color: #777;
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1ex;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    text-align: center
+    }
+.titlepage3 {
+    color: #777;
+    display: block;
+    font-size: 0.75em;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 30px;
+    text-align: center
+    }
+.titlepage4 {
+    border-top: 1px solid #bbb;
+    color: #444;
+    display: block;
+    font-size: 0.58333em;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 45px;
+    text-align: center
+    }

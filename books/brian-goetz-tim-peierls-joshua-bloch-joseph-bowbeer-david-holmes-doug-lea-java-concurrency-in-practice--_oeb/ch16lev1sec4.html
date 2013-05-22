@@ -1,0 +1,22 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: ch16lev1sec3.html
+next: app01.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<a name="ch16lev1sec4" class="calibre18" id="ch16lev1sec4"></a>
+<h3 id="title-IDAJZNDN" class="docSection1Title">Summary</h3>
+<p class="docText1">The Java Memory Model specifies when the actions of one thread on memory are guaranteed to be visible to another. The specifics involve ensuring that operations are ordered by a partial ordering called <span class="docEmphasis">happens-before</span>, which is specified at the level of individual memory and synchronization operations. In the absence of sufficient synchronization, some very strange things can happen when threads access shared data. However, the higher-level rules offered in <a class="calibre2" href="ch02_split_000.html#ch02">Chapters 2</a> and <a class="calibre2" href="ch03.html#ch03">3</a>, such as <tt class="calibre25">@GuardedBy</tt> and safe publication, can be used to ensure thread safety without resorting to the low-level details of <span class="docEmphasis">happens-before</span>.</p>
+
+<p class="calibre1"> </p>
+
+</div>
+
+{% endraw %}
+

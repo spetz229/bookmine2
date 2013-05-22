@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="6d6e49e7-109e-43c3-9d7b-04244312c20d" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Real World Haskell, 1st Edition</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="24e7b4ab-e09a-4fb2-8620-4c52103dc5ce" playOrder="1">
+      <navLabel>
+        <text>Chapter 1. Getting Started</text>
+      </navLabel>
+      <content src="starting_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="8081d4a1-7e86-489f-848e-8d21130c49f5" playOrder="2">
+      <navLabel>
+        <text>Chapter 2. Types and Functions</text>
+      </navLabel>
+      <content src="funcstypes_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="9b642a79-b484-4695-b78f-3aa495b95990" playOrder="3">
+      <navLabel>
+        <text>Chapter 3. Defining Types, Streamlining Functions</text>
+      </navLabel>
+      <content src="deftypes_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="b56b2b07-f258-49e6-821b-ceff1f13799a" playOrder="4">
+      <navLabel>
+        <text>Chapter 4. Functional Programming</text>
+      </navLabel>
+      <content src="fp_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="30ea650b-1cd1-451f-a03f-1cc2b5b87918" playOrder="5">
+      <navLabel>
+        <text>Chapter 5. Writing a Library: Working with JSON Data</text>
+      </navLabel>
+      <content src="library_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="49f414bc-6544-427c-b70a-af6f39332c40" playOrder="6">
+      <navLabel>
+        <text>Chapter 6. Using Typeclasses</text>
+      </navLabel>
+      <content src="typeclasses_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="95953736-8d1b-4513-900d-2b8fe354880b" playOrder="7">
+      <navLabel>
+        <text>Chapter 7. I/O</text>
+      </navLabel>
+      <content src="io_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="af2960b7-fcc2-478a-9d45-1e809ed56dca" playOrder="8">
+      <navLabel>
+        <text>Chapter 8. Efficient File Processing, Regular Expressions, and Filename Matching</text>
+      </navLabel>
+      <content src="glob_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="32f8564e-a921-49e9-8fdc-6393d85a4d8a" playOrder="9">
+      <navLabel>
+        <text>Chapter 9. I/O Case Study: A Library for Searching the Filesystem</text>
+      </navLabel>
+      <content src="find_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="a8633003-5857-4dfd-a30c-ed63d0cad6b0" playOrder="10">
+      <navLabel>
+        <text>Chapter 10. Code Case Study: Parsing a Binary Data Format</text>
+      </navLabel>
+      <content src="binary_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="136a6a9a-9c5f-4ec4-84bc-46d5afb96cb2" playOrder="11">
+      <navLabel>
+        <text>Chapter 11. Testing and Quality Assurance</text>
+      </navLabel>
+      <content src="testing_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="08faf14e-f2d9-4789-88f2-2433fd72bc45" playOrder="12">
+      <navLabel>
+        <text>Chapter 12. Barcode Recognition</text>
+      </navLabel>
+      <content src="barcode_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="676d5765-6d6b-4175-b2da-5d9fcbe2d1d0" playOrder="13">
+      <navLabel>
+        <text>Chapter 13. Data Structures</text>
+      </navLabel>
+      <content src="data_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="9f151070-f3ce-4509-be02-f29b900de78a" playOrder="14">
+      <navLabel>
+        <text>Chapter 14. Monads</text>
+      </navLabel>
+      <content src="monads_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="94e1e483-bc7f-49d3-8667-60ee97fda6a3" playOrder="15">
+      <navLabel>
+        <text>Chapter 15. Programming with Monads</text>
+      </navLabel>
+      <content src="monadcase_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="a5152c47-fe95-49c9-9215-09f923ecf7f4" playOrder="16">
+      <navLabel>
+        <text>Chapter 16. Using Parsec</text>
+      </navLabel>
+      <content src="parsec_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="576fde1b-62e4-4225-b657-639f102d82d8" playOrder="17">
+      <navLabel>
+        <text>Chapter 17. Interfacing with C: The FFI</text>
+      </navLabel>
+      <content src="ffi_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="d033e945-04d0-4de3-9c3f-a44a2fe2927e" playOrder="18">
+      <navLabel>
+        <text>Chapter 18. Monad Transformers</text>
+      </navLabel>
+      <content src="monadtrans_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="8392dade-2760-4fed-b6e3-ded4d4fb6c21" playOrder="19">
+      <navLabel>
+        <text>Chapter 19. Error Handling</text>
+      </navLabel>
+      <content src="errors_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="ce1e9810-a29c-45fd-bc59-8d88a5b7f6ba" playOrder="20">
+      <navLabel>
+        <text>Chapter 20. Systems Programming in Haskell</text>
+      </navLabel>
+      <content src="systems_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="1964a1f0-0457-458f-b5a1-10998c368b7f" playOrder="21">
+      <navLabel>
+        <text>Chapter 21. Using Databases</text>
+      </navLabel>
+      <content src="databases_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="8da6e48e-9de2-41f8-9710-a4034e0313dc" playOrder="22">
+      <navLabel>
+        <text>Chapter 22. Extended Example: Web Client Programming</text>
+      </navLabel>
+      <content src="webclient_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="8a897689-56f0-4cd4-993b-990753872a5a" playOrder="23">
+      <navLabel>
+        <text>Chapter 23. GUI Programming with gtk2hs</text>
+      </navLabel>
+      <content src="gui_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="ea83ea87-9ac0-46f0-942c-3b2ebecdc62e" playOrder="24">
+      <navLabel>
+        <text>Chapter 24. Concurrent and Multicore Programming</text>
+      </navLabel>
+      <content src="concurrent_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="3b341b25-0db1-4ce3-a59b-f659a37ad6c1" playOrder="25">
+      <navLabel>
+        <text>Chapter 25. Profiling and Optimization</text>
+      </navLabel>
+      <content src="profiling_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="658acfc5-a0f8-499d-8709-0481f1a49bfe" playOrder="26">
+      <navLabel>
+        <text>Chapter 26. Advanced Library Design: Building a Bloom Filter</text>
+      </navLabel>
+      <content src="bloomfilter_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="466927e3-f4db-4826-a60e-4e9d0a6fc11f" playOrder="27">
+      <navLabel>
+        <text>Chapter 27. Sockets and Syslog</text>
+      </navLabel>
+      <content src="sockets_split_001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="7390495b-a953-4e46-b1c8-2a00cf6363ec" playOrder="28">
+      <navLabel>
+        <text>Chapter 28. Software Transactional Memory</text>
+      </navLabel>
+      <content src="stm_split_001.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

@@ -1,0 +1,359 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: system_termination.html
+next: systems_piping.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="system_termination.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="systems_piping.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="systems_datetime" class="calibre27" id="systems_datetime"></a><h3 id="title-IDA13BAD" class="docSection1Title">20.4. Dates and Times</h3><a name="x_Va" class="calibre27" id="x_Va"></a><p class="docText">Everything<a name="ch20-datesandtimes" class="calibre27" id="ch20-datesandtimes"></a><a name="ch20-spdatesandtimes" class="calibre27" id="ch20-spdatesandtimes"></a><a name="ch20-dates" class="calibre27" id="ch20-dates"></a><a name="ch20-times" class="calibre27" id="ch20-times"></a> from file timestamps to business transactions involve dates
+    and times. Haskell provides ways for manipulating dates and times, as well
+    as features for obtaining date and time information from the
+    system.</p><a name="systems_datetime_types" class="calibre27" id="systems_datetime_types"></a><h4 id="title-IDAY4BAD" class="docSection1Title">20.4.1. ClockTime and CalendarTime</h4><a name="x_Wa" class="calibre27" id="x_Wa"></a><p class="docText">In Haskell, the <tt class="calibre34">System.Time</tt> module is<a name="I_indexterm20_d1e43086" class="calibre27" id="I_indexterm20_d1e43086"></a><a name="I_indexterm20_d1e43089" class="calibre27" id="I_indexterm20_d1e43089"></a><a name="I_indexterm20_d1e43092" class="calibre27" id="I_indexterm20_d1e43092"></a> primarily responsible for date and time handling. It
+      defines two types: <tt class="calibre34">ClockTime</tt> and
+      <tt class="calibre34">CalendarTime</tt>.</p><a name="x_Xa" class="calibre27" id="x_Xa"></a><p class="docText"><tt class="calibre34">ClockTime</tt> is the
+      Haskell version of the traditional POSIX epoch. A <tt class="calibre34">ClockTime</tt> represents a time relative to
+      midnight the morning of January 1, 1970, Coordinated Universal Time
+      (UTC). A negative <tt class="calibre34">ClockTime</tt>
+      represents a number of seconds prior to that date, while a positive
+      number represents a count of seconds after it.</p><a name="x_Ya" class="calibre27" id="x_Ya"></a><p class="docText"><tt class="calibre34">ClockTime</tt> is
+      convenient for computations. Since it tracks <a name="I_indexterm20_d1e43116" class="calibre27" id="I_indexterm20_d1e43116"></a><a name="I_indexterm20_d1e43119" class="calibre27" id="I_indexterm20_d1e43119"></a> UTC, it doesn't have to adjust for local time zones,
+      daylight saving time, or other special cases in time handling. Every day
+      is exactly (60 * 60 * 24) or 86,400 seconds,<sup class="docFootnote"><a class="docLink1" href="#x_Yad1e43438">[46]</a></sup> which makes time interval calculations simple. You can,
+      for instance, check the <tt class="calibre34">ClockTime</tt> at the start of a long task,
+      again at the end, and simply subtract the start time from the end time
+      to determine how much time elapsed. You can then divide by 3,600 and
+      display the elapsed time as a count of hours if you wish.</p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_Yad1e43438" class="calibre5" id="x_Yad1e43438">[46]</a></sup> Some will note that UTC defines leap seconds at
+          irregular intervals. The POSIX standard, which Haskell follows,
+          states that every day is exactly 86,400 seconds in length in its
+          representation, so you need not be concerned about leap seconds when
+          performing routine calculations. The exact manner of handling leap
+          seconds is system-dependent and complex, though usually it can be
+          explained as having a "long second." This nuance is generally only
+          of interest when performing precise subsecond calculations.</p></blockquote><a name="x_aa" class="calibre27" id="x_aa"></a><p class="docText"><tt class="calibre34">ClockTime</tt> is ideal
+      for answering questions such as these:</p><ul class="calibre18"><li class="calibre19"><p class="docText">How much time has elapsed?</p></li><li class="calibre19"><p class="docText">What will be the <tt class="calibre34">ClockTime</tt> 14 days ahead of this precise
+          instant?</p></li><li class="calibre19"><p class="docText">When was the file last modified?</p></li><li class="calibre19"><p class="docText">What is the precise time right now?</p></li></ul><a name="x_fa" class="calibre27" id="x_fa"></a><p class="docText">These are good uses of <tt class="calibre34">ClockTime</tt> because they refer to precise,
+      unambiguous moments in time. However, <tt class="calibre34">ClockTime</tt> is not as easily used for questions
+      such as:</p><ul class="calibre18"><li class="calibre19"><p class="docText">Is today Monday?</p></li><li class="calibre19"><p class="docText">What day of the week will May 1 fall on next
+          year?</p></li><li class="calibre19"><p class="docText">What is the current time in my local time zone,
+          taking the potential presence of <a name="I_indexterm20_d1e43168" class="calibre27" id="I_indexterm20_d1e43168"></a><a name="I_indexterm20_d1e43171" class="calibre27" id="I_indexterm20_d1e43171"></a>Daylight Saving Time (DST) into account?</p></li></ul><a name="x_ka" class="calibre27" id="x_ka"></a><p class="docText"><tt class="calibre34">CalendarTime</tt> stores
+      time the way humans do: with a year, month, day, hour, minute, second,
+      time zone, and DST information. It's easy to convert this into a
+      conveniently displayable string, or to answer questions about the local
+      time.</p><a name="x_la" class="calibre27" id="x_la"></a><p class="docText">You can convert between <tt class="calibre34">ClockTime</tt> and <tt class="calibre34">CalendarTime</tt> at will. Haskell includes
+      functions to convert a <tt class="calibre34">ClockTime</tt> to a
+      <tt class="calibre34">CalendarTime</tt> in the local time zone
+      or to a <tt class="calibre34">CalendarTime</tt> representing UTC.</p><a name="systems_clocktime" class="calibre27" id="systems_clocktime"></a><h5 id="title-IDA4DCAD" class="docSection3Title">20.4.1.1. Using ClockTime</h5><a name="x_ma" class="calibre27" id="x_ma"></a><p class="docText"><tt class="calibre34">ClockTime</tt>
+        is<a name="I_indexterm20_d1e43203" class="calibre27" id="I_indexterm20_d1e43203"></a> defined in <tt class="calibre34">System.Time</tt> like this:</p><pre class="calibre39">data ClockTime = TOD Integer Integer</pre><br class="calibre48"/>
+<a name="x_na" class="calibre27" id="x_na"></a><p class="docText">The first <tt class="calibre34">Integer</tt>
+        represents the number of seconds since the epoch. The second <tt class="calibre34">Integer</tt> represents an
+        additional number of picoseconds. Because <tt class="calibre34">ClockTime</tt> in Haskell uses the unbounded
+        <tt class="calibre34">Integer</tt> type, it can effectively
+        represent a date range limited only by computational resources.</p><a name="x_oa" class="calibre27" id="x_oa"></a><p class="docText">Let's look at some ways to use <tt class="calibre34">ClockTime</tt>. First, there is the <tt class="calibre34">getClockTime</tt> function that returns the
+        current time according to the system's clock:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:module System.Time</b>ghci&gt; <b class="calibre40">getClockTime</b>
+Loading package old-locale-1.0.0.0 ... linking ... done.
+Loading package old-time-1.0.0.0 ... linking ... done.
+Sat Aug 23 22:30:03 PDT 2008</pre><a name="x_pa" class="calibre27" id="x_pa"></a><p class="docText">If you wait a second and run <tt class="calibre34">getClockTime</tt> again, <a name="I_indexterm20_d1e43252" class="calibre27" id="I_indexterm20_d1e43252"></a>it will return an updated time. Notice that the output
+        from this command is a nice-looking string, complete with day-of-week
+        information. That's due to the <tt class="calibre34">Show</tt>
+        instance for <tt class="calibre34">ClockTime</tt>. Let's look
+        at the <tt class="calibre34">ClockTime</tt> at a lower level:</p><pre class="calibre39">ghci&gt; <b class="calibre40">TOD 1000 0</b>
+Wed Dec 31 16:16:40 PST 1969
+ghci&gt; <b class="calibre40">getClockTime &gt;&gt;= (\(TOD sec _) -&gt; return sec)</b>
+1219555803</pre><a name="x_qa" class="calibre27" id="x_qa"></a><p class="docText">Here we first construct a <tt class="calibre34">ClockTime</tt> representing the point in time
+        1,000 seconds after midnight on January 1, 1970, UTC. That moment in
+        time is known as the <span class="docEmphasis">epoch</span>. Depending on your
+        time zone, this moment in time may correspond to the evening of
+        December 31, 1969, in your local time zone.</p><a name="x_ra" class="calibre27" id="x_ra"></a><p class="docText">In the second example we pull the number of seconds
+        out of the value returned by <tt class="calibre34">getClockTime</tt>. We can now manipulate it, like
+        so:</p><pre class="calibre39">ghci&gt; <b class="calibre40">getClockTime &gt;&gt;= (\(TOD sec _) -&gt; return (TOD (sec + 86400) 0))</b>
+Sun Aug 24 22:30:03 PDT 2008
+</pre><a name="x_sa" class="calibre27" id="x_sa"></a><p class="docText">This will display what the time will be exactly 24
+        hours from now in your local time zone, since there are 86,400 seconds
+        in 24 hours.</p><a name="system_calendartime" class="calibre27" id="system_calendartime"></a><h5 id="title-IDAEICAD" class="docSection3Title">20.4.1.2. Using CalendarTime</h5><a name="x_ta" class="calibre27" id="x_ta"></a><p class="docText">As its name implies, <tt class="calibre34">CalendarTime</tt> represents<a name="I_indexterm20_d1e43307" class="calibre27" id="I_indexterm20_d1e43307"></a> time like we would on a calendar. It has fields for
+        information such as year, month, and day. <tt class="calibre34">CalendarTime</tt> and its associated types are
+        defined like this:</p><pre class="calibre39">data CalendarTime = CalendarTime
+   {ctYear :: Int,         -- Year (post-Gregorian)
+    ctMonth :: Month, 
+    ctDay :: Int,          -- Day of the month (1 to 31)
+    ctHour :: Int,         -- Hour of the day (0 to 23)
+    ctMin :: Int,          -- Minutes (0 to 59)
+    ctSec :: Int,          -- Seconds (0 to 61, allowing for leap seconds)
+    ctPicosec :: Integer,  -- Picoseconds
+    ctWDay :: Day,         -- Day of the week
+    ctYDay :: Int,         -- Day of the year (0 to 364 or 365)
+    ctTZName :: String,    -- Name of timezone
+    ctTZ :: Int,           -- Variation from UTC in seconds
+    ctIsDST :: Bool        -- True if Daylight Saving Time in effect
+   }
+
+data Month = January | February | March | April | May | June 
+             | July | August | September | October | November | December
+
+data Day = Sunday | Monday | Tuesday | Wednesday
+           | Thursday | Friday | Saturday</pre><br class="calibre48"/>
+<a name="x_ua" class="calibre27" id="x_ua"></a><p class="docText">There are a few things about these structures that
+        should be highlighted:</p><ul class="calibre18"><li class="calibre19"><p class="docText"><tt class="calibre34">ctWDay</tt>,
+            <tt class="calibre34">ctYDay</tt>, and <tt class="calibre34">ctTZName</tt> are<a name="I_indexterm20_d1e43332" class="calibre27" id="I_indexterm20_d1e43332"></a><a name="I_indexterm20_d1e43335" class="calibre27" id="I_indexterm20_d1e43335"></a><a name="I_indexterm20_d1e43338" class="calibre27" id="I_indexterm20_d1e43338"></a> generated by the library functions that create a
+            <tt class="calibre34">CalendarTime</tt> but are not used
+            in calculations. If you are creating a <tt class="calibre34">CalendarTime</tt> by hand, it is not
+            necessary to put accurate values into these fields, unless your
+            later calculations will depend upon them.</p></li><li class="calibre19"><p class="docText">All of these three types are members of the
+            <tt class="calibre34">Eq</tt>, <tt class="calibre34">Ord</tt>, <tt class="calibre34">Read</tt>, and <tt class="calibre34">Show</tt> typeclasses. In addition, <tt class="calibre34">Month</tt> and <tt class="calibre34">Day</tt> are declared as members<a name="I_indexterm20_d1e43371" class="calibre27" id="I_indexterm20_d1e43371"></a> <a name="I_indexterm20_d1e43375" class="calibre27" id="I_indexterm20_d1e43375"></a>of the <tt class="calibre34">Enum</tt> and
+            <tt class="calibre34">Bounded</tt> typeclasses. For more
+            information on these typeclasses, refer to <a class="docLink" href="typeclasses_wellknown.html#typeclasses_wellknown">Section 6.4</a>.</p><p class="docText">You can generate <tt class="calibre34">CalendarTime</tt> values several ways. You
+            could start by converting a <tt class="calibre34">ClockTime</tt> to a <tt class="calibre34">CalendarTime</tt> such as this:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:module System.Time</b>ghci&gt; <b class="calibre40">now &lt;- getClockTime</b>
+Loading package old-locale-1.0.0.0 ... linking ... done.
+Loading package old-time-1.0.0.0 ... linking ... done.
+Sat Aug 23 22:29:59 PDT 2008
+ghci&gt; <b class="calibre40">nowCal &lt;- toCalendarTime now</b>
+CalendarTime {ctYear = 2008, ctMonth = August, ctDay = 23, ctHour = 22, 
+ctMin = 29,ctSec = 59, ctPicosec = 877577000000, ctWDay = Saturday, 
+ctYDay = 235, ctTZName ="PDT", ctTZ = -25200, ctIsDST = True}
+ghci&gt; <b class="calibre40">let nowUTC = toUTCTime now</b>
+ghci&gt; <b class="calibre40">nowCal</b>
+CalendarTime {ctYear = 2008, ctMonth = August, ctDay = 23, ctHour = 22, 
+ctMin = 29, ctSec = 59, ctPicosec = 877577000000, ctWDay = Saturday, 
+ctYDay = 235, ctTZName = "PDT", ctTZ = -25200, ctIsDST = True}
+ghci&gt; <b class="calibre40">nowUTC</b>
+CalendarTime {ctYear = 2008, ctMonth = August, ctDay = 24, ctHour = 5, 
+ctMin = 29, ctSec = 59, ctPicosec = 877577000000, ctWDay = Sunday, 
+ctYDay = 236, ctTZName = "UTC", ctTZ = 0, ctIsDST = False}</pre><p class="docText">We used <tt class="calibre34">getClockTime</tt> to obtain the current
+            <tt class="calibre34">ClockTime</tt> from the system's
+            clock. Next, <tt class="calibre34">toCalendarTime</tt>
+            converts the <tt class="calibre34">ClockTime</tt> to a
+            <tt class="calibre34">CalendarTime</tt> representing the
+            time in the local time zone. <tt class="calibre34">toUTCtime</tt> performs a similar conversion,
+            but its result is in the UTC time zone instead of the local time
+            zone.</p><p class="docText">Notice that <tt class="calibre34">toCalendarTime</tt> is <a name="I_indexterm20_d1e43456" class="calibre27" id="I_indexterm20_d1e43456"></a><a name="I_indexterm20_d1e43459" class="calibre27" id="I_indexterm20_d1e43459"></a>an IO function, but <tt class="calibre34">toUTCTime</tt> is not. The reason is that
+            <tt class="calibre34">toCalendarTime</tt> returns a
+            different result depending upon the locally configured time zone,
+            but <tt class="calibre34">toUTCTime</tt> will return the
+            exact same result whenever it is passed the same source <tt class="calibre34">ClockTime</tt>.</p><p class="docText">It's easy to modify a <tt class="calibre34">CalendarTime</tt> value:</p><pre class="calibre39">ghci&gt; <b class="calibre40">nowCal {ctYear = 1960}</b>
+CalendarTime {ctYear = 1960, ctMonth = August, ctDay = 23, 
+ctHour = 22, ctMin = 29, ctSec = 59, ctPicosec = 877577000000,
+ctWDay = Saturday, ctYDay = 235, ctTZName = "PDT", 
+ctTZ = -25200, ctIsDST = True}
+ghci&gt; <b class="calibre40">(\(TOD sec _) -&gt; sec) (toClockTime nowCal)</b>
+1219555799
+ghci&gt; <b class="calibre40">(\(TOD sec _) -&gt; sec) (toClockTime (nowCal {ctYear = 1960}))</b>
+-295209001</pre><p class="docText">In this example, we first took the <tt class="calibre34">CalendarTime</tt> value from earlier and
+            simply switched its year to 1960. Then, we used <tt class="calibre34">toClockTime</tt> to convert the unmodified
+            value to a <tt class="calibre34">ClockTime</tt>, and then
+            the modified value, so you can see the difference. Notice that the
+            modified value shows a negative number of seconds once converted
+            to <tt class="calibre34">ClockTime</tt>. That's to be
+            expected, since a <tt class="calibre34">ClockTime</tt> is
+            an offset from midnight on January 1, 1970, UTC, and this value is
+            in 1960.</p><p class="docText">You can also create <tt class="calibre34">CalendarTime</tt> values manually:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let newCT = CalendarTime 2010 January 15 12 30 0 0 Sunday 0 "UTC" 0 False</b>ghci&gt; <b class="calibre40">newCT</b>
+CalendarTime {ctYear = 2010, ctMonth = January, ctDay = 15, ctHour = 12, 
+ctMin = 30, ctSec = 0, ctPicosec = 0, ctWDay = Sunday, ctYDay = 0, 
+ctTZName = "UTC", ctTZ = 0, ctIsDST = False}
+ghci&gt; <b class="calibre40">(\(TOD sec _) -&gt; sec) (toClockTime newCT)</b>
+1263558600</pre><p class="docText">Note that even though January 15, 2010, isn't a
+            Sunday—and isn't day 0 in the year—the system was able to process
+            this just fine. In fact, if we convert the value to a <tt class="calibre34">ClockTime</tt> and then back to a <tt class="calibre34">CalendarTime</tt>, you'll find those fields
+            properly filled in:</p><pre class="calibre39">ghci&gt; <b class="calibre40">toUTCTime . toClockTime $ newCT</b>
+CalendarTime {ctYear = 2010, ctMonth = January, ctDay = 15, ctHour = 12, 
+ctMin = 30, ctSec = 0, ctPicosec = 0, ctWDay = Friday, ctYDay = 14, 
+ctTZName = "UTC", ctTZ = 0, ctIsDST = False}
+</pre></li></ul><a name="system_timediff" class="calibre27" id="system_timediff"></a><h5 id="title-IDA2BDAD" class="docSection3Title">20.4.1.3. TimeDiff for ClockTime</h5><a name="x_Eb" class="calibre27" id="x_Eb"></a><p class="docText">Because it can be difficult to <a name="I_indexterm20_d1e43558" class="calibre27" id="I_indexterm20_d1e43558"></a><a name="I_indexterm20_d1e43563" class="calibre27" id="I_indexterm20_d1e43563"></a>manage differences between <tt class="calibre34">ClockTime</tt> values in a human-friendly way,
+        the <tt class="calibre34">System.Time</tt> module includes a
+        <tt class="calibre34">TimeDiff</tt> type. <tt class="calibre34">TimeDiff</tt> can be used, where convenient, to
+        handle these differences. It is defined like this:</p><pre class="calibre39">data TimeDiff = TimeDiff
+   {tdYear :: Int,
+    tdMonth :: Int,
+    tdDay :: Int,
+    tdHour :: Int,
+    tdMin :: Int,
+    tdSec :: Int,
+    tdPicosec :: Integer}</pre><br class="calibre48"/>
+<a name="x_Fb" class="calibre27" id="x_Fb"></a><p class="docText">Functions such as <tt class="calibre34">diffClockTimes</tt> and <tt class="calibre34">addToClockTime</tt> take a <tt class="calibre34">ClockTime</tt> and a
+        <tt class="calibre34">TimeDiff</tt> and
+        handle the calculations internally by converting to a <tt class="calibre34">CalendarTime</tt> in UTC, applying the
+        differences, and converting back to a <tt class="calibre34">ClockTime</tt>.</p><a name="x_Gb" class="calibre27" id="x_Gb"></a><p class="docText">Let's see how it works:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:module System.Time</b>ghci&gt; <b class="calibre40">let feb5 = toClockTime $ CalendarTime 2008 February 5 0 0 0 0 Sunday 0
+"UTC" 0 False</b>
+Loading package old-locale-1.0.0.0 ... linking ... done.
+Loading package old-time-1.0.0.0 ... linking ... done.
+ghci&gt; <b class="calibre40">feb5</b>
+Mon Feb  4 16:00:00 PST 2008
+ghci&gt; <b class="calibre40">addToClockTime (TimeDiff 0 1 0 0 0 0 0) feb5</b>
+Tue Mar  4 16:00:00 PST 2008
+ghci&gt; <b class="calibre40">toUTCTime $ addToClockTime (TimeDiff 0 1 0 0 0 0 0) feb5</b>
+CalendarTime {ctYear = 2008, ctMonth = March, ctDay = 5, ctHour = 0,
+ctMin = 0, ctSec = 0, ctPicosec = 0, ctWDay = Wednesday, ctYDay = 64, 
+ctTZName = "UTC", ctTZ = 0, ctIsDST = False}
+ghci&gt; <b class="calibre40">let jan30 = toClockTime $ CalendarTime 2009 January 30 0 0 0 0 
+Sunday 0 "UTC" 0 False</b>
+ghci&gt; <b class="calibre40">jan30</b>
+Thu Jan 29 16:00:00 PST 2009
+ghci&gt; <b class="calibre40">addToClockTime (TimeDiff 0 1 0 0 0 0 0) jan30</b>
+Sun Mar  1 16:00:00 PST 2009
+ghci&gt; <b class="calibre40">toUTCTime $ addToClockTime (TimeDiff 0 1 0 0 0 0 0) jan30</b>
+CalendarTime {ctYear = 2009, ctMonth = March, ctDay = 2, ctHour = 0, ctMin = 0, 
+ctSec = 0, ctPicosec = 0, ctWDay = Monday, ctYDay = 60, ctTZName = "UTC", ctTZ = 
+0, ctIsDST = False}
+ghci&gt; <b class="calibre40">diffClockTimes jan30 feb5</b>
+TimeDiff {tdYear = 0, tdMonth = 0, tdDay = 0, tdHour = 0, tdMin = 0, tdSec = 31104000, 
+tdPicosec = 0}
+ghci&gt; <b class="calibre40">normalizeTimeDiff $ diffClockTimes jan30 feb5</b>
+TimeDiff {tdYear = 0, tdMonth = 12, tdDay = 0, tdHour = 0, tdMin = 0, tdSec = 0, 
+tdPicosec = 0}</pre><a name="x_Hb" class="calibre27" id="x_Hb"></a><p class="docText">We started by generating a <tt class="calibre34">ClockTime</tt> representing midnight February 5,
+        2008 in UTC. Note that, unless your time zone is the same as UTC, when
+        this time is printed out on the display, it may show up as the evening
+        of February 4 because it is formatted for your local time zone.</p><a name="x_Ib" class="calibre27" id="x_Ib"></a><p class="docText">Next, we add one month to it by<a name="I_indexterm20_d1e43669" class="calibre27" id="I_indexterm20_d1e43669"></a> calling <tt class="calibre34">addToClockTime</tt>. 2008 is a leap year, but the
+        system handled that properly and we get a result that has the same
+        date and time in March. Using <tt class="calibre34">toUTCTime</tt>, we can see the effect on this in
+        the original UTC time zone.</p><a name="x_Jb" class="calibre27" id="x_Jb"></a><p class="docText">For a second experiment, we set up a time representing
+        midnight on January 30, 2009 in UTC. 2009 is not a leap year, so we
+        might wonder what will happen when trying to add one month to it. We
+        can see that, since neither February 29 or 30 exist in 2009, we wind
+        up with March 2.</p><a name="x_Kb" class="calibre27" id="x_Kb"></a><p class="docText">Finally, we can see how <tt class="calibre34">diffClockTimes</tt> turns two <tt class="calibre34">ClockTime</tt> values<a name="I_indexterm20_d1e43689" class="calibre27" id="I_indexterm20_d1e43689"></a> into a <tt class="calibre34">TimeDiff</tt>,
+        though only the seconds and picoseconds are filled in. The <tt class="calibre34">normalizeTimeDiff</tt> function takes such a
+        <tt class="calibre34">TimeDiff</tt> and reformats it as a
+        human might expect to see it.</p><a name="systems_modtime" class="calibre27" id="systems_modtime"></a><h4 id="title-IDAHHDAD" class="docSection1Title">20.4.2. File Modification Times</h4><a name="x_Lb" class="calibre27" id="x_Lb"></a><p class="docText">Many programs<a name="I_indexterm20_d1e43708" class="calibre27" id="I_indexterm20_d1e43708"></a><a name="I_indexterm20_d1e43713" class="calibre27" id="I_indexterm20_d1e43713"></a> need to find out when particular files were last
+      modified. Programs such as <tt class="calibre34">ls</tt> or
+      graphical file managers typically display the modification time of
+      files. The <tt class="calibre34">System.Directory</tt>
+      module<a name="I_indexterm20_d1e43725" class="calibre27" id="I_indexterm20_d1e43725"></a><a name="I_indexterm20_d1e43728" class="calibre27" id="I_indexterm20_d1e43728"></a> contains a cross-platform <tt class="calibre34">getModificationTime</tt> function. It takes a
+      filename and returns a <tt class="calibre34">ClockTime</tt>
+      representing the time the file was last modified. For instance:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:module System.Directory</b>ghci&gt; <b class="calibre40">getModificationTime "/etc/passwd"</b>
+Loading package old-locale-1.0.0.0 ... linking ... done.
+Loading package old-time-1.0.0.0 ... linking ... done.
+Loading package filepath-1.1.0.0 ... linking ... done.
+Loading package directory-1.0.0.1 ... linking ... done.
+Mon Jul 14 04:06:29 PDT 2008</pre><a name="x_Mb" class="calibre27" id="x_Mb"></a><p class="docText">POSIX platforms maintain not just a modification time
+      (known as mtime), but also the time of last read or write access (atime)
+      and the time of last status change (ctime). Since this information is
+      POSIX-specific, the cross-platform <tt class="calibre34">System.Directory</tt> module does not provide
+      access to it. Instead, you will need to use functions in <tt class="calibre34">System.Posix.Files</tt>.
+      Here<a name="I_indexterm20_d1e43758" class="calibre27" id="I_indexterm20_d1e43758"></a> is an example function to do that:</p><pre class="calibre39">-- file: ch20/posixtime.hs
+-- posixtime.hs
+
+import System.Posix.Files
+import System.Time
+import System.Posix.Types
+
+-- | Given a path, returns (atime, mtime, ctime)
+getTimes :: FilePath -&gt; IO (ClockTime, ClockTime, ClockTime)
+getTimes fp =
+    do stat &lt;- getFileStatus fp
+       return (toct (accessTime stat),
+               toct (modificationTime stat),
+               toct (statusChangeTime stat))
+
+-- | Convert an EpochTime to a ClockTime
+toct :: EpochTime -&gt; ClockTime
+toct et = 
+    TOD (truncate (toRational et)) 0</pre><br class="calibre48"/>
+<a name="x_Nb" class="calibre27" id="x_Nb"></a><p class="docText">Notice that call to <tt class="calibre34">getFileStatus</tt>. That call maps directly to the
+      C function <tt class="calibre34">stat()</tt>. Its return value
+      stores a vast assortment of information, including file type,
+      permissions, owner, group, and the three time values we're interested
+      in. <tt class="calibre34">System.Posix.Files</tt> provides
+      various functions, such as <tt class="calibre34">accessTime</tt>, that extract the information we're
+      interested out of the opaque <tt class="calibre34">FileStatus</tt> type returned by <tt class="calibre34">getFileStatus</tt>.</p><a name="x_gJ1" class="calibre27" id="x_gJ1"></a><p class="docText">The functions such as <tt class="calibre34">accessTime</tt> return data in a POSIX-specific
+      type called <tt class="calibre34">EpochTime</tt>, which converts to a <tt class="calibre34">ClockTime</tt> using the <tt class="calibre34">toct</tt> function. <tt class="calibre34">System.Posix.Files</tt> also provides a
+      <tt class="calibre34">setFileTimes</tt> function<a name="I_indexterm20_d1e43806" class="calibre27" id="I_indexterm20_d1e43806"></a> to set the atime and mtime for a file.<sup class="docFootnote"><a class="docLink1" href="#x_gJ1d1e44120">[47]</a></sup></p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_gJ1d1e44120" class="calibre5" id="x_gJ1d1e44120">[47]</a></sup> It is not normally possible to set the ctime on
+          POSIX systems.</p></blockquote>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="system_termination.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="systems_piping.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

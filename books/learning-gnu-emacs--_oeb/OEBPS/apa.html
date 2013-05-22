@@ -1,0 +1,1187 @@
+---
+layout: page
+title: "Learning GNU Emacs, 3rd Edition"
+prev: OEBPS/ch14s05.html
+next: OEBPS/apb.html
+book_path: books/learning-gnu-emacs--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" xml:lang="en"><div class="book"><div class="book"><div class="book"><h1 class="title"><a id="gnu3-APP-A" class="calibre1"></a>Appendix A. Emacs Variables</h1></div></div></div><p class="copyright">This appendix lists some Emacs variables. We chose them for their
+general usefulness and for their applicability to subjects in this
+book.</p><p class="copyright">The variables below are grouped by category, and their default values
+are shown (where practical to do so). For more details on specific
+variables, see the chapters referred to at the beginning of each
+table. For
+<a id="gnu3-APP-A-ITERM-3002" class="calibre2"></a>
+         <a id="gnu3-APP-A-ITERM-3003" class="calibre2"></a>
+         <a id="gnu3-APP-A-ITERM-3004" class="calibre2"></a>
+         <a id="gnu3-APP-A-ITERM-3005" class="calibre2"></a>
+         <a id="gnu3-APP-A-ITERM-3006" class="calibre2"></a>
+         <a id="gnu3-APP-A-ITERM-3007" class="calibre2"></a>information on variables used in
+programming language modes, see <a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>.</p><div class="book"><a id="gnu3-APP-A-TABLE-1" class="calibre2"></a><p class="title2"><b class="calibre25">Table A-1. Backups, auto-save, and versioning (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>, <a class="calibre2" href="ch12.html" title="Chapter 12. Version Control">Chapter 12</a>)</b></p><div class="table-contents"><table summary="Backups, auto-save, and versioning (Chapter 2, Chapter 12)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Variable</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Default</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Description</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">make-backup-files</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If <span><strong class="calibre5">t</strong></span>, create a backup version of the
+current file before saving it for the first time.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">backup-by-copying</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If <span><strong class="calibre5">t</strong></span>, create backup files by
+<span><em class="calibre7">copying</em></span> rather than
+<span><em class="calibre7">renaming</em></span> the file being saved to a backup
+version. The default is renaming, which is more efficient. Copying
+can yield different results, especially when you're
+editing files owned by another user, and in operating systems that
+allow "hard links" to files
+(alternate names that are associated with the physical file). There
+are a raft of variables that can tweak this behavior based on
+context; check the online help for <span><strong class="calibre5">make-backup-files</strong></span> for the details.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">version-control</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If <span><strong class="calibre5">t</strong></span>, create numbered versions of
+files as backups (with names of the form
+<span><em class="calibre7">filename~N~</em></span>). If <span><strong class="calibre5">nil</strong></span>, only do this for files that have numbered
+versions already. If '<span><strong class="calibre5">never</strong></span> (note
+the leading single quote), never make numbered versions.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kept-new-versions</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">2</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Number of latest versions of a file to keep when a new numbered
+backup is made.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kept-old-versions</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">2</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Number of oldest versions of a file to keep when a new numbered
+backup is made.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">delete-old-versions</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If <span><strong class="calibre5">t</strong></span>, delete excess versions (not
+those kept according to the above variables) without asking for
+confirmation first. If <span><strong class="calibre5">nil</strong></span>, ask for
+confirmation first. If any other value, don't delete
+excess versions.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">auto-save-default</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If <span><strong class="calibre5">t</strong></span>, do auto-saving of every file
+visited.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">auto-save-visited-file-name</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If <span><strong class="calibre5">t</strong></span>, auto-save to the file being
+visited rather than to a special auto-save file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">auto-save-interval</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">300</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Number of keystrokes between auto-saving; if 0, turn off auto-saving.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">auto-save-timeout</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">30</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Length of time of inactivity after which Emacs auto-saves. If
+<span><strong class="calibre5">nil</strong></span> or 0, turn off this feature.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">delete-auto-save-files</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Non-<span><strong class="calibre5">nil</strong></span> means delete auto-save files
+whenever the "real" file is saved.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">buffer-offer-save</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Non-<span><strong class="calibre5">nil</strong></span> means offer to save the
+current buffer when exiting Emacs, even if the buffer is not a file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-handled-backends</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">(RCS CVS SVN SCCS Arch MCVS)</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Version control systems used with the <span><strong class="calibre5">vc</strong></span> package. The order in which they appear in
+this list controls the order in which they will be attempted when
+working with a new file.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-display-status</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, display the version
+number and the locked state in the mode line.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-keep-workfiles</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, do not delete work files
+after you register changes with the version control system.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-mistrust-permissions</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, do not assume that a
+file's owner ID and permission flags reflect version
+control system's idea of file's
+ownership and permission; get this information directly from version
+control system.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-suppress-confirm</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, do not ask for
+confirmation before performing version control actions.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-initial-comment</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, prompt for an initial
+comment when registering a file with version control system.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vc-make-backup-files</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, make standard Emacs
+backups of files registered with version control.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">diff-switches</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">-c</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Command-line switches used to control the format of change reports by
+VC as well as <code class="calibre21">diff.el</code>.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-A-TABLE-2" class="calibre2"></a><p class="title2"><b class="calibre25">Table A-2. Searching and replacing (<a class="calibre2" href="ch03.html" title="Chapter 3. Search and Replace">Chapter 3</a>)</b></p><div class="table-contents"><a id="appa-idx-missedid-7" class="calibre2"></a><a id="appa-idx-missedid-8" class="calibre2"></a><table summary="Searching and replacing (Chapter 3)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Variable</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Default</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Description</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">case-fold-search</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, treat upper- and
+lowercase letters as the same when searching.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">case-replace</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, preserve the original
+case of letters when doing replaces (even if <span><strong class="calibre5">case-fold-search</strong></span> is on).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">search-upper-case</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">'<span><strong class="calibre5">not-yanks</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, uppercase letters in
+search strings defeat <span><strong class="calibre5">case-fold-search</strong></span> (i.e., force search to be
+case-sensitive). The symbol '<span><strong class="calibre5">not-yanks</strong></span> means convert uppercase letters in
+yanked text to lowercase.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">search-exit-option</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, any control character
+other than those defined in incremental search (<span><strong class="calibre5">Del</strong></span>, <span><strong class="calibre5">C-j</strong></span>,
+<span><strong class="calibre5">C-q</strong></span>, <span><strong class="calibre5">C-r</strong></span>, <span><strong class="calibre5">C-s</strong></span>,
+<span><strong class="calibre5">C-w</strong></span>, <span><strong class="calibre5">C-y</strong></span>) exits search.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">search-highlight</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, highlight partial search
+matches.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">query-replace-highlight</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, highlight matches in
+query-replace mode.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-A-TABLE-3" class="calibre2"></a><p class="title2"><b class="calibre25">Table A-3. Display (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>, <a class="calibre2" href="ch04.html" title="Chapter 4. Using Buffers, Windows, and Frames">Chapter 4</a>)</b></p><div class="table-contents"><a id="appa-idx-missedid-9" class="calibre2"></a><a id="appa-idx-missedid-10" class="calibre2"></a><table summary="Display (Chapter 2, Chapter 4)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Variable</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Default</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Description</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">next-screen-context-lines</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">2</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Retain this many lines when scrolling forward or backward by
+<span><strong class="calibre5">C-v</strong></span> or <span><strong class="calibre5">M-v</strong></span>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">scroll-step</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">0</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">When moving the cursor vertically out of the current window, scroll
+this many lines forward or backward. If 0, scroll enough lines to
+place the cursor at the center of the window after scrolling.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">hscroll-step</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">0</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">When moving the cursor horizontally out of the current window, scroll
+this many columns left or right. If 0, scroll enough lines to place
+the cursor at the center of the window after scrolling.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tab-width</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">8</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Width of tab stops; when set, it becomes local to the current buffer.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">left-margin</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">0</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Number of columns to indent when typing <span><strong class="calibre5">C-j</strong></span> in fundamental mode and text mode.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">standard-indent</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">4</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">The number of columns to indent when using commands that increase or
+decrease margins.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">truncate-lines</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, do not wrap long lines;
+instead, truncate them and use arrows to show that the line continues
+off-screen. (Nongraphical versions of Emacs use <span><strong class="calibre5">$</strong></span> instead to show where the line extends.)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">truncate-partial-width-windows</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, truncate long lines (as
+above) in all windows that are not the full width of the display.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">window-min-height</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">4</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Minimum allowable height of windows (in lines).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">window-min-width</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">10</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Minimum allowable width of vertically split windows (in columns).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ctl-arrow</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Non-<span><strong class="calibre5">nil</strong></span> means display control
+characters using ^<span><em class="calibre7">X</em></span>, where
+<span><em class="calibre7">X</em></span> is the letter being
+"controlled." Otherwise, use octal
+(base 8) ASCII notation for display—for example, <span><strong class="calibre5">C-h</strong></span> appears as \010 in octal.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">display-time-day-and-date</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, <span><strong class="calibre5">M-x display-time Enter</strong></span> will also show the day
+and date.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">line-number-mode</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, display the line number
+on the mode line.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">line-number-display-limit</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Maximum size of buffer (in characters) for which line numbers should
+be displayed. A value of <span><strong class="calibre5">nil</strong></span> means
+no limit.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">column-number-mode</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, display the column
+number on the mode line.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">visible-bell</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>,
+"flash" the screen instead of
+beeping when necessary.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">track-eol</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, whenever the cursor is
+at the end of the line, "stick" to
+the end of the line when moving the cursor up or down; otherwise,
+stay in the column where the cursor is.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">blink-matching-paren</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, blink matching open
+parenthesis-type character when a corresponding close parenthesis is
+typed.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">blink-matching-paren-distance</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">25600</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Maximum number of characters to search through to find a matching
+open parenthesis character when a close parenthesis is typed.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">blink-matching-delay</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">1</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Number of seconds to pause when blinking a matching parenthesis.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">echo-keystrokes</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">1</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Echo prefixes for unfinished commands (e.g., <span><strong class="calibre5">C-</strong></span>) in minibuffer after user pauses for this
+many seconds; 0 means don't do echoing at all.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">insert-default-directory</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, insert the current
+directory in the minibuffer when asking for a filename.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">highlight-nonselected-windows</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, highlight regions in
+windows other than the one currently selected; applies to GUI
+displays and others that support highlighting.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">mouse-scroll-delay</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">0.25</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Delay, in seconds, between screen scrolls when mouse is clicked and
+dragged from inside a window to beyond its borders. 0 means scroll as
+fast as possible.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">mouse-scroll-min-lines</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">1</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Scroll at least this many lines when mouse is clicked and dragged up
+or down beyond a window.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-A-TABLE-4" class="calibre2"></a><p class="title2"><b class="calibre25">Table A-4. Modes (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>, <a class="calibre2" href="ch05.html" title="Chapter 5. Emacs as a Work Environment">Chapter 5</a>, <a class="calibre2" href="ch07.html" title="Chapter 7. Simple Text Formatting and Specialized Editing">Chapter 7</a>)</b></p><div class="table-contents"><a id="appa-idx-missedid-11" class="calibre2"></a><a id="appa-idx-missedid-12" class="calibre2"></a><table summary="Modes (Chapter 2, Chapter 5, Chapter 7)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Variable</strong></span>
+                     </p>
+                  </th><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Default</strong></span>
+                     </p>
+                  </th><th class="calibre27">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Description</strong></span>
+                     </p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">major-mode</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">fundamental-mode</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Default mode for new buffers, unless set by virtue of the filename;
+when setting this variable, remember to precede the mode name with a
+single quote (the value is a <span><em class="calibre7">symbol</em></span>).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">default-major-mode</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">fundamental-mode</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">The major mode for new buffers.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">auto-mode-alist</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">see <a class="calibre2" href="ch10.html" title="Chapter 10. Customizing Emacs">Chapter 10</a>
+                        </em></span>)</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">List of associations between filenames and major modes.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">interpreter-mode-alist</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">see <a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>
+                        </em></span>)</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">A list similar to <span><strong class="calibre5">auto-mode-alist</strong></span>,
+but for interpreted languages like Perl and Python.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">indent-tabs-mode</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, allow the use of tab
+characters (as well as spaces) when indenting with <span><strong class="calibre5">C-j</strong></span>. This can really drive other developers
+mad, so you should probably disable this if you are working on a
+team.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-kept-versions</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">2</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">When cleaning a directory in Dired, keep this many versions of files.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-garbage-files-regexp</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"\\.\\(?:aux\\|bak\\|dvi\\|log\\|orig\\|rej\\|toc\\)\\'"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Defines what file types are marked when selecting garbage files in
+Dired.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-listing-switches</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">-al</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Options passed to the <span><strong class="calibre5">ls</strong></span> command for
+generating <span><strong class="calibre5">dired</strong></span> listings; should
+contain at least "<span><strong class="calibre5">-l</strong></span>".</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dired-view-command-alist</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">see <a class="calibre2" href="ch10.html" title="Chapter 10. Customizing Emacs">Chapter 10</a>)</em></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Defines helper applications for Dired to invoke when opening certain
+types of files.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">shell-file-name</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><em class="calibre7">varies</em></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Filename of shell to run with functions that use one, such as
+<span><strong class="calibre5">list-directory</strong></span>, <span><strong class="calibre5">dired</strong></span>, and <span><strong class="calibre5">compile</strong></span>; taken from value of the Unix
+environment variable <span><strong class="calibre5">SHELL</strong></span>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">load-path</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+</td><td class="calibre29">
+                     <p class="copyright">List of directories to search for Lisp packages to load (see <a class="calibre2" href="ch11.html" title="Chapter 11. Emacs Lisp Programming">Chapter 11</a>); often set to <span><em class="calibre7">lisp</em></span>
+subdirectory of directory where Emacs source code is installed on
+your system.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">lpr-switches</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Defines command-line options to pass to <span><strong class="calibre5">lpr</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">calendar-week-start-day</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">0</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Day defined as first day of the week. 0 is Sunday, 1 is Monday and so
+on.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">picture-tab-characters</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">"<span><strong class="calibre5">!-~</strong></span>"</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">Characters interpreted as tab stops in picture mode if they appear on
+a line of their own.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-A-TABLE-5" class="calibre2"></a><p class="title2"><b class="calibre25">Table A-5. Text editing (<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>, <a class="calibre2" href="ch03.html" title="Chapter 3. Search and Replace">Chapter 3</a>, <a class="calibre2" href="ch07.html" title="Chapter 7. Simple Text Formatting and Specialized Editing">Chapter 7</a>, <a class="calibre2" href="ch08.html" title="Chapter 8. Markup Language Support">Chapter 8</a>)</b></p><div class="table-contents"><a id="appa-idx-missedid-13" class="calibre2"></a><a id="appa-idx-missedid-14" class="calibre2"></a><table summary="Text editing (Chapter 2, Chapter 3, Chapter 7, Chapter 8)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Variable</strong></span>
+                     </p>
+                  </th><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Default</strong></span>
+                     </p>
+                  </th><th class="calibre27">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Description</strong></span>
+                     </p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">sentence-end</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">see <a class="calibre2" href="ch13.html" title="Chapter 13. Platform-Specific Considerations">Chapter 13</a>
+                        </em></span>)</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Regular expression that matches ends of sentences.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">sentence-end-double-space</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, do not treat single
+spaces after periods as ends of sentences.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">paragraph-separate</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">[ \t\f]*$</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Regular expression that matches beginnings of lines that separate
+paragraphs.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">paragraph-start</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">\f\\|[ \t]*$</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Regular expression that matches beginnings of lines that start or
+separate paragraphs.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">page-delimiter</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">^\f</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Regular expression that matches page breaks.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tex-default-mode</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">'<span><strong class="calibre5">latex-mode</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Mode to invoke when creating a file that could be either TEX or LATEX.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tex-run-command</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">tex</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Character string used as a command to run in a subprocess on a file
+in mode.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">latex-run-command</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">latex</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">String used as a command to run LATEX in a subprocess.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">slitex-run-command</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">slitex</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">String used as a command to run SliTEX in a subprocess.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tex-dvi-print-command</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">lpr -d</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Character string used as a command to print a file in tex mode with
+<span><strong class="calibre5">C-c C-p</strong></span>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tex-alt-dvi-print-command</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">lpr -d</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Command to direct <span><em class="calibre7">.dvi</em></span> files to a secondary
+printer.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tex-dvi-view-command</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">(if (eq window-system 'x) "xdvi" "dvi2tty * |
+cat -s")</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Character string used as command to view a <span><em class="calibre7">.dvi</em></span>
+output file with <span><strong class="calibre5">C-c C-v</strong></span>; this
+expression yields <span><em class="calibre7">xdvi</em></span> on X Window systems, and
+a terminal-based alternative on others. This will only work if a
+Unix-like operating environment is present (such as Mac OS X, or
+Cygwin under Windows).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tex-offer-save</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, offer to save any
+unsaved buffers before running TEX.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tex-show-queue-command</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">lpq</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Character string used as command to show the print queue with
+<span><strong class="calibre5">C-c C-q</strong></span> in Tex mode.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tex-directory</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">.</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Directory for TEX to put temporary files in; default is the current
+directory.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">outline-regexp</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">[*\f]+</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Regular expression that matches heading lines in outline mode.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">outline-heading-end-regexp</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"<span><strong class="calibre5">\n</strong></span>"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Regular expression that matches ends of heading lines in outline mode.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">selective-display-ellipses</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">If <span><strong class="calibre5">t</strong></span>, display "..." in place of
+hidden text in outline mode; otherwise don't display
+anything.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-A-TABLE-6" class="calibre2"></a><p class="title2"><b class="calibre25">Table A-6. Programming (<a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>)</b></p><div class="table-contents"><a id="appa-idx-missedid-15" class="calibre2"></a><a id="appa-idx-missedid-16" class="calibre2"></a><table summary="Programming (Chapter 9)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Variable</strong></span>
+                     </p>
+                  </th><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Default</strong></span>
+                     </p>
+                  </th><th class="calibre27">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Description</strong></span>
+                     </p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">compile-command</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"make -k"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Default compilation command to use when compiling files via Emacs
+language modes. For example, to set ant as the default compilation
+tool, set this to "<span><strong class="calibre5">ant -emacs</strong></span>".</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">compilation-error-regexp-alist</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">very long regular expression</em></span>)</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Regular expression designed to match error messages from all the
+compilers supported by Emacs.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">comment-column</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">32</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">The column at which Emacs should insert comments. If code reaches
+this column, inserts comment one space beyond code.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">comment-multi-line</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If <span><strong class="calibre5">t</strong></span>, continue comment on the next
+line. If <span><strong class="calibre5">nil</strong></span>, start a new comment on
+the next line.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-style-alist</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">see <a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>
+                        </em></span>)</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">The code indentation style to use. Many are available; see <a class="calibre2" href="ch09.html" title="Chapter 9. Computer Language Support">Chapter 9</a>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">debug-on-error</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, emacs will go into debug
+mode when an error occurs in evaluating Lisp code. This can be handy
+when you're trying out a new function, but you
+probably want to read the debugger's help first to
+learn your way around.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-macro-preprocessor</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">"/lib/cpp -C"</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Defines which command is used to invoke C preprocessor when you type
+<span><strong class="calibre5">C-c C-e</strong></span>.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">stack-trace-on-error</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, Emacs displays a stack
+trace when an error occurs in evaluating Lisp code. This is useful in
+similar situations as <span><strong class="calibre5">debug-on-error</strong></span>
+and might give you enough information without having to learn the
+debugger interface.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-A-TABLE-7" class="calibre2"></a><p class="title2"><b class="calibre25">Table A-7. Completion (<a class="calibre2" href="ch14.html" title="Chapter 14. The Help System">Chapter 14</a>)</b></p><div class="table-contents"><a id="appa-idx-missedid-17" class="calibre2"></a><a id="appa-idx-missedid-18" class="calibre2"></a><table summary="Completion (Chapter 14)" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Variable</strong></span>
+                     </p>
+                  </th><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Default</strong></span>
+                     </p>
+                  </th><th class="calibre27">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Description</strong></span>
+                     </p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">completion-auto-help</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, provide help if a
+completion (via <span><strong class="calibre5">Tab</strong></span> or <span><strong class="calibre5">Enter</strong></span> in minibuffer) is invalid or ambiguous.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">completion-ignored-extensions</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">(<span><em class="calibre7">see <a class="calibre2" href="ch14.html" title="Chapter 14. The Help System">Chapter 14</a>
+                        </em></span>)</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">List of filename suffixes Emacs ignores when completing filenames
+(for example, <span><em class="calibre7">~</em></span>).</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">completion-ignore-case</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, ignore case distinctions
+when doing completion.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-A-TABLE-8" class="calibre2"></a><p class="title2"><b class="calibre25">Table A-8. Miscellaneous</b></p><div class="table-contents"><a id="appa-idx-missedid-19" class="calibre2"></a><table summary="Miscellaneous" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Variable</strong></span>
+                     </p>
+                  </th><th class="calibre26">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Default</strong></span>
+                     </p>
+                  </th><th class="calibre27">
+                     <p class="copyright">
+                        <span><strong class="calibre5">Description</strong></span>
+                     </p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">kill-ring-max</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">60</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Keep <span><em class="calibre7">n</em></span> pieces of deleted text in the kill ring
+before deleting oldest kills.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">require-final-newline</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If a file being saved is missing a final newline: <span><strong class="calibre5">nil</strong></span> means don't add one;
+<span><strong class="calibre5">t</strong></span> means add one automatically;
+otherwise ask whether to add a newline.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">next-line-add-newlines</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">If non-<span><strong class="calibre5">nil</strong></span>, <span><strong class="calibre5">next-line</strong></span> (<span><strong class="calibre5">C-n</strong></span> or down arrow) inserts newlines when at
+the end of the buffer, rather than signaling an error.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">undo-limit, undo-strong-limit</strong></span>
+                     </p>
+                  </td><td class="calibre28">
+                     <p class="copyright">
+                        <span><strong class="calibre5">20000, 30000</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">These two variables jointly control how much space Emacs is willing
+to allocate to supporting the <span><strong class="calibre5">undo</strong></span>
+command. If you ever find yourself wanting to undo more than past
+what Emacs remembers, you might want to investigate increasing these
+limits; with today's memory sizes they can probably
+comfortably be much larger.</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">mac-command-key-is-meta</strong></span>
+                     </p>
+                  </td><td class="calibre30">
+                     <p class="copyright">
+                        <span><strong class="calibre5">t</strong></span>
+                     </p>
+                  </td><td class="calibre31">
+                     <p class="copyright">If <span><strong class="calibre5">t</strong></span>, the Mac <span><strong class="calibre5">Command</strong></span> key is used for <span><strong class="calibre5">Meta</strong></span>; if <span><strong class="calibre5">nil</strong></span>,
+the <span><strong class="calibre5">Option</strong></span> key is <span><strong class="calibre5">Meta</strong></span> instead.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/></div></div>
+
+{% endraw %}
+

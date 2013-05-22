@@ -1,0 +1,159 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: data_dlist_split_001.html
+next: monads_split_000.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="data_dlist_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="monads_split_000.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="data_seq" class="calibre27" id="data_seq"></a><h3 id="title-IDAQ2SUD" class="docSection1Title">13.7. General-Purpose Sequences</h3><a name="x_LG1" class="calibre27" id="x_LG1"></a><p class="docText">Both <a name="I_indexterm13_d1e30609" class="calibre27" id="I_indexterm13_d1e30609"></a><a name="I_indexterm13_d1e30610" class="calibre27" id="I_indexterm13_d1e30610"></a>Haskell's built-in list type and
+    the DList type that we defined earlier have poor performance
+    characteristics under some circumstances. The <tt class="calibre34">Data.Sequence</tt>
+    module<a name="I_indexterm13_d1e30618" class="calibre27" id="I_indexterm13_d1e30618"></a> defines a Seq container type that gives good
+    performance for a wider variety of <span class="docEmphasis">operations</span>.</p><a name="x_MG1" class="calibre27" id="x_MG1"></a><p class="docText">As with other modules, <tt class="calibre34">Data.Sequence</tt> is
+    intended to be used via qualified import:</p><pre class="calibre39">-- file: ch13/DataSequence.hs
+import qualified Data.Sequence as Seq</pre><br class="calibre48"/>
+<a name="x_NG1" class="calibre27" id="x_NG1"></a><p class="docText">We can construct an empty Seq using
+    <i class="docEmphasis">empty</i> and a single-element container
+    using <i class="docEmphasis">singleton</i>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">Seq.empty</b>
+Loading package array-0.1.0.0 ... linking ... done.
+Loading package containers-0.1.0.2 ... linking ... done.
+fromList []
+ghci&gt; <b class="calibre40">Seq.singleton 1</b>
+fromList [1]</pre><a name="x_OG1" class="calibre27" id="x_OG1"></a><p class="docText">We can create a Seq from a list using
+    <i class="docEmphasis">fromList</i>:</p><pre class="calibre39">        ghci&gt; 
+        <b class="calibre40">let a = Seq.fromList [1,2,3]</b></pre><a name="x_PG1" class="calibre27" id="x_PG1"></a><p class="docText">The <tt class="calibre34">Data.Sequence</tt> module provides some
+    constructor functions in the form of operators. When we perform a
+    qualified import, we must qualify the name of an operator in our code
+    (which is ugly):</p><pre class="calibre39">ghci&gt; <b class="calibre40">1 Seq.&lt;| Seq.singleton 2</b>
+fromList [1,2]
+</pre><a name="x_QG1" class="calibre27" id="x_QG1"></a><p class="docText">If we import the operators explicitly, we can avoid the
+    need to qualify them:</p><pre class="calibre39">-- file: ch13/DataSequence.hs
+import Data.Sequence ((&gt;&lt;), (&lt;|), (|&gt;))</pre><br class="calibre48"/>
+<a name="x_RG1" class="calibre27" id="x_RG1"></a><p class="docText">By removing the qualification from the operator, we
+    improve the readability of our code:</p><pre class="calibre39">ghci&gt; <b class="calibre40">Seq.singleton 1 |&gt; 2</b>
+fromList [1,2]
+</pre><a name="x_SG1" class="calibre27" id="x_SG1"></a><p class="docText">A useful way to remember the <i class="docEmphasis">(&lt;|)</i> and <i class="docEmphasis">(|&gt;)</i> functions<a name="I_indexterm13_d1e30705" class="calibre27" id="I_indexterm13_d1e30705"></a><a name="I_indexterm13_d1e30708" class="calibre27" id="I_indexterm13_d1e30708"></a> is that the "arrow" points to the element
+    we're adding to the <tt class="calibre34">Seq</tt>. The element will be added on the
+    side to which the arrow points: <i class="docEmphasis">(&lt;|)</i> adds on the left, <i class="docEmphasis">(|&gt;)</i> on the right.</p><a name="x_TG1" class="calibre27" id="x_TG1"></a><p class="docText">Both adding on the left and adding on the right are
+    constant-time operations. Appending two <tt class="calibre34">Seq</tt>s is also cheap,
+    occurring in time proportional to the logarithm of whichever is shorter.
+    To append, we use <a name="I_indexterm13_d1e30730" class="calibre27" id="I_indexterm13_d1e30730"></a>the <i class="docEmphasis">(&gt;&lt;)</i>
+    operator:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let left = Seq.fromList [1,3,3]</b>ghci&gt; <b class="calibre40">let right = Seq.fromList [7,1]</b>ghci&gt; <b class="calibre40">left &gt;&lt; right</b>
+fromList [1,3,3,7,1]</pre><a name="x_UG1" class="calibre27" id="x_UG1"></a><p class="docText">If we want to create a list from a Seq, we
+    must use the <tt class="calibre34">Data.Foldable</tt> module,<a name="I_indexterm13_d1e30761" class="calibre27" id="I_indexterm13_d1e30761"></a> which is best imported qualified:</p><pre class="calibre39">-- file: ch13/DataSequence.hs
+import qualified Data.Foldable as Foldable</pre><br class="calibre48"/>
+<a name="x_VG1" class="calibre27" id="x_VG1"></a><p class="docText">This module defines a typeclass, Foldable,
+    which Seq implements:</p><pre class="calibre39">ghci&gt; <b class="calibre40">Foldable.toList (Seq.fromList [1,2,3])</b>
+[1,2,3]
+</pre><a name="x_WG1" class="calibre27" id="x_WG1"></a><p class="docText">If we want to fold over a Seq, we use the
+    fold functions from the <tt class="calibre34">Data.Foldable</tt> module:</p><pre class="calibre39">ghci&gt; <b class="calibre40">Foldable.foldl' (+) 0 (Seq.fromList [1,2,3])</b>
+6
+</pre><a name="x_XG1" class="calibre27" id="x_XG1"></a><p class="docText">The <tt class="calibre34">Data.Sequence</tt> module provides a number
+    of other useful list-like functions. Its documentation is very thorough,
+    giving time bounds for each operation.</p><a name="x_YG1" class="calibre27" id="x_YG1"></a><p class="docText">If Seq has so many desirable
+    characteristics, why is it not the default sequence type? Lists are
+    simpler and have less overhead, and so quite often they are good enough
+    for the task at hand. They are also well suited to a lazy setting, whereas
+    Seq does not fare<a name="I_indexterm13_d1e30809" class="calibre27" id="I_indexterm13_d1e30809"></a> well.</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="data_dlist_split_000.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="monads_split_000.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

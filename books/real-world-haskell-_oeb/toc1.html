@@ -1,0 +1,1735 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: index_split_001.html
+next: index&view=A.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" class="sfbody">
+<tbody class="calibre21">
+<tr class="calibre22">
+<td class="docBookTitle"/></tr></tbody></table><td class="calibre7"><a name="MainContent" class="calibre5" id="MainContent"></a>
+<table width="95%" class="sfbody">
+<tbody class="calibre21">
+<tr class="calibre22">
+<td class="v">
+<table cellspacing="0" cellpadding="0" width="627" border="0" class="sfbody">
+<tbody class="calibre21">
+<tr valign="top" class="calibre22">
+<td class="v1" width="91"><a title="Book Cover" href="Toc.html" class="calibre13"><img alt="Book Cover" src="9780596514983_xs.gif" border="0" class="calibre10"/></a></td>
+<td class="v" height="20">
+<table cellspacing="0" cellpadding="0" border="0" class="calibre11">
+<tbody class="calibre21">
+<tr class="calibre22">
+<td class="v1" colspan="3" height="20"><b class="calibre12">Real World Haskell, 1st 
+                  Edition</b></td></tr>
+<tr class="calibre22">
+<td class="v1" colspan="3" height="18">By <a class="calibre13" href="http://www.oreillynet.com/pub/au/3346?x-t=book.view" target="_new">Bryan O'Sullivan</a>, <a class="calibre13" href="http://www.oreillynet.com/pub/au/3348?x-t=book.view" target="_new">Donald Bruce Stewart</a>, <a class="calibre13" href="http://www.oreillynet.com/pub/au/3347?x-t=book.view" target="_new">John Goerzen</a></td></tr>
+<tr class="calibre22">
+<td class="v" colspan="3">...............................................</td></tr>
+<tr class="calibre22">
+<td class="v1" colspan="3">Publisher: <b class="calibre12">O'Reilly Media, 
+                  Inc.</b></td></tr>
+<tr class="calibre22">
+<td class="v1" colspan="3">Pub Date: <b class="calibre12">December 5, 
+              2008</b></td></tr>
+<tr class="calibre22">
+<td class="v1" colspan="3">Print ISBN-13: 
+                  <b class="calibre12">978-0-596-51498-3</b></td></tr>
+<tr class="calibre22">
+<td class="v1" colspan="3">Pages: <b class="calibre12">720</b></td></tr>
+<tr class="calibre22">
+<td class="v1">Slots: <b class="calibre12">2.0</b></td>
+<td class="v2" width="75%" colspan="2"> </td></tr></tbody></table></td>
+<td class="calibre23"/></tr></tbody></table><br class="calibre20"/>
+<table cellspacing="0" cellpadding="0" width="627" border="0" class="sfbody">
+<tbody class="calibre21">
+<tr class="calibre22">
+<td class="v1"><a class="calibre13" title="Table of Contents" href="Toc.html">Table of Contents</a>  | <a class="calibre13" title="Index" href="index_split_000.html">Index</a>  | <a class="calibre13" title="Errata" href="http://oreilly.com/catalog/9780596514983/errata/" target="_new">Errata</a></td>
+<td valign="bottom" class="v2"/>
+<td valign="bottom" class="v2"/></tr></tbody></table><br class="calibre20"/>
+<table cellspacing="0" cellpadding="0" border="0" class="sfbody">
+<tbody class="calibre21">
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255"><a class="calibre13" href="kurt2safari_copyright_id_split_000.html">Copyright</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255"><a class="calibre13" href="_dedication.html">Dedication</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255"><a class="calibre13" href="whyfp_split_000.html">Preface</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="starting_split_000.html">Chapter 1.  Getting Started</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="starting_ghc.html">Section 1.1.  Your Haskell 
+            Environment</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="starting_ghci.html">Section 1.2.  Getting Started with 
+            ghci, the Interpreter</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="starting_calc.html">Section 1.3.  Basic Interaction: 
+            Using ghci as a Calculator</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="starting_ghci_edit.html">Section 1.4.  Command-Line 
+            Editing in ghci</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="starting_list.html">Section 1.5.  Lists</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="starting_string.html">Section 1.6.  Strings and 
+            Characters</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="starting_types_split_000.html">Section 1.7.  First Steps with 
+            Types</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect11_d1e2727_split_000.html">Section 1.8.  A Simple 
+          Program</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="funcstypes_split_000.html">Chapter 2.  Types and 
+Functions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect12_d1e2872.html">Section 2.1.  Why Care About 
+            Types?</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="funcstypes_types_split_000.html">Section 2.2.  Haskell's Type 
+            System</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect12_d1e3131.html">Section 2.3.  What to Expect from 
+            the Type System</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="funcstypes_basic.html">Section 2.4.  Some Common Basic 
+            Types</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="funcstypes_calling.html">Section 2.5.  Function 
+            Application</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="funcstypes_composite_split_000.html">Section 2.6.  Useful Composite 
+            Data Types: Lists and Tuples</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect12_d1e3762.html">Section 2.7.  Functions over Lists 
+            and Tuples</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="funcstypes_sigs.html">Section 2.8.  Function Types and 
+            Purity</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="funcstypes_srcfile.html">Section 2.9.  Haskell Source 
+            Files, and Writing Simple Functions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect12_d1e4585.html">Section 2.10.  Understanding 
+            Evaluation by Example</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="funcstypes_polymorphism.html">Section 2.11.  Polymorphism 
+            in Haskell</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect12_d1e5384_split_000.html">Section 2.12.  The Type of a 
+            Function of More Than One Argument</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect12_d1e5476.html">Section 2.13.  Why the Fuss over 
+            Purity?</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="funcstypes_end.html">Section 2.14.  Conclusion</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="deftypes_split_000.html">Chapter 3.  Defining Types, Streamlining 
+            Functions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_data.html">Section 3.1.  Defining a New Data 
+            Type</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_alias.html">Section 3.2.  Type 
+Synonyms</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_adt.html">Section 3.3.  Algebraic Data 
+          Types</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_pattern.html">Section 3.4.  Pattern 
+          Matching</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_record.html">Section 3.5.  Record 
+        Syntax</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_paramtypes.html">Section 3.6.  Parameterized 
+            Types</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_recursive_split_000.html">Section 3.7.  Recursive 
+          Types</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_error.html">Section 3.8.  Reporting 
+        Errors</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_locals.html">Section 3.9.  Introducing Local 
+            Variables</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_offside.html">Section 3.10.  The Offside Rule 
+            and Whitespace in an Expression</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_case.html">Section 3.11.  The case 
+          Expression</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_pattern_limits.html">Section 3.12.  Common 
+            Beginner Mistakes with Patterns</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="deftypes_guard_split_000.html">Section 3.13.  Conditional 
+            Evaluation with Guards</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="fp_split_000.html">Chapter 4.  Functional Programming</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_thinking.html">Section 4.1.  Thinking in 
+        Haskell</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_framework.html">Section 4.2.  A Simple Command-Line 
+            Framework</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_splitlines.html">Section 4.3.  Warming Up: Portably 
+            Splitting Lines of Text</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_infix.html">Section 4.4.  Infix Functions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_lists_split_000.html">Section 4.5.  Working with Lists</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_loop_split_000.html">Section 4.6.  How to Think About 
+          Loops</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_anonymous.html">Section 4.7.  Anonymous (lambda) 
+            Functions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_partialapp.html">Section 4.8.  Partial Function 
+            Application and Currying</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_aspattern.html">Section 4.9.  As-patterns</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_compose.html">Section 4.10.  Code Reuse Through 
+            Composition</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_readability.html">Section 4.11.  Tips for Writing 
+            Readable Code</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="fp_seq.html">Section 4.12.  Space Leaks and Strict 
+            Evaluation</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="library_split_000.html">Chapter 5.  Writing a Library: Working with 
+            JSON Data</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e12707.html">Section 5.1.  A Whirlwind Tour of 
+            JSON</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="library_jvalue.html">Section 5.2.  Representing JSON Data 
+            in Haskell</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="library_anatomy.html">Section 5.3.  The Anatomy of a 
+            Haskell Module</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e12958.html">Section 5.4.  Compiling Haskell 
+            Source</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e13065.html">Section 5.5.  Generating a 
+            Haskell Program and Importing Modules</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e13203.html">Section 5.6.  Printing JSON 
+            Data</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e13228.html">Section 5.7.  Type Inference Is a 
+            Double-Edged Sword</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e13316.html">Section 5.8.  A More General Look 
+            at Rendering</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e13394.html">Section 5.9.  Developing Haskell 
+            Code Without Going Nuts</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e13471.html">Section 5.10.  Pretty Printing a 
+            String</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e13753.html">Section 5.11.  Arrays and 
+            Objects, and the Module Header</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e13839.html">Section 5.12.  Writing a Module 
+            Header</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e13904_split_000.html">Section 5.13.  Fleshing Out the 
+            Pretty-Printing Library</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="library_package.html">Section 5.14.  Creating a 
+            Package</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect15_d1e14861.html">Section 5.15.  Practical Pointers 
+            and Further Reading</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="typeclasses_split_000.html">Chapter 6.  Using Typeclasses</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="typeclasses_need.html">Section 6.1.  The Need for 
+            Typeclasses</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="typeclasses_whatarethey.html">Section 6.2.  What Are 
+            Typeclasses?</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="typeclasses_instances.html">Section 6.3.  Declaring 
+            Typeclass Instances</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="typeclasses_wellknown.html">Section 6.4.  Important 
+            Built-in Typeclasses</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="typeclasses_auto_derivation.html">Section 6.5.  Automatic 
+            Derivation</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="jsonclass.html">Section 6.6.  Typeclasses at Work: Making 
+            JSON Easier to Use</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect16_d1e17476.html">Section 6.7.  Living in an Open 
+            World</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect16_d1e17824.html">Section 6.8.  How to Give a Type 
+            a New Identity</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="jsonclass_instances_split_000.html">Section 6.9.  JSON Typeclasses 
+            Without Overlapping Instances</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect16_d1e18419.html">Section 6.10.  The Dreaded 
+            Monomorphism Restriction</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="typeclasses_conclusion.html">Section 6.11.  
+          Conclusion</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="io_split_000.html">Chapter 7.  I/O</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_basics.html">Section 7.1.  Classic I/O in 
+          Haskell</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_files.html">Section 7.2.  Working with Files and 
+            Handles</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_example.html">Section 7.3.  Extended Example: 
+            Functional I/O and Temporary Files</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_lazy.html">Section 7.4.  Lazy I/O</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_monad.html">Section 7.5.  The IO Monad</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_imperative.html">Section 7.6.  Is Haskell Really 
+            Imperative?</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_sideeffects.html">Section 7.7.  Side Effects with Lazy 
+            I/O</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_buffering.html">Section 7.8.  Buffering</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_args.html">Section 7.9.  Reading Command-Line 
+            Arguments</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="io_environ.html">Section 7.10.  Environment 
+          Variables</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="glob_split_000.html">Chapter 8.  Efficient File Processing, Regular 
+            Expressions, and Filename Matching</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="glob_bytestring.html">Section 8.1.  Efficient File 
+            Processing</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="glob_fnmatch.html">Section 8.2.  Filename 
+        Matching</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="glob_regex.html">Section 8.3.  Regular Expressions in 
+            Haskell</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect18_d1e22097_split_000.html">Section 8.4.  More About Regular 
+            Expressions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="glob_translate_split_000.html">Section 8.5.  Translating a glob 
+            Pattern into a Regular Expression</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="glob_lazyfn.html">Section 8.6.  An important Aside: 
+            Writing Lazy Functions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="glob_use_split_000.html">Section 8.7.  Making Use of Our Pattern 
+            Matcher</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="glob_errapi_split_000.html">Section 8.8.  Handling Errors Through 
+            API Design</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="glob_work_split_000.html">Section 8.9.  Putting Our Code to 
+          Work</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="find_split_000.html">Chapter 9.  I/O Case Study: A Library for 
+            Searching the Filesystem</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="find_getRecursiveContents.html">Section 9.1.  The find 
+            Command</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect19_d1e23147.html">Section 9.2.  Starting Simple: 
+            Recursively Listing a Directory</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="find_simpleFind.html">Section 9.3.  A Naive Finding 
+            Function</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect19_d1e23452.html">Section 9.4.  Predicates: From 
+            Poverty to Riches, While Remaining Pure</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect19_d1e23695_split_000.html">Section 9.5.  Sizing a File 
+            Safely</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="find_predicate.html">Section 9.6.  A Domain-Specific 
+            Language for Predicates</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="find_traverse_split_000.html">Section 9.7.  Controlling 
+            Traversal</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect19_d1e24516.html">Section 9.8.  Density, 
+            Readability, and the Learning Process</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="find_fold_split_000.html">Section 9.9.  Another Way of Looking at 
+            Traversal</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect19_d1e24785_split_000.html">Section 9.10.  Useful Coding 
+            Guidelines</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="binary_split_000.html">Chapter 10.  Code Case Study: Parsing a 
+            Binary Data Format</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect110_d1e24938.html">Section 10.1.  Grayscale 
+            Files</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect110_d1e24985.html">Section 10.2.  Parsing a Raw PGM 
+            File</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect110_d1e25091.html">Section 10.3.  Getting Rid of 
+            Boilerplate Code</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="binary_implicit.html">Section 10.4.  Implicit 
+        State</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="binary_functor.html">Section 10.5.  Introducing 
+            Functors</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect110_d1e26216.html">Section 10.6.  Writing a Functor 
+            Instance for Parse</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect110_d1e26311.html">Section 10.7.  Using Functors 
+            for Parsing</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect110_d1e26414.html">Section 10.8.  Rewriting Our PGM 
+            Parser</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect110_d1e26457_split_000.html">Section 10.9.  Future 
+            Directions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="testing_split_000.html">Chapter 11.  Testing and Quality 
+            Assurance</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect111_d1e26537.html">Section 11.1.  QuickCheck: 
+            Type-Based Testing</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="quickcheck_indepth.html">Section 11.2.  Testing Case 
+            Study: Specifying a Pretty Printer</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect111_d1e27052.html">Section 11.3.  Measuring Test 
+            Coverage with HPC</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="barcode_split_000.html">Chapter 12.  Barcode Recognition</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e27234.html">Section 12.1.  A Little Bit 
+            About Barcodes</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="barcode_array_split_000.html">Section 12.2.  Introducing 
+          Arrays</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e27657.html">Section 12.3.  Encoding an 
+            EAN-13 Barcode</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e27688.html">Section 12.4.  Constraints on 
+            Our Decoder</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e27743.html">Section 12.5.  Divide and 
+            Conquer</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e27766.html">Section 12.6.  Turning a Color 
+            Image into Something Tractable</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e27934.html">Section 12.7.  What Have We Done 
+            to Our Image?</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e27986.html">Section 12.8.  Finding Matching 
+            Digits</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e28385.html">Section 12.9.  Life Without 
+            Arrays or Hash Tables</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e28808.html">Section 12.10.  Turning Digit 
+            Soup into an Answer</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e28992.html">Section 12.11.  Working with Row 
+            Data</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e29065.html">Section 12.12.  Pulling It All 
+            Together</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect112_d1e29099.html">Section 12.13.  A Few Comments 
+            on Development Style</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="data_split_000.html">Chapter 13.  Data Structures</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="data_assoc.html">Section 13.1.  Association 
+        Lists</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="data_map.html">Section 13.2.  Maps</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="data_funcs.html">Section 13.3.  Functions Are Data, 
+            Too</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="data_passwd.html">Section 13.4.  Extended Example: 
+            /etc/passwd</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="data_num_split_000.html">Section 13.5.  Extended Example: Numeric 
+            Types</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="data_dlist_split_000.html">Section 13.6.  Taking Advantage of 
+            Functions as Data</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="data_seq.html">Section 13.7.  General-Purpose 
+            Sequences</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="monads_split_000.html">Chapter 14.  Monads</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e30814.html">Section 14.1.  </a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e30852.html">Section 14.2.  Revisiting 
+            Earlier Code Examples</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e30935.html">Section 14.3.  Looking for 
+            Shared Patterns</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="monads_class.html">Section 14.4.  The Monad 
+          Typeclass</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e31273.html">Section 14.5.  And Now, a Jargon 
+            Moment</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="monads_logger.html">Section 14.6.  Using a New Monad: 
+            Show Your Work!</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="monads_liftM.html">Section 14.7.  Mixing Pure and Monadic 
+            Code</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e31773.html">Section 14.8.  Putting a Few 
+            Misconceptions to Rest</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e31817.html">Section 14.9.  Building the 
+            Logger Monad</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e31941.html">Section 14.10.  The Maybe 
+            Monad</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e32163.html">Section 14.11.  The List 
+            Monad</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="monads_do.html">Section 14.12.  Desugaring of do 
+            Blocks</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="monads_state_split_000.html">Section 14.13.  The State 
+        Monad</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e33514.html">Section 14.14.  Monads and 
+            Functors</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect114_d1e33741.html">Section 14.15.  The Monad Laws 
+            and Good Coding Style</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="monadcase_split_000.html">Chapter 15.  Programming with 
+          Monads</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="monadcase_urlencoded.html">Section 15.1.  Golfing 
+            Practice: Association Lists</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="monadcase_ap.html">Section 15.2.  Generalized 
+          Lifting</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="monadcase_monadplus.html">Section 15.3.  Looking for 
+            Alternatives</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect115_d1e34429.html">Section 15.4.  Adventures in 
+            Hiding the Plumbing</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect115_d1e34892.html">Section 15.5.  Separating 
+            Interface from Implementation</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect115_d1e35180.html">Section 15.6.  The Reader 
+            Monad</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect115_d1e35298.html">Section 15.7.  A Return to 
+            Automated Deriving</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect115_d1e35473_split_000.html">Section 15.8.  Hiding the IO 
+            Monad</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="parsec_split_000.html">Chapter 16.  Using Parsec</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="parsec_firststeps.html">Section 16.1.  First Steps with 
+            Parsec: Simple CSV Parsing</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="parsec_sep.html">Section 16.2.  The sepBy and endBy 
+            Combinators</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="parsec_choices.html">Section 16.3.  Choices and 
+          Errors</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="csv.html">Section 16.4.  Extended Example: Full CSV 
+            Parser</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect116_d1e36850.html">Section 16.5.  Parsec and 
+            MonadPlus</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="applicative_urlencoded.html">Section 16.6.  Parsing a 
+            URL-Encoded Query String</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect116_d1e36989.html">Section 16.7.  Supplanting 
+            Regular Expressions for Casual Parsing</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect116_d1e37006.html">Section 16.8.  Parsing Without 
+            Variables</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect116_d1e37048.html">Section 16.9.  Applicative 
+            Functors for Parsing</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect116_d1e37117.html">Section 16.10.  Applicative 
+            Parsing by Example</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect116_d1e37324.html">Section 16.11.  Parsing JSON 
+            Data</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect116_d1e37427_split_000.html">Section 16.12.  Parsing a HTTP 
+            Request</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="ffi_split_000.html">Chapter 17.  Interfacing with C: The 
+        FFI</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect117_d1e37631.html">Section 17.1.  Foreign Language 
+            Bindings: The Basics</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect117_d1e37921.html">Section 17.2.  Regular 
+            Expressions for Haskell: A Binding for PCRE</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect117_d1e38308.html">Section 17.3.  Passing String 
+            Data Between Haskell and C</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect117_d1e38933.html">Section 17.4.  Matching on 
+            Strings</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="monadtrans_split_000.html">Chapter 18.  Monad 
+Transformers</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect118_d1e39299.html">Section 18.1.  Motivation: 
+            Boilerplate Avoidance</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect118_d1e39405.html">Section 18.2.  A Simple Monad 
+            Transformer Example</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect118_d1e39551.html">Section 18.3.  Common Patterns 
+            in Monads and Monad Transformers</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect118_d1e39658_split_000.html">Section 18.4.  Stacking Multiple 
+            Monad Transformers</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect118_d1e39964.html">Section 18.5.  Moving Down the 
+            Stack</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="monadtrans_maybet_split_000.html">Section 18.6.  Understanding 
+            Monad Transformers by Building One</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect118_d1e40515.html">Section 18.7.  Transformer 
+            Stacking Order Is Important</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect118_d1e40625.html">Section 18.8.  Putting Monads 
+            and Monad Transformers into Perspective</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="errors_split_000.html">Chapter 19.  Error Handling</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="errors_nonexception.html">Section 19.1.  Error Handling 
+            with Data Types</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="errors_exceptions_split_000.html">Section 19.2.  
+        Exceptions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect119_d1e42478_split_000.html">Section 19.3.  Error Handling in 
+            Monads</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="systems_split_000.html">Chapter 20.  Systems Programming in 
+            Haskell</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="systems_running.html">Section 20.1.  Running External 
+            Programs</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="systems_directories.html">Section 20.2.  Directory and 
+            File Information</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="system_termination.html">Section 20.3.  Program 
+            Termination</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="systems_datetime.html">Section 20.4.  Dates and 
+          Times</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="systems_piping.html">Section 20.5.  Extended Example: 
+            Piping</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="databases_split_000.html">Chapter 21.  Using Databases</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_hdbc.html">Section 21.1.  Overview of 
+          HDBC</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_hdbc_install.html">Section 21.2.  Installing 
+            HDBC and Drivers</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_connect.html">Section 21.3.  Connecting to 
+            Databases</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_transactions.html">Section 21.4.  
+            Transactions</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_simplequeries.html">Section 21.5.  Simple 
+            Queries</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="database_sqlvalue.html">Section 21.6.  SqlValue</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_args.html">Section 21.7.  Query 
+          Parameters</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_statements.html">Section 21.8.  Prepared 
+            Statements</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_readingresults.html">Section 21.9.  Reading 
+            Results</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_metadata.html">Section 21.10.  Database 
+            Metadata</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="databases_errors.html">Section 21.11.  Error 
+          Handling</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="webclient_split_000.html">Chapter 22.  Extended Example: Web Client 
+            Programming</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="webclient_types.html">Section 22.1.  Basic 
+Types</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="webclient_db.html">Section 22.2.  The Database</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="webclient_parser.html">Section 22.3.  The 
+Parser</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="webclient_download.html">Section 22.4.  
+        Downloading</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="webclient_main.html">Section 22.5.  Main 
+Program</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="gui_split_000.html">Chapter 23.  GUI Programming with 
+        gtk2hs</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="gui_install.html">Section 23.1.  Installing 
+        gtk2hs</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="gui_overview.html">Section 23.2.  Overview of the GTK+ 
+            Stack</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="gui_glade.html">Section 23.3.  User Interface Design with 
+            Glade</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="gui_event.html">Section 23.4.  Event-Driven 
+            Programming</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="gui_init.html">Section 23.5.  Initializing the 
+        GUI</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="gui_add.html">Section 23.6.  The Add Podcast 
+        Window</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="gui_longrunning.html">Section 23.7.  Long-Running 
+            Tasks</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="gui_cabal_split_000.html">Section 23.8.  Using Cabal</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="concurrent_split_000.html">Chapter 24.  Concurrent and Multicore 
+            Programming</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect124_d1e46302.html">Section 24.1.  Defining 
+            Concurrency and Parallelism</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect124_d1e46331.html">Section 24.2.  Concurrent 
+            Programming with Threads</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect124_d1e46438.html">Section 24.3.  Simple 
+            Communication Between Threads</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect124_d1e46566.html">Section 24.4.  The Main Thread 
+            and Waiting for Other Threads</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect124_d1e46934.html">Section 24.5.  Communicating 
+            over Channels</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect124_d1e46964.html">Section 24.6.  Useful Things to 
+            Know About</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="concurrent_hard_split_000.html">Section 24.7.  Shared-State 
+            Concurrency Is Still Hard</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect124_d1e47262.html">Section 24.8.  Using Multiple 
+            Cores with GHC</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect124_d1e47441_split_000.html">Section 24.9.  Parallel 
+            Programming in Haskell</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect124_d1e48019.html">Section 24.10.  Parallel 
+            Strategies and MapReduce</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="profiling_split_000.html">Chapter 25.  Profiling and 
+            Optimization</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect125_d1e48477.html">Section 25.1.  Profiling Haskell 
+            Programs</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect125_d1e48856.html">Section 25.2.  Controlling 
+            Evaluation</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect125_d1e49110.html">Section 25.3.  Understanding 
+            Core</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect125_d1e49269.html">Section 25.4.  Advanced 
+            Techniques: Fusion</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="bloomfilter_split_000.html">Chapter 26.  Advanced Library Design: 
+            Building a Bloom Filter</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e49402.html">Section 26.1.  Introducing the 
+            Bloom Filter</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e49566.html">Section 26.2.  Use Cases and 
+            Package Layout</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e49589.html">Section 26.3.  Basic 
+          Design</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e49680.html">Section 26.4.  The ST 
+          Monad</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e49776.html">Section 26.5.  Designing an API 
+            for Qualified Import</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e49851.html">Section 26.6.  Creating a 
+            Mutable Bloom Filter</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e49941.html">Section 26.7.  The Immutable 
+            API</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e50018.html">Section 26.8.  Creating a 
+            Friendly Interface</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e50419.html">Section 26.9.  Creating a Cabal 
+            Package</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e50755.html">Section 26.10.  Testing with 
+            QuickCheck</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect126_d1e51063_split_000.html">Section 26.11.  Performance 
+            Analysis and Tuning</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="sockets_split_000.html">Chapter 27.  Sockets and Syslog</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="sockets_basics.html">Section 27.1.  Basic 
+          Networking</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="sockets_udp.html">Section 27.2.  Communicating with 
+            UDP</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="sockets_tcp.html">Section 27.3.  Communicating with 
+            TCP</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="stm_split_000.html">Chapter 28.  Software Transactional 
+          Memory</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect128_d1e51806.html">Section 28.1.  The 
+        Basics</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect128_d1e51835.html">Section 28.2.  Some Simple 
+            Examples</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect128_d1e51917.html">Section 28.3.  STM and 
+          Safety</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect128_d1e51989.html">Section 28.4.  Retrying a 
+            Transaction</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect128_d1e52076.html">Section 28.5.  Choosing Between 
+            Alternatives</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect128_d1e52174.html">Section 28.6.  I/O and 
+        STM</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect128_d1e52276.html">Section 28.7.  Communication 
+            Between Threads</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect128_d1e52318.html">Section 28.8.  A Concurrent Web 
+            Link Checker</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect128_d1e52674.html">Section 28.9.  Practical Aspects 
+            of STM</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="install_split_000.html">Appendix A.  Installing GHC and Haskell 
+            Libraries</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="I_sect1_d1e52828.html">Section A.1.  Installing 
+        GHC</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="installing_haskell_software.html">Section A.2.  
+            Installing Haskell Software</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="escapes_split_000.html">Appendix B.  Characters, Strings, and 
+            Escaping Rules</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="escapes_char.html">Section B.1.  Writing Character and 
+            String Literals</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="escapes_intl.html">Section B.2.  International Language 
+            Support</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" valign="top">  </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="254"><a class="calibre13" href="escapes_escape.html">Section B.3.  Escaping 
+Text</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255">  <a class="calibre13" href="colophon_split_000.html">Colophon</a></td></tr>
+<tr class="calibre22">
+<td class="v" width="21">   </td>
+<td class="v" width="14" height="18"><img alt="" src="/images/pixel.gif" vspace="4" border="0" class="calibre24"/></td>
+<td class="v" valign="top" colspan="255"><a class="calibre13" href="index_split_000.html">Index</a></td></tr></tbody></table><br class="calibre20"/><span class="calibre9"><a title="Top" href="#toppage" target="_self" class="calibre13"><img alt="Top" src="btn_top.gif" border="0" class="calibre25"/></a></span><br class="calibre20"/><br class="calibre20"/><!--IP User 2--></td></tr></tbody></table></td></div>
+
+{% endraw %}
+

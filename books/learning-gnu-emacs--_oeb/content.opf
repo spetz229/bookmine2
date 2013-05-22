@@ -1,0 +1,532 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>O'Reilly Media</dc:publisher>
+    <dc:rights>Copyright © 2009 O'Reilly Media, Inc.</dc:rights>
+    <dc:description>The third edition of &lt;i&gt;Learning GNU Emacs&lt;/i&gt; describes Emacs 21.3 from the ground up, including new user interface features such as an icon-based toolbar and an interactive interface to Emacs customization. A new chapter details how to install and run Emacs on Mac OS X, Windows, and Linux, including tips for using Emacs effectively on those platforms.</dc:description>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Debra Cameron" opf:role="aut">Debra Cameron</dc:creator>
+    <dc:creator opf:file-as="Debra Cameron" opf:role="aut">James Elliott</dc:creator>
+    <dc:creator opf:file-as="Debra Cameron" opf:role="aut">Marc Loy</dc:creator>
+    <dc:creator opf:file-as="Debra Cameron" opf:role="aut">Eric S. Raymond</dc:creator>
+    <dc:creator opf:file-as="Debra Cameron" opf:role="aut">Bill Rosenblatt</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T22:00:14.985055+00:00"/>
+    <dc:title>Learning GNU Emacs, 3rd Edition</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2009-02-08T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">9780596104184</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">a3063b33-7124-44ec-b3ca-a072ad3ad519</dc:identifier>
+    <dc:subject>COMPUTERS / General</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="OEBPS/DejaVuSerif.otf" id="epub.embedded.font" media-type="font/opentype"/>
+    <item href="OEBPS/apa.html" id="id2694734" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/apb.html" id="id2716787" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/apc.html" id="id2720355" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/apd.html" id="id2720552" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ape.html" id="id2721565" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01.html" id="id2590476" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s02.html" id="id2700521" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s03.html" id="id2700578" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s04.html" id="id2603758" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s05.html" id="id2603903" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s06.html" id="id2698876" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s07.html" id="id2699277" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s08.html" id="id2615570" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s09.html" id="id2615753" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s10.html" id="id2676629" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s11.html" id="id2677109" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02.html" id="id2701445" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s02.html" id="id2703070" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s03.html" id="id2704445" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s04.html" id="id2613435" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s05.html" id="id2642031" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s06.html" id="id2643455" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s07.html" id="id2748948" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03.html" id="id2749975" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s02.html" id="id2674666" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s03.html" id="id2601680" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s04.html" id="id2644977" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04.html" id="id2646974" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s02.html" id="id2647561" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s03.html" id="id2648326" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s04.html" id="id2649197" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s05.html" id="id2649965" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s06.html" id="id2710650" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s07.html" id="id2712051" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05.html" id="id2714174" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s02.html" id="id2759198" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s03.html" id="id2653728" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s04.html" id="id2654235" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s05.html" id="id2654357" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06.html" id="id2657495" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s02.html" id="id2751184" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s03.html" id="id2751356" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s04.html" id="id2751894" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s05.html" id="id2752371" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s06.html" id="id2752493" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s07.html" id="id2752594" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s08.html" id="id2752865" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s09.html" id="id2754281" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s10.html" id="id2754672" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07.html" id="id2755449" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07s02.html" id="id2756842" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07s03.html" id="id2631776" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07s04.html" id="id2632322" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07s05.html" id="id2634274" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07s06.html" id="id2636233" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08.html" id="id2640355" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08s02.html" id="id2640881" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08s03.html" id="id2640965" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08s04.html" id="id2746868" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08s05.html" id="id2617561" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09.html" id="id2619280" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s02.html" id="id2620279" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s03.html" id="id2622568" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s04.html" id="id2624695" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s05.html" id="id2624838" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s06.html" id="id2626811" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s07.html" id="id2627028" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s08.html" id="id2627613" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10.html" id="id2629763" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s02.html" id="id2659988" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s03.html" id="id2660852" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s04.html" id="id2661893" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s05.html" id="id2663090" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s06.html" id="id2663494" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s07.html" id="id2663647" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s08.html" id="id2663942" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11.html" id="id2664150" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s02.html" id="id2666743" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s03.html" id="id2668219" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s04.html" id="id2672245" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s05.html" id="id2673158" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s06.html" id="id2678713" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s07.html" id="id2679873" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12.html" id="id2680455" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s02.html" id="id2680555" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s03.html" id="id2680894" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s04.html" id="id2681164" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s05.html" id="id2681260" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s06.html" id="id2681736" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s07.html" id="id2681820" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s08.html" id="id2681947" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s09.html" id="id2683023" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s10.html" id="id2683304" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s11.html" id="id2683406" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s12.html" id="id2683476" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s13.html" id="id2683524" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch13.html" id="id2685142" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch13s02.html" id="id2686213" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch13s03.html" id="id2687461" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch14.html" id="id2689209" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch14s02.html" id="id2689382" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch14s03.html" id="id2691022" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch14s04.html" id="id2691245" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch14s05.html" id="id2693796" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/co01.html" id="id2730004" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/cover.html" id="u29d5d25c-fb8d-4b68-ba66-09216e01a61b" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/index.html" id="id2590420" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/oreilly_large.gif" id="id2600455" media-type="image/gif"/>
+    <item href="OEBPS/pr01.html" id="id2599304" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s02.html" id="id2590333" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s03.html" id="id2590406" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s04.html" id="id2699426" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s05.html" id="id2699691" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s06.html" id="id2599718" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s07.html" id="id2599850" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s08.html" id="id2704735" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s09.html" id="id2614346" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s10.html" id="id2614470" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125615.png" id="id2614221" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125617.png" id="id2614424" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125619.png" id="id2603874" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125621.png" id="id2603966" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125622.png" id="id2651195" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125623.png" id="id2651230" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125624.png" id="id2651270" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125625.png" id="id2651310" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125626.png.jpg" id="id2651345" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125627.png" id="id2651380" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125628.png" id="id2651419" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125629.png" id="id2651459" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125630.png" id="id2651499" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125631.png" id="id2651539" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125632.png" id="id2651579" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125633.png" id="id2651619" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125634.png.jpg" id="id2651659" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125636.png" id="id2651922" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125638.png" id="id2699382" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125640.png" id="id2615041" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125642.png" id="id2615236" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125644.png" id="id2615305" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125646.png" id="id2615374" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125648.png" id="id2676829" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125650.png" id="id2676893" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125652.png" id="id2701556" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125654.png" id="id2702218" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125656.png" id="id2702436" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125658.png" id="id2703064" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125660.png" id="id2703682" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125662.png" id="id2703746" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125664.png" id="id2703815" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125666.png" id="id2704660" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125668.png" id="id2611999" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125673.png" id="id2612069" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125678.png" id="id2612208" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125682.png" id="id2750543" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125686.png" id="id2750695" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125691.png" id="id2674798" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125695.png" id="id2674866" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125700.png" id="id2675422" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125706.png" id="id2675491" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125714.png" id="id2675684" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125720.png" id="id2675822" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125727.png" id="id2676006" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125734.png" id="id2676091" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125741.png" id="id2601835" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125748.png" id="id2601985" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125755.png" id="id2602049" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125761.png" id="id2602123" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125769.png" id="id2602273" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125777.png" id="id2602346" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125783.png" id="id2602426" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125791.png" id="id2602690" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125797.png" id="id2602757" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125803.png" id="id2602950" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125808.png.jpg" id="id2603051" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125812.png" id="id2603114" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125817.png" id="id2645128" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125821.png" id="id2645215" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125827.png" id="id2645404" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125832.png" id="id2645474" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125837.png" id="id2647135" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125841.png" id="id2647167" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125846.png" id="id2647859" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125850.png" id="id2647922" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125855.png.jpg" id="id2648101" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125860.png" id="id2648589" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125864.png" id="id2648658" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125869.png" id="id2648901" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125874.png" id="id2648975" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125878.png" id="id2649056" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125883.png" id="id2649359" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125887.png" id="id2649494" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125892.png" id="id2650826" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125897.png" id="id2650916" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125902.png" id="id2710792" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125909.png.jpg" id="id2710943" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125917.png" id="id2711142" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125925.png" id="id2712646" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125932.png" id="id2713385" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125937.png" id="id2714414" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125942.png" id="id2714478" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125947.png" id="id2714622" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125954.png" id="id2714695" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125959.png" id="id2714814" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125964.png" id="id2757744" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125970.png" id="id2757922" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125975.png" id="id2758132" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125980.png" id="id2759370" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125987.png" id="id2760011" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125993.png" id="id2760183" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages125998.png" id="id2760788" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126007.png" id="id2760851" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126015.png" id="id2760996" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126019.png" id="id2761098" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126024.png" id="id2761182" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126028.png" id="id2761736" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126033.png" id="id2761800" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126037.png" id="id2761968" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126042.png" id="id2762032" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126046.png" id="id2762122" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126051.png" id="id2762186" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126055.png" id="id2654469" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126060.png" id="id2655731" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126064.png" id="id2656390" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126069.png" id="id2658077" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126073.png" id="id2751052" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126078.png" id="id2751813" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126083.png" id="id2752011" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126087.png" id="id2752105" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126092.png" id="id2752266" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126096.png" id="id2752346" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126101.png" id="id2753526" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126105.png" id="id2753590" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126110.png" id="id2753655" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126114.png" id="id2753719" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126119.png" id="id2754592" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126123.png" id="id2754657" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126128.png" id="id2755647" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126132.png" id="id2755722" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126137.png" id="id2755835" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126141.png" id="id2755970" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126146.png" id="id2756157" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126150.png" id="id2756250" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126155.png" id="id2756391" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126159.png" id="id2757023" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126164.png" id="id2757321" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126168.png" id="id2757384" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126173.png" id="id2757458" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126178.png" id="id2757578" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126183.png" id="id2757645" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126187.png" id="id2630450" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126192.png" id="id2630618" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126197.png" id="id2630681" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126203.png" id="id2631032" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126208.png" id="id2631105" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126213.png" id="id2631882" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126218.png" id="id2631946" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126223.png" id="id2632060" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126228.png" id="id2632430" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126232.png" id="id2632674" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126236.png" id="id2632866" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126242.png" id="id2632980" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126246.png" id="id2634383" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126251.png" id="id2634509" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126255.png" id="id2634580" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126260.png" id="id2634670" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126264.png" id="id2634780" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126269.png" id="id2634844" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126274.png" id="id2634972" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126279.png" id="id2635052" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126283.png" id="id2635134" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126289.png" id="id2635224" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126297.png" id="id2635290" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126305.png" id="id2635412" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126312.png" id="id2635477" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126321.png" id="id2636059" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126328.png" id="id2636123" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126335.png" id="id2636199" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126339.png" id="id2636335" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126344.png" id="id2636524" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126349.png" id="id2636631" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126354.png" id="id2636695" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126360.png" id="id2636766" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126369.png" id="id2636831" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126376.png" id="id2636907" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126382.png" id="id2637234" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126390.png" id="id2637348" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126398.png" id="id2637411" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126406.png" id="id2639091" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126413.png" id="id2639154" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126421.png" id="id2639220" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126429.png" id="id2639277" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126437.png" id="id2641315" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126446.png" id="id2641379" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126453.png" id="id2641724" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126461.png" id="id2641791" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126464.png" id="id2736453" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126468.png" id="id2736515" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126470.png" id="id2736920" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126474.png" id="id2737991" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126478.png" id="id2738045" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126481.png" id="id2738252" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126484.png" id="id2738307" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126491.png.jpg" id="id2741112" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126499.png.jpg" id="id2741154" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126507.png" id="id2741259" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126513.png" id="id2741375" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126520.png" id="id2741458" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126527.png" id="id2741571" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126533.png" id="id2741641" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126540.png" id="id2741726" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126547.png" id="id2741862" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126553.png" id="id2747042" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126561.png" id="id2747117" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126567.png" id="id2747181" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126574.png" id="id2747438" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126581.png" id="id2747510" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126589.png" id="id2747600" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126595.png" id="id2747677" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126601.png" id="id2747752" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126609.png" id="id2615979" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126617.png" id="id2616067" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126624.png" id="id2616170" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126631.png" id="id2616244" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126638.png" id="id2616319" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126645.png" id="id2618122" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126651.png.jpg" id="id2618217" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126660.png.jpg" id="id2622508" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126667.png" id="id2625650" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126675.png.jpg" id="id2625965" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126681.png" id="id2626756" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126689.png.jpg" id="id2629993" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126696.png" id="id2630118" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126707.png" id="id2630208" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126715.png" id="id2658149" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126726.png" id="id2658229" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126734.png" id="id2658322" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126745.png" id="id2658554" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126755.png" id="id2658613" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126766.png" id="id2658672" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126777.png" id="id2658731" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126788.png" id="id2658811" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126798.png" id="id2658900" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126808.png" id="id2659044" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126816.png" id="id2659287" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126827.png" id="id2659366" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126838.png" id="id2659451" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126849.png.jpg" id="id2659492" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126858.png" id="id2659553" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126868.png" id="id2659663" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126880.png" id="id2659748" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126894.png" id="id2659966" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126905.png" id="id2661228" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126916.png" id="id2661350" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126927.png" id="id2661802" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126937.png" id="id2681057" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126948.png" id="id2681135" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126957.png" id="id2681814" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126966.png.jpg" id="id2683703" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126974.png" id="id2683764" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126982.png.jpg" id="id2683821" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages126993.png" id="id2685404" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127005.png" id="id2686158" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127011.png" id="id2686348" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127015.png.jpg" id="id2686536" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127020.png" id="id2688286" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127024.png" id="id2688352" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127029.png" id="id2688422" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127035.png" id="id2691426" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127040.png" id="id2691534" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127045.png" id="id2691649" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127049.png" id="id2691713" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127053.png" id="id2691771" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127056.png" id="id2692118" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127058.png" id="id2692170" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127060.png" id="id2692220" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127062.png.jpg" id="id2692270" media-type="image/jpeg"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127064.png" id="id2692426" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127067.png" id="id2692477" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20070228oreillyimages127069.png" id="id2692527" media-type="image/png"/>
+    <item href="OEBPS/tagoreillycom20090202oreillyimages251803.jpg" id="cover-image" media-type="image/jpeg"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id2590420"/>
+    <itemref idref="id2599304"/>
+    <itemref idref="id2590333"/>
+    <itemref idref="id2590406"/>
+    <itemref idref="id2699426"/>
+    <itemref idref="id2699691"/>
+    <itemref idref="id2599718"/>
+    <itemref idref="id2599850"/>
+    <itemref idref="id2704735"/>
+    <itemref idref="id2614346"/>
+    <itemref idref="id2614470"/>
+    <itemref idref="id2590476"/>
+    <itemref idref="id2700521"/>
+    <itemref idref="id2700578"/>
+    <itemref idref="id2603758"/>
+    <itemref idref="id2603903"/>
+    <itemref idref="id2698876"/>
+    <itemref idref="id2699277"/>
+    <itemref idref="id2615570"/>
+    <itemref idref="id2615753"/>
+    <itemref idref="id2676629"/>
+    <itemref idref="id2677109"/>
+    <itemref idref="id2701445"/>
+    <itemref idref="id2703070"/>
+    <itemref idref="id2704445"/>
+    <itemref idref="id2613435"/>
+    <itemref idref="id2642031"/>
+    <itemref idref="id2643455"/>
+    <itemref idref="id2748948"/>
+    <itemref idref="id2749975"/>
+    <itemref idref="id2674666"/>
+    <itemref idref="id2601680"/>
+    <itemref idref="id2644977"/>
+    <itemref idref="id2646974"/>
+    <itemref idref="id2647561"/>
+    <itemref idref="id2648326"/>
+    <itemref idref="id2649197"/>
+    <itemref idref="id2649965"/>
+    <itemref idref="id2710650"/>
+    <itemref idref="id2712051"/>
+    <itemref idref="id2714174"/>
+    <itemref idref="id2759198"/>
+    <itemref idref="id2653728"/>
+    <itemref idref="id2654235"/>
+    <itemref idref="id2654357"/>
+    <itemref idref="id2657495"/>
+    <itemref idref="id2751184"/>
+    <itemref idref="id2751356"/>
+    <itemref idref="id2751894"/>
+    <itemref idref="id2752371"/>
+    <itemref idref="id2752493"/>
+    <itemref idref="id2752594"/>
+    <itemref idref="id2752865"/>
+    <itemref idref="id2754281"/>
+    <itemref idref="id2754672"/>
+    <itemref idref="id2755449"/>
+    <itemref idref="id2756842"/>
+    <itemref idref="id2631776"/>
+    <itemref idref="id2632322"/>
+    <itemref idref="id2634274"/>
+    <itemref idref="id2636233"/>
+    <itemref idref="id2640355"/>
+    <itemref idref="id2640881"/>
+    <itemref idref="id2640965"/>
+    <itemref idref="id2746868"/>
+    <itemref idref="id2617561"/>
+    <itemref idref="id2619280"/>
+    <itemref idref="id2620279"/>
+    <itemref idref="id2622568"/>
+    <itemref idref="id2624695"/>
+    <itemref idref="id2624838"/>
+    <itemref idref="id2626811"/>
+    <itemref idref="id2627028"/>
+    <itemref idref="id2627613"/>
+    <itemref idref="id2629763"/>
+    <itemref idref="id2659988"/>
+    <itemref idref="id2660852"/>
+    <itemref idref="id2661893"/>
+    <itemref idref="id2663090"/>
+    <itemref idref="id2663494"/>
+    <itemref idref="id2663647"/>
+    <itemref idref="id2663942"/>
+    <itemref idref="id2664150"/>
+    <itemref idref="id2666743"/>
+    <itemref idref="id2668219"/>
+    <itemref idref="id2672245"/>
+    <itemref idref="id2673158"/>
+    <itemref idref="id2678713"/>
+    <itemref idref="id2679873"/>
+    <itemref idref="id2680455"/>
+    <itemref idref="id2680555"/>
+    <itemref idref="id2680894"/>
+    <itemref idref="id2681164"/>
+    <itemref idref="id2681260"/>
+    <itemref idref="id2681736"/>
+    <itemref idref="id2681820"/>
+    <itemref idref="id2681947"/>
+    <itemref idref="id2683023"/>
+    <itemref idref="id2683304"/>
+    <itemref idref="id2683406"/>
+    <itemref idref="id2683476"/>
+    <itemref idref="id2683524"/>
+    <itemref idref="id2685142"/>
+    <itemref idref="id2686213"/>
+    <itemref idref="id2687461"/>
+    <itemref idref="id2689209"/>
+    <itemref idref="id2689382"/>
+    <itemref idref="id2691022"/>
+    <itemref idref="id2691245"/>
+    <itemref idref="id2693796"/>
+    <itemref idref="id2694734"/>
+    <itemref idref="id2716787"/>
+    <itemref idref="id2720355"/>
+    <itemref idref="id2720552"/>
+    <itemref idref="id2721565"/>
+    <itemref idref="id2730004"/>
+  </spine>
+  <guide>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="Cover"/>
+    <reference href="OEBPS/cover.html" type="other.titlepage" title="Title Page"/>
+  </guide>
+</package>

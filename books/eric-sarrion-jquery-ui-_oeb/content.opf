@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>O'Reilly Media</dc:publisher>
+    <dc:rights>Copyright © 2012 Eric Sarrion</dc:rights>
+    <dc:description>&lt;p&gt;With the jQuery UI library, you can apply the power and standards of jQuery to user interface design, complete with interactive elements, animation, and themeable widgets. This concise, code-heavy guide demonstrates how to harness interactive features that HTML5 lacks, including tabs, accordions, and dialog boxes. You&amp;#8217;ll also learn how to program common but complex tasks, such as managing drag and drop and autocomplete, that make it easier for users to interact with your site.&lt;/p&gt;</dc:description>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Eric Sarrion" opf:role="aut">Eric Sarrion</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:58:38.188076+00:00"/>
+    <dc:title>jQuery UI</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2012-03-19T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">9781449316983</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">a197c9d5-b223-42d6-a1fc-a2a1ea10c4fd</dc:identifier>
+    <dc:subject>COMPUTERS / Programming Languages / JavaScript</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="OEBPS/FreeSansBold.otf" id="epub.embedded.font.6" media-type="font/opentype"/>
+    <item href="OEBPS/FreeSerif.otf" id="epub.embedded.font.5" media-type="font/opentype"/>
+    <item href="OEBPS/UbuntuMono-B.ttf" id="epub.embedded.font.1" media-type="font/truetype"/>
+    <item href="OEBPS/UbuntuMono-BI.ttf" id="epub.embedded.font.2" media-type="font/truetype"/>
+    <item href="OEBPS/UbuntuMono-R.ttf" id="epub.embedded.font.3" media-type="font/truetype"/>
+    <item href="OEBPS/UbuntuMono-RI.ttf" id="epub.embedded.font.4" media-type="font/truetype"/>
+    <item href="OEBPS/author_bios.html" id="id3067849" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01.html" id="id2950337" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s02.html" id="id2868861" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s03.html" id="id2999370" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s04.html" id="id2880873" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s05.html" id="id2915526" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s06.html" id="id2916375" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02.html" id="id2895699" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s02.html" id="id2851966" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s03.html" id="id2948783" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s04.html" id="id3000511" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s05.html" id="id3000762" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03.html" id="id3020253" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s02.html" id="id3020442" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s03.html" id="id3020671" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s04.html" id="id3021471" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s05.html" id="id3021602" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04.html" id="id3021943" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s02.html" id="id3022149" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s03.html" id="id3022363" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s04.html" id="id3038109" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s05.html" id="id3038427" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05.html" id="id3039354" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s02.html" id="id3039482" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s03.html" id="id3039638" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s04.html" id="id3040134" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s05.html" id="id3040152" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s06.html" id="id3040448" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s07.html" id="id3040638" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06.html" id="id3041396" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s02.html" id="id3041502" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s03.html" id="id3041654" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s04.html" id="id3042028" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s05.html" id="id3042066" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07.html" id="id3042285" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07s02.html" id="id3042404" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07s03.html" id="id3042587" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07s04.html" id="id3043516" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07s05.html" id="id3043679" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08.html" id="id3044089" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08s02.html" id="id3044236" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08s03.html" id="id3044516" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08s04.html" id="id3046707" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09.html" id="id3047783" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s02.html" id="id3047922" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s03.html" id="id3048126" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s04.html" id="id3048992" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09s05.html" id="id3049213" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10.html" id="id3050495" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s02.html" id="id3052255" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s03.html" id="id3052394" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s04.html" id="id3053363" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s05.html" id="id3054473" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch10s06.html" id="id3054662" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11.html" id="id3055224" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s02.html" id="id3055347" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s03.html" id="id3055644" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s04.html" id="id3056400" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch11s05.html" id="id3056616" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12.html" id="id3057168" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s02.html" id="id3057286" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s03.html" id="id3057494" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s04.html" id="id3059772" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch12s05.html" id="id3060079" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch13.html" id="id3061048" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch13s02.html" id="id3061167" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch13s03.html" id="id3061434" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch13s04.html" id="id3062869" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch13s05.html" id="id3063008" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch14.html" id="id3063872" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch14s02.html" id="id3066835" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch14s03.html" id="id3067050" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch14s04.html" id="id3067350" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/cover.html" id="ucc159b88-ab51-4d3d-b612-4f98a1df3ac1" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096291.png" id="id2951921" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096293.png" id="id3000054" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096295.png" id="id2946118" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096297.png" id="id2880293" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096299.png.jpg" id="id2915951" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096301.png" id="id2896113" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096303.png.jpg" id="id2895649" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096305.png" id="id2915051" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096307.png" id="id2946924" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096309.png.jpg" id="id2951126" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096311.png.jpg" id="id3000897" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096313.png.jpg" id="id3001012" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096315.png.jpg" id="id3001170" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096317.png.jpg" id="id3020159" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096319.png.jpg" id="id3020305" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096321.png.jpg" id="id3020436" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096323.png" id="id3020530" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096325.png.jpg" id="id3020663" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096327.png.jpg" id="id3021694" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096329.png" id="id3021828" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096331.png" id="id3021996" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096333.png" id="id3022126" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096335.png" id="id3022207" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096337.png.jpg" id="id3022345" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096339.png" id="id3038590" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096341.png" id="id3038630" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096343.png" id="id3038799" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096345.png" id="id3038950" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096347.png" id="id3039079" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096349.png" id="id3039217" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096351.png" id="id3039346" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096353.png.jpg" id="id3039476" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096355.png" id="id3039523" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096357.png" id="id3039572" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096359.png" id="id3039754" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096361.png.jpg" id="id3040275" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096363.png" id="id3040305" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096365.png.jpg" id="id3040442" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096367.png.jpg" id="id3040487" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096369.png.jpg" id="id3040630" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096371.png.jpg" id="id3040745" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096373.png" id="id3040821" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096375.png.jpg" id="id3040911" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096377.png.jpg" id="id3040942" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096379.png" id="id3040989" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096381.png" id="id3041251" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096383.png.jpg" id="id3041447" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096385.png" id="id3041547" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096387.png" id="id3041648" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096389.png" id="id3042184" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096391.png.jpg" id="id3042279" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096393.png.jpg" id="id3042398" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096395.png" id="id3042459" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096397.png.jpg" id="id3042578" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096399.png" id="id3043811" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096401.png" id="id3043966" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096403.png.jpg" id="id3044083" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096405.png" id="id3044146" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096407.png" id="id3044294" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096409.png" id="id3044510" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096411.png" id="id3046794" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096413.png" id="id3046944" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096415.png" id="id3046974" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096417.png" id="id3047057" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096419.png" id="id3047159" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096421.png" id="id3047357" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096423.png" id="id3047402" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096425.png" id="id3047481" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096427.png" id="id3047575" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096429.png" id="id3047777" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096431.png" id="id3047842" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096433.png" id="id3048087" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096435.png" id="id3048120" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096437.png" id="id3049381" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096439.png" id="id3049522" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096441.png" id="id3049847" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096443.png" id="id3050220" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096445.png" id="id3052563" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096447.png.jpg" id="id3052697" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096449.png" id="id3052921" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096452.png.jpg" id="id3052976" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096454.png" id="id3053101" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096456.png" id="id3053241" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096458.png.jpg" id="id3054728" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096460.png.jpg" id="id3054846" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096462.png.jpg" id="id3055068" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096464.png" id="id3055341" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096466.png" id="id3055404" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096468.png.jpg" id="id3055565" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096470.png" id="id3055595" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096472.png" id="id3055638" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096474.png" id="id3056760" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096476.png.jpg" id="id3056860" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096478.png" id="id3056990" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096480.png.jpg" id="id3057160" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096482.png" id="id3057280" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096484.png" id="id3057342" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096486.png" id="id3057488" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096488.png" id="id3060252" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096490.png" id="id3060306" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096492.png" id="id3060494" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096494.png" id="id3060536" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096496.png.jpg" id="id3060649" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096498.png.jpg" id="id3060689" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096500.png.jpg" id="id3060998" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096502.png.jpg" id="id3061097" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096504.png" id="id3061303" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096506.png" id="id3063065" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096508.png.jpg" id="id3063261" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096510.png" id="id3063444" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096512.png.jpg" id="id3063487" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096514.png.jpg" id="id3063700" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096516.png.jpg" id="id3063730" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096518.png" id="id3063866" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096520.png.jpg" id="id3064351" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096522.png.jpg" id="id3064383" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096524.png.jpg" id="id3064944" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096526.png.jpg" id="id3064981" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096528.png.jpg" id="id3065014" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096530.png.jpg" id="id3065232" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096532.png.jpg" id="id3065414" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096534.png.jpg" id="id3065809" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096536.png.jpg" id="id3065849" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096538.png.jpg" id="id3066057" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096540.png.jpg" id="id3066603" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096542.png.jpg" id="id3066990" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096544.png.jpg" id="id3067216" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096546.png.jpg" id="id3067249" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096548.png.jpg" id="id3067280" media-type="image/jpeg"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096550.png" id="id3067385" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096552.png" id="id3067501" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096554.png" id="id3067812" media-type="image/png"/>
+    <item href="OEBPS/httpatomoreillycomsourceoreillyimages1096556.png" id="id3067843" media-type="image/png"/>
+    <item href="OEBPS/index.html" id="id2892383" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/oreilly_large.gif" id="id2914631" media-type="image/gif"/>
+    <item href="OEBPS/orm_front_cover.jpg" id="cover-image" media-type="image/jpeg"/>
+    <item href="OEBPS/pr01.html" id="id2852715" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s02.html" id="id2842734" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s03.html" id="id3001330" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s04.html" id="id2950752" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s05.html" id="id2996144" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s06.html" id="id3001639" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s07.html" id="id2842868" media-type="application/xhtml+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id2892383"/>
+    <itemref idref="id2852715"/>
+    <itemref idref="id2842734"/>
+    <itemref idref="id3001330"/>
+    <itemref idref="id2950752"/>
+    <itemref idref="id2996144"/>
+    <itemref idref="id3001639"/>
+    <itemref idref="id2842868"/>
+    <itemref idref="id2950337"/>
+    <itemref idref="id2868861"/>
+    <itemref idref="id2999370"/>
+    <itemref idref="id2880873"/>
+    <itemref idref="id2915526"/>
+    <itemref idref="id2916375"/>
+    <itemref idref="id2895699"/>
+    <itemref idref="id2851966"/>
+    <itemref idref="id2948783"/>
+    <itemref idref="id3000511"/>
+    <itemref idref="id3000762"/>
+    <itemref idref="id3020253"/>
+    <itemref idref="id3020442"/>
+    <itemref idref="id3020671"/>
+    <itemref idref="id3021471"/>
+    <itemref idref="id3021602"/>
+    <itemref idref="id3021943"/>
+    <itemref idref="id3022149"/>
+    <itemref idref="id3022363"/>
+    <itemref idref="id3038109"/>
+    <itemref idref="id3038427"/>
+    <itemref idref="id3039354"/>
+    <itemref idref="id3039482"/>
+    <itemref idref="id3039638"/>
+    <itemref idref="id3040134"/>
+    <itemref idref="id3040152"/>
+    <itemref idref="id3040448"/>
+    <itemref idref="id3040638"/>
+    <itemref idref="id3041396"/>
+    <itemref idref="id3041502"/>
+    <itemref idref="id3041654"/>
+    <itemref idref="id3042028"/>
+    <itemref idref="id3042066"/>
+    <itemref idref="id3042285"/>
+    <itemref idref="id3042404"/>
+    <itemref idref="id3042587"/>
+    <itemref idref="id3043516"/>
+    <itemref idref="id3043679"/>
+    <itemref idref="id3044089"/>
+    <itemref idref="id3044236"/>
+    <itemref idref="id3044516"/>
+    <itemref idref="id3046707"/>
+    <itemref idref="id3047783"/>
+    <itemref idref="id3047922"/>
+    <itemref idref="id3048126"/>
+    <itemref idref="id3048992"/>
+    <itemref idref="id3049213"/>
+    <itemref idref="id3050495"/>
+    <itemref idref="id3052255"/>
+    <itemref idref="id3052394"/>
+    <itemref idref="id3053363"/>
+    <itemref idref="id3054473"/>
+    <itemref idref="id3054662"/>
+    <itemref idref="id3055224"/>
+    <itemref idref="id3055347"/>
+    <itemref idref="id3055644"/>
+    <itemref idref="id3056400"/>
+    <itemref idref="id3056616"/>
+    <itemref idref="id3057168"/>
+    <itemref idref="id3057286"/>
+    <itemref idref="id3057494"/>
+    <itemref idref="id3059772"/>
+    <itemref idref="id3060079"/>
+    <itemref idref="id3061048"/>
+    <itemref idref="id3061167"/>
+    <itemref idref="id3061434"/>
+    <itemref idref="id3062869"/>
+    <itemref idref="id3063008"/>
+    <itemref idref="id3063872"/>
+    <itemref idref="id3066835"/>
+    <itemref idref="id3067050"/>
+    <itemref idref="id3067350"/>
+    <itemref idref="id3067849"/>
+  </spine>
+  <guide>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="Cover"/>
+    <reference href="OEBPS/cover.html" type="other.titlepage" title="Title Page"/>
+  </guide>
+</package>

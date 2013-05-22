@@ -1,0 +1,155 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: systems_running.html
+next: system_termination.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="systems_running.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="system_termination.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="systems_directories" class="calibre27" id="systems_directories"></a><h3 id="title-IDA2JQYG" class="docSection1Title">20.2. Directory and File Information</h3><a name="x_Oa" class="calibre27" id="x_Oa"></a><p class="docText">The <tt class="calibre34">System.Directory</tt>
+    module <a name="I_indexterm20_d1e42903" class="calibre27" id="I_indexterm20_d1e42903"></a><a name="I_indexterm20_d1e42908" class="calibre27" id="I_indexterm20_d1e42908"></a><a name="I_indexterm20_d1e42911" class="calibre27" id="I_indexterm20_d1e42911"></a>contains quite a few functions that can be used to obtain
+    information from the filesystem. You can get a list of files in a
+    directory, rename or delete files, copy files, change the current working
+    directory, or create new directories. <tt class="calibre34">System.Directory</tt> is portable and works on any
+    platform where GHC itself works.</p><a name="x_Pa" class="calibre27" id="x_Pa"></a><p class="docText">The <a class="docLink" target="_blank" href="http://www.haskell.org/ghc/docs/latest/html/libraries/base/System-Directory.html">library
+    reference for <tt class="calibre34">System.Directory</tt></a>
+    provides a comprehensive list of the functions available. Let's use
+    <i class="docEmphasis">ghci</i> to<a name="I_indexterm20_d1e42928" class="calibre27" id="I_indexterm20_d1e42928"></a> demonstrate a few of them. Most of these functions are
+    straightforward equivalents to C library calls or shell commands:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:module System.Directory</b>ghci&gt; <b class="calibre40">setCurrentDirectory "/etc"</b>
+Loading package old-locale-1.0.0.0 ... linking ... done.
+Loading package old-time-1.0.0.0 ... linking ... done.
+Loading package filepath-1.1.0.0 ... linking ... done.
+Loading package directory-1.0.0.1 ... linking ... done.
+ghci&gt; <b class="calibre40">getCurrentDirectory</b>
+"/etc"
+ghci&gt; <b class="calibre40">setCurrentDirectory ".."</b>
+ghci&gt; <b class="calibre40">getCurrentDirectory</b>
+"/"</pre><a name="x_Qa" class="calibre27" id="x_Qa"></a><p class="docText">Here we saw commands to change the current working
+    directory and obtain the current working directory from the system. These
+    are similar to the <tt class="calibre34">cd</tt> and <tt class="calibre34">pwd</tt> commands in the POSIX shell:</p><pre class="calibre39">ghci&gt; <b class="calibre40">getDirectoryContents "/"</b>
+["dev",".vmware","mnt","var","etc","net","..","lib","srv","media","lib64","opt",
+".ccache","bin","selinux",".","lost+found","proc",".autorelabel",".autofsck",
+"sys","misc","home","tmp","boot",".bash_history","root","sbin","usr"]
+</pre><a name="x_Ra" class="calibre27" id="x_Ra"></a><p class="docText"><tt class="calibre34">getdirectoryContents</tt>
+    returns a list for every item in a given directory. Note that on POSIX
+    systems, this list normally includes the special values <tt class="calibre34">"."</tt> and <tt class="calibre34">".."</tt>.
+    You will usually want to filter these out when processing the content of
+    the directory, perhaps like this:</p><pre class="calibre39">ghci&gt; <b class="calibre40">getDirectoryContents "/" &gt;&gt;= return . filter (`notElem` [".", ".."])</b>
+["dev",".vmware","mnt","var","etc","net","lib","srv","media","lib64","opt",
+".ccache","bin","selinux","lost+found","proc",".autorelabel",".autofsck",
+"sys","misc","home","tmp","boot",".bash_history","root","sbin","usr"]
+</pre><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><a name="x_ev" class="calibre27" id="x_ev"></a><p class="docText">For a more detailed discussion of filtering the
+      <a name="I_indexterm20_d1e42994" class="calibre27" id="I_indexterm20_d1e42994"></a>results of <tt class="calibre34">getdirectoryContents</tt>, refer to <a class="docLink" href="glob_split_000.html#glob">Chapter 8</a>.</p><a name="x_fJ1" class="calibre27" id="x_fJ1"></a><p class="docText">Is the <tt class="calibre34">filter (`notElem` [".",
+      ".."])</tt> part confusing? That could got also be written as
+      <tt class="calibre34">filter (\c -&gt; not $ elem c [".",
+      ".."])</tt>. The backticks in this case effectively let us pass the
+      second argument to <tt class="calibre34">notElem</tt>; see <a class="docLink" href="fp_infix.html#fp_infix">Section 4.4</a>
+      for more information on backticks.</p></td></tr></table></td></tr></table></p><br class="calibre48"/><a name="x_Sa" class="calibre27" id="x_Sa"></a><p class="docText">You can also query the system about the location of
+    certain directories. This query will ask the underlying operating system
+    for the information:</p><pre class="calibre39">ghci&gt; <b class="calibre40">getHomeDirectory</b>
+"/home/bos"
+ghci&gt; <b class="calibre40">getAppUserDataDirectory "myApp"</b>
+"/home/bos/.myApp"
+ghci&gt; <b class="calibre40">getUserDocumentsDirectory</b>
+"/home/bos"</pre>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="systems_running.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="system_termination.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

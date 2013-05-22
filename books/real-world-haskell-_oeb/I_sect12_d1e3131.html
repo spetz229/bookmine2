@@ -1,0 +1,133 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: funcstypes_types_split_001.html
+next: funcstypes_basic.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="funcstypes_types_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="funcstypes_basic.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="I_sect12_d1e3131" class="calibre27" id="I_sect12_d1e3131"></a><h3 id="title-IDAL4PBD" class="docSection1Title">2.3. What to Expect from the Type System</h3><a name="x_Bm" class="calibre27" id="x_Bm"></a><p class="docText">Our exploration of the major capabilities and benefits of
+    Haskell's type system will span a number of chapters. Early on, you may
+    find Haskell's types to be a chore to deal with.</p><a name="x_Cm" class="calibre27" id="x_Cm"></a><p class="docText">For example, instead of simply writing some code and
+    running it to see if it works as you might expect in Python or Ruby,
+    you'll first need to make sure that your program passes the scrutiny of
+    the type checker. Why stick with the learning curve?</p><a name="x_DN" class="calibre27" id="x_DN"></a><p class="docText">While strong, static typing makes Haskell safe, type
+    inference makes it concise. The result is potent: we end up with a
+    language that's safer than popular statically typed languages and often
+    more expressive than dynamically typed languages. This is a strong claim
+    to make, and we will back it up with evidence throughout the book.</p><a name="x_Dm" class="calibre27" id="x_Dm"></a><p class="docText">Fixing type errors may initially feel like more work than
+    using a dynamic language. It might help to look at this as moving much of
+    your debugging <span class="docEmphasis">up front</span>. The compiler shows you many
+    of the logical flaws in your code, instead of leaving you to stumble
+    across problems at runtime.</p><a name="x_Em" class="calibre27" id="x_Em"></a><p class="docText">Furthermore, because Haskell can infer the types of your
+    expressions and functions, you gain the benefits of static typing
+    <span class="docEmphasis">without</span> the added burden of "finger
+    typing" imposed by less powerful statically typed languages. In
+    other languages, the type system serves the needs of the compiler. In
+    Haskell, it serves <span class="docEmphasis">you</span>. The trade-off is that you
+    have to learn to work within the framework it provides.</p><a name="x_Fm" class="calibre27" id="x_Fm"></a><p class="docText">We will introduce new uses of Haskell's types throughout
+    this book to help us write and test practical code. As a result, the
+    complete picture of why the type system is worthwhile will emerge
+    gradually. While each step should justify itself, the whole will end up
+    greater than the sum of its parts.</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="funcstypes_types_split_000.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="funcstypes_basic.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

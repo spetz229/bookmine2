@@ -1,0 +1,174 @@
+---
+layout: page
+title: "Scala in Depth"
+prev: kindle_split_022.html
+next: None
+book_path: books/scala-in-depth-joshua-d-suereth--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<div class="calibre5"></div><h2 class="chapter" id="loe">List of Listings</h2>
+      <p class="noind">Chapter 1. Scala—a blended language</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_009.html#ch01list1" class="calibre7">Listing 1.1. Byte conversions in scala.Predef object</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_009.html#ch01list2" class="calibre7">Listing 1.2. Simple Java object</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_009.html#ch01list3" class="calibre7">Listing 1.3. Implementing a first-class function in Java</a><br class="calibre4"/></p>
+      </blockquote>
+      <p class="noind">Chapter 2. The core rules</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_010.html#ch02list1" class="calibre7">Listing 2.1. Companion objects in REPL</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list2" class="calibre7">Listing 2.2. Correct companion object in REPL</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list3" class="calibre7">Listing 2.3. Inexpressible language features in the REPL</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list4" class="calibre7">Listing 2.4. Java idiom: one return statement</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list5" class="calibre7">Listing 2.5. Updated createErrorMessage with expression-oriented pattern match</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list6" class="calibre7">Listing 2.6. Final expression-oriented createErrorMessage method</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list7" class="calibre7">Listing 2.7. Example of imperative style code</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list8" class="calibre7">Listing 2.8. Example mutable expression-oriented method</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list9" class="calibre7">Listing 2.9. Mixing immutable and mutable objects with expression</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list10" class="calibre7">Listing 2.10. Mutable objects and expressions—the right way</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list11" class="calibre7">Listing 2.11. Mutable Point2 class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list12" class="calibre7">Listing 2.12. Mutable Point2 class with hashing function</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list13" class="calibre7">Listing 2.13. Mutable Point2 class with hashing and equality</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list14" class="calibre7">Listing 2.14. Mutating Point2 with HashMap</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list15" class="calibre7">Listing 2.15. Simple usage of Some and None</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list16" class="calibre7">Listing 2.16. Usage of the Option factory</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list17" class="calibre7">Listing 2.17. Creating an object or returning a default</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list18" class="calibre7">Listing 2.18. Executing code if option is defined</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list19" class="calibre7">Listing 2.19. Executing code if several options are defined</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list20" class="calibre7">Listing 2.20. Merging options</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list21" class="calibre7">Listing 2.21. Generically converting functions</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list22" class="calibre7">Listing 2.22. Simple InstantaneousTime class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list23" class="calibre7">Listing 2.23. Event subclass of InstantaneousTime</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list24" class="calibre7">Listing 2.24. Using Event and InstantaneousTime</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list25" class="calibre7">Listing 2.25. Using scala.Equals</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_010.html#ch02list26" class="calibre7">Listing 2.26. Using new equals and canEquals methods</a><br class="calibre4"/></p>
+      </blockquote>
+      <p class="noind">Chapter 3. Modicum of style—coding conventions</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_011.html#ch03list1" class="calibre7">Listing 3.1. Next line opening brackets causing issues</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list2" class="calibre7">Listing 3.2. Next line opening brackets compiling correctly</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list3" class="calibre7">Listing 3.3. Using dangling operators</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list4" class="calibre7">Listing 3.4. Using parentheses</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list5" class="calibre7">Listing 3.5. Simple method to calculate an average</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list6" class="calibre7">Listing 3.6. Average.scala file with mischievous class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list7" class="calibre7">Listing 3.7. Average.scala with mischievous inner classes</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list8" class="calibre7">Listing 3.8. Simple named parameter usage</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list9" class="calibre7">Listing 3.9. Named parameters and inheritance</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list10" class="calibre7">Listing 3.10. Changing the underlying method</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list11" class="calibre7">Listing 3.11. Traits won’t cause compile errors</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list12" class="calibre7">Listing 3.12. Traits will cause compile errors</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list13" class="calibre7">Listing 3.13. Animal hierarchy with override</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list14" class="calibre7">Listing 3.14. Multiple inheritance and override</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list15" class="calibre7">Listing 3.15. Animal hierarchy without override</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list16" class="calibre7">Listing 3.16. Multiple inheritance without override</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list17" class="calibre7">Listing 3.17. Multiple inheritance with mixed override</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_011.html#ch03list18" class="calibre7">Listing 3.18. Using the @switch annotation</a><br class="calibre4"/></p>
+      </blockquote>
+      <p class="noind">Chapter 4. Utilizing object orientation</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_012.html#ch04list1" class="calibre7">Listing 4.1. Poor Hello World! example in Scala</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list2" class="calibre7">Listing 4.2. Application trait</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list3" class="calibre7">Listing 4.3. SimulationEntity class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list4" class="calibre7">Listing 4.4. NetworkEntity trait</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list5" class="calibre7">Listing 4.5. Empty implementation trait attempt</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list6" class="calibre7">Listing 4.6. REPL session with simulation classes</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list7" class="calibre7">Listing 4.7. Composition of Logger and DataAccess classes</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list8" class="calibre7">Listing 4.8. Composition of Logger and DataAccess into third class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list9" class="calibre7">Listing 4.9. Inheritance-based composition of Logger and DataAccess</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list10" class="calibre7">Listing 4.10. Logger hierarchy</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list11" class="calibre7">Listing 4.11. Abstract member-composition trait HasLogger</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list12" class="calibre7">Listing 4.12. DataAccess class with HasLogger trait</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list13" class="calibre7">Listing 4.13. Specification test for DataAccess</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list14" class="calibre7">Listing 4.14. DataAccess as a class with default arguments</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list15" class="calibre7">Listing 4.15. Inheritance with default arguments</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list16" class="calibre7">Listing 4.16. Simple Scala trait and implementation class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list17" class="calibre7">Listing 4.17. javap disassembly of Main class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list18" class="calibre7">Listing 4.18. Modified Foo trait</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list19" class="calibre7">Listing 4.19. ScalaMain testing class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list20" class="calibre7">Listing 4.20. Modified ScalaMain testing class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list21" class="calibre7">Listing 4.21. PureAbstract trait</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list22" class="calibre7">Listing 4.22. MessageDispatcher trait</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list23" class="calibre7">Listing 4.23. MessageDispatcher factory and implementation class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_012.html#ch04list24" class="calibre7">Listing 4.24. MessageDispatcher factory with two implementation classes</a><br class="calibre4"/></p>
+      </blockquote>
+      <p class="noind">Chapter 5. Using implicits to write expressive code</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_013.html#ch05list1" class="calibre7">Listing 5.1. externalbindings.scala</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list2" class="calibre7">Listing 5.2. Implicit binding test file</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list3" class="calibre7">Listing 5.3. Wildcard imports</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list4" class="calibre7">Listing 5.4. Explicit imports</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list5" class="calibre7">Listing 5.5. Inline definitions</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list6" class="calibre7">Listing 5.6. Companion object and implicit lookup</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list7" class="calibre7">Listing 5.7. Simple Matrix class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list8" class="calibre7">Listing 5.8. Matrix multiplication</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list9" class="calibre7">Listing 5.9. Concurrent strategey</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list10" class="calibre7">Listing 5.10. Scoped precedence</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_013.html#ch05list11" class="calibre7">Listing 5.11. ComplexNumber class</a><br class="calibre4"/></p>
+      </blockquote>
+      <p class="noind">Chapter 6. The Type System</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_014.html#ch06list1" class="calibre7">Listing 6.1. Defining types from class, trait, or object keywords</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list2" class="calibre7">Listing 6.2. Path-dependent types and type projection examples</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list3" class="calibre7">Listing 6.3. Resource handling utility</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list4" class="calibre7">Listing 6.4. Nested structural typing</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list5" class="calibre7">Listing 6.5. Path-dependent and structural types</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list6" class="calibre7">Listing 6.6. Lower bounds on types</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list7" class="calibre7">Listing 6.7. Upper bounds on types</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list8" class="calibre7">Listing 6.8. Covariance example</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list9" class="calibre7">Listing 6.9. Implicit variance of methods</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list10" class="calibre7">Listing 6.10. First attempt at defining a function object</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list11" class="calibre7">Listing 6.11. Function object with only covariance</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list12" class="calibre7">Listing 6.12. Function with covariance and contravariance</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list13" class="calibre7">Listing 6.13. Complete function example</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list14" class="calibre7">Listing 6.14. First attempt at a list interface</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list15" class="calibre7">Listing 6.15. Naive attempt to work around variance</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list16" class="calibre7">Listing 6.16. Appropriately working with variance</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_014.html#ch06list17" class="calibre7">Listing 6.17. Ensuring the correct type changes</a><br class="calibre4"/></p>
+      </blockquote>
+      <p class="noind">Chapter 7. Using implicits and types together</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_015.html#ch07list1" class="calibre7">Listing 7.1. The &lt;:&lt; type</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list2" class="calibre7">Listing 7.2. TraversableOnce.sum method</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list3" class="calibre7">Listing 7.3. Initial FileLike interface</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list4" class="calibre7">Listing 7.4. File synchronization using FileLike</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list5" class="calibre7">Listing 7.5. Enforcing To/From types with type arguments</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list6" class="calibre7">Listing 7.6. Higher-kinded FileLike</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list7" class="calibre7">Listing 7.7. FileLike type class trait</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list8" class="calibre7">Listing 7.8. Synchronize method using type class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list9" class="calibre7">Listing 7.9. Creating default type class implementation for java.io.File</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list10" class="calibre7">Listing 7.10. Basic HList implementation</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list11" class="calibre7">Listing 7.11. IndexedView</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_015.html#ch07list12" class="calibre7">Listing 7.12. Natural numbers encoded into types</a><br class="calibre4"/></p>
+      </blockquote>
+      <p class="noind">Chapter 9. Actors</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_017.html#ch09list1" class="calibre7">Listing 9.1. Supervisor for search nodes</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_017.html#ch09list2" class="calibre7">Listing 9.2. SearchTree factory</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_017.html#ch09list3" class="calibre7">Listing 9.3. AdaptiveSearchNode</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_017.html#ch09list4" class="calibre7">Listing 9.4. LeafNode.executeLocalQuery</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_017.html#ch09list5" class="calibre7">Listing 9.5. LeafNode.addDocumentToLocalIndex</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_017.html#ch09list6" class="calibre7">Listing 9.6. BranchNode</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_017.html#ch09list7" class="calibre7">Listing 9.7. AdaptiveSearchNode</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_017.html#ch09list8" class="calibre7">Listing 9.8. Creating an adaptive scatter-gather tree</a><br class="calibre4"/></p>
+      </blockquote>
+      <p class="noind">Chapter 10. Integrating Scala with Java</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_018.html#ch010list1" class="calibre7">Listing 10.1. The add2 method</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_018.html#ch010list2" class="calibre7">Listing 10.2. Parcelable Address for Android</a><br class="calibre4"/></p>
+      </blockquote>
+      <p class="noind">Chapter 11. Patterns in functional programming</p>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_019.html#ch011list1" class="calibre7">Listing 11.1. Functor typeclass</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_019.html#ch011list2" class="calibre7">Listing 11.2. Monad typeclass</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_019.html#ch011list3" class="calibre7">Listing 11.3. Applicative typeclass</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_019.html#ch011list4" class="calibre7">Listing 11.4. Configuring an application using the Config class and applicative builder</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_019.html#ch011list5" class="calibre7">Listing 11.5. ApplicativeBuilder class</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_019.html#ch011list6" class="calibre7">Listing 11.6. Automated resource management interface</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_019.html#ch011list7" class="calibre7">Listing 11.7. ManagedResource functor and monad instances</a><br class="calibre4"/></p>
+      </blockquote>
+   </div>
+
+{% endraw %}
+

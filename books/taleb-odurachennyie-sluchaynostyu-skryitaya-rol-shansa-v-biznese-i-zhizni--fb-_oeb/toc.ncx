@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="rus">
+  <head>
+    <meta content="0b40f045-11de-46c7-904c-85d81f083b6e" name="dtb:uid"/>
+    <meta content="3" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Одураченные случайностью. Скрытая роль шанса в бизнесе и жизни</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Предисловие</text>
+      </navLabel>
+      <content src="text/part0003.html#id1"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Благодарности ко второму изданию, исправленному и дополненному</text>
+      </navLabel>
+      <content src="text/part0004.html#id2"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Пролог</text>
+      </navLabel>
+      <content src="text/part0005.html#id3"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Часть I Предупреждение Солона Перекос, асимметрия, индукция</text>
+      </navLabel>
+      <content src="text/part0006.html#id4"/>
+      <navPoint class="chapter" id="num_5" playOrder="5">
+        <navLabel>
+          <text>Глава 1 Если ты такой богатый, то почему такой глупый?</text>
+        </navLabel>
+        <content src="text/part0007.html#id5"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_6" playOrder="6">
+        <navLabel>
+          <text>Глава 2 Необычный метод учета</text>
+        </navLabel>
+        <content src="text/part0008.html#id6"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_7" playOrder="7">
+        <navLabel>
+          <text>Глава 3 Размышления о математической истории</text>
+        </navLabel>
+        <content src="text/part0009.html#id7"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_8" playOrder="8">
+        <navLabel>
+          <text>Глава 4 Случайность, бессмыслица и научный интеллект</text>
+        </navLabel>
+        <content src="text/part0011.html#id8"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_9" playOrder="9">
+        <navLabel>
+          <text>Глава 5 Выживание наименее приспособленного — может ли случайность одурачить эволюцию?</text>
+        </navLabel>
+        <content src="text/part0012.html#id9"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_10" playOrder="10">
+        <navLabel>
+          <text>Глава 6 Перекос и асимметрия</text>
+        </navLabel>
+        <content src="text/part0013.html#id10"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_11" playOrder="11">
+        <navLabel>
+          <text>Глава 7 Проблема индукции</text>
+        </navLabel>
+        <content src="text/part0014.html#id11"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="12">
+      <navLabel>
+        <text>Часть II Обезьяны у пишущей машинки Выживание и другие ошибки</text>
+      </navLabel>
+      <content src="text/part0015.html#id12"/>
+      <navPoint class="chapter" id="num_13" playOrder="13">
+        <navLabel>
+          <text>Глава 8 Среди моих соседей слишком много миллионеров</text>
+        </navLabel>
+        <content src="text/part0016.html#id13"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_14" playOrder="14">
+        <navLabel>
+          <text>Глава 9 Покупать и продавать проще, чем жарить яичницу</text>
+        </navLabel>
+        <content src="text/part0017.html#id14"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_15" playOrder="15">
+        <navLabel>
+          <text>Глава 10 Проигравший получает все — о нелинейности жизни</text>
+        </navLabel>
+        <content src="text/part0018.html#id15"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_16" playOrder="16">
+        <navLabel>
+          <text>Глава 11 Случайность и наш разум: мы вероятностно слепы</text>
+        </navLabel>
+        <content src="text/part0019.html#id16"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_17" playOrder="17">
+      <navLabel>
+        <text>Часть III Воск в моих ушах Жизнь со случайностью</text>
+      </navLabel>
+      <content src="text/part0021.html#id17"/>
+      <navPoint class="chapter" id="num_18" playOrder="18">
+        <navLabel>
+          <text>Глава 12 Приметы игрока и голуби в ящике</text>
+        </navLabel>
+        <content src="text/part0022.html#id18"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_19" playOrder="19">
+        <navLabel>
+          <text>Глава 13 Карнеад едет в Рим: о вероятности и скептицизме</text>
+        </navLabel>
+        <content src="text/part0023.html#id19"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_20" playOrder="20">
+        <navLabel>
+          <text>Глава 14 Бахус оставляет Антония</text>
+        </navLabel>
+        <content src="text/part0023.html#id20"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_21" playOrder="21">
+      <navLabel>
+        <text>Эпилог Солон предупреждал тебя об этом</text>
+      </navLabel>
+      <content src="text/part0024.html#id21"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_22" playOrder="22">
+      <navLabel>
+        <text>Постскриптум Три мысли напоследок</text>
+      </navLabel>
+      <content src="text/part0025.html#id22"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_23" playOrder="23">
+      <navLabel>
+        <text>Благодарности к первому изданию</text>
+      </navLabel>
+      <content src="text/part0026.html#id23"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_24" playOrder="24">
+      <navLabel>
+        <text>Поход в библиотеку</text>
+      </navLabel>
+      <content src="text/part0027.html#id24"/>
+    </navPoint>
+  </navMap>
+</ncx>

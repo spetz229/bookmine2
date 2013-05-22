@@ -1,0 +1,1047 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="d53788f5-689b-4990-81ea-c0141032052a" name="dtb:uid"/>
+    <meta content="3" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Practical Vim (for Kathryn Amaral)</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="navPoint-0" playOrder="1">
+      <navLabel>
+        <text>Practical Vim</text>
+      </navLabel>
+      <content src="f_0000.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-2" playOrder="2">
+      <navLabel>
+        <text>Table of Contents</text>
+      </navLabel>
+      <content src="f_0002.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-3" playOrder="3">
+      <navLabel>
+        <text>What readers are saying about Practical Vim</text>
+      </navLabel>
+      <content src="f_0003.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-4" playOrder="4">
+      <navLabel>
+        <text>Acknowledgments</text>
+      </navLabel>
+      <content src="f_0004.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-5" playOrder="5">
+      <navLabel>
+        <text>Foreword</text>
+      </navLabel>
+      <content src="f_0005.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-6" playOrder="6">
+      <navLabel>
+        <text>Read Me</text>
+      </navLabel>
+      <content src="f_0006.html"/>
+      <navPoint class="chapter" id="navPoint-7" playOrder="7">
+        <navLabel>
+          <text>How This Book Is Structured</text>
+        </navLabel>
+        <content src="f_0007.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-8" playOrder="8">
+        <navLabel>
+          <text>A Note on the Examples</text>
+        </navLabel>
+        <content src="f_0008.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-9" playOrder="9">
+        <navLabel>
+          <text>Learn to Touch Type, Then Learn Vim</text>
+        </navLabel>
+        <content src="f_0009.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-10" playOrder="10">
+      <navLabel>
+        <text>Read the Forgotten Manual</text>
+      </navLabel>
+      <content src="f_0010.html"/>
+      <navPoint class="chapter" id="navPoint-11" playOrder="11">
+        <navLabel>
+          <text>Get to Know Vim’s Built-in Documentation</text>
+        </navLabel>
+        <content src="f_0011.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-12" playOrder="12">
+        <navLabel>
+          <text>Notation for Simulating Vim on the Page</text>
+        </navLabel>
+        <content src="f_0012.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-13" playOrder="13">
+        <navLabel>
+          <text>Downloading the Examples</text>
+        </navLabel>
+        <content src="f_0013.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-14" playOrder="14">
+        <navLabel>
+          <text>Use Vim’s Factory Settings</text>
+        </navLabel>
+        <content src="f_0014.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-15" playOrder="15">
+        <navLabel>
+          <text>On the Role of Vim Script</text>
+        </navLabel>
+        <content src="f_0015.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-16" playOrder="16">
+        <navLabel>
+          <text>On Vim Versions</text>
+        </navLabel>
+        <content src="f_0016.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-17" playOrder="17">
+      <navLabel>
+        <text>Chapter 1: The Vim Way</text>
+      </navLabel>
+      <content src="f_0017.html"/>
+      <navPoint class="chapter" id="navPoint-18" playOrder="18">
+        <navLabel>
+          <text>Meet the Dot Command</text>
+        </navLabel>
+        <content src="f_0018.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-19" playOrder="19">
+        <navLabel>
+          <text>Don’t Repeat Yourself</text>
+        </navLabel>
+        <content src="f_0019.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-20" playOrder="20">
+        <navLabel>
+          <text>Take One Step Back, Then Three Forward</text>
+        </navLabel>
+        <content src="f_0020.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-21" playOrder="21">
+        <navLabel>
+          <text>Act, Repeat, Reverse</text>
+        </navLabel>
+        <content src="f_0021.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-22" playOrder="22">
+        <navLabel>
+          <text>Find and Replace by Hand</text>
+        </navLabel>
+        <content src="f_0022.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-23" playOrder="23">
+        <navLabel>
+          <text>Meet the Dot Formula</text>
+        </navLabel>
+        <content src="f_0023.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-24" playOrder="24">
+      <navLabel>
+        <text>Part 1: Modes</text>
+      </navLabel>
+      <content src="f_0024.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-25" playOrder="25">
+      <navLabel>
+        <text>Chapter 2: Normal Mode</text>
+      </navLabel>
+      <content src="f_0025.html"/>
+      <navPoint class="chapter" id="navPoint-26" playOrder="26">
+        <navLabel>
+          <text>Pause with Your Brush Off the Page</text>
+        </navLabel>
+        <content src="f_0026.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-27" playOrder="27">
+        <navLabel>
+          <text>Chunk Your Undos</text>
+        </navLabel>
+        <content src="f_0027.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-28" playOrder="28">
+        <navLabel>
+          <text>Compose Repeatable Changes</text>
+        </navLabel>
+        <content src="f_0028.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-29" playOrder="29">
+        <navLabel>
+          <text>Use Counts to Do Simple Arithmetic</text>
+        </navLabel>
+        <content src="f_0029.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-30" playOrder="30">
+        <navLabel>
+          <text>Don’t Count If You Can Repeat</text>
+        </navLabel>
+        <content src="f_0030.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-31" playOrder="31">
+        <navLabel>
+          <text>Combine and Conquer</text>
+        </navLabel>
+        <content src="f_0031.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-32" playOrder="32">
+      <navLabel>
+        <text>Chapter 3: Insert Mode</text>
+      </navLabel>
+      <content src="f_0032.html"/>
+      <navPoint class="chapter" id="navPoint-33" playOrder="33">
+        <navLabel>
+          <text>Make Corrections Instantly from Insert Mode</text>
+        </navLabel>
+        <content src="f_0033.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-34" playOrder="34">
+        <navLabel>
+          <text>Get Back to Normal Mode</text>
+        </navLabel>
+        <content src="f_0034.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-35" playOrder="35">
+        <navLabel>
+          <text>Paste from a Register Without Leaving Insert Mode</text>
+        </navLabel>
+        <content src="f_0035.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-36" playOrder="36">
+        <navLabel>
+          <text>Do Back-of-the-Envelope Calculations in Place</text>
+        </navLabel>
+        <content src="f_0036.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-37" playOrder="37">
+        <navLabel>
+          <text>Insert Unusual Characters by Character Code</text>
+        </navLabel>
+        <content src="f_0037.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-38" playOrder="38">
+        <navLabel>
+          <text>Insert Unusual Characters by Digraph</text>
+        </navLabel>
+        <content src="f_0038.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-39" playOrder="39">
+        <navLabel>
+          <text>Overwrite Existing Text with Replace Mode</text>
+        </navLabel>
+        <content src="f_0039.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-40" playOrder="40">
+      <navLabel>
+        <text>Chapter 4: Visual Mode</text>
+      </navLabel>
+      <content src="f_0040.html"/>
+      <navPoint class="chapter" id="navPoint-41" playOrder="41">
+        <navLabel>
+          <text>Grok Visual Mode</text>
+        </navLabel>
+        <content src="f_0041.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-42" playOrder="42">
+        <navLabel>
+          <text>Define a Visual Selection</text>
+        </navLabel>
+        <content src="f_0042.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-43" playOrder="43">
+        <navLabel>
+          <text>Repeat Line-Wise Visual Commands</text>
+        </navLabel>
+        <content src="f_0043.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-44" playOrder="44">
+        <navLabel>
+          <text>Prefer Operators to Visual Commands Where Possible</text>
+        </navLabel>
+        <content src="f_0044.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-45" playOrder="45">
+        <navLabel>
+          <text>Edit Tabular Data with Visual-Block Mode</text>
+        </navLabel>
+        <content src="f_0045.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-46" playOrder="46">
+        <navLabel>
+          <text>Change Columns of Text</text>
+        </navLabel>
+        <content src="f_0046.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-47" playOrder="47">
+        <navLabel>
+          <text>Append After a Ragged Visual Block</text>
+        </navLabel>
+        <content src="f_0047.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-48" playOrder="48">
+      <navLabel>
+        <text>Chapter 5: Command-Line Mode</text>
+      </navLabel>
+      <content src="f_0048.html"/>
+      <navPoint class="chapter" id="navPoint-49" playOrder="49">
+        <navLabel>
+          <text>Meet Vim’s Command Line</text>
+        </navLabel>
+        <content src="f_0049.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-50" playOrder="50">
+        <navLabel>
+          <text>Execute a Command on One or More Consecutive Lines</text>
+        </navLabel>
+        <content src="f_0050.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-51" playOrder="51">
+        <navLabel>
+          <text>Duplicate or Move Lines Using ‘:t’ and ‘:m’ Commands</text>
+        </navLabel>
+        <content src="f_0051.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-52" playOrder="52">
+        <navLabel>
+          <text>Run Normal Mode Commands Across a Range</text>
+        </navLabel>
+        <content src="f_0052.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-53" playOrder="53">
+        <navLabel>
+          <text>Repeat the Last Ex Command</text>
+        </navLabel>
+        <content src="f_0053.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-54" playOrder="54">
+        <navLabel>
+          <text>Tab-Complete Your Ex Commands</text>
+        </navLabel>
+        <content src="f_0054.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-55" playOrder="55">
+        <navLabel>
+          <text>Insert the Current Word at the Command Prompt</text>
+        </navLabel>
+        <content src="f_0055.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-56" playOrder="56">
+        <navLabel>
+          <text>Recall Commands from History</text>
+        </navLabel>
+        <content src="f_0056.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-57" playOrder="57">
+        <navLabel>
+          <text>Run Commands in the Shell</text>
+        </navLabel>
+        <content src="f_0057.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-58" playOrder="58">
+      <navLabel>
+        <text>Part 2: Files</text>
+      </navLabel>
+      <content src="f_0058.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-59" playOrder="59">
+      <navLabel>
+        <text>Chapter 6: Manage Multiple Files</text>
+      </navLabel>
+      <content src="f_0059.html"/>
+      <navPoint class="chapter" id="navPoint-60" playOrder="60">
+        <navLabel>
+          <text>Track Open Files with the Buffer List</text>
+        </navLabel>
+        <content src="f_0060.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-61" playOrder="61">
+        <navLabel>
+          <text>Group Buffers into a Collection with the Argument List</text>
+        </navLabel>
+        <content src="f_0061.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-62" playOrder="62">
+        <navLabel>
+          <text>Manage Hidden Files</text>
+        </navLabel>
+        <content src="f_0062.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-63" playOrder="63">
+        <navLabel>
+          <text>Divide Your Workspace into Split Windows</text>
+        </navLabel>
+        <content src="f_0063.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-64" playOrder="64">
+        <navLabel>
+          <text>Organize Your Window Layouts with Tab Pages</text>
+        </navLabel>
+        <content src="f_0064.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-65" playOrder="65">
+      <navLabel>
+        <text>Chapter 7: Open Files and Save Them to Disk</text>
+      </navLabel>
+      <content src="f_0065.html"/>
+      <navPoint class="chapter" id="navPoint-66" playOrder="66">
+        <navLabel>
+          <text>Open a File by Its Filepath Using ‘:edit’</text>
+        </navLabel>
+        <content src="f_0066.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-67" playOrder="67">
+        <navLabel>
+          <text>Open a File by Its Filename Using ‘:find’</text>
+        </navLabel>
+        <content src="f_0067.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-68" playOrder="68">
+        <navLabel>
+          <text>Explore the File System with netrw</text>
+        </navLabel>
+        <content src="f_0068.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-69" playOrder="69">
+        <navLabel>
+          <text>Save Files to Nonexistent Directories</text>
+        </navLabel>
+        <content src="f_0069.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-70" playOrder="70">
+        <navLabel>
+          <text>Save a File as the Super User</text>
+        </navLabel>
+        <content src="f_0070.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-71" playOrder="71">
+      <navLabel>
+        <text>Part 3: Getting Around Faster</text>
+      </navLabel>
+      <content src="f_0071.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-72" playOrder="72">
+      <navLabel>
+        <text>Chapter 8: Navigate Inside Files with Motions</text>
+      </navLabel>
+      <content src="f_0072.html"/>
+      <navPoint class="chapter" id="navPoint-73" playOrder="73">
+        <navLabel>
+          <text>Keep Your Fingers on the Home Row</text>
+        </navLabel>
+        <content src="f_0073.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-74" playOrder="74">
+        <navLabel>
+          <text>Distinguish Between Real Lines and Display Lines</text>
+        </navLabel>
+        <content src="f_0074.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-75" playOrder="75">
+        <navLabel>
+          <text>Move Word-Wise</text>
+        </navLabel>
+        <content src="f_0075.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-76" playOrder="76">
+        <navLabel>
+          <text>Find by Character</text>
+        </navLabel>
+        <content src="f_0076.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-77" playOrder="77">
+        <navLabel>
+          <text>Search to Navigate</text>
+        </navLabel>
+        <content src="f_0077.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-78" playOrder="78">
+        <navLabel>
+          <text>Trace Your Selection with Precision Text Objects</text>
+        </navLabel>
+        <content src="f_0078.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-79" playOrder="79">
+        <navLabel>
+          <text>Delete Around, or Change Inside</text>
+        </navLabel>
+        <content src="f_0079.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-80" playOrder="80">
+        <navLabel>
+          <text>Mark Your Place and Snap Back to It</text>
+        </navLabel>
+        <content src="f_0080.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-81" playOrder="81">
+        <navLabel>
+          <text>Jump Between Matching Parentheses</text>
+        </navLabel>
+        <content src="f_0081.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-82" playOrder="82">
+      <navLabel>
+        <text>Chapter 9: Navigate Between Files with Jumps</text>
+      </navLabel>
+      <content src="f_0082.html"/>
+      <navPoint class="chapter" id="navPoint-83" playOrder="83">
+        <navLabel>
+          <text>Traverse the Jump List</text>
+        </navLabel>
+        <content src="f_0083.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-84" playOrder="84">
+        <navLabel>
+          <text>Traverse the Change List</text>
+        </navLabel>
+        <content src="f_0084.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-85" playOrder="85">
+        <navLabel>
+          <text>Jump to the Filename Under the Cursor</text>
+        </navLabel>
+        <content src="f_0085.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-86" playOrder="86">
+        <navLabel>
+          <text>Snap Between Files Using Global Marks</text>
+        </navLabel>
+        <content src="f_0086.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-87" playOrder="87">
+      <navLabel>
+        <text>Part 4: Registers</text>
+      </navLabel>
+      <content src="f_0087.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-88" playOrder="88">
+      <navLabel>
+        <text>Chapter 10: Copy and Paste</text>
+      </navLabel>
+      <content src="f_0088.html"/>
+      <navPoint class="chapter" id="navPoint-89" playOrder="89">
+        <navLabel>
+          <text>Delete, Yank, and Put with Vim’s Unnamed Register</text>
+        </navLabel>
+        <content src="f_0089.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-90" playOrder="90">
+        <navLabel>
+          <text>Grok Vim’s Registers</text>
+        </navLabel>
+        <content src="f_0090.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-91" playOrder="91">
+        <navLabel>
+          <text>Replace a Visual Selection with a Register</text>
+        </navLabel>
+        <content src="f_0091.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-92" playOrder="92">
+        <navLabel>
+          <text>Paste from a Register</text>
+        </navLabel>
+        <content src="f_0092.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-93" playOrder="93">
+        <navLabel>
+          <text>Interact with the System Clipboard</text>
+        </navLabel>
+        <content src="f_0093.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-94" playOrder="94">
+      <navLabel>
+        <text>Chapter 11: Macros</text>
+      </navLabel>
+      <content src="f_0094.html"/>
+      <navPoint class="chapter" id="navPoint-95" playOrder="95">
+        <navLabel>
+          <text>Record and Execute a Macro</text>
+        </navLabel>
+        <content src="f_0095.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-96" playOrder="96">
+        <navLabel>
+          <text>Normalize, Strike, Abort</text>
+        </navLabel>
+        <content src="f_0096.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-97" playOrder="97">
+        <navLabel>
+          <text>Play Back with a Count</text>
+        </navLabel>
+        <content src="f_0097.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-98" playOrder="98">
+        <navLabel>
+          <text>Repeat a Change on Contiguous Lines</text>
+        </navLabel>
+        <content src="f_0098.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-99" playOrder="99">
+        <navLabel>
+          <text>Append Commands to a Macro</text>
+        </navLabel>
+        <content src="f_0099.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-100" playOrder="100">
+        <navLabel>
+          <text>Act Upon a Collection of Files</text>
+        </navLabel>
+        <content src="f_0100.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-101" playOrder="101">
+        <navLabel>
+          <text>Evaluate an Iterator to Number Items in a List</text>
+        </navLabel>
+        <content src="f_0101.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-102" playOrder="102">
+        <navLabel>
+          <text>Edit the Contents of a Macro</text>
+        </navLabel>
+        <content src="f_0102.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-103" playOrder="103">
+      <navLabel>
+        <text>Part 5: Patterns</text>
+      </navLabel>
+      <content src="f_0103.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-104" playOrder="104">
+      <navLabel>
+        <text>Chapter 12: Matching Patterns and Literals</text>
+      </navLabel>
+      <content src="f_0104.html"/>
+      <navPoint class="chapter" id="navPoint-105" playOrder="105">
+        <navLabel>
+          <text>Tune the Case Sensitivity of Search Patterns</text>
+        </navLabel>
+        <content src="f_0105.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-106" playOrder="106">
+        <navLabel>
+          <text>Use the \v Pattern Switch for Regex Searches</text>
+        </navLabel>
+        <content src="f_0106.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-107" playOrder="107">
+        <navLabel>
+          <text>Use the \V Literal Switch for Verbatim Searches</text>
+        </navLabel>
+        <content src="f_0107.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-108" playOrder="108">
+        <navLabel>
+          <text>Use Parentheses to Capture Submatches</text>
+        </navLabel>
+        <content src="f_0108.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-109" playOrder="109">
+        <navLabel>
+          <text>Stake the Boundaries of a Word</text>
+        </navLabel>
+        <content src="f_0109.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-110" playOrder="110">
+        <navLabel>
+          <text>Stake the Boundaries of a Match</text>
+        </navLabel>
+        <content src="f_0110.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-111" playOrder="111">
+        <navLabel>
+          <text>Escape Problem Characters</text>
+        </navLabel>
+        <content src="f_0111.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-112" playOrder="112">
+      <navLabel>
+        <text>Chapter 13: Search</text>
+      </navLabel>
+      <content src="f_0112.html"/>
+      <navPoint class="chapter" id="navPoint-113" playOrder="113">
+        <navLabel>
+          <text>Meet the Search Command</text>
+        </navLabel>
+        <content src="f_0113.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-114" playOrder="114">
+        <navLabel>
+          <text>Highlight Search Matches</text>
+        </navLabel>
+        <content src="f_0114.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-115" playOrder="115">
+        <navLabel>
+          <text>Preview the First Match Before Execution</text>
+        </navLabel>
+        <content src="f_0115.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-116" playOrder="116">
+        <navLabel>
+          <text>Count the Matches for the Current Pattern</text>
+        </navLabel>
+        <content src="f_0116.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-117" playOrder="117">
+        <navLabel>
+          <text>Offset the Cursor to the End of a Search Match</text>
+        </navLabel>
+        <content src="f_0117.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-118" playOrder="118">
+        <navLabel>
+          <text>Operate on a Complete Search Match</text>
+        </navLabel>
+        <content src="f_0118.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-119" playOrder="119">
+        <navLabel>
+          <text>Create Complex Patterns by Iterating upon Search History</text>
+        </navLabel>
+        <content src="f_0119.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-120" playOrder="120">
+        <navLabel>
+          <text>Search for the Current Visual Selection</text>
+        </navLabel>
+        <content src="f_0120.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-121" playOrder="121">
+      <navLabel>
+        <text>Chapter 14: Substitution</text>
+      </navLabel>
+      <content src="f_0121.html"/>
+      <navPoint class="chapter" id="navPoint-122" playOrder="122">
+        <navLabel>
+          <text>Meet the Substitute Command</text>
+        </navLabel>
+        <content src="f_0122.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-123" playOrder="123">
+        <navLabel>
+          <text>Find and Replace Every Match in a File</text>
+        </navLabel>
+        <content src="f_0123.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-124" playOrder="124">
+        <navLabel>
+          <text>Eyeball Each Substitution</text>
+        </navLabel>
+        <content src="f_0124.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-125" playOrder="125">
+        <navLabel>
+          <text>Reuse the Last Search Pattern</text>
+        </navLabel>
+        <content src="f_0125.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-126" playOrder="126">
+        <navLabel>
+          <text>Replace with the Contents of a Register</text>
+        </navLabel>
+        <content src="f_0126.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-127" playOrder="127">
+        <navLabel>
+          <text>Repeat the Previous Substitute Command</text>
+        </navLabel>
+        <content src="f_0127.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-128" playOrder="128">
+        <navLabel>
+          <text>Rearrange CSV Fields Using Submatches</text>
+        </navLabel>
+        <content src="f_0128.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-129" playOrder="129">
+        <navLabel>
+          <text>Perform Arithmetic on the Replacement</text>
+        </navLabel>
+        <content src="f_0129.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-130" playOrder="130">
+        <navLabel>
+          <text>Swap Two or More Words</text>
+        </navLabel>
+        <content src="f_0130.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-131" playOrder="131">
+        <navLabel>
+          <text>Find and Replace Across Multiple Files</text>
+        </navLabel>
+        <content src="f_0131.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-132" playOrder="132">
+      <navLabel>
+        <text>Chapter 15: Global Commands</text>
+      </navLabel>
+      <content src="f_0132.html"/>
+      <navPoint class="chapter" id="navPoint-133" playOrder="133">
+        <navLabel>
+          <text>Meet the Global Command</text>
+        </navLabel>
+        <content src="f_0133.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-134" playOrder="134">
+        <navLabel>
+          <text>Delete Lines Containing a Pattern</text>
+        </navLabel>
+        <content src="f_0134.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-135" playOrder="135">
+        <navLabel>
+          <text>Collect TODO Items in a Register</text>
+        </navLabel>
+        <content src="f_0135.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-136" playOrder="136">
+        <navLabel>
+          <text>Alphabetize the Properties of Each Rule in a CSS File</text>
+        </navLabel>
+        <content src="f_0136.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-137" playOrder="137">
+      <navLabel>
+        <text>Part 6: Tools</text>
+      </navLabel>
+      <content src="f_0137.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-138" playOrder="138">
+      <navLabel>
+        <text>Chapter 16: Index and Navigate Source Code with ctags</text>
+      </navLabel>
+      <content src="f_0138.html"/>
+      <navPoint class="chapter" id="navPoint-139" playOrder="139">
+        <navLabel>
+          <text>Meet ctags</text>
+        </navLabel>
+        <content src="f_0139.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-140" playOrder="140">
+        <navLabel>
+          <text>Configure Vim to Work with ctags</text>
+        </navLabel>
+        <content src="f_0140.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-141" playOrder="141">
+        <navLabel>
+          <text>Navigate Keyword Definitions with Vim’s Tag Navigation Commands</text>
+        </navLabel>
+        <content src="f_0141.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-142" playOrder="142">
+      <navLabel>
+        <text>Chapter 17: Compile Code and Navigate Errors with the Quickfix List</text>
+      </navLabel>
+      <content src="f_0142.html"/>
+      <navPoint class="chapter" id="navPoint-143" playOrder="143">
+        <navLabel>
+          <text>Compile Code Without Leaving Vim</text>
+        </navLabel>
+        <content src="f_0143.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-144" playOrder="144">
+        <navLabel>
+          <text>Browse the Quickfix List</text>
+        </navLabel>
+        <content src="f_0144.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-145" playOrder="145">
+        <navLabel>
+          <text>Recall Results from a Previous Quickfix List</text>
+        </navLabel>
+        <content src="f_0145.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-146" playOrder="146">
+        <navLabel>
+          <text>Customize the External Compiler</text>
+        </navLabel>
+        <content src="f_0146.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-147" playOrder="147">
+      <navLabel>
+        <text>Chapter 18: Search Project-Wide with grep, vimgrep, and Others</text>
+      </navLabel>
+      <content src="f_0147.html"/>
+      <navPoint class="chapter" id="navPoint-148" playOrder="148">
+        <navLabel>
+          <text>Call grep Without Leaving Vim</text>
+        </navLabel>
+        <content src="f_0148.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-149" playOrder="149">
+        <navLabel>
+          <text>Customize the grep Program</text>
+        </navLabel>
+        <content src="f_0149.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-150" playOrder="150">
+        <navLabel>
+          <text>Grep with Vim’s Internal Search Engine</text>
+        </navLabel>
+        <content src="f_0150.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-151" playOrder="151">
+      <navLabel>
+        <text>Chapter 19: Dial X for Autocompletion</text>
+      </navLabel>
+      <content src="f_0151.html"/>
+      <navPoint class="chapter" id="navPoint-152" playOrder="152">
+        <navLabel>
+          <text>Meet Vim’s Keyword Autocompletion</text>
+        </navLabel>
+        <content src="f_0152.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-153" playOrder="153">
+        <navLabel>
+          <text>Work with the Autocomplete Pop-Up Menu</text>
+        </navLabel>
+        <content src="f_0153.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-154" playOrder="154">
+        <navLabel>
+          <text>Understand the Source of Keywords</text>
+        </navLabel>
+        <content src="f_0154.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-155" playOrder="155">
+        <navLabel>
+          <text>Autocomplete Words from the Dictionary</text>
+        </navLabel>
+        <content src="f_0155.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-156" playOrder="156">
+        <navLabel>
+          <text>Autocomplete Entire Lines</text>
+        </navLabel>
+        <content src="f_0156.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-157" playOrder="157">
+        <navLabel>
+          <text>Autocomplete Filenames</text>
+        </navLabel>
+        <content src="f_0157.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-158" playOrder="158">
+        <navLabel>
+          <text>Autocomplete with Context Awareness</text>
+        </navLabel>
+        <content src="f_0158.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-159" playOrder="159">
+      <navLabel>
+        <text>Chapter 20: Find and Fix Typos with Vim’s Spell Checker</text>
+      </navLabel>
+      <content src="f_0159.html"/>
+      <navPoint class="chapter" id="navPoint-160" playOrder="160">
+        <navLabel>
+          <text>Spell Check Your Work</text>
+        </navLabel>
+        <content src="f_0160.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-161" playOrder="161">
+        <navLabel>
+          <text>Use Alternate Spelling Dictionaries</text>
+        </navLabel>
+        <content src="f_0161.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-162" playOrder="162">
+        <navLabel>
+          <text>Add Words to the Spell File</text>
+        </navLabel>
+        <content src="f_0162.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-163" playOrder="163">
+        <navLabel>
+          <text>Fix Spelling Errors from Insert Mode</text>
+        </navLabel>
+        <content src="f_0163.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-164" playOrder="164">
+      <navLabel>
+        <text>Chapter 21: Now What?</text>
+      </navLabel>
+      <content src="f_0164.html"/>
+      <navPoint class="chapter" id="navPoint-165" playOrder="165">
+        <navLabel>
+          <text>21.1 Keep Practicing!</text>
+        </navLabel>
+        <content src="f_0165.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-166" playOrder="166">
+        <navLabel>
+          <text>21.2 Make Vim Your Own</text>
+        </navLabel>
+        <content src="f_0166.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-167" playOrder="167">
+        <navLabel>
+          <text>21.3 Know the Saw, Then Sharpen It</text>
+        </navLabel>
+        <content src="f_0167.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="navPoint-168" playOrder="168">
+      <navLabel>
+        <text>Appendix 1: Customize Vim to Suit Your Preferences</text>
+      </navLabel>
+      <content src="f_0168.html"/>
+      <navPoint class="chapter" id="navPoint-169" playOrder="169">
+        <navLabel>
+          <text>A1.1 Change Vim’s Settings on the Fly</text>
+        </navLabel>
+        <content src="f_0169.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-170" playOrder="170">
+        <navLabel>
+          <text>A1.2 Save Your Configuration in a vimrc File</text>
+        </navLabel>
+        <content src="f_0170.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-171" playOrder="171">
+        <navLabel>
+          <text>A1.3 Apply Customizations to Certain Types of Files</text>
+        </navLabel>
+        <content src="f_0171.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="navPoint-172" playOrder="172">
+        <navLabel>
+          <text>You May Be Interested In…</text>
+        </navLabel>
+        <content src="f_0172.html"/>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

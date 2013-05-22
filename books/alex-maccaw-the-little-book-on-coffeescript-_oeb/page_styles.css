@@ -1,0 +1,40 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: "Free Serif";
+    font-style: normal;
+    font-weight: normal;
+    src: url(OEBPS/FreeSerif.otf)
+    }
+@font-face {
+    font-family: "Free Sans Bold";
+    font-style: normal;
+    font-weight: bold;
+    src: url(OEBPS/FreeSansBold.otf)
+    }
+@font-face {
+    font-family: "Ubuntu Mono";
+    font-weight: normal;
+    font-style: normal;
+    src: url(OEBPS/UbuntuMono-R.ttf)
+    }
+@font-face {
+    font-family: "Ubuntu Mono Bold";
+    font-style: normal;
+    font-weight: bold;
+    src: url(OEBPS/UbuntuMono-B.ttf)
+    }
+@font-face {
+    font-family: "Ubuntu Mono BoldItal";
+    font-weight: bold;
+    font-style: italic;
+    src: url(OEBPS/UbuntuMono-BI.ttf)
+    }
+@font-face {
+    font-family: "Ubuntu Mono Ital";
+    font-weight: normal;
+    font-style: italic;
+    src: url(OEBPS/UbuntuMono-RI.ttf)
+    }

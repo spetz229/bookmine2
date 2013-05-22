@@ -1,0 +1,157 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: typeclasses_wellknown.html
+next: jsonclass.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="typeclasses_wellknown.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="jsonclass.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="typeclasses_auto_derivation" class="calibre27" id="typeclasses_auto_derivation"></a><h3 id="title-IDAXUUZD" class="docSection1Title">6.5. Automatic Derivation</h3><a name="x_rB" class="calibre27" id="x_rB"></a><p class="docText">For<a name="I_indexterm6_d1e17175" class="calibre27" id="I_indexterm6_d1e17175"></a><a name="I_indexterm6_d1e17176" class="calibre27" id="I_indexterm6_d1e17176"></a><a name="I_indexterm6_d1e17181" class="calibre27" id="I_indexterm6_d1e17181"></a> many simple data types, the Haskell compiler can
+    automatically derive instances of <tt class="calibre34">Read</tt>,
+    <tt class="calibre34">Show</tt>, <tt class="calibre34">Bounded</tt>, <tt class="calibre34">Enum</tt>, <tt class="calibre34">Eq</tt>, and
+    <tt class="calibre34">Ord</tt> for us. This saves us the effort of
+    having to manually write code to compare or display our own types:</p><pre class="calibre39">-- file: ch06/colorderived.hs
+data Color = Red | Green | Blue
+     deriving (Read, Show, Eq, Ord)</pre><br class="calibre48"/>
+<a name="typeclasses_auto_derivationd1e17561" class="calibre27" id="typeclasses_auto_derivationd1e17561"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_HN" class="calibre27" id="x_HN"></a></p><p class="docText">The Haskell standard requires compilers to be able to
+      automatically derive instances of these specific typeclasses. This
+      automation is not available for other typeclasses.</p></div><a name="x_sB" class="calibre27" id="x_sB"></a><p class="docText">Let's take a look at how these derived instances work for
+    us:</p><pre class="calibre39">ghci&gt; <b class="calibre40">show Red</b>
+"Red"
+ghci&gt; <b class="calibre40">(read "Red")::Color</b>
+Red
+ghci&gt; <b class="calibre40">(read "[Red,Red,Blue]")::[Color]</b>
+[Red,Red,Blue]
+ghci&gt; <b class="calibre40">(read "[Red, Red, Blue]")::[Color]</b>
+[Red,Red,Blue]
+ghci&gt; <b class="calibre40">Red == Red</b>
+True
+ghci&gt; <b class="calibre40">Red == Blue</b>
+False
+ghci&gt; <b class="calibre40">Data.List.sort [Blue,Green,Blue,Red]</b>
+[Red,Green,Blue,Blue]
+ghci&gt; <b class="calibre40">Red &lt; Blue</b>
+True</pre><a name="x_IN" class="calibre27" id="x_IN"></a><p class="docText">Notice that the sort order for <tt class="calibre34">Color</tt> was based on the order in which the
+    constructors were defined.</p><a name="x_uB" class="calibre27" id="x_uB"></a><p class="docText">Automatic derivation is not always possible. For instance,
+    if you defined a type <tt class="calibre34">data
+    MyType = MyType (Int -&gt; Bool)</tt>, the compiler will not be able
+    to derive an instance of <tt class="calibre34">Show</tt> because
+    it doesn't know how to render a function. We will get a compilation error
+    in such a situation.</p><a name="x_wD1" class="calibre27" id="x_wD1"></a><p class="docText">When we automatically derive an instance of some
+    typeclass, the types that we refer to in our <tt class="calibre34">data</tt> declaration must also be instances of that
+    typeclass (manually or <span class="docEmphasis">automatically</span>):</p><pre class="calibre39">-- file: ch06/AutomaticDerivation.hs
+data CannotShow = CannotShow
+                deriving (Show)
+
+-- will not compile, since CannotShow is not an instance of Show
+data CannotDeriveShow = CannotDeriveShow CannotShow
+                        deriving (Show)
+
+data OK = OK
+
+instance Show OK where
+    show _ = "OK"
+
+data ThisWorks = ThisWorks OK
+                 deriving (Show)</pre><br class="calibre48"/>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="typeclasses_wellknown.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="jsonclass.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

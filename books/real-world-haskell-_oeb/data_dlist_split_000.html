@@ -1,0 +1,251 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: data_num_split_001.html
+next: data_dlist_split_001.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="data_num_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="data_seq.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="data_dlist" class="calibre27" id="data_dlist"></a><h3 id="title-IDAHMBZG" class="docSection1Title">13.6. Taking Advantage of Functions as Data</h3><a name="x_Hq" class="calibre27" id="x_Hq"></a><p class="docText">In<a name="I_indexterm13_d1e30147" class="calibre27" id="I_indexterm13_d1e30147"></a><a name="I_indexterm13_d1e30148" class="calibre27" id="I_indexterm13_d1e30148"></a><a name="ch13-fundataadv" class="calibre27" id="ch13-fundataadv"></a><a name="ch13-datafundav" class="calibre27" id="ch13-datafundav"></a> an imperative language, appending two lists is cheap and
+    easy. Here's a simple C structure in which we maintain a pointer to the
+    head and tail of a list:</p><pre class="calibre39">struct list {
+    struct node *head, *tail;
+};</pre><br class="calibre48"/>
+<a name="x_Iq" class="calibre27" id="x_Iq"></a><p class="docText">When we have one list and want to append another list onto
+    its end, we modify the last node of the existing list to point to its
+    <tt class="calibre34">head</tt> node, and then update its <tt class="calibre34">tail</tt> pointer to
+    point to its <tt class="calibre34">tail</tt> node.</p><a name="x_Jq" class="calibre27" id="x_Jq"></a><p class="docText">Obviously, this approach is off limits to us in Haskell if
+    we want to stay pure. Since pure data is immutable, we can't go around
+    modifying lists in place. Haskell's <i class="docEmphasis">(++)</i> operator<a name="I_indexterm13_d1e30182" class="calibre27" id="I_indexterm13_d1e30182"></a><a name="I_indexterm13_d1e30185" class="calibre27" id="I_indexterm13_d1e30185"></a> appends two lists by creating a new one:</p><pre class="calibre39">-- file: ch13/Append.hs
+(++) :: [a] -&gt; [a] -&gt; [a]
+(x:xs) ++ ys = x : xs ++ ys
+_      ++ ys = ys</pre><br class="calibre48"/>
+<a name="x_Kq" class="calibre27" id="x_Kq"></a><p class="docText">From inspecting the code, we can see that the cost of
+    creating a new list depends on the length of the initial one.<sup class="docFootnote"><a class="docLink1" href="#x_Kqd1e30531">[34]</a></sup></p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_Kqd1e30531" class="calibre5" id="x_Kqd1e30531">[34]</a></sup> Nonstrict evaluation makes the cost calculation more
+        subtle. We pay for an append only if we actually use the resulting
+        list. Even then, we pay only for as much as we actually use.</p></blockquote><a name="x_Lq" class="calibre27" id="x_Lq"></a><p class="docText">We often need to append lists over and over in order to
+    construct one big list. For instance, we might be generating the contents
+    of a web page as a String, emitting a chunk at a time as we
+    traverse some data structure. Each time we have a chunk of markup to add
+    to the page, we will naturally want to append it onto the end of our
+    existing String.</p><a name="x_Mq" class="calibre27" id="x_Mq"></a><p class="docText">If a single append has a cost proportional to the length
+    of the initial list, and each repeated append makes the initial list
+    longer, we end up in an unhappy situation: the cost of all of the repeated
+    appends is proportional to the <span class="docEmphasis">square</span> of the length
+    of the final list.</p><a name="x_Nq" class="calibre27" id="x_Nq"></a><p class="docText">To understand this, let's dig in a little. The <i class="docEmphasis">(++)</i> operator is right-associative:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:info (++)</b>
+(++) :: [a] -&gt; [a] -&gt; [a] 	-- Defined in GHC.Base
+infixr 5 ++
+</pre><a name="x_Oq" class="calibre27" id="x_Oq"></a><p class="docText">This means that a Haskell implementation will evaluate the
+    expression <tt class="calibre34">"a" ++ "b" ++ "c"</tt> as though we had put parentheses
+    around it as follows: <tt class="calibre34">"a" ++ ("b" ++ "c")</tt>. This makes good
+    performance sense, because it keeps the left operand as short as
+    possible.</p><a name="x_Pq" class="calibre27" id="x_Pq"></a><p class="docText">When we repeatedly append onto the end of a list, we
+    defeat this associativity. Let's say we start with the list
+    <tt class="calibre34">"a"</tt> and append <tt class="calibre34">"b"</tt>, and save the result as our
+    new list. If we later append <tt class="calibre34">"c"</tt> onto this new list, our left
+    operand is now <tt class="calibre34">"ab"</tt>. In this scheme, every time we append,
+    our left operand gets longer.</p><a name="x_Qq" class="calibre27" id="x_Qq"></a><p class="docText">Meanwhile, the imperative programmers are cackling with
+    glee, because the cost of <span class="docEmphasis">their</span> repeated appends
+    depends only on the number that they perform. They have linear
+    performance; ours is quadratic.</p><a name="x_Rq" class="calibre27" id="x_Rq"></a><p class="docText">When something as common as repeated appending of lists
+    imposes such a performance penalty, it's time to look at the problem from
+    another angle.</p><a name="x_Sq" class="calibre27" id="x_Sq"></a><p class="docText">The expression <tt class="calibre34">("a"++)</tt> is a section, a
+    partially applied function. What is its type?</p><pre class="calibre39">ghci&gt; <b class="calibre40">:type ("a" ++)</b>
+("a" ++) :: [Char] -&gt; [Char]
+</pre><a name="x_Tq" class="calibre27" id="x_Tq"></a><p class="docText">Since this is a function, we can use the <i class="docEmphasis">(.)</i> operator<a name="I_indexterm13_d1e30266" class="calibre27" id="I_indexterm13_d1e30266"></a> to compose it with another section, let's say
+    <tt class="calibre34">("b"++)</tt>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:type ("a" ++) . ("b" ++)</b>
+("a" ++) . ("b" ++) :: [Char] -&gt; [Char]
+</pre><a name="x_Uq" class="calibre27" id="x_Uq"></a><p class="docText">Our new function has the same type. What happens if we
+    stop composing functions, and instead provide a String to the
+    function we've created?</p><pre class="calibre39">ghci&gt; <b class="calibre40">let f = ("a" ++) . ("b" ++)</b>ghci&gt; <b class="calibre40">f []</b>
+"ab"</pre><a name="x_Vq" class="calibre27" id="x_Vq"></a><p class="docText">We've appended the strings! We're using these partially
+    applied functions to store data, which we can retrieve by providing an
+    empty list. Each partial application of <i class="docEmphasis">(++)</i> and <i class="docEmphasis">(.)</i> <span class="docEmphasis">represents</span> an append,
+    but it doesn't actually <span class="docEmphasis">perform</span> the append.</p><a name="x_Wq" class="calibre27" id="x_Wq"></a><p class="docText">There are two very interesting things about this approach.
+    The first is that the cost of a partial application is constant, so the
+    cost of many partial applications is linear. The second is that when we
+    finally provide a <tt class="calibre34">[]</tt> value to unlock the final list from its
+    chain of partial applications, application proceeds from right to left.
+    This keeps the left operand<i class="docEmphasis"> (++)</i>
+    small, and so the overall cost of all of these appends is linear, not
+    <span class="docEmphasis">quadratic</span>.</p><a name="x_Xq" class="calibre27" id="x_Xq"></a><p class="docText">By choosing an unfamiliar data representation, we've
+    avoided a nasty performance quagmire, while gaining a new perspective on
+    the usefulness of treating functions as data. By the way, this is an old
+    trick, and it's usually called a <span class="docEmphasis">difference
+    list</span>.</p><a name="x_Yq" class="calibre27" id="x_Yq"></a><p class="docText">We're not yet finished, though. As appealing as difference
+    lists are in theory, ours won't be very pleasant in practice if we leave
+    all the plumbing of <i class="docEmphasis">(++)</i>, <i class="docEmphasis">(.)</i>, and partial applications exposed. We need
+    to turn this mess into something pleasant to work with.</p><a name="data_dlistd1e30671" class="calibre27" id="data_dlistd1e30671"></a><h4 id="title-IDAJTBZG" class="docSection1Title">13.6.1. Turning Difference Lists into a Proper Library</h4><a name="x_Zq" class="calibre27" id="x_Zq"></a><p class="docText">Our first step is to use a <tt class="calibre34">newtype</tt>
+      declaration to hide the underlying type from our users. We'll create a
+      new type and call it DList, and like a regular list, it
+      will be a parameterized type:</p><pre class="calibre39">-- file: ch13/DList.hs
+newtype DList a = DL {
+      unDL :: [a] -&gt; [a]
+    }</pre><br class="calibre48"/>
+<a name="x_aq" class="calibre27" id="x_aq"></a><p class="docText">The <i class="docEmphasis">unDL</i> function
+      is our deconstructor, which removes the <tt class="calibre34">DL</tt> constructor.
+      When we go back and decide what we want to export from our module, we
+      will omit our data constructor and deconstruction function, so the
+      DList type will be completely opaque to our users. They'll
+      only be able to work with the type using the other functions we
+      export:</p><pre class="calibre39">-- file: ch13/DList.hs
+append :: DList a -&gt; DList a -&gt; DList a
+append xs ys = DL (unDL xs . unDL ys)</pre><br class="calibre48"/>
+<a name="x_bq" class="calibre27" id="x_bq"></a><p class="docText">Our <i class="docEmphasis">append</i> function
+      may seem a little complicated, but it's just performing some
+      book-keeping around the same use of the <i class="docEmphasis">(.)</i> operator that we demonstrated earlier. To
+      compose our functions, we must first unwrap them from their
+      DL constructor—hence the use of <i class="docEmphasis">unDL</i>. We then re-wrap the resulting function
+      with the DL constructor so that it will have the right
+      type.</p><a name="x_cq" class="calibre27" id="x_cq"></a><p class="docText">Here's another way of writing the same function, in
+      which we perform the unwrapping of <span class="docMonofont">xs</span> and
+      <span class="docMonofont">ys</span> via pattern matching:</p><pre class="calibre39">-- file: ch13/DList.hs
+append' :: DList a -&gt; DList a -&gt; DList a
+append' (DL xs) (DL ys) = DL (xs . ys)</pre><br class="calibre48"/>
+<a name="x_dq" class="calibre27" id="x_dq"></a><p class="docText">Our DList type won't be much use if we
+      can't convert back and forth between the DList
+      representation and a regular list:</p><pre class="calibre39">-- file: ch13/DList.hs
+fromList :: [a] -&gt; DList a
+fromList xs = DL (xs ++)
+
+toList :: DList a -&gt; [a]
+toList (DL xs) = xs []</pre><br class="calibre48"/>
+<a name="x_eq" class="calibre27" id="x_eq"></a><p class="docText">Once again, compared to the original versions of these
+      functions that we wrote, all we're doing is a little bookkeeping to hide
+      the plumbing.</p><a name="x_fq" class="calibre27" id="x_fq"></a><p class="docText">If we want to make DList useful as a
+      substitute for regular lists, we need to provide some more of the common
+      list operations:</p><pre class="calibre39">-- file: ch13/DList.hs
+empty :: DList a
+empty = DL id
+
+-- equivalent of the list type's (:) operator
+cons :: a -&gt; DList a -&gt; DList a
+cons x (DL xs) = DL ((x:) . xs)
+infixr `cons`
+
+dfoldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; DList a -&gt; b
+dfoldr f z xs = foldr f z (toList xs)</pre><br class="calibre48"/>
+<a name="x_gq" class="calibre27" id="x_gq"></a><p class="docText">Although the DList approach makes appends
+      cheap, not all list-like operations are easily available. The <i class="docEmphasis">head</i> function has constant cost for lists.
+      Our DList equivalent requires that we convert the entire
+      DList to a regular list, so it is much more expensive than
+      its list counterpart—its cost is linear in the number of appends we have
+      performed to construct the DList:</p><pre class="calibre39">-- file: ch13/DList.hs
+safeHead :: DList a -&gt; Maybe a
+safeHead xs = case toList xs of
+                (y:_) -&gt; Just y
+                _ -&gt; Nothing</pre><br class="calibre48"/>
+<a name="x_hq" class="calibre27" id="x_hq"></a><p class="docText">To support an equivalent of <i class="docEmphasis">map</i>, we can make our DList type
+      a functor:</p><pre class="calibre39">-- file: ch13/DList.hs
+dmap :: (a -&gt; b) -&gt; DList a -&gt; DList b
+dmap f = dfoldr go empty
+    where go x xs = cons (f x) xs
+
+instance Functor DList where
+    fmap = dmap</pre><br class="calibre48"/>
+<a name="x_iq" class="calibre27" id="x_iq"></a><p class="docText">Once we decide that we have written enough equivalents
+      of list functions, we go back to the top of our source file and add a
+      module header:</p><pre class="calibre39">-- file: ch13/DList.hs
+module DList
+    (
+      DList
+    , fromList
+    , toList
+    , empty
+    , append
+    , cons
+    , dfoldr
+    ) where</pre><br class="calibre48"/>
+<a name="data_dlistd1e30777" class="calibre27" id="data_dlistd1e30777"></a><h4 id="title-IDADXBZG" class="docSection1Title">13.6.2. Lists, Difference Lists, and Monoids</h4><a name="x_jq" class="calibre27" id="x_jq"></a><p class="docText">In abstract<a name="I_indexterm13_d1e30445" class="calibre27" id="I_indexterm13_d1e30445"></a><a name="I_indexterm13_d1e30448" class="calibre27" id="I_indexterm13_d1e30448"></a> algebra, there is a simple abstract structure called a
+      <span class="docEmphasis">monoid</span>. Many mathematical objects are monoids,
+      because the "bar to entry" is very low. In order to be
+      considered a monoid, an object must have two properties:</p><dl class="docList1"><dt class="calibre48"><br class="calibre48"/><p class="calibre37"><i class="docEmphasis"><span class="docPubcolor">An associative binary operator</span></i></p></dt><dd class="calibre49"><p class="docText">Let's call it <i class="docEmphasis">(*)</i>: the
+            expression <tt class="calibre34">a * (b * c)</tt> must give the same result as
+            <tt class="calibre34">(a * b) * c</tt>.</p></dd><dt class="calibre48"><br class="calibre48"/><p class="calibre37"><i class="docEmphasis"><span class="docPubcolor">An identity value</span></i></p></dt><dd class="calibre49"><p class="docText">If we call this <span class="docMonofont">e</span>, it must obey two
+            rules: <tt class="calibre34">a * e == a</tt> and <tt class="calibre34">e * a == a</tt>.</p></dd></dl><a name="x_mq" class="calibre27" id="x_mq"></a><p class="docText">The rules for monoids don't say what the binary operator
+      must do, merely that such an operator must exist. Because of this, lots
+      of mathematical objects are monoids. If we take addition as the binary
+      operator and zero as the identity value, integers form a monoid. With
+      multiplication as the binary operator and one as the identity value,
+      integers form a different monoid.</p><a name="x_nq" class="calibre27" id="x_nq"></a><p class="docText">Monoids are ubiquitous in Haskell.<sup class="docFootnote"><a class="docLink1" href="#x_nqd1e30830">[35]</a></sup> The Monoid typeclass is defined in
+      the<a name="I_indexterm13_d1e30500" class="calibre27" id="I_indexterm13_d1e30500"></a> <tt class="calibre34">Data.Monoid</tt>
+      module:</p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_nqd1e30830" class="calibre5" id="x_nqd1e30830">[35]</a></sup> Indeed, monoids are ubiquitous throughout
+          programming. The difference is that in Haskell, we recognize, and
+          talk about them.</p></blockquote><pre class="calibre39">-- file: ch13/Monoid.hs
+class Monoid a where
+    mempty  :: a                -- the identity
+    mappend :: a -&gt; a -&gt; a      -- associative binary operator</pre><br class="calibre48"/>
+<a name="x_oq" class="calibre27" id="x_oq"></a><p class="docText">If we take <i class="docEmphasis">(++)</i> as
+      the binary operator and <tt class="calibre34">[]</tt> as the identity,
+      <tt class="calibre34">lists</tt> forms a monoid:</p><pre class="calibre39">-- file: ch13/Monoid.hs
+instance Monoid [a] where
+    mempty  = []
+    mappend = (++)</pre><br class="calibre48"/>
+<a name="x_pq" class="calibre27" id="x_pq"></a><p class="docText">Since lists and DLists are so closely
+      related, it follows that our DList type must be a monoid,
+      too:</p><pre class="calibre39">-- file: ch13/DList.hs
+instance Monoid (DList a) where
+    mempty = empty
+    mappend = append</pre><br class="calibre48"/>
+<a name="x_qq" class="calibre27" id="x_qq"></a><p class="docText">Let's try our the methods of the Monoid
+      typeclass in <i class="docEmphasis">ghci</i>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">"foo" `mappend` "bar"</b>
+"foobar"
+ghci&gt; <b class="calibre40">toList (fromList [1,2] `mappend` fromList [3,4])</b>
+[1,2,3,4]
+ghci&gt; <b class="calibre40">mempty `mappend` [1]</b>
+[1]</pre><a name="I_sidebar13_d1e30557" class="calibre27" id="I_sidebar13_d1e30557"></a></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

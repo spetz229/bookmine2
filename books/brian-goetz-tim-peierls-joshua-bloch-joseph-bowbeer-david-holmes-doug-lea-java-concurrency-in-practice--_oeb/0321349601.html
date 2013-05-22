@@ -1,0 +1,155 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: None
+next: main.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<p class="calibre1"> </p><a href="main.html" class="calibre2">Java Concurrency in Practice </a>
+<p class="calibre3"> </p><a href="toc.html" class="calibre2">Table of Contents </a>
+<p class="calibre3"> </p><a href="copyrightpg.html" class="calibre2">Copyright </a>
+<p class="calibre3"> </p><a href="pref01.html" class="calibre2">Advance Praise for Java Concurrency in Practice </a>
+<p class="calibre3"> </p><a href="pref02.html" class="calibre2">Listings </a>
+<p class="calibre3"> </p><a href="pref03.html" class="calibre2">Preface </a>
+<p class="calibre3"> </p><a href="ch01.html" class="calibre2">Chapter 1.  Introduction </a>
+<p class="calibre3"> </p><a href="ch01lev1sec1.html" class="calibre2">Section 1.1.  A (Very) Brief History of Concurrency </a>
+<p class="calibre3"> </p><a href="ch01lev1sec2.html" class="calibre2">Section 1.2.  Benefits of Threads </a>
+<p class="calibre3"> </p><a href="ch01lev1sec3.html" class="calibre2">Section 1.3.  Risks of Threads </a>
+<p class="calibre3"> </p><a href="ch01lev1sec4.html" class="calibre2">Section 1.4.  Threads are Everywhere </a>
+<p class="calibre3"> </p><a href="part01.html" class="calibre2">Part I:  Fundamentals </a>
+<p class="calibre3"> </p><a href="ch02_split_000.html" class="calibre2">Chapter 2.  Thread Safety </a>
+<p class="calibre3"> </p><a href="ch02lev1sec1.html" class="calibre2">Section 2.1.  What is Thread Safety? </a>
+<p class="calibre3"> </p><a href="ch02lev1sec2.html" class="calibre2">Section 2.2.  Atomicity </a>
+<p class="calibre3"> </p><a href="ch02lev1sec3.html" class="calibre2">Section 2.3.  Locking </a>
+<p class="calibre3"> </p><a href="ch02lev1sec4.html" class="calibre2">Section 2.4.  Guarding State with Locks </a>
+<p class="calibre3"> </p><a href="ch02lev1sec5.html" class="calibre2">Section 2.5.  Liveness and Performance </a>
+<p class="calibre3"> </p><a href="ch03.html" class="calibre2">Chapter 3.  Sharing Objects </a>
+<p class="calibre3"> </p><a href="ch03lev1sec1.html" class="calibre2">Section 3.1.  Visibility </a>
+<p class="calibre3"> </p><a href="ch03lev1sec2.html" class="calibre2">Section 3.2.  Publication and Escape </a>
+<p class="calibre3"> </p><a href="ch03lev1sec3.html" class="calibre2">Section 3.3.  Thread Confinement </a>
+<p class="calibre3"> </p><a href="ch03lev1sec4.html" class="calibre2">Section 3.4.  Immutability </a>
+<p class="calibre3"> </p><a href="ch03lev1sec5.html" class="calibre2">Section 3.5.  Safe Publication </a>
+<p class="calibre3"> </p><a href="ch04.html" class="calibre2">Chapter 4.  Composing Objects </a>
+<p class="calibre3"> </p><a href="ch04lev1sec1.html" class="calibre2">Section 4.1.  Designing a Thread-safe Class </a>
+<p class="calibre3"> </p><a href="ch04lev1sec2.html" class="calibre2">Section 4.2.  Instance Confinement </a>
+<p class="calibre3"> </p><a href="ch04lev1sec3.html" class="calibre2">Section 4.3.  Delegating Thread Safety </a>
+<p class="calibre3"> </p><a href="ch04lev1sec4.html" class="calibre2">Section 4.4.  Adding Functionality to Existing Thread-safe Classes </a>
+<p class="calibre3"> </p><a href="ch04lev1sec5.html" class="calibre2">Section 4.5.  Documenting Synchronization Policies </a>
+<p class="calibre3"> </p><a href="ch05.html" class="calibre2">Chapter 5.  Building Blocks </a>
+<p class="calibre3"> </p><a href="ch05lev1sec1.html" class="calibre2">Section 5.1.  Synchronized Collections </a>
+<p class="calibre3"> </p><a href="ch05lev1sec2.html" class="calibre2">Section 5.2.  Concurrent Collections </a>
+<p class="calibre3"> </p><a href="ch05lev1sec3.html" class="calibre2">Section 5.3.  Blocking Queues and the Producer-consumer Pattern </a>
+<p class="calibre3"> </p><a href="ch05lev1sec4.html" class="calibre2">Section 5.4.  Blocking and Interruptible Methods </a>
+<p class="calibre3"> </p><a href="ch05lev1sec5.html" class="calibre2">Section 5.5.  Synchronizers </a>
+<p class="calibre3"> </p><a href="ch05lev1sec6.html" class="calibre2">Section 5.6.  Building an Efficient, Scalable Result Cache </a>
+<p class="calibre3"> </p><a href="ch05lev1sec7.html" class="calibre2">Summary of Part I </a>
+<p class="calibre3"> </p><a href="part02.html" class="calibre2">Part II:  Structuring Concurrent Applications </a>
+<p class="calibre3"> </p><a href="ch06.html" class="calibre2">Chapter 6.  Task Execution </a>
+<p class="calibre3"> </p><a href="ch06lev1sec1.html" class="calibre2">Section 6.1.  Executing Tasks in Threads </a>
+<p class="calibre3"> </p><a href="ch06lev1sec2.html" class="calibre2">Section 6.2.  The Executor Framework </a>
+<p class="calibre3"> </p><a href="ch06lev1sec3.html" class="calibre2">Section 6.3.  Finding Exploitable Parallelism </a>
+<p class="calibre3"> </p><a href="ch06lev1sec4.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="ch07.html" class="calibre2">Chapter 7.  Cancellation and Shutdown </a>
+<p class="calibre3"> </p><a href="ch07lev1sec1.html" class="calibre2">Section 7.1.  Task Cancellation </a>
+<p class="calibre3"> </p><a href="ch07lev1sec2.html" class="calibre2">Section 7.2.  Stopping a Thread-based Service </a>
+<p class="calibre3"> </p><a href="ch07lev1sec3.html" class="calibre2">Section 7.3.  Handling Abnormal Thread Termination </a>
+<p class="calibre3"> </p><a href="ch07lev1sec4.html" class="calibre2">Section 7.4.  JVM Shutdown </a>
+<p class="calibre3"> </p><a href="ch07lev1sec5.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="ch08.html" class="calibre2">Chapter 8.  Applying Thread Pools </a>
+<p class="calibre3"> </p><a href="ch08lev1sec1.html" class="calibre2">Section 8.1.  Implicit Couplings Between Tasks and Execution Policies </a>
+<p class="calibre3"> </p><a href="ch08lev1sec2.html" class="calibre2">Section 8.2.  Sizing Thread Pools </a>
+<p class="calibre3"> </p><a href="ch08lev1sec3.html" class="calibre2">Section 8.3.  Configuring ThreadPoolExecutor </a>
+<p class="calibre3"> </p><a href="ch08lev1sec4.html" class="calibre2">Section 8.4.  Extending ThreadPoolExecutor </a>
+<p class="calibre3"> </p><a href="ch08lev1sec5.html" class="calibre2">Section 8.5.  Parallelizing Recursive Algorithms </a>
+<p class="calibre3"> </p><a href="ch08lev1sec6.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="ch09.html" class="calibre2">Chapter 9.  GUI Applications </a>
+<p class="calibre3"> </p><a href="ch09lev1sec1.html" class="calibre2">Section 9.1.  Why are GUIs Single-threaded? </a>
+<p class="calibre3"> </p><a href="ch09lev1sec2.html" class="calibre2">Section 9.2.  Short-running GUI Tasks </a>
+<p class="calibre3"> </p><a href="ch09lev1sec3.html" class="calibre2">Section 9.3.  Long-running GUI Tasks </a>
+<p class="calibre3"> </p><a href="ch09lev1sec4.html" class="calibre2">Section 9.4.  Shared Data Models </a>
+<p class="calibre3"> </p><a href="ch09lev1sec5.html" class="calibre2">Section 9.5.  Other Forms of Single-threaded Subsystems </a>
+<p class="calibre3"> </p><a href="ch09lev1sec6.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="part03.html" class="calibre2">Part III:  Liveness, Performance, and Testing </a>
+<p class="calibre3"> </p><a href="ch10.html" class="calibre2">Chapter 10.  Avoiding Liveness Hazards </a>
+<p class="calibre3"> </p><a href="ch10lev1sec1.html" class="calibre2">Section 10.1.  Deadlock </a>
+<p class="calibre3"> </p><a href="ch10lev1sec2.html" class="calibre2">Section 10.2.  Avoiding and Diagnosing Deadlocks </a>
+<p class="calibre3"> </p><a href="ch10lev1sec3.html" class="calibre2">Section 10.3.  Other Liveness Hazards </a>
+<p class="calibre3"> </p><a href="ch10lev1sec4.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="ch11.html" class="calibre2">Chapter 11.  Performance and Scalability </a>
+<p class="calibre3"> </p><a href="ch11lev1sec1.html" class="calibre2">Section 11.1.  Thinking about Performance </a>
+<p class="calibre3"> </p><a href="ch11lev1sec2.html" class="calibre2">Section 11.2.  Amdahl's Law </a>
+<p class="calibre3"> </p><a href="ch11lev1sec3.html" class="calibre2">Section 11.3.  Costs Introduced by Threads </a>
+<p class="calibre3"> </p><a href="ch11lev1sec4.html" class="calibre2">Section 11.4.  Reducing Lock Contention </a>
+<p class="calibre3"> </p><a href="ch11lev1sec5.html" class="calibre2">Section 11.5.  Example: Comparing Map Performance </a>
+<p class="calibre3"> </p><a href="ch11lev1sec6.html" class="calibre2">Section 11.6.  Reducing Context Switch Overhead </a>
+<p class="calibre3"> </p><a href="ch11lev1sec7.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="ch12.html" class="calibre2">Chapter 12.  Testing Concurrent Programs </a>
+<p class="calibre3"> </p><a href="ch12lev1sec1.html" class="calibre2">Section 12.1.  Testing for Correctness </a>
+<p class="calibre3"> </p><a href="ch12lev1sec2.html" class="calibre2">Section 12.2.  Testing for Performance </a>
+<p class="calibre3"> </p><a href="ch12lev1sec3.html" class="calibre2">Section 12.3.  Avoiding Performance Testing Pitfalls </a>
+<p class="calibre3"> </p><a href="ch12lev1sec4.html" class="calibre2">Section 12.4.  Complementary Testing Approaches </a>
+<p class="calibre3"> </p><a href="ch12lev1sec5.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="part04.html" class="calibre2">Part IV:  Advanced Topics </a>
+<p class="calibre3"> </p><a href="ch13.html" class="calibre2">Chapter 13.  Explicit Locks </a>
+<p class="calibre3"> </p><a href="ch13lev1sec1.html" class="calibre2">Section 13.1.  Lock and ReentrantLock </a>
+<p class="calibre3"> </p><a href="ch13lev1sec2.html" class="calibre2">Section 13.2.  Performance Considerations </a>
+<p class="calibre3"> </p><a href="ch13lev1sec3.html" class="calibre2">Section 13.3.  Fairness </a>
+<p class="calibre3"> </p><a href="ch13lev1sec4.html" class="calibre2">Section 13.4.  Choosing Between Synchronized and ReentrantLock </a>
+<p class="calibre3"> </p><a href="ch13lev1sec5.html" class="calibre2">Section 13.5.  Read-write Locks </a>
+<p class="calibre3"> </p><a href="ch13lev1sec6.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="ch14.html" class="calibre2">Chapter 14.  Building Custom Synchronizers </a>
+<p class="calibre3"> </p><a href="ch14lev1sec1.html" class="calibre2">Section 14.1.  Managing State Dependence </a>
+<p class="calibre3"> </p><a href="ch14lev1sec2.html" class="calibre2">Section 14.2.  Using Condition Queues </a>
+<p class="calibre3"> </p><a href="ch14lev1sec3.html" class="calibre2">Section 14.3.  Explicit Condition Objects </a>
+<p class="calibre3"> </p><a href="ch14lev1sec4.html" class="calibre2">Section 14.4.  Anatomy of a Synchronizer </a>
+<p class="calibre3"> </p><a href="ch14lev1sec5.html" class="calibre2">Section 14.5.  AbstractQueuedSynchronizer </a>
+<p class="calibre3"> </p><a href="ch14lev1sec6.html" class="calibre2">Section 14.6.  AQS in Java.util.concurrent Synchronizer Classes </a>
+<p class="calibre3"> </p><a href="ch14lev1sec7.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="ch15.html" class="calibre2">Chapter 15.  Atomic Variables and Nonblocking Synchronization </a>
+<p class="calibre3"> </p><a href="ch15lev1sec1.html" class="calibre2">Section 15.1.  Disadvantages of Locking </a>
+<p class="calibre3"> </p><a href="ch15lev1sec2.html" class="calibre2">Section 15.2.  Hardware Support for Concurrency </a>
+<p class="calibre3"> </p><a href="ch15lev1sec3.html" class="calibre2">Section 15.3.  Atomic Variable Classes </a>
+<p class="calibre3"> </p><a href="ch15lev1sec4.html" class="calibre2">Section 15.4.  Nonblocking Algorithms </a>
+<p class="calibre3"> </p><a href="ch15lev1sec5.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="ch16.html" class="calibre2">Chapter 16.  The Java Memory Model </a>
+<p class="calibre3"> </p><a href="ch16lev1sec1.html" class="calibre2">Section 16.1.  What is a Memory Model, and Why would I Want One? </a>
+<p class="calibre3"> </p><a href="ch16lev1sec2.html" class="calibre2">Section 16.2.  Publication </a>
+<p class="calibre3"> </p><a href="ch16lev1sec3.html" class="calibre2">Section 16.3.  Initialization Safety </a>
+<p class="calibre3"> </p><a href="ch16lev1sec4.html" class="calibre2">Summary </a>
+<p class="calibre3"> </p><a href="app01.html" class="calibre2">Appendix A.  Annotations for Concurrency </a>
+<p class="calibre3"> </p><a href="app01lev1sec1.html" class="calibre2">Section A.1.  Class Annotations </a>
+<p class="calibre3"> </p><a href="app01lev1sec2.html" class="calibre2">Section A.2.  Field and Method Annotations </a>
+<p class="calibre3"> </p><a href="bib01.html" class="calibre2">Bibliography </a>
+<p class="calibre3"> </p><a href="index.html" class="calibre2">Index </a>
+<p class="calibre3"> </p><a href="SYMBOL.html" class="calibre2">SYMBOL </a>
+<p class="calibre3"> </p><a href="A.html" class="calibre2">A </a>
+<p class="calibre3"> </p><a href="B.html" class="calibre2">B </a>
+<p class="calibre3"> </p><a href="C.html" class="calibre2">C </a>
+<p class="calibre3"> </p><a href="D.html" class="calibre2">D </a>
+<p class="calibre3"> </p><a href="E.html" class="calibre2">E </a>
+<p class="calibre3"> </p><a href="F.html" class="calibre2">F </a>
+<p class="calibre3"> </p><a href="G.html" class="calibre2">G </a>
+<p class="calibre3"> </p><a href="H.html" class="calibre2">H </a>
+<p class="calibre3"> </p><a href="I.html" class="calibre2">I </a>
+<p class="calibre3"> </p><a href="J.html" class="calibre2">J </a>
+<p class="calibre3"> </p><a href="K.html" class="calibre2">K </a>
+<p class="calibre3"> </p><a href="L.html" class="calibre2">L </a>
+<p class="calibre3"> </p><a href="M.html" class="calibre2">M </a>
+<p class="calibre3"> </p><a href="N.html" class="calibre2">N </a>
+<p class="calibre3"> </p><a href="O.html" class="calibre2">O </a>
+<p class="calibre3"> </p><a href="P.html" class="calibre2">P </a>
+<p class="calibre3"> </p><a href="Q.html" class="calibre2">Q </a>
+<p class="calibre3"> </p><a href="R.html" class="calibre2">R </a>
+<p class="calibre3"> </p><a href="S.html" class="calibre2">S </a>
+<p class="calibre3"> </p><a href="T.html" class="calibre2">T </a>
+<p class="calibre3"> </p><a href="U.html" class="calibre2">U </a>
+<p class="calibre3"> </p><a href="V.html" class="calibre2">V </a>
+<p class="calibre3"> </p><a href="W.html" class="calibre2">W </a>
+</div>
+
+{% endraw %}
+

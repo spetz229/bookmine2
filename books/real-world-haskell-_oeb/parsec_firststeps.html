@@ -1,0 +1,245 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: parsec_split_001.html
+next: parsec_sep.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="parsec_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="parsec_sep.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="parsec_firststeps" class="calibre27" id="parsec_firststeps"></a><h3 id="title-IDA5VU1F" class="docSection1Title">16.1. First Steps with Parsec: Simple CSV Parsing</h3><a name="x_HJ" class="calibre27" id="x_HJ"></a><p class="docText">Let's jump right<a name="ch16-parseccsv" class="calibre27" id="ch16-parseccsv"></a><a name="I_indexterm16_d1e36010" class="calibre27" id="I_indexterm16_d1e36010"></a><a name="I_indexterm16_d1e36015" class="calibre27" id="I_indexterm16_d1e36015"></a> in and write some code for parsing a<a name="ch16-csvfiles" class="calibre27" id="ch16-csvfiles"></a> CSV file. CSV files are often used as a plain-text
+    representation of spreadsheets or databases. Each line is a record, and
+    each field in the record is separated from the next by a comma. There are
+    ways of dealing with fields that contain commas, but we won't worry about
+    that now.</p><a name="x_IJ" class="calibre27" id="x_IJ"></a><p class="docText">This first example is much longer than it really needs to
+    be. We will soon introduce more Parsec features that will shrink the
+    parser down to only four lines!</p><pre class="calibre39">-- file: ch16/csv1.hs
+import Text.ParserCombinators.Parsec
+
+{- A CSV file contains 0 or more lines, each of which is terminated
+   by the end-of-line character (eol). -}
+csvFile :: GenParser Char st [[String]]
+csvFile = 
+    do result &lt;- many line
+       eof
+       return result
+
+-- Each line contains 1 or more cells, separated by a comma
+line :: GenParser Char st [String]
+line = 
+    do result &lt;- cells
+       eol                       -- end of line
+       return result
+       
+-- Build up a list of cells.  Try to parse the first cell, then figure out 
+-- what ends the cell.
+cells :: GenParser Char st [String]
+cells = 
+    do first &lt;- cellContent
+       next &lt;- remainingCells
+       return (first : next)
+
+-- The cell either ends with a comma, indicating that 1 or more cells follow,
+-- or it doesn't, indicating that we're at the end of the cells for this line
+remainingCells :: GenParser Char st [String]
+remainingCells =
+    (char ',' &gt;&gt; cells)            -- Found comma?  More cells coming
+    &lt;|&gt; (return [])                -- No comma?  Return [], no more cells
+
+-- Each cell contains 0 or more characters, which must not be a comma or
+-- EOL
+cellContent :: GenParser Char st String
+cellContent = 
+    many (noneOf ",\n")
+       
+
+-- The end of line character is \n
+eol :: GenParser Char st Char
+eol = char '\n'
+
+parseCSV :: String -&gt; Either ParseError [[String]]
+parseCSV input = parse csvFile "(unknown)" input</pre><br class="calibre48"/>
+<a name="x_NJ" class="calibre27" id="x_NJ"></a><p class="docText">Let's take a look at the code for this example. We didn't
+    use many shortcuts here, so remember that this will get shorter and
+    simpler!</p><a name="x_OJ" class="calibre27" id="x_OJ"></a><p class="docText">We've built it from the top down, so our first function is
+    <tt class="calibre34">csvFile</tt>. The type of this function is
+    <tt class="calibre34">GenParser Char st [[String]]</tt>. This
+    means that the type of the input is a sequence of characters, which is
+    exactly what a Haskell string is, since <tt class="calibre34">String</tt> is the same as <tt class="calibre34">[Char]</tt>. It also means that we will return a
+    value of type <tt class="calibre34">[[String]]</tt>: a list of a
+    list of strings. The <tt class="calibre34">st</tt> can be ignored
+    for now.</p><a name="x_PJ" class="calibre27" id="x_PJ"></a><p class="docText">Parsec programmers often omit type declarations, since we
+    write so many small functions. Haskell's type inference can figure it out.
+    We've listed the types for the first example, here so you can get a better
+    idea of what's going on. You can always use <tt class="calibre34">:t</tt> in <i class="docEmphasis">ghci</i> to
+    inspect types as well.</p><a name="x_QJ" class="calibre27" id="x_QJ"></a><p class="docText">The <tt class="calibre34">csvFile</tt> uses a
+    <tt class="calibre34">do</tt> block. As this implies, Parsec is a
+    monadic library: it defines its own special parsing monad,<sup class="docFootnote"><a class="docLink1" href="#x_QJd1e36403">[36]</a></sup> GenParser.</p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_QJd1e36403" class="calibre5" id="x_QJd1e36403">[36]</a></sup> For more on monads, refer to <a class="docLink" href="monads_split_000.html#monads">Chapter 14</a>.</p></blockquote><a name="x_RJ" class="calibre27" id="x_RJ"></a><p class="docText">We start by running <tt class="calibre34">many
+    line</tt>. <tt class="calibre34">many</tt> is a function that
+    takes a function as an argument. It tries to repeatedly parse the input
+    using the function passed to it. It gathers up the results from all that
+    repeated parsing and returns a list of them. So, here, we are storing the
+    results of parsing all lines in <tt class="calibre34">result</tt>.
+    Then we look for the end-of-file indicator, called <tt class="calibre34">eof</tt>. Finally, we return the <tt class="calibre34">result</tt>. So, a CSV file is made up of many lines,
+    and then the end of file. We can often read out Parsec functions in plain
+    English just like this.</p><a name="x_SJ" class="calibre27" id="x_SJ"></a><p class="docText">Now we must answer the question: what is a line? We define
+    the <tt class="calibre34">line</tt> function to do just that.
+    Reading the function, we can see that a line consists of cells followed by
+    the end-of-line character.</p><a name="x_TJ" class="calibre27" id="x_TJ"></a><p class="docText">So what are cells? We defined them in the <tt class="calibre34">cells</tt> function. The cells of a line start with
+    the content of the first cell, and then continue with the content of the
+    remaining cells, if any. The result is simply the first cell and the
+    remaining cells assembled into a list.</p><a name="x_UJ" class="calibre27" id="x_UJ"></a><p class="docText">Let's skip over <tt class="calibre34">remainingCells</tt> for a minute and look at <tt class="calibre34">cellContent</tt>. A cell contains any number of
+    characters, but each character must not be a comma or end-of-line
+    character. The <tt class="calibre34">noneOf</tt> function matches
+    one item, so long as it isn't in the list of items that we pass. So,
+    saying <tt class="calibre34">many (noneOf ",\n")</tt> defines a
+    cell the way we want it.</p><a name="x_VJ" class="calibre27" id="x_VJ"></a><p class="docText">Back in <tt class="calibre34">remainingCells</tt>,
+    we have the first example of a choice in Parsec. The choice operator is
+    <tt class="calibre34">&lt;|&gt;</tt>. This operator behaves like
+    this: it will try the parser on the left, and if it consumes no
+    input,<sup class="docFootnote"><a class="docLink1" href="#x_VJd1e36462">[37]</a></sup> it will try the parser on the right.</p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_VJd1e36462" class="calibre5" id="x_VJd1e36462">[37]</a></sup> For information on dealing with choices that may
+        consume some input before failing, see <a class="docLink" href="parsec_choices.html#parsec_lookahead">Section 16.3.1</a>.</p></blockquote><a name="x_WJ" class="calibre27" id="x_WJ"></a><p class="docText">So, in <tt class="calibre34">remainingCells</tt>,
+    our task is to come up with all the cells after the first. Recall that
+    <tt class="calibre34">cellContent</tt> uses <tt class="calibre34">noneOf ",\n"</tt>. So it will not consume the comma
+    or end-of-line character from the input. If we see a comma after parsing a
+    cell, it means that at least one more cell follows. Otherwise, we're done.
+    So, our first choice in <tt class="calibre34">remainingCells</tt>
+    is <tt class="calibre34">char ','</tt>. This
+    parser simply matches the passed character in the input. If we find a
+    comma, we want this function to return the remaining cells on the line. At
+    this point, the "remaining cells" looks exactly like the start of the
+    line, so we call <tt class="calibre34">cells</tt> recursively to
+    parse them. If we don't find a comma, we return the empty list, signifying
+    no remaining cells on the line.</p><a name="x_XJ" class="calibre27" id="x_XJ"></a><p class="docText">Finally, we must define what the end-of-line indicator is.
+    We set it to <tt class="calibre34">char '\n'</tt>, which will suit
+    our purposes fine for now.</p><a name="x_YJ" class="calibre27" id="x_YJ"></a><p class="docText">At the very end of the program, we define a function
+    <tt class="calibre34">parseCSV</tt> that takes a <tt class="calibre34">String</tt> and parses it as a CSV file. This
+    function is just a shortcut that calls Parsec's <tt class="calibre34">parse</tt> function, filling in a few parameters.
+    <tt class="calibre34">parse</tt> returns <tt class="calibre34">Either ParseError [[String]]</tt> for the CSV file.
+    If there is an error, the return value will be <tt class="calibre34">Left</tt> with the error; otherwise, it will be
+    <tt class="calibre34">Right</tt> with the result.</p><a name="x_JJ" class="calibre27" id="x_JJ"></a><p class="docText">Now that we understand this code, let's play with it a bit
+    and see what it does:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:l csv1.hs</b>
+[1 of 1] Compiling Main             ( csv1.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">parseCSV ""</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+Right []</pre><a name="x_KJ" class="calibre27" id="x_KJ"></a><p class="docText">That makes sense—parsing the empty string returns an empty
+    list. Let's try parsing a single cell:</p><pre class="calibre39">ghci&gt; <b class="calibre40">parseCSV "hi"</b>
+Left "(unknown)" (line 1, column 3):
+unexpected end of input
+expecting "," or "\n"
+</pre><a name="x_LJ" class="calibre27" id="x_LJ"></a><p class="docText">Look at that. Recall how we defined that each line must
+    end with the end-of-line character, and we didn't give it. Parsec's error
+    message helpfully indicated the line number and column number of the
+    problem, and even told us what it was expecting! Let's give it an
+    end-of-line character and continue experimenting:</p><pre class="calibre39">ghci&gt; <b class="calibre40">parseCSV "hi\n"</b>
+Right [["hi"]]
+ghci&gt; <b class="calibre40">parseCSV "line1\nline2\nline3\n"</b>
+Right [["line1"],["line2"],["line3"]]
+ghci&gt; <b class="calibre40">parseCSV "cell1,cell2,cell3\n"</b>
+Right [["cell1","cell2","cell3"]]
+ghci&gt; <b class="calibre40">parseCSV "l1c1,l1c2\nl2c1,l2c2\n"</b>
+Right [["l1c1","l1c2"],["l2c1","l2c2"]]
+ghci&gt; <b class="calibre40">parseCSV "Hi,\n\n,Hello\n"</b>
+Right [["Hi",""],[""],["","Hello"]]</pre><a name="x_MJ" class="calibre27" id="x_MJ"></a><p class="docText">You can see that <tt class="calibre34">parseCSV</tt> is doing exactly what we want it to do.
+    It's even handling empty cells and empty lines properly.</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="parsec_split_000.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="parsec_sep.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

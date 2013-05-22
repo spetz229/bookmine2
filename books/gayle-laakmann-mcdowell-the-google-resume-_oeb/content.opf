@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>Wiley</dc:publisher>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Gayle Laakmann McDowell</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:59:01.126697+00:00"/>
+    <dc:title>The Google Resume</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2011-01-13T10:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">9780470927625</dc:identifier>
+    <dc:identifier opf:scheme="MOBI-ASIN">04e8d061-05c1-4266-9a9d-e8913eb9872b</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">72fc2519-dfec-4343-86b9-07b79251030d</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="images/calibre_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="The_Google_Resume.html" id="id1" media-type="application/xhtml+xml"/>
+    <item href="images/00001.jpg" id="id3" media-type="image/jpeg"/>
+    <item href="images/00002.jpg" id="id4" media-type="image/jpeg"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id1"/>
+  </spine>
+  <guide>
+    <reference href="The_Google_Resume.html#filepos100" type="toc" title="Contents"/>
+    <reference href="images/calibre_cover.jpg" type="cover" title="Cover"/>
+  </guide>
+</package>

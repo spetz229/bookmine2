@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>O'Reilly Media</dc:publisher>
+    <dc:rights>Copyright © 2012 Alex MacCaw</dc:rights>
+    <dc:description>&lt;p&gt;This little book shows JavaScript developers how to build superb web applications with CoffeeScript, the remarkable little language that&amp;#8217;s gaining considerable interest. Through example code, this guide demonstrates how CoffeeScript abstracts JavaScript, providing syntactical sugar and preventing many common errors. You&amp;#8217;ll learn CoffeeScript&amp;#8217;s syntax and idioms step by step, from basic variables and functions to complex comprehensions and classes.&lt;/p&gt;</dc:description>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Alex MacCaw" opf:role="aut">Alex MacCaw</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:55:27.241438+00:00"/>
+    <dc:title>The Little Book on CoffeeScript</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2012-01-20T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">9781449321048</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">94e864d6-652c-46ef-94c2-80b37a5bf636</dc:identifier>
+    <dc:subject>COMPUTERS / Programming Languages / JavaScript</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="OEBPS/FreeSansBold.otf" id="epub.embedded.font.6" media-type="font/opentype"/>
+    <item href="OEBPS/FreeSerif.otf" id="epub.embedded.font.5" media-type="font/opentype"/>
+    <item href="OEBPS/UbuntuMono-B.ttf" id="epub.embedded.font.1" media-type="font/truetype"/>
+    <item href="OEBPS/UbuntuMono-BI.ttf" id="epub.embedded.font.2" media-type="font/truetype"/>
+    <item href="OEBPS/UbuntuMono-R.ttf" id="epub.embedded.font.3" media-type="font/truetype"/>
+    <item href="OEBPS/UbuntuMono-RI.ttf" id="epub.embedded.font.4" media-type="font/truetype"/>
+    <item href="OEBPS/author_bios.html" id="id2624631" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01.html" id="id3636640" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s02.html" id="id2856898" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s03.html" id="id2535306" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s04.html" id="id2768400" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s05.html" id="id2440534" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s06.html" id="id2850669" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s07.html" id="id2490622" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01s08.html" id="id2927002" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02.html" id="id2545256" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s02.html" id="id3587535" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s03.html" id="id2722444" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s04.html" id="id2601124" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02s05.html" id="id2700366" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03.html" id="id2857001" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s02.html" id="id2804474" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s03.html" id="id2627121" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s04.html" id="id2844081" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s05.html" id="id2849966" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s06.html" id="id2695504" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s07.html" id="id2706937" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s08.html" id="id2736648" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s09.html" id="id3594253" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s10.html" id="id2709465" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03s11.html" id="id2870459" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04.html" id="id2808634" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04s02.html" id="id2778931" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05.html" id="id3138204" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s02.html" id="id2614375" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05s03.html" id="id2785427" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06.html" id="id2871240" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s02.html" id="id2768220" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06s03.html" id="id2817496" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/cover.html" id="u99e0457a-94ef-4764-80c4-8457d62538a4" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/index.html" id="id2648235" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/oreilly_large.gif" id="id2524373" media-type="image/gif"/>
+    <item href="OEBPS/orm_front_cover.jpg" id="cover-image" media-type="image/jpeg"/>
+    <item href="OEBPS/pr01.html" id="id2545639" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s02.html" id="id2728403" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s03.html" id="id2494036" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s04.html" id="id2510329" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s05.html" id="id2598064" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01s06.html" id="id2646796" media-type="application/xhtml+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id2648235"/>
+    <itemref idref="id2545639"/>
+    <itemref idref="id2728403"/>
+    <itemref idref="id2494036"/>
+    <itemref idref="id2510329"/>
+    <itemref idref="id2598064"/>
+    <itemref idref="id2646796"/>
+    <itemref idref="id3636640"/>
+    <itemref idref="id2856898"/>
+    <itemref idref="id2535306"/>
+    <itemref idref="id2768400"/>
+    <itemref idref="id2440534"/>
+    <itemref idref="id2850669"/>
+    <itemref idref="id2490622"/>
+    <itemref idref="id2927002"/>
+    <itemref idref="id2545256"/>
+    <itemref idref="id3587535"/>
+    <itemref idref="id2722444"/>
+    <itemref idref="id2601124"/>
+    <itemref idref="id2700366"/>
+    <itemref idref="id2857001"/>
+    <itemref idref="id2804474"/>
+    <itemref idref="id2627121"/>
+    <itemref idref="id2844081"/>
+    <itemref idref="id2849966"/>
+    <itemref idref="id2695504"/>
+    <itemref idref="id2706937"/>
+    <itemref idref="id2736648"/>
+    <itemref idref="id3594253"/>
+    <itemref idref="id2709465"/>
+    <itemref idref="id2870459"/>
+    <itemref idref="id2808634"/>
+    <itemref idref="id2778931"/>
+    <itemref idref="id3138204"/>
+    <itemref idref="id2614375"/>
+    <itemref idref="id2785427"/>
+    <itemref idref="id2871240"/>
+    <itemref idref="id2768220"/>
+    <itemref idref="id2817496"/>
+    <itemref idref="id2624631"/>
+  </spine>
+  <guide>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="Cover"/>
+    <reference href="OEBPS/cover.html" type="other.titlepage" title="Title Page"/>
+  </guide>
+</package>

@@ -1,0 +1,2505 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="a3063b33-7124-44ec-b3ca-a072ad3ad519" name="dtb:uid"/>
+    <meta content="7" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Learning GNU Emacs, 3rd Edition</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="id2590420" playOrder="1">
+      <navLabel>
+        <text>Learning GNU Emacs, 3rd Edition</text>
+      </navLabel>
+      <content src="OEBPS/index.html"/>
+      <navPoint class="chapter" id="id2599304" playOrder="2">
+        <navLabel>
+          <text>Preface</text>
+        </navLabel>
+        <content src="OEBPS/pr01.html"/>
+        <navPoint class="chapter" id="id2599330" playOrder="3">
+          <navLabel>
+            <text>Why Read This Book?</text>
+          </navLabel>
+          <content src="OEBPS/pr01.html#gnu3-PREFACE-2-SECT-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2590333" playOrder="4">
+          <navLabel>
+            <text>Which Emacs Is Which?</text>
+          </navLabel>
+          <content src="OEBPS/pr01s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2590406" playOrder="5">
+          <navLabel>
+            <text>What's New in This Edition?</text>
+          </navLabel>
+          <content src="OEBPS/pr01s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2699426" playOrder="6">
+          <navLabel>
+            <text>GNU Emacs and the Free Software Foundation</text>
+          </navLabel>
+          <content src="OEBPS/pr01s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2699691" playOrder="7">
+          <navLabel>
+            <text>An Approach to Learning Emacs</text>
+          </navLabel>
+          <content src="OEBPS/pr01s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2599718" playOrder="8">
+          <navLabel>
+            <text>What We Haven't Included</text>
+          </navLabel>
+          <content src="OEBPS/pr01s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2599850" playOrder="9">
+          <navLabel>
+            <text>The Meta Key</text>
+          </navLabel>
+          <content src="OEBPS/pr01s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2704735" playOrder="10">
+          <navLabel>
+            <text>Conventions Used in This Book</text>
+          </navLabel>
+          <content src="OEBPS/pr01s08.html"/>
+          <navPoint class="chapter" id="id2704747" playOrder="11">
+            <navLabel>
+              <text>Keystroke Notation</text>
+            </navLabel>
+            <content src="OEBPS/pr01s08.html#gnu3-PREFACE-2-SECT-8.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2705039" playOrder="12">
+            <navLabel>
+              <text>Command Tables</text>
+            </navLabel>
+            <content src="OEBPS/pr01s08.html#gnu3-PREFACE-2-SECT-8.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2705267" playOrder="13">
+            <navLabel>
+              <text>Examples</text>
+            </navLabel>
+            <content src="OEBPS/pr01s08.html#gnu3-PREFACE-2-SECT-8.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2614282" playOrder="14">
+            <navLabel>
+              <text>Font Usage</text>
+            </navLabel>
+            <content src="OEBPS/pr01s08.html#gnu3-PREFACE-2-SECT-8.4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2614346" playOrder="15">
+          <navLabel>
+            <text>How to Contact Us</text>
+          </navLabel>
+          <content src="OEBPS/pr01s09.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2614470" playOrder="16">
+          <navLabel>
+            <text>Acknowledgments</text>
+          </navLabel>
+          <content src="OEBPS/pr01s10.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2590476" playOrder="17">
+        <navLabel>
+          <text>1. Emacs Basics</text>
+        </navLabel>
+        <content src="OEBPS/ch01.html"/>
+        <navPoint class="chapter" id="id2590493" playOrder="18">
+          <navLabel>
+            <text>1.1. Introducing Emacs!</text>
+          </navLabel>
+          <content src="OEBPS/ch01.html#gnu3-CHP-1-SECT-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2700521" playOrder="19">
+          <navLabel>
+            <text>1.2. Understanding Files and Buffers</text>
+          </navLabel>
+          <content src="OEBPS/ch01s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2700578" playOrder="20">
+          <navLabel>
+            <text>1.3. A Word About Modes</text>
+          </navLabel>
+          <content src="OEBPS/ch01s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2603758" playOrder="21">
+          <navLabel>
+            <text>1.4. Starting Emacs</text>
+          </navLabel>
+          <content src="OEBPS/ch01s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2603903" playOrder="22">
+          <navLabel>
+            <text>1.5. About the Emacs Display</text>
+          </navLabel>
+          <content src="OEBPS/ch01s05.html"/>
+          <navPoint class="chapter" id="id2651081" playOrder="23">
+            <navLabel>
+              <text>1.5.1. The Toolbar</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#gnu3-CHP-1-SECT-5.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2651745" playOrder="24">
+            <navLabel>
+              <text>1.5.2. The Menus</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#gnu3-CHP-1-SECT-5.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2698648" playOrder="25">
+            <navLabel>
+              <text>1.5.3. The Mode Line</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#gnu3-CHP-1-SECT-5.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2698829" playOrder="26">
+            <navLabel>
+              <text>1.5.4. The Minibuffer</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#gnu3-CHP-1-SECT-5.4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2698876" playOrder="27">
+          <navLabel>
+            <text>1.6. Emacs Commands</text>
+          </navLabel>
+          <content src="OEBPS/ch01s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2699277" playOrder="28">
+          <navLabel>
+            <text>1.7. Opening a File</text>
+          </navLabel>
+          <content src="OEBPS/ch01s07.html"/>
+          <navPoint class="chapter" id="id2615082" playOrder="29">
+            <navLabel>
+              <text>1.7.1. If You Read the Wrong File</text>
+            </navLabel>
+            <content src="OEBPS/ch01s07.html#gnu3-CHP-1-SECT-7.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2615144" playOrder="30">
+            <navLabel>
+              <text>1.7.2. Letting Emacs Fill in the Blanks</text>
+            </navLabel>
+            <content src="OEBPS/ch01s07.html#gnu3-CHP-1-SECT-7.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2615432" playOrder="31">
+            <navLabel>
+              <text>1.7.3. Inserting and Appending Files</text>
+            </navLabel>
+            <content src="OEBPS/ch01s07.html#gnu3-CHP-1-SECT-7.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2615500" playOrder="32">
+            <navLabel>
+              <text>1.7.4. How Emacs Chooses a Default Directory</text>
+            </navLabel>
+            <content src="OEBPS/ch01s07.html#gnu3-CHP-1-SECT-7.4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2615570" playOrder="33">
+          <navLabel>
+            <text>1.8. Saving Files</text>
+          </navLabel>
+          <content src="OEBPS/ch01s08.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2615753" playOrder="34">
+          <navLabel>
+            <text>1.9. Leaving Emacs</text>
+          </navLabel>
+          <content src="OEBPS/ch01s09.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2676629" playOrder="35">
+          <navLabel>
+            <text>1.10. Getting Help</text>
+          </navLabel>
+          <content src="OEBPS/ch01s10.html"/>
+          <navPoint class="chapter" id="id2677032" playOrder="36">
+            <navLabel>
+              <text>1.10.1. The Help Menu</text>
+            </navLabel>
+            <content src="OEBPS/ch01s10.html#gnu3-CHP-1-SECT-10.1"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2677109" playOrder="37">
+          <navLabel>
+            <text>1.11. Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch01s11.html"/>
+          <navPoint class="chapter" id="id2677610" playOrder="38">
+            <navLabel>
+              <text>1.11.1. Problems You May Encounter</text>
+            </navLabel>
+            <content src="OEBPS/ch01s11.html#gnu3-CHP-1-SECT-11.1"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2701445" playOrder="39">
+        <navLabel>
+          <text>2. Editing</text>
+        </navLabel>
+        <content src="OEBPS/ch02.html"/>
+        <navPoint class="chapter" id="id2702089" playOrder="40">
+          <navLabel>
+            <text>2.1. Moving the Cursor</text>
+          </navLabel>
+          <content src="OEBPS/ch02.html#gnu3-CHP-2-SECT-1"/>
+          <navPoint class="chapter" id="id2702252" playOrder="41">
+            <navLabel>
+              <text>2.1.1. Other Ways to Move the Cursor</text>
+            </navLabel>
+            <content src="OEBPS/ch02.html#gnu3-CHP-2-SECT-1.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2697325" playOrder="42">
+            <navLabel>
+              <text>2.1.2. Moving a Screen (or More) at a Time</text>
+            </navLabel>
+            <content src="OEBPS/ch02.html#gnu3-CHP-2-SECT-1.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2697550" playOrder="43">
+            <navLabel>
+              <text>2.1.3. Repeating Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch02.html#gnu3-CHP-2-SECT-1.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2697763" playOrder="44">
+            <navLabel>
+              <text>2.1.4. Centering the Display</text>
+            </navLabel>
+            <content src="OEBPS/ch02.html#gnu3-CHP-2-SECT-1.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2702975" playOrder="45">
+            <navLabel>
+              <text>2.1.5. Emacs Commands and Your Keyboard</text>
+            </navLabel>
+            <content src="OEBPS/ch02.html#gnu3-CHP-2-SECT-1.5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2703070" playOrder="46">
+          <navLabel>
+            <text>2.2. Deleting Text</text>
+          </navLabel>
+          <content src="OEBPS/ch02s02.html"/>
+          <navPoint class="chapter" id="id2703492" playOrder="47">
+            <navLabel>
+              <text>2.2.1. The Kill Ring</text>
+            </navLabel>
+            <content src="OEBPS/ch02s02.html#gnu3-CHP-2-SECT-2.1"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2704445" playOrder="48">
+          <navLabel>
+            <text>2.3. Marking Text to Delete, Move, or Copy</text>
+          </navLabel>
+          <content src="OEBPS/ch02s03.html"/>
+          <navPoint class="chapter" id="id2612374" playOrder="49">
+            <navLabel>
+              <text>2.3.1. Copying Text</text>
+            </navLabel>
+            <content src="OEBPS/ch02s03.html#gnu3-CHP-2-SECT-3.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2612702" playOrder="50">
+            <navLabel>
+              <text>2.3.2. Recovering Earlier Deletions</text>
+            </navLabel>
+            <content src="OEBPS/ch02s03.html#gnu3-CHP-2-SECT-3.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2613017" playOrder="51">
+            <navLabel>
+              <text>2.3.3. Selecting and Pasting</text>
+            </navLabel>
+            <content src="OEBPS/ch02s03.html#gnu3-CHP-2-SECT-3.3"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2613435" playOrder="52">
+          <navLabel>
+            <text>2.4. Emacs and the Clipboard</text>
+          </navLabel>
+          <content src="OEBPS/ch02s04.html"/>
+          <navPoint class="chapter" id="id2613459" playOrder="53">
+            <navLabel>
+              <text>2.4.1. Placing Text on the Clipboard</text>
+            </navLabel>
+            <content src="OEBPS/ch02s04.html#gnu3-CHP-2-SECT-4.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2613726" playOrder="54">
+            <navLabel>
+              <text>2.4.2. Retrieving Text from the Clipboard</text>
+            </navLabel>
+            <content src="OEBPS/ch02s04.html#gnu3-CHP-2-SECT-4.2"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2642031" playOrder="55">
+          <navLabel>
+            <text>2.5. Editing Tricks and Shortcuts</text>
+          </navLabel>
+          <content src="OEBPS/ch02s05.html"/>
+          <navPoint class="chapter" id="id2642049" playOrder="56">
+            <navLabel>
+              <text>2.5.1. Fixing Transpositions</text>
+            </navLabel>
+            <content src="OEBPS/ch02s05.html#gnu3-CHP-2-SECT-5.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2642750" playOrder="57">
+            <navLabel>
+              <text>2.5.2. Changing Capitalization</text>
+            </navLabel>
+            <content src="OEBPS/ch02s05.html#gnu3-CHP-2-SECT-5.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2643327" playOrder="58">
+            <navLabel>
+              <text>2.5.3. Overwrite Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch02s05.html#gnu3-CHP-2-SECT-5.3"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2643455" playOrder="59">
+          <navLabel>
+            <text>2.6. Canceling Commands and Undoing Changes</text>
+          </navLabel>
+          <content src="OEBPS/ch02s06.html"/>
+          <navPoint class="chapter" id="id2643470" playOrder="60">
+            <navLabel>
+              <text>2.6.1. Canceling Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch02s06.html#gnu3-CHP-2-SECT-6.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2643535" playOrder="61">
+            <navLabel>
+              <text>2.6.2. Undoing Changes</text>
+            </navLabel>
+            <content src="OEBPS/ch02s06.html#gnu3-CHP-2-SECT-6.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2643890" playOrder="62">
+            <navLabel>
+              <text>2.6.3. Reverting a Buffer from a File</text>
+            </navLabel>
+            <content src="OEBPS/ch02s06.html#gnu3-CHP-2-SECT-6.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2643986" playOrder="63">
+            <navLabel>
+              <text>2.6.4. Going Back to a Previous Version: Backup Files</text>
+            </navLabel>
+            <content src="OEBPS/ch02s06.html#gnu3-CHP-2-SECT-6.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2748684" playOrder="64">
+            <navLabel>
+              <text>2.6.5. Recovering Lost Changes</text>
+            </navLabel>
+            <content src="OEBPS/ch02s06.html#gnu3-CHP-2-SECT-6.5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2748948" playOrder="65">
+          <navLabel>
+            <text>2.7. Making Emacs Work the Way You Want</text>
+          </navLabel>
+          <content src="OEBPS/ch02s07.html"/>
+          <navPoint class="chapter" id="id2749273" playOrder="66">
+            <navLabel>
+              <text>2.7.1. Hiding the Toolbar</text>
+            </navLabel>
+            <content src="OEBPS/ch02s07.html#gnu3-CHP-2-SECT-7.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2749391" playOrder="67">
+            <navLabel>
+              <text>2.7.2. Turning On CUA Mode for C-x, C-c, and C-v to Cut, Copy, and Paste</text>
+            </navLabel>
+            <content src="OEBPS/ch02s07.html#gnu3-CHP-2-SECT-7.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2749545" playOrder="68">
+            <navLabel>
+              <text>2.7.3. Turning On Text Mode and Auto-Fill Mode Automatically</text>
+            </navLabel>
+            <content src="OEBPS/ch02s07.html#gnu3-CHP-2-SECT-7.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2749654" playOrder="69">
+            <navLabel>
+              <text>2.7.4. Remapping Keys</text>
+            </navLabel>
+            <content src="OEBPS/ch02s07.html#gnu3-CHP-2-SECT-7.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2749846" playOrder="70">
+            <navLabel>
+              <text>2.7.5. Problems You May Encounter</text>
+            </navLabel>
+            <content src="OEBPS/ch02s07.html#gnu3-CHP-2-SECT-7.5"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2749975" playOrder="71">
+        <navLabel>
+          <text>3. Search and Replace</text>
+        </navLabel>
+        <content src="OEBPS/ch03.html"/>
+        <navPoint class="chapter" id="id2750012" playOrder="72">
+          <navLabel>
+            <text>3.1. Different Kinds of Searches</text>
+          </navLabel>
+          <content src="OEBPS/ch03.html#gnu3-CHP-3-SECT-1"/>
+          <navPoint class="chapter" id="id2750432" playOrder="73">
+            <navLabel>
+              <text>3.1.1. Incremental Search</text>
+            </navLabel>
+            <content src="OEBPS/ch03.html#gnu3-CHP-3-SECT-1.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2674132" playOrder="74">
+            <navLabel>
+              <text>3.1.2. Simple Searches</text>
+            </navLabel>
+            <content src="OEBPS/ch03.html#gnu3-CHP-3-SECT-1.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2674478" playOrder="75">
+            <navLabel>
+              <text>3.1.3. Word Search</text>
+            </navLabel>
+            <content src="OEBPS/ch03.html#gnu3-CHP-3-SECT-1.3"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2674666" playOrder="76">
+          <navLabel>
+            <text>3.2. Search and Replace</text>
+          </navLabel>
+          <content src="OEBPS/ch03s02.html"/>
+          <navPoint class="chapter" id="id2674691" playOrder="77">
+            <navLabel>
+              <text>3.2.1. Simple Search and Replace Operations</text>
+            </navLabel>
+            <content src="OEBPS/ch03s02.html#gnu3-CHP-3-SECT-2.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2674890" playOrder="78">
+            <navLabel>
+              <text>3.2.2. Query-Replace</text>
+            </navLabel>
+            <content src="OEBPS/ch03s02.html#gnu3-CHP-3-SECT-2.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2675544" playOrder="79">
+            <navLabel>
+              <text>3.2.3. Repeating Query-Replaces (and Other Complex Commands)</text>
+            </navLabel>
+            <content src="OEBPS/ch03s02.html#gnu3-CHP-3-SECT-2.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2675860" playOrder="80">
+            <navLabel>
+              <text>3.2.4. Recursive Editing</text>
+            </navLabel>
+            <content src="OEBPS/ch03s02.html#gnu3-CHP-3-SECT-2.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2676158" playOrder="81">
+            <navLabel>
+              <text>3.2.5. Are Emacs Searches Case-Sensitive?</text>
+            </navLabel>
+            <content src="OEBPS/ch03s02.html#gnu3-CHP-3-SECT-2.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2600697" playOrder="82">
+            <navLabel>
+              <text>3.2.6. Regular Expressions for Search and Replacement Operations</text>
+            </navLabel>
+            <content src="OEBPS/ch03s02.html#gnu3-CHP-3-SECT-2.6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2601680" playOrder="83">
+          <navLabel>
+            <text>3.3. Checking Spelling Using Ispell</text>
+          </navLabel>
+          <content src="OEBPS/ch03s03.html"/>
+          <navPoint class="chapter" id="id2601717" playOrder="84">
+            <navLabel>
+              <text>3.3.1. Checking a Buffer</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#gnu3-CHP-3-SECT-3.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2602509" playOrder="85">
+            <navLabel>
+              <text>3.3.2. Checking a Single Word</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#gnu3-CHP-3-SECT-3.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2602570" playOrder="86">
+            <navLabel>
+              <text>3.3.3. Completing a Word</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#gnu3-CHP-3-SECT-3.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2602784" playOrder="87">
+            <navLabel>
+              <text>3.3.4. Spellchecking on the Fly with Flyspell</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#gnu3-CHP-3-SECT-3.4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2644977" playOrder="88">
+          <navLabel>
+            <text>3.4. Word Abbreviations</text>
+          </navLabel>
+          <content src="OEBPS/ch03s04.html"/>
+          <navPoint class="chapter" id="id2645027" playOrder="89">
+            <navLabel>
+              <text>3.4.1. Dynamic Abbreviations</text>
+            </navLabel>
+            <content src="OEBPS/ch03s04.html#gnu3-CHP-3-SECT-4.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2645256" playOrder="90">
+            <navLabel>
+              <text>3.4.2. Word Abbreviation Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch03s04.html#gnu3-CHP-3-SECT-4.2"/>
+            <navPoint class="chapter" id="id2645631" playOrder="91">
+              <navLabel>
+                <text>3.4.2.1. Trying word abbreviations for one session</text>
+              </navLabel>
+              <content src="OEBPS/ch03s04.html#gnu3-CHP-3-SECT-4.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2645763" playOrder="92">
+              <navLabel>
+                <text>3.4.2.2. Making word abbreviations part of your startup</text>
+              </navLabel>
+              <content src="OEBPS/ch03s04.html#gnu3-CHP-3-SECT-4.2.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2645911" playOrder="93">
+              <navLabel>
+                <text>3.4.2.3. Deleting a word abbreviation</text>
+              </navLabel>
+              <content src="OEBPS/ch03s04.html#gnu3-CHP-3-SECT-4.2.3"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2646037" playOrder="94">
+              <navLabel>
+                <text>3.4.2.4. Disabling word abbreviations</text>
+              </navLabel>
+              <content src="OEBPS/ch03s04.html#gnu3-CHP-3-SECT-4.2.4"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2646107" playOrder="95">
+              <navLabel>
+                <text>3.4.2.5. Abbreviations and capitalization</text>
+              </navLabel>
+              <content src="OEBPS/ch03s04.html#gnu3-CHP-3-SECT-4.2.5"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2646890" playOrder="96">
+            <navLabel>
+              <text>3.4.3. Problems You May Encounter</text>
+            </navLabel>
+            <content src="OEBPS/ch03s04.html#gnu3-CHP-3-SECT-4.3"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2646974" playOrder="97">
+        <navLabel>
+          <text>4. Using Buffers, Windows, and Frames</text>
+        </navLabel>
+        <content src="OEBPS/ch04.html"/>
+        <navPoint class="chapter" id="id2647004" playOrder="98">
+          <navLabel>
+            <text>4.1. Understanding Buffers, Windows, and Frames</text>
+          </navLabel>
+          <content src="OEBPS/ch04.html#gnu3-CHP-4-SECT-1"/>
+          <navPoint class="chapter" id="id2647021" playOrder="99">
+            <navLabel>
+              <text>4.1.1. Windows Versus Frames</text>
+            </navLabel>
+            <content src="OEBPS/ch04.html#gnu3-CHP-4-SECT-1.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2647180" playOrder="100">
+            <navLabel>
+              <text>4.1.2. Buffers: Independent of Windows and Frames</text>
+            </navLabel>
+            <content src="OEBPS/ch04.html#gnu3-CHP-4-SECT-1.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2647292" playOrder="101">
+            <navLabel>
+              <text>4.1.3. More About Buffers</text>
+            </navLabel>
+            <content src="OEBPS/ch04.html#gnu3-CHP-4-SECT-1.3"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2647561" playOrder="102">
+          <navLabel>
+            <text>4.2. Working with Multiple Buffers</text>
+          </navLabel>
+          <content src="OEBPS/ch04s02.html"/>
+          <navPoint class="chapter" id="id2647625" playOrder="103">
+            <navLabel>
+              <text>4.2.1. Switching Buffers</text>
+            </navLabel>
+            <content src="OEBPS/ch04s02.html#gnu3-CHP-4-SECT-2.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2648161" playOrder="104">
+            <navLabel>
+              <text>4.2.2. Deleting Buffers</text>
+            </navLabel>
+            <content src="OEBPS/ch04s02.html#gnu3-CHP-4-SECT-2.2"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2648326" playOrder="105">
+          <navLabel>
+            <text>4.3. Working with Windows</text>
+          </navLabel>
+          <content src="OEBPS/ch04s03.html"/>
+          <navPoint class="chapter" id="id2648478" playOrder="106">
+            <navLabel>
+              <text>4.3.1. Creating Horizontal Windows</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#gnu3-CHP-4-SECT-3.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2648773" playOrder="107">
+            <navLabel>
+              <text>4.3.2. Moving Between Windows</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#gnu3-CHP-4-SECT-3.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2649123" playOrder="108">
+            <navLabel>
+              <text>4.3.3. Getting Rid of Windows</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#gnu3-CHP-4-SECT-3.3"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2649197" playOrder="109">
+          <navLabel>
+            <text>4.4. Working with Frames</text>
+          </navLabel>
+          <content src="OEBPS/ch04s04.html"/>
+          <navPoint class="chapter" id="id2649212" playOrder="110">
+            <navLabel>
+              <text>4.4.1. Creating a New Frame</text>
+            </navLabel>
+            <content src="OEBPS/ch04s04.html#gnu3-CHP-4-SECT-4.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2649531" playOrder="111">
+            <navLabel>
+              <text>4.4.2. Moving Between Frames</text>
+            </navLabel>
+            <content src="OEBPS/ch04s04.html#gnu3-CHP-4-SECT-4.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2649590" playOrder="112">
+            <navLabel>
+              <text>4.4.3. Deleting and Minimizing Frames</text>
+            </navLabel>
+            <content src="OEBPS/ch04s04.html#gnu3-CHP-4-SECT-4.3"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2649965" playOrder="113">
+          <navLabel>
+            <text>4.5. More About Buffers</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html"/>
+          <navPoint class="chapter" id="id2649988" playOrder="114">
+            <navLabel>
+              <text>4.5.1. Saving Multiple Buffers</text>
+            </navLabel>
+            <content src="OEBPS/ch04s05.html#gnu3-CHP-4-SECT-5.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2650113" playOrder="115">
+            <navLabel>
+              <text>4.5.2. Renaming Buffers</text>
+            </navLabel>
+            <content src="OEBPS/ch04s05.html#gnu3-CHP-4-SECT-5.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2650436" playOrder="116">
+            <navLabel>
+              <text>4.5.3. Read-Only Buffers</text>
+            </navLabel>
+            <content src="OEBPS/ch04s05.html#gnu3-CHP-4-SECT-5.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2650714" playOrder="117">
+            <navLabel>
+              <text>4.5.4. Getting a List of Buffers</text>
+            </navLabel>
+            <content src="OEBPS/ch04s05.html#gnu3-CHP-4-SECT-5.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2650922" playOrder="118">
+            <navLabel>
+              <text>4.5.5. Working with the Buffer List</text>
+            </navLabel>
+            <content src="OEBPS/ch04s05.html#gnu3-CHP-4-SECT-5.5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2710650" playOrder="119">
+          <navLabel>
+            <text>4.6. More About Windows</text>
+          </navLabel>
+          <content src="OEBPS/ch04s06.html"/>
+          <navPoint class="chapter" id="id2710683" playOrder="120">
+            <navLabel>
+              <text>4.6.1. Creating Vertical or Side-by-Side Windows</text>
+            </navLabel>
+            <content src="OEBPS/ch04s06.html#gnu3-CHP-4-SECT-6.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2710863" playOrder="121">
+            <navLabel>
+              <text>4.6.2. Navigating Windows</text>
+            </navLabel>
+            <content src="OEBPS/ch04s06.html#gnu3-CHP-4-SECT-6.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2710953" playOrder="122">
+            <navLabel>
+              <text>4.6.3. Enlarging and Shrinking Windows</text>
+            </navLabel>
+            <content src="OEBPS/ch04s06.html#gnu3-CHP-4-SECT-6.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2711197" playOrder="123">
+            <navLabel>
+              <text>4.6.4. Limits on Window Size</text>
+            </navLabel>
+            <content src="OEBPS/ch04s06.html#gnu3-CHP-4-SECT-6.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2711261" playOrder="124">
+            <navLabel>
+              <text>4.6.5. Comparing Files Between Windows</text>
+            </navLabel>
+            <content src="OEBPS/ch04s06.html#gnu3-CHP-4-SECT-6.5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2712051" playOrder="125">
+          <navLabel>
+            <text>4.7. Holding Your Place with Bookmarks</text>
+          </navLabel>
+          <content src="OEBPS/ch04s07.html"/>
+          <navPoint class="chapter" id="id2712116" playOrder="126">
+            <navLabel>
+              <text>4.7.1. Setting Bookmarks</text>
+            </navLabel>
+            <content src="OEBPS/ch04s07.html#gnu3-CHP-4-SECT-7.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2712194" playOrder="127">
+            <navLabel>
+              <text>4.7.2. Moving to a Bookmark</text>
+            </navLabel>
+            <content src="OEBPS/ch04s07.html#gnu3-CHP-4-SECT-7.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2712303" playOrder="128">
+            <navLabel>
+              <text>4.7.3. Renaming and Deleting Bookmarks</text>
+            </navLabel>
+            <content src="OEBPS/ch04s07.html#gnu3-CHP-4-SECT-7.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2712545" playOrder="129">
+            <navLabel>
+              <text>4.7.4. Working with a List of Bookmarks</text>
+            </navLabel>
+            <content src="OEBPS/ch04s07.html#gnu3-CHP-4-SECT-7.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2713282" playOrder="130">
+            <navLabel>
+              <text>4.7.5. Annotating Bookmarks</text>
+            </navLabel>
+            <content src="OEBPS/ch04s07.html#gnu3-CHP-4-SECT-7.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2713513" playOrder="131">
+            <navLabel>
+              <text>4.7.6. A Few More Bookmark Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch04s07.html#gnu3-CHP-4-SECT-7.6"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2714174" playOrder="132">
+        <navLabel>
+          <text>5. Emacs as a Work Environment</text>
+        </navLabel>
+        <content src="OEBPS/ch05.html"/>
+        <navPoint class="chapter" id="id2714222" playOrder="133">
+          <navLabel>
+            <text>5.1. Executing Commands in Shell Buffers</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#gnu3-CHP-5-SECT-1"/>
+          <navPoint class="chapter" id="id2714310" playOrder="134">
+            <navLabel>
+              <text>5.1.1. Running One Command at a Time</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#gnu3-CHP-5-SECT-1.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2714835" playOrder="135">
+            <navLabel>
+              <text>5.1.2. Using Shell Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#gnu3-CHP-5-SECT-1.2"/>
+            <navPoint class="chapter" id="id2758283" playOrder="136">
+              <navLabel>
+                <text>5.1.2.1. Which shell?</text>
+              </navLabel>
+              <content src="OEBPS/ch05.html#gnu3-CHP-5-SECT-1.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2758452" playOrder="137">
+              <navLabel>
+                <text>5.1.2.2. Making passwords invisible in shell mode</text>
+              </navLabel>
+              <content src="OEBPS/ch05.html#gnu3-CHP-5-SECT-1.2.2"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2759198" playOrder="138">
+          <navLabel>
+            <text>5.2. Using Dired, the Directory Editor</text>
+          </navLabel>
+          <content src="OEBPS/ch05s02.html"/>
+          <navPoint class="chapter" id="id2759607" playOrder="139">
+            <navLabel>
+              <text>5.2.1. Viewing and Editing Files</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2759814" playOrder="140">
+            <navLabel>
+              <text>5.2.2. Deleting, Copying, and Renaming Files</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2760341" playOrder="141">
+            <navLabel>
+              <text>5.2.3. Compressing and Uncompressing Files</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2760521" playOrder="142">
+            <navLabel>
+              <text>5.2.4. Comparing Files</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2760652" playOrder="143">
+            <navLabel>
+              <text>5.2.5. Running Shell Commands on Files</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2761221" playOrder="144">
+            <navLabel>
+              <text>5.2.6. Working with Groups of Files</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.6"/>
+            <navPoint class="chapter" id="id2761240" playOrder="145">
+              <navLabel>
+                <text>5.2.6.1. Selecting files</text>
+              </navLabel>
+              <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.6.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2761338" playOrder="146">
+              <navLabel>
+                <text>5.2.6.2. Selecting likely candidates for deletion</text>
+              </navLabel>
+              <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.6.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2761509" playOrder="147">
+              <navLabel>
+                <text>5.2.6.3. Selecting files by type</text>
+              </navLabel>
+              <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.6.3"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2761576" playOrder="148">
+              <navLabel>
+                <text>5.2.6.4. Using regular expressions to choose files</text>
+              </navLabel>
+              <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.6.4"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2761848" playOrder="149">
+              <navLabel>
+                <text>5.2.6.5. Operating on groups of files</text>
+              </navLabel>
+              <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.6.5"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2762269" playOrder="150">
+            <navLabel>
+              <text>5.2.7. Navigating Directories</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#gnu3-CHP-5-SECT-2.7"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2653728" playOrder="151">
+          <navLabel>
+            <text>5.3. Printing from Emacs</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2654235" playOrder="152">
+          <navLabel>
+            <text>5.4. Reading Manpages in Emacs</text>
+          </navLabel>
+          <content src="OEBPS/ch05s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2654357" playOrder="153">
+          <navLabel>
+            <text>5.5. Using Time Management Tools</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html"/>
+          <navPoint class="chapter" id="id2654378" playOrder="154">
+            <navLabel>
+              <text>5.5.1. Displaying the Calendar</text>
+            </navLabel>
+            <content src="OEBPS/ch05s05.html#gnu3-CHP-5-SECT-5.1"/>
+            <navPoint class="chapter" id="id2654536" playOrder="155">
+              <navLabel>
+                <text>5.5.1.1. Moving in the calendar</text>
+              </navLabel>
+              <content src="OEBPS/ch05s05.html#gnu3-CHP-5-SECT-5.1.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2655624" playOrder="156">
+              <navLabel>
+                <text>5.5.1.2. Displaying holidays</text>
+              </navLabel>
+              <content src="OEBPS/ch05s05.html#gnu3-CHP-5-SECT-5.1.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2655802" playOrder="157">
+            <navLabel>
+              <text>5.5.2. Using the Diary</text>
+            </navLabel>
+            <content src="OEBPS/ch05s05.html#gnu3-CHP-5-SECT-5.2"/>
+            <navPoint class="chapter" id="id2655818" playOrder="158">
+              <navLabel>
+                <text>5.5.2.1. Creating a diary file</text>
+              </navLabel>
+              <content src="OEBPS/ch05s05.html#gnu3-CHP-5-SECT-5.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2655927" playOrder="159">
+              <navLabel>
+                <text>5.5.2.2. Adding diary entries</text>
+              </navLabel>
+              <content src="OEBPS/ch05s05.html#gnu3-CHP-5-SECT-5.2.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2656272" playOrder="160">
+              <navLabel>
+                <text>5.5.2.3. Displaying diary entries</text>
+              </navLabel>
+              <content src="OEBPS/ch05s05.html#gnu3-CHP-5-SECT-5.2.3"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2657371" playOrder="161">
+            <navLabel>
+              <text>5.5.3. Problems You May Encounter</text>
+            </navLabel>
+            <content src="OEBPS/ch05s05.html#gnu3-CHP-5-SECT-5.3"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2657495" playOrder="162">
+        <navLabel>
+          <text>6. Writing Macros</text>
+        </navLabel>
+        <content src="OEBPS/ch06.html"/>
+        <navPoint class="chapter" id="id2657649" playOrder="163">
+          <navLabel>
+            <text>6.1. Defining a Macro</text>
+          </navLabel>
+          <content src="OEBPS/ch06.html#gnu3-CHP-6-SECT-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2751184" playOrder="164">
+          <navLabel>
+            <text>6.2. Tips for Creating Good Macros</text>
+          </navLabel>
+          <content src="OEBPS/ch06s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2751356" playOrder="165">
+          <navLabel>
+            <text>6.3. A More Complicated Macro Example</text>
+          </navLabel>
+          <content src="OEBPS/ch06s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2751894" playOrder="166">
+          <navLabel>
+            <text>6.4. Editing a Macro</text>
+          </navLabel>
+          <content src="OEBPS/ch06s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2752371" playOrder="167">
+          <navLabel>
+            <text>6.5. The Macro Ring</text>
+          </navLabel>
+          <content src="OEBPS/ch06s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2752493" playOrder="168">
+          <navLabel>
+            <text>6.6. Binding Your Macro to a Key</text>
+          </navLabel>
+          <content src="OEBPS/ch06s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2752594" playOrder="169">
+          <navLabel>
+            <text>6.7. Naming, Saving, and Executing Your Macros</text>
+          </navLabel>
+          <content src="OEBPS/ch06s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2752865" playOrder="170">
+          <navLabel>
+            <text>6.8. Building More Complicated Macros</text>
+          </navLabel>
+          <content src="OEBPS/ch06s08.html"/>
+          <navPoint class="chapter" id="id2752881" playOrder="171">
+            <navLabel>
+              <text>6.8.1. Pausing a Macro for Keyboard Input</text>
+            </navLabel>
+            <content src="OEBPS/ch06s08.html#gnu3-CHP-6-SECT-8.1"/>
+            <navPoint class="chapter" id="id2752964" playOrder="172">
+              <navLabel>
+                <text>6.8.1.1. Example</text>
+              </navLabel>
+              <content src="OEBPS/ch06s08.html#gnu3-CHP-6-SECT-8.1.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2753740" playOrder="173">
+            <navLabel>
+              <text>6.8.2. Adding a Query to a Macro</text>
+            </navLabel>
+            <content src="OEBPS/ch06s08.html#gnu3-CHP-6-SECT-8.2"/>
+            <navPoint class="chapter" id="id2753934" playOrder="174">
+              <navLabel>
+                <text>6.8.2.1. Example</text>
+              </navLabel>
+              <content src="OEBPS/ch06s08.html#gnu3-CHP-6-SECT-8.2.1"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2754281" playOrder="175">
+          <navLabel>
+            <text>6.9. Executing Macros on a Region</text>
+          </navLabel>
+          <content src="OEBPS/ch06s09.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2754672" playOrder="176">
+          <navLabel>
+            <text>6.10. Beyond Macros</text>
+          </navLabel>
+          <content src="OEBPS/ch06s10.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2755449" playOrder="177">
+        <navLabel>
+          <text>7. Simple Text Formatting and Specialized Editing</text>
+        </navLabel>
+        <content src="OEBPS/ch07.html"/>
+        <navPoint class="chapter" id="id2755518" playOrder="178">
+          <navLabel>
+            <text>7.1. Using Tabs</text>
+          </navLabel>
+          <content src="OEBPS/ch07.html#gnu3-CHP-7-SECT-1"/>
+          <navPoint class="chapter" id="id2755556" playOrder="179">
+            <navLabel>
+              <text>7.1.1. How Emacs 21 Handles Tabs by Default</text>
+            </navLabel>
+            <content src="OEBPS/ch07.html#gnu3-CHP-7-SECT-1.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2755877" playOrder="180">
+            <navLabel>
+              <text>7.1.2. Changing Tab Stops</text>
+            </navLabel>
+            <content src="OEBPS/ch07.html#gnu3-CHP-7-SECT-1.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2756278" playOrder="181">
+            <navLabel>
+              <text>7.1.3. What if You Want Literal Tabs?</text>
+            </navLabel>
+            <content src="OEBPS/ch07.html#gnu3-CHP-7-SECT-1.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2756422" playOrder="182">
+            <navLabel>
+              <text>7.1.4. Changing Tab Width</text>
+            </navLabel>
+            <content src="OEBPS/ch07.html#gnu3-CHP-7-SECT-1.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2756477" playOrder="183">
+            <navLabel>
+              <text>7.1.5. Tabs and Spaces</text>
+            </navLabel>
+            <content src="OEBPS/ch07.html#gnu3-CHP-7-SECT-1.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2756556" playOrder="184">
+            <navLabel>
+              <text>7.1.6. Changing Tabs to Spaces (and Vice Versa)</text>
+            </navLabel>
+            <content src="OEBPS/ch07.html#gnu3-CHP-7-SECT-1.6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2756842" playOrder="185">
+          <navLabel>
+            <text>7.2. Indenting Text</text>
+          </navLabel>
+          <content src="OEBPS/ch07s02.html"/>
+          <navPoint class="chapter" id="id2756915" playOrder="186">
+            <navLabel>
+              <text>7.2.1. Indenting Paragraphs</text>
+            </navLabel>
+            <content src="OEBPS/ch07s02.html#gnu3-CHP-7-SECT-2.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2757072" playOrder="187">
+            <navLabel>
+              <text>7.2.2. Indenting the First Line of a Paragraph</text>
+            </navLabel>
+            <content src="OEBPS/ch07s02.html#gnu3-CHP-7-SECT-2.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2757185" playOrder="188">
+            <navLabel>
+              <text>7.2.3. Filling Indented Paragraphs</text>
+            </navLabel>
+            <content src="OEBPS/ch07s02.html#gnu3-CHP-7-SECT-2.3"/>
+            <navPoint class="chapter" id="id2757474" playOrder="189">
+              <navLabel>
+                <text>7.2.3.1. Indenting regions</text>
+              </navLabel>
+              <content src="OEBPS/ch07s02.html#gnu3-CHP-7-SECT-2.3.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2630478" playOrder="190">
+              <navLabel>
+                <text>7.2.3.2. Other indentation tricks</text>
+              </navLabel>
+              <content src="OEBPS/ch07s02.html#gnu3-CHP-7-SECT-2.3.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2630702" playOrder="191">
+            <navLabel>
+              <text>7.2.4. Changing Margins</text>
+            </navLabel>
+            <content src="OEBPS/ch07s02.html#gnu3-CHP-7-SECT-2.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2630855" playOrder="192">
+            <navLabel>
+              <text>7.2.5. Using Fill Prefixes</text>
+            </navLabel>
+            <content src="OEBPS/ch07s02.html#gnu3-CHP-7-SECT-2.5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2631776" playOrder="193">
+          <navLabel>
+            <text>7.3. Centering Text</text>
+          </navLabel>
+          <content src="OEBPS/ch07s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2632322" playOrder="194">
+          <navLabel>
+            <text>7.4. Using Outline Mode</text>
+          </navLabel>
+          <content src="OEBPS/ch07s04.html"/>
+          <navPoint class="chapter" id="id2632506" playOrder="195">
+            <navLabel>
+              <text>7.4.1. Entering Outline Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch07s04.html#gnu3-CHP-7-SECT-4.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2632720" playOrder="196">
+            <navLabel>
+              <text>7.4.2. Hiding and Showing Text</text>
+            </navLabel>
+            <content src="OEBPS/ch07s04.html#gnu3-CHP-7-SECT-4.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2632995" playOrder="197">
+            <navLabel>
+              <text>7.4.3. Editing While Text Is Hidden</text>
+            </navLabel>
+            <content src="OEBPS/ch07s04.html#gnu3-CHP-7-SECT-4.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2633135" playOrder="198">
+            <navLabel>
+              <text>7.4.4. Marking Sections of the Outline</text>
+            </navLabel>
+            <content src="OEBPS/ch07s04.html#gnu3-CHP-7-SECT-4.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2633205" playOrder="199">
+            <navLabel>
+              <text>7.4.5. Promoting and Demoting Sections</text>
+            </navLabel>
+            <content src="OEBPS/ch07s04.html#gnu3-CHP-7-SECT-4.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2633290" playOrder="200">
+            <navLabel>
+              <text>7.4.6. Using Outline Minor Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch07s04.html#gnu3-CHP-7-SECT-4.6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2634274" playOrder="201">
+          <navLabel>
+            <text>7.5. Rectangle Editing</text>
+          </navLabel>
+          <content src="OEBPS/ch07s05.html"/>
+          <navPoint class="chapter" id="id2635904" playOrder="202">
+            <navLabel>
+              <text>7.5.1. CUA Rectangle Editing</text>
+            </navLabel>
+            <content src="OEBPS/ch07s05.html#gnu3-CHP-7-SECT-5.1"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2636233" playOrder="203">
+          <navLabel>
+            <text>7.6. Making Simple Drawings</text>
+          </navLabel>
+          <content src="OEBPS/ch07s06.html"/>
+          <navPoint class="chapter" id="id2636383" playOrder="204">
+            <navLabel>
+              <text>7.6.1. Drawing in Picture Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch07s06.html#gnu3-CHP-7-SECT-6.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2636922" playOrder="205">
+            <navLabel>
+              <text>7.6.2. Editing in Picture Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch07s06.html#gnu3-CHP-7-SECT-6.2"/>
+            <navPoint class="chapter" id="id2637001" playOrder="206">
+              <navLabel>
+                <text>7.6.2.1. Cursor motion in picture mode</text>
+              </navLabel>
+              <content src="OEBPS/ch07s06.html#gnu3-CHP-7-SECT-6.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2637240" playOrder="207">
+              <navLabel>
+                <text>7.6.2.2. Inserting blank lines</text>
+              </navLabel>
+              <content src="OEBPS/ch07s06.html#gnu3-CHP-7-SECT-6.2.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2638979" playOrder="208">
+            <navLabel>
+              <text>7.6.3. Drawing with the Mouse Using Artist</text>
+            </navLabel>
+            <content src="OEBPS/ch07s06.html#gnu3-CHP-7-SECT-6.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2640331" playOrder="209">
+            <navLabel>
+              <text>7.6.4. Problems You May Encounter</text>
+            </navLabel>
+            <content src="OEBPS/ch07s06.html#gnu3-CHP-7-SECT-6.4"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2640355" playOrder="210">
+        <navLabel>
+          <text>8. Markup Language Support</text>
+        </navLabel>
+        <content src="OEBPS/ch08.html"/>
+        <navPoint class="chapter" id="id2640660" playOrder="211">
+          <navLabel>
+            <text>8.1. Comments</text>
+          </navLabel>
+          <content src="OEBPS/ch08.html#gnu3-CHP-8-SECT-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2640881" playOrder="212">
+          <navLabel>
+            <text>8.2. Font-Lock Mode</text>
+          </navLabel>
+          <content src="OEBPS/ch08s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2640965" playOrder="213">
+          <navLabel>
+            <text>8.3. Writing HTML</text>
+          </navLabel>
+          <content src="OEBPS/ch08s03.html"/>
+          <navPoint class="chapter" id="id2641200" playOrder="214">
+            <navLabel>
+              <text>8.3.1. Using HTML Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.1"/>
+            <navPoint class="chapter" id="id2641846" playOrder="215">
+              <navLabel>
+                <text>8.3.1.1. Character encoding in HTML mode</text>
+              </navLabel>
+              <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.1.1"/>
+              <navPoint class="chapter" id="id2735690" playOrder="216">
+                <navLabel>
+                  <text>8.3.1.1.1. Using ISO accents mode</text>
+                </navLabel>
+                <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.1.1.1"/>
+              </navPoint>
+              <navPoint class="chapter" id="id2735762" playOrder="217">
+                <navLabel>
+                  <text>8.3.1.1.2. Using the C-x 8 prefix</text>
+                </navLabel>
+                <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.1.1.2"/>
+              </navPoint>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2740789" playOrder="218">
+            <navLabel>
+              <text>8.3.2. Using HTML Helper Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.2"/>
+            <navPoint class="chapter" id="id2740915" playOrder="219">
+              <navLabel>
+                <text>8.3.2.1. Starting HTML helper mode</text>
+              </navLabel>
+              <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2741059" playOrder="220">
+              <navLabel>
+                <text>8.3.2.2. A brief tour of HTML helper mode</text>
+              </navLabel>
+              <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.2.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2741160" playOrder="221">
+              <navLabel>
+                <text>8.3.2.3. Inserting an HTML template</text>
+              </navLabel>
+              <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.2.3"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2741485" playOrder="222">
+              <navLabel>
+                <text>8.3.2.4. Putting tags around a region</text>
+              </navLabel>
+              <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.2.4"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2741742" playOrder="223">
+              <navLabel>
+                <text>8.3.2.5. Using completion</text>
+              </navLabel>
+              <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.2.5"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2741930" playOrder="224">
+              <navLabel>
+                <text>8.3.2.6. Turning on prompting</text>
+              </navLabel>
+              <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.2.6"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2742024" playOrder="225">
+              <navLabel>
+                <text>8.3.2.7. Character encoding in HTML helper mode</text>
+              </navLabel>
+              <content src="OEBPS/ch08s03.html#gnu3-CHP-8-SECT-3.2.7"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2746868" playOrder="226">
+          <navLabel>
+            <text>8.4. Writing XML</text>
+          </navLabel>
+          <content src="OEBPS/ch08s04.html"/>
+          <navPoint class="chapter" id="id2746922" playOrder="227">
+            <navLabel>
+              <text>8.4.1. Writing XML with SGML Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch08s04.html#gnu3-CHP-8-SECT-4.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2747213" playOrder="228">
+            <navLabel>
+              <text>8.4.2. TEI Emacs: XML Authoring for Linux and Windows</text>
+            </navLabel>
+            <content src="OEBPS/ch08s04.html#gnu3-CHP-8-SECT-4.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2747304" playOrder="229">
+            <navLabel>
+              <text>8.4.3. Writing XHTML Using nxml Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch08s04.html#gnu3-CHP-8-SECT-4.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2748521" playOrder="230">
+            <navLabel>
+              <text>8.4.4. Using psgml Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch08s04.html#gnu3-CHP-8-SECT-4.4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2617561" playOrder="231">
+          <navLabel>
+            <text>8.5. Marking up Text for TEX and LATEX</text>
+          </navLabel>
+          <content src="OEBPS/ch08s05.html"/>
+          <navPoint class="chapter" id="id2617609" playOrder="232">
+            <navLabel>
+              <text>8.5.1. Matching Braces</text>
+            </navLabel>
+            <content src="OEBPS/ch08s05.html#gnu3-CHP-8-SECT-5.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2617781" playOrder="233">
+            <navLabel>
+              <text>8.5.2. Quotation Marks and Paragraphing</text>
+            </navLabel>
+            <content src="OEBPS/ch08s05.html#gnu3-CHP-8-SECT-5.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2617852" playOrder="234">
+            <navLabel>
+              <text>8.5.3. Command Pairs</text>
+            </navLabel>
+            <content src="OEBPS/ch08s05.html#gnu3-CHP-8-SECT-5.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2617974" playOrder="235">
+            <navLabel>
+              <text>8.5.4. Processing and Printing Text</text>
+            </navLabel>
+            <content src="OEBPS/ch08s05.html#gnu3-CHP-8-SECT-5.4"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2619280" playOrder="236">
+        <navLabel>
+          <text>9. Computer Language Support</text>
+        </navLabel>
+        <content src="OEBPS/ch09.html"/>
+        <navPoint class="chapter" id="id2619406" playOrder="237">
+          <navLabel>
+            <text>9.1. Emacs as an IDE</text>
+          </navLabel>
+          <content src="OEBPS/ch09.html#gnu3-CHP-9-SECT-1"/>
+          <navPoint class="chapter" id="id2619459" playOrder="238">
+            <navLabel>
+              <text>9.1.1. Compiling and Debugging</text>
+            </navLabel>
+            <content src="OEBPS/ch09.html#gnu3-CHP-9-SECT-1.1"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2620279" playOrder="239">
+          <navLabel>
+            <text>9.2. Writing Code</text>
+          </navLabel>
+          <content src="OEBPS/ch09s02.html"/>
+          <navPoint class="chapter" id="id2620326" playOrder="240">
+            <navLabel>
+              <text>9.2.1. Language Modes</text>
+            </navLabel>
+            <content src="OEBPS/ch09s02.html#gnu3-CHP-9-SECT-2.1"/>
+            <navPoint class="chapter" id="id2620769" playOrder="241">
+              <navLabel>
+                <text>9.2.1.1. Syntax</text>
+              </navLabel>
+              <content src="OEBPS/ch09s02.html#gnu3-CHP-9-SECT-2.1.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2621095" playOrder="242">
+            <navLabel>
+              <text>9.2.2. Comments</text>
+            </navLabel>
+            <content src="OEBPS/ch09s02.html#gnu3-CHP-9-SECT-2.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2621400" playOrder="243">
+            <navLabel>
+              <text>9.2.3. Indenting Code</text>
+            </navLabel>
+            <content src="OEBPS/ch09s02.html#gnu3-CHP-9-SECT-2.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2621872" playOrder="244">
+            <navLabel>
+              <text>9.2.4. etags</text>
+            </navLabel>
+            <content src="OEBPS/ch09s02.html#gnu3-CHP-9-SECT-2.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2622370" playOrder="245">
+            <navLabel>
+              <text>9.2.5. Fonts and Font-lock Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch09s02.html#gnu3-CHP-9-SECT-2.5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2622568" playOrder="246">
+          <navLabel>
+            <text>9.3. C and C++ Support</text>
+          </navLabel>
+          <content src="OEBPS/ch09s03.html"/>
+          <navPoint class="chapter" id="id2622754" playOrder="247">
+            <navLabel>
+              <text>9.3.1. Motion Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch09s03.html#gnu3-CHP-9-SECT-3.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2623454" playOrder="248">
+            <navLabel>
+              <text>9.3.2. Customizing Code Indentation Style</text>
+            </navLabel>
+            <content src="OEBPS/ch09s03.html#gnu3-CHP-9-SECT-3.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2623928" playOrder="249">
+            <navLabel>
+              <text>9.3.3. Additional C and C++ Mode Features</text>
+            </navLabel>
+            <content src="OEBPS/ch09s03.html#gnu3-CHP-9-SECT-3.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2624496" playOrder="250">
+            <navLabel>
+              <text>9.3.4. C++ Mode Differences</text>
+            </navLabel>
+            <content src="OEBPS/ch09s03.html#gnu3-CHP-9-SECT-3.4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2624695" playOrder="251">
+          <navLabel>
+            <text>9.4. Java Support</text>
+          </navLabel>
+          <content src="OEBPS/ch09s04.html"/>
+          <navPoint class="chapter" id="id2624722" playOrder="252">
+            <navLabel>
+              <text>9.4.1. Java Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch09s04.html#gnu3-CHP-9-SECT-4.1"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2624838" playOrder="253">
+          <navLabel>
+            <text>9.5. The Java Development Environment for Emacs (JDEE)</text>
+          </navLabel>
+          <content src="OEBPS/ch09s05.html"/>
+          <navPoint class="chapter" id="id2624866" playOrder="254">
+            <navLabel>
+              <text>9.5.1. Getting Started</text>
+            </navLabel>
+            <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2624946" playOrder="255">
+            <navLabel>
+              <text>9.5.2. Installing CEDET</text>
+            </navLabel>
+            <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2625049" playOrder="256">
+            <navLabel>
+              <text>9.5.3. Installing the ELisp Library</text>
+            </navLabel>
+            <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2625369" playOrder="257">
+            <navLabel>
+              <text>9.5.4. Installing the JDEE</text>
+            </navLabel>
+            <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2625553" playOrder="258">
+            <navLabel>
+              <text>9.5.5. Registering Your Java Tools</text>
+            </navLabel>
+            <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.5"/>
+            <navPoint class="chapter" id="id2625679" playOrder="259">
+              <navLabel>
+                <text>9.5.5.1. JDK tools.jar problems</text>
+              </navLabel>
+              <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.5.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2625839" playOrder="260">
+            <navLabel>
+              <text>9.5.6. Editing with the JDEE</text>
+            </navLabel>
+            <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.6"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2626161" playOrder="261">
+            <navLabel>
+              <text>9.5.7. Compiling and Running with the JDEE</text>
+            </navLabel>
+            <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.7"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2626365" playOrder="262">
+            <navLabel>
+              <text>9.5.8. Debugging with the JDEE</text>
+            </navLabel>
+            <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.8"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2626762" playOrder="263">
+            <navLabel>
+              <text>9.5.9. Learning More about the JDEE</text>
+            </navLabel>
+            <content src="OEBPS/ch09s05.html#gnu3-CHP-9-SECT-5.9"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2626811" playOrder="264">
+          <navLabel>
+            <text>9.6. Perl Support</text>
+          </navLabel>
+          <content src="OEBPS/ch09s06.html"/>
+          <navPoint class="chapter" id="id2626933" playOrder="265">
+            <navLabel>
+              <text>9.6.1. Perl Caveats</text>
+            </navLabel>
+            <content src="OEBPS/ch09s06.html#gnu3-CHP-9-SECT-6.1"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2627028" playOrder="266">
+          <navLabel>
+            <text>9.7. SQL Support</text>
+          </navLabel>
+          <content src="OEBPS/ch09s07.html"/>
+          <navPoint class="chapter" id="id2627066" playOrder="267">
+            <navLabel>
+              <text>9.7.1. Prerequisites</text>
+            </navLabel>
+            <content src="OEBPS/ch09s07.html#gnu3-CHP-9-SECT-7.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2627110" playOrder="268">
+            <navLabel>
+              <text>9.7.2. Modes of Operation</text>
+            </navLabel>
+            <content src="OEBPS/ch09s07.html#gnu3-CHP-9-SECT-7.2"/>
+            <navPoint class="chapter" id="id2627164" playOrder="269">
+              <navLabel>
+                <text>9.7.2.1. Interactive mode</text>
+              </navLabel>
+              <content src="OEBPS/ch09s07.html#gnu3-CHP-9-SECT-7.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2627399" playOrder="270">
+              <navLabel>
+                <text>9.7.2.2. Editing mode</text>
+              </navLabel>
+              <content src="OEBPS/ch09s07.html#gnu3-CHP-9-SECT-7.2.2"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2627613" playOrder="271">
+          <navLabel>
+            <text>9.8. The Lisp Modes</text>
+          </navLabel>
+          <content src="OEBPS/ch09s08.html"/>
+          <navPoint class="chapter" id="id2628703" playOrder="272">
+            <navLabel>
+              <text>9.8.1. Indentation in Lisp Modes</text>
+            </navLabel>
+            <content src="OEBPS/ch09s08.html#gnu3-CHP-9-SECT-8.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2629043" playOrder="273">
+            <navLabel>
+              <text>9.8.2. Comments in Lisp Modes</text>
+            </navLabel>
+            <content src="OEBPS/ch09s08.html#gnu3-CHP-9-SECT-8.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2629151" playOrder="274">
+            <navLabel>
+              <text>9.8.3. Emacs Lisp Mode Differences</text>
+            </navLabel>
+            <content src="OEBPS/ch09s08.html#gnu3-CHP-9-SECT-8.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2629266" playOrder="275">
+            <navLabel>
+              <text>9.8.4. Lisp Mode Differences</text>
+            </navLabel>
+            <content src="OEBPS/ch09s08.html#gnu3-CHP-9-SECT-8.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2629340" playOrder="276">
+            <navLabel>
+              <text>9.8.5. Working with Lisp Fragments</text>
+            </navLabel>
+            <content src="OEBPS/ch09s08.html#gnu3-CHP-9-SECT-8.5"/>
+            <navPoint class="chapter" id="id2629389" playOrder="277">
+              <navLabel>
+                <text>9.8.5.1. Commands for evaluating a line of Lisp</text>
+              </navLabel>
+              <content src="OEBPS/ch09s08.html#gnu3-CHP-9-SECT-8.5.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2629567" playOrder="278">
+              <navLabel>
+                <text>9.8.5.2. Using Lisp interaction mode</text>
+              </navLabel>
+              <content src="OEBPS/ch09s08.html#gnu3-CHP-9-SECT-8.5.2"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2629763" playOrder="279">
+        <navLabel>
+          <text>10. Customizing Emacs</text>
+        </navLabel>
+        <content src="OEBPS/ch10.html"/>
+        <navPoint class="chapter" id="id2629902" playOrder="280">
+          <navLabel>
+            <text>10.1. Using Custom</text>
+          </navLabel>
+          <content src="OEBPS/ch10.html#gnu3-CHP-10-SECT-1"/>
+          <navPoint class="chapter" id="id2630009" playOrder="281">
+            <navLabel>
+              <text>10.1.1. Navigating Custom</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#gnu3-CHP-10-SECT-1.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2630136" playOrder="282">
+            <navLabel>
+              <text>10.1.2. Common Options</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#gnu3-CHP-10-SECT-1.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2658167" playOrder="283">
+            <navLabel>
+              <text>10.1.3. Customizing with Custom</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#gnu3-CHP-10-SECT-1.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2658455" playOrder="284">
+            <navLabel>
+              <text>10.1.4. An Abbrev Mode Example</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#gnu3-CHP-10-SECT-1.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2658976" playOrder="285">
+            <navLabel>
+              <text>10.1.5. The Options Menu</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#gnu3-CHP-10-SECT-1.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2659141" playOrder="286">
+            <navLabel>
+              <text>10.1.6. A Dired Example</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#gnu3-CHP-10-SECT-1.6"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2659779" playOrder="287">
+            <navLabel>
+              <text>10.1.7. But Where Is the Variable I Want?</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#gnu3-CHP-10-SECT-1.7"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2659988" playOrder="288">
+          <navLabel>
+            <text>10.2. Modifying the .emacs File Directly</text>
+          </navLabel>
+          <content src="OEBPS/ch10s02.html"/>
+          <navPoint class="chapter" id="id2660007" playOrder="289">
+            <navLabel>
+              <text>10.2.1. Custom Versus .emacs</text>
+            </navLabel>
+            <content src="OEBPS/ch10s02.html#gnu3-CHP-10-SECT-2.1"/>
+            <navPoint class="chapter" id="id2660158" playOrder="290">
+              <navLabel>
+                <text>10.2.1.1. Will the real .emacs please stand up?</text>
+              </navLabel>
+              <content src="OEBPS/ch10s02.html#gnu3-CHP-10-SECT-2.1.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2660261" playOrder="291">
+            <navLabel>
+              <text>10.2.2. Basic .emacs Statements</text>
+            </navLabel>
+            <content src="OEBPS/ch10s02.html#gnu3-CHP-10-SECT-2.2"/>
+            <navPoint class="chapter" id="id2660373" playOrder="292">
+              <navLabel>
+                <text>10.2.2.1. Caveat editor</text>
+              </navLabel>
+              <content src="OEBPS/ch10s02.html#gnu3-CHP-10-SECT-2.2.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2660473" playOrder="293">
+            <navLabel>
+              <text>10.2.3. A Sample .emacs File</text>
+            </navLabel>
+            <content src="OEBPS/ch10s02.html#gnu3-CHP-10-SECT-2.3"/>
+            <navPoint class="chapter" id="id2660616" playOrder="294">
+              <navLabel>
+                <text>10.2.3.1. Editing .emacs</text>
+              </navLabel>
+              <content src="OEBPS/ch10s02.html#gnu3-CHP-10-SECT-2.3.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2660754" playOrder="295">
+              <navLabel>
+                <text>10.2.3.2. Saving .emacs</text>
+              </navLabel>
+              <content src="OEBPS/ch10s02.html#gnu3-CHP-10-SECT-2.3.2"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2660852" playOrder="296">
+          <navLabel>
+            <text>10.3. Modifying Fonts and Colors</text>
+          </navLabel>
+          <content src="OEBPS/ch10s03.html"/>
+          <navPoint class="chapter" id="id2660879" playOrder="297">
+            <navLabel>
+              <text>10.3.1. Changing Fonts Interactively</text>
+            </navLabel>
+            <content src="OEBPS/ch10s03.html#gnu3-CHP-10-SECT-3.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2660966" playOrder="298">
+            <navLabel>
+              <text>10.3.2. Automatic Highlighting and Coloring</text>
+            </navLabel>
+            <content src="OEBPS/ch10s03.html#gnu3-CHP-10-SECT-3.2"/>
+            <navPoint class="chapter" id="id2661006" playOrder="299">
+              <navLabel>
+                <text>10.3.2.1. Isearch</text>
+              </navLabel>
+              <content src="OEBPS/ch10s03.html#gnu3-CHP-10-SECT-3.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2661062" playOrder="300">
+              <navLabel>
+                <text>10.3.2.2. Buffer highlighting</text>
+              </navLabel>
+              <content src="OEBPS/ch10s03.html#gnu3-CHP-10-SECT-3.2.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2661134" playOrder="301">
+            <navLabel>
+              <text>10.3.3. Customizing Fonts Through Custom</text>
+            </navLabel>
+            <content src="OEBPS/ch10s03.html#gnu3-CHP-10-SECT-3.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2661234" playOrder="302">
+            <navLabel>
+              <text>10.3.4. Changing Colors</text>
+            </navLabel>
+            <content src="OEBPS/ch10s03.html#gnu3-CHP-10-SECT-3.4"/>
+            <navPoint class="chapter" id="id2661372" playOrder="303">
+              <navLabel>
+                <text>10.3.4.1. Changing the cursor color</text>
+              </navLabel>
+              <content src="OEBPS/ch10s03.html#gnu3-CHP-10-SECT-3.4.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2661417" playOrder="304">
+            <navLabel>
+              <text>10.3.5. Saving Font- and Color-Enriched Text</text>
+            </navLabel>
+            <content src="OEBPS/ch10s03.html#gnu3-CHP-10-SECT-3.5"/>
+            <navPoint class="chapter" id="id2661808" playOrder="305">
+              <navLabel>
+                <text>10.3.5.1. Saving enriched text</text>
+              </navLabel>
+              <content src="OEBPS/ch10s03.html#gnu3-CHP-10-SECT-3.5.1"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2661893" playOrder="306">
+          <navLabel>
+            <text>10.4. Customizing Your Key Bindings</text>
+          </navLabel>
+          <content src="OEBPS/ch10s04.html"/>
+          <navPoint class="chapter" id="id2662712" playOrder="307">
+            <navLabel>
+              <text>10.4.1. Special Keys</text>
+            </navLabel>
+            <content src="OEBPS/ch10s04.html#gnu3-CHP-10-SECT-4.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2663033" playOrder="308">
+            <navLabel>
+              <text>10.4.2. Unsetting Key Bindings</text>
+            </navLabel>
+            <content src="OEBPS/ch10s04.html#gnu3-CHP-10-SECT-4.2"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2663090" playOrder="309">
+          <navLabel>
+            <text>10.5. Setting Emacs Variables</text>
+          </navLabel>
+          <content src="OEBPS/ch10s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2663494" playOrder="310">
+          <navLabel>
+            <text>10.6. Finding Emacs Lisp Packages</text>
+          </navLabel>
+          <content src="OEBPS/ch10s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2663647" playOrder="311">
+          <navLabel>
+            <text>10.7. Starting Modes via Auto-Mode Customization</text>
+          </navLabel>
+          <content src="OEBPS/ch10s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2663942" playOrder="312">
+          <navLabel>
+            <text>10.8. Making Emacs Work the Way You Think It Should</text>
+          </navLabel>
+          <content src="OEBPS/ch10s08.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2664150" playOrder="313">
+        <navLabel>
+          <text>11. Emacs Lisp Programming</text>
+        </navLabel>
+        <content src="OEBPS/ch11.html"/>
+        <navPoint class="chapter" id="id2664325" playOrder="314">
+          <navLabel>
+            <text>11.1. Introduction to Lisp</text>
+          </navLabel>
+          <content src="OEBPS/ch11.html#gnu3-CHP-11-SECT-1"/>
+          <navPoint class="chapter" id="id2664364" playOrder="315">
+            <navLabel>
+              <text>11.1.1. Basic Lisp Entities</text>
+            </navLabel>
+            <content src="OEBPS/ch11.html#gnu3-CHP-11-SECT-1.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2665047" playOrder="316">
+            <navLabel>
+              <text>11.1.2. Defining Functions</text>
+            </navLabel>
+            <content src="OEBPS/ch11.html#gnu3-CHP-11-SECT-1.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2665965" playOrder="317">
+            <navLabel>
+              <text>11.1.3. Turning Lisp Functions into Emacs Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch11.html#gnu3-CHP-11-SECT-1.3"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2666743" playOrder="318">
+          <navLabel>
+            <text>11.2. Lisp Primitive Functions</text>
+          </navLabel>
+          <content src="OEBPS/ch11s02.html"/>
+          <navPoint class="chapter" id="id2667092" playOrder="319">
+            <navLabel>
+              <text>11.2.1. Statement Blocks</text>
+            </navLabel>
+            <content src="OEBPS/ch11s02.html#gnu3-CHP-11-SECT-2.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2667480" playOrder="320">
+            <navLabel>
+              <text>11.2.2. Control Structures</text>
+            </navLabel>
+            <content src="OEBPS/ch11s02.html#gnu3-CHP-11-SECT-2.2"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2668219" playOrder="321">
+          <navLabel>
+            <text>11.3. Useful Built-in Emacs Functions</text>
+          </navLabel>
+          <content src="OEBPS/ch11s03.html"/>
+          <navPoint class="chapter" id="id2668285" playOrder="322">
+            <navLabel>
+              <text>11.3.1. Buffers, Text, and Regions</text>
+            </navLabel>
+            <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2668917" playOrder="323">
+            <navLabel>
+              <text>11.3.2. Regular Expressions</text>
+            </navLabel>
+            <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.2"/>
+            <navPoint class="chapter" id="id2669166" playOrder="324">
+              <navLabel>
+                <text>11.3.2.1. Basic operators</text>
+              </navLabel>
+              <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2669798" playOrder="325">
+              <navLabel>
+                <text>11.3.2.2. Grouping and alternation</text>
+              </navLabel>
+              <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.2.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2670053" playOrder="326">
+              <navLabel>
+                <text>11.3.2.3. Context</text>
+              </navLabel>
+              <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.2.3"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2670384" playOrder="327">
+              <navLabel>
+                <text>11.3.2.4. Retrieving portions of matches</text>
+              </navLabel>
+              <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.2.4"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2670866" playOrder="328">
+              <navLabel>
+                <text>11.3.2.5. Regular expression operator summary</text>
+              </navLabel>
+              <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.2.5"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2671386" playOrder="329">
+            <navLabel>
+              <text>11.3.3. A Treasure Trove of Examples</text>
+            </navLabel>
+            <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2671592" playOrder="330">
+            <navLabel>
+              <text>11.3.4. Functions That Use Regular Expressions</text>
+            </navLabel>
+            <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2671955" playOrder="331">
+            <navLabel>
+              <text>11.3.5. Finding Other Built-in Functions</text>
+            </navLabel>
+            <content src="OEBPS/ch11s03.html#gnu3-CHP-11-SECT-3.5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2672245" playOrder="332">
+          <navLabel>
+            <text>11.4. Building an Automatic Template System</text>
+          </navLabel>
+          <content src="OEBPS/ch11s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2673158" playOrder="333">
+          <navLabel>
+            <text>11.5. Programming a Major Mode</text>
+          </navLabel>
+          <content src="OEBPS/ch11s05.html"/>
+          <navPoint class="chapter" id="id2673232" playOrder="334">
+            <navLabel>
+              <text>11.5.1. Components of a Major Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch11s05.html#gnu3-CHP-11-SECT-5.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2673678" playOrder="335">
+            <navLabel>
+              <text>11.5.2. More Lisp Basics: Lists</text>
+            </navLabel>
+            <content src="OEBPS/ch11s05.html#gnu3-CHP-11-SECT-5.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2677815" playOrder="336">
+            <navLabel>
+              <text>11.5.3. The Calculator Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch11s05.html#gnu3-CHP-11-SECT-5.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2678399" playOrder="337">
+            <navLabel>
+              <text>11.5.4. Lisp Code for the Calculator Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch11s05.html#gnu3-CHP-11-SECT-5.4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2678713" playOrder="338">
+          <navLabel>
+            <text>11.6. Customizing Existing Modes</text>
+          </navLabel>
+          <content src="OEBPS/ch11s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2679873" playOrder="339">
+          <navLabel>
+            <text>11.7. Building Your Own Lisp Library</text>
+          </navLabel>
+          <content src="OEBPS/ch11s07.html"/>
+          <navPoint class="chapter" id="id2680263" playOrder="340">
+            <navLabel>
+              <text>11.7.1. Byte-Compiling Lisp Files</text>
+            </navLabel>
+            <content src="OEBPS/ch11s07.html#gnu3-CHP-11-SECT-7.1"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2680455" playOrder="341">
+        <navLabel>
+          <text>12. Version Control</text>
+        </navLabel>
+        <content src="OEBPS/ch12.html"/>
+        <navPoint class="chapter" id="id2680463" playOrder="342">
+          <navLabel>
+            <text>12.1. The Uses of Version Control</text>
+          </navLabel>
+          <content src="OEBPS/ch12.html#gnu3-CHP-12-SECT-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2680555" playOrder="343">
+          <navLabel>
+            <text>12.2. Version Control Concepts</text>
+          </navLabel>
+          <content src="OEBPS/ch12s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2680894" playOrder="344">
+          <navLabel>
+            <text>12.3. How VC Helps with Basic Operations</text>
+          </navLabel>
+          <content src="OEBPS/ch12s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2681164" playOrder="345">
+          <navLabel>
+            <text>12.4. Editing Comment Buffers</text>
+          </navLabel>
+          <content src="OEBPS/ch12s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2681260" playOrder="346">
+          <navLabel>
+            <text>12.5. VC Command Summary</text>
+          </navLabel>
+          <content src="OEBPS/ch12s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2681736" playOrder="347">
+          <navLabel>
+            <text>12.6. VC Mode Indicators</text>
+          </navLabel>
+          <content src="OEBPS/ch12s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2681820" playOrder="348">
+          <navLabel>
+            <text>12.7. Which Version Control System?</text>
+          </navLabel>
+          <content src="OEBPS/ch12s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2681947" playOrder="349">
+          <navLabel>
+            <text>12.8. Individual VC Commands</text>
+          </navLabel>
+          <content src="OEBPS/ch12s08.html"/>
+          <navPoint class="chapter" id="id2681976" playOrder="350">
+            <navLabel>
+              <text>12.8.1. Working with Groups and Subtrees of Files</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2682146" playOrder="351">
+            <navLabel>
+              <text>12.8.2. Difference Reports</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2682302" playOrder="352">
+            <navLabel>
+              <text>12.8.3. Retrieving Old Revisions</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2682390" playOrder="353">
+            <navLabel>
+              <text>12.8.4. Viewing Change Histories</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2682439" playOrder="354">
+            <navLabel>
+              <text>12.8.5. Registering a File</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2682502" playOrder="355">
+            <navLabel>
+              <text>12.8.6. Inserting Version Control Headers</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.6"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2682650" playOrder="356">
+            <navLabel>
+              <text>12.8.7. Making and Retrieving Snapshots</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.7"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2682778" playOrder="357">
+            <navLabel>
+              <text>12.8.8. Updating ChangeLog Files</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.8"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2682857" playOrder="358">
+            <navLabel>
+              <text>12.8.9. Renaming Version-Controlled Files</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.9"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2682938" playOrder="359">
+            <navLabel>
+              <text>12.8.10. When VC Gets Confused</text>
+            </navLabel>
+            <content src="OEBPS/ch12s08.html#gnu3-CHP-12-SECT-8.10"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2683023" playOrder="360">
+          <navLabel>
+            <text>12.9. Customizing VC</text>
+          </navLabel>
+          <content src="OEBPS/ch12s09.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2683304" playOrder="361">
+          <navLabel>
+            <text>12.10. Extending VC</text>
+          </navLabel>
+          <content src="OEBPS/ch12s10.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2683406" playOrder="362">
+          <navLabel>
+            <text>12.11. What VC Is Not</text>
+          </navLabel>
+          <content src="OEBPS/ch12s11.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2683476" playOrder="363">
+          <navLabel>
+            <text>12.12. Using VC Effectively</text>
+          </navLabel>
+          <content src="OEBPS/ch12s12.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2683524" playOrder="364">
+          <navLabel>
+            <text>12.13. Comparing with Ediff</text>
+          </navLabel>
+          <content src="OEBPS/ch12s13.html"/>
+          <navPoint class="chapter" id="id2683580" playOrder="365">
+            <navLabel>
+              <text>12.13.1. Starting Ediff</text>
+            </navLabel>
+            <content src="OEBPS/ch12s13.html#gnu3-CHP-12-SECT-13.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2683835" playOrder="366">
+            <navLabel>
+              <text>12.13.2. Using Ediff</text>
+            </navLabel>
+            <content src="OEBPS/ch12s13.html#gnu3-CHP-12-SECT-13.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2684643" playOrder="367">
+            <navLabel>
+              <text>12.13.3. Making Changes</text>
+            </navLabel>
+            <content src="OEBPS/ch12s13.html#gnu3-CHP-12-SECT-13.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2684813" playOrder="368">
+            <navLabel>
+              <text>12.13.4. Quitting Ediff</text>
+            </navLabel>
+            <content src="OEBPS/ch12s13.html#gnu3-CHP-12-SECT-13.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2684873" playOrder="369">
+            <navLabel>
+              <text>12.13.5. Recovering from Confusion</text>
+            </navLabel>
+            <content src="OEBPS/ch12s13.html#gnu3-CHP-12-SECT-13.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2684940" playOrder="370">
+            <navLabel>
+              <text>12.13.6. Learning More</text>
+            </navLabel>
+            <content src="OEBPS/ch12s13.html#gnu3-CHP-12-SECT-13.6"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2685030" playOrder="371">
+            <navLabel>
+              <text>12.13.7. Customizing Ediff</text>
+            </navLabel>
+            <content src="OEBPS/ch12s13.html#gnu3-CHP-12-SECT-13.7"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2685110" playOrder="372">
+            <navLabel>
+              <text>12.13.8. Invoking Ediff Automatically</text>
+            </navLabel>
+            <content src="OEBPS/ch12s13.html#gnu3-CHP-12-SECT-13.8"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2685142" playOrder="373">
+        <navLabel>
+          <text>13. Platform-Specific Considerations</text>
+        </navLabel>
+        <content src="OEBPS/ch13.html"/>
+        <navPoint class="chapter" id="id2685215" playOrder="374">
+          <navLabel>
+            <text>13.1. Emacs and Unix</text>
+          </navLabel>
+          <content src="OEBPS/ch13.html#gnu3-CHP-13-SECT-1"/>
+          <navPoint class="chapter" id="id2685253" playOrder="375">
+            <navLabel>
+              <text>13.1.1. Where to Get Emacs?</text>
+            </navLabel>
+            <content src="OEBPS/ch13.html#gnu3-CHP-13-SECT-1.1"/>
+            <navPoint class="chapter" id="id2685295" playOrder="376">
+              <navLabel>
+                <text>13.1.1.1. Downloading Emacs from the Web</text>
+              </navLabel>
+              <content src="OEBPS/ch13.html#gnu3-CHP-13-SECT-1.1.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2685419" playOrder="377">
+            <navLabel>
+              <text>13.1.2. Where to Put Emacs?</text>
+            </navLabel>
+            <content src="OEBPS/ch13.html#gnu3-CHP-13-SECT-1.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2685499" playOrder="378">
+            <navLabel>
+              <text>13.1.3. Uncompressing and Unpacking</text>
+            </navLabel>
+            <content src="OEBPS/ch13.html#gnu3-CHP-13-SECT-1.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2685638" playOrder="379">
+            <navLabel>
+              <text>13.1.4. Downloading Emacs from CVS</text>
+            </navLabel>
+            <content src="OEBPS/ch13.html#gnu3-CHP-13-SECT-1.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2685832" playOrder="380">
+            <navLabel>
+              <text>13.1.5. Building Emacs</text>
+            </navLabel>
+            <content src="OEBPS/ch13.html#gnu3-CHP-13-SECT-1.5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2686213" playOrder="381">
+          <navLabel>
+            <text>13.2. Emacs and Mac OS X</text>
+          </navLabel>
+          <content src="OEBPS/ch13s02.html"/>
+          <navPoint class="chapter" id="id2686273" playOrder="382">
+            <navLabel>
+              <text>13.2.1. "But I Already Have Emacs"</text>
+            </navLabel>
+            <content src="OEBPS/ch13s02.html#gnu3-CHP-13-SECT-2.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2686389" playOrder="383">
+            <navLabel>
+              <text>13.2.2. Installing Prebuilt Emacs on Mac OS X</text>
+            </navLabel>
+            <content src="OEBPS/ch13s02.html#gnu3-CHP-13-SECT-2.2"/>
+            <navPoint class="chapter" id="id2686451" playOrder="384">
+              <navLabel>
+                <text>13.2.2.1. Downloading Alex Rice's application bundle of Emacs 21.3.5</text>
+              </navLabel>
+              <content src="OEBPS/ch13s02.html#gnu3-CHP-13-SECT-2.2.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2686552" playOrder="385">
+            <navLabel>
+              <text>13.2.3. Building Emacs from Source on Mac OS X</text>
+            </navLabel>
+            <content src="OEBPS/ch13s02.html#gnu3-CHP-13-SECT-2.3"/>
+            <navPoint class="chapter" id="id2686656" playOrder="386">
+              <navLabel>
+                <text>13.2.3.1. Before you build</text>
+              </navLabel>
+              <content src="OEBPS/ch13s02.html#gnu3-CHP-13-SECT-2.3.1"/>
+              <navPoint class="chapter" id="id2686682" playOrder="387">
+                <navLabel>
+                  <text>13.2.3.1.1. Jaguar (Mac OS X 10.2) preparation</text>
+                </navLabel>
+                <content src="OEBPS/ch13s02.html#gnu3-CHP-13-SECT-2.3.3.1"/>
+              </navPoint>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2686900" playOrder="388">
+            <navLabel>
+              <text>13.2.4. Starting Emacs from the Command Line on Mac OS X</text>
+            </navLabel>
+            <content src="OEBPS/ch13s02.html#gnu3-CHP-13-SECT-2.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2687133" playOrder="389">
+            <navLabel>
+              <text>13.2.5. Mac OS X and the Meta Key</text>
+            </navLabel>
+            <content src="OEBPS/ch13s02.html#gnu3-CHP-13-SECT-2.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2687309" playOrder="390">
+            <navLabel>
+              <text>13.2.6. Installing Ispell</text>
+            </navLabel>
+            <content src="OEBPS/ch13s02.html#gnu3-CHP-13-SECT-2.6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2687461" playOrder="391">
+          <navLabel>
+            <text>13.3. Emacs and Windows</text>
+          </navLabel>
+          <content src="OEBPS/ch13s03.html"/>
+          <navPoint class="chapter" id="id2687505" playOrder="392">
+            <navLabel>
+              <text>13.3.1. Installing Emacs</text>
+            </navLabel>
+            <content src="OEBPS/ch13s03.html#gnu3-CHP-13-SECT-3.1"/>
+            <navPoint class="chapter" id="id2687561" playOrder="393">
+              <navLabel>
+                <text>13.3.1.1. Installing the latest binaries: Nqmacs</text>
+              </navLabel>
+              <content src="OEBPS/ch13s03.html#gnu3-CHP-13-SECT-3.1.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2687608" playOrder="394">
+              <navLabel>
+                <text>13.3.1.2. Installing Emacs from the FSF</text>
+              </navLabel>
+              <content src="OEBPS/ch13s03.html#gnu3-CHP-13-SECT-3.1.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2687769" playOrder="395">
+            <navLabel>
+              <text>13.3.2. Where to Put Your .emacs File</text>
+            </navLabel>
+            <content src="OEBPS/ch13s03.html#gnu3-CHP-13-SECT-3.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2687845" playOrder="396">
+            <navLabel>
+              <text>13.3.3. Starting Emacs from the Command Line</text>
+            </navLabel>
+            <content src="OEBPS/ch13s03.html#gnu3-CHP-13-SECT-3.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2687961" playOrder="397">
+            <navLabel>
+              <text>13.3.4. Making Emacs Act like Windows: CUA Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch13s03.html#gnu3-CHP-13-SECT-3.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2688887" playOrder="398">
+            <navLabel>
+              <text>13.3.5. Installing Ispell</text>
+            </navLabel>
+            <content src="OEBPS/ch13s03.html#gnu3-CHP-13-SECT-3.5"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2689209" playOrder="399">
+        <navLabel>
+          <text>14. The Help System</text>
+        </navLabel>
+        <content src="OEBPS/ch14.html"/>
+        <navPoint class="chapter" id="id2689286" playOrder="400">
+          <navLabel>
+            <text>14.1. Using the Tutorial</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#gnu3-CHP-14-SECT-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2689382" playOrder="401">
+          <navLabel>
+            <text>14.2. Help Commands</text>
+          </navLabel>
+          <content src="OEBPS/ch14s02.html"/>
+          <navPoint class="chapter" id="id2689500" playOrder="402">
+            <navLabel>
+              <text>14.2.1. Detail Information</text>
+            </navLabel>
+            <content src="OEBPS/ch14s02.html#gnu3-CHP-14-SECT-2.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2690338" playOrder="403">
+            <navLabel>
+              <text>14.2.2. Apropos Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch14s02.html#gnu3-CHP-14-SECT-2.2"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2691022" playOrder="404">
+          <navLabel>
+            <text>14.3. Help with Complex Emacs Commands</text>
+          </navLabel>
+          <content src="OEBPS/ch14s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2691245" playOrder="405">
+          <navLabel>
+            <text>14.4. Navigating Emacs Documentation</text>
+          </navLabel>
+          <content src="OEBPS/ch14s04.html"/>
+          <navPoint class="chapter" id="id2691295" playOrder="406">
+            <navLabel>
+              <text>14.4.1. Using Info to Read Manuals</text>
+            </navLabel>
+            <content src="OEBPS/ch14s04.html#gnu3-CHP-14-SECT-4.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2692633" playOrder="407">
+            <navLabel>
+              <text>14.4.2. FAQ, News, and Antinews</text>
+            </navLabel>
+            <content src="OEBPS/ch14s04.html#gnu3-CHP-14-SECT-4.2"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2693796" playOrder="408">
+          <navLabel>
+            <text>14.5. Completion</text>
+          </navLabel>
+          <content src="OEBPS/ch14s05.html"/>
+          <navPoint class="chapter" id="id2694509" playOrder="409">
+            <navLabel>
+              <text>14.5.1. Customizing Completion</text>
+            </navLabel>
+            <content src="OEBPS/ch14s05.html#gnu3-CHP-14-SECT-5.1"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2694734" playOrder="410">
+        <navLabel>
+          <text>A. Emacs Variables</text>
+        </navLabel>
+        <content src="OEBPS/apa.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2716787" playOrder="411">
+        <navLabel>
+          <text>B. Emacs Lisp Packages</text>
+        </navLabel>
+        <content src="OEBPS/apb.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2720355" playOrder="412">
+        <navLabel>
+          <text>C. Bugs and Bug Fixes</text>
+        </navLabel>
+        <content src="OEBPS/apc.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2720552" playOrder="413">
+        <navLabel>
+          <text>D. Online Resources</text>
+        </navLabel>
+        <content src="OEBPS/apd.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2721565" playOrder="414">
+        <navLabel>
+          <text>E. Quick Reference</text>
+        </navLabel>
+        <content src="OEBPS/ape.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2730004" playOrder="415">
+        <navLabel>
+          <text>Colophon</text>
+        </navLabel>
+        <content src="OEBPS/co01.html"/>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

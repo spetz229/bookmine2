@@ -1,0 +1,50 @@
+---
+layout: page
+title: "vi and Vim Editors Pocket Reference"
+prev: OEBPS/ch01s03.html
+next: OEBPS/ch01s05.html
+book_path: books/arnold-robbins-vi-and-vim-editors-pocket-reference-support-for-every-text-editing-task-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Command-Line Options"><div class="book"><div class="book"><div class="book"><h1 class="title1"><a id="viref2-ch-1-sect-3" class="calibre1"></a>Command-Line Options</h1></div></div></div><a id="I_indexterm1_d1e245"></a><div class="book"><a id="viref-ch-1-tab-1"></a><table class="calibre10"><colgroup class="calibre11"><col class="calibre12"/><col width="1.9in" class="calibre12"/></colgroup><thead class="calibre13"><tr class="calibre14"><th class="calibre15">Command</th><th class="calibre16">Action</th></tr></thead><tbody class="calibre17"><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code>
+            <em class="calibre3"><code class="calibre19">file</code></em></td><td class="calibre20"><p class="copyright">Invoke <em class="calibre3">vi</em> on
+            <span><em class="calibre3">file</em></span></p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code> <em class="calibre3"><code class="calibre19">file1
+            file2</code></em></td><td class="calibre20"><p class="copyright">Invoke <em class="calibre3">vi</em> on files
+            sequentially</p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">view</code>
+            <em class="calibre3"><code class="calibre19">file</code></em></td><td class="calibre20"><p class="copyright">Invoke <em class="calibre3">vi</em> on
+            <span><em class="calibre3">file</em></span> in read-only mode</p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code> <code class="literal1">-R</code>
+            <em class="calibre3"><code class="calibre19">file</code></em></td><td class="calibre20"><p class="copyright">Invoke <em class="calibre3">vi</em> on
+            <span><em class="calibre3">file</em></span> in read-only mode</p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code> <code class="literal1">-r</code>
+            <em class="calibre3"><code class="calibre19">file</code></em></td><td class="calibre20"><p class="copyright">Recover <span><em class="calibre3">file</em></span> and recent edits
+            after a crash</p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code> <code class="literal1">-t</code>
+            <em class="calibre3"><code class="calibre19">tag</code></em></td><td class="calibre20"><p class="copyright">Look up <span><em class="calibre3">tag</em></span> and start editing at
+            its <span>definition</span></p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code> <code class="literal1">-w</code>
+            <em class="calibre3"><code class="calibre19">n</code></em></td><td class="calibre20"><p class="copyright">Set the window size to <span><em class="calibre3">n</em></span>; useful
+            over a slow connection</p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code> <code class="literal1">+</code>
+            <em class="calibre3"><code class="calibre19">file</code></em></td><td class="calibre20"><p class="copyright">Open <span><em class="calibre3">file</em></span> at last
+            line</p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code> <code class="literal1">+</code><em class="calibre3"><code class="calibre19">n
+            file</code></em></td><td class="calibre20"><p class="copyright">Open <span><em class="calibre3">file</em></span> directly at line
+            number <span><em class="calibre3">n</em></span></p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code> <code class="literal1">-c</code>
+            <em class="calibre3"><code class="calibre19">command file</code></em></td><td class="calibre20"><p class="copyright">Open <span><em class="calibre3">file</em></span>, execute
+            <span><em class="calibre3">command</em></span>, which is usually a search command or
+            line number (POSIX)</p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">vi</code>
+            <code class="literal1">+/</code><em class="calibre3"><code class="calibre19">pattern
+            file</code></em></td><td class="calibre20"><p class="copyright">Open <span><em class="calibre3">file</em></span> directly at
+            <span><em class="calibre3">pattern</em></span></p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">ex</code>
+            <em class="calibre3"><code class="calibre19">file</code></em></td><td class="calibre20"><p class="copyright">Invoke <em class="calibre3">ex</em> on
+            <span><em class="calibre3">file</em></span></p></td></tr><tr class="calibre14"><td class="calibre18"><code class="literal1">ex</code> <code class="literal1">-</code>
+            <em class="calibre3"><code class="calibre19">file</code></em> <code class="literal1">&lt;</code>
+            <em class="calibre3"><code class="calibre19">script</code></em></td><td class="calibre20"><p class="copyright">Invoke <em class="calibre3">ex</em> on
+            <span><em class="calibre3">file</em></span>, taking commands from
+            <span><em class="calibre3">script</em></span>; suppress informative messages and
+            prompts</p></td></tr><tr class="calibre14"><td class="calibre21"><code class="literal1">ex</code> <code class="literal1">-s</code>
+            <em class="calibre3"><code class="calibre19">file</code></em> <code class="literal1">&lt;</code>
+            <em class="calibre3"><code class="calibre19">script</code></em></td><td class="calibre22"><p class="copyright">Invoke <em class="calibre3">ex</em> on
+            <span><em class="calibre3">file</em></span>, taking commands from
+            <span><em class="calibre3">script</em></span>; suppress informative messages and
+            prompts (POSIX)</p></td></tr></tbody></table></div></div></div>
+
+{% endraw %}
+

@@ -1,0 +1,68 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/pt04.html
+next: OEBPS/apas02.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Appendix A. monad-control"><div class="book"><div class="book"><div class="book"><h1 class="title1"><a id="I_appendix_d1e8720" class="calibre1"></a>Appendix A. monad-control</h1></div></div></div><p class="calibre7"><code class="function">monad-control</code> is used in a few places within Yesod, most notably to ensure proper exception handling within Persistent. It is a general purpose package to extend standard functionality in monad transformers.</p><div class="book" title="Overview"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect1_d1e8727" class="calibre1"></a>Overview</h1></div></div></div><p class="calibre7"></p><p class="calibre7">One of the powerful, and sometimes confusing, features in Haskell is monad transformers.
+      They allow you to take different pieces of functionality—such as mutable state, error
+      handling, or logging—and compose them together easily. Though I swore I’d never write a monad
+      tutorial, I’m going to employ a painful analogy here: monads are like onions. (Monads are not
+      like cakes.) By that, I mean <span class="firstname"><em class="calibre4">layers</em></span>.</p><p class="calibre7">We have the core monad, also known as the innermost or bottom monad. On top of this core,
+      we add layers, each adding a new feature and spreading outward/upward. As a motivating
+      example, let’s consider an Error monad stacked on top of the IO
+      monad:<a id="I_programlisting_d1e8738" class="firstname"></a></p><pre class="programlistinghaskell"><code class="kr">newtype</code> <code class="kt">ErrorT</code> <code class="n">e</code> <code class="n">m</code> <code class="n">a</code> <code class="ow">=</code> <code class="kt">ErrorT</code> <code class="p">{</code> <code class="n">runErrorT</code> <code class="ow">::</code> <code class="n">m</code> <code class="p">(</code><code class="kt">Either</code> <code class="n">e</code> <code class="n">a</code><code class="p">)</code> <code class="p">}</code>
+<code class="kr">type</code> <code class="kt">MyStack</code> <code class="ow">=</code> <code class="kt">ErrorT</code> <code class="kt">MyError</code> <code class="kt">IO</code>
+</pre><p class="calibre7">Now
+      pay close attention here: ErrorT is just a simple newtype around an Either wrapped in a monad.
+      Getting rid of the newtype, we
+      have:<a id="I_programlisting_d1e8744" class="firstname"></a></p><pre class="programlistinghaskell"><code class="kr">type</code> <code class="kt">ErrorTUnwrapped</code> <code class="n">e</code> <code class="n">m</code> <code class="n">a</code> <code class="ow">=</code> <code class="n">m</code> <code class="p">(</code><code class="kt">Either</code> <code class="n">e</code> <code class="n">a</code><code class="p">)</code>
+</pre><p class="calibre7">At some point, we’ll need to actually perform some IO inside our MyStack. If we went with
+      the unwrapped approach, it would be trivial, since there would be no ErrorT constructor in the
+      way. However, we need that newtype wrapper for a whole bunch of type reasons I won’t go into
+      here (this isn’t a monad transformer tutorial, after all). So the solution is the MonadTrans
+      typeclass:</p><a id="I_programlisting_d1e8748" class="firstname"></a><pre class="programlistinghaskell"><code class="kr">class</code> <code class="kt">MonadTrans</code> <code class="n">t</code> <code class="kr">where</code>
+    <code class="n">lift</code> <code class="ow">::</code> <code class="kt">Monad</code> <code class="n">m</code> <code class="ow">=&gt;</code> <code class="n">m</code> <code class="n">a</code> <code class="ow">-&gt;</code> <code class="n">t</code> <code class="n">m</code> <code class="n">a</code>
+</pre><p class="calibre7">I’ll admit, the first time I saw that type signature, my response was stunned confusion, and
+   incredulity that it actually meant anything. But looking at an instance helps a
+   bit:<a id="I_programlisting_d1e8752" class="firstname"></a></p><pre class="programlistinghaskell"><code class="kr">instance</code> <code class="p">(</code><code class="kt">Error</code> <code class="n">e</code><code class="p">)</code> <code class="ow">=&gt;</code> <code class="kt">MonadTrans</code> <code class="p">(</code><code class="kt">ErrorT</code> <code class="n">e</code><code class="p">)</code> <code class="kr">where</code>
+    <code class="n">lift</code> <code class="n">m</code> <code class="ow">=</code> <code class="kt">ErrorT</code> <code class="o">$</code> <code class="kr">do</code>
+        <code class="n">a</code> <code class="ow">&lt;-</code> <code class="n">m</code>
+        <code class="n">return</code> <code class="p">(</code><code class="kt">Right</code> <code class="n">a</code><code class="p">)</code>
+</pre><p class="calibre7">All
+   we’re doing is wrapping the inside of the IO with a Right value, and then applying our newtype
+   wrapper. This allows us to take an action that lives in IO, and “lift” it to the outer/upper
+   monad.</p><p class="calibre7">But now to the point at hand. This works very well for simple functions. For example:</p><a id="I_programlisting_d1e8757" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">sayHi</code> <code class="ow">::</code> <code class="kt">IO</code> <code class="nb">()</code>
+<code class="nf">sayHi</code> <code class="ow">=</code> <code class="n">putStrLn</code> <code class="s">"Hello"</code>
+
+<code class="nf">sayHiError</code> <code class="ow">::</code> <code class="kt">ErrorT</code> <code class="kt">MyError</code> <code class="kt">IO</code> <code class="nb">()</code>
+<code class="nf">sayHiError</code> <code class="ow">=</code> <code class="n">lift</code> <code class="o">$</code> <code class="n">putStrLn</code> <code class="s">"Hello"</code>
+</pre><p class="calibre7">But let’s take something slightly more complicated, like a callback:</p><a id="I_programlisting_d1e8761" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">withMyFile</code> <code class="ow">::</code> <code class="p">(</code><code class="kt">Handle</code> <code class="ow">-&gt;</code> <code class="kt">IO</code> <code class="n">a</code><code class="p">)</code> <code class="ow">-&gt;</code> <code class="kt">IO</code> <code class="n">a</code>
+<code class="nf">withMyFile</code> <code class="ow">=</code> <code class="n">withFile</code> <code class="s">"test.txt"</code> <code class="kt">WriteMode</code>
+
+<code class="nf">sayHi</code> <code class="ow">::</code> <code class="kt">Handle</code> <code class="ow">-&gt;</code> <code class="kt">IO</code> <code class="nb">()</code>
+<code class="nf">sayHi</code> <code class="n">handle</code> <code class="ow">=</code> <code class="n">hPutStrLn</code> <code class="n">handle</code> <code class="s">"Hi there"</code>
+
+<code class="nf">useMyFile</code> <code class="ow">::</code> <code class="kt">IO</code> <code class="nb">()</code>
+<code class="nf">useMyFile</code> <code class="ow">=</code> <code class="n">withMyFile</code> <code class="n">sayHi</code>
+</pre><p class="calibre7">So far so good, right? Now let’s say that we need a version of sayHi that has access to the
+   Error monad:</p><a id="I_programlisting_d1e8766" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">sayHiError</code> <code class="ow">::</code> <code class="kt">Handle</code> <code class="ow">-&gt;</code> <code class="kt">ErrorT</code> <code class="kt">MyError</code> <code class="kt">IO</code> <code class="nb">()</code>
+<code class="nf">sayHiError</code> <code class="n">handle</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="n">lift</code> <code class="o">$</code> <code class="n">hPutStrLn</code> <code class="n">handle</code> <code class="s">"Hi there, error!"</code>
+    <code class="n">throwError</code> <code class="kt">MyError</code>
+</pre><p class="calibre7">We would like to write a function that combines withMyFile and sayHiError.
+   Unfortunately, GHC doesn’t like this very
+   much:<a id="I_programlisting_d1e8773" class="firstname"></a></p><pre class="programlistinghaskell"><code class="nf">useMyFileErrorBad</code> <code class="ow">::</code> <code class="kt">ErrorT</code> <code class="kt">MyError</code> <code class="kt">IO</code> <code class="nb">()</code>
+<code class="nf">useMyFileErrorBad</code> <code class="ow">=</code> <code class="n">withMyFile</code> <code class="n">sayHiError</code>
+
+    <code class="kt">Couldn't</code> <code class="n">match</code> <code class="n">expected</code> <code class="kr">type</code> <code class="p">`</code><code class="kt">ErrorT</code> <code class="kt">MyError</code> <code class="kt">IO</code> <code class="nb">()</code><code class="s">'</code>
+<code class="s">                with actual type `IO ()'</code>
+</pre><p class="calibre7">Why
+   does this happen, and how can we work around it?</p></div></div></div>
+
+{% endraw %}
+

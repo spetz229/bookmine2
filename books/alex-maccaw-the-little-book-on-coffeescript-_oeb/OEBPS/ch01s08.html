@@ -1,0 +1,25 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch01s07.html
+next: OEBPS/ch02.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Aliases and the Existential Operator"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e880" class="calibre2"></a>Aliases and the Existential Operator</h1></div></div></div><p class="calibre8">CoffeeScript includes some useful aliases to save some typing. One
+    such alias is <code class="literal">@</code>, which can be used in
+    place of <code class="literal">this</code>:</p><pre class="screen">@saviour = true</pre><p class="calibre8">Another is <code class="literal">::</code>, which is an alias
+    for <code class="literal">prototype</code>:</p><pre class="screen">User::first = -&gt; @records[0]</pre><p class="calibre8">Using <code class="literal">if</code> for <code class="literal">null</code> checks in JavaScript is common, but has a
+    few pitfalls in that empty strings and zero are both coerced into <code class="literal">false</code>, which can catch you out. CoffeeScript
+    existential operator <code class="literal">?</code> returns true
+    unless a variable is <code class="literal">null</code> or <code class="literal">undefined</code>, similar to Ruby’s <code class="literal">nil?</code>:</p><pre class="screen">praise if brian?</pre><p class="calibre8">You can also use it in place of the <code class="literal">||</code> operator:</p><pre class="screen">velocity = southern ? 40</pre><p class="calibre8">If you’re using a <code class="literal">null</code> check
+    before accessing a property, you can skip that by placing the existential
+    operator right before it. This is similar to Active Support’s <a class="ulink" href="http://guides.rubyonrails.org/active_support_core_extensions.html#try"><code class="literal">try</code></a> method:</p><pre class="screen">blackKnight.getLegs()?.kick()</pre><p class="calibre8">Similarly, you can check that a property is actually a function, and
+    callable, by placing the existential operator right before the parens. If
+    the property doesn’t exist, or isn’t a function, it simply won’t get
+    called:</p><pre class="screen">blackKnight.getLegs().kick?()</pre></div></div>
+
+{% endraw %}
+

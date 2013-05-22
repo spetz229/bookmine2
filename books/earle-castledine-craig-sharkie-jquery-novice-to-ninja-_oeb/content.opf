@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>SitePoint Pty. Ltd.</dc:publisher>
+    <dc:rights>Copyright © 2012 SitePoint Pty. Ltd.</dc:rights>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Castledine, Earle" opf:role="aut">Earle Castledine, Craig Sharkie</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:58:20.233524+00:00"/>
+    <dc:title>jQuery: Novice to Ninja</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>2012-05-21T20:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">9780987153012</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">ddd85a56-9a50-4d89-9f08-bdef914ab9db</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="OEBPS/apa.html" id="d4e13530" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/apb.html" id="d4e14475" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/apc.html" id="d4e14732" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/bk01-toc.html" id="htmltoc" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch01.html" id="d4e275" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch02.html" id="d4e756" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch03.html" id="d4e2077" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch04.html" id="d4e3361" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch05.html" id="d4e4808" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch06.html" id="d4e6223" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch07.html" id="d4e8076" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch08.html" id="d4e10333" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ch09.html" id="d4e11597" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/cover.html" id="ubf310e6f-097b-498f-9b64-0f173cbf9a40" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/figures/cover.jpg" id="cover-image" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig01_domfragment.jpg" id="d4e698" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig01_jquery_ui.jpg" id="d4e360" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig01_plugin_repository.jpg" id="d4e379" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig01_statement.jpg" id="d4e608" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig02_classes_firebug.jpg" id="d4e1309" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig02_inline_styles_firebug.jpg" id="d4e1234" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig02_modified_DOM.jpg" id="d4e2061" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig02_new_celebs_table.jpg" id="d4e831" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig02_prepend_append.jpg" id="d4e1650" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig02_toggle_button.jpg" id="d4e1593" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig02_zebra_striping.jpg" id="d4e1150" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig03_advanced_easing_options.jpg" id="d4e2366" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig03_biography_panes.jpg" id="d4e2409" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig03_bouncy menu.jpg" id="d4e2704" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig03_custom_scrollbar.jpg" id="d4e3022" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig03_easing_options.jpg" id="d4e2300" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig03_pane_splitter.jpg" id="d4e3279" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig03_resizable_paras.jpg" id="d4e3145" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig03_resize_textarea.jpg" id="d4e3193" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig04_colorbox.jpg" id="d4e3616" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig04_cycle_shuffle.jpg" id="d4e4328" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig04_firebug_console.jpg" id="d4e3526" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig04_jcrop.jpg" id="d4e3679" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig04_lightbox.jpg" id="d4e3401" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05_menus_dropdown.jpg" id="d4e5109" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05_menus_tooltip.jpg" id="d4e5827" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05_menus_ui_accordion.jpg" id="d4e5398" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05_tabs_jquery_ui_tabs.jpg" id="d4e5523" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05_tabs_login_open.jpg" id="d4e5648" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05_tabs_overlay.jpg" id="d4e5703" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05advancedtooltip.jpg" id="d4e5955" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05advtooltipsprite.jpg" id="d4e5982" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05expandcollapsemenu.jpg" id="d4e4836" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05multiaccordion.jpg" id="d4e5370" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05opencloseindicator.jpg" id="d4e4990" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig05simpleaccordion.jpg" id="d4e5223" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig06_ajax_console.jpg" id="d4e8071" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07andenbuttons.jpg" id="d4e9310" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07autocomplete.jpg" id="d4e8970" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07datepicker.jpg" id="d4e9339" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07dragdrop.jpg" id="d4e9587" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07formhints.jpg" id="d4e8594" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07growlstyle.jpg" id="d4e10195" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07html5fieldvalidation.jpg" id="d4e8340" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07speedcompare.jpg" id="d4e8150" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07starrating.jpg" id="d4e9060" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07starsprite.jpg" id="d4e9077" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07uiautocomplete.jpg" id="d4e9024" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07uidialogbox.jpg" id="d4e10071" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07uislider.jpg" id="d4e9464" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig07validplugin.jpg" id="d4e8481" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig08_delegatingevents.jpg" id="d4e11017" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig08_lists_editable_table.jpg" id="d4e11415" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig08_lists_expandable_tree.jpg" id="d4e10910" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig08_lists_fixed_header.jpg" id="d4e11099" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig08_lists_pagination.jpg" id="d4e11294" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig08_lists_repeat_header.jpg" id="d4e11210" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig08_lists_select_swap.jpg" id="d4e10713" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig08_lists_selectable_list.jpg" id="d4e10384" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig09_animation_nearing_completion.jpg" id="d4e12235" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig09_animation_progressing.jpg" id="d4e12230" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig09_animation_starting.jpg" id="d4e12225" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig09fliptoggle.jpg" id="d4e13215" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig09poptrumps1.jpg" id="d4e13031" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig09poptrumps2.jpg" id="d4e13037" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig09poptrumps3.jpg" id="d4e13042" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig_plugins_themed_panes.jpg" id="d4e12930" media-type="image/jpeg"/>
+    <item href="OEBPS/figures/fig_plugins_themeroller.jpg" id="d4e12900" media-type="image/jpeg"/>
+    <item href="OEBPS/images/sitepoint-logo.png" id="sitepointlogo" media-type="image/png"/>
+    <item href="OEBPS/index.html" id="d4e1" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/ix01.html" id="d4e14887" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/pr01.html" id="d4e94" media-type="application/xhtml+xml"/>
+    <item href="OEBPS/titlepage.html" id="d4e2" media-type="application/xhtml+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="htmltoc"/>
+    <itemref idref="d4e2"/>
+    <itemref idref="d4e1"/>
+    <itemref idref="d4e94"/>
+    <itemref idref="d4e275"/>
+    <itemref idref="d4e756"/>
+    <itemref idref="d4e2077"/>
+    <itemref idref="d4e3361"/>
+    <itemref idref="d4e4808"/>
+    <itemref idref="d4e6223"/>
+    <itemref idref="d4e8076"/>
+    <itemref idref="d4e10333"/>
+    <itemref idref="d4e11597"/>
+    <itemref idref="d4e13530"/>
+    <itemref idref="d4e14475"/>
+    <itemref idref="d4e14732"/>
+    <itemref idref="d4e14887"/>
+  </spine>
+  <guide>
+    <reference href="OEBPS/bk01-toc.html" type="toc" title="Table of Contents"/>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="Cover"/>
+    <reference href="OEBPS/cover.html" type="other.titlepage" title="Title Page"/>
+  </guide>
+</package>

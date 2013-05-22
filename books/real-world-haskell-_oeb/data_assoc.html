@@ -1,0 +1,216 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: data_split_001.html
+next: data_map.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="data_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="data_map.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="data_assoc" class="calibre27" id="data_assoc"></a><h3 id="title-IDAYMC5H" class="docSection1Title">13.1. Association Lists</h3><a name="x_NI" class="calibre27" id="x_NI"></a><p class="docText">Often, we <a name="I_indexterm13_d1e29149" class="calibre27" id="I_indexterm13_d1e29149"></a><a name="ch13-datastructures" class="calibre27" id="ch13-datastructures"></a>have to deal with data that is unordered but is indexed by a
+    key. For instance, a Unix administrator might have a list of<a name="I_indexterm13_d1e29158" class="calibre27" id="I_indexterm13_d1e29158"></a><a name="I_indexterm13_d1e29161" class="calibre27" id="I_indexterm13_d1e29161"></a> numeric <span class="docEmphasis">UIDs</span> (user IDs) and the
+    textual usernames that they correspond to. The value of this list lies in
+    being able to look up a textual username for a given UID, not in the order
+    of the data. In other words, the UID is a key into a database.</p><a name="x_OI" class="calibre27" id="x_OI"></a><p class="docText">In Haskell, there are several ways to handle data that is
+    structured in this way. The two most common are association lists and the
+    Map type provided by <tt class="calibre34">Data.Map</tt> module. Association lists are handy
+    because they are simple. They are standard Haskell lists, so all the
+    familiar list functions work with them. However, for large data sets,
+    Map will have a considerable performance advantage over
+    association lists. We'll use both in this chapter.</p><a name="x_PI" class="calibre27" id="x_PI"></a><p class="docText">An <a name="I_indexterm13_d1e29181" class="calibre27" id="I_indexterm13_d1e29181"></a>association list is just a normal list containing (key,
+    value) tuples. The type of a list of mappings from UID to username might
+    be <tt class="calibre34">[(Integer, String)]</tt>. We could use
+    just about any type<sup class="docFootnote"><a class="docLink1" href="#x_PId1e29527">[33]</a></sup> for both the key and the value.</p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_PId1e29527" class="calibre5" id="x_PId1e29527">[33]</a></sup> The type we use for the key must be a member of the
+        <tt class="calibre34">Eq</tt> typeclass.</p></blockquote><a name="x_rI" class="calibre27" id="x_rI"></a><p class="docText">We can build association lists just like we do any other
+    list. Haskell comes with one built-in function called <tt class="calibre34">Data.List.lookup</tt> to<a name="I_indexterm13_d1e29200" class="calibre27" id="I_indexterm13_d1e29200"></a> look up data in an association list. Its type is <tt class="calibre34">Eq a =&gt; a -&gt; [(a, b)] -&gt;
+    Maybe b</tt>. Can you guess how it works from that type? Let's take a
+    look in <i class="docEmphasis">ghci</i>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let al = [(1, "one"), (2, "two"), (3, "three"), (4, "four")]</b>ghci&gt; <b class="calibre40">lookup 1 al</b>
+Just "one"
+ghci&gt; <b class="calibre40">lookup 5 al</b>
+Nothing</pre><a name="x_sI" class="calibre27" id="x_sI"></a><p class="docText">The <tt class="calibre34">lookup</tt> function is
+    really simple. Here's one way we could write it:</p><pre class="calibre39">-- file: ch13/lookup.hs
+myLookup :: Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
+myLookup _ [] = Nothing
+myLookup key ((thiskey,thisval):rest) =
+    if key == thiskey
+       then Just thisval
+       else myLookup key rest</pre><br class="calibre48"/>
+<a name="x_tI" class="calibre27" id="x_tI"></a><p class="docText">This function returns <tt class="calibre34">Nothing</tt> if passed the empty list. Otherwise, it
+    compares the key with the key we're looking for. If a match is found, the
+    corresponding value is returned; otherwise, it searches the rest of the
+    list.</p><a name="x_uI" class="calibre27" id="x_uI"></a><p class="docText">Let's take a look at a more complex example of association
+    lists. On Unix/Linux machines, there is a file called <i class="docEmphasis">/etc/passwd</i> that stores usernames, UIDs, home
+    directories, and various other data. We will write a program that parses
+    such a file, creates an association list, and lets the user look up a
+    username with a UID:</p><pre class="calibre39">-- file: ch13/passwd-al.hs
+import Data.List
+import System.IO
+import Control.Monad(when)
+import System.Exit
+import System.Environment(getArgs)
+
+main = do
+    -- Load the command-line arguments
+    args &lt;- getArgs
+
+    -- If we don't have the right amount of args, give an error and abort
+    when (length args /= 2) $ do
+        putStrLn "Syntax: passwd-al filename uid"
+        exitFailure
+
+    -- Read the file lazily
+    content &lt;- readFile (args !! 0)
+
+    -- Compute the username in pure code
+    let username = findByUID content (read (args !! 1))
+
+    -- Display the result
+    case username of 
+         Just x -&gt; putStrLn x
+         Nothing -&gt; putStrLn "Could not find that UID"
+
+-- Given the entire input and a UID, see if we can find a username.
+findByUID :: String -&gt; Integer -&gt; Maybe String
+findByUID content uid =
+    let al = map parseline . lines $ content
+        in lookup uid al
+
+-- Convert a colon-separated line into fields
+parseline :: String -&gt; (Integer, String)
+parseline input =
+    let fields = split ':' input
+        in (read (fields !! 2), fields !! 0)
+
+{- | Takes a delimiter and a list.  Break up the list based on the
+-  delimiter. -}
+split :: Eq a =&gt; a -&gt; [a] -&gt; [[a]]
+
+-- If the input is empty, the result is a list of empty lists.
+split _ [] = [[]]
+split delim str =
+    let -- Find the part of the list before delim and put it in "before".
+        -- The rest of the list, including the leading delim, goes
+        -- in "remainder".
+        (before, remainder) = span (/= delim) str
+        in
+        before : case remainder of
+                      [] -&gt; []
+                      x -&gt; -- If there is more data to process,
+                           -- call split recursively to process it
+                           split delim (tail x)</pre><br class="calibre48"/>
+<a name="x_vI" class="calibre27" id="x_vI"></a><p class="docText">Let's look at this program. The heart of it is <tt class="calibre34">findByUID</tt>, which is a simple function that
+    parses the input one line at a time, then calls <tt class="calibre34">lookup</tt> over the result. The remaining program is
+    concerned with parsing the input. The input file looks like this:</p><pre class="calibre39">root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+jgoerzen:x:1000:1000:John Goerzen,,,:/home/jgoerzen:/bin/bash</pre><br class="calibre48"/>
+<a name="x_rF1" class="calibre27" id="x_rF1"></a><p class="docText">Its fields are separated by colons and include a
+    username, numeric user ID, numeric group ID, full name, home directory,
+    and shell. No field may contain an internal colon.</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="data_split_000.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="data_map.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

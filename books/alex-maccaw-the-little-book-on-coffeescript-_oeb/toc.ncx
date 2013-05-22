@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="94e864d6-652c-46ef-94c2-80b37a5bf636" name="dtb:uid"/>
+    <meta content="6" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>The Little Book on CoffeeScript</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="id2648235" playOrder="1">
+      <navLabel>
+        <text>The Little Book on CoffeeScript</text>
+      </navLabel>
+      <content src="OEBPS/index.html"/>
+      <navPoint class="chapter" id="id2545639" playOrder="2">
+        <navLabel>
+          <text>Preface</text>
+        </navLabel>
+        <content src="OEBPS/pr01.html"/>
+        <navPoint class="chapter" id="id2491646" playOrder="3">
+          <navLabel>
+            <text>What Is CoffeeScript?</text>
+          </navLabel>
+          <content src="OEBPS/pr01.html#I_sect1_d1e126"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2728403" playOrder="4">
+          <navLabel>
+            <text>Initial Setup</text>
+          </navLabel>
+          <content src="OEBPS/pr01s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2494036" playOrder="5">
+          <navLabel>
+            <text>Conventions Used in This Book</text>
+          </navLabel>
+          <content src="OEBPS/pr01s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2510329" playOrder="6">
+          <navLabel>
+            <text>Using Code Examples</text>
+          </navLabel>
+          <content src="OEBPS/pr01s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2598064" playOrder="7">
+          <navLabel>
+            <text>Safari® Books Online</text>
+          </navLabel>
+          <content src="OEBPS/pr01s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2646796" playOrder="8">
+          <navLabel>
+            <text>How to Contact Us</text>
+          </navLabel>
+          <content src="OEBPS/pr01s06.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3636640" playOrder="9">
+        <navLabel>
+          <text>1. CoffeeScript Syntax</text>
+        </navLabel>
+        <content src="OEBPS/ch01.html"/>
+        <navPoint class="chapter" id="id2721242" playOrder="10">
+          <navLabel>
+            <text>Variables and Scope</text>
+          </navLabel>
+          <content src="OEBPS/ch01.html#I_sect11_d1e464"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2856898" playOrder="11">
+          <navLabel>
+            <text>Functions</text>
+          </navLabel>
+          <content src="OEBPS/ch01s02.html"/>
+          <navPoint class="chapter" id="id2600767" playOrder="12">
+            <navLabel>
+              <text>Function Arguments</text>
+            </navLabel>
+            <content src="OEBPS/ch01s02.html#id2600767"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2993890" playOrder="13">
+            <navLabel>
+              <text>Function Invocation</text>
+            </navLabel>
+            <content src="OEBPS/ch01s02.html#id2993890"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2758230" playOrder="14">
+            <navLabel>
+              <text>Function Context</text>
+            </navLabel>
+            <content src="OEBPS/ch01s02.html#id2758230"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2535306" playOrder="15">
+          <navLabel>
+            <text>Object Literals and Array Definition</text>
+          </navLabel>
+          <content src="OEBPS/ch01s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2768400" playOrder="16">
+          <navLabel>
+            <text>Flow Control</text>
+          </navLabel>
+          <content src="OEBPS/ch01s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2440534" playOrder="17">
+          <navLabel>
+            <text>String Interpolation</text>
+          </navLabel>
+          <content src="OEBPS/ch01s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2850669" playOrder="18">
+          <navLabel>
+            <text>Loops and Comprehensions</text>
+          </navLabel>
+          <content src="OEBPS/ch01s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2490622" playOrder="19">
+          <navLabel>
+            <text>Arrays</text>
+          </navLabel>
+          <content src="OEBPS/ch01s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2927002" playOrder="20">
+          <navLabel>
+            <text>Aliases and the Existential Operator</text>
+          </navLabel>
+          <content src="OEBPS/ch01s08.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2545256" playOrder="21">
+        <navLabel>
+          <text>2. CoffeeScript Classes</text>
+        </navLabel>
+        <content src="OEBPS/ch02.html"/>
+        <navPoint class="chapter" id="id2698190" playOrder="22">
+          <navLabel>
+            <text>Instance Properties</text>
+          </navLabel>
+          <content src="OEBPS/ch02.html#I_sect12_d1e1003"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3587535" playOrder="23">
+          <navLabel>
+            <text>Static Properties</text>
+          </navLabel>
+          <content src="OEBPS/ch02s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2722444" playOrder="24">
+          <navLabel>
+            <text>Inheritance and Super</text>
+          </navLabel>
+          <content src="OEBPS/ch02s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2601124" playOrder="25">
+          <navLabel>
+            <text>Mixins</text>
+          </navLabel>
+          <content src="OEBPS/ch02s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2700366" playOrder="26">
+          <navLabel>
+            <text>Extending Classes</text>
+          </navLabel>
+          <content src="OEBPS/ch02s05.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2857001" playOrder="27">
+        <navLabel>
+          <text>3. CoffeeScript Idioms</text>
+        </navLabel>
+        <content src="OEBPS/ch03.html"/>
+        <navPoint class="chapter" id="id3636654" playOrder="28">
+          <navLabel>
+            <text>Each</text>
+          </navLabel>
+          <content src="OEBPS/ch03.html#I_sect13_d1e1181"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2804474" playOrder="29">
+          <navLabel>
+            <text>Map</text>
+          </navLabel>
+          <content src="OEBPS/ch03s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2627121" playOrder="30">
+          <navLabel>
+            <text>Select</text>
+          </navLabel>
+          <content src="OEBPS/ch03s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2844081" playOrder="31">
+          <navLabel>
+            <text>Includes</text>
+          </navLabel>
+          <content src="OEBPS/ch03s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2849966" playOrder="32">
+          <navLabel>
+            <text>Property Iteration</text>
+          </navLabel>
+          <content src="OEBPS/ch03s05.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2695504" playOrder="33">
+          <navLabel>
+            <text>Min/Max</text>
+          </navLabel>
+          <content src="OEBPS/ch03s06.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2706937" playOrder="34">
+          <navLabel>
+            <text>Multiple Arguments</text>
+          </navLabel>
+          <content src="OEBPS/ch03s07.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2736648" playOrder="35">
+          <navLabel>
+            <text>And/Or</text>
+          </navLabel>
+          <content src="OEBPS/ch03s08.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3594253" playOrder="36">
+          <navLabel>
+            <text>Destructuring Assignments</text>
+          </navLabel>
+          <content src="OEBPS/ch03s09.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2709465" playOrder="37">
+          <navLabel>
+            <text>External Libraries</text>
+          </navLabel>
+          <content src="OEBPS/ch03s10.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2870459" playOrder="38">
+          <navLabel>
+            <text>Private Variables</text>
+          </navLabel>
+          <content src="OEBPS/ch03s11.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2808634" playOrder="39">
+        <navLabel>
+          <text>4. Compiling CoffeeScript</text>
+        </navLabel>
+        <content src="OEBPS/ch04.html"/>
+        <navPoint class="chapter" id="id2695277" playOrder="40">
+          <navLabel>
+            <text>Cake</text>
+          </navLabel>
+          <content src="OEBPS/ch04.html#I_sect14_d1e1546"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2778931" playOrder="41">
+          <navLabel>
+            <text>Creating Applications</text>
+          </navLabel>
+          <content src="OEBPS/ch04s02.html"/>
+          <navPoint class="chapter" id="id2695880" playOrder="42">
+            <navLabel>
+              <text>Structure and CommonJS</text>
+            </navLabel>
+            <content src="OEBPS/ch04s02.html#id2695880"/>
+            <navPoint class="chapter" id="id2721726" playOrder="43">
+              <navLabel>
+                <text>Requiring files</text>
+              </navLabel>
+              <content src="OEBPS/ch04s02.html#id2721726"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2817461" playOrder="44">
+              <navLabel>
+                <text>Exporting properties</text>
+              </navLabel>
+              <content src="OEBPS/ch04s02.html#id2817461"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2805187" playOrder="45">
+            <navLabel>
+              <text>Stitch It Up</text>
+            </navLabel>
+            <content src="OEBPS/ch04s02.html#id2805187"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2803009" playOrder="46">
+            <navLabel>
+              <text>JavaScript Templates</text>
+            </navLabel>
+            <content src="OEBPS/ch04s02.html#id2803009"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2736479" playOrder="47">
+            <navLabel>
+              <text>Bonus: 30-Second Deployment with Heroku</text>
+            </navLabel>
+            <content src="OEBPS/ch04s02.html#id2736479"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2806870" playOrder="48">
+            <navLabel>
+              <text>Additional Libraries</text>
+            </navLabel>
+            <content src="OEBPS/ch04s02.html#id2806870"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3138204" playOrder="49">
+        <navLabel>
+          <text>5. The Good Parts</text>
+        </navLabel>
+        <content src="OEBPS/ch05.html"/>
+        <navPoint class="chapter" id="id2661653" playOrder="50">
+          <navLabel>
+            <text>The Unfixed parts</text>
+          </navLabel>
+          <content src="OEBPS/ch05.html#I_sect15_d1e2087"/>
+          <navPoint class="chapter" id="id2690185" playOrder="51">
+            <navLabel>
+              <text>Using eval</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#id2690185"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2600231" playOrder="52">
+            <navLabel>
+              <text>Using typeof</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#id2600231"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2808394" playOrder="53">
+            <navLabel>
+              <text>Using instanceof</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#id2808394"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2660072" playOrder="54">
+            <navLabel>
+              <text>Using delete</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#id2660072"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2696770" playOrder="55">
+            <navLabel>
+              <text>Using parseInt</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#id2696770"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2852291" playOrder="56">
+            <navLabel>
+              <text>Strict Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#id2852291"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2700468" playOrder="57">
+            <navLabel>
+              <text>Strict Mode Changes</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#id2700468"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2810703" playOrder="58">
+            <navLabel>
+              <text>Strict Mode Usage</text>
+            </navLabel>
+            <content src="OEBPS/ch05.html#id2810703"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2614375" playOrder="59">
+          <navLabel>
+            <text>The Fixed Parts</text>
+          </navLabel>
+          <content src="OEBPS/ch05s02.html"/>
+          <navPoint class="chapter" id="id2674399" playOrder="60">
+            <navLabel>
+              <text>A JavaScript Subset</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#id2674399"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2767775" playOrder="61">
+            <navLabel>
+              <text>Global Variables</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#id2767775"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2843383" playOrder="62">
+            <navLabel>
+              <text>Semicolons</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#id2843383"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2695811" playOrder="63">
+            <navLabel>
+              <text>Reserved Words</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#id2695811"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2749796" playOrder="64">
+            <navLabel>
+              <text>Equality Comparisons</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#id2749796"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2688143" playOrder="65">
+            <navLabel>
+              <text>Function Definition</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#id2688143"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2625944" playOrder="66">
+            <navLabel>
+              <text>Number Property Lookups</text>
+            </navLabel>
+            <content src="OEBPS/ch05s02.html#id2625944"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2785427" playOrder="67">
+          <navLabel>
+            <text>JavaScript Lint</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2871240" playOrder="68">
+        <navLabel>
+          <text>6. The Little Conclusion</text>
+        </navLabel>
+        <content src="OEBPS/ch06.html"/>
+        <navPoint class="chapter" id="id2626771" playOrder="69">
+          <navLabel>
+            <text>Philosophy</text>
+          </navLabel>
+          <content src="OEBPS/ch06.html#I_sect16_d1e2817"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2768220" playOrder="70">
+          <navLabel>
+            <text>It’s Just JavaScript</text>
+          </navLabel>
+          <content src="OEBPS/ch06s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2817496" playOrder="71">
+          <navLabel>
+            <text>Build Your Own JavaScript</text>
+          </navLabel>
+          <content src="OEBPS/ch06s03.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2624631" playOrder="72">
+        <navLabel>
+          <text>About the Author</text>
+        </navLabel>
+        <content src="OEBPS/author_bios.html"/>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

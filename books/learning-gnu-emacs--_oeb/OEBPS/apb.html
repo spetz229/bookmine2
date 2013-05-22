@@ -1,0 +1,754 @@
+---
+layout: page
+title: "Learning GNU Emacs, 3rd Edition"
+prev: OEBPS/apa.html
+next: OEBPS/apc.html
+book_path: books/learning-gnu-emacs--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" xml:lang="en"><div class="book"><div class="book"><div class="book"><h1 class="title"><a id="gnu3-APP-B" class="calibre1"></a>Appendix B. Emacs Lisp Packages</h1></div></div></div><p class="copyright">The tables in this appendix list the most useful Lisp packages that
+come with Emacs. All Lisp packages are typically located in the
+directory <code class="calibre21">emacs-source/lisp</code>, where
+<code class="calibre21">emacs-source</code> is the directory in which you
+placed the Emacs source distribution. We have omitted all of the
+packages that provide "basic" Emacs
+support; likewise, we have omitted many packages
+<a id="gnu3-APP-B-ITERM-3008" class="calibre2"></a>
+         <a id="gnu3-APP-B-ITERM-3009" class="calibre2"></a>whose functionality is obsolete or
+unspeakably obscure.</p><p class="copyright">While some of these packages are described in some detail in this
+book, most aren't; you will have to rely on GNU
+Emacs' help for precise descriptions of what the
+package does. See <a class="calibre2" href="ch14.html" title="Chapter 14. The Help System">Chapter 14</a> for details about
+help; the most important help commands you will need for finding out
+about the functionality of Lisp packages are <span><strong class="calibre5">C-h p</strong></span> (for <span><strong class="calibre5">finder-by-keyword</strong></span>), <span><strong class="calibre5">C-h
+f</strong></span> (for <span><strong class="calibre5">describe-function</strong></span>), and <span><strong class="calibre5">C-h m</strong></span> (for <span><strong class="calibre5">describe-mode</strong></span>).</p><p class="copyright">
+         <span><strong class="calibre5">C-h p</strong></span> is especially helpful. It lets
+you navigate through a hierarchy of information about all packages
+available on your system, from general areas of functionality, like
+those in the tables in this appendix, to the <span><strong class="calibre5">C-h m</strong></span> information about each individual mode.
+Unfortunately, the detailed information is sometimes incomplete and
+also lists many packages that could not possibly be interesting to
+anyone other than hard-core Emacs customizers.</p><p class="copyright">Wherever it is reasonable, the tables in this appendix give commands
+that "start" the package. This
+startup information has the following meanings:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="copyright">If the package implements a major mode, the startup command is the
+function that puts Emacs into this major mode.</p></li><li class="listitem"><p class="copyright">If the package implements a major mode that is automatically loaded
+when you visit a file with a certain suffix, we list
+"suffix
+<em class="calibre7"><code class="calibre21">suffixname</code></em>" in addition
+to the startup command.</p></li><li class="listitem"><p class="copyright">If the package implements a minor mode, the startup command is the
+function that puts Emacs into this minor mode.</p></li><li class="listitem"><p class="copyright">If the package implements a set of general-purpose functions,
+we've tried to pick the most
+"typical" of these functions. For
+example, the <span><strong class="calibre5">studly</strong></span> package
+implements three commands. We arbitrarily picked <span><strong class="calibre5">studlify-region</strong></span> as one way to invoke this
+package. If there isn't any reasonable choice, we
+list "many."</p></li></ul></div><p class="copyright">Finally, a word on using the packages. Some packages are
+automatically loaded when Emacs starts; some are loaded when you
+visit a file with the appropriate suffix (such as many of the modes
+for programming languages); some are automatically loaded whenever
+you give the appropriate command (for example, <span><strong class="calibre5">M-x shell Enter</strong></span> loads the package
+<code class="calibre21">shell.el</code> for <span><strong class="calibre5">shell-mode</strong></span>); and some are never automatically
+loaded. So how do you know which is which?</p><p class="copyright">You don't really have to concern yourself with this
+issue. In the tables, the Startup column tells you what command (or
+commands) put the package to work. Start Emacs, and give this command
+(<span><strong class="calibre5">M-x</strong></span>
+         <em class="calibre7"><code class="calibre21">startup-command</code></em> 
+         <span><strong class="calibre5">Enter</strong></span>). If Emacs complains <span><strong class="calibre5">no match</strong></span>, the package wasn't
+loaded automatically and you need to load the package
+"by hand." To do so during an Emacs
+session, use the command <span><strong class="calibre5">M-x
+load-library</strong></span> 
+         <em class="calibre7"><code class="calibre21">name</code></em> 
+         <span><strong class="calibre5">Enter</strong></span>, where the package's
+"name" is given in the first column
+of the table. You can also tell Emacs to load packages automatically
+at startup time by putting lines in your <code class="calibre21">.emacs</code>
+file that have this form:</p><a id="I__tt715" class="calibre2"></a><pre class="programlisting">(load-library "<em class="calibre7"><code class="calibre32">name</code></em>")</pre><p class="copyright">Finally, if you're interested in looking at the
+source code of
+<a id="gnu3-APP-B-ITERM-3010" class="calibre2"></a>the libraries, which can be a great way
+to pick up techniques as you develop skills in programming Emacs
+Lisp, check out the <span><strong class="calibre5">find-library-file</strong></span> function presented in <a class="calibre2" href="ch11.html" title="Chapter 11. Emacs Lisp Programming">Chapter 11</a>.</p><p class="copyright">Now, without further ado, here are the tables of Lisp packages.</p><div class="book"><a id="gnu3-APP-B-TABLE-1" class="calibre2"></a><p class="title2"><b class="calibre25">Table B-1. Support for Java, C, and C++ programming</b></p><div class="table-contents"><a id="appb-idx-missedid-4" class="calibre2"></a><a id="appb-idx-missedid-5" class="calibre2"></a><a id="appb-idx-missedid-6" class="calibre2"></a><a id="appb-idx-missedid-7" class="calibre2"></a><a id="appb-idx-missedid-8" class="calibre2"></a><a id="appb-idx-missedid-9" class="calibre2"></a><table summary="Support for Java, C, and C++ programming" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Package</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Description</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Startup</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt716" class="calibre2"></a><pre class="programlisting">cc-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing Java, C, C++ and Objective-C source files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">java-mode</strong></span>, <span><strong class="calibre5">c-mode</strong></span>, <span><strong class="calibre5">c++-mode</strong></span>, <span><strong class="calibre5">objc-mode</strong></span>, suffixes
+<code class="calibre21">.java</code>, <code class="calibre21">.c</code>,
+<code class="calibre21">.h</code>, <code class="calibre21">.y</code>,
+<code class="calibre21">.lex</code>, <code class="calibre21">.cc</code>,
+<code class="calibre21">.hh</code>, <code class="calibre21">.C</code>,
+<code class="calibre21">.H</code>, <code class="calibre21">.cpp</code>,
+<code class="calibre21">.cxx</code>, <code class="calibre21">.hxx</code>,
+<code class="calibre21">.c++</code>, <code class="calibre21">.h++</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt717" class="calibre2"></a><pre class="programlisting">cmacexp</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Function for using cpp to expand macros in C source code</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">c-macro-expand</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt718" class="calibre2"></a><pre class="programlisting">hideif</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Minor mode for hiding code within C preprocessor commands</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">hide-ifdef-mode</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <a id="I__tt719" class="calibre2"></a><pre class="programlisting">cpp</pre>
+                  </td><td class="calibre30">
+                     <p class="copyright">Major mode for highlighting and hiding code within C preprocessor
+conditionals; takes advantage of graphical displays</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">
+                        <span><strong class="calibre5">cpp-parse-edit</strong></span>
+                     </p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-B-TABLE-2" class="calibre2"></a><p class="title2"><b class="calibre25">Table B-2. Support for Lisp programming</b></p><div class="table-contents"><a id="appb-idx-missedid-10" class="calibre2"></a><a id="appb-idx-missedid-11" class="calibre2"></a><table summary="Support for Lisp programming" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Package</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Description</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Startup</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt720" class="calibre2"></a><pre class="programlisting">lisp-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major modes for Lisp, Emacs Lisp and Lisp interaction</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">lisp-mode</strong></span>, <span><strong class="calibre5">emacs-lisp-mode</strong></span>, <span><strong class="calibre5">lisp-interaction-mode</strong></span>, suffixes
+<code class="calibre21">.l</code>, <code class="calibre21">.lisp</code>,
+<code class="calibre21">.lsp</code>, <code class="calibre21">.ml</code>,
+<code class="calibre21">.el</code>, and others<sup class="calibre6">[<a id="gnu3-APP-B-FNOTE-1" href="#ftn.gnu3-APP-B-FNOTE-1" class="calibre2">1</a>]</sup>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt721" class="calibre2"></a><pre class="programlisting">scheme</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing Scheme source files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">scheme-mode</strong></span>, suffixes
+<code class="calibre21">.scm</code>, <code class="calibre21">.stk</code>,
+<code class="calibre21">.ss</code>, <code class="calibre21">.sch</code>,
+<code class="calibre21">.oak</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt722" class="calibre2"></a><pre class="programlisting">cl</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Functions and macros for Emacs Lisp compatibility with Common Lisp</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">many</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt723" class="calibre2"></a><pre class="programlisting">debug</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for debugging Emacs Lisp programs</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">debug</strong></span>, automatically invoked if an
+error occurs running code when <span><strong class="calibre5">debug-on-error</strong></span> is not <span><strong class="calibre5">nil</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt724" class="calibre2"></a><pre class="programlisting">edebug</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Emacs Lisp debugging functionality, implemented as a minor mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">edebug</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt725" class="calibre2"></a><pre class="programlisting">disass</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Function to disassemble compiled Emacs Lisp code</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">disassemble</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt726" class="calibre2"></a><pre class="programlisting">elp</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Code profiler for Emacs Lisp</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">elp-instrument-package</strong></span>, <span><strong class="calibre5">elp-instrument-function</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <a id="I__tt727" class="calibre2"></a><pre class="programlisting">trace</pre>
+                  </td><td class="calibre30">
+                     <p class="copyright">Produces function call traces for Emacs Lisp</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">
+                        <span><strong class="calibre5">trace-function</strong></span>
+                     </p>
+                  </td></tr></tbody><tbody class="calibre15"><tr class="calibre12"><td colspan="3" class="calibre31"><div class="book"><p class="copyright"><sup class="calibre6">[<a id="ftn.gnu3-APP-B-FNOTE-1" href="#gnu3-APP-B-FNOTE-1" class="calibre2">1</a>] </sup>Emacs Lisp mode
+is also invoked for files named <code class="calibre21">.emacs</code> or
+<code class="calibre21">_emacs</code>. In the default configuration, Lisp
+Interaction mode is used by the initial <code class="calibre21">*scratch*</code>
+buffer.</p></div></td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-B-TABLE-3" class="calibre2"></a><p class="title2"><b class="calibre25">Table B-3. Support for other programming tasks and languages</b></p><div class="table-contents"><table summary="Support for other programming tasks and languages" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Package</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Description</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Startup</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt728" class="calibre2"></a><pre class="programlisting">gud</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for working with many different debuggers including
+<code class="calibre21">jdb</code>, <code class="calibre21">gdb</code>,
+<code class="calibre21">sdb</code>, <code class="calibre21">dbx</code>,
+<code class="calibre21">xdb</code>, <code class="calibre21">perldb</code>,
+<code class="calibre21">pdb</code> (Python), and <code class="calibre21">bash</code>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">jdb</strong></span>, <span><strong class="calibre5">bashdb</strong></span>, <span><strong class="calibre5">gdb</strong></span>,
+and many others</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt729" class="calibre2"></a><pre class="programlisting">perl-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for working with Perl source</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">perl-mode</strong></span>, suffixes
+<code class="calibre21">.pl</code>, <code class="calibre21">.pm</code>,
+<code class="calibre21">.perl</code>,<code class="calibre21"> .al</code>, and capitalized
+variants</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt730" class="calibre2"></a><pre class="programlisting">cperl-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for working with Perl source, which many prefer to the
+older Perl mode</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">cperl-mode</strong></span>, suffixes
+<code class="calibre21">.pl</code>, <code class="calibre21">.pm</code>,
+<code class="calibre21">.perl</code>,<code class="calibre21"> .al</code>, and capitalized
+variants</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt731" class="calibre2"></a><pre class="programlisting">python</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing Python source files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">python-mode</strong></span>, suffix
+<code class="calibre21">.py</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt732" class="calibre2"></a><pre class="programlisting">tcl</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing TCL source files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tcl-mode</strong></span>, suffixes
+<code class="calibre21">.tcl</code>, <code class="calibre21">.exp</code>,
+<code class="calibre21">.itcl</code>, <code class="calibre21">.itk</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt733" class="calibre2"></a><pre class="programlisting">sql</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing SQL queries</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">sql-mode</strong></span>, suffix
+<code class="calibre21">.sql</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt734" class="calibre2"></a><pre class="programlisting">ada-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing Ada source files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ada-mode</strong></span>, suffixes
+<code class="calibre21">.ada</code>, <code class="calibre21">.adb</code>,
+<code class="calibre21">.ads</code>, <code class="calibre21">.adb.dg</code>,
+<code class="calibre21">.ads.dg</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt735" class="calibre2"></a><pre class="programlisting">pascal</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing Pascal source files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">pascal-mode</strong></span>, suffixes
+<code class="calibre21">.p</code>, <code class="calibre21">.pas</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt736" class="calibre2"></a><pre class="programlisting">modula2</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing Modula-2 source code</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">modula-2-mode</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt737" class="calibre2"></a><pre class="programlisting">fortran</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing Fortran source files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">fortran-mode</strong></span>, suffixes
+<code class="calibre21">.f</code>, <code class="calibre21">.F</code>,
+<code class="calibre21">.for</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt738" class="calibre2"></a><pre class="programlisting">f90</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing source code in the Fortran 90 dialect</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">f90-mode</strong></span>, suffixes
+<code class="calibre21">.f90</code>, <code class="calibre21">.f95</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt739" class="calibre2"></a><pre class="programlisting">asm-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing assembly language source code</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">asm-mode</strong></span>, suffixes
+<code class="calibre21">.s</code>, <code class="calibre21">.S</code>,
+<code class="calibre21">.asm</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt740" class="calibre2"></a><pre class="programlisting">awk-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing awk code</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">awk-mode</strong></span>, suffix
+<code class="calibre21">.awk</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt741" class="calibre2"></a><pre class="programlisting">m4-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing m4 macro source</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">m4-mode</strong></span>, suffixes
+<code class="calibre21">.m4</code>, <code class="calibre21">.mc</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt742" class="calibre2"></a><pre class="programlisting">ps-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing PostScript code</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ps-mode</strong></span>, suffixes
+<code class="calibre21">.ps</code>, <code class="calibre21">.eps</code>, with any
+capitalization</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <a id="I__tt743" class="calibre2"></a><pre class="programlisting">compile</pre>
+                  </td><td class="calibre30">
+                     <p class="copyright">Major mode for compiling programs (often through <span><strong class="calibre5">make</strong></span> or <span><strong class="calibre5">ant</strong></span>)
+and allowing easy access to the source lines on which errors are
+reported</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">
+                        <span><strong class="calibre5">compile</strong></span>
+                     </p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-B-TABLE-4" class="calibre2"></a><p class="title2"><b class="calibre25">Table B-4. Support for Text Processing</b></p><div class="table-contents"><a id="appb-idx-missedid-12" class="calibre2"></a><a id="appb-idx-missedid-13" class="calibre2"></a><table summary="Support for Text Processing" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Package</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Description</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Startup</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt744" class="calibre2"></a><pre class="programlisting">text-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing unprocessed text files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">text-mode</strong></span>, suffixes
+<code class="calibre21">.txt</code>, <code class="calibre21">.text</code>,
+<code class="calibre21">.article</code>, <code class="calibre21">.letter</code>, and
+files starting with <code class="calibre21">/tmp/Re</code>,
+<code class="calibre21">Message</code> and a digit (mail),
+<code class="calibre21">/tmp/fol</code> (news)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt745" class="calibre2"></a><pre class="programlisting">sgml-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing structured documents (including HTML and
+XML)<sup class="calibre6">[<a id="gnu3-APP-B-FNOTE-2" href="#ftn.gnu3-APP-B-FNOTE-2" class="calibre2">2</a>]</sup>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">html-mode</strong></span>, <span><strong class="calibre5">xml-mode</strong></span>, <span><strong class="calibre5">sgml-mode</strong></span>, suffixes <code class="calibre21">.htm</code>,
+<code class="calibre21">.html</code>, <code class="calibre21">.shtml</code>,
+<code class="calibre21">.xml</code>, <code class="calibre21">.xsl</code>,
+<code class="calibre21">.dtd</code>, <code class="calibre21">.sgm</code>,
+<code class="calibre21">.sgml</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt746" class="calibre2"></a><pre class="programlisting">tex-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing TEX and LATEX files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tex-mode</strong></span>, <span><strong class="calibre5">latex-mode</strong></span>, suffixes
+<code class="calibre21">.tex</code>, <code class="calibre21">.ins</code>,
+<code class="calibre21">.TeX</code>, <code class="calibre21">.ltx</code>,
+<code class="calibre21">.sty</code>, <code class="calibre21">.cls</code>,
+<code class="calibre21">.clo</code>, <code class="calibre21">.bbl</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt747" class="calibre2"></a><pre class="programlisting">bibtex</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing bibliography files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">bibtex-mode</strong></span>, suffix
+<code class="calibre21">.bib</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt748" class="calibre2"></a><pre class="programlisting">refbib</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Convert bibliography files in <span><strong class="calibre5">refer</strong></span>
+format to <span><strong class="calibre5">bibtex</strong></span> format</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">r2b-convert-buffer</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt749" class="calibre2"></a><pre class="programlisting">nroff</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for editing <span><strong class="calibre5">nroff</strong></span> and
+<span><strong class="calibre5">troff</strong></span> text files</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">nroff-mode</strong></span>, suffixes
+<code class="calibre21">.mm</code>, <code class="calibre21">.me</code>,
+<code class="calibre21">.ms</code>, <code class="calibre21">.man</code>, or any digit
+following a period (manual page source)</p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <a id="I__tt750" class="calibre2"></a><pre class="programlisting">scribe</pre>
+                  </td><td class="calibre30">
+                     <p class="copyright">Major mode for editing Scribe text files</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">
+                        <span><strong class="calibre5">scribe-mode</strong></span>, suffix
+<code class="calibre21">.mss</code>
+                     </p>
+                  </td></tr></tbody><tbody class="calibre15"><tr class="calibre12"><td colspan="3" class="calibre31"><div class="book"><p class="copyright"><sup class="calibre6">[<a id="ftn.gnu3-APP-B-FNOTE-2" href="#gnu3-APP-B-FNOTE-2" class="calibre2">2</a>] </sup>See <a class="calibre2" href="ch08.html" title="Chapter 8. Markup Language Support">Chapter 8</a> for an
+extensive discussion of working with markup languages in
+Emacs.</p></div></td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-B-TABLE-5" class="calibre2"></a><p class="title2"><b class="calibre25">Table B-5. Emulations for other editors</b></p><div class="table-contents"><table summary="Emulations for other editors" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Package</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Description</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Startup</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt751" class="calibre2"></a><pre class="programlisting">vi</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for emulating the <span><strong class="calibre5">vi</strong></span>
+editor</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vi-mode</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt752" class="calibre2"></a><pre class="programlisting">vip</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Another major mode for emulating <span><strong class="calibre5">vi</strong></span>
+                     </p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">vip-mode</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <a id="I__tt753" class="calibre2"></a><pre class="programlisting">edt</pre>
+                  </td><td class="calibre30">
+                     <p class="copyright">Function to set key bindings to emulate the VAX/VMS <span><strong class="calibre5">EDT</strong></span> editor</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">
+                        <span><strong class="calibre5">edt-emulation-on</strong></span>
+                     </p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-B-TABLE-6" class="calibre2"></a><p class="title2"><b class="calibre25">Table B-6. Interfaces to operating system utilities<sup class="calibre6">[<a id="gnu3-APP-B-FNOTE-3" href="#ftn.gnu3-APP-B-FNOTE-3" class="calibre2">3</a>]</sup>
+         </b></p><div class="table-contents"><table summary="Interfaces to operating system utilitiesSome of these will be useful on Windows only if you've installed a Unix compatibility package like Cygwin (see ).          " class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Package</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Description</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Startup</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt754" class="calibre2"></a><pre class="programlisting">shell</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for interacting with the command-line shell.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">shell-mode</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt755" class="calibre2"></a><pre class="programlisting">find-dired</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Run the <span><strong class="calibre5">find</strong></span> command and use
+<span><strong class="calibre5">dired</strong></span> on the resulting list of
+files.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">find-dired</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt756" class="calibre2"></a><pre class="programlisting">tar-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Access files inside a <span><strong class="calibre5">tar</strong></span> archive
+through a <span><strong class="calibre5">dired</strong></span>-like interface.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tar-mode</strong></span>, suffix
+<code class="calibre21">.tar</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt757" class="calibre2"></a><pre class="programlisting">arc-mode</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Access files in several other archive formats through a <span><strong class="calibre5">dired</strong></span>-like interface.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">archive-mode</strong></span>, suffixes
+<code class="calibre21">.arc</code>, <code class="calibre21">.zip</code>,
+<code class="calibre21">.lzh</code>, <code class="calibre21">.zoo</code>,
+<code class="calibre21">.ear</code>, <code class="calibre21">.jar</code>,
+<code class="calibre21">.war</code>, as well as capitalized variants;<code class="calibre21">
+.sxd</code>, <code class="calibre21">.sxm</code>,
+<code class="calibre21">.sxi</code>, <code class="calibre21">.sxc</code>,
+<code class="calibre21">.sxw</code>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt758" class="calibre2"></a><pre class="programlisting">lpr</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Print the contents of a buffer or region.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">lpr-buffer</strong></span>, <span><strong class="calibre5">print-buffer</strong></span>, <span><strong class="calibre5">lpr-region</strong></span>, <span><strong class="calibre5">print-region</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt759" class="calibre2"></a><pre class="programlisting">sort</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Sort the contents of a buffer.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">sort-columns</strong></span>, <span><strong class="calibre5">sort-fields</strong></span>, <span><strong class="calibre5">sort-lines</strong></span>, <span><strong class="calibre5">sort-numeric-fields</strong></span>, <span><strong class="calibre5">sort-paragraphs</strong></span>, <span><strong class="calibre5">sort-regexp-fields</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt760" class="calibre2"></a><pre class="programlisting">spell, ispell</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Various tools for checking spelling.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">See <a class="calibre2" href="ch03.html" title="Chapter 3. Search and Replace">Chapter 3</a>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <a id="I__tt761" class="calibre2"></a><pre class="programlisting">diff, ediff</pre>
+                  </td><td class="calibre30">
+                     <p class="copyright">Tools to help in comparing files.</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">See <a class="calibre2" href="ch12.html" title="Chapter 12. Version Control">Chapter 12</a>
+                     </p>
+                  </td></tr></tbody><tbody class="calibre15"><tr class="calibre12"><td colspan="3" class="calibre31"><div class="book"><p class="copyright"><sup class="calibre6">[<a id="ftn.gnu3-APP-B-FNOTE-3" href="#gnu3-APP-B-FNOTE-3" class="calibre2">3</a>] </sup>Some of these will be useful on Windows only if you've installed a Unix compatibility package like Cygwin (see <a class="calibre2" href="http://www.cygwin.com">http://www.cygwin.com</a>).</p></div></td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-B-TABLE-7" class="calibre2"></a><p class="title2"><b class="calibre25">Table B-7. Networking support</b></p><div class="table-contents"><a id="appb-idx-missedid-14" class="calibre2"></a><a id="appb-idx-missedid-15" class="calibre2"></a><table summary="Networking support" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Package</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Description</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Startup</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt762" class="calibre2"></a><pre class="programlisting">ange-ftp</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Provides transparent access to remote files via FTP</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">most standard file-handling commands</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt763" class="calibre2"></a><pre class="programlisting">url</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Functions for retrieving the contents of documents through URLs</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">Invoked from Lisp code, not interactively</p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt764" class="calibre2"></a><pre class="programlisting">quickurl</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Functions for looking up and adding URLs to documents</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">many commands beginning with <span><strong class="calibre5">quickurl</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt765" class="calibre2"></a><pre class="programlisting">talk</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">A multi-user talk package that runs in Emacs</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">talk-connect</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt766" class="calibre2"></a><pre class="programlisting">eudc</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">A unified directory client for looking up address information from
+LDAP, BBDB, CCSO PH/QU and other directory servers</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">eudc-mode</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <a id="I__tt767" class="calibre2"></a><pre class="programlisting">net-utils</pre>
+                  </td><td class="calibre30">
+                     <p class="copyright">Provides access to common network utility programs (ping, traceroute,
+netstat, etc.</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">
+                        <span><strong class="calibre5">ping</strong></span>, <span><strong class="calibre5">traceroute</strong></span>, <span><strong class="calibre5">netstat</strong></span>, etc.</p>
+                  </td></tr></tbody></table></div></div><br class="book"/><div class="book"><a id="gnu3-APP-B-TABLE-8" class="calibre2"></a><p class="title2"><b class="calibre25">Table B-8. Games and amusements</b></p><div class="table-contents"><a id="appb-idx-missedid-16" class="calibre2"></a><a id="appb-idx-missedid-17" class="calibre2"></a><a id="appb-idx-missedid-18" class="calibre2"></a><table summary="Games and amusements" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                     <p class="copyright">Package</p>
+                  </th><th class="calibre26">
+                     <p class="copyright">Description</p>
+                  </th><th class="calibre27">
+                     <p class="copyright">Startup</p>
+                  </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt768" class="calibre2"></a><pre class="programlisting">animate</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Draws animated text.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">animate-birthday-present</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt769" class="calibre2"></a><pre class="programlisting">blackbox</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode to play the Blackbox game.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">blackbox-mode</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt770" class="calibre2"></a><pre class="programlisting">decipher</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode to cryptanalyze monoalphabetic substitution ciphers (break
+simple codes).</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">decipher</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt771" class="calibre2"></a><pre class="programlisting">dissociate</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Randomly scramble text.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dissociated-press</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt772" class="calibre2"></a><pre class="programlisting">doctor</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for playing the famous
+"psychoanalyst" game.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">doctor</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt773" class="calibre2"></a><pre class="programlisting">dunnet</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for playing an adventure game.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">dunnet</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt774" class="calibre2"></a><pre class="programlisting">gomoku</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Major mode for playing Gomoku.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">gomoku</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt775" class="calibre2"></a><pre class="programlisting">hanoi</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Solve the Towers of Hanoi puzzle for you.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">hanoi</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt776" class="calibre2"></a><pre class="programlisting">life</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Explore cellular automata using John Conway's
+"life" game rules.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">life</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt777" class="calibre2"></a><pre class="programlisting">mpuz</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Generate a random multiplication puzzle.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">mpuz</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt778" class="calibre2"></a><pre class="programlisting">snake</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Steer an animated snake towards food without hitting yourself or the
+walls.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">snake</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt779" class="calibre2"></a><pre class="programlisting">solitaire</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Play the peg solitaire game.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">solitaire</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt780" class="calibre2"></a><pre class="programlisting">studly</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Randomly capitalize letters for that polished, professional look.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">studlify-region</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt781" class="calibre2"></a><pre class="programlisting">tetris</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Guide falling tiles to complete rows.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">tetris</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre28">
+                     <a id="I__tt782" class="calibre2"></a><pre class="programlisting">yow</pre>
+                  </td><td class="calibre28">
+                     <p class="copyright">Print a random quotation from Zippy the Pinhead.</p>
+                  </td><td class="calibre29">
+                     <p class="copyright">
+                        <span><strong class="calibre5">yow</strong></span>
+                     </p>
+                  </td></tr><tr class="calibre12"><td class="calibre30">
+                     <a id="I__tt783" class="calibre2"></a><pre class="programlisting">zone</pre>
+                  </td><td class="calibre30">
+                     <p class="copyright">Rearrange your buffer in a hypnotic way.</p>
+                  </td><td class="calibre31">
+                     <p class="copyright">
+                        <span><strong class="calibre5">zone</strong></span>
+                     </p>
+                  </td></tr></tbody></table></div></div><br class="book"/><p class="copyright">Again, this is only a sampling of some available packages, to give
+you a sense of the breadth and depth of capabilities that ship with
+Emacs. The list isn't close to complete even with
+respect to what's available at this time, and new
+features are always being added. Your best bet is to explore for
+yourself using the tools mentioned at the beginning of this appendix.
+And don't forget to search the Web for nonstandard
+additions that might be just what you need for your own environment
+and projects!</p></div></div>
+
+{% endraw %}
+

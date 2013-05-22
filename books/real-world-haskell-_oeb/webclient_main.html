@@ -1,0 +1,187 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: webclient_download.html
+next: gui_split_000.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="webclient_download.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="gui_split_000.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="webclient_main" class="calibre27" id="webclient_main"></a><h3 id="title-IDAJLJUD" class="docSection1Title">22.5. Main Program</h3><a name="x_uv" class="calibre27" id="x_uv"></a><p class="docText">Finally, we need a main program to tie it all together.
+    Here's our main module:</p><pre class="calibre39">-- file: ch22/PodMain.hs
+module Main where
+
+import PodDownload
+import PodDB
+import PodTypes
+import System.Environment
+import Database.HDBC
+import Network.Socket(withSocketsDo)
+
+main = withSocketsDo $ handleSqlError $
+    do args &lt;- getArgs
+       dbh &lt;- connect "pod.db"
+       case args of
+         ["add", url] -&gt; add dbh url
+         ["update"] -&gt; update dbh
+         ["download"] -&gt; download dbh
+         ["fetch"] -&gt; do update dbh
+                         download dbh
+         _ -&gt; syntaxError
+       disconnect dbh
+
+add dbh url = 
+    do addPodcast dbh pc
+       commit dbh
+    where pc = Podcast {castId = 0, castURL = url}
+
+update dbh = 
+    do pclist &lt;- getPodcasts dbh
+       mapM_ procPodcast pclist
+    where procPodcast pc =
+              do putStrLn $ "Updating from " ++ (castURL pc)
+                 updatePodcastFromFeed dbh pc
+
+download dbh =
+    do pclist &lt;- getPodcasts dbh
+       mapM_ procPodcast pclist
+    where procPodcast pc =
+              do putStrLn $ "Considering " ++ (castURL pc)
+                 episodelist &lt;- getPodcastEpisodes dbh pc
+                 let dleps = filter (\ep -&gt; epDone ep == False)
+                             episodelist
+                 mapM_ procEpisode dleps
+          procEpisode ep =
+              do putStrLn $ "Downloading " ++ (epURL ep)
+                 getEpisode dbh ep
+
+syntaxError = putStrLn 
+  "Usage: pod command [args]\n\
+  \\n\
+  \pod add url      Adds a new podcast with the given URL\n\
+  \pod download     Downloads all pending episodes\n\
+  \pod fetch        Updates, then downloads\n\
+  \pod update       Downloads podcast feeds, looks for new episodes\n"</pre><br class="calibre48"/>
+<a name="x_vv" class="calibre27" id="x_vv"></a><p class="docText">We have a very simple command-line parser with a function
+    to indicate a command-line syntax error, plus small functions to handle
+    the different command-line arguments.</p><a name="x_wv" class="calibre27" id="x_wv"></a><p class="docText">You can compile this program with a command like
+    this:</p><pre class="calibre39">ghc --make -O2 -o pod -package HTTP -package HaXml -package network \
+    -package HDBC -package HDBC-sqlite3 PodMain.hs</pre><br class="calibre48"/>
+<a name="x_xv" class="calibre27" id="x_xv"></a><p class="docText">Alternatively, you could use a Cabal file as documented in
+    <a class="docLink" href="library_package.html#library_package">Section 5.14</a> to build this project:</p><pre class="calibre39">-- ch23/pod.cabal
+Name: pod
+Version: 1.0.0
+Build-type: Simple
+Build-Depends: HTTP, HaXml, network, HDBC, HDBC-sqlite3, base
+
+Executable: pod
+Main-Is: PodMain.hs
+GHC-Options: -O2</pre><br class="calibre48"/>
+<a name="x_yv" class="calibre27" id="x_yv"></a><p class="docText">Also, you'll want a simple <i class="docEmphasis">Setup.hs</i>
+    file:</p><pre class="calibre39">import Distribution.Simple
+main = defaultMain</pre><br class="calibre48"/>
+<a name="x_zv" class="calibre27" id="x_zv"></a><p class="docText">Now, to build with Cabal, you just run the
+    following:</p><pre class="calibre39">runghc Setup.hs configure
+runghc Setup.hs build</pre><br class="calibre48"/>
+<a name="x_Aw" class="calibre27" id="x_Aw"></a><p class="docText">And you'll find a <i class="docEmphasis">dist</i> directory
+    containing your output. To install the program system-wide,<a name="I_indexterm22_d1e45665" class="calibre27" id="I_indexterm22_d1e45665"></a> run <tt class="calibre34">runghc Setup.hs install</tt>.</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="webclient_download.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="gui_split_000.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

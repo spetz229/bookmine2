@@ -1,0 +1,16 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch01.html
+next: OEBPS/ch01s03.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Concise"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e332" class="calibre1"></a>Concise</h1></div></div></div><p class="calibre7">We all know that there is a lot of boilerplate coding involved in web applications.
+      Wherever possible, Yesod tries to use Haskell’s features to save your fingers the
+      work:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7">The forms library reduces the amount of code used for common cases by leveraging the Applicative type class.</p></li><li class="listitem"><p class="calibre7">Routes are declared in a very terse format, without sacrificing type safety.</p></li><li class="listitem"><p class="calibre7">Serializing your data to and from a database is handled automatically via code generation.</p></li></ul></div><p class="calibre7">In Yesod, we have two kinds of code generation. To get your project started, we provide a scaffolding tool to set up your file and folder structure. However, most code generation is done at compile time via meta programming. This means your generated code will never get stale, as a simple library upgrade will bring all your generated code up-to-date.</p><p class="calibre7">But for those who like to stay in control, and know exactly what their code is doing, you can always run closer to the compiler and write all your code yourself.</p></div></div>
+
+{% endraw %}
+

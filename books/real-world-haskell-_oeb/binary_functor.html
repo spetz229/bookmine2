@@ -1,0 +1,340 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: binary_implicit.html
+next: I_sect110_d1e26216.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="binary_implicit.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect110_d1e26216.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="binary_functor" class="calibre27" id="binary_functor"></a><h3 id="title-IDA51RZD" class="docSection1Title">10.5. Introducing Functors</h3><a name="x_mR" class="calibre27" id="x_mR"></a><p class="docText">We're<a name="I_indexterm10_d1e25640" class="calibre27" id="I_indexterm10_d1e25640"></a><a name="I_indexterm10_d1e25641" class="calibre27" id="I_indexterm10_d1e25641"></a> by now thoroughly familiar with
+    the <i class="docEmphasis">map</i> function, which applies a
+    function to every element of a list, returning a list of possibly a
+    different type:</p><pre class="calibre39">ghci&gt; <b class="calibre40">map (+1) [1,2,3]</b>
+[2,3,4]
+ghci&gt; <b class="calibre40">map show [1,2,3]</b>
+["1","2","3"]
+ghci&gt; <b class="calibre40">:type map show</b>
+map show :: (Show a) =&gt; [a] -&gt; [String]</pre><a name="x_nR" class="calibre27" id="x_nR"></a><p class="docText">This <i class="docEmphasis">map</i>-like
+    activity can be useful in other instances. For example, consider a binary
+    tree:</p><pre class="calibre39">-- file: ch10/TreeMap.hs
+data Tree a = Node (Tree a) (Tree a)
+            | Leaf a
+              deriving (Show)</pre><br class="calibre48"/>
+<a name="x_oR" class="calibre27" id="x_oR"></a><p class="docText">If we want to take a tree of strings and turn it into a
+    tree containing the lengths of those strings, we could write a function to
+    do this:</p><pre class="calibre39">-- file: ch10/TreeMap.hs
+treeLengths (Leaf s) = Leaf (length s)
+treeLengths (Node l r) = Node (treeLengths l) (treeLengths r)</pre><br class="calibre48"/>
+<a name="x_pR" class="calibre27" id="x_pR"></a><p class="docText">Now that our eyes are attuned to looking for patterns that
+    we can turn into generally useful functions, we can see a possible case of
+    this here:</p><pre class="calibre39">-- file: ch10/TreeMap.hs
+treeMap :: (a -&gt; b) -&gt; Tree a -&gt; Tree b
+treeMap f (Leaf a)   = Leaf (f a)
+treeMap f (Node l r) = Node (treeMap f l) (treeMap f r)</pre><br class="calibre48"/>
+<a name="x_qR" class="calibre27" id="x_qR"></a><p class="docText">As we might hope, <i class="docEmphasis">treeLengths</i> and <i class="docEmphasis">treeMap length</i> give the same results:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let tree = Node (Leaf "foo") (Node (Leaf "x") (Leaf "quux"))</b>ghci&gt; <b class="calibre40">treeLengths tree</b>
+Node (Leaf 3) (Node (Leaf 1) (Leaf 4))
+ghci&gt; <b class="calibre40">treeMap length tree</b>
+Node (Leaf 3) (Node (Leaf 1) (Leaf 4))
+ghci&gt; <b class="calibre40">treeMap (odd . length) tree</b>
+Node (Leaf True) (Node (Leaf True) (Leaf False))</pre><a name="x_rR" class="calibre27" id="x_rR"></a><p class="docText">Haskell provides a well-known typeclass to further
+    generalize <i class="docEmphasis">treeMap</i>. This typeclass is
+    named Functor, and it defines one function, <i class="docEmphasis">fmap</i>:</p><pre class="calibre39">-- file: ch10/TreeMap.hs
+class Functor f where
+    fmap :: (a -&gt; b) -&gt; f a -&gt; f b</pre><br class="calibre48"/>
+<a name="x_sR" class="calibre27" id="x_sR"></a><p class="docText">We can think of <i class="docEmphasis">fmap</i>
+    as a kind of <span class="docEmphasis">lifting</span> function, <a name="I_indexterm10_d1e25728" class="calibre27" id="I_indexterm10_d1e25728"></a>as we introduced in <a class="docLink" href="find_predicate.html#find_predicate_lift">Section 9.6.1</a>.
+    It takes a function over ordinary values a -&gt; b, and lifts
+    it to become a function over containers f a -&gt; f b, where
+    <span class="docMonofont">f</span> is the container type.</p><a name="x_tR" class="calibre27" id="x_tR"></a><p class="docText">If we substitute Tree for the type variable
+    <span class="docMonofont">f</span>, for example, then the type of <i class="docEmphasis">fmap</i> is identical to the type of <i class="docEmphasis">treeMap</i>, and in fact we can use <i class="docEmphasis">treeMap</i> as the implementation of <i class="docEmphasis">fmap</i> over Trees:</p><pre class="calibre39">-- file: ch10/TreeMap.hs
+instance Functor Tree where
+    fmap = treeMap</pre><br class="calibre48"/>
+<a name="x_uR" class="calibre27" id="x_uR"></a><p class="docText">We can also use <i class="docEmphasis">map</i>
+    as the implementation of <i class="docEmphasis">fmap</i> for
+    lists:</p><pre class="calibre39">-- file: ch10/TreeMap.hs
+instance Functor [] where
+    fmap = map</pre><br class="calibre48"/>
+<a name="x_vR" class="calibre27" id="x_vR"></a><p class="docText">We can now use <i class="docEmphasis">fmap</i>
+    over different container types:</p><pre class="calibre39">ghci&gt; <b class="calibre40">fmap length ["foo","quux"]</b>
+[3,4]
+ghci&gt; <b class="calibre40">fmap length (Node (Leaf "Livingstone") (Leaf "I presume"))</b>
+Node (Leaf 11) (Leaf 9)</pre><a name="x_wR" class="calibre27" id="x_wR"></a><p class="docText">The <tt class="calibre34">Prelude</tt> defines instances of
+    Functor for several common types, notably lists and
+    Maybe:</p><pre class="calibre39">-- file: ch10/TreeMap.hs
+instance Functor Maybe where
+    fmap _ Nothing  = Nothing
+    fmap f (Just x) = Just (f x)</pre><br class="calibre48"/>
+<a name="x_xR" class="calibre27" id="x_xR"></a><p class="docText">The instance for Maybe makes it particularly
+    clear what an <i class="docEmphasis">fmap</i> implementation
+    needs to do. The implementation must have a sensible behavior for each of
+    a type's constructors. If a value is wrapped in <tt class="calibre34">Just</tt>, for
+    example, the <i class="docEmphasis">fmap</i> implementation
+    calls the function on the unwrapped value, then rewraps it in
+    <tt class="calibre34">Just</tt>.</p><a name="x_yR" class="calibre27" id="x_yR"></a><p class="docText">The definition of Functor imposes a few
+    obvious restrictions on what we can do with <i class="docEmphasis">fmap</i>. For example, we can only make instances
+    of <i class="docEmphasis">Functor</i> from types that have
+    exactly one type parameter.</p><a name="x_AS" class="calibre27" id="x_AS"></a><p class="docText">We can't write an <i class="docEmphasis">fmap</i> implementation for Either a b
+    or (a, b), for example, because these have two type
+    parameters. We also can't write one for Bool or
+    Int, as they have no type parameters.</p><a name="x_BS" class="calibre27" id="x_BS"></a><p class="docText">In addition, we can't place any constraints on our type
+    definition. What does this mean? To illustrate, let's first look at a
+    normal <tt class="calibre34">data</tt> definition and its
+    <tt class="calibre34">Functor</tt> instance:</p><pre class="calibre39">-- file: ch10/ValidFunctor.hs
+data Foo a = Foo a
+           
+instance Functor Foo where
+    fmap f (Foo a) = Foo (f a)</pre><br class="calibre48"/>
+<a name="x_CS" class="calibre27" id="x_CS"></a><p class="docText">When we define a new type, we can add a type constraint
+    just after the <tt class="calibre34">data</tt> keyword as
+    follows:</p><pre class="calibre39">-- file: ch10/ValidFunctor.hs
+data Eq a =&gt; Bar a = Bar a
+
+instance Functor Bar where
+    fmap f (Bar a) = Bar (f a)</pre><br class="calibre48"/>
+<a name="x_DS" class="calibre27" id="x_DS"></a><p class="docText">This says that we can only put a type <span class="docMonofont">a</span> into a Foo if <span class="docMonofont">a</span> is a member of the <tt class="calibre34">Eq</tt> typeclass.
+    However, the constraint renders it impossible to write a
+    <tt class="calibre34">Functor</tt> instance for Bar:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:load ValidFunctor</b>
+[1 of 1] Compiling Main             ( ValidFunctor.hs, interpreted )
+
+ValidFunctor.hs:12:12:
+    Could not deduce (Eq a) from the context (Functor Bar)
+      arising from a use of `Bar' at ValidFunctor.hs:12:12-16
+    Possible fix:
+      add (Eq a) to the context of the type signature for `fmap'
+    In the pattern: Bar a
+    In the definition of `fmap': fmap f (Bar a) = Bar (f a)
+    In the definition for method `fmap'
+
+ValidFunctor.hs:12:21:
+    Could not deduce (Eq b) from the context (Functor Bar)
+      arising from a use of `Bar' at ValidFunctor.hs:12:21-29
+    Possible fix:
+      add (Eq b) to the context of the type signature for `fmap'
+    In the expression: Bar (f a)
+    In the definition of `fmap': fmap f (Bar a) = Bar (f a)
+    In the definition for method `fmap'
+Failed, modules loaded: none.
+</pre><a name="binary_functord1e26252" class="calibre27" id="binary_functord1e26252"></a><h4 id="title-IDAZFSZD" class="docSection1Title">10.5.1. Constraints on Type Definitions Are Bad</h4><a name="x_ES" class="calibre27" id="x_ES"></a><p class="docText">Adding <a name="I_indexterm10_d1e25904" class="calibre27" id="I_indexterm10_d1e25904"></a>a constraint<a name="I_indexterm10_d1e25910" class="calibre27" id="I_indexterm10_d1e25910"></a> to a type definition is essentially never a good idea. It
+      has the effect of forcing you to add type constraints to
+      <span class="docEmphasis">every</span> function that will operate on values of that
+      type. Let's say that we need a stack data structure that we want to be
+      able to query to see whether its elements obey some ordering. Here's a
+      naive definition of the data type:</p><pre class="calibre39">-- file: ch10/TypeConstraint.hs
+data (Ord a) =&gt; OrdStack a = Bottom
+                           | Item a (OrdStack a)
+                             deriving (Show)</pre><br class="calibre48"/>
+<a name="x_FS" class="calibre27" id="x_FS"></a><p class="docText">If we want to write a function that checks the stack to
+      see whether it is increasing (i.e., every element is bigger than the
+      element below it), we'll obviously need an <tt class="calibre34">Ord</tt> constraint
+      to perform the pairwise comparisons:</p><pre class="calibre39">-- file: ch10/TypeConstraint.hs
+isIncreasing :: (Ord a) =&gt; OrdStack a -&gt; Bool
+isIncreasing (Item a rest@(Item b _))
+    | a &lt; b     = isIncreasing rest
+    | otherwise = False
+isIncreasing _  = True</pre><br class="calibre48"/>
+<a name="x_GS" class="calibre27" id="x_GS"></a><p class="docText">However, because we wrote the type constraint on the
+      type definition, that constraint ends up infecting places where it isn't
+      needed. We need to add the <tt class="calibre34">Ord</tt> constraint to <i class="docEmphasis">push</i>, which does not care about the ordering
+      of elements on the stack:</p><pre class="calibre39">-- file: ch10/TypeConstraint.hs
+push :: (Ord a) =&gt; a -&gt; OrdStack a -&gt; OrdStack a
+push a s = Item a s</pre><br class="calibre48"/>
+<a name="x_HS" class="calibre27" id="x_HS"></a><p class="docText">Try removing that <tt class="calibre34">Ord</tt> constraint, and the
+      definition of <i class="docEmphasis">push</i> will fail to
+      typecheck.</p><a name="x_IS" class="calibre27" id="x_IS"></a><p class="docText">This is why our attempt to write a <tt class="calibre34">Functor</tt>
+      instance for Bar failed earlier: it would have required an
+      <tt class="calibre34">Eq</tt> constraint to somehow get retroactively added to the
+      signature of <i class="docEmphasis">fmap</i>.</p><a name="x_JS" class="calibre27" id="x_JS"></a><p class="docText">Now that we've tentatively established that putting a
+      type constraint on a type definition is a misfeature of Haskell, what's
+      a more sensible alternative? The answer is simply to omit type
+      constraints from type definitions, and instead place them on the
+      functions that need them.</p><a name="x_KS" class="calibre27" id="x_KS"></a><p class="docText">In this example, we can drop the <tt class="calibre34">Ord</tt>
+      constraints from <tt class="calibre34">OrdStack</tt> and <i class="docEmphasis">push</i>. It needs to stay on <i class="docEmphasis">isIncreasing</i>, which otherwise couldn't call
+      <i class="docEmphasis">(&lt;)</i>. We now have the constraints
+      where they actually matter. This has the further benefit of making the
+      type signatures better document the true requirements of each
+      function.</p><a name="x_LS" class="calibre27" id="x_LS"></a><p class="docText">Most Haskell container types follow this pattern. The
+      Map type in the <tt class="calibre34">Data.Map</tt> module requires that
+      its keys be ordered, but the type itself does not have such a
+      constraint. The constraint is expressed on functions such as <i class="docEmphasis">insert</i>, where it's actually needed, and not
+      on <i class="docEmphasis">size</i>, where ordering isn't
+      used.</p><a name="binary_fmap" class="calibre27" id="binary_fmap"></a><h4 id="title-IDAGJSZD" class="docSection1Title">10.5.2. Infix Use of fmap</h4><a name="x_MS" class="calibre27" id="x_MS"></a><p class="docText">Quite often, you'll<a name="I_indexterm10_d1e25999" class="calibre27" id="I_indexterm10_d1e25999"></a> see <i class="docEmphasis">fmap</i> called as
+      an operator:</p><pre class="calibre39">ghci&gt; <b class="calibre40">(1+) `fmap` [1,2,3] ++ [4,5,6]</b>
+[2,3,4,4,5,6]
+</pre><a name="x_NS" class="calibre27" id="x_NS"></a><p class="docText">Perhaps strangely, plain old <i class="docEmphasis">map</i> is almost never used in this way.</p><a name="x_OS" class="calibre27" id="x_OS"></a><p class="docText">One possible reason for the stickiness of the <i class="docEmphasis">fmap</i>-as-operator meme is that this use lets
+      us omit parentheses from its second argument. Fewer parentheses leads to
+      reduced mental juggling while reading a function:</p><pre class="calibre39">ghci&gt; <b class="calibre40">fmap (1+) ([1,2,3] ++ [4,5,6])</b>
+[2,3,4,5,6,7]
+</pre><a name="x_PS" class="calibre27" id="x_PS"></a><p class="docText">If you really want to use <i class="docEmphasis">fmap</i> as an operator, the
+      <tt class="calibre34">Control.Applicative</tt> module<a name="I_indexterm10_d1e26036" class="calibre27" id="I_indexterm10_d1e26036"></a> contains an<a name="I_indexterm10_d1e26040" class="calibre27" id="I_indexterm10_d1e26040"></a> operator <i class="docEmphasis">(&lt;$&gt;)</i>
+      that is an alias for <i class="docEmphasis">fmap</i>. The
+      <tt class="calibre34">$</tt> in its name appeals to the similarity between applying a
+      function to its arguments (using the <i class="docEmphasis">($)</i> operator)<a name="I_indexterm10_d1e26057" class="calibre27" id="I_indexterm10_d1e26057"></a> and lifting a function into a functor. We will see that
+      this works well for parsing when we return to the code that we have been
+      writing.</p><a name="binary_functord1e26415" class="calibre27" id="binary_functord1e26415"></a><h4 id="title-IDA0LSZD" class="docSection1Title">10.5.3. Flexible Instances</h4><a name="x_QS" class="calibre27" id="x_QS"></a><p class="docText">You might hope that<a name="I_indexterm10_d1e26067" class="calibre27" id="I_indexterm10_d1e26067"></a> we could write a Functor instance for the
+      type Either Int b, which has one type parameter:</p><pre class="calibre39">-- file: ch10/EitherInt.hs
+instance Functor (Either Int) where
+    fmap _ (Left n) = Left n
+    fmap f (Right r) = Right (f r)</pre><br class="calibre48"/>
+<a name="x_RS" class="calibre27" id="x_RS"></a><p class="docText">However, the type system of Haskell 98 cannot guarantee
+      that checking the constraints on such an instance will terminate. A
+      nonterminating constraint check may send a compiler into an infinite
+      loop, so instances of this form are forbidden:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:load EitherInt</b>
+[1 of 1] Compiling Main             ( EitherInt.hs, interpreted )
+
+EitherInt.hs:2:0:
+    Illegal instance declaration for `Functor (Either Int)'
+        (All instance types must be of the form (T a1 ... an)
+         where a1 ... an are type *variables*,
+         and each type variable appears at most once in the instance head.
+         Use -XFlexibleInstances if you want to disable this.)
+    In the instance declaration for `Functor (Either Int)'
+Failed, modules loaded: none.
+</pre><a name="x_SS" class="calibre27" id="x_SS"></a><p class="docText"><span class="docMonofont">GHC</span> has a
+      more powerful type system than the base Haskell 98 standard. It operates
+      in Haskell 98 compatibility mode by default, for maximal portability. We
+      can instruct it to allow more flexible instances using a special
+      compiler directive:</p><pre class="calibre39">-- file: ch10/EitherIntFlexible.hs
+{-# LANGUAGE FlexibleInstances #-}
+
+instance Functor (Either Int) where
+    fmap _ (Left n)  = Left n
+    fmap f (Right r) = Right (f r)</pre><br class="calibre48"/>
+<a name="x_TS" class="calibre27" id="x_TS"></a><p class="docText">The directive is embedded in the specially formatted
+      <tt class="calibre34">LANGUAGE</tt> pragma.</p><a name="x_VS" class="calibre27" id="x_VS"></a><p class="docText">With our Functor instance in hand, let's
+      try out <i class="docEmphasis">fmap</i> on Either
+      Int:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:load EitherIntFlexible</b>
+[1 of 1] Compiling Main             ( EitherIntFlexible.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">fmap (== "cheeseburger") (Left 1 :: Either Int String)</b>
+Left 1
+ghci&gt; <b class="calibre40">fmap (== "cheeseburger") (Right "fries" :: Either Int String)</b>
+Right False</pre><a name="binary_functor_laws" class="calibre27" id="binary_functor_laws"></a><h4 id="title-IDAEOSZD" class="docSection1Title">10.5.4. Thinking More About Functors</h4><a name="x_WS" class="calibre27" id="x_WS"></a><p class="docText">We've made a few implicit assumptions<a name="I_indexterm10_d1e26132" class="calibre27" id="I_indexterm10_d1e26132"></a> about how functors ought to work. It's helpful to make
+      these explicit and to think of them as rules to follow, because this
+      lets us treat functors as uniform, well-behaved objects. We have only
+      two rules to remember, and they're simple:</p><ul class="calibre18"><li class="calibre19"><p class="docText">Our first rule is functors must preserve<a name="I_indexterm10_d1e26140" class="calibre27" id="I_indexterm10_d1e26140"></a> <span class="docEmphasis">identity</span>. That is, applying
+          <tt class="calibre34">fmap id</tt> to a value should give us back an identical
+          value:</p><pre class="calibre39">ghci&gt; <b class="calibre40">fmap id (Node (Leaf "a") (Leaf "b"))</b>
+Node (Leaf "a") (Leaf "b")
+</pre><br class="calibre48"/>
+</li><li class="calibre19"><p class="docText">Our second rule is functors must be
+          <span class="docEmphasis">composable</span>. <a name="I_indexterm10_d1e26162" class="calibre27" id="I_indexterm10_d1e26162"></a>That is, composing two uses of <i class="docEmphasis">fmap</i> should give the same result as one
+          <i class="docEmphasis">fmap</i> with the same functions
+          composed:</p><pre class="calibre39">ghci&gt; <b class="calibre40">(fmap even . fmap length) (Just "twelve")</b>
+Just True
+ghci&gt; <b class="calibre40">fmap (even . length) (Just "twelve")</b>
+Just True</pre><br class="calibre48"/>
+</li></ul><a name="x_ZS" class="calibre27" id="x_ZS"></a><p class="docText">Another way of looking at these two rules is that
+      functors must preserve <span class="docEmphasis">shape</span>. <a name="I_indexterm10_d1e26188" class="calibre27" id="I_indexterm10_d1e26188"></a>The structure of a collection should not be affected by a
+      functor; only the values that it contains should change:</p><pre class="calibre39">ghci&gt; <b class="calibre40">fmap odd (Just 1)</b>
+Just True
+ghci&gt; <b class="calibre40">fmap odd Nothing</b>
+Nothing</pre><a name="x_aS" class="calibre27" id="x_aS"></a><p class="docText">If you're writing a Functor instance, it's
+      useful to keep these rules in mind, and indeed to test them, because the
+      compiler can't check the rules we've just listed. On the other hand, if
+      you're simply <span class="docEmphasis">using</span> functors, the rules are
+      "natural" enough that there's no need to memorize them.
+      They just formalize a few intuitive notions of "do what I mean." Here is
+      a pseudocode representation of the expected behavior:</p><pre class="calibre39">-- file: ch10/FunctorLaws.hs
+fmap id       ==  id
+fmap (f . g)  ==  fmap f . fmap g</pre><br class="calibre48"/>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="binary_implicit.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="I_sect110_d1e26216.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

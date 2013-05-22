@@ -1,0 +1,52 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: "DejaVu Serif";
+    font-style: normal;
+    font-weight: normal;
+    src: url(OEBPS/DejaVuSerif.otf)
+    }
+@font-face {
+    font-family: "DejaVu Serif Bold";
+    font-weight: bold;
+    font-style: normal;
+    src: url(OEBPS/DejaVuSerif-Bold.otf)
+    }
+@font-face {
+    font-family: "DejaVu Serif Italic";
+    font-weight: normal;
+    font-style: italic;
+    src: url(OEBPS/DejaVuSerif-Italic.otf)
+    }
+@font-face {
+    font-family: "DejaVu Serif Bold Italic";
+    font-weight: bold;
+    font-style: italic;
+    src: url(OEBPS/DejaVuSerif-BoldItalic.otf)
+    }
+@font-face {
+    font-family: "DejaVu Sans Mono";
+    font-weight: normal;
+    font-style: normal;
+    src: url(OEBPS/DejaVuSansMono.otf)
+    }
+@font-face {
+    font-family: "DejaVu Sans Mono Bold";
+    font-weight: bold;
+    font-style: normal;
+    src: url(OEBPS/DejaVuSansMono-Bold.otf)
+    }
+@font-face {
+    font-family: "DejaVu Sans Mono Oblique";
+    font-weight: normal;
+    font-style: italic;
+    src: url(OEBPS/DejaVuSansMono-Oblique.otf)
+    }
+@font-face {
+    font-family: "DejaVu Sans Mono Bold Oblique";
+    font-weight: bold;
+    font-style: italic;
+    src: url(OEBPS/DejaVuSansMono-BoldOblique.otf)
+    }

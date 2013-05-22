@@ -1,0 +1,296 @@
+---
+layout: page
+title: "Scala in Depth"
+prev: kindle_split_002.html
+next: kindle_split_004.html
+book_path: books/scala-in-depth-joshua-d-suereth--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<div class="calibre5"></div><h2 class="chapter" id="toc">Table of Contents</h2>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_001.html#copyrightp1g" class="calibre7">Copyright</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_002.html#btoc" class="calibre7">Brief Table of Contents</a><br class="calibre4"/></p>
+         <p class="ind"><a href="#toc" class="calibre7">Table of Contents</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_004.html#pref01" class="calibre7">Foreword</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_005.html#pref02" class="calibre7">Preface</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_006.html#pref03" class="calibre7">Acknowledgments</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_007.html#pref04" class="calibre7">About this Book</a><br class="calibre4"/></p>
+         <p class="ind"><a href="kindle_split_008.html#pref05" class="calibre7">About the Cover Illustration</a><br class="calibre4"/></p>
+      </blockquote>
+      <blockquote class="toc">
+         <p class="ind"><a href="kindle_split_009.html#ch01" class="calibre7">Chapter 1. Scala—a blended language</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_009.html#ch01lev1sec1" class="calibre7">1.1. Functional programming meets object orientation</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec1" class="calibre7">1.1.1. Discovering existing functional concepts</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec2" class="calibre7">1.1.2. Examining functional concepts in Google Collections</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_009.html#ch01lev1sec2" class="calibre7">1.2. Static typing and expressiveness</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec3" class="calibre7">1.2.1. Changing sides</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec4" class="calibre7">1.2.2. Type inference</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec5" class="calibre7">1.2.3. Dropping verbose syntax</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec6" class="calibre7">1.2.4. Implicits are an old concept</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec7" class="calibre7">1.2.5. Using Scala’s implicit keyword</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_009.html#ch01lev1sec3" class="calibre7">1.3. Transparently working with the JVM</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec8" class="calibre7">1.3.1. Java in Scala</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec9" class="calibre7">1.3.2. Scala in Java</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_009.html#ch01lev2sec10" class="calibre7">1.3.3. The benefits of a JVM</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_009.html#ch01lev1sec4" class="calibre7">1.4. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_010.html#ch02" class="calibre7">Chapter 2. The core rules</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_010.html#ch02lev1sec1" class="calibre7">2.1. Learn to use the Read Eval Print Loop (REPL)</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec1" class="calibre7">2.1.1. Experiment-driven development</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec2" class="calibre7">2.1.2. Working around eager parsing</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec3" class="calibre7">2.1.3. Inexpressible language features</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_010.html#ch02lev1sec2" class="calibre7">2.2. Think in expressions</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec4" class="calibre7">2.2.1. Don’t use return</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec5" class="calibre7">2.2.2. Mutability</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_010.html#ch02lev1sec3" class="calibre7">2.3. Prefer immutability</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec6" class="calibre7">2.3.1. Object equality</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec7" class="calibre7">2.3.2. Concurrency</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_010.html#ch02lev1sec4" class="calibre7">2.4. Use None instead of null</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec8" class="calibre7">2.4.1. Advanced Option techniques</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_010.html#ch02lev1sec5" class="calibre7">2.5. Polymorphic equality</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec9" class="calibre7">2.5.1. Example: A timeline library</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_010.html#ch02lev2sec10" class="calibre7">2.5.2. Polymorphic equals implementation</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_010.html#ch02lev1sec6" class="calibre7">2.6. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_011.html#ch03" class="calibre7">Chapter 3. Modicum of style—coding conventions</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_011.html#ch03lev1sec1" class="calibre7">3.1. Avoid coding conventions from other languages</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_011.html#ch03lev2sec1" class="calibre7">3.1.1. The block debacle</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_011.html#ch03lev1sec2" class="calibre7">3.2. Dangling operators and parenthetical expressions</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_011.html#ch03lev1sec3" class="calibre7">3.3. Use meaningful variable names</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_011.html#ch03lev2sec2" class="calibre7">3.3.1. Avoid $ in names</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_011.html#ch03lev2sec3" class="calibre7">3.3.2. Working with named and default parameters</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_011.html#ch03lev1sec4" class="calibre7">3.4. Always mark overridden methods</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_011.html#ch03lev1sec5" class="calibre7">3.5. Annotate for expected optimizations</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_011.html#ch03lev2sec4" class="calibre7">3.5.1. Using the tableswitch optimization</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_011.html#ch03lev2sec5" class="calibre7">3.5.2. Using the tail recursion optimization</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_011.html#ch03lev1sec6" class="calibre7">3.6. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_012.html#ch04" class="calibre7">Chapter 4. Utilizing object orientation</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_012.html#ch04lev1sec1" class="calibre7">4.1. Limit code inside an object or trait’s body to initialization logic</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_012.html#ch04lev2sec1" class="calibre7">4.1.1. Delayed construction</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_012.html#ch04lev2sec2" class="calibre7">4.1.2. And then there’s multiple inheritance</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_012.html#ch04lev1sec2" class="calibre7">4.2. Provide empty implementations for abstract methods on traits</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_012.html#ch04lev1sec3" class="calibre7">4.3. Composition can include inheritance</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_012.html#ch04lev2sec3" class="calibre7">4.3.1. Member composition by inheritance</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_012.html#ch04lev2sec4" class="calibre7">4.3.2. Classic constructors with a twist</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_012.html#ch04lev1sec4" class="calibre7">4.4. Promote abstract interface into its own trait</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_012.html#ch04lev2sec5" class="calibre7">4.4.1. Interfaces you can talk to</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_012.html#ch04lev2sec6" class="calibre7">4.4.2. Learning from the past</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_012.html#ch04lev1sec5" class="calibre7">4.5. Provide return types in your public APIs</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_012.html#ch04lev1sec6" class="calibre7">4.6. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_013.html#ch05" class="calibre7">Chapter 5. Using implicits to write expressive code</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_013.html#ch05lev1sec1" class="calibre7">5.1. Introduction to implicits</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_013.html#ch05lev2sec1" class="calibre7">5.1.1. Identifiers: A digression</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_013.html#ch05lev2sec2" class="calibre7">5.1.2. Scope and bindings</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_013.html#ch05lev2sec3" class="calibre7">5.1.3. Implicit resolution</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_013.html#ch05lev1sec2" class="calibre7">5.2. Enhancing existing classes with implicit views</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_013.html#ch05lev1sec3" class="calibre7">5.3. Utilize implicit parameters with defaults</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_013.html#ch05lev1sec4" class="calibre7">5.4. Limiting the scope of implicits</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_013.html#ch05lev2sec4" class="calibre7">5.4.1. Creating implicits for import</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_013.html#ch05lev2sec5" class="calibre7">5.4.2. Implicits without the import tax</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_013.html#ch05lev1sec5" class="calibre7">5.5. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_014.html#ch06" class="calibre7">Chapter 6. The Type System</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_014.html#ch06lev1sec1" class="calibre7">6.1. Types</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_014.html#ch06lev2sec1" class="calibre7">6.1.1. Types and paths</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_014.html#ch06lev2sec2" class="calibre7">6.1.2. The type keyword</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_014.html#ch06lev2sec3" class="calibre7">6.1.3. Structural types</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_014.html#ch06lev1sec2" class="calibre7">6.2. Type constraints</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_014.html#ch06lev1sec3" class="calibre7">6.3. Type parameters and higher-kinded types</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_014.html#ch06lev2sec4" class="calibre7">6.3.1. Type parameter constraints</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_014.html#ch06lev2sec5" class="calibre7">6.3.2. Higher-kinded types</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_014.html#ch06lev1sec4" class="calibre7">6.4. Variance</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_014.html#ch06lev2sec6" class="calibre7">6.4.1. Advanced variance annotations</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_014.html#ch06lev1sec5" class="calibre7">6.5. Existential types</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_014.html#ch06lev2sec7" class="calibre7">6.5.1. The formal syntax of existential types</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_014.html#ch06lev1sec6" class="calibre7">6.6. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_015.html#ch07" class="calibre7">Chapter 7. Using implicits and types together</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_015.html#ch07lev1sec1" class="calibre7">7.1. Context bounds and view bounds</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_015.html#ch07lev2sec1" class="calibre7">7.1.1. When to use implicit type constraints</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_015.html#ch07lev1sec2" class="calibre7">7.2. Capturing types with implicits</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_015.html#ch07lev2sec2" class="calibre7">7.2.1. Manifests</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_015.html#ch07lev2sec3" class="calibre7">7.2.2. Using Manifests</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_015.html#ch07lev2sec4" class="calibre7">7.2.3. Capturing type constraints</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_015.html#ch07lev2sec5" class="calibre7">7.2.4. Specialized methods</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_015.html#ch07lev1sec3" class="calibre7">7.3. Use type classes</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_015.html#ch07lev2sec6" class="calibre7">7.3.1. FileLike as a type class</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_015.html#ch07lev2sec7" class="calibre7">7.3.2. The benefits of type classes</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_015.html#ch07lev1sec4" class="calibre7">7.4. Conditional execution using the type system</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_015.html#ch07lev2sec8" class="calibre7">7.4.1. Heterogeneous typed list</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_015.html#ch07lev2sec9" class="calibre7">7.4.2. IndexedView</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_015.html#ch07lev1sec5" class="calibre7">7.5. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_016.html#ch08" class="calibre7">Chapter 8. Using the right collection</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_016.html#ch08lev1sec1" class="calibre7">8.1. Use the right collection</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec1" class="calibre7">8.1.1. The collection hierarchy</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec2" class="calibre7">8.1.2. Traversable</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec3" class="calibre7">8.1.3. Iterable</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec4" class="calibre7">8.1.4. Seq</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec5" class="calibre7">8.1.5. LinearSeq</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec6" class="calibre7">8.1.6. IndexedSeq</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec7" class="calibre7">8.1.7. Set</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec8" class="calibre7">8.1.8. Map</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_016.html#ch08lev1sec2" class="calibre7">8.2. Immutable collections</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec9" class="calibre7">8.2.1. Vector</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec10" class="calibre7">8.2.2. List</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec11" class="calibre7">8.2.3. Stream</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_016.html#ch08lev1sec3" class="calibre7">8.3. Mutable collections</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec12" class="calibre7">8.3.1. ArrayBuffer</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec13" class="calibre7">8.3.2. Mixin mutation event publishing</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec14" class="calibre7">8.3.3. Mixin synchronization</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_016.html#ch08lev1sec4" class="calibre7">8.4. Changing evaluation with views and parallel collections</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec15" class="calibre7">8.4.1. Views</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec16" class="calibre7">8.4.2. Parallel collections</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_016.html#ch08lev1sec5" class="calibre7">8.5. Writing methods to use with all collection types</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_016.html#ch08lev2sec17" class="calibre7">8.5.1. Optimizing algorithms for each collections type</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_016.html#ch08lev1sec6" class="calibre7">8.6. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_017.html#ch09" class="calibre7">Chapter 9. Actors</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_017.html#ch09lev1sec1" class="calibre7">9.1. Know when to use actors</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_017.html#ch09lev2sec1" class="calibre7">9.1.1. Using actors to search</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_017.html#ch09lev1sec2" class="calibre7">9.2. Use typed, transparent references</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_017.html#ch09lev2sec2" class="calibre7">9.2.1. Scatter-Gather with OutputChannel</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_017.html#ch09lev1sec3" class="calibre7">9.3. Limit failures to zones</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_017.html#ch09lev2sec3" class="calibre7">9.3.1. Scatter-Gather failure zones</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_017.html#ch09lev2sec4" class="calibre7">9.3.2. General failure handling practices</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_017.html#ch09lev1sec4" class="calibre7">9.4. Limit overload using scheduler zones</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_017.html#ch09lev2sec5" class="calibre7">9.4.1. Scheduling zones</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_017.html#ch09lev1sec5" class="calibre7">9.5. Dynamic actor topology</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_017.html#ch09lev1sec6" class="calibre7">9.6. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_018.html#ch10" class="calibre7">Chapter 10. Integrating Scala with Java</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_018.html#ch10lev1sec1" class="calibre7">10.1. The language mismatch between Scala and Java</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_018.html#ch10lev2sec1" class="calibre7">10.1.1. Differences in primitive boxing</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_018.html#ch10lev2sec2" class="calibre7">10.1.2. Differences in visibility</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_018.html#ch10lev2sec3" class="calibre7">10.1.3. Inexpressible language features</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_018.html#ch10lev1sec2" class="calibre7">10.2. Be wary of implicit conversions</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_018.html#ch10lev2sec4" class="calibre7">10.2.1. Object identity and equality</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_018.html#ch10lev2sec5" class="calibre7">10.2.2. Chaining implicits</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_018.html#ch10lev1sec3" class="calibre7">10.3. Be wary of Java serialization</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_018.html#ch10lev2sec6" class="calibre7">10.3.1. Serializing anonymous classes</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_018.html#ch10lev1sec4" class="calibre7">10.4. Annotate your annotations</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_018.html#ch10lev2sec7" class="calibre7">10.4.1. Annotation targets</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_018.html#ch10lev2sec8" class="calibre7">10.4.2. Scala and static fields</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_018.html#ch10lev1sec5" class="calibre7">10.5. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+         <p class="ind"><a href="kindle_split_019.html#ch11" class="calibre7">Chapter 11. Patterns in functional programming</a><br class="calibre4"/></p>
+         <blockquote class="toc">
+            <p class="ind"><a href="kindle_split_019.html#ch11lev1sec1" class="calibre7">11.1. Category theory for computer science</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_019.html#ch11lev1sec2" class="calibre7">11.2. Functors and monads, and how they relate to categories</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_019.html#ch11lev2sec1" class="calibre7">11.2.1. Monads</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_019.html#ch11lev1sec3" class="calibre7">11.3. Currying and applicative style</a><br class="calibre4"/></p>
+            <blockquote class="toc">
+               <p class="ind"><a href="kindle_split_019.html#ch11lev2sec2" class="calibre7">11.3.1. Currying</a><br class="calibre4"/></p>
+               <p class="ind"><a href="kindle_split_019.html#ch11lev2sec3" class="calibre7">11.3.2. Applicative style</a><br class="calibre4"/></p>
+            </blockquote>
+            <p class="ind"><a href="kindle_split_019.html#ch11lev1sec4" class="calibre7">11.4. Monads as workflows</a><br class="calibre4"/></p>
+            <p class="ind"><a href="kindle_split_019.html#ch11lev1sec5" class="calibre7">11.5. Summary</a><br class="calibre4"/></p>
+         </blockquote>
+      </blockquote>
+      <blockquote class="calibre16">
+         <p class="ind"><a href="kindle_split_020.html#MainIndex" class="calibre7">Index</a><br class="calibre4"/></p>
+      </blockquote>
+      <blockquote class="calibre16">
+         <p class="ind"><a href="kindle_split_021.html#lof" class="calibre7">List of Figures</a><br class="calibre4"/></p>
+      </blockquote>
+      <blockquote class="calibre16">
+         <p class="ind"><a href="kindle_split_022.html#lot" class="calibre7">List of Tables</a><br class="calibre4"/></p>
+      </blockquote>
+      <blockquote class="calibre16">
+         <p class="ind"><a href="kindle_split_023.html#loe" class="calibre7">List of Listings</a><br class="calibre4"/></p>
+      </blockquote>
+      <div class="calibre4" id="calibre_pb_3"></div></div>
+
+{% endraw %}
+

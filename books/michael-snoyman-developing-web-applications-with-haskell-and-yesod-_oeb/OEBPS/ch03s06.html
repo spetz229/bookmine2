@@ -1,0 +1,64 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch03s05.html
+next: OEBPS/ch03s07.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Resources and Type-Safe URLs"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect13_d1e1049" class="calibre1"></a>Resources and Type-Safe URLs</h1></div></div></div><p class="calibre7">In our hello world, we defined just a single resource (<code class="literal">HomeR</code>). A web application is usually much more exciting with more than
+            one page on it. Let’s take a look:</p><a id="I_programlisting3_d1e1057" class="firstname"></a><pre class="programlistinghaskell"><code class="cm">{-# LANGUAGE TypeFamilies, QuasiQuotes, MultiParamTypeClasses,</code>
+<code class="cm">             TemplateHaskell, OverloadedStrings #-}</code>
+<code class="kr">import</code> <code class="nn">Yesod</code>
+
+<code class="kr">data</code> <code class="kt">Links</code> <code class="ow">=</code> <code class="kt">Links</code>
+
+<code class="nf">mkYesod</code> <code class="s">"Links"</code> <code class="p">[</code><code class="n">parseRoutes</code><code class="o">|</code>
+<code class="o">/</code> <code class="kt">HomeR</code> <code class="kt">GET</code>
+<code class="o">/</code><code class="n">page1</code> <code class="kt">Page1R</code> <code class="kt">GET</code>
+<code class="o">/</code><code class="n">page2</code> <code class="kt">Page2R</code> <code class="kt">GET</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="kr">instance</code> <code class="kt">Yesod</code> <code class="kt">Links</code>
+
+<code class="nf">getHomeR</code>  <code class="ow">=</code> <code class="n">defaultLayout</code> <code class="p">[</code><code class="n">whamlet</code><code class="o">|&lt;</code><code class="n">a</code> <code class="n">href</code><code class="o">=@</code><code class="p">{</code><code class="kt">Page1R</code><code class="p">}</code><code class="o">&gt;</code><code class="kt">Go</code> <code class="n">to</code> <code class="n">page</code> <code class="mi">1</code><code class="o">!|</code><code class="p">]</code>
+<code class="nf">getPage1R</code> <code class="ow">=</code> <code class="n">defaultLayout</code> <code class="p">[</code><code class="n">whamlet</code><code class="o">|&lt;</code><code class="n">a</code> <code class="n">href</code><code class="o">=@</code><code class="p">{</code><code class="kt">Page2R</code><code class="p">}</code><code class="o">&gt;</code><code class="kt">Go</code> <code class="n">to</code> <code class="n">page</code> <code class="mi">2</code><code class="o">!|</code><code class="p">]</code>
+<code class="nf">getPage2R</code> <code class="ow">=</code> <code class="n">defaultLayout</code> <code class="p">[</code><code class="n">whamlet</code><code class="o">|&lt;</code><code class="n">a</code> <code class="n">href</code><code class="o">=@</code><code class="p">{</code><code class="kt">HomeR</code><code class="p">}</code><code class="o">&gt;</code><code class="kt">Go</code> <code class="n">home</code><code class="o">!|</code><code class="p">]</code>
+
+<code class="nf">main</code> <code class="ow">=</code> <code class="n">warpDebug</code> <code class="mi">3000</code> <code class="kt">Links</code>
+</pre><p class="calibre7">Overall, this is very similar to Hello World. Our foundation is now <code class="literal">Links</code> instead of <code class="literal">HelloWorld</code>, and in addition to the <code class="literal">HomeR</code> resource, we’ve added <code class="literal">Page1R</code> and
+                <code class="literal">Page2R</code>. As such, we’ve also added two more
+            handler functions: <code class="literal">getPage1R</code> and <code class="literal">getPage2R</code>.</p><p class="calibre7">The only truly new feature is inside the <code class="literal">whamlet</code>
+            quasi-quotation. We’ll delve into syntax in the Shakespeare chapter, but we can see
+            that:</p><a id="I_programlisting3_d1e1088" class="firstname"></a><pre class="programlistinghaskell">&lt;a href=@{Page1R}&gt;Go to page 1!</pre><p class="calibre7">creates a link to the <code class="literal">Page1R</code> resource. The important thing to
+            note here is that <code class="literal">Page1R</code> is a data constructor. By making each resource
+            a data constructor, we have a feature called <em class="calibre4">type-safe URLs</em>.
+            Instead of splicing together strings to create URLs, we simply create a plain old
+            Haskell value. By using at-sign interpolation (<code class="literal">@{...}</code>), Yesod
+            automatically renders those values to textual URLs before sending things off to the
+            user. We can see how this is implemented by looking again at the
+                <em class="calibre4">-ddump-splices</em> output:</p><a id="I_programlisting3_d1e1107" class="firstname"></a><pre class="programlistinghaskell"><code class="kr">instance</code> <code class="kt">RenderRoute</code> <code class="kt">Links</code> <code class="kr">where</code>
+    <code class="kr">data</code> <code class="kt">Route</code> <code class="kt">Links</code> <code class="ow">=</code> <code class="kt">HomeR</code> <code class="o">|</code> <code class="kt">Page1R</code> <code class="o">|</code> <code class="kt">Page2R</code>
+      <code class="kr">deriving</code> <code class="p">(</code><code class="kt">Show</code><code class="p">,</code> <code class="kt">Eq</code><code class="p">,</code> <code class="kt">Read</code><code class="p">)</code>
+
+    <code class="n">renderRoute</code> <code class="kt">HomeR</code>  <code class="ow">=</code> <code class="p">(</code><code class="kt">[]</code><code class="p">,</code> <code class="kt">[]</code><code class="p">)</code>
+    <code class="n">renderRoute</code> <code class="kt">Page1R</code> <code class="ow">=</code> <code class="p">([</code><code class="s">"page1"</code><code class="p">],</code> <code class="kt">[]</code><code class="p">)</code>
+    <code class="n">renderRoute</code> <code class="kt">Page2R</code> <code class="ow">=</code> <code class="p">([</code><code class="s">"page2"</code><code class="p">],</code> <code class="kt">[]</code><code class="p">)</code>
+</pre><p class="calibre7">In the <code class="literal">Route</code> associated type for <code class="literal">Links</code>, we have
+            additional constructors for <code class="literal">Page1R</code> and <code class="literal">Page2R</code>. We also
+            now have a better glimpse of the return values for <code class="literal">returnRoute</code>. The
+            first part of the tuple gives the <em class="calibre4">path pieces</em> for the given route. The
+            second part gives the query string parameters; for almost all use cases, this will be an
+            empty list.</p><p class="calibre7">It’s hard to over-estimate the value of type-safe URLs. They give you a huge amount of
+            flexibility and robustness when developing your application. You can move URLs around at
+            will without ever breaking links. In the routing chapter, we’ll see that routes can take
+            parameters, such as a blog entry URL taking the blog post ID.</p><p class="calibre7">Let’s say you want to switch from routing on the numerical post ID to a year/month/slug
+            setup. In a traditional web framework, you would need to go through every single
+            reference to your blog post route and update appropriately. If you miss one, you’ll have
+            404s at runtime. In Yesod, all you do is update your route and compile: GHC will
+            pinpoint every single line of code that needs to be corrected.</p></div></div>
+
+{% endraw %}
+

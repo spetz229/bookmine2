@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:language>en</dc:language>
+    <dc:creator opf:role="aut">Unknown</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:59:35.155665+00:00"/>
+    <dc:title>Interface novie napravlenia v proektirovanii</dc:title>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">ab5e0e29-8556-404a-bbd8-2604db2bb073</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="index-100_1.jpg" id="id2" media-type="image/jpeg"/>
+    <item href="index-100_2.jpg" id="id3" media-type="image/jpeg"/>
+    <item href="index-102_1.jpg" id="id4" media-type="image/jpeg"/>
+    <item href="index-103_1.jpg" id="id5" media-type="image/jpeg"/>
+    <item href="index-104_1.jpg" id="id6" media-type="image/jpeg"/>
+    <item href="index-120_1.jpg" id="id7" media-type="image/jpeg"/>
+    <item href="index-121_1.jpg" id="id8" media-type="image/jpeg"/>
+    <item href="index-121_2.jpg" id="id9" media-type="image/jpeg"/>
+    <item href="index-121_3.jpg" id="id10" media-type="image/jpeg"/>
+    <item href="index-122_1.jpg" id="id11" media-type="image/jpeg"/>
+    <item href="index-122_2.jpg" id="id12" media-type="image/jpeg"/>
+    <item href="index-123_1.jpg" id="id13" media-type="image/jpeg"/>
+    <item href="index-123_2.jpg" id="id14" media-type="image/jpeg"/>
+    <item href="index-124_1.jpg" id="id15" media-type="image/jpeg"/>
+    <item href="index-126_1.jpg" id="id16" media-type="image/jpeg"/>
+    <item href="index-129_1.jpg" id="id17" media-type="image/jpeg"/>
+    <item href="index-135_1.jpg" id="id18" media-type="image/jpeg"/>
+    <item href="index-148_1.jpg" id="id19" media-type="image/jpeg"/>
+    <item href="index-149_1.jpg" id="id20" media-type="image/jpeg"/>
+    <item href="index-149_2.jpg" id="id21" media-type="image/jpeg"/>
+    <item href="index-15_1.png" id="id22" media-type="image/png"/>
+    <item href="index-1_1.jpg" id="id23" media-type="image/jpeg"/>
+    <item href="index-26_1.jpg" id="id24" media-type="image/jpeg"/>
+    <item href="index-2_1.jpg" id="id25" media-type="image/jpeg"/>
+    <item href="index-31_1.jpg" id="id26" media-type="image/jpeg"/>
+    <item href="index-32_1.png" id="id27" media-type="image/png"/>
+    <item href="index-32_2.png" id="id28" media-type="image/png"/>
+    <item href="index-35_1.jpg" id="id29" media-type="image/jpeg"/>
+    <item href="index-36_1.jpg" id="id30" media-type="image/jpeg"/>
+    <item href="index-42_1.jpg" id="id31" media-type="image/jpeg"/>
+    <item href="index-43_1.jpg" id="id32" media-type="image/jpeg"/>
+    <item href="index-43_2.jpg" id="id33" media-type="image/jpeg"/>
+    <item href="index-43_3.jpg" id="id34" media-type="image/jpeg"/>
+    <item href="index-45_1.jpg" id="id35" media-type="image/jpeg"/>
+    <item href="index-46_1.jpg" id="id36" media-type="image/jpeg"/>
+    <item href="index-46_2.jpg" id="id37" media-type="image/jpeg"/>
+    <item href="index-58_1.jpg" id="id38" media-type="image/jpeg"/>
+    <item href="index-60_1.jpg" id="id39" media-type="image/jpeg"/>
+    <item href="index-63_1.jpg" id="id40" media-type="image/jpeg"/>
+    <item href="index-64_1.jpg" id="id41" media-type="image/jpeg"/>
+    <item href="index-67_1.jpg" id="id42" media-type="image/jpeg"/>
+    <item href="index-6_1.jpg" id="id43" media-type="image/jpeg"/>
+    <item href="index-72_1.jpg" id="id44" media-type="image/jpeg"/>
+    <item href="index-73_1.jpg" id="id45" media-type="image/jpeg"/>
+    <item href="index-74_1.jpg" id="id46" media-type="image/jpeg"/>
+    <item href="index-74_2.jpg" id="id47" media-type="image/jpeg"/>
+    <item href="index-83_1.jpg" id="id48" media-type="image/jpeg"/>
+    <item href="index-89_1.jpg" id="id49" media-type="image/jpeg"/>
+    <item href="index-95_1.jpg" id="id50" media-type="image/jpeg"/>
+    <item href="index-98_1.jpg" id="id51" media-type="image/jpeg"/>
+    <item href="index.html" id="id1" media-type="application/xhtml+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id1"/>
+  </spine>
+  <guide/>
+</package>

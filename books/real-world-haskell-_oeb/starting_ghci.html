@@ -1,0 +1,147 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: starting_ghc.html
+next: starting_calc.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="starting_ghc.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="starting_calc.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="starting_ghci" class="calibre27" id="starting_ghci"></a><h3 id="title-IDAR1AG" class="docSection1Title">1.2. Getting Started with ghci, the Interpreter</h3><a name="x_L1" class="calibre27" id="x_L1"></a><p class="docText">The interactive interpreter for <span class="docMonofont">GHC</span> is a program named <i class="docEmphasis">ghci</i>. It lets us enter and evaluate Haskell
+    expressions, explore modules, and debug our code. If you are familiar with
+    Python<a name="I_indexterm1_d1e1076" class="calibre27" id="I_indexterm1_d1e1076"></a><a name="I_indexterm1_d1e1079" class="calibre27" id="I_indexterm1_d1e1079"></a> or Ruby, <i class="docEmphasis">ghci</i> is
+    somewhat similar to <i class="docEmphasis">python</i> and <i class="docEmphasis">irb</i>,
+    the interactive Python and Ruby interpreters.</p><a name="starting_ghcid1e1120" class="calibre27" id="starting_ghcid1e1120"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_UM" class="calibre27" id="x_UM"></a></p><p class="docText">We typically cannot copy some code out of a Haskell
+      source file and paste it into <i class="docEmphasis">ghci</i>.
+      This does not have a significant effect on debugging pieces of code, but
+      it can initially be surprising if you are used to, say, the interactive
+      Python interpreter.</p></div><a name="x_VM" class="calibre27" id="x_VM"></a><p class="docText">On Unix-like systems, we run <i class="docEmphasis">ghci</i> as a command in a shell window. On Windows,
+    it's available via the Start menu. For example, if you install the program
+    using the <span class="docMonofont">GHC</span> installer on
+    Windows XP, you should go to All Programs, then GHC; you will see <i class="docEmphasis">ghci</i> in the list. (See <a class="docLink" href="I_sect1_d1e52828.html#install_win">Section A.1.1</a> for a screenshot.)</p><a name="x_M1" class="calibre27" id="x_M1"></a><p class="docText">When we run <i class="docEmphasis">ghci</i>, it
+    displays a startup banner, followed by a Prelude&gt; prompt. Here, we're showing version
+    6.8.3 on a Linux box:</p><pre class="calibre39">$<b class="calibre40">ghci</b>
+GHCi, version 6.8.3: http://www.haskell.org/ghc/  :? for help
+Loading package base ... linking ... done.
+Prelude&gt;</pre><a name="x_uK" class="calibre27" id="x_uK"></a><p class="docText">The word <tt class="calibre34">Prelude</tt> in the prompt indicates that
+    <i class="docEmphasis">Prelude</i>, a standard library of useful
+    functions, is loaded and ready to use. When we load other modules or
+    source files, they will show up in the prompt, too.</p><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><p class="docNormalTitle">Getting help</p><a name="x_ml" class="calibre27" id="x_ml"></a><p class="docText">If you enter <tt class="calibre34">:?</tt> at <a name="I_indexterm1_d1e1148" class="calibre27" id="I_indexterm1_d1e1148"></a><a name="I_indexterm1_d1e1151" class="calibre27" id="I_indexterm1_d1e1151"></a>the <i class="docEmphasis">ghci</i> prompt, it
+      will print a long help message.</p></td></tr></table></td></tr></table></p><br class="calibre48"/><a name="x_o1" class="calibre27" id="x_o1"></a><p class="docText">The <i class="docEmphasis">Prelude</i>
+    module<a name="I_indexterm1_d1e1163" class="calibre27" id="I_indexterm1_d1e1163"></a><a name="I_indexterm1_d1e1166" class="calibre27" id="I_indexterm1_d1e1166"></a>is sometimes referred to as "the standard
+    prelude" because its contents are defined by the Haskell 98
+    standard. Usually, it's simply shortened to "the
+    prelude."</p><a name="starting_ghcid1e1200" class="calibre27" id="starting_ghcid1e1200"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_N1" class="calibre27" id="x_N1"></a></p><p class="docText">The prompt displayed by <i class="docEmphasis">ghci</i> changes frequently depending on what
+      modules we have loaded. It can often grow long enough to leave little
+      visual room on a single line for our input.</p><a name="x_WM" class="calibre27" id="x_WM"></a><p class="docText">For brevity and consistency, we replaced <i class="docEmphasis">ghci</i>'s default prompts throughout this book
+      with the prompt string ghci&gt;.</p><a name="x_nl" class="calibre27" id="x_nl"></a><p class="docText">If you want to do this youself,<a name="I_indexterm1_d1e1193" class="calibre27" id="I_indexterm1_d1e1193"></a><a name="I_indexterm1_d1e1196" class="calibre27" id="I_indexterm1_d1e1196"></a> use <i class="docEmphasis">ghci</i>'s <tt class="calibre34">:set
+      prompt</tt> directive, as <span class="docEmphasis">follows</span>:</p><pre class="calibre39">          Prelude&gt;
+          <b class="calibre40">:set prompt "ghci&gt; "</b>
+          ghci&gt;</pre></div><a name="x_p1" class="calibre27" id="x_p1"></a><p class="docText">The <tt class="calibre34">Prelude</tt> is always implicitly
+    available; we don't need to take any actions to use the types, values, or
+    functions it defines. To use definitions from other modules, we must load
+    them into <i class="docEmphasis">ghci</i>, using<a name="I_indexterm1_d1e1226" class="calibre27" id="I_indexterm1_d1e1226"></a> the <i class="docEmphasis">:module</i>
+    command:</p><pre class="calibre39">        ghci&gt; 
+        <b class="calibre40">:module + Data.Ratio</b></pre><a name="x_tA1" class="calibre27" id="x_tA1"></a><p class="docText">We can now use the functionality of the
+    <tt class="calibre34">Data.Ratio</tt> module,<a name="I_indexterm1_d1e1245" class="calibre27" id="I_indexterm1_d1e1245"></a> which lets us work with rational numbers
+    (fractions).</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="starting_ghc.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="starting_calc.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

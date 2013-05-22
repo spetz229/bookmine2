@@ -1,0 +1,282 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: monads_do.html
+next: monads_state_split_001.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="monads_do.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect114_d1e33514.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="monads_state" class="calibre27" id="monads_state"></a><h3 id="title-IDARI4SI" class="docSection1Title">14.13. The State Monad</h3><a name="x_NZ" class="calibre27" id="x_NZ"></a><p class="docText">We discovered<a name="ch14-statemonads" class="calibre27" id="ch14-statemonads"></a><a name="ch14-monstate" class="calibre27" id="ch14-monstate"></a> earlier in this chapter that Parse from <a class="docLink" href="binary_split_000.html#binary">Chapter 10</a> was a monad. It has two logically distinct aspects.
+    One is the idea of a parse failing and providing a message with the
+    details (we represented this using the Either type). The
+    other involves carrying around a piece of implicit state, in our case, the
+    partially consumed ByteString.</p><a name="x_OZ" class="calibre27" id="x_OZ"></a><p class="docText">This need for a way to read and write state is common
+    enough in Haskell programs that the standard libraries provide a monad
+    named State that is dedicated to this purpose. This monad
+    lives in the <tt class="calibre34">Control.Monad.State</tt> module.</p><a name="x_PZ" class="calibre27" id="x_PZ"></a><p class="docText">Where our Parse type carried around a
+    ByteString as its piece of state, the State
+    monad can carry any type of state. We'll refer to the state's unknown type
+    as <span class="docMonofont">s</span>.</p><a name="x_QZ" class="calibre27" id="x_QZ"></a><p class="docText">What's an obvious and general thing we might want to do
+    with a state? Given a state value, we inspect it, and then produce a
+    result and a new state value. Let's say the result can be of any type
+    <span class="docMonofont">a</span>. A type signature that captures this idea
+    is s -&gt; (a, s). Take a state <span class="docMonofont">s</span>, do something with it, and return a result
+    <span class="docMonofont">a</span> and possibly a new state <span class="docMonofont">s</span>.</p><a name="monads_stated1e33209" class="calibre27" id="monads_stated1e33209"></a><h4 id="title-IDAZK4SI" class="docSection1Title">14.13.1. Almost a State Monad</h4><a name="x_RZ" class="calibre27" id="x_RZ"></a><p class="docText"><a name="I_indexterm14_d1e32878" class="calibre27" id="I_indexterm14_d1e32878"></a>Let's develop some simple code that's
+      <span class="docEmphasis">almost</span> the State monad, and then take
+      a look at the real thing. We'll start with our type definition, which
+      has exactly the obvious type that we just described:</p><pre class="calibre39">-- file: ch14/SimpleState.hs
+type SimpleState s a = s -&gt; (a, s)</pre><br class="calibre48"/>
+<a name="x_kG1" class="calibre27" id="x_kG1"></a><p class="docText">Our monad is a function that transforms one state into
+      another, yielding a result when it does so. Because of this, the
+      <tt class="calibre34">State</tt> monad is sometimes called the state transformer
+      monad.</p><a name="x_SZ" class="calibre27" id="x_SZ"></a><p class="docText">Yes, this is a type synonym, not a new type, and so
+      we're cheating a little. Bear with us for now; this simplifies the
+      description that follows.</p><a name="x_TZ" class="calibre27" id="x_TZ"></a><p class="docText">Earlier in this chapter, we said that a monad has
+      a<a name="I_indexterm14_d1e32901" class="calibre27" id="I_indexterm14_d1e32901"></a> type constructor with a single type variable, and yet
+      here we have a type with two parameters. The key is to understand that
+      we can partially apply a <span class="docEmphasis">type</span> just as we can
+      partially apply a normal function. This is easiest to follow with an
+      example:</p><pre class="calibre39">-- file: ch14/SimpleState.hs
+type StringState a = SimpleState String a</pre><br class="calibre48"/>
+<a name="x_UZ" class="calibre27" id="x_UZ"></a><p class="docText">Here, we've bound the type variable <span class="docMonofont">s</span> to String. The type
+      StringState still has a type parameter <span class="docMonofont">a</span>, though. It's now more obvious that we have a
+      suitable type constructor for a monad. In other words, our monad's type
+      constructor is SimpleState s, not SimpleState
+      alone.</p><a name="x_VZ" class="calibre27" id="x_VZ"></a><p class="docText">The next ingredient we need to make a monad is a
+      definition for the <tt class="calibre34">return</tt>
+      function:</p><pre class="calibre39">-- file: ch14/SimpleState.hs
+returnSt :: a -&gt; SimpleState s a
+returnSt a = \s -&gt; (a, s)</pre><br class="calibre48"/>
+<a name="x_WZ" class="calibre27" id="x_WZ"></a><p class="docText">All this does is take the result and the current state
+      and "tuple them up." You may now be used to the idea that a Haskell
+      function with multiple parameters is just a chain of single-parameter
+      functions, but just in case you're not, here's a more familiar way of
+      writing <i class="docEmphasis">returnSt</i> that makes it more
+      obvious how simple this function is:</p><pre class="calibre39">-- file: ch14/SimpleState.hs
+returnAlt :: a -&gt; SimpleState s a
+returnAlt a s = (a, s)</pre><br class="calibre48"/>
+<a name="x_XZ" class="calibre27" id="x_XZ"></a><p class="docText">Our final piece of the monadic puzzle is a definition
+      for <i class="docEmphasis">(&gt;&gt;=)</i>. Here<a name="I_indexterm14_d1e32953" class="calibre27" id="I_indexterm14_d1e32953"></a> it is, using the actual variable names from the standard
+      library's definition of <i class="docEmphasis">(&gt;&gt;=)</i>
+      for State:</p><pre class="calibre39">-- file: ch14/SimpleState.hs
+bindSt :: (SimpleState s a) -&gt; (a -&gt; SimpleState s b) -&gt; SimpleState s b
+bindSt m k = \s -&gt; let (a, s') = m s
+                   in (k a) s'</pre><br class="calibre48"/>
+<a name="x_YZ" class="calibre27" id="x_YZ"></a><p class="docText">Those single-letter variable names aren't exactly a boon
+      to readability, so let's see if we can substitute some more meaningful
+      names:</p><pre class="calibre39">-- file: ch14/SimpleState.hs
+-- m == step
+-- k == makeStep
+-- s == oldState
+
+bindAlt step makeStep oldState =
+    let (result, newState) = step oldState
+    in  (makeStep result) newState</pre><br class="calibre48"/>
+<a name="x_ZZ" class="calibre27" id="x_ZZ"></a><p class="docText">To understand this definition, remember that
+      <span class="docMonofont">step</span> is a function with the type s -&gt; (a,
+      s). When we evaluate this, we get a tuple, which we have to use
+      to return a new function of type s -&gt; (a, s). This is
+      perhaps easier to follow if we get rid of the SimpleState
+      type synonyms from <i class="docEmphasis">bindAlt</i>'s type
+      signature, and then examine the types of its parameters and
+      result:</p><pre class="calibre39">-- file: ch14/SimpleState.hs
+bindAlt :: (s -&gt; (a, s))        -- step
+        -&gt; (a -&gt; s -&gt; (b, s))   -- makeStep
+        -&gt; (s -&gt; (b, s))        -- (makeStep result) newState</pre><br class="calibre48"/>
+<a name="monads_stated1e33325" class="calibre27" id="monads_stated1e33325"></a><h4 id="title-IDAAP4SI" class="docSection1Title">14.13.2. Reading and Modifying the State</h4><a name="x_aZ" class="calibre27" id="x_aZ"></a><p class="docText">The definitions of <i class="docEmphasis">(&gt;&gt;=)</i> and <tt class="calibre34">return</tt> for<a name="I_indexterm14_d1e33001" class="calibre27" id="I_indexterm14_d1e33001"></a><a name="I_indexterm14_d1e33008" class="calibre27" id="I_indexterm14_d1e33008"></a> the <tt class="calibre34">State</tt> monad simply act as plumbing: they
+      move a piece of state around, but they don't touch it in any way. We
+      need a few other simple functions to actually do useful work with the
+      state:</p><pre class="calibre39">-- file: ch14/SimpleState.hs
+getSt :: SimpleState s s
+getSt = \s -&gt; (s, s)
+
+putSt :: s -&gt; SimpleState s ()
+putSt s = \_ -&gt; ((), s)</pre><br class="calibre48"/>
+<a name="x_bZ" class="calibre27" id="x_bZ"></a><p class="docText">The <i class="docEmphasis">getSt</i> function
+      simply takes the current state and returns it as the result, while
+      <i class="docEmphasis">putSt</i> ignores<a name="I_indexterm14_d1e33029" class="calibre27" id="I_indexterm14_d1e33029"></a><a name="I_indexterm14_d1e33032" class="calibre27" id="I_indexterm14_d1e33032"></a> the current state and replaces it with a new one.</p><a name="monads_stated1e33371" class="calibre27" id="monads_stated1e33371"></a><h4 id="title-IDAZQ4SI" class="docSection1Title">14.13.3. Will the Real State Monad Please Stand Up?</h4><a name="x_cZ" class="calibre27" id="x_cZ"></a><p class="docText">The only simplifying trick we played in the previous
+      section was to use a type synonym instead of a type definition for
+      SimpleState. If we had introduced a <tt class="calibre34">newtype</tt>
+      wrapper at the same time, the extra wrapping and unwrapping would have
+      made our code harder to follow.</p><a name="x_lG1" class="calibre27" id="x_lG1"></a><p class="docText">In order to define a <tt class="calibre34">Monad</tt> instance, we
+      have to provide a proper type constructor as well as definitions for
+      <i class="docEmphasis">(&gt;&gt;=)</i> and <tt class="calibre34">return</tt>. This leads us to the
+      <span class="docEmphasis">real</span> definition of State:</p><pre class="calibre39">-- file: ch14/State.hs
+newtype State s a = State {
+      runState :: s -&gt; (a, s)
+    }</pre><br class="calibre48"/>
+<a name="x_dZ" class="calibre27" id="x_dZ"></a><p class="docText">All we've done is wrap our s -&gt; (a, s)
+      type in a <tt class="calibre34">State</tt> constructor. We're automatically given a
+      <i class="docEmphasis">runState</i> function that will unwrap
+      a State value from its constructor when we use Haskell's
+      record syntax to define the type. The type of <i class="docEmphasis">runState</i> is State s a -&gt; s -&gt; (a,
+      s).</p><a name="x_eZ" class="calibre27" id="x_eZ"></a><p class="docText">The definition of <tt class="calibre34">return</tt> is almost the same as for
+      SimpleState, except we wrap our function with a
+      <tt class="calibre34">State</tt> constructor:</p><pre class="calibre39">-- file: ch14/State.hs
+returnState :: a -&gt; State s a
+returnState a = State $ \s -&gt; (a, s)</pre><br class="calibre48"/>
+<a name="x_fZ" class="calibre27" id="x_fZ"></a><p class="docText">The definition of <i class="docEmphasis">(&gt;&gt;=)</i> is a little more complicated,
+      because it has to use <i class="docEmphasis">runState</i> to
+      remove the <tt class="calibre34">State</tt> wrappers:</p><pre class="calibre39">-- file: ch14/State.hs
+bindState :: State s a -&gt; (a -&gt; State s b) -&gt; State s b
+bindState m k = State $ \s -&gt; let (a, s') = runState m s
+                              in runState (k a) s'</pre><br class="calibre48"/>
+<a name="x_gZ" class="calibre27" id="x_gZ"></a><p class="docText">This function differs from our earlier <i class="docEmphasis">bindSt</i> only in adding the wrapping and
+      unwrapping of a few values. By separating the "real work"
+      from the bookkeeping, we've hopefully made it clearer what's really
+      happening.</p><a name="x_hZ" class="calibre27" id="x_hZ"></a><p class="docText">We modify the functions for reading and modifying the
+      state in the same way, by adding a little wrapping:</p><pre class="calibre39">-- file: ch14/State.hs
+get :: State s s
+get = State $ \s -&gt; (s, s)
+
+put :: s -&gt; State s ()
+put s = State $ \_ -&gt; ((), s)</pre><br class="calibre48"/>
+<a name="monads_state_random" class="calibre27" id="monads_state_random"></a><h4 id="title-IDA2T4SI" class="docSection1Title">14.13.4. Using the State Monad: Generating Random Values</h4><a name="x_iZ" class="calibre27" id="x_iZ"></a><p class="docText">We've already<a name="I_indexterm14_d1e33131" class="calibre27" id="I_indexterm14_d1e33131"></a><a name="I_indexterm14_d1e33134" class="calibre27" id="I_indexterm14_d1e33134"></a><a name="I_indexterm14_d1e33139" class="calibre27" id="I_indexterm14_d1e33139"></a> used Parse, our precursor to the
+      <tt class="calibre34">State</tt> monad, to parse binary data. In that case, we wired
+      the type of the state we were manipulating directly into the
+      Parse type.</p><a name="x_mG1" class="calibre27" id="x_mG1"></a><p class="docText">The State monad, by contrast, accepts any
+      type of state as a parameter. We supply the type of the state to give,
+      for example, State ByteString.</p><a name="x_jZ" class="calibre27" id="x_jZ"></a><p class="docText">The <tt class="calibre34">State</tt> monad will probably feel more
+      familiar to you than many other monads if you have a background in
+      imperative languages. After all, imperative languages are all about
+      carrying around some implicit state, reading some parts, and modifying
+      others through assignment, which is just what the <tt class="calibre34">State</tt>
+      monad is for.</p><a name="x_kZ" class="calibre27" id="x_kZ"></a><p class="docText">So instead of unnecessarily cheerleading for the idea of
+      using the <tt class="calibre34">State</tt> monad, we'll begin by demonstrating how to
+      use it for something <a name="I_indexterm14_d1e33177" class="calibre27" id="I_indexterm14_d1e33177"></a>simple: <span class="docEmphasis">pseudorandom value
+      generation</span>. In an imperative language, there's usually an
+      easily available source of uniformly distributed pseudorandom numbers.
+      For example, in C, there's a standard <i class="docEmphasis">rand</i> function that generates a pseudorandom
+      number, using a global state that it <span class="docEmphasis">updates</span>.</p><a name="x_lZ" class="calibre27" id="x_lZ"></a><p class="docText">Haskell's standard random value generation module is
+      <a name="I_indexterm14_d1e33192" class="calibre27" id="I_indexterm14_d1e33192"></a>named <tt class="calibre34">System.Random</tt>. It allows the generation
+      of random values of any type, not just numbers. The module contains
+      several handy functions that live in the IO
+      monad.<a name="I_indexterm14_d1e33202" class="calibre27" id="I_indexterm14_d1e33202"></a> For example, a rough equivalent of C's <i class="docEmphasis">rand</i> function would be the following:</p><pre class="calibre39">-- file: ch14/Random.hs
+import System.Random
+
+rand :: IO Int
+rand = getStdRandom (randomR (0, maxBound))</pre><br class="calibre48"/>
+<a name="x_mZ" class="calibre27" id="x_mZ"></a><p class="docText">(The <i class="docEmphasis">randomR</i>
+      function<a name="I_indexterm14_d1e33218" class="calibre27" id="I_indexterm14_d1e33218"></a> takes an inclusive range within which the generated
+      random value should lie.)</p><a name="x_nZ" class="calibre27" id="x_nZ"></a><p class="docText">The <tt class="calibre34">System.Random</tt> module provides a
+      typeclass, <tt class="calibre34">RandomGen</tt>, that lets us define new sources of
+      random Int values. The type StdGen is the
+      standard <tt class="calibre34">RandomGen</tt> instance. It generates pseudorandom
+      values. If we had an external source of truly random data, we could make
+      it an instance of <tt class="calibre34">RandomGen</tt> and get truly random, instead
+      of merely <span class="docEmphasis">pseudorandom</span>,
+      values.</p><a name="x_oZ" class="calibre27" id="x_oZ"></a><p class="docText">Another typeclass, <tt class="calibre34">Random</tt>, indicates how to
+      generate random values of a particular type. The module defines
+      <tt class="calibre34">Random</tt> instances for all of the usual simple types.</p><a name="x_pZ" class="calibre27" id="x_pZ"></a><p class="docText">Incidentally, the definition of <i class="docEmphasis">rand</i> here reads and modifies a built-in
+      global random generator that inhabits the IO monad.</p><a name="monads_stated1e33597" class="calibre27" id="monads_stated1e33597"></a><h4 id="title-IDAHY4SI" class="docSection1Title">14.13.5. A First Attempt at Purity</h4><a name="x_qZ" class="calibre27" id="x_qZ"></a><p class="docText">After all of our emphasis<a name="I_indexterm14_d1e33267" class="calibre27" id="I_indexterm14_d1e33267"></a> so far on avoiding the IO monad wherever
+      possible, it would be a shame if we were dragged back into it just to
+      generate some random values. Indeed, <tt class="calibre34">System.Random</tt> contains
+      pure random number generation functions.</p><a name="x_rZ" class="calibre27" id="x_rZ"></a><p class="docText">The traditional downside of purity is that we have to
+      get or create a random number generator, and then ship it from the point
+      we created it to the place where it's needed. When we finally call it,
+      it returns a <span class="docEmphasis">new</span> random number generator—we're in
+      pure code, remember, so we can't modify the state of the existing
+      generator.</p><a name="x_sZ" class="calibre27" id="x_sZ"></a><p class="docText">If we forget about immutability and reuse the same
+      generator within a function, we get back exactly the same
+      "random" number every time:</p><pre class="calibre39">-- file: ch14/Random.hs
+twoBadRandoms :: RandomGen g =&gt; g -&gt; (Int, Int)
+twoBadRandoms gen = (fst $ random gen, fst $ random gen)</pre><br class="calibre48"/>
+<a name="x_tZ" class="calibre27" id="x_tZ"></a><p class="docText">Needless to say, this has unpleasant
+      consequences:</p><pre class="calibre39">ghci&gt; <b class="calibre40">twoBadRandoms `fmap` getStdGen</b>
+Loading package old-locale-1.0.0.0 ... linking ... done.
+Loading package old-time-1.0.0.0 ... linking ... done.
+Loading package random-1.0.0.0 ... linking ... done.
+Loading package mtl-1.1.0.1 ... linking ... done.
+(639600350314210417,639600350314210417)
+</pre><a name="x_uZ" class="calibre27" id="x_uZ"></a><p class="docText">The <i class="docEmphasis">random</i> function
+      uses an implicit range instead of the user-supplied range employed by
+      <i class="docEmphasis">randomR</i>. The <i class="docEmphasis">getStdGen</i> function retrieves the current
+      value of the global standard number generator from the IO
+      monad.</p><a name="x_vZ" class="calibre27" id="x_vZ"></a><p class="docText">Unfortunately, correctly passing around and using
+      successive versions of the generator does not make for palatable
+      reading. Here's a simple example:</p><pre class="calibre39">-- file: ch14/Random.hs
+twoGoodRandoms :: RandomGen g =&gt; g -&gt; ((Int, Int), g)
+twoGoodRandoms gen = let (a, gen') = random gen
+                         (b, gen'') = random gen'
+                     in ((a, b), gen'')</pre><br class="calibre48"/>
+<a name="x_wZ" class="calibre27" id="x_wZ"></a><p class="docText">Now that we know about the <tt class="calibre34">State</tt> monad,
+      though, it looks like a fine candidate to hide the generator. The
+      <tt class="calibre34">State</tt> monad lets us manage our mutable state tidily, while
+      guaranteeing that our code will be free of other unexpected side
+      effects, such as modifying files or making network connections. This
+      makes it easier to reason about the behavior of our code.</p><a name="monads_stated1e33660" class="calibre27" id="monads_stated1e33660"></a><h4 id="title-IDAQ04SI" class="docSection1Title">14.13.6. Random Values in the State Monad</h4><a name="x_xZ" class="calibre27" id="x_xZ"></a><p class="docText">Here's <a name="I_indexterm14_d1e33330" class="calibre27" id="I_indexterm14_d1e33330"></a>a <tt class="calibre34">State</tt> monad that carries around a
+      StdGen as its piece of state:</p><pre class="calibre39">-- file: ch14/Random.hs
+type RandomState a = State StdGen a</pre><br class="calibre48"/>
+<a name="x_yZ" class="calibre27" id="x_yZ"></a><p class="docText">The type synonym is, of course, not necessary, but it's
+      handy. It saves a little keyboarding, and if we want to swap another
+      random generator for StdGen, it would reduce the number of
+      type signatures we'd need to change.</p><a name="x_zZ" class="calibre27" id="x_zZ"></a><p class="docText">Generating a random value is now a matter of fetching
+      the current generator, using it, then modifying the state to replace it
+      with the new generator:</p><pre class="calibre39">-- file: ch14/Random.hs
+getRandom :: Random a =&gt; RandomState a
+getRandom =
+  get &gt;&gt;= \gen -&gt;
+  let (val, gen') = random gen in
+  put gen' &gt;&gt;
+  return val</pre><br class="calibre48"/>
+<a name="x_Aa" class="calibre27" id="x_Aa"></a><p class="docText">We can now use some of the monadic machinery that we saw
+      earlier to write a much more concise function for giving us a pair of
+      random numbers:</p><pre class="calibre39">-- file: ch14/Random.hs
+getTwoRandoms :: Random a =&gt; RandomState (a, a)
+getTwoRandoms = liftM2 (,) getRandom getRandom</pre><br class="calibre48"/>
+<a name="I_sidebar14_d1e33358" class="calibre27" id="I_sidebar14_d1e33358"></a></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

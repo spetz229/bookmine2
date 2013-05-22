@@ -1,0 +1,19 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch01s04.html
+next: OEBPS/ch01s06.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="A Solid Foundation"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e373" class="calibre1"></a>A Solid Foundation</h1></div></div></div><p class="calibre7">I remember once seeing a PHP framework advertising support for UTF-8. This struck me as
+      surprising: you mean having UTF-8 support isn’t automatic? In the Haskell world, issues like
+      character encoding are already well addressed and fully supported. In fact, we usually have
+      the opposite problem: there are a number of packages providing powerful and well-designed
+      support for the problem. The Haskell community is constantly pushing the boundaries finding
+      the cleanest, most efficient solutions for each challenge.</p><p class="calibre7">The downside of such a powerful ecosystem is the complexity of choice. By using Yesod, you will already have most of the tools chosen for you, and you can be guaranteed they work together. Of course, you always have the option of pulling in your own solution.</p><p class="calibre7">As a real-life example, Yesod and Hamlet (the default templating language) use <code class="function">blaze-builder</code> for textual content generation. This choice was made because blaze provides the fastest interface for generating UTF-8 data. Anyone who wants to use one of the other great libraries out there, such as <code class="function">text</code>, should have no problem dropping it in.</p></div></div>
+
+{% endraw %}
+

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="6ef7d1e2-f4eb-4998-9614-298c28ef6f5c" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Structure and Interpretation of Computer Programs</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Unnamed</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos12122"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Unnamed</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos24646"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Unnamed</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos37229"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Unnamed</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos42017"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Unnamed</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos50284"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Chapter 1</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos58748"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="7">
+      <navLabel>
+        <text>Chapter 2</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos309813"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="8">
+      <navLabel>
+        <text>Chapter 3</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos719831"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_9" playOrder="9">
+      <navLabel>
+        <text>Chapter 4</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos1134035"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_10" playOrder="10">
+      <navLabel>
+        <text>Chapter 5</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos1539197"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_11" playOrder="11">
+      <navLabel>
+        <text>Unnamed</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos1903925"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="12">
+      <navLabel>
+        <text>Unnamed</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos1924792"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_13" playOrder="13">
+      <navLabel>
+        <text>Unnamed</text>
+      </navLabel>
+      <content src="Structure_and_Interpretation_of.html#filepos1938568"/>
+    </navPoint>
+  </navMap>
+</ncx>

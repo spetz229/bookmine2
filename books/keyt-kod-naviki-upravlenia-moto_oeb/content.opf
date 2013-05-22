@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">User</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T22:00:00.793960+00:00"/>
+    <dc:title>Содержание</dc:title>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">237b37bd-996b-4c48-bee0-8bbd0c713889</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="index-12_1.png" id="id2" media-type="image/png"/>
+    <item href="index-13_1.png" id="id3" media-type="image/png"/>
+    <item href="index-14_1.png" id="id4" media-type="image/png"/>
+    <item href="index-18_1.png" id="id5" media-type="image/png"/>
+    <item href="index-1_1.jpg" id="id6" media-type="image/jpeg"/>
+    <item href="index-22_1.png" id="id7" media-type="image/png"/>
+    <item href="index-22_2.png" id="id8" media-type="image/png"/>
+    <item href="index-24_1.png" id="id9" media-type="image/png"/>
+    <item href="index-24_2.png" id="id10" media-type="image/png"/>
+    <item href="index-25_1.png" id="id11" media-type="image/png"/>
+    <item href="index-27_1.png" id="id12" media-type="image/png"/>
+    <item href="index-29_1.png" id="id13" media-type="image/png"/>
+    <item href="index-30_1.png" id="id14" media-type="image/png"/>
+    <item href="index-32_1.png" id="id15" media-type="image/png"/>
+    <item href="index-33_1.png" id="id16" media-type="image/png"/>
+    <item href="index-33_2.png" id="id17" media-type="image/png"/>
+    <item href="index-34_1.png" id="id18" media-type="image/png"/>
+    <item href="index-35_1.png" id="id19" media-type="image/png"/>
+    <item href="index-36_1.png" id="id20" media-type="image/png"/>
+    <item href="index-38_1.png" id="id21" media-type="image/png"/>
+    <item href="index-39_1.png" id="id22" media-type="image/png"/>
+    <item href="index-39_2.png" id="id23" media-type="image/png"/>
+    <item href="index-39_3.png" id="id24" media-type="image/png"/>
+    <item href="index-3_1.jpg" id="id25" media-type="image/jpeg"/>
+    <item href="index-3_2.png" id="id26" media-type="image/png"/>
+    <item href="index-40_1.png" id="id27" media-type="image/png"/>
+    <item href="index-41_1.png" id="id28" media-type="image/png"/>
+    <item href="index-44_1.png" id="id29" media-type="image/png"/>
+    <item href="index-44_2.png" id="id30" media-type="image/png"/>
+    <item href="index-46_1.png" id="id31" media-type="image/png"/>
+    <item href="index-47_1.png" id="id32" media-type="image/png"/>
+    <item href="index-47_2.png" id="id33" media-type="image/png"/>
+    <item href="index-49_1.jpg" id="id34" media-type="image/jpeg"/>
+    <item href="index-56_1.png" id="id35" media-type="image/png"/>
+    <item href="index-5_1.png" id="id36" media-type="image/png"/>
+    <item href="index-7_1.png" id="id37" media-type="image/png"/>
+    <item href="index-9_1.png" id="id38" media-type="image/png"/>
+    <item href="index.html" id="id1" media-type="application/xhtml+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id1"/>
+  </spine>
+  <guide/>
+</package>

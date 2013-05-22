@@ -1,0 +1,37 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch02.html
+next: OEBPS/ch02s03.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Tools"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect12_d1e535" class="calibre1"></a>Tools</h1></div></div></div><p class="calibre7">There are two main tools you’ll need to develop in Haskell. The Glasgow Haskell Compiler
+      (GHC) is the standard Haskell compiler, and the only one officially supported by Yesod. You’ll
+      also need Cabal, which is the standard Haskell build tool. Not only do we use Cabal for
+      building our local code, but it can automatically download and install dependencies from
+      Hackage, the Haskell package repository.</p><p class="calibre7">If you’re on Windows or Mac, it is strongly recommended that you download the <a class="ulink" href="http://hackage.haskell.org/platform/">Haskell Platform</a>. On Linux, many
+      distributions include the Haskell Platform in their repositories. On Debian-based systems, for
+      example, you can get started by running <code class="literal">sudo apt-get install
+        haskell-platform</code>. If your distribution does not include the Haskell Platform, you
+      can install it manually by following the instructions on the Haskell Platform page.</p><p class="calibre7">One important tool you’ll need to update is <em class="calibre4">alex</em>. The
+      Haskell Platform includes version 2, while the JavaScript minifier Yesod uses, <code class="function">hjsmin</code>, requires version three. Be sure to <em class="calibre4">cabal install alex</em> after getting set up with the Haskell Platform,
+      or you’ll run into error messages about the <code class="function">language-javascript</code> package.</p><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7">Some people like to live on the bleeding edge and install the latest version of GHC
+        before it is available in the Haskell Platform. We try to keep Yesod up-to-date with all
+        current versions of GHC, but we only officially support the Haskell Platform. If you do go
+        the route of manually installing GHC, here are a few notes:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7">You’ll need to install some additional build tools, <em class="calibre4">alex</em> and <em class="calibre4">happy</em> in particular.</p></li><li class="listitem"><p class="calibre7">Make sure to install all of the <a class="ulink" href="http://www.vex.net/%7Etrebla/haskell/haskell-platform.xhtml">required C
+                libraries</a>. On Debian-based systems, you would need to
+              run:<a id="I_programlisting2_d1e587" class="firstname"></a></p><pre class="programlisting">sudo apt-get install libedit-dev libbsd-dev libgmp3-dev zlib1g-dev freeglut3-dev</pre><p class="calibre7">
+            </p></li></ul></div></div><p class="calibre7">Regardless of how you’ve installed your tools, you should be sure to put <code class="literal">cabal</code>’s bin folder in your <code class="literal">PATH</code>
+      variable. On Mac and Linux, this will be <code class="literal">$HOME/.cabal/bin</code>
+      and on Windows it will be <code class="literal">%APPDATA%\cabal\bin</code>.</p><p class="calibre7"><code class="literal">cabal</code> has lots of different options available, but for now, just try out two
+   commands:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7"><em class="calibre4">cabal update</em> will download the most recent list of packages from
+    Hackage.</p></li><li class="listitem"><p class="calibre7"><em class="calibre4">cabal install yesod</em> will install Yesod and all its dependencies.</p></li></ul></div><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7">Many people in the community prefer to perform sandboxed builds of their Haskell
+        packages, which prevents your install of Yesod from breaking existing packages, or packages
+        you install in the future, from breaking your Yesod install. I won’t go into detail on how
+        to use these in this book, but the two most commonly used tools are <a class="ulink" href="http://hackage.haskell.org/package/cabal-dev">cabal-dev</a> and <a class="ulink" href="http://hackage.haskell.org/package/virthualenv">virthualenv</a>.</p></div></div></div>
+
+{% endraw %}
+

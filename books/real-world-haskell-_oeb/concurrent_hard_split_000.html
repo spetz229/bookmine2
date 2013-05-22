@@ -1,0 +1,121 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: I_sect124_d1e46964.html
+next: concurrent_hard_split_001.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect124_d1e46964.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect124_d1e47262.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="concurrent_hard" class="calibre27" id="concurrent_hard"></a><h3 id="title-IDAFADAD" class="docSection1Title">24.7. Shared-State Concurrency Is Still Hard</h3><a name="x_k41" class="calibre27" id="x_k41"></a><p class="docText">Although Haskell<a name="ch24-concurrentshared" class="calibre27" id="ch24-concurrentshared"></a> has different primitives for sharing data between threads
+    than other languages, it still suffers from the same fundamental problem:
+    writing correct <span class="docEmphasis">concurrent</span> programs
+    is fiendishly difficult. Indeed, several pitfalls of concurrent <span class="docEmphasis">programming</span> in other languages apply equally
+    to Haskell. Two of the better-known problems are
+    <span class="docEmphasis">deadlock</span> and <span class="docEmphasis">starvation</span>.</p><a name="concurrent_hardd1e47373" class="calibre27" id="concurrent_hardd1e47373"></a><h4 id="title-IDA5ADAD" class="docSection1Title">24.7.1. Deadlock</h4><a name="x_l41" class="calibre27" id="x_l41"></a><p class="docText">In a <span class="docEmphasis">deadlock</span> situation,<a name="I_indexterm24_d1e47094" class="calibre27" id="I_indexterm24_d1e47094"></a> two or more threads get stuck forever in a clash over
+      access to shared resources. One classic way to make a multithreaded
+      program deadlock is to forget the order in which we must acquire locks.
+      This kind of bug is so common, it has a name: <span class="docEmphasis">lock order
+      inversion</span>. While<a name="I_indexterm24_d1e47101" class="calibre27" id="I_indexterm24_d1e47101"></a> Haskell doesn't provide locks, the MVar type
+      is prone to the order inversion problem. Here's a simple example:</p><pre class="calibre39">-- file: ch24/LockHierarchy.hs
+import Control.Concurrent
+
+nestedModification outer inner = do
+  modifyMVar_ outer $ \x -&gt; do
+    yield  -- force this thread to temporarily yield the CPU
+    modifyMVar_ inner $ \y -&gt; return (y + 1)
+    return (x + 1)
+  putStrLn "done"
+
+main = do
+  a &lt;- newMVar 1
+  b &lt;- newMVar 2
+  forkIO $ nestedModification a b
+  forkIO $ nestedModification b a</pre><br class="calibre48"/>
+<a name="x_m41" class="calibre27" id="x_m41"></a><p class="docText">If we run this in <i class="docEmphasis">ghci</i>, it will usually—but not always—print
+      nothing, indicating that both threads have gotten stuck.</p><a name="x_n41" class="calibre27" id="x_n41"></a><p class="docText">The problem with the <i class="docEmphasis">nestedModification</i> function is easy to spot.
+      In the first thread, we take the MVar <span class="docMonofont">a</span>,
+      then <span class="docMonofont">b</span>. In the second, we take <span class="docMonofont">b</span>,
+      then <span class="docMonofont">a</span>. If the first thread succeeds in taking
+      <span class="docMonofont">a</span> and the second takes <span class="docMonofont">b</span>, both
+      threads will block; each tries to take an MVar that the
+      other has already emptied, so neither can make progress.</p><a name="x_o41" class="calibre27" id="x_o41"></a><p class="docText">Across languages, the usual way to solve an order
+      inversion problem is to always follow a consistent order when acquiring
+      resources. Since this approach requires manual adherence to a coding
+      convention, it is easy to miss in practice.</p><a name="x_p41" class="calibre27" id="x_p41"></a><p class="docText">To make matters more complicated, these kinds of
+      inversion problems can be difficult to spot in real code. The taking of
+      MVars is often spread across several functions in different
+      files, making visual inspection more tricky. Worse, these problems are
+      often <span class="docEmphasis">intermittent</span>, which makes them tough to even
+      reproduce, never mind isolate and fix.</p><a name="concurrent_hardd1e47442" class="calibre27" id="concurrent_hardd1e47442"></a><h4 id="title-IDACDDAD" class="docSection1Title">24.7.2. Starvation</h4><a name="x_q41" class="calibre27" id="x_q41"></a><p class="docText">Concurrent software<a name="I_indexterm24_d1e47160" class="calibre27" id="I_indexterm24_d1e47160"></a> is also prone to <span class="docEmphasis">starvation</span>, in
+      which one thread "hogs" a shared resource, preventing
+      another from using it. It's easy to imagine how this might occur: one
+      thread<a name="I_indexterm24_d1e47170" class="calibre27" id="I_indexterm24_d1e47170"></a> calls <i class="docEmphasis">modifyMVar</i>
+      with a body that executes for 100 milliseconds, while another calls
+      <i class="docEmphasis">modifyMVar</i> on the same
+      MVar with a body that executes for 1 millisecond. The
+      second thread cannot make progress until the first puts a value back
+      into the MVar.</p><a name="x_r41" class="calibre27" id="x_r41"></a><p class="docText">The nonstrict nature of the MVar type can
+      either cause or exacerbate a starvation problem. If we put a thunk into
+      an MVar that will be expensive to evaluate, and then take
+      it out of the MVar in a thread that otherwise looks like it
+      <span class="docEmphasis">ought</span> to be cheap, that thread could suddenly
+      become computationally expensive if it has to evaluate the thunk. This
+      makes the advice we gave in <a class="docLink" href="I_sect124_d1e46964.html#concurrent_useful_nonstrict">Section 24.6.1</a> particularly relevant.</p><a name="concurrent_hardd1e47492" class="calibre27" id="concurrent_hardd1e47492"></a><h4 id="title-IDAVEDAD" class="docSection1Title">24.7.3. Is There Any Hope?</h4><a name="x_s41" class="calibre27" id="x_s41"></a><p class="docText">Fortunately, the APIs for concurrency that we have
+      covered here are by no means the end of the story. A more recent
+      addition to Haskell, software transactional memory (STM), is both easier
+      and safer to work with. We will discuss it in <a class="docLink" href="stm_split_000.html#stm">Chapter 28</a>.</p><a name="I_sidebar24_d1e47212" class="calibre27" id="I_sidebar24_d1e47212"></a></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

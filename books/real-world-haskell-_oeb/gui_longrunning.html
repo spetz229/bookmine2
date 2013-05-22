@@ -1,0 +1,239 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: gui_add.html
+next: gui_cabal_split_000.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="gui_add.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="gui_cabal_split_000.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="gui_longrunning" class="calibre27" id="gui_longrunning"></a><h3 id="title-IDARNOUH" class="docSection1Title">23.7. Long-Running Tasks</h3><a name="x_qw" class="calibre27" id="x_qw"></a><p class="docText">As we think about the buttons available in the main
+    window, three of them correspond to tasks that could take a while to
+    complete: update, download, and fetch. While these operations take place,
+    we'd like to do two things with our GUI: provide the user with the status
+    of the operation and the ability to cancel the operation as it is in
+    progress.</p><a name="x_rw" class="calibre27" id="x_rw"></a><p class="docText">Since all three of these things are very similar
+    operations, it makes sense to provide a generic way to handle this
+    interaction. We have defined a single status window widget in the Glade
+    file that will be used by all three of these. In our Haskell source code,
+    we'll define a generic <tt class="calibre34">statusWindow</tt>
+    function that will be used by all three of these operations as
+    well.</p><a name="x_sw" class="calibre27" id="x_sw"></a><p class="docText"><tt class="calibre34">statusWindow</tt> takes four
+    parameters: the GUI information, the database information, a <tt class="calibre34">String</tt> giving the title of the window, and a
+    function that will perform the operation. This function will itself be
+    passed a function that it can call to report its progress. Here's the
+    code:</p><pre class="calibre39">-- file: ch23/PodMainGUI.hs
+statusWindow :: IConnection conn =&gt;
+                GUI 
+             -&gt; conn 
+             -&gt; String 
+             -&gt; ((String -&gt; IO ()) -&gt; IO ())
+             -&gt; IO ()
+statusWindow gui dbh title func =
+    do -- Clear the status text
+       labelSetText (swLabel gui) ""
+       
+       -- Disable the OK button, enable Cancel button
+       widgetSetSensitivity (swOKBt gui) False
+       widgetSetSensitivity (swCancelBt gui) True
+
+       -- Set the title
+       windowSetTitle (statusWin gui) title
+
+       -- Start the operation
+       childThread &lt;- forkIO childTasks
+
+       -- Define what happens when clicking on Cancel
+       onClicked (swCancelBt gui) (cancelChild childThread)
+       
+       -- Show the window
+       windowPresent (statusWin gui)
+    where childTasks =
+              do updateLabel "Starting thread..."
+                 func updateLabel
+                 -- After the child task finishes, enable OK
+                 -- and disable Cancel
+                 enableOK
+                 
+          enableOK = 
+              do widgetSetSensitivity (swCancelBt gui) False
+                 widgetSetSensitivity (swOKBt gui) True
+                 onClicked (swOKBt gui) (widgetHide (statusWin gui))
+                 return ()
+
+          updateLabel text =
+              labelSetText (swLabel gui) text
+          cancelChild childThread =
+              do killThread childThread
+                 yield
+                 updateLabel "Action has been cancelled."
+                 enableOK</pre><br class="calibre48"/>
+<a name="x_tw" class="calibre27" id="x_tw"></a><p class="docText">This function starts by clearing the label text from the
+    last run. Next, we disable (gray out) the OK button and enable the Cancel
+    button. While the operation is in progress, clicking OK doesn't make much
+    sense. And when it's done, clicking Cancel also doesn't make much
+    sense.</p><a name="x_uw" class="calibre27" id="x_uw"></a><p class="docText">Next, we set the title of the window. The title is the
+    part that is displayed by the system in the title bar of the window.
+    Finally, we start off the new thread (represented by <tt class="calibre34">childTasks</tt>) and save off its thread ID. Then, we
+    define what to do if the user clicks Cancel—we call <tt class="calibre34">cancelChild</tt>, passing along the thread ID.
+    Finally, we call <tt class="calibre34">windowPresent</tt> to show the status
+    window.</p><a name="x_vw" class="calibre27" id="x_vw"></a><p class="docText">In <tt class="calibre34">childTasks</tt>, we
+    display a message saying that we're starting the thread. Then we call the
+    actual worker function, passing <tt class="calibre34">updateLabel</tt> as the function to use for
+    displaying status messages. Note that a command-line version of the
+    program could pass <tt class="calibre34">putStrLn</tt>
+    here.</p><a name="x_ww" class="calibre27" id="x_ww"></a><p class="docText">Finally, after the worker function exits, we call <tt class="calibre34">enableOK</tt>. This function disables the Cancel
+    button, enables the OK button, and defines that a click on the OK button
+    causes the status window to go away.</p><a name="x_xw" class="calibre27" id="x_xw"></a><p class="docText"><tt class="calibre34">updateLabel</tt> simply
+    calls <tt class="calibre34">labelSetText</tt> on the label widget
+    to update it with the displayed text. Finally, <tt class="calibre34">cancelChild</tt> kills the thread that is processing
+    the task, updates the label, and enables the OK button.</p><a name="x_yw" class="calibre27" id="x_yw"></a><p class="docText">We now have the infrastructure in place to define our
+    three GUI functions. They look like this:</p><pre class="calibre39">-- file: ch23/PodMainGUI.hs
+guiUpdate :: IConnection conn =&gt; GUI -&gt; conn -&gt; IO ()
+guiUpdate gui dbh = 
+    statusWindow gui dbh "Pod: Update" (update dbh)
+
+guiDownload gui dbh =
+    statusWindow gui dbh "Pod: Download" (download dbh)
+
+guiFetch gui dbh =
+    statusWindow gui dbh "Pod: Fetch" 
+                     (\logf -&gt; update dbh logf &gt;&gt; download dbh logf)</pre><br class="calibre48"/>
+<a name="x_zw" class="calibre27" id="x_zw"></a><p class="docText">For brevity, we have given the type for only the first
+    one, but all three have the same type, and Haskell can work them out via
+    type inference. Notice our implementation of <tt class="calibre34">guiFetch</tt>. We don't call <tt class="calibre34">statusWindow</tt> twice, but rather combine functions
+    in its action.</p><a name="x_Ax" class="calibre27" id="x_Ax"></a><p class="docText">The final piece of the puzzle consists of the three
+    functions that do our work. <tt class="calibre34">add</tt> is
+    unmodified from the command-line chapter. <tt class="calibre34">update</tt> and <tt class="calibre34">download</tt> are modified only to take a logging
+    function instead of calling <tt class="calibre34">putStrLn</tt>
+    for status updates.</p><pre class="calibre39">-- file: ch23/PodMainGUI.hs
+add dbh url = 
+    do addPodcast dbh pc
+       commit dbh
+    where pc = Podcast {castId = 0, castURL = url}
+
+update :: IConnection conn =&gt; conn -&gt; (String -&gt; IO ()) -&gt; IO ()
+update dbh logf = 
+    do pclist &lt;- getPodcasts dbh
+       mapM_ procPodcast pclist
+       logf "Update complete."
+    where procPodcast pc =
+              do logf $ "Updating from " ++ (castURL pc)
+                 updatePodcastFromFeed dbh pc
+
+download dbh logf =
+    do pclist &lt;- getPodcasts dbh
+       mapM_ procPodcast pclist
+       logf "Download complete."
+    where procPodcast pc =
+              do logf $ "Considering " ++ (castURL pc)
+                 episodelist &lt;- getPodcastEpisodes dbh pc
+                 let dleps = filter (\ep -&gt; epDone ep == False)
+                             episodelist
+                 mapM_ procEpisode dleps
+          procEpisode ep =
+              do logf $ "Downloading " ++ (epURL ep)
+                 getEpisode dbh ep</pre><br class="calibre48"/>
+<a name="x_Bx" class="calibre27" id="x_Bx"></a><p class="docText"><a class="docLink" href="#update_complete">Figure 23-4</a> shows what the final
+    result looks like after running an update.</p><a name="update_complete" class="calibre27" id="update_complete"></a><p class="calibre37"><div class="calibre61"><h5 class="docTableTitle">Figure 23-4. Screenshot of a dialog box displaying the words "Update
+      complete"</h5><a name="I_mediaobject23_d1e46212" class="calibre27" id="I_mediaobject23_d1e46212"></a></div></p><p class="docText"><img border="0" alt="" src="img29.png" class="calibre45"/></p><br class="calibre48"/>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="gui_add.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="gui_cabal_split_000.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

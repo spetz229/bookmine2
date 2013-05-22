@@ -1,0 +1,765 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="07b101f8-0fcf-46c4-abf8-6abdcc675aec" name="dtb:uid"/>
+    <meta content="6" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>vi and Vim Editors Pocket Reference</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="id2734713" playOrder="1">
+      <navLabel>
+        <text>vi and Vim Editors Pocket Reference</text>
+      </navLabel>
+      <content src="OEBPS/index.html"/>
+      <navPoint class="chapter" id="id2734853" playOrder="2">
+        <navLabel>
+          <text>1. vi and Vim Editors Pocket Reference</text>
+        </navLabel>
+        <content src="OEBPS/ch01.html"/>
+        <navPoint class="chapter" id="id2712579" playOrder="3">
+          <navLabel>
+            <text>Introduction</text>
+          </navLabel>
+          <content src="OEBPS/ch01.html#viref2-ch-1-sect-1"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2667328" playOrder="4">
+          <navLabel>
+            <text>Conventions</text>
+          </navLabel>
+          <content src="OEBPS/ch01s02.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2753158" playOrder="5">
+          <navLabel>
+            <text>Acknowledgments</text>
+          </navLabel>
+          <content src="OEBPS/ch01s03.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2642277" playOrder="6">
+          <navLabel>
+            <text>Command-Line Options</text>
+          </navLabel>
+          <content src="OEBPS/ch01s04.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2712653" playOrder="7">
+          <navLabel>
+            <text>vi Commands</text>
+          </navLabel>
+          <content src="OEBPS/ch01s05.html"/>
+          <navPoint class="chapter" id="id2764557" playOrder="8">
+            <navLabel>
+              <text>Movement Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#viref2-ch-1-sect-4.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2724929" playOrder="9">
+            <navLabel>
+              <text>Editing Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#viref2-ch-1-sect-4.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2797857" playOrder="10">
+            <navLabel>
+              <text>Exit Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#viref2-ch-1-sect-4.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2819409" playOrder="11">
+            <navLabel>
+              <text>Solaris vi Command-Mode Tag Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#viref2-ch-1-sect-4.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2819485" playOrder="12">
+            <navLabel>
+              <text>Buffer Names</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#viref2-ch-1-sect-4.5"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2819540" playOrder="13">
+            <navLabel>
+              <text>Buffer and Marking Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch01s05.html#viref2-ch-1-sect-4.6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2819720" playOrder="14">
+          <navLabel>
+            <text>Input Mode Shortcuts</text>
+          </navLabel>
+          <content src="OEBPS/ch01s06.html"/>
+          <navPoint class="chapter" id="id2819757" playOrder="15">
+            <navLabel>
+              <text>Word Abbreviation</text>
+            </navLabel>
+            <content src="OEBPS/ch01s06.html#viref2-ch-1-sect-5.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2819815" playOrder="16">
+            <navLabel>
+              <text>Command and Input Mode Maps</text>
+            </navLabel>
+            <content src="OEBPS/ch01s06.html#viref2-ch-1-sect-5.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2820029" playOrder="17">
+            <navLabel>
+              <text>Executable Buffers</text>
+            </navLabel>
+            <content src="OEBPS/ch01s06.html#viref2-ch-1-sect-5.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2820148" playOrder="18">
+            <navLabel>
+              <text>Automatic Indentation</text>
+            </navLabel>
+            <content src="OEBPS/ch01s06.html#viref2-ch-1-sect-5.4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2820300" playOrder="19">
+          <navLabel>
+            <text>Substitution and Regular Expressions</text>
+          </navLabel>
+          <content src="OEBPS/ch01s07.html"/>
+          <navPoint class="chapter" id="id2820324" playOrder="20">
+            <navLabel>
+              <text>The Substitute Command</text>
+            </navLabel>
+            <content src="OEBPS/ch01s07.html#viref2-ch-1-sect-6.1"/>
+            <navPoint class="chapter" id="id2820411" playOrder="21">
+              <navLabel>
+                <text>Substitution flags</text>
+              </navLabel>
+              <content src="OEBPS/ch01s07.html#viref2-ch-1-sect-6.1.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2820506" playOrder="22">
+            <navLabel>
+              <text>vi Regular Expressions</text>
+            </navLabel>
+            <content src="OEBPS/ch01s07.html#viref2-ch-1-sect-6.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2820877" playOrder="23">
+            <navLabel>
+              <text>POSIX Bracket Expressions</text>
+            </navLabel>
+            <content src="OEBPS/ch01s07.html#viref2-ch-1-sect-6.3"/>
+            <navPoint class="chapter" id="id2821023" playOrder="24">
+              <navLabel>
+                <text>POSIX character classes</text>
+              </navLabel>
+              <content src="OEBPS/ch01s07.html#viref2-ch-1-sect-6.3.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2821214" playOrder="25">
+            <navLabel>
+              <text>Metacharacters Used in Replacement Strings</text>
+            </navLabel>
+            <content src="OEBPS/ch01s07.html#viref2-ch-1-sect-6.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2821420" playOrder="26">
+            <navLabel>
+              <text>More Substitution Tricks</text>
+            </navLabel>
+            <content src="OEBPS/ch01s07.html#viref2-ch-1-sect-6.5"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2821612" playOrder="27">
+          <navLabel>
+            <text>ex Commands</text>
+          </navLabel>
+          <content src="OEBPS/ch01s08.html"/>
+          <navPoint class="chapter" id="id2821654" playOrder="28">
+            <navLabel>
+              <text>Command Syntax</text>
+            </navLabel>
+            <content src="OEBPS/ch01s08.html#viref2-ch-1-sect-7.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2821676" playOrder="29">
+            <navLabel>
+              <text>Address Symbols</text>
+            </navLabel>
+            <content src="OEBPS/ch01s08.html#viref2-ch-1-sect-7.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2821966" playOrder="30">
+            <navLabel>
+              <text>Command Option Symbols</text>
+            </navLabel>
+            <content src="OEBPS/ch01s08.html#viref2-ch-1-sect-7.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2822048" playOrder="31">
+            <navLabel>
+              <text>Alphabetical List of Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch01s08.html#viref2-ch-1-sect-7.4"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2823710" playOrder="32">
+          <navLabel>
+            <text>Initialization</text>
+          </navLabel>
+          <content src="OEBPS/ch01s09.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2823862" playOrder="33">
+          <navLabel>
+            <text>Recovery</text>
+          </navLabel>
+          <content src="OEBPS/ch01s10.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2823916" playOrder="34">
+          <navLabel>
+            <text>vi set Options</text>
+          </navLabel>
+          <content src="OEBPS/ch01s11.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2824820" playOrder="35">
+          <navLabel>
+            <text>Nothing like the Original</text>
+          </navLabel>
+          <content src="OEBPS/ch01s12.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2824904" playOrder="36">
+          <navLabel>
+            <text>Enhanced Tags and Tag Stacks</text>
+          </navLabel>
+          <content src="OEBPS/ch01s13.html"/>
+          <navPoint class="chapter" id="id2824945" playOrder="37">
+            <navLabel>
+              <text>Exuberant ctags</text>
+            </navLabel>
+            <content src="OEBPS/ch01s13.html#viref2-ch-1-sect-11.1"/>
+            <navPoint class="chapter" id="id2825018" playOrder="38">
+              <navLabel>
+                <text>Extended ctags keywords</text>
+              </navLabel>
+              <content src="OEBPS/ch01s13.html#viref2-ch-1-sect-11.1.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2825205" playOrder="39">
+            <navLabel>
+              <text>Solaris vi Tag Stacking</text>
+            </navLabel>
+            <content src="OEBPS/ch01s13.html#viref2-ch-1-sect-11.2"/>
+            <navPoint class="chapter" id="id2825231" playOrder="40">
+              <navLabel>
+                <text>Tag commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s13.html#viref2-ch-1-sect-11.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2825333" playOrder="41">
+              <navLabel>
+                <text>Tag commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s13.html#viref2-ch-1-sect-11.2.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2825404" playOrder="42">
+              <navLabel>
+                <text>Tag management options</text>
+              </navLabel>
+              <content src="OEBPS/ch01s13.html#viref2-ch-1-sect-11.2.3"/>
+            </navPoint>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2825503" playOrder="43">
+          <navLabel>
+            <text>Vim—vi Improved</text>
+          </navLabel>
+          <content src="OEBPS/ch01s14.html"/>
+          <navPoint class="chapter" id="id2825536" playOrder="44">
+            <navLabel>
+              <text>Important Command-Line Options</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2825835" playOrder="45">
+            <navLabel>
+              <text>Vim Window Management</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.2"/>
+            <navPoint class="chapter" id="id2825870" playOrder="46">
+              <navLabel>
+                <text>Window management commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2826302" playOrder="47">
+              <navLabel>
+                <text>Window management commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.2.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2827083" playOrder="48">
+            <navLabel>
+              <text>Tabbed Editing</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.3"/>
+            <navPoint class="chapter" id="id2827126" playOrder="49">
+              <navLabel>
+                <text>Managing tabs—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.3.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2827536" playOrder="50">
+              <navLabel>
+                <text>Managing tabs—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.3.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2827665" playOrder="51">
+              <navLabel>
+                <text>Tabbed editing options</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.3.3"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2827777" playOrder="52">
+            <navLabel>
+              <text>Vim Extended Regular Expressions</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2828478" playOrder="53">
+            <navLabel>
+              <text>Command-Line History and Completion</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.5"/>
+            <navPoint class="chapter" id="id2828506" playOrder="54">
+              <navLabel>
+                <text>History commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.5.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2828750" playOrder="55">
+              <navLabel>
+                <text>Completion commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.5.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2828914" playOrder="56">
+            <navLabel>
+              <text>Tag Stacks</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.6"/>
+            <navPoint class="chapter" id="id2828955" playOrder="57">
+              <navLabel>
+                <text>Tag commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.6.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2829312" playOrder="58">
+              <navLabel>
+                <text>Tag commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.6.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2829402" playOrder="59">
+            <navLabel>
+              <text>Edit-Compile Speedup</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.7"/>
+            <navPoint class="chapter" id="id2829438" playOrder="60">
+              <navLabel>
+                <text>Program development commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.7.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2829719" playOrder="61">
+              <navLabel>
+                <text>Program development options</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.7.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2829898" playOrder="62">
+            <navLabel>
+              <text>Programming Assistance</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.8"/>
+            <navPoint class="chapter" id="id2829922" playOrder="63">
+              <navLabel>
+                <text>Identifier search commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.8.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2830494" playOrder="64">
+              <navLabel>
+                <text>Identifier search commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.8.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2830765" playOrder="65">
+              <navLabel>
+                <text>Extended matching commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.8.3"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2831044" playOrder="66">
+              <navLabel>
+                <text>Indentation and formatting options</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.8.4"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2831242" playOrder="67">
+            <navLabel>
+              <text>Folding and Unfolding Text</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.9"/>
+            <navPoint class="chapter" id="id2831388" playOrder="68">
+              <navLabel>
+                <text>Folding commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.9.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2831590" playOrder="69">
+              <navLabel>
+                <text>Folding commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.9.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2832028" playOrder="70">
+              <navLabel>
+                <text>Folding options</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.9.3"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2832251" playOrder="71">
+            <navLabel>
+              <text>Insertion Completion Facilities</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.10"/>
+            <navPoint class="chapter" id="id2832361" playOrder="72">
+              <navLabel>
+                <text>Completion commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.10.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2833132" playOrder="73">
+              <navLabel>
+                <text>Completion options</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.10.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2833430" playOrder="74">
+            <navLabel>
+              <text>Diff Mode</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.11"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2833601" playOrder="75">
+            <navLabel>
+              <text>Vim Scripting</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.12"/>
+            <navPoint class="chapter" id="id2833668" playOrder="76">
+              <navLabel>
+                <text>Variables, options, and numbers</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.12.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2833972" playOrder="77">
+              <navLabel>
+                <text>Control flow commands</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.12.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2834320" playOrder="78">
+              <navLabel>
+                <text>Operators</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.12.3"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2834615" playOrder="79">
+              <navLabel>
+                <text>User-defined functions</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.12.4"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2835148" playOrder="80">
+              <navLabel>
+                <text>Running scripts</text>
+              </navLabel>
+              <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.12.5"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2835264" playOrder="81">
+            <navLabel>
+              <text>Vim set Options</text>
+            </navLabel>
+            <content src="OEBPS/ch01s14.html#viref2-ch-1-sect-12.13"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2836665" playOrder="82">
+          <navLabel>
+            <text>nvi—New vi</text>
+          </navLabel>
+          <content src="OEBPS/ch01s15.html"/>
+          <navPoint class="chapter" id="id2836706" playOrder="83">
+            <navLabel>
+              <text>Important Command-Line Options</text>
+            </navLabel>
+            <content src="OEBPS/ch01s15.html#viref2-ch-1-sect-13.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2836808" playOrder="84">
+            <navLabel>
+              <text>nvi Window Management Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch01s15.html#viref2-ch-1-sect-13.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2837100" playOrder="85">
+            <navLabel>
+              <text>nvi Extended Regular Expressions</text>
+            </navLabel>
+            <content src="OEBPS/ch01s15.html#viref2-ch-1-sect-13.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2837233" playOrder="86">
+            <navLabel>
+              <text>Command-Line History and Completion Options</text>
+            </navLabel>
+            <content src="OEBPS/ch01s15.html#viref2-ch-1-sect-13.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2837332" playOrder="87">
+            <navLabel>
+              <text>Tag Stacks</text>
+            </navLabel>
+            <content src="OEBPS/ch01s15.html#viref2-ch-1-sect-13.5"/>
+            <navPoint class="chapter" id="id2837377" playOrder="88">
+              <navLabel>
+                <text>Tag commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s15.html#viref2-ch-1-sect-13.5.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2837557" playOrder="89">
+              <navLabel>
+                <text>Tag commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s15.html#viref2-ch-1-sect-13.5.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2837626" playOrder="90">
+            <navLabel>
+              <text>nvi 1.79 set Options</text>
+            </navLabel>
+            <content src="OEBPS/ch01s15.html#viref2-ch-1-sect-13.6"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2838103" playOrder="91">
+          <navLabel>
+            <text>elvis</text>
+          </navLabel>
+          <content src="OEBPS/ch01s16.html"/>
+          <navPoint class="chapter" id="id2838131" playOrder="92">
+            <navLabel>
+              <text>Important Command-Line Options</text>
+            </navLabel>
+            <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2838403" playOrder="93">
+            <navLabel>
+              <text>elvis Window Management</text>
+            </navLabel>
+            <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.2"/>
+            <navPoint class="chapter" id="id2838440" playOrder="94">
+              <navLabel>
+                <text>Window management commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.2.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2838755" playOrder="95">
+              <navLabel>
+                <text>Arguments to the :window command</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.2.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2838887" playOrder="96">
+              <navLabel>
+                <text>Window management commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.2.3"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2839154" playOrder="97">
+            <navLabel>
+              <text>elvis Extended Regular Expressions</text>
+            </navLabel>
+            <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2839286" playOrder="98">
+            <navLabel>
+              <text>Command-Line History and Completion Movement Keys</text>
+            </navLabel>
+            <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.4"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2839416" playOrder="99">
+            <navLabel>
+              <text>Tag Stacks</text>
+            </navLabel>
+            <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.5"/>
+            <navPoint class="chapter" id="id2839461" playOrder="100">
+              <navLabel>
+                <text>Tag commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.5.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2839572" playOrder="101">
+              <navLabel>
+                <text>Tag commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.5.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2839642" playOrder="102">
+            <navLabel>
+              <text>Edit-Compile Speedup</text>
+            </navLabel>
+            <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.6"/>
+            <navPoint class="chapter" id="id2839675" playOrder="103">
+              <navLabel>
+                <text>Program development commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.6.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2839822" playOrder="104">
+              <navLabel>
+                <text>Display modes</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.6.2"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2839950" playOrder="105">
+              <navLabel>
+                <text>Display-mode commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.6.3"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2840047" playOrder="106">
+              <navLabel>
+                <text>Options for print management</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.6.4"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2840286" playOrder="107">
+              <navLabel>
+                <text>Values for the lptype option</text>
+              </navLabel>
+              <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.6.5"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2840460" playOrder="108">
+            <navLabel>
+              <text>elvis 2.2 set Options</text>
+            </navLabel>
+            <content src="OEBPS/ch01s16.html#viref2-ch-1-sect-14.7"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2841230" playOrder="109">
+          <navLabel>
+            <text>vile—vi like Emacs</text>
+          </navLabel>
+          <content src="OEBPS/ch01s17.html"/>
+          <navPoint class="chapter" id="id2841267" playOrder="110">
+            <navLabel>
+              <text>Important Command-Line Options</text>
+            </navLabel>
+            <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2841457" playOrder="111">
+            <navLabel>
+              <text>vile Window Management Commands</text>
+            </navLabel>
+            <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.2"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2842103" playOrder="112">
+            <navLabel>
+              <text>vile Extended Regular Expressions</text>
+            </navLabel>
+            <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.3"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2842361" playOrder="113">
+            <navLabel>
+              <text>Command-Line History and Completion</text>
+            </navLabel>
+            <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.4"/>
+            <navPoint class="chapter" id="id2842407" playOrder="114">
+              <navLabel>
+                <text>History commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.4.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2842511" playOrder="115">
+              <navLabel>
+                <text>History options</text>
+              </navLabel>
+              <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.4.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2842655" playOrder="116">
+            <navLabel>
+              <text>Tag Stacks</text>
+            </navLabel>
+            <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.5"/>
+            <navPoint class="chapter" id="id2842700" playOrder="117">
+              <navLabel>
+                <text>Tag commands—ex</text>
+              </navLabel>
+              <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.5.1"/>
+            </navPoint>
+            <navPoint class="chapter" id="id2842828" playOrder="118">
+              <navLabel>
+                <text>Tag commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.5.2"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2842929" playOrder="119">
+            <navLabel>
+              <text>Edit-Compile Speedup</text>
+            </navLabel>
+            <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.6"/>
+            <navPoint class="chapter" id="id2842961" playOrder="120">
+              <navLabel>
+                <text>Program development commands—vi</text>
+              </navLabel>
+              <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.6.1"/>
+            </navPoint>
+          </navPoint>
+          <navPoint class="chapter" id="id2843084" playOrder="121">
+            <navLabel>
+              <text>vile 9.8 set Options</text>
+            </navLabel>
+            <content src="OEBPS/ch01s17.html#viref2-ch-1-sect-15.7"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2844159" playOrder="122">
+          <navLabel>
+            <text>Internet Resources for vi</text>
+          </navLabel>
+          <content src="OEBPS/ch01s18.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="id2844338" playOrder="123">
+          <navLabel>
+            <text>Program Source and Contact Information</text>
+          </navLabel>
+          <content src="OEBPS/ch01s19.html"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2844643" playOrder="124">
+        <navLabel>
+          <text>Index</text>
+        </navLabel>
+        <content src="OEBPS/ix01.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2844655" playOrder="125">
+        <navLabel>
+          <text>About the Author</text>
+        </navLabel>
+        <content src="OEBPS/author_bios.html"/>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

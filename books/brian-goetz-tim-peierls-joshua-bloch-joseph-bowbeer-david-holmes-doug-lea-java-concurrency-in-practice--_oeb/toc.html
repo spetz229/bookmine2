@@ -1,0 +1,422 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: main.html
+next: copyrightpg.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<table width="627" border="0" cellspacing="0" cellpadding="0" class="calibre5"><tr valign="top" class="calibre6"><td class="v" width="91"><img src="0321349601_xs.jpg" alt="Book Cover" border="0" class="calibre7"/></td><td class="v1" height="20"><table cellpadding="0" cellspacing="0" border="0" class="calibre8"><tr class="calibre6"><td colspan="3" class="v2" height="20"><b class="calibre9">Java Concurrency in Practice</b></td></tr><tr class="calibre6"><td colspan="3" class="v2" height="18">By 
+											<a target="_new" class="v3">Brian Goetz</a>, <a target="_new" class="v3">Tim Peierls</a>, <a target="_new" class="v3">Joshua Bloch</a>, <a target="_new" class="v3">Joseph Bowbeer</a>, <a target="_new" class="v3">David Holmes</a>, <a target="_new" class="v3">Doug Lea</a></td></tr><tr class="calibre6"><td class="aCells" colspan="3">...............................................</td></tr><tr class="calibre6"><td colspan="3" class="aCells1">Publisher: <b class="calibre9">Addison Wesley Professional</b></td></tr><tr class="calibre6"><td colspan="3" class="aCells1">Pub Date: <b class="calibre9">May 09, 2006</b></td></tr><tr class="calibre6"><td colspan="3" class="aCells1">Print ISBN-10: <b class="calibre9">0-321-34960-1</b></td></tr><tr class="calibre6"><td colspan="3" class="aCells1">Print ISBN-13: <b class="calibre9">978-0-321-34960-6</b></td></tr><tr class="calibre6"><td colspan="3" class="aCells1">
+                    Pages: <b class="calibre9">384</b></td></tr><tr class="calibre6"><td class="aCells1"/><td width="75%" colspan="2" class="aCells2"> </td></tr></table></td><td class="calibre10"><br class="calibre11"/><br class="calibre11"/><div class="calibre12"></div></td></tr></table><p class="calibre1"> </p><table width="627" border="0" cellspacing="0" cellpadding="0" class="calibre5"><tr class="calibre6"><td class="aTopMenu"><a title="Table of Contents" href="toc.html" class="aTopMenu1">Table of Contents</a>
+												   | <a title="Index" href="index.html" class="aTopMenu1">Index</a></td><td valign="bottom" class="calibre13"/><td valign="bottom" class="calibre13"/></tr></table><p class="calibre1"> </p><table border="0" cellspacing="0" cellpadding="0" class="calibre5"><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="copyrightpg.html">Copyright</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="pref01.html">Advance Praise for Java Concurrency in Practice</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="pref02.html">Listings</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="pref03.html">Preface</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="ch01.html">
+             Chapter 1. 
+           Introduction</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch01lev1sec1.html">
+             Section 1.1. 
+           A (Very) Brief History of Concurrency</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch01lev1sec2.html">
+             Section 1.2. 
+           Benefits of Threads</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch01lev1sec3.html">
+             Section 1.3. 
+           Risks of Threads</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch01lev1sec4.html">
+             Section 1.4. 
+           Threads are Everywhere</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="part01.html">
+             Part I: 
+           Fundamentals</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch02_split_000.html">
+             Chapter 2. 
+           Thread Safety</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch02lev1sec1.html">
+             Section 2.1. 
+           What is Thread Safety?</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch02lev1sec2.html">
+             Section 2.2. 
+           Atomicity</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch02lev1sec3.html">
+             Section 2.3. 
+           Locking</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch02lev1sec4.html">
+             Section 2.4. 
+           Guarding State with Locks</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch02lev1sec5.html">
+             Section 2.5. 
+           Liveness and Performance</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch03.html">
+             Chapter 3. 
+           Sharing Objects</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch03lev1sec1.html">
+             Section 3.1. 
+           Visibility</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch03lev1sec2.html">
+             Section 3.2. 
+           Publication and Escape</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch03lev1sec3.html">
+             Section 3.3. 
+           Thread Confinement</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch03lev1sec4.html">
+             Section 3.4. 
+           Immutability</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch03lev1sec5.html">
+             Section 3.5. 
+           Safe Publication</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch04.html">
+             Chapter 4. 
+           Composing Objects</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch04lev1sec1.html">
+             Section 4.1. 
+           Designing a Thread-safe Class</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch04lev1sec2.html">
+             Section 4.2. 
+           Instance Confinement</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch04lev1sec3.html">
+             Section 4.3. 
+           Delegating Thread Safety</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch04lev1sec4.html">
+             Section 4.4. 
+           Adding Functionality to Existing Thread-safe Classes</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch04lev1sec5.html">
+             Section 4.5. 
+           Documenting Synchronization Policies</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch05.html">
+             Chapter 5. 
+           Building Blocks</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch05lev1sec1.html">
+             Section 5.1. 
+           Synchronized Collections</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch05lev1sec2.html">
+             Section 5.2. 
+           Concurrent Collections</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch05lev1sec3.html">
+             Section 5.3. 
+           Blocking Queues and the Producer-consumer Pattern</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch05lev1sec4.html">
+             Section 5.4. 
+           Blocking and Interruptible Methods</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch05lev1sec5.html">
+             Section 5.5. 
+           Synchronizers</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch05lev1sec6.html">
+             Section 5.6. 
+           Building an Efficient, Scalable Result Cache</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch05lev1sec7.html">Summary of Part I</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="part02.html">
+             Part II: 
+           Structuring Concurrent Applications</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch06.html">
+             Chapter 6. 
+           Task Execution</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch06lev1sec1.html">
+             Section 6.1. 
+           Executing Tasks in Threads</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch06lev1sec2.html">
+             Section 6.2. 
+           The Executor Framework</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch06lev1sec3.html">
+             Section 6.3. 
+           Finding Exploitable Parallelism</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch06lev1sec4.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch07.html">
+             Chapter 7. 
+           Cancellation and Shutdown</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch07lev1sec1.html">
+             Section 7.1. 
+           Task Cancellation</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch07lev1sec2.html">
+             Section 7.2. 
+           Stopping a Thread-based Service</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch07lev1sec3.html">
+             Section 7.3. 
+           Handling Abnormal Thread Termination</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch07lev1sec4.html">
+             Section 7.4. 
+           JVM Shutdown</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch07lev1sec5.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch08.html">
+             Chapter 8. 
+           Applying Thread Pools</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch08lev1sec1.html">
+             Section 8.1. 
+           Implicit Couplings Between Tasks and Execution Policies</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch08lev1sec2.html">
+             Section 8.2. 
+           Sizing Thread Pools</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch08lev1sec3.html">
+             Section 8.3. 
+           Configuring ThreadPoolExecutor</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch08lev1sec4.html">
+             Section 8.4. 
+           Extending ThreadPoolExecutor</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch08lev1sec5.html">
+             Section 8.5. 
+           Parallelizing Recursive Algorithms</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch08lev1sec6.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch09.html">
+             Chapter 9. 
+           GUI Applications</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch09lev1sec1.html">
+             Section 9.1. 
+           Why are GUIs Single-threaded?</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch09lev1sec2.html">
+             Section 9.2. 
+           Short-running GUI Tasks</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch09lev1sec3.html">
+             Section 9.3. 
+           Long-running GUI Tasks</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch09lev1sec4.html">
+             Section 9.4. 
+           Shared Data Models</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch09lev1sec5.html">
+             Section 9.5. 
+           Other Forms of Single-threaded Subsystems</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch09lev1sec6.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="part03.html">
+             Part III: 
+           Liveness, Performance, and Testing</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch10.html">
+             Chapter 10. 
+           Avoiding Liveness Hazards</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch10lev1sec1.html">
+             Section 10.1. 
+           Deadlock</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch10lev1sec2.html">
+             Section 10.2. 
+           Avoiding and Diagnosing Deadlocks</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch10lev1sec3.html">
+             Section 10.3. 
+           Other Liveness Hazards</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch10lev1sec4.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch11.html">
+             Chapter 11. 
+           Performance and Scalability</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch11lev1sec1.html">
+             Section 11.1. 
+           Thinking about Performance</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch11lev1sec2.html">
+             Section 11.2. 
+           Amdahl's Law</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch11lev1sec3.html">
+             Section 11.3. 
+           Costs Introduced by Threads</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch11lev1sec4.html">
+             Section 11.4. 
+           Reducing Lock Contention</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch11lev1sec5.html">
+             Section 11.5. 
+           Example: Comparing Map Performance</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch11lev1sec6.html">
+             Section 11.6. 
+           Reducing Context Switch Overhead</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch11lev1sec7.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch12.html">
+             Chapter 12. 
+           Testing Concurrent Programs</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch12lev1sec1.html">
+             Section 12.1. 
+           Testing for Correctness</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch12lev1sec2.html">
+             Section 12.2. 
+           Testing for Performance</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch12lev1sec3.html">
+             Section 12.3. 
+           Avoiding Performance Testing Pitfalls</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch12lev1sec4.html">
+             Section 12.4. 
+           Complementary Testing Approaches</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch12lev1sec5.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="part04.html">
+             Part IV: 
+           Advanced Topics</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch13.html">
+             Chapter 13. 
+           Explicit Locks</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch13lev1sec1.html">
+             Section 13.1. 
+           Lock and ReentrantLock</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch13lev1sec2.html">
+             Section 13.2. 
+           Performance Considerations</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch13lev1sec3.html">
+             Section 13.3. 
+           Fairness</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch13lev1sec4.html">
+             Section 13.4. 
+           Choosing Between Synchronized and ReentrantLock</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch13lev1sec5.html">
+             Section 13.5. 
+           Read-write Locks</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch13lev1sec6.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch14.html">
+             Chapter 14. 
+           Building Custom Synchronizers</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch14lev1sec1.html">
+             Section 14.1. 
+           Managing State Dependence</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch14lev1sec2.html">
+             Section 14.2. 
+           Using Condition Queues</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch14lev1sec3.html">
+             Section 14.3. 
+           Explicit Condition Objects</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch14lev1sec4.html">
+             Section 14.4. 
+           Anatomy of a Synchronizer</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch14lev1sec5.html">
+             Section 14.5. 
+           AbstractQueuedSynchronizer</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch14lev1sec6.html">
+             Section 14.6. 
+           AQS in Java.util.concurrent Synchronizer Classes</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch14lev1sec7.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch15.html">
+             Chapter 15. 
+           Atomic Variables and Nonblocking Synchronization</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch15lev1sec1.html">
+             Section 15.1. 
+           Disadvantages of Locking</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch15lev1sec2.html">
+             Section 15.2. 
+           Hardware Support for Concurrency</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch15lev1sec3.html">
+             Section 15.3. 
+           Atomic Variable Classes</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch15lev1sec4.html">
+             Section 15.4. 
+           Nonblocking Algorithms</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch15lev1sec5.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="ch16.html">
+             Chapter 16. 
+           The Java Memory Model</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch16lev1sec1.html">
+             Section 16.1. 
+           What is a Memory Model, and Why would I Want One?</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch16lev1sec2.html">
+             Section 16.2. 
+           Publication</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch16lev1sec3.html">
+             Section 16.3. 
+           Initialization Safety</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="ch16lev1sec4.html">Summary</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="app01.html">
+             Appendix A. 
+           Annotations for Concurrency</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="app01lev1sec1.html">
+             Section A.1. 
+           Class Annotations</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="2">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="253"><a class="v5" href="app01lev1sec2.html">
+             Section A.2. 
+           Field and Method Annotations</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td class="v6" valign="top" colspan="1">
+             
+          </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="254"><a class="v5" href="bib01.html">Bibliography</a></td></tr><tr class="calibre6"><td class="v1" width="21">   </td><td height="18" class="v1" width="14"><img src="pixel.gif" alt="" border="0" vspace="4" class="calibre17"/></td><td class="v1" valign="top" colspan="255"><a class="v5" href="index.html">Index</a></td></tr></table>
+<p class="calibre1"> </p>
+
+</div>
+
+{% endraw %}
+

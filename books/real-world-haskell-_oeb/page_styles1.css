@@ -1,0 +1,46 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: "Droid";
+    font-weight: normal;
+    font-style: normal;
+    src: url(res:///Data/fonts/DroidSerif-Regular.ttf)
+    }
+@font-face {
+    font-family: "Droid";
+    font-weight: bold;
+    font-style: normal;
+    src: url(res:///Data/fonts/DroidSerif-Bold.ttf)
+    }
+@font-face {
+    font-family: "Droid";
+    font-weight: bold;
+    font-style: italic;
+    src: url(res:///Data/fonts/DroidSerif-Italic.ttf)
+    }
+@font-face {
+    font-family: "Droid";
+    font-weight: normal;
+    font-style: italic;
+    src: url(res:///Data/fonts/DroidSerif-BoldItalic.ttf)
+    }
+@font-face {
+    font-family: "DroidSans";
+    font-weight: normal;
+    font-style: normal;
+    src: url(res:///Data/fonts/DroidSans.ttf)
+    }
+@font-face {
+    font-family: "DroidSans";
+    font-weight: bold;
+    font-style: normal;
+    src: url(res:///Data/fonts/DroidSans-Bold.ttf)
+    }
+@font-face {
+    font-family: "DroidMono";
+    font-weight: bold;
+    font-style: italic;
+    src: url(res:///Data/fonts/DroidSansMonoSlashed.ttf)
+    }

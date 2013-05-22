@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="87e46abe-6eca-41ce-a2c0-bf27e0f72189" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>The Joy of Clojure: Thinking the Clojure Way</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Copyright</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos466"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Dedication</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos3680"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Brief Table of Contents</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos4307"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Table of Contents</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos8993"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Foreword</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos63754"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Preface</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos68289"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="7">
+      <navLabel>
+        <text>Acknowledgments</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos71697"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="8">
+      <navLabel>
+        <text>About This Book</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos75292"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_9" playOrder="9">
+      <navLabel>
+        <text>Part 1. Foundations</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos105806"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_10" playOrder="10">
+      <navLabel>
+        <text>Chapter 1. Clojure philosophy</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos106322"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_11" playOrder="11">
+      <navLabel>
+        <text>Chapter 2. Drinking from the Clojure firehose</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos163683"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="12">
+      <navLabel>
+        <text>Chapter 3. Dipping our toes in the pool</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos235819"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_13" playOrder="13">
+      <navLabel>
+        <text>Part 2. Data types</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos284570"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_14" playOrder="14">
+      <navLabel>
+        <text>Chapter 4. On scalars</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos284964"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_15" playOrder="15">
+      <navLabel>
+        <text>Chapter 5. Composite data types</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos332652"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_16" playOrder="16">
+      <navLabel>
+        <text>Part 3. Functional programming</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos428825"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_17" playOrder="17">
+      <navLabel>
+        <text>Chapter 6. Being lazy and set in your ways</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos429362"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_18" playOrder="18">
+      <navLabel>
+        <text>Chapter 7. Functional programming</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos485904"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_19" playOrder="19">
+      <navLabel>
+        <text>Part 4. Large-scale design</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos582206"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_20" playOrder="20">
+      <navLabel>
+        <text>Chapter 8. Macros</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos582816"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_21" playOrder="21">
+      <navLabel>
+        <text>Chapter 9. Combining data and code</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos642230"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_22" playOrder="22">
+      <navLabel>
+        <text>Chapter 10. Java.next</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos731329"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_23" playOrder="23">
+      <navLabel>
+        <text>Chapter 11. Mutation</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos818901"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_24" playOrder="24">
+      <navLabel>
+        <text>Part 5. Tangential considerations</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos952172"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_25" playOrder="25">
+      <navLabel>
+        <text>Chapter 12. Performance</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos952602"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_26" playOrder="26">
+      <navLabel>
+        <text>Chapter 13. Clojure changes the way you think</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos1001213"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_27" playOrder="27">
+      <navLabel>
+        <text>Resources</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos1067612"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_28" playOrder="28">
+      <navLabel>
+        <text>Index</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos1088739"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_29" playOrder="29">
+      <navLabel>
+        <text>List of Figures</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos1463166"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_30" playOrder="30">
+      <navLabel>
+        <text>List of Tables</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos1479906"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_31" playOrder="31">
+      <navLabel>
+        <text>List of Listings</text>
+      </navLabel>
+      <content src="The_Joy_of_Clojure__Thinking_th.html#filepos1481669"/>
+    </navPoint>
+  </navMap>
+</ncx>

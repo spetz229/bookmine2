@@ -1,0 +1,597 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="72fc2519-dfec-4343-86b9-07b79251030d" name="dtb:uid"/>
+    <meta content="3" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>The Google Resume</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Chapter 1: Introduction</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos23974"/>
+      <navPoint class="chapter" id="num_2" playOrder="2">
+        <navLabel>
+          <text>Life at Infinite Loop and Microsoft Way</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos26895"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_3" playOrder="3">
+        <navLabel>
+          <text>Big vs. Little: Is a Start-up Right for You?</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos33873"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_4" playOrder="4">
+        <navLabel>
+          <text>The Job Title: What Do You Want to Be When You Grow Up?</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos41855"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_5" playOrder="5">
+        <navLabel>
+          <text>And You’re on Your Way . . .</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos49213"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Chapter 2: Advanced Preparation</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos52556"/>
+      <navPoint class="chapter" id="num_7" playOrder="7">
+        <navLabel>
+          <text>What Can You Do: An Overview</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos54374"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_8" playOrder="8">
+        <navLabel>
+          <text>Academics</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos57953"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_9" playOrder="9">
+        <navLabel>
+          <text>Work Experience</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos72451"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_10" playOrder="10">
+        <navLabel>
+          <text>Extracurriculars and the Checkbox People</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos80120"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_11" playOrder="11">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos87101"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="12">
+      <navLabel>
+        <text>Chapter 3: Getting in the Door</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos98269"/>
+      <navPoint class="chapter" id="num_13" playOrder="13">
+        <navLabel>
+          <text>The Black Hole: Online Job Submission</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos99890"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_14" playOrder="14">
+        <navLabel>
+          <text>Getting a Personal Referral</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos102969"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_15" playOrder="15">
+        <navLabel>
+          <text>Career Fairs</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos109422"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_16" playOrder="16">
+        <navLabel>
+          <text>Professional Recruiters</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos114116"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_17" playOrder="17">
+        <navLabel>
+          <text>Additional Avenues</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos117771"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_18" playOrder="18">
+        <navLabel>
+          <text>Networking</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos123107"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_19" playOrder="19">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos134762"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_20" playOrder="20">
+      <navLabel>
+        <text>Chapter 4: Résumés</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos145358"/>
+      <navPoint class="chapter" id="num_21" playOrder="21">
+        <navLabel>
+          <text>Six Hallmarks of a Powerful Résumé</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos146924"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_22" playOrder="22">
+        <navLabel>
+          <text>The Structure</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos161971"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_23" playOrder="23">
+        <navLabel>
+          <text>How Long Is Too Long?</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos179224"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_24" playOrder="24">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos183867"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_25" playOrder="25">
+      <navLabel>
+        <text>Chapter 5: Deconstructing the Résumé</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos192802"/>
+      <navPoint class="chapter" id="num_26" playOrder="26">
+        <navLabel>
+          <text>Résumé A: Bill Jobs</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos194001"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_27" playOrder="27">
+        <navLabel>
+          <text>Résumé B: Steve Gates</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos203451"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_28" playOrder="28">
+        <navLabel>
+          <text>Résumé C: Geena Roberts</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos211984"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_29" playOrder="29">
+        <navLabel>
+          <text>Parting Words</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos219638"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_30" playOrder="30">
+        <navLabel>
+          <text>Additional Resources</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos221298"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_31" playOrder="31">
+      <navLabel>
+        <text>Chapter 6: Cover Letters and References</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos221603"/>
+      <navPoint class="chapter" id="num_32" playOrder="32">
+        <navLabel>
+          <text>Why a Cover Letter?</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos222575"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_33" playOrder="33">
+        <navLabel>
+          <text>The Three Types of Cover Letter</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos224432"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_34" playOrder="34">
+        <navLabel>
+          <text>The Structure</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos227978"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_35" playOrder="35">
+        <navLabel>
+          <text>Five Traits of a Strong Cover Letter</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos231594"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_36" playOrder="36">
+        <navLabel>
+          <text>An A+ Cover Letter</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos238071"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_37" playOrder="37">
+        <navLabel>
+          <text>References</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos241738"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_38" playOrder="38">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos253947"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_39" playOrder="39">
+        <navLabel>
+          <text>Additional Resources</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos262101"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_40" playOrder="40">
+      <navLabel>
+        <text>Chapter 7: Interview Prep and Overview</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos262416"/>
+      <navPoint class="chapter" id="num_41" playOrder="41">
+        <navLabel>
+          <text>What Are Tech Companies Looking For?</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos264431"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_42" playOrder="42">
+        <navLabel>
+          <text>How to Prepare</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos267476"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_43" playOrder="43">
+        <navLabel>
+          <text>Working with Your Recruiter</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos281841"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_44" playOrder="44">
+        <navLabel>
+          <text>Communication and Behavior</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos286051"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_45" playOrder="45">
+        <navLabel>
+          <text>Special Interview Types</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos296671"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_46" playOrder="46">
+        <navLabel>
+          <text>After the Interview</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos307686"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_47" playOrder="47">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos316653"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_48" playOrder="48">
+        <navLabel>
+          <text>Additional Resources</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos326158"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_49" playOrder="49">
+      <navLabel>
+        <text>Chapter 8: Interview Questions</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos326500"/>
+      <navPoint class="chapter" id="num_50" playOrder="50">
+        <navLabel>
+          <text>General Advice</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos327888"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_51" playOrder="51">
+        <navLabel>
+          <text>Acing the Standard Questions</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos332618"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_52" playOrder="52">
+        <navLabel>
+          <text>Behavioral and Résumé Questions</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos343495"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_53" playOrder="53">
+        <navLabel>
+          <text>Estimation Questions</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos349766"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_54" playOrder="54">
+        <navLabel>
+          <text>Design Questions</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos354980"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_55" playOrder="55">
+        <navLabel>
+          <text>Brainteasers: Why Are Manhole Covers Round?</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos361341"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_56" playOrder="56">
+        <navLabel>
+          <text>Answering the Tough Questions</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos369845"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_57" playOrder="57">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos374669"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_58" playOrder="58">
+        <navLabel>
+          <text>Additional Resources</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos382260"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_59" playOrder="59">
+      <navLabel>
+        <text>Chapter 9: The Programming Interview</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos382579"/>
+      <navPoint class="chapter" id="num_60" playOrder="60">
+        <navLabel>
+          <text>How They Differ: Microsoft, Google, Amazon, and Apple</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos383753"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_61" playOrder="61">
+        <navLabel>
+          <text>How to Prepare</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos385807"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_62" playOrder="62">
+        <navLabel>
+          <text>Memory Usage</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos393178"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_63" playOrder="63">
+        <navLabel>
+          <text>Coding Questions</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos394884"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_64" playOrder="64">
+        <navLabel>
+          <text>Algorithm Questions: Five Ways to Create an Algorithm</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos403802"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_65" playOrder="65">
+        <navLabel>
+          <text>Object-Oriented Design</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos414021"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_66" playOrder="66">
+        <navLabel>
+          <text>Scalability Questions</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos416715"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_67" playOrder="67">
+        <navLabel>
+          <text>Testing Interviews</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos419207"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_68" playOrder="68">
+        <navLabel>
+          <text>Example Problems</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos427987"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_69" playOrder="69">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos430986"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_70" playOrder="70">
+        <navLabel>
+          <text>Additional Resources</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos442659"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_71" playOrder="71">
+      <navLabel>
+        <text>Chapter 10: Getting into Gaming</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos442988"/>
+      <navPoint class="chapter" id="num_72" playOrder="72">
+        <navLabel>
+          <text>The Culture: Is It All Fun and Games?</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos444149"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_73" playOrder="73">
+        <navLabel>
+          <text>Job Positions: What Can You Do?</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos445888"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_74" playOrder="74">
+        <navLabel>
+          <text>Fresh Meat: Advice for College Candidates</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos454466"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_75" playOrder="75">
+        <navLabel>
+          <text>Reaching Out and Getting In</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos458495"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_76" playOrder="76">
+        <navLabel>
+          <text>Personality Fit</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos462143"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_77" playOrder="77">
+        <navLabel>
+          <text>The Gaming Interview—Three Tips to Doing Well</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos466921"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_78" playOrder="78">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos470436"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_79" playOrder="79">
+      <navLabel>
+        <text>Chapter 11: The Offer</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos480203"/>
+      <navPoint class="chapter" id="num_80" playOrder="80">
+        <navLabel>
+          <text>How to Evaluate an Offer</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos482169"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_81" playOrder="81">
+        <navLabel>
+          <text>Your Career Development</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos483701"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_82" playOrder="82">
+        <navLabel>
+          <text>The Financial Package</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos494124"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_83" playOrder="83">
+        <navLabel>
+          <text>The Happiness Factor</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos499968"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_84" playOrder="84">
+        <navLabel>
+          <text>How Can You Negotiate an Offer?</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos503494"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_85" playOrder="85">
+        <navLabel>
+          <text>Tricky Issues: Deadlines, Extensions, and Declining Offers</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos510799"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_86" playOrder="86">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos520111"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_87" playOrder="87">
+      <navLabel>
+        <text>Chapter 12: On the Job</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos532699"/>
+      <navPoint class="chapter" id="num_88" playOrder="88">
+        <navLabel>
+          <text>Your Career Path</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos533845"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_89" playOrder="89">
+        <navLabel>
+          <text>Promotions and Raises</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos548818"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_90" playOrder="90">
+        <navLabel>
+          <text>How and When to Quit</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos556490"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_91" playOrder="91">
+        <navLabel>
+          <text>Going Back to School</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos564424"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_92" playOrder="92">
+        <navLabel>
+          <text>Part-Time Schooling</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos579753"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_93" playOrder="93">
+        <navLabel>
+          <text>Your Questions Answered</text>
+        </navLabel>
+        <content src="The_Google_Resume.html#filepos582061"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_94" playOrder="94">
+      <navLabel>
+        <text>Chapter 13: Final Thoughts</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos590367"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_95" playOrder="95">
+      <navLabel>
+        <text>Appendix A : 156 Action Words to Make Your Résumé Jump</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos594571"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_96" playOrder="96">
+      <navLabel>
+        <text>Appendix B : Answers to Behavioral Interview Questions</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos607447"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_97" playOrder="97">
+      <navLabel>
+        <text>Index</text>
+      </navLabel>
+      <content src="The_Google_Resume.html#filepos621468"/>
+    </navPoint>
+  </navMap>
+</ncx>

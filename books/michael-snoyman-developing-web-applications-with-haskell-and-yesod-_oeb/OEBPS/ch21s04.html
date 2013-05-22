@@ -1,0 +1,117 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch21s03.html
+next: OEBPS/ch21s05.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Streaming xmlpipe Output"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect14_d1e8525" class="calibre1"></a>Streaming xmlpipe Output</h1></div></div></div><p class="calibre7"></p><p class="calibre7">We’ve saved the best for last. For the majority of Yesod handlers, the recommended approach is
+   to load up the database results into memory and then produce the output document based on that.
+   It’s simpler to work with, but more importantly it’s more resilient to exceptions. If there’s a
+   problem loading the data from the database, the user will get a proper 500 response code.</p><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7">What do I mean by “proper 500 response code”? If you start streaming a response to a
+                client, and encounter an exception halfway through, there’s no way to change the
+                status code; the user will see a 200 response that simply stops in the middle. Not
+                only can this partial content be confusing, but it’s an invalid usage of the HTTP
+                spec.</p></div><p class="calibre7">However, generating the xmlpipe output is a perfect example of the alternative. There are
+   potentially a huge number of documents (the yesodweb.com code handles tens of thousands of
+   these), and documents could easily be several hundred kilobytes. If we take a non-streaming
+   approach, this can lead to huge memory usage and slow response times.</p><p class="calibre7">So how exactly do we create a streaming response? As we cover in the WAI chapter, we have a <code class="literal">ResponseSource</code> constructor that
+   uses a stream of blaze-builder <code class="literal">Builder</code>s. From the Yesod side, we can
+   avoid the normal Yesod response procedure and send a WAI response directly using the <code class="literal">sendWaiResponse</code> function. So there are at least two of the pieces of this
+   puzzle.</p><p class="calibre7">Now we know we want to create a stream of <code class="literal">Builder</code>s from some XML
+   content. Fortunately, the <code class="function">xml-conduit</code> package provides this
+   interface directly. <code class="literal">xml-conduit</code> provides some high-level interfaces for dealing
+   with documents as a whole, but in our case, we’re going to need to use the low-level Event
+   interface to ensure minimal memory impact. So the function we’re interested in is:</p><a id="I_programlisting4_d1e8561" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">renderBuilder</code> <code class="ow">::</code> <code class="kt">Resource</code> <code class="n">m</code> <code class="ow">=&gt;</code> <code class="kt">RenderSettings</code> <code class="ow">-&gt;</code> <code class="kt">Conduit</code> <code class="kt">Event</code> <code class="n">m</code> <code class="kt">Builder</code> <code class="n">b</code>
+</pre><p class="calibre7">In plain English, that means renderBuilder takes some settings (we’ll just use the
+            defaults), and will then convert a stream of <code class="literal">Event</code>s
+            to a stream of <code class="literal">Builder</code>s. This is looking pretty good,
+            so all we need now is a stream of <code class="literal">Event</code>s.</p><p class="calibre7">Speaking of which, what should our XML document actually look like? It’s pretty simple: we
+            have a <code class="literal">sphinx:docset</code> root element, a <code class="literal">sphinx:schema</code> element containing a single <code class="literal">sphinx:field</code> (which defines the content field), and then a
+                <code class="literal">sphinx:document</code> for each document in our
+            database. That last element will have an <code class="literal">id</code> attribute
+            and a child <code class="literal">content</code> element.</p><div class="example"><a id="conceptId-x-20" class="firstname"></a><p class="title6">Example 21-1. Sample xmlpipe document</p><div class="book"><pre class="programlisting1">&lt;sphinx:docset xmlns:sphinx="http://sphinxsearch.com/"&gt;
+    &lt;sphinx:schema&gt;
+        &lt;sphinx:field name="content"/&gt;
+    &lt;/sphinx:schema&gt;
+    &lt;sphinx:document id="1"&gt;
+        &lt;content&gt;bar&lt;/content&gt;
+    &lt;/sphinx:document&gt;
+    &lt;sphinx:document id="2"&gt;
+        &lt;content&gt;foo bar baz&lt;/content&gt;
+    &lt;/sphinx:document&gt;
+&lt;/sphinx:docset&gt;</pre></div></div><p class="calibre7">Every document is going to start off with the same events (start the docset, start
+   the schema, etc) and end with the same event (end the docset). We’ll start off by defining
+   those:</p><a id="I_programlisting4_d1e8606" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">toName</code> <code class="ow">::</code> <code class="kt">Text</code> <code class="ow">-&gt;</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Name</code>
+<code class="nf">toName</code> <code class="n">x</code> <code class="ow">=</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Name</code> <code class="n">x</code> <code class="p">(</code><code class="kt">Just</code> <code class="s">"http://sphinxsearch.com/"</code><code class="p">)</code> <code class="p">(</code><code class="kt">Just</code> <code class="s">"sphinx"</code><code class="p">)</code>
+
+<code class="nf">docset</code><code class="p">,</code> <code class="n">schema</code><code class="p">,</code> <code class="n">field</code><code class="p">,</code> <code class="n">document</code><code class="p">,</code> <code class="n">content</code> <code class="ow">::</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Name</code>
+<code class="nf">docset</code> <code class="ow">=</code> <code class="n">toName</code> <code class="s">"docset"</code>
+<code class="nf">schema</code> <code class="ow">=</code> <code class="n">toName</code> <code class="s">"schema"</code>
+<code class="nf">field</code> <code class="ow">=</code> <code class="n">toName</code> <code class="s">"field"</code>
+<code class="nf">document</code> <code class="ow">=</code> <code class="n">toName</code> <code class="s">"document"</code>
+<code class="nf">content</code> <code class="ow">=</code> <code class="s">"content"</code> <code class="cm">-- no prefix</code>
+
+<code class="nf">startEvents</code><code class="p">,</code> <code class="n">endEvents</code> <code class="ow">::</code> <code class="p">[</code><code class="kt">X</code><code class="o">.</code><code class="kt">Event</code><code class="p">]</code>
+<code class="nf">startEvents</code> <code class="ow">=</code>
+    <code class="p">[</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginDocument</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">docset</code> <code class="kt">[]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">schema</code> <code class="kt">[]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">field</code> <code class="p">[(</code><code class="s">"name"</code><code class="p">,</code> <code class="p">[</code><code class="kt">X</code><code class="o">.</code><code class="kt">ContentText</code> <code class="s">"content"</code><code class="p">])]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">field</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">schema</code>
+    <code class="p">]</code>
+
+<code class="nf">endEvents</code> <code class="ow">=</code>
+    <code class="p">[</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">docset</code>
+    <code class="p">]</code>
+</pre><p class="calibre7">Now that we have the shell of our document, we need to get the <code class="literal">Event</code>s for each individual document. This is actually a fairly simple function:</p><a id="I_programlisting4_d1e8616" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">entityToEvents</code> <code class="ow">::</code> <code class="p">(</code><code class="kt">Entity</code> <code class="kt">Doc</code><code class="p">)</code> <code class="ow">-&gt;</code> <code class="p">[</code><code class="kt">X</code><code class="o">.</code><code class="kt">Event</code><code class="p">]</code>
+<code class="nf">entityToEvents</code> <code class="p">(</code><code class="kt">Entity</code> <code class="n">docid</code> <code class="n">doc</code><code class="p">)</code> <code class="ow">=</code>
+    <code class="p">[</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">document</code> <code class="p">[(</code><code class="s">"id"</code><code class="p">,</code> <code class="p">[</code><code class="kt">X</code><code class="o">.</code><code class="kt">ContentText</code> <code class="o">$</code> <code class="n">toPathPiece</code> <code class="n">docid</code><code class="p">])]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">content</code> <code class="kt">[]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventContent</code> <code class="o">$</code> <code class="kt">X</code><code class="o">.</code><code class="kt">ContentText</code> <code class="o">$</code> <code class="n">unTextarea</code> <code class="o">$</code> <code class="n">docContent</code> <code class="n">doc</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">content</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">document</code>
+    <code class="p">]</code>
+</pre><p class="calibre7">We start the document element with an <code class="literal">id</code> attribute, start the
+   content, insert the content, and then close both elements. We use <code class="literal">toPathPiece</code> to
+   convert a <code class="literal">DocId</code> into a <code class="literal">Text</code> value. Next, we need to be able to
+   convert a stream of these entities into a stream of events. For this, we can use the built-in
+    <code class="literal">concatMap</code> function from <code class="literal">Data.Conduit.List</code>: <code class="literal">CL.concatMap entityToEvents</code>.</p><p class="calibre7">But what we <span class="firstname"><em class="calibre4">really</em></span> want is to stream those events directly from the
+   database. For most of this book, we’ve used the <code class="literal">selectList</code> function, but
+   Persistent also provides the (more powerful) <code class="literal">selectSourceConn</code> function. So we
+   end up with the function:</p><a id="I_programlisting4_d1e8653" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">docSource</code> <code class="ow">::</code> <code class="kt">Connection</code> <code class="ow">-&gt;</code> <code class="kt">C</code><code class="o">.</code><code class="kt">Source</code> <code class="kt">IO</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Event</code>
+<code class="nf">docSource</code> <code class="n">conn</code> <code class="ow">=</code> <code class="n">selectSourceConn</code> <code class="n">conn</code> <code class="kt">[]</code> <code class="kt">[]</code> <code class="kt">C</code><code class="o">.$=</code> <code class="kt">CL</code><code class="o">.</code><code class="n">concatMap</code> <code class="n">entityToEvents</code>
+</pre><p class="calibre7">The $= operator joins together a source and a conduit into a new source. Now that we
+   have our <code class="literal">Event</code> source, all we need to do is surround it with the document start
+   and end events. With <code class="literal">Source</code>’s <code class="literal">Monoid</code> instance, this is a piece
+   of cake:</p><a id="I_programlisting4_d1e8666" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">fullDocSource</code> <code class="ow">::</code> <code class="kt">Connection</code> <code class="ow">-&gt;</code> <code class="kt">C</code><code class="o">.</code><code class="kt">Source</code> <code class="kt">IO</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Event</code>
+<code class="nf">fullDocSource</code> <code class="n">conn</code> <code class="ow">=</code> <code class="n">mconcat</code>
+    <code class="p">[</code> <code class="kt">CL</code><code class="o">.</code><code class="n">sourceList</code> <code class="n">startEvents</code>
+    <code class="p">,</code> <code class="n">docSource</code> <code class="n">conn</code>
+    <code class="p">,</code> <code class="kt">CL</code><code class="o">.</code><code class="n">sourceList</code> <code class="n">endEvents</code>
+    <code class="p">]</code>
+</pre><p class="calibre7">We’re almost there. Now we just need to tie it together in <code class="literal">getXmlpipeR</code>. We need to get a database connection to be used. Normally,
+            database connections are taken and returned automatically via the <code class="literal">runDB</code> function. In our case, we want to check out a
+            connection and keep it available until the response body is completely sent. To do this,
+            we use the <code class="literal">takeResource</code> function, which registers a
+            cleanup action with the <code class="literal">ResourceT</code> monad.</p><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7">All WAI applications live in a <code class="literal">ResourceT</code> transformer. You can get more
+   information on <code class="literal">ResourceT</code> in the conduit appendix.</p></div><p class="calibre7">By default, a resource will not be returned to the pool. This has to do with proper
+   exception handling, but is not relevant for our use case. Therefore, we need to force the
+   connection to be returned to the pool.</p><a id="I_programlisting4_d1e8701" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">getXmlpipeR</code> <code class="ow">::</code> <code class="kt">Handler</code> <code class="kt">RepXml</code>
+<code class="nf">getXmlpipeR</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="kt">Searcher</code> <code class="n">pool</code> <code class="ow">&lt;-</code> <code class="n">getYesod</code>
+    <code class="kr">let</code> <code class="n">headers</code> <code class="ow">=</code> <code class="p">[(</code><code class="s">"Content-Type"</code><code class="p">,</code> <code class="s">"text/xml"</code><code class="p">)]</code>
+    <code class="n">managedConn</code> <code class="ow">&lt;-</code> <code class="n">lift</code> <code class="o">$</code> <code class="n">takeResource</code> <code class="n">pool</code>
+    <code class="kr">let</code> <code class="n">conn</code> <code class="ow">=</code> <code class="n">mrValue</code> <code class="n">managedConn</code>
+    <code class="n">lift</code> <code class="o">$</code> <code class="n">mrReuse</code> <code class="n">managedConn</code> <code class="kt">True</code> <code class="kr">let</code> <code class="n">source</code> <code class="ow">=</code> <code class="n">fullDocSource</code> <code class="n">conn</code> <code class="kt">C</code><code class="o">.$=</code> <code class="n">renderBuilder</code> <code class="n">def</code>
+    <code class="n">sendWaiResponse</code> <code class="o">$</code> <code class="kt">ResponseSource</code> <code class="n">status200</code> <code class="n">headers</code> <code class="n">source</code>
+</pre><p class="calibre7">We get our connection pool from the foundation variable, then send a WAI response. We
+   use the <code class="literal">ResponseSource</code> constructor, and provide it the status code, response
+   headers, and body.</p></div></div>
+
+{% endraw %}
+

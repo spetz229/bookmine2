@@ -1,0 +1,1557 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="a197c9d5-b223-42d6-a1fc-a2a1ea10c4fd" name="dtb:uid"/>
+    <meta content="5" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>jQuery UI</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="id2892383" playOrder="1">
+      <navLabel>
+        <text>jQuery UI</text>
+      </navLabel>
+      <content src="OEBPS/index.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="id2852715" playOrder="2">
+      <navLabel>
+        <text>Preface</text>
+      </navLabel>
+      <content src="OEBPS/pr01.html"/>
+      <navPoint class="chapter" id="id2753220" playOrder="3">
+        <navLabel>
+          <text>Who Should Read This Book</text>
+        </navLabel>
+        <content src="OEBPS/pr01.html#who_should_read_this_book"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2842734" playOrder="4">
+        <navLabel>
+          <text>Structure of the Book</text>
+        </navLabel>
+        <content src="OEBPS/pr01s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3001330" playOrder="5">
+        <navLabel>
+          <text>Conventions Used in This Book</text>
+        </navLabel>
+        <content src="OEBPS/pr01s03.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2950752" playOrder="6">
+        <navLabel>
+          <text>Using Code Examples</text>
+        </navLabel>
+        <content src="OEBPS/pr01s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2996144" playOrder="7">
+        <navLabel>
+          <text>Safari® Books Online</text>
+        </navLabel>
+        <content src="OEBPS/pr01s05.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3001639" playOrder="8">
+        <navLabel>
+          <text>How to Contact Us</text>
+        </navLabel>
+        <content src="OEBPS/pr01s06.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2842868" playOrder="9">
+        <navLabel>
+          <text>Acknowledgments</text>
+        </navLabel>
+        <content src="OEBPS/pr01s07.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id2950337" playOrder="10">
+      <navLabel>
+        <text>1. Introduction to jQuery UI</text>
+      </navLabel>
+      <content src="OEBPS/ch01.html"/>
+      <navPoint class="chapter" id="id2950344" playOrder="11">
+        <navLabel>
+          <text>jQuery UI Installation</text>
+        </navLabel>
+        <content src="OEBPS/ch01.html#jquery_ui_installation"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2868861" playOrder="12">
+        <navLabel>
+          <text>Overview of jQuery UI</text>
+        </navLabel>
+        <content src="OEBPS/ch01s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2999370" playOrder="13">
+        <navLabel>
+          <text>What Is a CSS Theme?</text>
+        </navLabel>
+        <content src="OEBPS/ch01s03.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2880873" playOrder="14">
+        <navLabel>
+          <text>Which Files Should We Include in Our HTML Pages?</text>
+        </navLabel>
+        <content src="OEBPS/ch01s04.html"/>
+        <navPoint class="chapter" id="id2885797" playOrder="15">
+          <navLabel>
+            <text>Uncompressed Files</text>
+          </navLabel>
+          <content src="OEBPS/ch01s04.html#uncompressed_files"/>
+          <navPoint class="chapter" id="id2880378" playOrder="16">
+            <navLabel>
+              <text>JavaScript files</text>
+            </navLabel>
+            <content src="OEBPS/ch01s04.html#javascript_files"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2880454" playOrder="17">
+            <navLabel>
+              <text>CSS files</text>
+            </navLabel>
+            <content src="OEBPS/ch01s04.html#css_files"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2840715" playOrder="18">
+            <navLabel>
+              <text>Sample HTML page including uncompressed files</text>
+            </navLabel>
+            <content src="OEBPS/ch01s04.html#sample_html_page_including_uncompressed"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2971505" playOrder="19">
+          <navLabel>
+            <text>Compressed Files</text>
+          </navLabel>
+          <content src="OEBPS/ch01s04.html#compressed_files"/>
+          <navPoint class="chapter" id="id2950290" playOrder="20">
+            <navLabel>
+              <text>JavaScript files</text>
+            </navLabel>
+            <content src="OEBPS/ch01s04.html#javascript_files-id1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2914796" playOrder="21">
+            <navLabel>
+              <text>CSS files</text>
+            </navLabel>
+            <content src="OEBPS/ch01s04.html#css_files-id1"/>
+          </navPoint>
+          <navPoint class="chapter" id="id2932630" playOrder="22">
+            <navLabel>
+              <text>Sample HTML page including compressed files</text>
+            </navLabel>
+            <content src="OEBPS/ch01s04.html#sample_html_page_including_compressed_fi"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id2915526" playOrder="23">
+        <navLabel>
+          <text>Change the CSS Theme</text>
+        </navLabel>
+        <content src="OEBPS/ch01s05.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2916375" playOrder="24">
+        <navLabel>
+          <text>And Now?</text>
+        </navLabel>
+        <content src="OEBPS/ch01s06.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id2895699" playOrder="25">
+      <navLabel>
+        <text>2. Tabs</text>
+      </navLabel>
+      <content src="OEBPS/ch02.html"/>
+      <navPoint class="chapter" id="id2982287" playOrder="26">
+        <navLabel>
+          <text>Basic Principles of Tabs</text>
+        </navLabel>
+        <content src="OEBPS/ch02.html#basic_principles_of_tabs"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2851966" playOrder="27">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch02s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id2948783" playOrder="28">
+        <navLabel>
+          <text>The tabs () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch02s03.html"/>
+        <navPoint class="chapter" id="id3001389" playOrder="29">
+          <navLabel>
+            <text>The tabs (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch02s03.html#the_tabs_open_parenthesis_options_close"/>
+          <navPoint class="chapter" id="id2948955" playOrder="30">
+            <navLabel>
+              <text>Tab appearance and behavior</text>
+            </navLabel>
+            <content src="OEBPS/ch02s03.html#tab_appearance_and_behavior"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3002320" playOrder="31">
+            <navLabel>
+              <text>Managing events associated with tabs</text>
+            </navLabel>
+            <content src="OEBPS/ch02s03.html#managing_events_associated_with_tabs"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id2948379" playOrder="32">
+          <navLabel>
+            <text>The tabs (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch02s03.html#the_tabs_open_parenthesis_quotation_mark"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3000511" playOrder="33">
+        <navLabel>
+          <text>The bind () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch02s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3000762" playOrder="34">
+        <navLabel>
+          <text>Examples of Using Tabs</text>
+        </navLabel>
+        <content src="OEBPS/ch02s05.html"/>
+        <navPoint class="chapter" id="id3000772" playOrder="35">
+          <navLabel>
+            <text>Dynamic Creation of Tabs</text>
+          </navLabel>
+          <content src="OEBPS/ch02s05.html#dynamic_creation_of_tabs"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3000903" playOrder="36">
+          <navLabel>
+            <text>Modifying the Contents of a Tab Using Ajax</text>
+          </navLabel>
+          <content src="OEBPS/ch02s05.html#modifying_the_contents_of_a_tab_using_aj"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3001029" playOrder="37">
+          <navLabel>
+            <text>Transmitting the Information to the Server via Ajax</text>
+          </navLabel>
+          <content src="OEBPS/ch02s05.html#transmitting_the_information_to_the_serv"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3001176" playOrder="38">
+          <navLabel>
+            <text>Using the Tabs add Method</text>
+          </navLabel>
+          <content src="OEBPS/ch02s05.html#using_the_tabs_add_event"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3020165" playOrder="39">
+          <navLabel>
+            <text>Using the tabsadd Event</text>
+          </navLabel>
+          <content src="OEBPS/ch02s05.html#using_the_tabsadd_event"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3020253" playOrder="40">
+      <navLabel>
+        <text>3. Accordion Menus</text>
+      </navLabel>
+      <content src="OEBPS/ch03.html"/>
+      <navPoint class="chapter" id="id3020267" playOrder="41">
+        <navLabel>
+          <text>Basic Principles of Accordion Menus</text>
+        </navLabel>
+        <content src="OEBPS/ch03.html#basic_principles_of_accordion_menus"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3020442" playOrder="42">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch03s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3020671" playOrder="43">
+        <navLabel>
+          <text>The accordion () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch03s03.html"/>
+        <navPoint class="chapter" id="id3020699" playOrder="44">
+          <navLabel>
+            <text>The accordion (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch03s03.html#the_accordion_open_parenthesis_options_c"/>
+          <navPoint class="chapter" id="id3020728" playOrder="45">
+            <navLabel>
+              <text>Options for managing accordion menus</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#options_for_managing_accordion_menus"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3020991" playOrder="46">
+            <navLabel>
+              <text>Managing the height of the menu contents</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#managing_the_height_of_the_menu_contents"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3021127" playOrder="47">
+            <navLabel>
+              <text>Managing events related to menus</text>
+            </navLabel>
+            <content src="OEBPS/ch03s03.html#managing_events_related_to_menus"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3021320" playOrder="48">
+          <navLabel>
+            <text>The accordion (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch03s03.html#the_accordion_open_parenthesis_quotation"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3021471" playOrder="49">
+        <navLabel>
+          <text>Event Management in Accordion Menus with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch03s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3021602" playOrder="50">
+        <navLabel>
+          <text>Examples of Using Accordion Menus</text>
+        </navLabel>
+        <content src="OEBPS/ch03s05.html"/>
+        <navPoint class="chapter" id="id3021612" playOrder="51">
+          <navLabel>
+            <text>Opening Any Menu</text>
+          </navLabel>
+          <content src="OEBPS/ch03s05.html#opening_any_menu"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3021700" playOrder="52">
+          <navLabel>
+            <text>Loading the Contents of a Menu with Ajax: Using options</text>
+          </navLabel>
+          <content src="OEBPS/ch03s05.html#loading_the_contents_of_a_menu_with_ajax"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3021851" playOrder="53">
+          <navLabel>
+            <text>Loading the contents of a menu with Ajax: Using accordionchange</text>
+          </navLabel>
+          <content src="OEBPS/ch03s05.html#loading_the_contents_of_a_menu_with"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3021943" playOrder="54">
+      <navLabel>
+        <text>4. Dialog Boxes</text>
+      </navLabel>
+      <content src="OEBPS/ch04.html"/>
+      <navPoint class="chapter" id="id3021959" playOrder="55">
+        <navLabel>
+          <text>Basic Principles of Dialog Boxes</text>
+        </navLabel>
+        <content src="OEBPS/ch04.html#basic_principles_of_dialog_boxes"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3022149" playOrder="56">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch04s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3022363" playOrder="57">
+        <navLabel>
+          <text>The dialog () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch04s03.html"/>
+        <navPoint class="chapter" id="id3022394" playOrder="58">
+          <navLabel>
+            <text>The dialog (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch04s03.html#the_dialog_open_parenthesis_options_clos"/>
+          <navPoint class="chapter" id="id3036857" playOrder="59">
+            <navLabel>
+              <text>Managing the visual effects on the dialog box</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#managing_the_visual_effects_on_the_dialo"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3037226" playOrder="60">
+            <navLabel>
+              <text>Managing the behavior of the dialog box</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#managing_the_behavior_of_the_dialog_box"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3037448" playOrder="61">
+            <navLabel>
+              <text>Managing events in the dialog box</text>
+            </navLabel>
+            <content src="OEBPS/ch04s03.html#managing_events_in_the_dialog_box"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3037814" playOrder="62">
+          <navLabel>
+            <text>The dialog (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch04s03.html#the_dialog_open_parenthesis_quotation_ma"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3038109" playOrder="63">
+        <navLabel>
+          <text>Event Handling in Dialog Boxes with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch04s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3038427" playOrder="64">
+        <navLabel>
+          <text>Examples of Using Dialog Boxes</text>
+        </navLabel>
+        <content src="OEBPS/ch04s05.html"/>
+        <navPoint class="chapter" id="id3038438" playOrder="65">
+          <navLabel>
+            <text>Opening and Closing a Dialog Box</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#opening_and_closing_a_dialog_box"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3038636" playOrder="66">
+          <navLabel>
+            <text>Applying an Effect When Opening or Closing the Dialog Box</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#applying_an_effect_when_opening_or_closi"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3038703" playOrder="67">
+          <navLabel>
+            <text>Verifying the Closure of the Dialog Box</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#verifying_the_closure_of_the_dialog_box"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3038811" playOrder="68">
+          <navLabel>
+            <text>Hiding the Close Button</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#hiding_the_close_button"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3038956" playOrder="69">
+          <navLabel>
+            <text>Inserting Buttons in the Dialog Box</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#inserting_buttons_in_the_dialog_box"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3039085" playOrder="70">
+          <navLabel>
+            <text>Inserting Content Using Ajax</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#inserting_content_using_ajax"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3039223" playOrder="71">
+          <navLabel>
+            <text>Changing the Behavior of a Dialog Box with Effects</text>
+          </navLabel>
+          <content src="OEBPS/ch04s05.html#changing_the_behavior_of_a_dialog_box_wi"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3039354" playOrder="72">
+      <navLabel>
+        <text>5. Buttons</text>
+      </navLabel>
+      <content src="OEBPS/ch05.html"/>
+      <navPoint class="chapter" id="id3039364" playOrder="73">
+        <navLabel>
+          <text>Basic Principles of Buttons</text>
+        </navLabel>
+        <content src="OEBPS/ch05.html#basic_principles_of_buttons"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3039482" playOrder="74">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch05s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3039638" playOrder="75">
+        <navLabel>
+          <text>The button () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch05s03.html"/>
+        <navPoint class="chapter" id="id3039661" playOrder="76">
+          <navLabel>
+            <text>The button (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html#the_button_open_parenthesis_options_clos"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3039919" playOrder="77">
+          <navLabel>
+            <text>The button (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch05s03.html#the_button_open_parenthesis_quotation_ma"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3040134" playOrder="78">
+        <navLabel>
+          <text>Event Handling on Buttons with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch05s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3040152" playOrder="79">
+        <navLabel>
+          <text>Radio Buttons</text>
+        </navLabel>
+        <content src="OEBPS/ch05s05.html"/>
+        <navPoint class="chapter" id="id3040161" playOrder="80">
+          <navLabel>
+            <text>Displaying Radio Buttons</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html#displaying_radio_buttons"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3040311" playOrder="81">
+          <navLabel>
+            <text>Improving the Display with buttonset ()</text>
+          </navLabel>
+          <content src="OEBPS/ch05s05.html#improving_the_display_with_buttonset_ope"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3040448" playOrder="82">
+        <navLabel>
+          <text>Checkboxes</text>
+        </navLabel>
+        <content src="OEBPS/ch05s06.html"/>
+        <navPoint class="chapter" id="id3040493" playOrder="83">
+          <navLabel>
+            <text>Displaying Checkboxes</text>
+          </navLabel>
+          <content src="OEBPS/ch05s06.html#displaying_checkboxes"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3040542" playOrder="84">
+          <navLabel>
+            <text>Improving the Display with buttonset ()</text>
+          </navLabel>
+          <content src="OEBPS/ch05s06.html#improving_the_display_with_buttonset"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3040638" playOrder="85">
+        <navLabel>
+          <text>Examples of Using Buttons</text>
+        </navLabel>
+        <content src="OEBPS/ch05s07.html"/>
+        <navPoint class="chapter" id="id3040648" playOrder="86">
+          <navLabel>
+            <text>Displaying Icons in Buttons</text>
+          </navLabel>
+          <content src="OEBPS/ch05s07.html#displaying_icons_in_buttons"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3040948" playOrder="87">
+          <navLabel>
+            <text>Creating a Calculator</text>
+          </navLabel>
+          <content src="OEBPS/ch05s07.html#creating_a_calculator"/>
+          <navPoint class="chapter" id="id3040995" playOrder="88">
+            <navLabel>
+              <text>Basic program</text>
+            </navLabel>
+            <content src="OEBPS/ch05s07.html#basic_program"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3041154" playOrder="89">
+            <navLabel>
+              <text>Improving the program</text>
+            </navLabel>
+            <content src="OEBPS/ch05s07.html#improving_the_program"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3041396" playOrder="90">
+      <navLabel>
+        <text>6. Progress Bars</text>
+      </navLabel>
+      <content src="OEBPS/ch06.html"/>
+      <navPoint class="chapter" id="id3041406" playOrder="91">
+        <navLabel>
+          <text>Basic Principles of Progress Bars</text>
+        </navLabel>
+        <content src="OEBPS/ch06.html#basic_principles_of_progress_bars"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3041502" playOrder="92">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch06s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3041654" playOrder="93">
+        <navLabel>
+          <text>The progressbar () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch06s03.html"/>
+        <navPoint class="chapter" id="id3041684" playOrder="94">
+          <navLabel>
+            <text>The progressbar (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch06s03.html#the_progressbar_open_parenthesis_options"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3041810" playOrder="95">
+          <navLabel>
+            <text>The progressbar (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch06s03.html#the_progressbar_open_parenthesis_quotati"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3042028" playOrder="96">
+        <navLabel>
+          <text>Handling Events in Progress Bars with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch06s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3042066" playOrder="97">
+        <navLabel>
+          <text>Examples of Using Progress Bars</text>
+        </navLabel>
+        <content src="OEBPS/ch06s05.html"/>
+        <navPoint class="chapter" id="id3042076" playOrder="98">
+          <navLabel>
+            <text>Incrementing a Progress Bar</text>
+          </navLabel>
+          <content src="OEBPS/ch06s05.html#incrementing_a_progress_bar"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3042190" playOrder="99">
+          <navLabel>
+            <text>Performing Processing at Different Stages of Completion</text>
+          </navLabel>
+          <content src="OEBPS/ch06s05.html#performing_processing_at_different_stage"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3042285" playOrder="100">
+      <navLabel>
+        <text>7. Sliders</text>
+      </navLabel>
+      <content src="OEBPS/ch07.html"/>
+      <navPoint class="chapter" id="id3042297" playOrder="101">
+        <navLabel>
+          <text>Basic Principles of Sliders</text>
+        </navLabel>
+        <content src="OEBPS/ch07.html#basic_principles_of_sliders"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3042404" playOrder="102">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch07s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3042587" playOrder="103">
+        <navLabel>
+          <text>The slider () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch07s03.html"/>
+        <navPoint class="chapter" id="id3042617" playOrder="104">
+          <navLabel>
+            <text>The slider (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch07s03.html#the_slider_open_parenthesis_options_clos"/>
+          <navPoint class="chapter" id="id3042645" playOrder="105">
+            <navLabel>
+              <text>Managing the appearance and behavior of sliders</text>
+            </navLabel>
+            <content src="OEBPS/ch07s03.html#managing_the_appearance_and_behavior_of"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3042801" playOrder="106">
+            <navLabel>
+              <text>Managing the values of cursors</text>
+            </navLabel>
+            <content src="OEBPS/ch07s03.html#managing_the_values_of_cursors"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3043032" playOrder="107">
+            <navLabel>
+              <text>Managing events on the slider</text>
+            </navLabel>
+            <content src="OEBPS/ch07s03.html#managing_events_on_the_slider"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3043208" playOrder="108">
+          <navLabel>
+            <text>The slider (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch07s03.html#the_slider_open_parenthesis_quotation_ma"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3043516" playOrder="109">
+        <navLabel>
+          <text>Event Management on the Sliders with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch07s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3043679" playOrder="110">
+        <navLabel>
+          <text>Examples of Using Sliders</text>
+        </navLabel>
+        <content src="OEBPS/ch07s05.html"/>
+        <navPoint class="chapter" id="id3043691" playOrder="111">
+          <navLabel>
+            <text>Displaying the Value of One Indicator</text>
+          </navLabel>
+          <content src="OEBPS/ch07s05.html#displaying_the_value_of_one_indicator"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3043822" playOrder="112">
+          <navLabel>
+            <text>Displaying the Values of Two Indicators</text>
+          </navLabel>
+          <content src="OEBPS/ch07s05.html#displaying_the_values_of_two_indicators"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3043972" playOrder="113">
+          <navLabel>
+            <text>Adjusting the Opacity of an Image Using a Slider</text>
+          </navLabel>
+          <content src="OEBPS/ch07s05.html#adjusting_the_opacity_of_an_image_using"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3044089" playOrder="114">
+      <navLabel>
+        <text>8. Datepickers</text>
+      </navLabel>
+      <content src="OEBPS/ch08.html"/>
+      <navPoint class="chapter" id="id3044104" playOrder="115">
+        <navLabel>
+          <text>Basic Principles of Datepickers</text>
+        </navLabel>
+        <content src="OEBPS/ch08.html#basic_principles_of_datepickers"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3044236" playOrder="116">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch08s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3044516" playOrder="117">
+        <navLabel>
+          <text>The datepicker () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch08s03.html"/>
+        <navPoint class="chapter" id="id3044546" playOrder="118">
+          <navLabel>
+            <text>The datepicker (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch08s03.html#the_datepicker_open_parenthesis_options"/>
+          <navPoint class="chapter" id="id3044588" playOrder="119">
+            <navLabel>
+              <text>Managing the appearance and visual effects associated with the calendar</text>
+            </navLabel>
+            <content src="OEBPS/ch08s03.html#managing_the_appearance_and_visual_effec"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3045217" playOrder="120">
+            <navLabel>
+              <text>Internationalization options</text>
+            </navLabel>
+            <content src="OEBPS/ch08s03.html#internationalization_options"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3045747" playOrder="121">
+            <navLabel>
+              <text>Managing date selection</text>
+            </navLabel>
+            <content src="OEBPS/ch08s03.html#managing_date_selection"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3046116" playOrder="122">
+            <navLabel>
+              <text>Managing events on the calendar</text>
+            </navLabel>
+            <content src="OEBPS/ch08s03.html#managing_events_on_the_calendar"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3046398" playOrder="123">
+          <navLabel>
+            <text>The datepicker (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch08s03.html#the_datepicker_open_parenthesis_quotatio"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3046707" playOrder="124">
+        <navLabel>
+          <text>Examples of Using Datepickers</text>
+        </navLabel>
+        <content src="OEBPS/ch08s04.html"/>
+        <navPoint class="chapter" id="id3046717" playOrder="125">
+          <navLabel>
+            <text>Displaying a Calendar in Another Language</text>
+          </navLabel>
+          <content src="OEBPS/ch08s04.html#displaying_a_calendar_in_another_languag"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3046800" playOrder="126">
+          <navLabel>
+            <text>Displaying Multiple Months in the Calendar</text>
+          </navLabel>
+          <content src="OEBPS/ch08s04.html#displaying_multiple_months_in_the_calend"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3046980" playOrder="127">
+          <navLabel>
+            <text>Displaying a Static Calendar</text>
+          </navLabel>
+          <content src="OEBPS/ch08s04.html#displaying_a_static_calendar"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3047063" playOrder="128">
+          <navLabel>
+            <text>Indicating Minimum and Maximum Dates</text>
+          </navLabel>
+          <content src="OEBPS/ch08s04.html#indicating_minimum_and_maximum_dates"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3047173" playOrder="129">
+          <navLabel>
+            <text>Preventing the Selection of Specific Dates</text>
+          </navLabel>
+          <content src="OEBPS/ch08s04.html#preventing_the_selection_of_specific_dat"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3047295" playOrder="130">
+          <navLabel>
+            <text>Preselecting Any Date</text>
+          </navLabel>
+          <content src="OEBPS/ch08s04.html#preselecting_any_date"/>
+          <navPoint class="chapter" id="id3047317" playOrder="131">
+            <navLabel>
+              <text>Using options.defaultDate</text>
+            </navLabel>
+            <content src="OEBPS/ch08s04.html#using_options.defaultdate"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3047408" playOrder="132">
+            <navLabel>
+              <text>Using datepicker (“setDate”, date)</text>
+            </navLabel>
+            <content src="OEBPS/ch08s04.html#using_datepicker_open_parenthesis_quotat"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3047487" playOrder="133">
+            <navLabel>
+              <text>Special case of dates in foreign formats</text>
+            </navLabel>
+            <content src="OEBPS/ch08s04.html#special_case_of_dates_in_foreign_formats"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3047581" playOrder="134">
+          <navLabel>
+            <text>Performing an Ajax Request When Selecting a Date</text>
+          </navLabel>
+          <content src="OEBPS/ch08s04.html#performing_an_ajax_request_when_selectin"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3047783" playOrder="135">
+      <navLabel>
+        <text>9. Autocompletion</text>
+      </navLabel>
+      <content src="OEBPS/ch09.html"/>
+      <navPoint class="chapter" id="id3047797" playOrder="136">
+        <navLabel>
+          <text>Basic Principles of Autocompletion</text>
+        </navLabel>
+        <content src="OEBPS/ch09.html#basic_principles_of_autocompletion"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3047922" playOrder="137">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch09s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3048126" playOrder="138">
+        <navLabel>
+          <text>The autocomplete () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch09s03.html"/>
+        <navPoint class="chapter" id="id3048156" playOrder="139">
+          <navLabel>
+            <text>The autocomplete (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch09s03.html#the_autocomplete_open_parenthesis_option"/>
+          <navPoint class="chapter" id="id3048202" playOrder="140">
+            <navLabel>
+              <text>Managing autocompletion</text>
+            </navLabel>
+            <content src="OEBPS/ch09s03.html#managing_autocompletion"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3048360" playOrder="141">
+            <navLabel>
+              <text>Managing events in the list of suggestions</text>
+            </navLabel>
+            <content src="OEBPS/ch09s03.html#managing_events_in_the_list_of_suggestio"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3048687" playOrder="142">
+          <navLabel>
+            <text>The autocomplete (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch09s03.html#the_autocomplete_open_parenthesis_quotat"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3048992" playOrder="143">
+        <navLabel>
+          <text>Event Management on the List of Suggestions with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch09s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3049213" playOrder="144">
+        <navLabel>
+          <text>Examples of Using the Autocompletion Mechanism</text>
+        </navLabel>
+        <content src="OEBPS/ch09s05.html"/>
+        <navPoint class="chapter" id="id3049224" playOrder="145">
+          <navLabel>
+            <text>Specifying the Width of the List of Suggestions</text>
+          </navLabel>
+          <content src="OEBPS/ch09s05.html#specifying_the_width_of_the_list_of_sugg"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3049387" playOrder="146">
+          <navLabel>
+            <text>Displaying a List of Suggestions at the Opening of the HTML Page</text>
+          </navLabel>
+          <content src="OEBPS/ch09s05.html#displaying_a_list_of_suggestions_at_the"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3049533" playOrder="147">
+          <navLabel>
+            <text>Displaying a List of Suggestions at the Entry of the Cursor in the Input Field</text>
+          </navLabel>
+          <content src="OEBPS/ch09s05.html#displaying_a_list_of_suggestions_at"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3049610" playOrder="148">
+          <navLabel>
+            <text>Producing an Effect on the Appearance of the List of Suggestions</text>
+          </navLabel>
+          <content src="OEBPS/ch09s05.html#producing_an_effect_on_the_appearance_of"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3049677" playOrder="149">
+          <navLabel>
+            <text>Dynamically Creating a List of Suggestions</text>
+          </navLabel>
+          <content src="OEBPS/ch09s05.html#dynamically_creating_a_list_of_suggestio"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3049853" playOrder="150">
+          <navLabel>
+            <text>Dynamically Creating a List of Suggestions Based on the Input Data</text>
+          </navLabel>
+          <content src="OEBPS/ch09s05.html#dynamically_creating_a_list_of_sugge"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3050162" playOrder="151">
+          <navLabel>
+            <text>Inserting Images in the List of Suggestions</text>
+          </navLabel>
+          <content src="OEBPS/ch09s05.html#inserting_images_in_the_list_of_suggesti"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3050495" playOrder="152">
+      <navLabel>
+        <text>10. Drag-and-Drop</text>
+      </navLabel>
+      <content src="OEBPS/ch10.html"/>
+      <navPoint class="chapter" id="id3050529" playOrder="153">
+        <navLabel>
+          <text>The draggable () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch10.html#the_draggable_open_parenthesis_close_par"/>
+        <navPoint class="chapter" id="id3050561" playOrder="154">
+          <navLabel>
+            <text>The draggable (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch10.html#the_draggable_open_parenthesis_options_c"/>
+          <navPoint class="chapter" id="id3050584" playOrder="155">
+            <navLabel>
+              <text>Specifying the movable elements</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#specifying_the_movable_elements"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3050804" playOrder="156">
+            <navLabel>
+              <text>Managing element movement</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#managing_element_movement"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3051181" playOrder="157">
+            <navLabel>
+              <text>Managing the effect at the end of displacement</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#managing_the_effect_at_the_end_of_displa"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3051326" playOrder="158">
+            <navLabel>
+              <text>Managing displacement constraints</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#managing_displacement_constraints"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3051618" playOrder="159">
+            <navLabel>
+              <text>Managing window scroll</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#managing_window_scroll"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3051762" playOrder="160">
+            <navLabel>
+              <text>Managing movable element events</text>
+            </navLabel>
+            <content src="OEBPS/ch10.html#managing_movable_element_events"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3052049" playOrder="161">
+          <navLabel>
+            <text>The draggable (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch10.html#the_draggable_open_parenthesis_quotation"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3052255" playOrder="162">
+        <navLabel>
+          <text>Event Management on the Moved Elements with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch10s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3052394" playOrder="163">
+        <navLabel>
+          <text>Examples of Using Drag Functionality</text>
+        </navLabel>
+        <content src="OEBPS/ch10s03.html"/>
+        <navPoint class="chapter" id="id3052407" playOrder="164">
+          <navLabel>
+            <text>Carrying Out a Treatment When Moving</text>
+          </navLabel>
+          <content src="OEBPS/ch10s03.html#carrying_out_a_treatment_when_moving"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3052569" playOrder="165">
+          <navLabel>
+            <text>Imposing Limits on Displacement</text>
+          </navLabel>
+          <content src="OEBPS/ch10s03.html#imposing_limits_on_displacement"/>
+          <navPoint class="chapter" id="id3052580" playOrder="166">
+            <navLabel>
+              <text>Constraining the displacement to a given space</text>
+            </navLabel>
+            <content src="OEBPS/ch10s03.html#constraining_the_displacement_to_a_given"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3052724" playOrder="167">
+            <navLabel>
+              <text>Constraining the displacement horizontally or vertically</text>
+            </navLabel>
+            <content src="OEBPS/ch10s03.html#constraining_the_displacement_horizontal"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3052837" playOrder="168">
+          <navLabel>
+            <text>Moving an Object by Duplicating</text>
+          </navLabel>
+          <content src="OEBPS/ch10s03.html#moving_an_object_by_duplicating"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3053363" playOrder="169">
+        <navLabel>
+          <text>The droppable () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch10s04.html"/>
+        <navPoint class="chapter" id="id3053396" playOrder="170">
+          <navLabel>
+            <text>The droppable (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch10s04.html#the_droppable_open_parenthesis_options_c"/>
+          <navPoint class="chapter" id="id3053442" playOrder="171">
+            <navLabel>
+              <text>Managing the behavior of the elements of deposit</text>
+            </navLabel>
+            <content src="OEBPS/ch10s04.html#managing_the_behavior_of_the_elements_of"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3053626" playOrder="172">
+            <navLabel>
+              <text>Indicating which elements can be dropped</text>
+            </navLabel>
+            <content src="OEBPS/ch10s04.html#indicating_which_elements_can_be_dropped"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3053776" playOrder="173">
+            <navLabel>
+              <text>Managing the appearance of elements of deposit</text>
+            </navLabel>
+            <content src="OEBPS/ch10s04.html#managing_the_appearance_of_elements_of_d"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3053898" playOrder="174">
+            <navLabel>
+              <text>Managing events on the elements of deposit</text>
+            </navLabel>
+            <content src="OEBPS/ch10s04.html#managing_events_on_the_elements_of_depos"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3054261" playOrder="175">
+          <navLabel>
+            <text>The droppable (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch10s04.html#the_droppable_open_parenthesis_quotation"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3054473" playOrder="176">
+        <navLabel>
+          <text>Event Management on the Elements of Deposit with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch10s05.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3054662" playOrder="177">
+        <navLabel>
+          <text>Examples of Using the Drop Functionality: A Shopping Cart</text>
+        </navLabel>
+        <content src="OEBPS/ch10s06.html"/>
+        <navPoint class="chapter" id="id3054676" playOrder="178">
+          <navLabel>
+            <text>Creating a Shopping Cart with Drag-and-Drop</text>
+          </navLabel>
+          <content src="OEBPS/ch10s06.html#creating_a_shopping_cart_with_drag_and_d"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3054941" playOrder="179">
+          <navLabel>
+            <text>Adding a Visual Effect to Shopping Cart Deposits</text>
+          </navLabel>
+          <content src="OEBPS/ch10s06.html#adding_a_visual_effect_to_shopping_cart"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3055110" playOrder="180">
+          <navLabel>
+            <text>Removing an Item from the Cart</text>
+          </navLabel>
+          <content src="OEBPS/ch10s06.html#removing_an_item_from_the_cart"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3055224" playOrder="181">
+      <navLabel>
+        <text>11. Selecting Items</text>
+      </navLabel>
+      <content src="OEBPS/ch11.html"/>
+      <navPoint class="chapter" id="id3055254" playOrder="182">
+        <navLabel>
+          <text>Basic Principles of Selecting Items</text>
+        </navLabel>
+        <content src="OEBPS/ch11.html#basic_principles_of_selecting_items"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3055347" playOrder="183">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch11s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3055644" playOrder="184">
+        <navLabel>
+          <text>The selectable () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch11s03.html"/>
+        <navPoint class="chapter" id="id3055675" playOrder="185">
+          <navLabel>
+            <text>The selectable (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch11s03.html#the_selectable_open_parenthesis_options"/>
+          <navPoint class="chapter" id="id3055697" playOrder="186">
+            <navLabel>
+              <text>Managing selected items</text>
+            </navLabel>
+            <content src="OEBPS/ch11s03.html#managing_selected_items"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3055887" playOrder="187">
+            <navLabel>
+              <text>Managing events on selected items</text>
+            </navLabel>
+            <content src="OEBPS/ch11s03.html#managing_events_on_selected_items"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3056202" playOrder="188">
+          <navLabel>
+            <text>The selectable (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch11s03.html#the_selectable_open_parenthesis_quotatio"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3056400" playOrder="189">
+        <navLabel>
+          <text>Event Management in the Selection with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch11s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3056616" playOrder="190">
+        <navLabel>
+          <text>Examples of Using the Selection Mechanism</text>
+        </navLabel>
+        <content src="OEBPS/ch11s05.html"/>
+        <navPoint class="chapter" id="id3056628" playOrder="191">
+          <navLabel>
+            <text>Displaying the Order of the Events During the Selection</text>
+          </navLabel>
+          <content src="OEBPS/ch11s05.html#displaying_the_order_of_the_events_durin"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3056766" playOrder="192">
+          <navLabel>
+            <text>Preventing the Selection of an Element</text>
+          </navLabel>
+          <content src="OEBPS/ch11s05.html#preventing_the_selection_of_an_element"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3056900" playOrder="193">
+          <navLabel>
+            <text>Inhibiting Clicks to Select an Item</text>
+          </navLabel>
+          <content src="OEBPS/ch11s05.html#inhibiting_clicks_to_select_an_item"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3056996" playOrder="194">
+          <navLabel>
+            <text>Managing a Shopping Cart</text>
+          </navLabel>
+          <content src="OEBPS/ch11s05.html#managing_a_shopping_cart"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3057168" playOrder="195">
+      <navLabel>
+        <text>12. Permutation of Elements in the Page</text>
+      </navLabel>
+      <content src="OEBPS/ch12.html"/>
+      <navPoint class="chapter" id="id3057192" playOrder="196">
+        <navLabel>
+          <text>Basic Principles of Permutation of Elements</text>
+        </navLabel>
+        <content src="OEBPS/ch12.html#basic_principles_of_permutation_of_eleme"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3057286" playOrder="197">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch12s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3057494" playOrder="198">
+        <navLabel>
+          <text>The sortable () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch12s03.html"/>
+        <navPoint class="chapter" id="id3057525" playOrder="199">
+          <navLabel>
+            <text>The sortable (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch12s03.html#the_sortable_open_parenthesis_options_cl"/>
+          <navPoint class="chapter" id="id3057559" playOrder="200">
+            <navLabel>
+              <text>Specifying and managing the movable elements</text>
+            </navLabel>
+            <content src="OEBPS/ch12s03.html#specifying_and_managing_the_movable_elem"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3058064" playOrder="201">
+            <navLabel>
+              <text>Specifying and managing swappable elements</text>
+            </navLabel>
+            <content src="OEBPS/ch12s03.html#specifying_and_managing_swappable_elemen"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3058334" playOrder="202">
+            <navLabel>
+              <text>Managing empty spaces</text>
+            </navLabel>
+            <content src="OEBPS/ch12s03.html#managing_empty_spaces"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3058488" playOrder="203">
+            <navLabel>
+              <text>Managing effects at the end of displacement</text>
+            </navLabel>
+            <content src="OEBPS/ch12s03.html#managing_effects_at_the_end_of_displacem"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3058578" playOrder="204">
+            <navLabel>
+              <text>Managing displacement constraints</text>
+            </navLabel>
+            <content src="OEBPS/ch12s03.html#managing_displacement_constraint"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3058743" playOrder="205">
+            <navLabel>
+              <text>Managing window scrolling</text>
+            </navLabel>
+            <content src="OEBPS/ch12s03.html#managing_window_scrolling"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3058885" playOrder="206">
+            <navLabel>
+              <text>Managing events on swappable elements</text>
+            </navLabel>
+            <content src="OEBPS/ch12s03.html#managing_events_on_swappable_elements"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3059513" playOrder="207">
+          <navLabel>
+            <text>The sortable (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch12s03.html#the_sortable_open_parenthesis_quotation"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3059772" playOrder="208">
+        <navLabel>
+          <text>Event Management of the Permutation with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch12s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3060079" playOrder="209">
+        <navLabel>
+          <text>Examples of Using the Permutation Mechanism</text>
+        </navLabel>
+        <content src="OEBPS/ch12s05.html"/>
+        <navPoint class="chapter" id="id3060089" playOrder="210">
+          <navLabel>
+            <text>Displaying the Order in Which Events Appear</text>
+          </navLabel>
+          <content src="OEBPS/ch12s05.html#displaying_the_order_in_which_events_app"/>
+          <navPoint class="chapter" id="id3060103" playOrder="211">
+            <navLabel>
+              <text>When swapping in one list</text>
+            </navLabel>
+            <content src="OEBPS/ch12s05.html#when_swapping_in_one_list"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3060316" playOrder="212">
+            <navLabel>
+              <text>When switching between two lists</text>
+            </navLabel>
+            <content src="OEBPS/ch12s05.html#when_switching_between_two_lists"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3060584" playOrder="213">
+          <navLabel>
+            <text>Dropping any Element in the List</text>
+          </navLabel>
+          <content src="OEBPS/ch12s05.html#dropping_any_element_in_the_list"/>
+          <navPoint class="chapter" id="id3060598" playOrder="214">
+            <navLabel>
+              <text>Inserting images into a list of titles</text>
+            </navLabel>
+            <content src="OEBPS/ch12s05.html#inserting_images_into_a_list_of_titles"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3060816" playOrder="215">
+            <navLabel>
+              <text>Adding a visual treatment</text>
+            </navLabel>
+            <content src="OEBPS/ch12s05.html#adding_a_visual_treatment"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3061048" playOrder="216">
+      <navLabel>
+        <text>13. Resizing</text>
+      </navLabel>
+      <content src="OEBPS/ch13.html"/>
+      <navPoint class="chapter" id="id3061059" playOrder="217">
+        <navLabel>
+          <text>Basic Principles of Resizing</text>
+        </navLabel>
+        <content src="OEBPS/ch13.html#basic_principles_of_resizing"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3061167" playOrder="218">
+        <navLabel>
+          <text>Formatting Content</text>
+        </navLabel>
+        <content src="OEBPS/ch13s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3061434" playOrder="219">
+        <navLabel>
+          <text>The resizable () Method</text>
+        </navLabel>
+        <content src="OEBPS/ch13s03.html"/>
+        <navPoint class="chapter" id="id3061465" playOrder="220">
+          <navLabel>
+            <text>The resizable (options) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch13s03.html#the_resizable_open_parenthesis_options_c"/>
+          <navPoint class="chapter" id="id3061487" playOrder="221">
+            <navLabel>
+              <text>Managing resizable elements</text>
+            </navLabel>
+            <content src="OEBPS/ch13s03.html#managing_resizable_elements"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3062122" playOrder="222">
+            <navLabel>
+              <text>Managing resizing effects</text>
+            </navLabel>
+            <content src="OEBPS/ch13s03.html#managing_resizing_effects"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3062337" playOrder="223">
+            <navLabel>
+              <text>Managing events on resized elements</text>
+            </navLabel>
+            <content src="OEBPS/ch13s03.html#managing_events_on_resized_elements"/>
+          </navPoint>
+        </navPoint>
+        <navPoint class="chapter" id="id3062672" playOrder="224">
+          <navLabel>
+            <text>The resizable (“action”, params) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch13s03.html#the_resizable_open_parenthesis_quotation"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3062869" playOrder="225">
+        <navLabel>
+          <text>Handling Events when Resizing with bind ()</text>
+        </navLabel>
+        <content src="OEBPS/ch13s04.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3063008" playOrder="226">
+        <navLabel>
+          <text>Examples of Using the Resizing Mechanism</text>
+        </navLabel>
+        <content src="OEBPS/ch13s05.html"/>
+        <navPoint class="chapter" id="id3063019" playOrder="227">
+          <navLabel>
+            <text>Displaying Dimensions of the Element When Resizing</text>
+          </navLabel>
+          <content src="OEBPS/ch13s05.html#displaying_dimensions_of_the_element_whe"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3063126" playOrder="228">
+          <navLabel>
+            <text>Displaying the Position of the Element When Resizing</text>
+          </navLabel>
+          <content src="OEBPS/ch13s05.html#displaying_the_position_of_the_element_w"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3063267" playOrder="229">
+          <navLabel>
+            <text>Performing an Animation While Resizing</text>
+          </navLabel>
+          <content src="OEBPS/ch13s05.html#performing_an_animation_while_resizing"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3063495" playOrder="230">
+          <navLabel>
+            <text>Creating a Resizable Text Box</text>
+          </navLabel>
+          <content src="OEBPS/ch13s05.html#creating_a_resizable_text_box"/>
+          <navPoint class="chapter" id="id3063506" playOrder="231">
+            <navLabel>
+              <text>Input on a single line</text>
+            </navLabel>
+            <content src="OEBPS/ch13s05.html#input_on_a_single_line"/>
+          </navPoint>
+          <navPoint class="chapter" id="id3063736" playOrder="232">
+            <navLabel>
+              <text>Multi-line input</text>
+            </navLabel>
+            <content src="OEBPS/ch13s05.html#multiline_input"/>
+          </navPoint>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3063872" playOrder="233">
+      <navLabel>
+        <text>14. Visual Effects in jQuery UI</text>
+      </navLabel>
+      <content src="OEBPS/ch14.html"/>
+      <navPoint class="chapter" id="id3063914" playOrder="234">
+        <navLabel>
+          <text>New Visual Effects</text>
+        </navLabel>
+        <content src="OEBPS/ch14.html#new_visual_effects"/>
+        <navPoint class="chapter" id="id3063939" playOrder="235">
+          <navLabel>
+            <text>The effect (effectName, options, duration, callback) Method</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_effect_open_parenthesis_effectname_c"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3064153" playOrder="236">
+          <navLabel>
+            <text>The blind Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_blind_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3064389" playOrder="237">
+          <navLabel>
+            <text>The bounce Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_bounce_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3064568" playOrder="238">
+          <navLabel>
+            <text>The shake Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_shake_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3064714" playOrder="239">
+          <navLabel>
+            <text>The clip Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_clip_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3065020" playOrder="240">
+          <navLabel>
+            <text>The drop Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_drop_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3065240" playOrder="241">
+          <navLabel>
+            <text>The explode Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_explode_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3065420" playOrder="242">
+          <navLabel>
+            <text>The fold Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_fold_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3065624" playOrder="243">
+          <navLabel>
+            <text>The highlight Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_highlight_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3065855" playOrder="244">
+          <navLabel>
+            <text>The puff Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_puff_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3066063" playOrder="245">
+          <navLabel>
+            <text>The pulsate Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_pulsate_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3066114" playOrder="246">
+          <navLabel>
+            <text>The scale Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_scale_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3066397" playOrder="247">
+          <navLabel>
+            <text>The size Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_size_effect"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3066609" playOrder="248">
+          <navLabel>
+            <text>The slide Effect</text>
+          </navLabel>
+          <content src="OEBPS/ch14.html#the_slide_effect"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3066835" playOrder="249">
+        <navLabel>
+          <text>The show (), hide (), and toggle () Methods</text>
+        </navLabel>
+        <content src="OEBPS/ch14s02.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="id3067050" playOrder="250">
+        <navLabel>
+          <text>The animate () method Improved by jQuery UI</text>
+        </navLabel>
+        <content src="OEBPS/ch14s03.html"/>
+        <navPoint class="chapter" id="id3067085" playOrder="251">
+          <navLabel>
+            <text>CSS Properties for Managing Colors</text>
+          </navLabel>
+          <content src="OEBPS/ch14s03.html#css_properties_for_managing_colors"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3067286" playOrder="252">
+          <navLabel>
+            <text>New Values for the easing Option</text>
+          </navLabel>
+          <content src="OEBPS/ch14s03.html#new_values_for_the_easing_option"/>
+        </navPoint>
+      </navPoint>
+      <navPoint class="chapter" id="id3067350" playOrder="253">
+        <navLabel>
+          <text>Producing Effects with CSS Classes</text>
+        </navLabel>
+        <content src="OEBPS/ch14s04.html"/>
+        <navPoint class="chapter" id="id3067391" playOrder="254">
+          <navLabel>
+            <text>The addClass (), removeClass (), and toggleClass () Improved Methods</text>
+          </navLabel>
+          <content src="OEBPS/ch14s04.html#the_addclass_open_parenthesis_close_pare"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3067642" playOrder="255">
+          <navLabel>
+            <text>The switchClass () Method</text>
+          </navLabel>
+          <content src="OEBPS/ch14s04.html#the_switchclass_open_parenthesis_close_p"/>
+        </navPoint>
+        <navPoint class="chapter" id="id3067696" playOrder="256">
+          <navLabel>
+            <text>Example of Using the toggleClass () Method</text>
+          </navLabel>
+          <content src="OEBPS/ch14s04.html#example_of_using_the_toggleclass_open_pa"/>
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="id3067849" playOrder="257">
+      <navLabel>
+        <text>About the Author</text>
+      </navLabel>
+      <content src="OEBPS/author_bios.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

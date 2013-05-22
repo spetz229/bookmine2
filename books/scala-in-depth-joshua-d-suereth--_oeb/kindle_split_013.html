@@ -1,0 +1,1483 @@
+---
+layout: page
+title: "Scala in Depth"
+prev: kindle_split_012.html
+next: kindle_split_014.html
+book_path: books/scala-in-depth-joshua-d-suereth--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<div class="calibre5"></div><h2 class="chapter" id="ch05">Chapter 5. <a id="ch05__title" class="calibre6"></a>Using implicits to write expressive code
+      </h2>
+      <p class="calibre2"> </p><table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><div class="calibre4">
+         
+         <b id="ch05sb01" class="calibre21">In this chapter</b>
+         
+         <p class="calibre22"></p>
+         <ul class="calibre23"><li class="calibre24">Introduction to implicits</li>
+            
+            <li class="calibre24">Mechanics of the implicit resolution system</li>
+            
+            <li class="calibre24">Using implicits to enhance classes</li>
+            
+            <li class="calibre24">Using implicits to enforce scope rules</li>
+            
+         </ul></div>
+      <table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><p class="calibre2"> </p><p class="noind">The implicit system in Scala allows the compiler to adjust code using a well-defined lookup mechanism. A programmer in Scala
+         can leave out information that the compiler will attempt to infer at compile time. The Scala compiler can infer one of two
+         situations:
+      </p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24">A method call or constructor with a missing parameter.</li>
+         
+         <li class="calibre24">Missing conversion from one type to another type. This also applies to method calls on an object that would require a conversion.</li>
+         
+      </ul><p class="noind">In both of these situations, the compiler follows a set of rules to resolve missing data and allow the code to compile. When
+         the programmer leaves out parameters, it’s incredibly useful and is done in advanced Scala libraries. When the compiler <a id="iddle1336" class="calibre25"></a><a id="iddle1493" class="calibre25"></a><a id="iddle2138" class="calibre25"></a>converts types to ensure that an expression compiles is more dangerous and is the cause of controversy.
+      </p>
+      
+      <p class="noind">The implicit system is one of the greatest assets of the Scala programming language. Using it wisely and conservatively can
+         drastically reduce the size of your code base. It can also be used to elegantly enforce design considerations. Let’s look
+         at implicit parameters in Scala.
+      </p>
+      
+      
+      <h3 id="ch05lev1sec1" class="calibre17"><a id="ch05lev1sec1__title" class="calibre6"></a>5.1. Introduction to implicits
+      </h3>
+      
+      <p class="noind">Scala provides an <kbd class="calibre18">implicit</kbd> keyword that can be used in two ways: method or variable definitions, and method parameter lists. If this keyword is used
+         on method or variable definitions, it tells the compiler that those methods or variable definitions can be used during implicit
+         resolution. Implicit resolution is when the compiler determines that a piece of information is missing in code, and it must
+         be looked up. The <kbd class="calibre18">implicit</kbd> keyword can also be used at the beginning of a method parameter list. This tells the compiler that the parameter list might
+         be missing, in which case the compiler should resolve the parameters via implicit resolution.
+      </p>
+      
+      <p class="noind">Let’s look at using the implicit resolution mechanism to resolve a missing parameter list:</p>
+      
+      <pre id="PLd0e8931" class="calibre8">scala&gt; def findAnInt(implicit x : Int) = x
+findAnInt: (implicit x: Int)Int</pre>
+      
+      <p class="noind">The <kbd class="calibre18">findAnInt</kbd> method declares a single parameter <kbd class="calibre18">x</kbd> of type <kbd class="calibre18">Int</kbd>. This function will return any value that’s passed into it. The parameter list is marked with implicit, which means that
+         we don’t need to use it. If it’s left off, the compiler will look for a variable of type <kbd class="calibre18">Int</kbd> in the implicit scope. Let’s look at the following example:
+      </p>
+      
+      <pre id="PLd0e8952" class="calibre8">scala&gt; findAnInt
+&lt;console&gt;:7: error: could not find implicit value for parameter x: Int
+       findAnInt
+       ^</pre>
+      
+      <p class="noind">The <kbd class="calibre18">findAnInt</kbd> method is called without specifying any argument list. The compiler complains that it can’t find an implicit value for the
+         <kbd class="calibre18">x</kbd> parameter. We’ll provide one, as follows:
+      </p>
+      
+      <pre id="PLd0e8967" class="calibre8">scala&gt; implicit val test = 5
+test: Int = 5</pre>
+      
+      <p class="noind">The <kbd class="calibre18">test</kbd> value is defined with the <kbd class="calibre18">implicit</kbd> keyword. This marks it as available for implicit resolution. Since this is in the REPL, the <kbd class="calibre18">test</kbd> value will be available in the implicit scope for the rest of the REPL session. Here’s what happens when we can <kbd class="calibre18">findAnInt</kbd>:
+      </p>
+      
+      <pre id="PLd0e8988" class="calibre8">scala&gt; findAnInt
+res3: Int = 5</pre>
+      
+      <p class="noind">The call to <kbd class="calibre18">findAnInt</kbd> succeeds and returns the value of the <kbd class="calibre18">test</kbd> value. The compiler was able to successfully complete the function call. We can still provide the parameter if desired.
+      </p>
+      
+      
+      <pre id="PLd0e9005" class="calibre8">scala&gt; findAnInt(2)
+res4: Int = 2</pre>
+      
+      <p class="noind"><a id="iddle1121" class="calibre25"></a><a id="iddle1348" class="calibre25"></a><a id="iddle1467" class="calibre25"></a><a id="iddle2014" class="calibre25"></a><a id="iddle2133" class="calibre25"></a><a id="iddle2143" class="calibre25"></a>This method call passes a parameter with a value of 2. Because the method call is complete, the compiler doesn’t need to look
+         up a value using implicits. Remember this, as implicit method parameters can still be explicitly provided. This utility will
+         be discussed further in section 5.6.
+      </p>
+      
+      <p class="noind">To understand how the compiler determines if a variable is available for implicit resolution, it’s important to dig into how
+         the compiler deals with identifiers and scope.
+      </p>
+      
+      
+      <h4 id="ch05lev2sec1" class="calibre28">5.1.1. <a id="ch05lev2sec1__title" class="calibre25"></a>Identifiers: A digression
+      </h4>
+      
+      <p class="noind">Before delving into the implicit resolution mechanism, it’s important to understand how the compiler resolves identifiers
+         within a particular scope. This section references <a href="kindle_split_010.html#ch02" class="calibre7">chapter 2</a> of the Scala Language Specification (SLS), I highly recommend reading through the SLS after you have an understanding of
+         the basics. Identifiers play a crucial role in the selection of implicits, so let’s dig into the nuts and bolts of identifiers
+         in Scala.
+      </p>
+      
+      <p class="noind">Scala defines the term <i class="calibre9">entity</i> to mean types, values, methods, or classes. These are the things we use to build our programs. We refer to them using identifiers,
+         or names. In Scala this is called a <i class="calibre9">binding</i>. For example, in the following code:
+      </p>
+      
+      <pre id="PLd0e9067" class="calibre8">class Foo {
+  def val x = 5
+}</pre>
+      
+      <p class="noind">the <kbd class="calibre18">Foo</kbd> class itself is an entity, a class containing an <kbd class="calibre18">x</kbd> method. But we’ve given this class the name <kbd class="calibre18">Foo</kbd>, which is the binding. If we declare this class locally within the REPL, we can instantiate it using the name <kbd class="calibre18">Foo</kbd> because it’s locally bound.
+      </p>
+      
+      <pre id="PLd0e9088" class="calibre8">scala&gt; val y = new Foo
+y: Foo = Foo@33262bf4</pre>
+      
+      <p class="noind">Here we can construct a new variable, named <kbd class="calibre18">y</kbd>, of type <kbd class="calibre18">Foo</kbd> using the name <kbd class="calibre18">Foo</kbd>. Again, this is because the class Foo was defined locally within the REPL and the name <kbd class="calibre18">Foo</kbd> was bound locally. Let’s complicate things by placing <kbd class="calibre18">Foo</kbd> in a package.
+      </p>
+      
+      <pre id="PLd0e9112" class="calibre8">package test;
+
+class Foo {
+  val x = 5
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">Foo</kbd> class is now a member of the package <kbd class="calibre18">test</kbd>. If we try to access it with the name <kbd class="calibre18">Foo</kbd>, it will fail on the REPL:
+      </p>
+      
+      <pre id="PLd0e9130" class="calibre8">scala&gt; new Foo
+&lt;console&gt;:7: error: not found: type Foo
+       new Foo</pre>
+      
+      <p class="noind">Trying to call new <kbd class="calibre18">Foo</kbd> fails because the name <kbd class="calibre18">Foo</kbd> isn’t bound in our scope. The <kbd class="calibre18">Foo</kbd> class is now in the <kbd class="calibre18">test</kbd> package. To access it, we must either use the name <kbd class="calibre18">test.Foo</kbd> <a id="iddle1109" class="calibre25"></a><a id="iddle1509" class="calibre25"></a><a id="iddle1515" class="calibre25"></a><a id="iddle1592" class="calibre25"></a><a id="iddle1867" class="calibre25"></a><a id="iddle1893" class="calibre25"></a><a id="iddle1894" class="calibre25"></a><a id="iddle2098" class="calibre25"></a>or create a binding of the name <kbd class="calibre18">Foo</kbd> to the <kbd class="calibre18">test.Foo</kbd> class in the current scope. For the latter, Scala provides the <kbd class="calibre18">import</kbd> keyword:
+      </p>
+      
+      <pre id="PLd0e9214" class="calibre8">scala&gt; import test.Foo
+import test.Foo
+
+scala&gt; new Foo
+res3: test.Foo = test.Foo@60e1e567</pre>
+      
+      <p class="noind">The <kbd class="calibre18">import</kbd> statement takes <kbd class="calibre18">test.Foo</kbd> entity and binds it in the local scope with the name <kbd class="calibre18">Foo</kbd>. This allows us to construct a new <kbd class="calibre18">test.Foo</kbd> instance by calling <kbd class="calibre18">new Foo</kbd>. This concept should be familiar from Java’s <kbd class="calibre18">import</kbd> statement or C++’s <kbd class="calibre18">using</kbd> statement. In Scala, things are a bit more flexible.
+      </p>
+      
+      <p class="noind">The <kbd class="calibre18">import</kbd> statement can be used anywhere in the source file and it will only create a binding in the local scope. This feature allows
+         us to control where imported names are used within our file. This feature can also be used to limit the scope of implicits
+         views or variables. We’ll cover this aspect in more detail in <a href="#ch05lev1sec4" class="calibre7">section 5.4</a>.
+      </p>
+      
+      <p class="noind">Scala is also more flexible in binding entities with arbitrary names. In Java or C#, one can only bring the name bound in
+         some other scope, or package, into the current one. For example, the <kbd class="calibre18">test.Foo</kbd> class could only be imported locally with the name <kbd class="calibre18">Foo</kbd>. The Scala <kbd class="calibre18">import</kbd> statement can give arbitrary names to imported entities using the <kbd class="calibre18">{OriginalBinding=&gt;NewBinding}</kbd> syntax. Let’s import our <kbd class="calibre18">test.Foo</kbd> entity with a different name:
+      </p>
+      
+      <pre id="PLd0e9271" class="calibre8">scala&gt; import test.{Foo=&gt;Bar}
+import test.{Foo=&gt;Bar}
+
+scala&gt; new Bar
+res1: test.Foo = test.Foo@596b753</pre>
+      
+      <p class="noind">The first <kbd class="calibre18">import</kbd> statement binds the <kbd class="calibre18">test.Foo</kbd> class to the current scope using the name <kbd class="calibre18">Bar</kbd>. The next line constructs a new instance of <kbd class="calibre18">test.Foo</kbd> by calling <kbd class="calibre18">new Bar</kbd>. You can use this renaming to avoid conflicts in classes imported from different packages. A good example is with <kbd class="calibre18">java.util.List</kbd> and <kbd class="calibre18">scala.List</kbd>. To avoid confusion within Scala, it’s common to see <kbd class="calibre18">import java.util.{List=&gt;JList}</kbd> in code that interacts with Java.
+      </p>
+      <p class="calibre2"> </p><table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><h5 class="notetitle" id="ch05note01">Renaming Packages</h5>
+      
+      
+      <p class="noindclose">Scala’s import statement can also be used to alter the names of packages. This can be handy when interacting with Java libraries.
+         For example, when using the <kbd class="calibre18">java.io</kbd> package, I frequently do the following:
+      </p>
+      
+      <pre id="PLd0e9314" class="calibre8">import java.{io=&gt;jio}
+def someMethod( input : jio.InputStream ) = ...</pre>
+      
+      <table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><p class="calibre2"> </p><p class="noind">Binding entities allows us to name them within a particular scope. But it’s important to understand what constitutes a scope
+         and what bindings are found in a scope.
+      </p>
+      
+      
+      
+      <h4 id="ch05lev2sec2" class="calibre28">5.1.2. <a id="ch05lev2sec2__title" class="calibre25"></a>Scope and bindings
+      </h4>
+      
+      <p class="noind">A scope is a lexical boundary in which bindings are available. A scope could be anything from the body of a class to the body
+         of a method to an anonymous block. As a general rule, anytime you use the <kbd class="calibre18">{}</kbd> characters you’re creating a new scope.
+      </p>
+      
+      <p class="noind"><a id="iddle1349" class="calibre25"></a><a id="iddle2030" class="calibre25"></a>In Scala, scopes can be nested. This means I can construct a new scope inside another scope. When creating a new scope, the
+         bindings from the outer scope are still available. This allows us to do the following:
+      </p>
+      
+      <pre id="PLd0e9350" class="calibre8">class Foo(x : Int) {
+  def tmp = {
+    x
+  }
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">Foo</kbd> class is defined with the constructor parameter <kbd class="calibre18">x</kbd>. We then define the <kbd class="calibre18">tmp</kbd> method with a nested scope. We can still access the constructor parameter inside this scope with the name <kbd class="calibre18">x</kbd>. This nested scope has access to bindings in its parent scope, however we can create new bindings that shadow the parent.
+         In this case, the <kbd class="calibre18">tmp</kbd> method can create a new binding called <kbd class="calibre18">x</kbd> that does not refer to the constructor parameter <kbd class="calibre18">x</kbd>. Let’s take a look:
+      </p>
+      
+      <pre id="PLd0e9380" class="calibre8">scala&gt; class Foo(x : Int) {
+     |   def tmp = {
+     |     val x = 2
+     |     x
+     |   }
+     | }
+defined class Foo</pre>
+      
+      <p class="noind">The <kbd class="calibre18">Foo</kbd> class is defined the same as before, but the <kbd class="calibre18">tmp</kbd> method defines a variable named x in the nested scope. This binding <i class="calibre9">shadows</i> the constructor parameter <kbd class="calibre18">x</kbd>. Shadowing means that the local binding is visible and the constructor parameter is no longer accessible, at least using
+         the name <kbd class="calibre18">x</kbd>. In Scala, bindings of higher precedence shadow bindings of lower precedence within the same scope. Also, bindings of higher
+         or the same precedence shadow bindings in an outer scope.
+      </p>
+      
+      <p class="noind">Scala defines the following precedence on bindings:</p>
+      
+      <p class="calibre22"></p>
+      <ol class="calibre29"><li class="calibre24">Definitions and declarations that are local, inherited, or made available by a package clause in the same source file where
+            the definition occurs have highest precedence.
+         </li>
+         
+         <li class="calibre24">Explicit imports have next highest precedence.</li>
+         
+         <li class="calibre24">Wildcard imports (<kbd class="calibre18">import foo._</kbd>) have next highest precedence.
+         </li>
+         
+         <li class="calibre24">Definitions made available by a package clause not in the source file where the definition occurs have lowest precedence.</li>
+         
+      </ol><p class="calibre2"> </p><table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><div class="calibre4">
+         
+         <b id="ch05sb02" class="calibre21">Bindings and Shadowing</b>
+         
+         <p class="noind">In Scala, a binding shadows bindings of lower precedence within the same scope. A binding shadows bindings of the same or
+            lower precedence in an outer scope. This is what allows us to write: <kbd class="calibre18">class Foo(x: Int) {</kbd></p>
+         
+         <pre id="PLd0e9439" class="calibre8">class Foo(x : Int) {
+ def tmp = {
+ val x = 2
+  x
+  }
+}</pre>
+         
+         <p class="noind">And have calls to <kbd class="calibre18">tmp</kbd> return the value <kbd class="calibre18">2</kbd>.
+         </p>
+         
+      </div>
+      <table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><p class="calibre2"> </p><p class="noind">Let’s look at an example of this precedence. First, let’s define a <kbd class="calibre18">test</kbd> package and an <a id="iddle1311" class="calibre25"></a><a id="iddle2010" class="calibre25"></a><a id="iddle2021" class="calibre25"></a><a id="iddle2035" class="calibre25"></a><a id="iddle2137" class="calibre25"></a>object <kbd class="calibre18">x</kbd> within it in a source file called <kbd class="calibre18">externalbindings.scala</kbd>, as shown in the following listing:
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list1">Listing 5.1. <a id="ch05list1__title" class="calibre25"></a><kbd class="calibre18">externalbindings.scala</kbd></h5>
+      <pre id="PLd0e9499" class="calibre8">package test;
+
+object x {
+  override def toString = "Externally bound x object in package test"
+}</pre>
+      
+      <p class="noind">This file defines a package <kbd class="calibre18">test</kbd> with the <kbd class="calibre18">x</kbd> object inside it. The <kbd class="calibre18">x</kbd> object overrides the <kbd class="calibre18">toString</kbd> method so we can easily call <kbd class="calibre18">toString</kbd> on it. This means that for the purposes of our test, the <kbd class="calibre18">x</kbd> object should have the lowest binding precedence with binding rules. Now, let’s create a file that will test the binding
+         rules:
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list2">Listing 5.2. <a id="ch05list2__title" class="calibre25"></a>Implicit binding test file
+      </h5>
+      <pre id="PLd0e9529" class="calibre8">package test;
+
+object Test {
+  def main(args : Array[String]) : Unit = {
+    testSamePackage()
+    testWildcardImport()
+    testExplicitImport()
+    testInlineDefinition()
+  }
+  ...
+}</pre>
+      
+      <p class="noind">First, we declare the contents of the file to be in the same test package as our earlier definition. Next, we define a main
+         method that will call four testing methods, one for each binding precedence rule. Let’s fill the first one in now:
+      </p>
+      
+      <pre id="PLd0e9538" class="calibre8">def testSamePackage() {
+  println(x)
+}</pre>
+      
+      <p class="noind">This method calls <kbd class="calibre18">println</kbd> on an entity called <kbd class="calibre18">x</kbd>. Because the <kbd class="calibre18">Test</kbd> object is defined within the <kbd class="calibre18">test</kbd> package, the <kbd class="calibre18">x</kbd> object created earlier is available and used for this method. To prove this, look at the output of this method:
+      </p>
+      
+      <pre id="PLd0e9562" class="calibre8">scala&gt; test.Test.testSamePackage()
+Externally bound x object in package test</pre>
+      
+      <p class="noind">Calling the <kbd class="calibre18">testSamePackage</kbd> method produces the string we defined for the object <kbd class="calibre18">x</kbd>. Now let’s see what happens if we add a <kbd class="calibre18">Wildcard</kbd> import:
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list3">Listing 5.3. <a id="ch05list3__title" class="calibre25"></a><kbd class="calibre18">Wildcard</kbd> imports
+      </h5>
+      <pre id="PLd0e9587" class="calibre8">object Wildcard {
+  def x = "Wildcard Import x"
+}
+
+def testWildcardImport() {
+  import Wildcard._
+  println(x)
+}</pre>
+      
+      <p class="noind"><a id="iddle1302" class="calibre25"></a><a id="iddle2018" class="calibre25"></a><a id="iddle2022" class="calibre25"></a><a id="iddle2124" class="calibre25"></a>The <kbd class="calibre18">Wildcard</kbd> object is a nested object used to contain the <kbd class="calibre18">x</kbd> entity so that it can later be imported. <kbd class="calibre18">The entity x</kbd> is defined as a method that returns the string <kbd class="calibre18">"Wildcard Import x"</kbd>. The <kbd class="calibre18">testWildcardImport</kbd> method first calls <kbd class="calibre18">import Wildcard._</kbd>. This is a wildcard import that will bind all the names/entities from the <kbd class="calibre18">Wildcard</kbd> object into the current scope. Because wildcard imports have higher precedence than resources made available from the same
+         package but in a different source file, the <kbd class="calibre18">Wildcard.x</kbd> entity will be used instead of the <kbd class="calibre18">test.x</kbd> entity. We see this when we run the <kbd class="calibre18">testWildcardImport</kbd> function:
+      </p>
+      
+      <pre id="PLd0e9648" class="calibre8">scala&gt; test.Test.testWildcardImport()
+Wildcard Import x</pre>
+      
+      <p class="noind">When calling the <kbd class="calibre18">testWildcardImport</kbd> method, the string <kbd class="calibre18">Wildcard Import x</kbd> is returned—exactly what we expect from the binding precedence. Things get more interesting when we add explicit imports.
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list4">Listing 5.4. <a id="ch05list4__title" class="calibre25"></a>Explicit imports
+      </h5>
+      <pre id="PLd0e9668" class="calibre8">object Explicit {
+  def x = "Explicit Import x"
+}
+
+def testExplicitImport() {
+  import Explicit.x
+  import Wildcard._
+  println(x)
+}</pre>
+      
+      <p class="noind">Once again, the <kbd class="calibre18">Explicit</kbd> object is used to create a new namespace for another <kbd class="calibre18">x</kbd> entity. The <kbd class="calibre18">testExplicitImport</kbd> method first imports this entity directly and then uses the wildcard import against the <kbd class="calibre18">Wildcard</kbd> object. Although the wildcard import is after the explicit import, the binding precedence rules kick in and the method will
+         use the <kbd class="calibre18">x</kbd> binding from the <kbd class="calibre18">Explicit</kbd> object. Let’s take a look:
+      </p>
+      
+      <pre id="PLd0e9695" class="calibre8">scala&gt; test.Test.testExplicitImport()
+Explicit Import x</pre>
+      
+      <p class="noind">As expected, the returned string is the one from <kbd class="calibre18">Explicit.x</kbd>. This precedence rule is important when dealing with implicit resolution, but we’ll get to that in <a href="#ch05lev2sec3" class="calibre7">section 5.1.3</a>.
+      </p>
+      
+      <p class="noind">The final precedence rule to test is for local declarations. Let’s modify the <kbd class="calibre18">testExplicitImport</kbd> method to define a local binding for the name <kbd class="calibre18">x</kbd>:
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list5">Listing 5.5. <a id="ch05list5__title" class="calibre25"></a>Inline definitions
+      </h5>
+      <pre id="PLd0e9724" class="calibre8">def testInlineDefinition() {
+    val x = "Inline definition x"
+    import Explicit.x
+    import Wildcard._
+    println(x)
+  }</pre>
+      
+      <p class="noind"><a id="iddle1494" class="calibre25"></a><a id="iddle2019" class="calibre25"></a>The first line in the <kbd class="calibre18">testInlineDefinition</kbd> method declares a local variable named <kbd class="calibre18">x</kbd>. The next two lines explicitly import and implicitly import <kbd class="calibre18">x</kbd> bindings from the <kbd class="calibre18">Explicit</kbd> and <kbd class="calibre18">Wildcard</kbd> objects, as we saw earlier. Finally, we call <kbd class="calibre18">println(x)</kbd> and see which binding is selected.
+      </p>
+      
+      <pre id="PLd0e9762" class="calibre8">scala&gt; test.Test.testInlineDefinition()
+Inline definition x</pre>
+      
+      <p class="noind">Again, even though the import statements come after the <kbd class="calibre18">val x</kbd> statement, the local variable is chosen based on the binding priorities.
+      </p>
+      <p class="calibre2"> </p><table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><div class="calibre4">
+         
+         <b id="ch05sb03" class="calibre21">Non-shadowing bindings</b>
+         
+         <p class="noind">It’s possible to have two bindings available for the same name. In this case, the compiler will warn you that the name is
+            ambiguous. Here’s an example directly from the Scala Language Specification:
+         </p>
+         
+         <pre id="PLd0e9782" class="calibre8">scala&gt; {
+ | val x = 1;
+ | {
+ | import test.x;
+ | x
+ | }
+ | }
+ &lt;console&gt;:11: error: reference to x is ambiguous; it is both defined in
+             value res7 and imported subsequently by import test.x
+ x
+ ^</pre>
+         
+         <p class="noind">In this example, the name <kbd class="calibre18">x</kbd> is bound in an outer scope. The name <kbd class="calibre18">x</kbd> is also imported from the test package in a nested scope. Neither of these bindings shadows the other. The value <kbd class="calibre18">x</kbd> from the outer scope isn’t eligible to shadow within the nested scope, and the imported value <kbd class="calibre18">x</kbd> doesn’t have high enough precedence to shadow.
+         </p>
+         
+      </div>
+      <table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><p class="calibre2"> </p><p class="noind">Why all the emphasis on name resolution within the compiler? Implicit resolution is intimately tied to name resolution, so
+         these intricate rules become important when using implicits. Let’s look at the compiler’s implicit resolution scheme.
+      </p>
+      
+      
+      
+      <h4 id="ch05lev2sec3" class="calibre28">5.1.3. <a id="ch05lev2sec3__title" class="calibre25"></a>Implicit resolution
+      </h4>
+      
+      <p class="noind">The Scala Language Specification declares two rules for looking up entities marked as implicit:</p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24">The implicit entity binding is available at the lookup site with no prefix—that is, not as <kbd class="calibre18">foo.x</kbd> but only <kbd class="calibre18">x</kbd>.
+         </li>
+         
+         <li class="calibre24">If there are no available entities from this rule, then all <kbd class="calibre18">implicit</kbd> members on objects belong to the implicit scope of an implicit parameter’s type.
+         </li>
+         
+      </ul><p class="noind">The first rule is intimately tied to the binding rules of the previous section. The second rule is a bit more complex and
+         we’ll look into it in section 5.1.4.
+      </p>
+      
+      <p class="noind"><a id="iddle1337" class="calibre25"></a><a id="iddle1362" class="calibre25"></a>First, let’s look at our earlier example of implicit resolution:
+      </p>
+      
+      <pre id="PLd0e9853" class="calibre8">scala&gt; def findAnInt(implicit x : Int) = x
+findAnInt: (implicit x: Int)Int
+
+scala&gt; implicit val test = 5
+test: Int = 5</pre>
+      
+      <p class="noind">The <kbd class="calibre18">findAnInt</kbd> method is declared with an implicit parameter list of a single integer. The next line defines a <kbd class="calibre18">val test</kbd> with the <kbd class="calibre18">implicit</kbd> marker. This makes the identifier, <kbd class="calibre18">test</kbd>, available on the local scope with no prefix. If we were to write <kbd class="calibre18">test</kbd> in the REPL, it would return the value <kbd class="calibre18">5</kbd>. When we write this method call, <kbd class="calibre18">findAnInt</kbd>, the compiler will rewrite it as <kbd class="calibre18">findAnInt(test)</kbd>. This lookup uses the binding rules we examined earlier.
+      </p>
+      
+      <p class="noind">The second rule for implicit lookup is used when the compiler can’t find any available implicits using the first rule. In
+         this case, the compiler will look for implicits defined within any object in the <i class="calibre9">implicit scope</i> of the type it’s looking for. The implicit scope of a type is defined as all companion modules that are associated with that
+         type. This means that if the compiler is looking for a parameter to the method <kbd class="calibre18">def foo(implicit param : Foo)</kbd>, that parameter will need to conform to the type <kbd class="calibre18">Foo</kbd>. If no value of type <kbd class="calibre18">Foo</kbd> is found using the first rule, then the compiler will use the <i class="calibre9">implicit scope</i> of <kbd class="calibre18">Foo</kbd>. The implicit scope of <kbd class="calibre18">Foo</kbd> would consist of the companion object to <kbd class="calibre18">Foo</kbd>.
+      </p>
+      
+      <p class="noind">Let’s look at the following listing:</p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list6">Listing 5.6. <a id="ch05list6__title" class="calibre25"></a>Companion object and implicit lookup
+      </h5>
+      <pre id="PLd0e9919" class="calibre8">scala&gt; object holder {
+     | trait Foo
+     | object Foo {
+     |   implicit val x = new Foo {
+     |     override def toString = "Companion Foo"
+     |   }
+     | }
+     | }
+defined module holder
+
+scala&gt; import holder.Foo
+import holder.Foo
+
+scala&gt; def method(implicit foo : Foo) = println(foo)
+method: (implicit foo: holder.Foo)Unit
+
+scala&gt; method
+Companion Foo</pre>
+      
+      <p class="noind">The <kbd class="calibre18">holder</kbd> object is used so we can define a trait and companion object within the REPL, as described in <a href="kindle_split_010.html#ch02lev2sec2" class="calibre7">section 2.1.2</a>. Inside, we define a trait <kbd class="calibre18">Foo</kbd> and companion object <kbd class="calibre18">Foo</kbd>. The companion object <kbd class="calibre18">Foo</kbd> defines a member <kbd class="calibre18">x</kbd> of type <kbd class="calibre18">Foo</kbd> that’s available for implicit resolution. Next we import the <kbd class="calibre18">Foo</kbd> type from the <kbd class="calibre18">holder</kbd> object into the current scope. This step isn’t necessary, it’s done to simplify the method definition. Next is the definition
+         of <kbd class="calibre18">method</kbd>. The method takes an implicit parameter of type <kbd class="calibre18">Foo</kbd>. <a id="iddle1507" class="calibre25"></a><a id="iddle1512" class="calibre25"></a><a id="iddle1897" class="calibre25"></a><a id="iddle2071" class="calibre25"></a>When called with no argument lists, the compiler will use the <kbd class="calibre18">implicit val x</kbd> defined on the companion.
+      </p>
+      
+      <p class="noind">Because the implicit scope is looked at second, we can use the implicit scope to store default implicits while allowing users
+         to import their own overrides as necessary. We’ll investigate this a bit further in <a href="kindle_split_015.html#ch07lev1sec2" class="calibre7">section 7.2</a>.
+      </p>
+      
+      <p class="noind">As stated previously, the implicit scope of a type <kbd class="calibre18">T</kbd> is the set of companion objects for all types associated with the type <kbd class="calibre18">T</kbd>—that is, there’s a set of types that are associated with <kbd class="calibre18">T</kbd>. All of the companion objects for these types are searched during implicit resolution. The Scala Language Specification defines
+         association as any class that’s a base class of some <i class="calibre9">part</i> of type <kbd class="calibre18">T</kbd>. The parts of type <kbd class="calibre18">T</kbd> are:
+      </p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24">The subtypes of <kbd class="calibre18">T</kbd> are all parts of <kbd class="calibre18">T</kbd>. If type <kbd class="calibre18">T</kbd> is defined as <kbd class="calibre18">A</kbd> with <kbd class="calibre18">B</kbd> with <kbd class="calibre18">C</kbd>, then <kbd class="calibre18">A</kbd>, <kbd class="calibre18">B</kbd>, and <kbd class="calibre18">C</kbd> are all parts of the type <kbd class="calibre18">T</kbd> and their companion objects will be searched during implicit resolution for type <kbd class="calibre18">T</kbd>.
+         </li>
+         
+         <li class="calibre24">If <kbd class="calibre18">T</kbd> is parameterized, then all type parameters and their parts are included in the parts of type <kbd class="calibre18">T</kbd>. For example, an implicit search for the type <kbd class="calibre18">List[String]</kbd> would look in <kbd class="calibre18">List</kbd>’s companion object and <kbd class="calibre18">String</kbd>’s companion object.
+         </li>
+         
+         <li class="calibre24">If <kbd class="calibre18">T</kbd> is a singleton type <kbd class="calibre18">T</kbd>, then the parts of the type <kbd class="calibre18">p</kbd> are included in the parts of type <kbd class="calibre18">T</kbd>. This means that if the type <kbd class="calibre18">T</kbd> lives inside an object, then the object itself is inspected for implicits. Singleton types are covered in more detail in
+            <a href="kindle_split_014.html#ch06lev2sec1" class="calibre7">section 6.1.1</a>.
+         </li>
+         
+         <li class="calibre24">If T is a type projection <kbd class="calibre18">S#T</kbd>, then the parts of <kbd class="calibre18">S</kbd> are included in the parts of type <kbd class="calibre18">T</kbd>. This means that if type <kbd class="calibre18">T</kbd> lives in a class or trait, then the class or trait’s companion objects are inspected for implicits. Type projections are
+            covered in more detail in <a href="kindle_split_014.html#ch06lev2sec1" class="calibre7">section 6.1.1</a>.
+         </li>
+         
+      </ul><p class="noind">The implicit scope of a type includes many different locations and grants a lot of flexibility in providing handy implicit
+         resolution.
+      </p>
+      
+      <p class="noind">Let’s look at a few of the more interesting cases of implicit scope.</p>
+      
+      
+      <h5 class="notetitle" id="ch05lev3sec1"><a id="ch05lev3sec1__title" class="calibre25"></a>Implicit Scope VIA Type Parameters
+      </h5>
+      
+      <p class="noind">The Scala language defines the implicit scope of a type to include the companion objects of all types or subtypes included
+         in the type’s parameters. This means, for example, that we can provide an implicit value for <kbd class="calibre18">List[Foo]</kbd> by including it in the type <kbd class="calibre18">Foo</kbd>’s companion object. Here’s an example:
+      </p>
+      
+      <pre id="PLd0e10148" class="calibre8">scala&gt; object holder {
+     |   trait Foo
+     |   object Foo {
+     |     implicit val list = List(new Foo{})
+     |   }
+     | }
+defined module holder
+
+scala&gt; implicitly[List[holder.Foo]]
+res0: List[holder.Foo] = List(holder$Foo$$anon$1@2ed4a1d3)</pre>
+      
+      <p class="noind"><a id="iddle1119" class="calibre25"></a><a id="iddle1499" class="calibre25"></a><a id="iddle1511" class="calibre25"></a><a id="iddle1688" class="calibre25"></a><a id="iddle1896" class="calibre25"></a><a id="iddle2075" class="calibre25"></a>The <kbd class="calibre18">holder</kbd> object is used, again, to create companion objects in the REPL. The <kbd class="calibre18">holder</kbd> object contains a trait <kbd class="calibre18">Foo</kbd> and its companion object. The companion object contains an implicit definition of a <kbd class="calibre18">List[Foo]</kbd> type. The next line calls Scala’s <kbd class="calibre18">implicitly</kbd> function. We can use this function to look up a type using the current implicit scope. The <kbd class="calibre18">implicitly</kbd> function is defined as <kbd class="calibre18">def implicitly[T](implicit arg : T) = arg</kbd>. It uses the type parameter <kbd class="calibre18">T</kbd> to allow us to reuse it for every type we’re looking for. We’ll cover type parameters in more detail in <a href="kindle_split_014.html#ch06lev1sec2" class="calibre7">section 6.2</a>. The call to <kbd class="calibre18">implicitly</kbd> for the type <kbd class="calibre18">List[holder.Foo]</kbd> returns the implicit list defined within <kbd class="calibre18">Foo</kbd>’s companion object.
+      </p>
+      
+      <p class="noind">This mechanism is used to implement <i class="calibre9">type traits</i> sometimes called <i class="calibre9">type classes</i>. Type traits describe generic interfaces using type parameters such that implementations can be created for any type. For
+         example, we can define a <kbd class="calibre18">BinaryFormat[T]</kbd> type trait. This trait can be implemented for a given type to describe how it should be serialized into a binary format.
+         Here’s an example interface:
+      </p>
+      
+      <pre id="PLd0e10245" class="calibre8">trait BinaryFormat[T] {
+  def asBinary(entity: T) : Array[Bytes]
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">BinaryFormat</kbd> trait defines one method, <kbd class="calibre18">asBinary</kbd>. This method takes in an instance of the type parameter and returns an array of bytes representing that parameter. Code that
+         needs to serialize objects to disk can now attempt to find a <kbd class="calibre18">BinaryFormat</kbd> type trait via implicits. We can provide an implementation for our type <kbd class="calibre18">Foo</kbd> by providing an <kbd class="calibre18">implicit</kbd> in <kbd class="calibre18">Foo</kbd>’s companion object, as follows:
+      </p>
+      
+      <pre id="PLd0e10272" class="calibre8">trait Foo {}
+object Foo {
+  implicit lazy val binaryFormat = new BinaryFormat[Foo] {
+    def asBinary(entity: Foo) = "serializedFoo".toBytes
+  }
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">Foo</kbd> trait is defined as an empty trait. Its companion object is defined with an <kbd class="calibre18">implicit val</kbd> that holds the implementation of the <kbd class="calibre18">BinaryFormat</kbd>. Now, when code that requires a <kbd class="calibre18">BinaryFormat</kbd> sees the type <kbd class="calibre18">Foo</kbd>, it will be able to find the <kbd class="calibre18">BinaryFormat</kbd> implicitly. The details of this mechanism and design techniques are discussed in detail in <a href="kindle_split_015.html#ch07lev1sec2" class="calibre7">section 7.2</a>.
+      </p>
+      
+      <p class="noind">Implicit lookup from type parameters enables elegant type trait programming. Nested types provides another great means to
+         supply implicit arguments.
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05lev3sec2"><a id="ch05lev3sec2__title" class="calibre25"></a>Implicit Scope VIA Nesting
+      </h5>
+      
+      <p class="noind">Implicit scope also includes companion objects from outer scopes if a type is defined in an inner scope. This allows us to
+         provide a set of handy implicits for a type in the outer scope. Let’s look at an example.
+      </p>
+      
+      <pre id="PLd0e10314" class="calibre8">scala&gt; object Foo {
+     | trait Bar
+     | implicit def newBar = new Bar {
+     |   override def toString = "Implicit Bar"
+     | }
+     | }
+defined module Foo
+
+scala&gt; implicitly[Foo.Bar]
+res0: Foo.Bar = Implicit Bar</pre>
+      
+      <p class="noind"><a id="iddle1110" class="calibre25"></a><a id="iddle1114" class="calibre25"></a><a id="iddle1751" class="calibre25"></a>The object <kbd class="calibre18">Foo</kbd> is the outer type. Inside is defined the trait <kbd class="calibre18">Bar</kbd>. The <kbd class="calibre18">Foo</kbd> object also defines an implicit method that creates an instance of the <kbd class="calibre18">Bar</kbd> trait. When calling <kbd class="calibre18">implicitly[Foo.Bar]</kbd>, the implicit value is found from a search of the <kbd class="calibre18">Foo</kbd> outer class. This technique is similar to placing implicits directly in a companion object. Defining implicits for nested
+         types is convenient when the outer scope contains several subtypes. We can use this technique in situations where we can’t
+         create an implicit on a companion object.
+      </p>
+      
+      <p class="noind">Scala objects can’t have companion objects for implicits. Because of this, implicits associated with the object’s type, that
+         are desired on the implicit scope of that object’s type, must be provided from an outer scope. Here’s an example:
+      </p>
+      
+      <pre id="PLd0e10361" class="calibre8">scala&gt; object Foo {
+     |   object Bar { override def toString = "Bar" }
+     |   implicit def b : Bar.type = Bar
+     | }
+defined module Foo
+
+scala&gt; implicitly[Foo.Bar.type]
+res1: Foo.Bar.type = Bar</pre>
+      
+      <p class="noind">The object <kbd class="calibre18">Bar</kbd> is nested inside the object <kbd class="calibre18">Foo</kbd>. The object <kbd class="calibre18">Foo</kbd> also defines an implicit that returns <kbd class="calibre18">Bar.type</kbd>. Now, when calling <kbd class="calibre18">implicitly[Foo.Bar.type]</kbd>, the object <kbd class="calibre18">Bar</kbd> is returned. This mechanism allows defining an implicit for objects.
+      </p>
+      
+      <p class="noind">An additional case of nesting that may surprise those not used to it is the case of package objects. As of Scala 2.8, objects
+         can be defined as package objects. A package object is an object defined using the <kbd class="calibre18">package</kbd> keyword. It’s convention in Scala to locate all package objects in a file called <kbd class="calibre18">package.scala</kbd> in a directory corresponding to the package name.
+      </p>
+      
+      <p class="noind">Any class that’s defined within a package is nested inside the package. Any implicits defined on a package object will be
+         on the implicit scope for all types defined inside the package. This provides a handy location to store implicits rather than
+         defining companion objects for every type in a package, as shown in the following example:
+      </p>
+      
+      <pre id="PLd0e10400" class="calibre8">package object foo {
+  implicit def foo = new Foo
+}
+
+package foo {
+  class Foo {
+    override def toString = "FOO!"
+  }
+}</pre>
+      
+      <p class="noind"><a id="iddle1350" class="calibre25"></a><a id="iddle1353" class="calibre25"></a><a id="iddle1364" class="calibre25"></a><a id="iddle1495" class="calibre25"></a><a id="iddle1497" class="calibre25"></a><a id="iddle1540" class="calibre25"></a><a id="iddle1742" class="calibre25"></a><a id="iddle1974" class="calibre25"></a><a id="iddle2036" class="calibre25"></a><a id="iddle2122" class="calibre25"></a>The package object <kbd class="calibre18">foo</kbd> is declared with a single implicit that returns a new instance of the <kbd class="calibre18">Foo</kbd> class. Next, the class <kbd class="calibre18">Foo</kbd> is defined within the package <kbd class="calibre18">foo</kbd>. In Scala, packages can be defined in multiple files and the types defined in each source file is aggregated to create the
+         complete package. There can only be one package object defined in all source files for any given package. The <kbd class="calibre18">Foo</kbd> class has an overridden <kbd class="calibre18">toString</kbd> method that will print the string <kbd class="calibre18">"Foo!"</kbd>. Let’s compile the <kbd class="calibre18">foo</kbd> package and use it in the REPL, as follows:
+      </p>
+      
+      <pre id="PLd0e10484" class="calibre8">scala&gt; implicitly[foo.Foo]
+res0: foo.Foo = FOO!</pre>
+      
+      <p class="noind">Without importing the package object or its members, the compiler can find the implicit for the <kbd class="calibre18">foo.Foo</kbd> object. It’s common in Scala to find a set of implicit definitions within the package object for a library. Usually this
+         package object also contains implicit views, a mechanism for converting between types.
+      </p>
+      
+      
+      
+      
+      
+      <h3 id="ch05lev1sec2" class="calibre17"><a id="ch05lev1sec2__title" class="calibre6"></a>5.2. Enhancing existing classes with implicit views
+      </h3>
+      
+      <p class="noind">An implicit view is an automatic conversion of one type to another to satisfy an expression. An implicit view definition takes
+         the general form: <kbd class="calibre18">implicit def &lt;myConversionName&gt;(&lt;argumentName&gt; : OriginalType) : ViewType</kbd>. The previous conversion would implicitly convert a value of <kbd class="calibre18">OriginalType</kbd> to a value of <kbd class="calibre18">ViewType</kbd> if available on the implicit scope.
+      </p>
+      
+      <p class="noind">Let’s look at a simple example attempting to convert an integer to a string:</p>
+      
+      <pre id="PLd0e10520" class="calibre8">scala&gt; def foo(msg : String) = println(msg)
+foo: (msg: String)Unit
+
+scala&gt; foo(5)
+&lt;console&gt;:7: error: type mismatch;
+ found   : Int(5)
+ required: String
+       foo(5)</pre>
+      
+      <p class="noind">The <kbd class="calibre18">foo</kbd> method is defined to take a <kbd class="calibre18">String</kbd> and print it to the console. The call to <kbd class="calibre18">foo</kbd> using the value <kbd class="calibre18">5</kbd> fails, as there’s a type mismatch. An implicit view can make this succeed. Let’s define one:
+      </p>
+      
+      <pre id="PLd0e10541" class="calibre8">scala&gt; implicit def intToString(x : Int) = x.toString
+intToString: (x: Int)java.lang.String
+
+scala&gt; foo(5)
+5</pre>
+      
+      <p class="noind">The method <kbd class="calibre18">intToString</kbd> is defined using the <kbd class="calibre18">implicit</kbd> keyword. It takes a single value of type <kbd class="calibre18">Int</kbd> and returns a <kbd class="calibre18">String</kbd>. This method is the implicit view, and is commonly referred to as the view <kbd class="calibre18">Int =&gt; String</kbd>. Now, when calling the <kbd class="calibre18">foo</kbd> method with the value <kbd class="calibre18">5</kbd>, it prints the string <kbd class="calibre18">5</kbd>. The compiler detected that the types did not conform and that there was a single implicit view that could correct the situation.
+      </p>
+      
+      <p class="noind">Implicit views are used in two situations:</p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24"><a id="iddle1111" class="calibre25"></a><a id="iddle1112" class="calibre25"></a><a id="iddle1115" class="calibre25"></a><a id="iddle2011" class="calibre25"></a>If an expression doesn’t meet the type expected by the compiler, the compiler will look for an implicit view that would make
+            it meet the expected type. An example of this would be passing a value of type <kbd class="calibre18">Int</kbd> to a function that expects a <kbd class="calibre18">String</kbd> would require an implicit view of <kbd class="calibre18">String =&gt; Int</kbd> in scope.
+         </li>
+         
+         <li class="calibre24">Given a selection <kbd class="calibre18">e.t</kbd>, where selection means a member access, such that <kbd class="calibre18">e</kbd>’s type doesn’t have a member <kbd class="calibre18">t</kbd>, the compiler will look for an implicit view that will apply to <kbd class="calibre18">e</kbd> and whose resulting type contains a member <kbd class="calibre18">t</kbd>. If we try to call method <kbd class="calibre18">foo</kbd> on a <kbd class="calibre18">String</kbd>, then the compiler will look for an implicit view from <kbd class="calibre18">String</kbd> that can be used to make the expression compile. The expression <kbd class="calibre18">"foo".foo()</kbd> would require an implicit view like the following: <kbd class="calibre18">implicit def stringToFoo(x : String) = new { def foo() : Unit = println("foo") }</kbd>.
+         </li>
+         
+      </ul><p class="noind">The implicit scope used for implicit views is the same as for implicit parameters. But when the compiler is looking for type
+         associations, it uses the type it’s attempting to convert from, not the type it’s attempting to convert to. Let’s look at
+         an example:
+      </p>
+      
+      <pre id="PLd0e10651" class="calibre8">scala&gt; object test {
+     |   trait Foo
+     |   trait Bar
+     |   object Foo {
+     |     implicit def fooToBar(foo : Foo) = new Bar {}
+     |   }
+     | }
+defined module test
+
+scala&gt; import test._
+import test._</pre>
+      
+      <p class="noind">The <kbd class="calibre18">test</kbd> object is a scoping object used so we can create a companion object in the REPL. This contains the <kbd class="calibre18">Foo</kbd> and <kbd class="calibre18">Bar</kbd> traits as well as a companion object to <kbd class="calibre18">Foo</kbd>. The companion object to <kbd class="calibre18">Foo</kbd> contains an implicit view from <kbd class="calibre18">Foo</kbd> to <kbd class="calibre18">Bar</kbd>. Remember that when the compiler is looking for implicit views, the type it’s converting <i class="calibre9">from</i> defines the implicit scope. This means the implicit views defined in <kbd class="calibre18">Foo</kbd>’s companion object will be inspected only when attempting to convert an expression of type <kbd class="calibre18">Foo</kbd> to some other expression. Let’s try this out by defining a method that expects the type <kbd class="calibre18">Bar</kbd>.
+      </p>
+      
+      <pre id="PLd0e10693" class="calibre8">scala&gt; def bar(x : Bar) = println("bar")
+bar: (x: test.Bar)Unit</pre>
+      
+      <p class="noind">The <kbd class="calibre18">bar</kbd> method takes a <kbd class="calibre18">bar</kbd> and prints the string <kbd class="calibre18">bar</kbd>. Let’s try to call it with a value of <kbd class="calibre18">foo</kbd> and see what happens:
+      </p>
+      
+      <pre id="PLd0e10714" class="calibre8">scala&gt; val x = new Foo {}
+x: java.lang.Object with test.Foo = $anon$1@15e565bd
+
+scala&gt; bar(x)
+bar</pre>
+      
+      <p class="noind">The <kbd class="calibre18">x</kbd> value is of type <kbd class="calibre18">Foo</kbd>. The expression <kbd class="calibre18">bar(x)</kbd> triggers the compiler to look for an implicit view. Because the type of <kbd class="calibre18">x</kbd> is <kbd class="calibre18">Foo</kbd>, the compiler look in associated types of <kbd class="calibre18">Foo</kbd> <a id="iddle1043" class="calibre25"></a><a id="iddle1270" class="calibre25"></a><a id="iddle1369" class="calibre25"></a><a id="iddle1401" class="calibre25"></a><a id="iddle1583" class="calibre25"></a><a id="iddle1794" class="calibre25"></a><a id="iddle1795" class="calibre25"></a><a id="iddle1856" class="calibre25"></a><a id="iddle1886" class="calibre25"></a>for implicit views. Finding the <kbd class="calibre18">fooToBar</kbd> view, the compiler inserts the necessary transformation and the method compiles successfully.
+      </p>
+      
+      <p class="noind">This style of implicits allows us to adapt libraries to other libraries, or add our own convenience methods to types. It’s
+         a common practice in Scala to adapt Java libraries so that they work well with the Scala standard library. For example, the
+         standard library defines a <kbd class="calibre18">scala.collection.JavaConversions</kbd> module that helps the Java collections library interoperate with the Scala collections library. This module is a set of implicit
+         views that can be imported into the current scope to allow automatic conversion between Java collections and Scala collections
+         and to “add” methods to the Java collections. Adapting Java libraries, or third party libraries, into your project using implicit
+         views is a common idiom in Scala. Let’s look at an example.
+      </p>
+      
+      <p class="noind">We’d like to write a wrapper around the <kbd class="calibre18">java.security</kbd> package for easier usage from Scala. Specifically, we want to simplify the task of running privileged code using <kbd class="calibre18">java.security.AccessController</kbd>. The <kbd class="calibre18">AccessController</kbd> class provides the static method <kbd class="calibre18">doPrivileged</kbd>, which allows us to run code in a privileged permission state. The <kbd class="calibre18">doPrivileged</kbd> method has two variants, one that grants the current context’s permissions to the privileged code and one that takes an <kbd class="calibre18">AccessControlContext</kbd> containing the privileges to grant the privileged code. The <kbd class="calibre18">doPrivileged</kbd> method takes an argument of type <kbd class="calibre18">PrivilegedExceptionAction</kbd> which is a trait that defines one method: <kbd class="calibre18">run</kbd>. The trait is similar to Scala’s <kbd class="calibre18">Function0</kbd> trait, and we’d like to be able to use an anonymous function when calling the <kbd class="calibre18">doPrivileged</kbd> method.
+      </p>
+      
+      <p class="noind">Let’s create an implicit view from a <kbd class="calibre18">Function0</kbd> type to a <kbd class="calibre18">doPrivileged</kbd> method:
+      </p>
+      
+      <pre id="PLd0e10842" class="calibre8">object ScalaSecurityImplicits {
+  implicit def functionToPrivilegedAction[A](func : Function0[A]) =
+    new PrivilegedAction[A] {
+      override def run() = func()
+    }
+}</pre>
+      
+      <p class="noind">This defines an object <kbd class="calibre18">ScalaSecurityImplicits</kbd> which contains the implicit view. The implicit view <kbd class="calibre18">functionToPrivilegedAction</kbd> takes a <kbd class="calibre18">Function0</kbd> and returns a new <kbd class="calibre18">PrivilegedAction</kbd> object such that the <kbd class="calibre18">run</kbd> method calls the function. Let’s use this implicit:
+      </p>
+      
+      <pre id="PLd0e10866" class="calibre8">scala&gt; import ScalaSecurityImplicits._
+import ScalaSecurityImplicits._
+
+scala&gt; AccessController.doPrivileged( () =&gt;
+     | println("This is privileged"))
+This is privileged</pre>
+      
+      <p class="noind">The first statement imports the implicit view into scope. Next, the call to <kbd class="calibre18">doPrivileged</kbd> passed the anonymous function <kbd class="calibre18">() =&gt; println("this is privileged")</kbd>. Again, the compiler sees that the anonymous function doesn’t match the expected type. The compiler then looks and finds
+         the implicit view defined and imported from <kbd class="calibre18">ScalaSecurityImplicits</kbd>. This technique can also be used when wrapping Java objects with Scala objects
+      </p>
+      
+      <p class="noind"><a id="iddle1328" class="calibre25"></a><a id="iddle1572" class="calibre25"></a>It’s common to write a wrapper class for existing Java libraries that add more advanced Scala idioms. Scala implicits can
+         be used to convert from the original type into the wrapped type and vice versa. For example, let’s look at adding some convenience
+         methods onto the <kbd class="calibre18">java.io.File</kbd> class.
+      </p>
+      
+      <p class="noind">We’d like to provide a convenience notation for <kbd class="calibre18">java.io.File</kbd> so that the <kbd class="calibre18">/</kbd> operator can be used to create new file objects. Let’s create the wrapper class that will provide the <kbd class="calibre18">/</kbd> operator:
+      </p>
+      
+      <pre id="PLd0e10913" class="calibre8">class FileWrapper(val file: java.io.File) {
+    def /(next : String) = new FileWrapper(new java.io.File(file, next))
+    override def toString = file.getCanonicalPath
+}</pre>
+      
+      <p class="noind">The class <kbd class="calibre18">FileWrapper</kbd> takes a <kbd class="calibre18">java.io.File</kbd> in its constructor. It provides one new method <kbd class="calibre18">/</kbd> that takes a string and returns a new <kbd class="calibre18">FileWrapper</kbd> object. The newly returned <kbd class="calibre18">FileWrapper</kbd> object points to a file with the name specified to the <kbd class="calibre18">/</kbd> method inside the directory of the original file. For example, if the original <kbd class="calibre18">FileWrapper</kbd>, called <kbd class="calibre18">file</kbd>, pointed at the <kbd class="calibre18">/tmp</kbd> directory, then expression <kbd class="calibre18">file / "mylog.txt"</kbd> will return a <kbd class="calibre18">FileWrapper</kbd> object that points at the <kbd class="calibre18">/tmp/mylog.txt</kbd> file. We’d like to use implicits to automatically convert between <kbd class="calibre18">java.io.File</kbd> and <kbd class="calibre18">FileWrapper</kbd>, so let’s add an implicit view to <kbd class="calibre18">FileWrapper</kbd>’s companion object:
+      </p>
+      
+      <pre id="PLd0e10967" class="calibre8">object FileWrapper {
+  implicit def wrap(file : java.io.File) = new FileWrapper(file)
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">FileWrapper</kbd> companion object defines one method, <kbd class="calibre18">wrap</kbd>, which takes a <kbd class="calibre18">java.io.File</kbd> and returns a new <kbd class="calibre18">FileWrapper</kbd>. Let’s look at an example usage in the REPL:
+      </p>
+      
+      <pre id="PLd0e10988" class="calibre8">scala&gt; import FileWrapper.wrap
+import FileWrapper.wrap
+
+scala&gt; val cur = new java.io.File(".")
+cur: java.io.File = .
+
+scala&gt; cur / "temp.txt"
+res0: FileWrapper = .../temp.txt</pre>
+      
+      <p class="noind">The first line imports the implicit view into scope. The next line creates a new <kbd class="calibre18">java.io.File</kbd> object with the string <kbd class="calibre18">"."</kbd>. This string denotes that the file object should point to the current directory. The last line calls the / method against
+         a <kbd class="calibre18">java.io.File</kbd>. The compiler doesn’t find this method on a standard <kbd class="calibre18">java.io.File</kbd> and looks for an implicit view that would enable this line to compile. Finding the <kbd class="calibre18">wrap</kbd> method in scope, the compiler wraps the <kbd class="calibre18">java.io.File</kbd> into a <kbd class="calibre18">FileWrapper</kbd> and calls the <kbd class="calibre18">/</kbd> method. The resulting <kbd class="calibre18">FileWrapper</kbd> object is returned.
+      </p>
+      
+      <p class="noind">This mechanism is a great way to append methods onto existing Java classes, or any library. We have the performance overhead
+         of the wrapper object instantiation, but the <kbd class="calibre18">HotSpot</kbd> optimizer may mitigate this. I say “may” here because there’s no guarantee that the <kbd class="calibre18">HotSpot</kbd> optimizer will remove the wrapper allocation, but in some <a id="iddle2094" class="calibre25"></a><a id="iddle2127" class="calibre25"></a>microbenchmarks this will occur. Again, it’s best to profile an application to determine critical regions rather than assuming
+         <kbd class="calibre18">HotSpot</kbd> will take care of allocations.
+      </p>
+      
+      <p class="noind">One issue with the <kbd class="calibre18">FileWrapper</kbd> is that calling its <kbd class="calibre18">/</kbd> method will return another <kbd class="calibre18">FileWrapper</kbd> object This means we can’t pass the result directly into a method that expects a vanilla <kbd class="calibre18">java.io.File</kbd>. The <kbd class="calibre18">/</kbd> method could change to instead return a <kbd class="calibre18">java.io.File</kbd> object, but Scala also provides another solution. When passing a <kbd class="calibre18">FileWrapper</kbd> to a method that expects a <kbd class="calibre18">java.io.File</kbd> type, the compiler will begin a search for a valid implicit view. As stated earlier, this search will include the companion
+         object for the <kbd class="calibre18">FileWrapper</kbd> type itself. Let’s add an unwrap implicit view to the companion object and see if this works:
+      </p>
+      
+      <pre id="PLd0e11078" class="calibre8">object FileWrapper {
+  implicit def wrap(file : java.io.File) = new FileWrapper(file)
+  implicit def unwrap(wrapper : FileWrapper) = wrapper.file
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">FileWrapper</kbd> companion object now contains two methods: <kbd class="calibre18">wrap</kbd> and <kbd class="calibre18">unwrap</kbd>. The <kbd class="calibre18">unwrap</kbd> method takes an instance of <kbd class="calibre18">FileWrapper</kbd> and returns the wrapped <kbd class="calibre18">java.io.File</kbd> type. We’ll test this out in the REPL:
+      </p>
+      
+      <pre id="PLd0e11105" class="calibre8">scala&gt; import test.FileWrapper.wrap
+import test.FileWrapper.wrap
+
+scala&gt; val cur = new java.io.File(".")
+cur: java.io.File = .
+
+scala&gt; def useFile(file : java.io.File) = println(file.getCanonicalPath)
+useFile: (file: java.io.File)Unit
+
+scala&gt; useFile(cur / "temp.txt")
+/home/jsuereth/projects/book/scala-in-depth/chapter5/wrappers/temp.txt</pre>
+      
+      <p class="noind">The first line imports the <kbd class="calibre18">wrap</kbd> implicit view. The next line construct a <kbd class="calibre18">java.io.File</kbd> object pointing to the current directory. The third line defines a <kbd class="calibre18">useFile</kbd> method. This method expects an input of type <kbd class="calibre18">java.io.File</kbd> and will print the path to the file. The last line calls the <kbd class="calibre18">useFile</kbd> method with the expression: <kbd class="calibre18">cur / "temp.txt"</kbd>. Again, the compile sees the <kbd class="calibre18">/</kbd> method call and looks for an implicit view to resolve the expression. The resulting type of the expression is a <kbd class="calibre18">FileWrapper</kbd>, but the <kbd class="calibre18">useFile</kbd> method requires a <kbd class="calibre18">java.io.File</kbd>. The compiler performs another implicit lookup using the type <kbd class="calibre18">Function1[java.io.File, FileWrapper]</kbd>. This search finds the <kbd class="calibre18">unwrap</kbd> implicit view on <kbd class="calibre18">FileWrapper</kbd>’s companion object. The types are now satisfied and the compiler has completed the expression. The runtime evaluation yields
+         the correct string.
+      </p>
+      
+      <p class="noind">Notice that utilizing the <kbd class="calibre18">unwrap</kbd> implicit view doesn’t require an import, as needed for the <kbd class="calibre18">wrap</kbd> method. This is because the <kbd class="calibre18">wrap</kbd> implicit view was used when the compile did not know the required type to satisfy the <kbd class="calibre18">cur / "temp.txt"</kbd> expression; therefore it looked for only local implicits, as <kbd class="calibre18">java.io.File</kbd> has no companion object. This feature allows us to provide a wrapper object with additional functionality and near-invisible
+         conversions to and from the wrapper.
+      </p>
+      
+      <p class="noind"><a id="iddle1258" class="calibre25"></a><a id="iddle1260" class="calibre25"></a><a id="iddle1261" class="calibre25"></a><a id="iddle1496" class="calibre25"></a><a id="iddle1498" class="calibre25"></a>Take care when providing additional functionality to existing classes using implicit views. This mechanism makes it much harder
+         to determine if there’s a name conflict across differing implicit views of a type. It also has a performance penalty that
+         may not be mitigated by the <kbd class="calibre18">HotSpot</kbd> optimizer. Finally, for folks not using a modern Scala IDE, it can be difficult to determine which implicit views are providing
+         methods used in a block of code.
+      </p>
+      <p class="calibre2"> </p><table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><div class="calibre4">
+         
+         <b id="ch05sb04" class="calibre21">Rule 13: Avoid implicit views</b>
+         
+         <p class="noind">Implicit views are the most abused feature in Scala. While they seem like a good idea in a lot of situations, Scala provides
+            better alternatives in most cases. Using too many implicit views can greatly increase the ramp-up time of new developers on
+            a code base. While useful, they should be limited to situations where they are the right solution.
+         </p>
+         
+      </div>
+      <table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><p class="calibre2"> </p><p class="noind">Scala implicit views provide users with the flexibility to adapt an API to their needs. Using wrappers and companion object
+         implicit views can drastically ease the pain of integrating libraries with varied but similar interfaces or can allow developers
+         to add functionality to older libraries. Implicit views are a key component in writing expressive Scala code, and should be
+         handled with care.
+      </p>
+      
+      <p class="noind">Implicits also have an interesting interaction with another Scala feature—default parameters.</p>
+      
+      
+      
+      <h3 id="ch05lev1sec3" class="calibre17"><a id="ch05lev1sec3__title" class="calibre6"></a>5.3. Utilize implicit parameters with defaults
+      </h3>
+      
+      <p class="noind">Implicit arguments provide a great mechanism to ensure that users don’t have to specify redundant arguments. They also work
+         well with default parameters. In the event that no parameter is specified and no implicit value is found using implicit resolution,
+         the default parameter is used. This allows us to create default parameters that remove redundant ones while still allowing
+         users to provide different parameters.
+      </p>
+      
+      <p class="noind">For example, let’s implement a set of methods designed to perform matrix calculations. These methods will utilize threads
+         to parallelize work when performing calculations on matrices. But as a library designer, we don’t know where these methods
+         will be called. They may be operating within a context where threading isn’t allowed, or they may already have their own work
+         queue set up. We want to allow users to tell us how to use threads in their context but provide a default for everyone else.
+      </p>
+      
+      <p class="noind">Let’s start by defining the <kbd class="calibre18">Matrix</kbd> class:
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list7">Listing 5.7. <a id="ch05list7__title" class="calibre25"></a>Simple Matrix class
+      </h5>
+      <pre id="PLd0e11247" class="calibre8">class Matrix(private val repr : Array[Array[Double]]) {
+  def row(idx : Int) : Seq[Double] = {
+    repr(idx)
+  }
+  def col(idx : Int) : Seq[Double] = {
+    repr.foldLeft(ArrayBuffer[Double]()) {
+      (buffer, currentRow) =&gt;
+        buffer.append(currentRow(idx))
+        buffer
+    } toArray
+  }
+
+  lazy val rowRank = repr.size
+  lazy val colRank = if(rowRank &gt; 0) repr(0).size else 0
+  override def toString = "Matrix" + repr.foldLeft(") {
+    (msg, row) =&gt; msg + row.mkString("\n|", " | ", "|")
+  }
+}</pre>
+      
+      <p class="noind"><a id="iddle1202" class="calibre25"></a><a id="iddle1841" class="calibre25"></a><a id="iddle2037" class="calibre25"></a>The <kbd class="calibre18">Matrix</kbd> class takes an array of double values and provides two similar methods: <kbd class="calibre18">row</kbd> and <kbd class="calibre18">col</kbd>. These methods take an index and return an array of the values for a given matrix row or column respectively. The <kbd class="calibre18">Matrix</kbd> class also provides <kbd class="calibre18">rowRank</kbd> and <kbd class="calibre18">colRank</kbd> values which return the number of rows and columns in the matrix respectively. Finally the <kbd class="calibre18">toString</kbd> method is overridden to create a prettier output of the matrix.
+      </p>
+      
+      <p class="noind">The <kbd class="calibre18">Matrix</kbd> class is complete and ready for a parallel multiplication algorithm. Let’s start by creating an interface we can use in our
+         library for threading:
+      </p>
+      
+      <pre id="PLd0e11300" class="calibre8">trait ThreadStrategy {
+  def execute[A](func : Function0[A]) : Function0[A]
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">ThreadStrategy</kbd> interface defines one method, <kbd class="calibre18">execute</kbd>. This method takes a function that returns a value of type <kbd class="calibre18">A</kbd>. It also returns a function that returns a value of type <kbd class="calibre18">A</kbd>. The returned function should return the same value as the passed-in function, but could block the current thread until the
+         function is calculated on its desired thread. Let’s implement our matrix calculation service using this <kbd class="calibre18">ThreadStrategy</kbd> interface:
+      </p>
+      
+      <pre id="PLd0e11324" class="calibre8">object MatrixUtils {
+  def multiply(a: Matrix,
+               b: Matrix)(
+               implicit threading: ThreadStrategy): MatrixN = {
+     ...
+  }
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">MatrixUtils</kbd> object contains the method <kbd class="calibre18">multiply</kbd>. The method takes two <kbd class="calibre18">Matrix</kbd> classes, assumed to have the correct dimensions, and will return a new matrix that’s the multiplication of the passed-in
+         matrices. <kbd class="calibre18">Matrix</kbd> multiplication involves multiplying the elements in <kbd class="calibre18">Matrix a</kbd>’s rows by the elements in <kbd class="calibre18">Matrix b</kbd>’s columns and adding the results. This multiplication and summation is done for every element in the resulting matrix. A
+         simple way to parallelize this is to compute each element of the result matrix on a separate thread. The algorithm for the
+         <kbd class="calibre18">MatrixUtils.multiply</kbd> method is simple:
+      </p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24">Create a buffer to hold results.</li>
+         
+         <li class="calibre24">Create a closure that will compute a single value for a row/column pair and place it in the buffer.</li>
+         
+         <li class="calibre24">Send the closures created to the <kbd class="calibre18">ThreadStrategy</kbd> provided.
+         </li>
+         
+         <li class="calibre24"><a id="iddle1214" class="calibre25"></a>Call the functions returned from <kbd class="calibre18">ThreadStrategy</kbd> to ensure they have completed.
+         </li>
+         
+         <li class="calibre24">Wrap the buffer in a <kbd class="calibre18">Matrix</kbd> class and return it.
+         </li>
+         
+      </ul><p class="noind">Let’s start with creating the buffer:</p>
+      
+      <pre id="PLd0e11395" class="calibre8">def  multiply(a: Matrix,
+               b: Matrix)(
+               implicit threading : ThreadStrategy): Matrix = {
+    assert(a.colRank == b.rowRank)
+    val buffer = new Array[Array[Double]](a.rowRank)
+    for ( i &lt;- 0 until a.rowRank ) {
+      buffer(i) = new Array[Double](b.colRank)
+    }
+    ...
+ }</pre>
+      
+      <p class="noind">The initial assert statement is used to ensure that the <kbd class="calibre18">Matrix</kbd> objects passed in are compatible for multiplication. By definition, the number of columns in <kbd class="calibre18">Matrix a</kbd> must equal the number of rows in <kbd class="calibre18">Matrix b</kbd>. We then construct an array of arrays to use as the buffer. The resulting matrix will have the same number of rows as <kbd class="calibre18">Matrix a</kbd> and the same number of columns as <kbd class="calibre18">Matrix b</kbd>. Now that the buffer is ready, let’s create a set of closures in the following listing that will compute the values and place
+         them in the buffer:
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list8">Listing 5.8. <a id="ch05list8__title" class="calibre25"></a>Matrix multiplication
+      </h5>
+      <pre id="PLd0e11422" class="calibre8">def  multiply(a: Matrix,
+               b: Matrix)(
+               implicit threading : ThreadStrategy) : Matrix = {
+   ...
+    def computeValue(row : Int, col : Int) : Unit = {
+       val pairwiseElements =
+         a.row(row).zip(b.col(col))
+       val products =
+         for((x,y) &lt;- pairwiseElements)
+         yield x*y
+       val result = products.sum
+       buffer(row)(col) = result
+    }
+...</pre>
+      
+      <p class="noind">The <kbd class="calibre18">computeValue</kbd> helper method takes a row and a column attribute and computes the value in the buffer at that row and column. The first step
+         is matching the elements of the row of <kbd class="calibre18">a</kbd> with the elements of the column of <kbd class="calibre18">b</kbd> in a pairwise fashion. Scala provides the <kbd class="calibre18">zip</kbd> function which, given two collections, will match their elements. Next, the <kbd class="calibre18">paired</kbd> elements are multiplied to create a list of the products of each element. The final calculation takes a sum of all the products.
+         This final value is placed into the correct row and column in the buffer. The next step is to take this method and construct
+         a function for every row and column in the resulting matrix and pass these functions to the threading strategy, as follows:
+      </p>
+      
+      
+      <pre id="PLd0e11448" class="calibre8">val computations = for {
+   i &lt;- 0 until a.rowRank
+   j &lt;- 0 until b.colRank
+ } yield threading.execute { () =&gt; computeValue(i,j) }</pre>
+      
+      <p class="noind"><a id="iddle1844" class="calibre25"></a><a id="iddle2025" class="calibre25"></a>This <kbd class="calibre18">for</kbd> expression loops every row and column in the resulting matrix and passes a function into the <kbd class="calibre18">ThreadStrategy</kbd> parameter threading. The <kbd class="calibre18">() =&gt;</kbd> syntax is used when creating anonymous function objects that take no arguments, required by the type <kbd class="calibre18">Function0</kbd>. After farming out the work to threads, the multiply method must ensure that all work is complete before returning results.
+         We do this by calling each method returned from the <kbd class="calibre18">ThreadStrategy</kbd>.
+      </p>
+      
+      <pre id="PLd0e11482" class="calibre8">def multiply(a: Matrix,
+              b: Matrix)(
+              implicit threading : ThreadStrategy) : Matrix = {
+  ...
+  computations.foreach(_())
+  new Matrix(buffer)
+}</pre>
+      
+      <p class="noind">The last portion of the multiple method ensures all work is completed and returns the result <kbd class="calibre18">Matrix</kbd> built from the buffer object. Let’s test this in the REPL, but first we need to implement the <kbd class="calibre18">ThreadStrategy</kbd> interface. Let’s create a simple version that executes all work on the current thread:
+      </p>
+      
+      <pre id="PLd0e11497" class="calibre8">object SameThreadStrategy extends ThreadStrategy {
+   def execute[A](func : Function0[A]) = func
+ }</pre>
+      
+      <p class="noind">The <kbd class="calibre18">SameThreadStrategy</kbd> ensures that all passed-in work operates on the calling thread by returning the original function. Let’s test out the <kbd class="calibre18">multiply</kbd> method in the REPL, as follows:
+      </p>
+      
+      <pre id="PLd0e11512" class="calibre8">scala&gt; implicit val ts = sameThreadStrategy
+ts: ThreadStrategy.sameThreadStrategy.type = ...
+
+scala&gt; val x = new Matrix(Array(Array(1,2,3), Array(4,5,6)))
+x: library.Matrix =
+Matrix
+|1.0 | 2.0 | 3.0|
+|4.0 | 5.0 | 6.0|
+
+scala&gt; val y = new Matrix(Array(Array(1), Array(1), Array(1)))
+y: library.Matrix =
+Matrix
+|1.0|
+|1.0|
+|1.0|
+
+scala&gt; MatrixService.multiply(x,y)
+res0: library.Matrix =
+Matrix
+|6.0|
+|15.0|</pre>
+      
+      <p class="noind"><a id="iddle1589" class="calibre25"></a><a id="iddle2024" class="calibre25"></a>The first line is creating an implicit <kbd class="calibre18">ThreadStrategy</kbd> that will be used for all remaining calculations. We then construct two matrices and multiply the results. The 2 x 3 matrix
+         is multiplied by a 3 x 1 matrix to product a 2 x 1 matrix, as expected. Everything appears to be working correctly with a
+         single thread, so let’s create a multithreaded service, as in the following listing:
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list9">Listing 5.9. <a id="ch05list9__title" class="calibre25"></a>Concurrent strategey
+      </h5>
+      <pre id="PLd0e11538" class="calibre8">import java.util.concurrent.{Callable, Executors}
+
+  object ThreadPoolStrategy extends ThreadStrategy {
+    val pool = Executors.newFixedThreadPool(
+                java.lang.Runtime.getRuntime.availableProcessors)
+    def execute[A](func : Function0[A] ) = {
+      val future = pool.submit(new Callable[A] {
+        def call() : A = {
+          Console.println("Executing function on thread: " +
+                          Thread.currentThread.getName)
+          func()
+        }
+      })
+      () =&gt; future.get()
+    }
+  }</pre>
+      
+      <p class="noind">The first thing the <kbd class="calibre18">ThreadPoolStrategy</kbd> implementation does is create a pool of threads using Java’s <kbd class="calibre18">java.util.concurrent.Executors</kbd> library. The thread pool is constructed with the number of threads equal to the number of available processors. The <kbd class="calibre18">execute</kbd> method takes the passed-in function and creates an anonymous <kbd class="calibre18">Callable</kbd> instance. The <kbd class="calibre18">Callable</kbd> interface is used in Java’s concurrent library to pass work into the thread pool. This returns a <kbd class="calibre18">Future</kbd> that can be used to determine when the passed-in work is completed. The last line of <kbd class="calibre18">execute</kbd> returns an anonymous closure that will call <kbd class="calibre18">get</kbd> on <kbd class="calibre18">future</kbd>. This call blocks until the original function executes and returns the value returned by the function. Also, every time a
+         function is executed inside the <kbd class="calibre18">Callable</kbd>, it will print a message informing which thread it’s executing on. Let’s try this out in the REPL:
+      </p>
+      
+      <pre id="PLd0e11577" class="calibre8">scala&gt; implicit val ts = ThreadPoolStrategy
+ts: ThreadStrategy.ThreadPoolStrategy.type = ...
+
+scala&gt; val x = new Matrix(Array(Array(1,2,3), Array(4,5,6)))
+x: library.Matrix =
+Matrix
+|1.0 | 2.0 | 3.0|
+|4.0 | 5.0 | 6.0|
+
+scala&gt; val y = new Matrix(Array(Array(1), Array(1), Array(1)))
+y: library.Matrix =
+Matrix
+|1.0|
+|1.0|
+|1.0|
+
+scala&gt; MatrixUtils.multiply(x,y)
+Executing function on thread: pool-2-thread-1
+Executing function on thread: pool-2-thread-2
+res0: library.Matrix =
+Matrix
+|6.0|
+|15.0|</pre>
+      
+      <p class="noind"><a id="iddle1648" class="calibre25"></a><a id="iddle1845" class="calibre25"></a><a id="iddle2144" class="calibre25"></a>The first line creates an implicit <kbd class="calibre18">ThreadPoolStrategy</kbd> that will be used for all remaining calculations within the REPL session. Again, the <kbd class="calibre18">x</kbd> and <kbd class="calibre18">y</kbd> variables are created as 2 x 3 and 3 x 1 matrices, respectively. But the <kbd class="calibre18">MatrixService.multiply</kbd> now outputs two lines indicating that the calculations for the result matrix are occurring on different threads. The resulting
+         matrix displays the correct values, as before.
+      </p>
+      
+      <p class="noind">Now what if we wanted to provide a default threading strategy for users of the library, and still allow them to override if
+         desired? We can use the default parameter mechanism to provide a default. This will be used if no value is available in the
+         implicit scope, meaning that our users can override the default in a scope by importing or creating their own implicit <kbd class="calibre18">ThreadStrategy</kbd>. Users can also override the behavior for a single method call by explicitly passing the <kbd class="calibre18">ThreadStrategy</kbd>. Let’s modify the signature of <kbd class="calibre18">MatrixService.multiply</kbd>:
+      </p>
+      
+      <pre id="PLd0e11627" class="calibre8">def multiply(a: Matrix, b: Matrix)(
+             implicit threading: ThreadStrategy = SameThreadStrategy
+            ) : Matrix = {
+  ...
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">multiply</kbd> method now defines the <kbd class="calibre18">SameThreadStrategy</kbd> as the default strategy. Now when we use this library, we don’t have to provide our own implicit <kbd class="calibre18">ThreadStrategy</kbd>:
+      </p>
+      
+      <pre id="PLd0e11645" class="calibre8">scala&gt; val x = new Matrix(Array(Array(1,2,3), Array(4,5,6)))
+x: library.Matrix =
+Matrix
+|1.0 | 2.0 | 3.0|
+|4.0 | 5.0 | 6.0|
+
+scala&gt; val y = new Matrix(Array(Array(1), Array(1), Array(1)))
+y: library.Matrix =
+Matrix
+|1.0|
+|1.0|
+|1.0|
+
+scala&gt; MatrixService.multiply(x,y)
+res0: library.Matrix =
+Matrix
+|6.0|
+|15.0|</pre>
+      
+      <p class="noind">Unlike normal default parameters, an implicit parameter list with defaults doesn’t need to be specified in the method call
+         with an additional <kbd class="calibre18">()</kbd>. This means we get the elegance of implicit parameters with the utility of default parameters. We can still utilize implicits
+         as normal:
+      </p>
+      
+      
+      <pre id="PLd0e11659" class="calibre8">scala&gt; implicit val ts = ThreadPoolStrategy
+ts: ThreadStrategy.ThreadPoolStrategy.type = ...
+
+scala&gt; MatrixUtils.multiply(x,y)
+Executing function on thread: pool-2-thread-1
+Executing function on thread: pool-2-thread-2
+res1: library.Matrix =
+Matrix
+|6.0|
+|15.0|</pre>
+      
+      <p class="noind"><a id="iddle1508" class="calibre25"></a><a id="iddle1617" class="calibre25"></a><a id="iddle1873" class="calibre25"></a><a id="iddle1895" class="calibre25"></a>The first line creates an implicitly available thread strategy. Now when calling the <kbd class="calibre18">MatrixService.multiply</kbd> call, the method is using the <kbd class="calibre18">ThreadPoolStrategy</kbd>. This allows users of the <kbd class="calibre18">MatrixService</kbd> to decide when to parallelize computations performed with the library. They can do this for a particular scope by providing
+         an implicit or for a single method call by explicitly passing the <kbd class="calibre18">ThreadStrategy</kbd>.
+      </p>
+      
+      <p class="noind">This technique of creating an implicit value for a scope of computations is a powerful, flexible means of using the strategy
+         pattern. The <i class="calibre9">strategy pattern</i> is an idiom where a piece of code needs to perform some operation, but certain behaviors, or execution “strategy,” can be
+         swapped into the method. The <kbd class="calibre18">ThreadPoolStrategy</kbd> is such a behavior that we’re passing into our <kbd class="calibre18">MatrixUtils</kbd> library methods. This same <kbd class="calibre18">ThreadPoolStrategy</kbd> could be used across different subsections of components in our system. It provides an alternative means of composing behavior
+         than using inheritance, as discussed in <a href="kindle_split_012.html#ch04lev1sec3" class="calibre7">section 4.3</a>.
+      </p>
+      
+      <p class="noind">Another good example of implicits with default parameters is reading the lines of a file. In the general case, users don’t
+         care if the line endings are <kbd class="calibre18">\r</kbd>, <kbd class="calibre18">\n</kbd>, or <kbd class="calibre18">\r\n</kbd>. However, a complete library would handle all situations. This can be done by providing an implicit argument for the line
+         ending strategy and providing a default value of “don’t care.”
+      </p>
+      
+      <p class="noind">Implicits provide a great way to reduce boilerplate in code, such as repeated parameters. The most important thing to remember
+         when using them is be careful, which is the topic of the next section.
+      </p>
+      
+      
+      
+      <h3 id="ch05lev1sec4" class="calibre17"><a id="ch05lev1sec4__title" class="calibre6"></a>5.4. Limiting the scope of implicits
+      </h3>
+      
+      <p class="noind">The most important aspect of dealing with implicits is ensuring that programmers can understand what’s happening in a block
+         of code. Programmers can do this by limiting the places they must check to discover available implicits. Let’s look at the
+         possible locations of implicits:
+      </p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24">The companion objects of any associated types, including package objects</li>
+         
+         <li class="calibre24">The <kbd class="calibre18">scala.Predef</kbd> object
+         </li>
+         
+         <li class="calibre24">Any imports that are in scope.</li>
+         
+      </ul><p class="noind">As seen in section 1.1.3, Scala will look in the companion objects of associated types for implicits. This behavior is core
+         to the Scala language. Companion and package objects should be considered part of the API of a class. When investigating how
+         to use a new library, check the companion and package objects for implicit conversions that you may use.
+      </p>
+      
+      
+      <p class="noind"></p><p class="calibre2"> </p><table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><div class="calibre4">
+         
+         <b id="ch05sb05" class="calibre21">Rule 14: Limit the scope of implicits</b>
+         
+         <p class="noind"><a id="iddle1510" class="calibre25"></a><a id="iddle1516" class="calibre25"></a><a id="iddle1581" class="calibre25"></a><a id="iddle1618" class="calibre25"></a><a id="iddle1780" class="calibre25"></a><a id="iddle2026" class="calibre25"></a><a id="iddle2029" class="calibre25"></a>Because implicit conflicts require explicit passing of arguments and conversions, it’s best to avoid them. This can be accomplished
+            by limiting the number of implicits that are in scope and providing implicits in a way that they can overridden or hidden.
+         </p>
+         
+      </div>
+      <table cellspacing="5" width="100%" border="1" class="calibre10"><colgroup class="calibre19"><col width="550" class="calibre12"/></colgroup><tbody class="calibre13"><tr class="calibre14"><td class="calibre20"/>
+            </tr></tbody></table><p class="calibre2"> </p><p class="noind">At the beginning of every compiled Scala file there’s an implicit <kbd class="calibre18">import scala.Predef._</kbd>. The <kbd class="calibre18">Predef</kbd> object contains many useful transformations, in particular the implicits used to add methods to the <kbd class="calibre18">java.lang.String</kbd> type so that it can support the methods required by the Scala Language Specification. It also contains implicits that will
+         convert between Java’s boxed types and Scala’s unified types for primitives. For example, there’s an implicit conversion in
+         <kbd class="calibre18">scala.Predef</kbd> for <kbd class="calibre18">java.lang.Integer =&gt; scala.Int</kbd>. When coding in Scala, it’s a good idea to know the implicits are available in the <kbd class="calibre18">scala.Predef</kbd> object.
+      </p>
+      
+      <p class="noind">The last possible location for implicits are explicit <kbd class="calibre18">import</kbd> statements within the source code. Imported implicits can be difficult to track down. They’re also hard to document when
+         designing a library. Because these are the only form of implicits that require an explicit <kbd class="calibre18">import</kbd> statement in every source file they’re used, they require the most amount of care.
+      </p>
+      
+      
+      <h4 id="ch05lev2sec4" class="calibre28">5.4.1. <a id="ch05lev2sec4__title" class="calibre25"></a>Creating implicits for import
+      </h4>
+      
+      <p class="noind">When defining a new implicit view or parameter that’s intended to be explicitly imported, you should ensure the following:</p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24">The implicit view or parameter doesn’t conflict with any other implicit.</li>
+         
+         <li class="calibre24">The implicit view or parameter’s name doesn’t conflict with anything in the <kbd class="calibre18">scala.Predef</kbd> object.
+         </li>
+         
+         <li class="calibre24">The implicit view or parameter is <i class="calibre9">discoverable</i>, which means that users of the library or module should be able to find the location of the implicit and determine its use.
+         </li>
+         
+      </ul><p class="noind">Because Scala uses scope resolution to look up implicits, if there’s a naming conflict between two implicit definitions it
+         can cause issues. These conflicts are hard to detect because implicit views and parameters can be defined in any scope and
+         imported. The <kbd class="calibre18">scala.Predef</kbd> object has its contents implicitly imported into every Scala file so that conflicts become immediately apparent. Let’s look
+         at what happens when there’s a conflict:
+      </p>
+      
+      <pre id="PLd0e11890" class="calibre8">object Time {
+  case class TimeRange(start : Long, end : Long)
+  implicit def longWrapper(start : Long) = new {
+    def to(end : Long) = TimeRange(start, end)
+  }
+}</pre>
+      
+      <p class="noind">This defines a <kbd class="calibre18">Time</kbd> object that contains a <kbd class="calibre18">TimeRange</kbd> class. An implicit conversion on <kbd class="calibre18">Long</kbd> provides a <kbd class="calibre18">to</kbd> method. You can use this method to construct time range objects. <a id="iddle1639" class="calibre25"></a><a id="iddle1708" class="calibre25"></a><a id="iddle1805" class="calibre25"></a><a id="iddle1877" class="calibre25"></a><a id="iddle2012" class="calibre25"></a><a id="iddle2134" class="calibre25"></a>This implicit conflicts with <kbd class="calibre18">scala.Predef.longWrapper</kbd> which, among other things, provides an implicit view that also has a <kbd class="calibre18">to</kbd> method. This <kbd class="calibre18">to</kbd> method returns a <kbd class="calibre18">Range</kbd> object that can be used in <kbd class="calibre18">for</kbd> expressions. Imagine a scenario where someone is using this <kbd class="calibre18">TimeRange</kbd> implicit to construct time ranges, and then desires the original implicit defined in <kbd class="calibre18">Predef</kbd> for a <kbd class="calibre18">for</kbd> expression. One way to solve this is to import the <kbd class="calibre18">Predef</kbd> implicit at a higher precedence level in a lower scope where it’s needed. This can be confusing, as shown in the following
+         example:
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list10">Listing 5.10. <a id="ch05list10__title" class="calibre25"></a>Scoped precedence
+      </h5>
+      <pre id="PLd0e11973" class="calibre8">object Test {
+  println(1L to 10L)
+  import Time._
+  println(1L to 10L)
+  def x() = {
+    import scala.Predef.longWrapper
+    println(1L to 10L)
+    def y() = {
+      import Time.longWrapper
+      println(1L to 10L)
+    }
+    y()
+  }
+  x()
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">Test</kbd> object is defined and immediately prints the expression <kbd class="calibre18">(1L to 10L)</kbd>. The <kbd class="calibre18">Time</kbd> implicits are imported and the expression is again printed. Next, in a lower scope, the <kbd class="calibre18">Predef longWrapper</kbd> is imported and the expression is printed. Finally, in yet a lower scope, the <kbd class="calibre18">Time longWrapper</kbd> is imported and the expression is again printed. The result of this objects construction is:
+      </p>
+      
+      <pre id="PLd0e11997" class="calibre8">scala&gt; Test
+NumericRange(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+TimeRange(1,10)
+NumericRange(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+TimeRange(1,10)
+res0: Test.type = Test$@2d34ab9b</pre>
+      
+      <p class="noind">The first <kbd class="calibre18">NumericRange</kbd> result is the expression <kbd class="calibre18">(1L to 10L)</kbd> before any import statements. The second <kbd class="calibre18">TimeRange</kbd> result is after the <kbd class="calibre18">Time</kbd> implicit conversion is imported. The next <kbd class="calibre18">NumericRange</kbd> result is from the nested scope in method <kbd class="calibre18">x()</kbd> and the final <kbd class="calibre18">TimeRange</kbd> result is the result of the statement in the deeply nested <kbd class="calibre18">y()</kbd> method. If the <kbd class="calibre18">Test</kbd> object contained a lot of code such that all these scopes were not visible within a single window, it would be hard to figure
+         out what the result of the expression <kbd class="calibre18">(1L to 10L)</kbd> would return at any particular point. Avoid this kind of confusion. The best way is to avoid conflicts across implicit views,
+         but sometimes this is difficult. In those cases, it’s better to pick one conversion to be implicit and use the other explicitly.
+      </p>
+      
+      <p class="noind">Making implicits discoverable also helps make code readable, as it helps a new developer determine what is and should be happening
+         in a block of code. Making <a id="iddle1208" class="calibre25"></a><a id="iddle1271" class="calibre25"></a><a id="iddle1465" class="calibre25"></a><a id="iddle1475" class="calibre25"></a><a id="iddle1513" class="calibre25"></a><a id="iddle1619" class="calibre25"></a><a id="iddle1811" class="calibre25"></a>implicits discoverable is important when working on a team. Within the Scala community, it’s common practice to limit importable
+         implicits into one of two places:
+      </p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24">Package objects</li>
+         
+         <li class="calibre24">Singleton objects that have the <kbd class="calibre18">postfix Implicits</kbd></li>
+         
+      </ul><p class="noind">Package objects make a great place to store implicits because they’re already on the implicit scope for types defined within
+         the package. Users need to investigate the package object for implicits relating to the package. Placing implicit definitions
+         that need explicit import on the package object means that there’s a greater chance a user will find the implicits and be
+         aware of them. When providing implicits via package object, make sure to document if they require explicit imports for usage.
+      </p>
+      
+      <p class="noind">A better option to documenting explicit import of implicits is to avoid import statements altogether.</p>
+      
+      
+      
+      <h4 id="ch05lev2sec5" class="calibre28">5.4.2. <a id="ch05lev2sec5__title" class="calibre25"></a>Implicits without the import tax
+      </h4>
+      
+      <p class="noind">Implicits work well without requiring any sort of import. Their secondary lookup rules, which inspect companion objects of
+         associated types, allow the definition of implicit conversions and values that don’t require explicit <kbd class="calibre18">import</kbd> statements for these implicit values. With some creative definitions, expressive libraries can be defined that make the full
+         use of implicits without requiring any imports. Let’s look at an example of this: a library for expressing complex numbers.
+      </p>
+      
+      <p class="noind"><i class="calibre9">Complex numbers</i> are numbers that have a rational and imaginary part to them. The imaginary part is the part multiplied by the square root
+         of -1, also known as <i class="calibre9">i</i> (or <i class="calibre9">j</i> for electrical engineers). This is simple to model using a case class in Scala:
+      </p>
+      
+      <pre id="PLd0e12127" class="calibre8">package complexmath
+case class ComplexNumber(real : Double, imaginary : Double)</pre>
+      
+      <p class="noind">The <kbd class="calibre18">ComplexNumber</kbd> class defines a real component of type <kbd class="calibre18">Double</kbd> called <kbd class="calibre18">real</kbd>. The <kbd class="calibre18">ComplexNumber</kbd> class also defines an imaginary component of type <kbd class="calibre18">Double</kbd> called <kbd class="calibre18">imaginary</kbd>. This class represents complex numbers using floating point arithmetic for the component parts. Complex numbers allow addition
+         and multiplication. Let’s take a look at those methods:
+      </p>
+      
+      
+      
+      <h5 class="notetitle" id="ch05list11">Listing 5.11. <a id="ch05list11__title" class="calibre25"></a>ComplexNumber class
+      </h5>
+      <pre id="PLd0e12157" class="calibre8">package complexmath
+
+case class ComplexNumber(real : Double, imaginary : Double) {
+  def *(other : ComplexNumber) =
+    ComplexNumber( (real*other.real) + (imaginary * other.imaginary),
+                   (real*other.imaginary) + (imaginary * other.real) )
+  def +(other : ComplexNumber) =
+    ComplexNumber( real + other.real, imaginary + other.imaginary )
+}</pre>
+      
+      <p class="noind"><a id="iddle1020" class="calibre25"></a><a id="iddle1025" class="calibre25"></a>Addition,<kbd class="calibre18">+</kbd>, is defined such that the real/imaginary component of the sum of two complex numbers is the sum of the real/imaginary components
+         of two numbers. Multiplication,<kbd class="calibre18">*</kbd>, is more complicated and defined as follows:
+      </p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24">The real component of the product of two complex numbers is the product of their real components added to the product of their
+            imaginary components: <kbd class="calibre18">(real*other.real) + (imaginary * other.imaginary)</kbd>.
+         </li>
+         
+         <li class="calibre24">The imaginary component of the product of two complex numbers is the sum of the product of the real component of one number
+            with the imaginary component of the other number: <kbd class="calibre18">(real*other.imaginary) + (imaginary * other.real)</kbd>.
+         </li>
+         
+      </ul><p class="noind">The complex number class now supports addition and multiplication. Let’s look at the class in action:</p>
+      
+      <pre id="PLd0e12203" class="calibre8">scala&gt; ComplexNumber(1,0) * ComplexNumber(0,1)
+res0: imath.ComplexNumber = ComplexNumber(0.0,1.0)
+
+scala&gt; ComplexNumber(1,0) + ComplexNumber(0,1)
+res1: imath.ComplexNumber = ComplexNumber(1.0,1.0)</pre>
+      
+      <p class="noind">The first line multiplies a real component by an imaginary component and the resulting complex number is imaginary. The second
+         line adds a real component to an imaginary component, resulting in a complex number with both real and imaginary parts. The
+         operators * and + work as desired, but calling the <kbd class="calibre18">ComplexNumber</kbd> factory method is a bit verbose. This can be simplified using a new notation for complex numbers.
+      </p>
+      
+      <p class="noind">In mathematics, complex numbers are usually represented as a sum of the real and imaginary parts. An example representation
+         of <kbd class="calibre18">ComplexNumber(1.0,1.0)</kbd> would be <kbd class="calibre18">1.0 + 1.0*i</kbd>, where <kbd class="calibre18">i</kbd> is the symbol for the imaginary number, the square root of –1. This notation would make an ideal syntax for the complex number
+         library. Let’s define the symbol <kbd class="calibre18">i</kbd> to refer to the square root of –1.
+      </p>
+      
+      <pre id="PLd0e12230" class="calibre8">package object complexmath {
+  val i = ComplexNumber(0.0,1.0)
+}</pre>
+      
+      <p class="noind">This defines the <kbd class="calibre18">val i</kbd> on the package object for <kbd class="calibre18">complexmath</kbd>. This places the name <kbd class="calibre18">i</kbd> available within the <kbd class="calibre18">complexmath</kbd> package and allows it to be imported directly. This name can be used to construct complex numbers from their component parts.
+         But a piece is missing, as shown in the following REPL session:
+      </p>
+      
+      <pre id="PLd0e12251" class="calibre8">scala&gt; i * 1.0
+&lt;console&gt;:9: error: type mismatch;
+ found   : Double(1.0)
+ required: ComplexNumber
+       i * 1.0</pre>
+      
+      <p class="noind">Attempting to multiply the imaginary number <kbd class="calibre18">i</kbd> by a <kbd class="calibre18">Double</kbd> fails because the <kbd class="calibre18">ComplexNumber</kbd> type only defines multiplication on <kbd class="calibre18">ComplexNumber</kbd> types. In mathematics, real numbers can be multiplied by complex numbers because a real number can be <a id="iddle1206" class="calibre25"></a><a id="iddle1813" class="calibre25"></a>considered a complex number that has no imaginary component. This property can be emulated in Scala using an implicit conversion
+         from <kbd class="calibre18">Double</kbd> to <kbd class="calibre18">ComplexNumber</kbd>:
+      </p>
+      
+      <pre id="PLd0e12290" class="calibre8">package object complexmath {
+  implicit def realToComplex(r : Double) = new ComplexNumber(r, 0.0)
+  val i = ComplexNumber(0.0, 1.0)
+}</pre>
+      
+      <p class="noind">The <kbd class="calibre18">complexmath</kbd> package object now contains the definition for the value <kbd class="calibre18">i</kbd> as well as an implicit conversion from <kbd class="calibre18">Double</kbd> to <kbd class="calibre18">ComplexNumber</kbd> called <kbd class="calibre18">realToComplex</kbd>. We’d like to limit the usage of this implicit conversion so that it’s only used when absolutely needed. Let’s try using
+         the <kbd class="calibre18">complexmath</kbd> package without explicitly importing any implicit conversions:
+      </p>
+      
+      <pre id="PLd0e12317" class="calibre8">scala&gt; import complexmath.i
+import complexmath.i
+
+scala&gt; val x = i*5.0 + 1.0
+x: complexmath.ComplexNumber = ComplexNumber(1.0,5.0)</pre>
+      
+      <p class="noind">The <kbd class="calibre18">val x</kbd> is declared using the expression <kbd class="calibre18">i*5 + 1</kbd> and has the type <kbd class="calibre18">ComplexNumber</kbd> with a real component of <kbd class="calibre18">1.0</kbd> and an imaginary component of <kbd class="calibre18">5.0</kbd>. The important thing to note here is that only the name <kbd class="calibre18">i</kbd> is imported from <kbd class="calibre18">complexmath</kbd>. The rest of the implicit conversions are all trigged from the <kbd class="calibre18">i</kbd> object when the compiler first sees the expression <kbd class="calibre18">i*5</kbd>. The value <kbd class="calibre18">i</kbd> is known to be a <kbd class="calibre18">ComplexNumber</kbd> and defines a <kbd class="calibre18">*</kbd> method that takes another <kbd class="calibre18">ComplexNumber</kbd>. The literal <kbd class="calibre18">5.0</kbd> isn’t of the type <kbd class="calibre18">ComplexNumber</kbd>, but <kbd class="calibre18">Double</kbd>. The compiler issues an implicit search for the type <kbd class="calibre18">Double =&gt; complexmath.ComplexNumber</kbd>. This search finds the <kbd class="calibre18">realToComplex</kbd> conversion on the package object and applies it. Next the compiler sees the expression <kbd class="calibre18">(... : ComplexNumber) + 1.0</kbd>. The compiler finds a <kbd class="calibre18">+</kbd> method defined on <kbd class="calibre18">ComplexNumber</kbd> that accepts a <kbd class="calibre18">ComplexNumber</kbd>. The value <kbd class="calibre18">1.0</kbd> is of type <kbd class="calibre18">Double</kbd>, not <kbd class="calibre18">ComplexNumber</kbd> so the compiler issues another implicit search for the type <kbd class="calibre18">Double =&gt; ComplexNumber</kbd>. Again this is found and applied, resulting in the final value for the expression of <kbd class="calibre18">ComplexNumber(1.0, 5.0)</kbd>.
+      </p>
+      
+      <p class="noind">Notice how the value <kbd class="calibre18">i</kbd> is used to trigger complex arithmetic. Once a complex number is seen, the compiler can accurately find implicits to ensure
+         that expressions are compiled. The syntax is elegant and concise, and no implicit conversions were needed to make this syntax
+         work. The downside is that the value <kbd class="calibre18">i</kbd> must be used to begin a <kbd class="calibre18">ComplexNumber</kbd> expression. Let’s look at what happens when <kbd class="calibre18">i</kbd> appears at the end of the expression:
+      </p>
+      
+      <pre id="PLd0e12422" class="calibre8">scala&gt; val x = 1.0 + 5.0*i
+&lt;console&gt;:6: error: overloaded method value * with alternatives:
+  (Double)Double &lt;and&gt;
+  (Float)Float &lt;and&gt;
+  (Long)Long &lt;and&gt;
+  (Int)Int &lt;and&gt;
+  (Char)Int &lt;and&gt;
+  (Short)Int &lt;and&gt;</pre>
+      
+      
+      
+      <pre id="PLd0e12430" class="calibre8"> (Byte)Int
+cannot be applied to (complexmath.ComplexNumber)
+      val x = 1 + 5*i</pre>
+      
+      <p class="noind"><a id="iddle1272" class="calibre25"></a><a id="iddle1476" class="calibre25"></a><a id="iddle1812" class="calibre25"></a>The compiler complains about the expression because it can’t find a <kbd class="calibre18">+</kbd> method defined for the type <kbd class="calibre18">Double</kbd> that takes a <kbd class="calibre18">ComplexNumber</kbd>. This issue could be solved by importing the implicit view of <kbd class="calibre18">Double =&gt; ComplexNumber</kbd> into scope:
+      </p>
+      
+      <pre id="PLd0e12466" class="calibre8">scala&gt; import complexmath.realToComplex
+import complexmath.realToComplex
+
+scala&gt; val x = 1.0 + 5.0*i
+x: complexmath.ComplexNumber = ComplexNumber(1.0,5.0)</pre>
+      
+      <p class="noind">The <kbd class="calibre18">realToComplex</kbd> implicit view is imported first. Now the expression <kbd class="calibre18">1 + 5*i</kbd> evaluates correctly to a <kbd class="calibre18">ComplexNumber(1.0, 5.0)</kbd>. The downside is that there’s now an additional implicit view in scope for the type <kbd class="calibre18">Double</kbd>. This can cause issues if other implicit views are defined that provide similar methods to <kbd class="calibre18">ComplexNumber</kbd>. Let’s define a new implicit conversion that adds an <kbd class="calibre18">imaginary</kbd> method to <kbd class="calibre18">Double</kbd>.
+      </p>
+      
+      <pre id="PLd0e12496" class="calibre8">scala&gt; implicit def doubleToReal(x : Double) = new {
+     |   def real = "For Reals(" + x + ")"
+     | }
+doubleToReal: (x: Double)java.lang.Object{def real: java.lang.String}
+
+scala&gt; 5.0 real
+&lt;console&gt;:10: error: type mismatch;
+ found   : Double
+ required: ?{val real: ?}
+Note that implicit conversions are not applicable
+ because they are ambiguous:
+ both method doubleToReal in object $iw of type
+   (x: Double)java.lang.Object{def real: java.lang.String}
+ and method realToComplex in package complexmath of type
+   (r: Double)complexmath.ComplexNumber
+ are possible conversion functions from
+   Double to ?{val real: ?}
+       5.0 real</pre>
+      
+      <p class="noind">The first statement defines an implicit view on the <kbd class="calibre18">Double</kbd> type that adds a new type containing a <kbd class="calibre18">real</kbd> method. The <kbd class="calibre18">real</kbd> method returns a string version of the <kbd class="calibre18">Double</kbd>. The next statement attempts to call the <kbd class="calibre18">real</kbd> method and is unable to do so. The compiler complains about finding ambiguous implicit conversions. The issue here is the
+         <kbd class="calibre18">ComplexNumber</kbd> type also defines a method <kbd class="calibre18">real</kbd>, and so the implicit conversion from <kbd class="calibre18">Double =&gt; ComplexNumber</kbd> is getting in the way of our <kbd class="calibre18">doubleToReal</kbd> implicit conversion. This conflict can be avoided by not importing the <kbd class="calibre18">Double =&gt; ComplexNumber</kbd> conversion:
+      </p>
+      
+      <pre id="PLd0e12535" class="calibre8">scala&gt; import complexmath.i
+import complexmath.i
+
+scala&gt; implicit def doubleToReal(x : Double) = new {
+     |   def real = "For Reals(" + x + ")"
+     | }
+doubleToReal: (x: Double)java.lang.Object{def real: java.lang.String}
+
+scala&gt; 5.0 real
+res0: java.lang.String = For Reals(5.0)</pre>
+      
+      <p class="noind"><a id="iddle1207" class="calibre25"></a><a id="iddle1466" class="calibre25"></a>The example starts a new REPL session that only imports <kbd class="calibre18">complexmath.i</kbd>. The next statement redefines the <kbd class="calibre18">doubleToReal</kbd> conversion. Now the expression <kbd class="calibre18">5.0 real</kbd> successfully compiles because there’s no conflict.
+      </p>
+      
+      <p class="noind">You can use this idiom to successfully create expressive code without all the dangers of implicit conflicts. The pattern takes
+         the following form:
+      </p>
+      
+      <p class="calibre22"></p>
+      <ul class="calibre23"><li class="calibre24">Define the core abstractions for a library, such as the <kbd class="calibre18">ComplexNumber</kbd> class.
+         </li>
+         
+         <li class="calibre24">Define the implicit conversions needed for expressive code in one of the associated types of the conversion. The <kbd class="calibre18">Double =&gt; ComplexNumber</kbd> conversion was created in the <kbd class="calibre18">complexmath</kbd> package object which is associated with the <kbd class="calibre18">ComplexNumber</kbd> type and therefore discovered in any implicit lookup involving the <kbd class="calibre18">ComplexNumber</kbd> type.
+         </li>
+         
+         <li class="calibre24">Define an <i class="calibre9">entry point</i> into the library such that implicit conversions are disambiguated after the entry point. In the <kbd class="calibre18">complexmath</kbd> library, the value <kbd class="calibre18">i</kbd> is the entry point.
+         </li>
+         
+         <li class="calibre24">Some situations require an explicit import. In the <kbd class="calibre18">complexmath</kbd> library, the entry point <kbd class="calibre18">i</kbd> allows certain types of expressions but not others that intuition would suggest should be there. For example, <kbd class="calibre18">(i * 5.0 + 1.0)</kbd> is accepted and <kbd class="calibre18">(1.0 + 5.0*i)</kbd> is rejected. In this situation, it’s acceptable to provide implicit conversions that can be imported from a well-known location.
+            In <kbd class="calibre18">complexmath</kbd>, this location is the package object.
+         </li>
+         
+      </ul><p class="noind">Following these guidelines helps create expressive APIs that are also discoverable.</p>
+      
+      
+      
+      
+      <h3 id="ch05lev1sec5" class="calibre17"><a id="ch05lev1sec5__title" class="calibre6"></a>5.5. Summary
+      </h3>
+      
+      <p class="noind">In this chapter, we discussed the implicit lookup mechanism of Scala. Scala supports two types of implicits: implicit value
+         and implicit views. Implicit values can be used to provide arguments to method calls. Implicit views can be used to convert
+         between types or to allow method calls against a type to succeed. Both implicit values and implicit views use the same implicit
+         resolution mechanism. Implicit resolution uses a two stage process. The first stage looks for implicits that have no prefix
+         in the current scope. The second stage looks in companion objects of associated types. Implicits provide a powerful way to
+         enhance existing classes. They can also be used with default parameters to reduce the noise for method calls and tie behavior
+         to the scope of an implicit value.
+      </p>
+      
+      <p class="noind">Most importantly, implicits provide a lot of power and should be used responsibly. Limiting the scope of implicits and defining
+         them in well-known or easily discoverable locations is key to success. You can do this by providing unambiguous entry points
+         into implicit conversions and expressive APIs. Implicits also interact with Scala’s type system in interesting ways. We’ll
+         discuss these in <a href="kindle_split_015.html#ch07" class="calibre7">chapter 7</a>, but first let’s look at Scala’s type system.
+      </p>
+      
+      
+      
+      
+      <div class="calibre4" id="calibre_pb_13"></div></div>
+
+{% endraw %}
+

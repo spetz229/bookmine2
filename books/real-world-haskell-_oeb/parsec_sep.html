@@ -1,0 +1,141 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: parsec_firststeps.html
+next: parsec_choices.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="parsec_firststeps.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="parsec_choices.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="parsec_sep" class="calibre27" id="parsec_sep"></a><h3 id="title-IDAPE5GL" class="docSection1Title">16.2. The sepBy and endBy Combinators</h3><a name="x_ZJ" class="calibre27" id="x_ZJ"></a><p class="docText">We<a name="I_indexterm16_d1e36244" class="calibre27" id="I_indexterm16_d1e36244"></a><a name="I_indexterm16_d1e36245" class="calibre27" id="I_indexterm16_d1e36245"></a><a name="I_indexterm16_d1e36246" class="calibre27" id="I_indexterm16_d1e36246"></a><a name="I_indexterm16_d1e36249" class="calibre27" id="I_indexterm16_d1e36249"></a> promised you earlier that we could simplify our CSV parser
+    significantly by using a few Parsec helper functions. There are two that
+    will dramatically simplify this code.</p><a name="x_aJ" class="calibre27" id="x_aJ"></a><p class="docText">The first tool is the <tt class="calibre34">sepBy</tt> function.<a name="I_indexterm16_d1e36260" class="calibre27" id="I_indexterm16_d1e36260"></a> This function takes two functions as arguments: the first
+    parses some sort of content, while the second parses a separator. <tt class="calibre34">sepBy</tt> starts by trying to parse content, and
+    then separators, and alternates back and forth until it can't parse a
+    separator. It returns a list of all the content that it was able to
+    parse.</p><a name="x_C31" class="calibre27" id="x_C31"></a><p class="docText">The second tool is <tt class="calibre34">endBy</tt>. It's<a name="I_indexterm16_d1e36272" class="calibre27" id="I_indexterm16_d1e36272"></a> similar to <tt class="calibre34">sepBy</tt>, but
+    expects the very last item to be followed by the separator. That is, it
+    continues parsing until it can't parse any more content.</p><a name="x_bJ" class="calibre27" id="x_bJ"></a><p class="docText">So, we can use <tt class="calibre34">endBy</tt> to
+    parse lines, since every line must end with the end-of-line character. We
+    can use <tt class="calibre34">sepBy</tt> to parse cells, since the
+    last cell will not end with a comma. Take a look at how much simpler our
+    parser is now:</p><pre class="calibre39">-- file: ch16/csv2.hs
+import Text.ParserCombinators.Parsec
+
+csvFile = endBy line eol
+line = sepBy cell (char ',')
+cell = many (noneOf ",\n")
+eol = char '\n'
+
+parseCSV :: String -&gt; Either ParseError [[String]]
+parseCSV input = parse csvFile "(unknown)" input</pre><br class="calibre48"/>
+<a name="x_cJ" class="calibre27" id="x_cJ"></a><p class="docText">This program behaves exactly the same as the first one. We
+    can verify this by using <i class="docEmphasis">ghci</i> to rerun
+    our examples from the earlier example. We'll get the same result from
+    every one. Yet the program is much shorter and more readable. It won't be
+    long before you can translate Parsec code such as this into a file format
+    definition in plain English. As you read over this code, you can see
+    that:</p><ul class="calibre18"><li class="calibre19"><p class="docText">A CSV file contains zero or more lines, each of which
+        is terminated by the end-of-line character.</p></li><li class="calibre19"><p class="docText">A line contains one or more cells, separated by a
+        comma.</p></li><li class="calibre19"><p class="docText">A cell contains zero or more characters, which must be
+        neither the comma nor the <span class="docEmphasis">end-of-line</span> character.</p></li><li class="calibre19"><p class="docText">The end-of-line character is the newline, <tt class="calibre34">\n</tt>.</p></li></ul>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="parsec_firststeps.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="parsec_choices.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

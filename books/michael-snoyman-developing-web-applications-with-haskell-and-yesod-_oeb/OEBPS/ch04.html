@@ -1,0 +1,54 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch03s09.html
+next: OEBPS/ch04s02.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="calibre8"></div><div class="book" title="Chapter 4. Shakespearean Templates"><div class="book"><div class="book"><div class="book"><div class="calibre8"></div><h1 class="title1"><a id="I_chapter4_d1e1212" class="calibre1"></a>Chapter 4. Shakespearean Templates</h1></div></div></div><p class="calibre7">Yesod uses the Shakespearean family of template languages as its standard approach to HTML,
+    CSS, and JavaScript creation. This language family shares some common syntax, as well as
+    overarching principles:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7">As little interference to the underlying language as possible, while providing
+          conveniences where unobtrusive</p></li><li class="listitem"><p class="calibre7">Compile-time guarantees on well-formed content</p></li><li class="listitem"><p class="calibre7">Static type safety, greatly helping the prevention of <a class="ulink" href="http://en.wikipedia.org/wiki/Cross-site_scripting">XSS (cross-site
+            scripting)</a> attacks</p></li><li class="listitem"><p class="calibre7">Automated checking of valid URLs, whenever possible, through <em class="calibre4">type-safe
+            URLs</em></p></li></ul></div><p class="calibre7">There is nothing inherently tying Yesod to these languages, or the other way around:
+   each can be used independently of the other. This chapter will address these template languages
+   on their own, while the remainder of the book will use them to enhance Yesod application
+   development.</p><div class="book" title="Synopsis"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect14_d1e1237" class="calibre1"></a>Synopsis</h1></div></div></div><p class="calibre7">There are four main languages at play: Hamlet is an HTML templating language, Julius is
+      for JavaScript, and Cassius and Lucius are both for CSS. Hamlet and Cassius are both
+      whitespace-sensitive formats, using indentation to denote nesting. By contrast, Lucius is a
+      superset of CSS, keeping CSS’s braces for denoting nesting. Julius is a simple passthrough
+      language for producing JavaScript; the only added feature is variable interpolation.</p><div class="book" title="Hamlet (HTML)"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id3022117" class="calibre1"></a>Hamlet (HTML)</h2></div></div></div><a id="I_programlisting4_d1e1245" class="firstname"></a><pre class="programlistinghaskell">$doctype 5
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;#{pageTitle} - My Site
+        &lt;link rel=stylesheet href=@{Stylesheet}&gt;
+    &lt;body&gt;
+        &lt;h1 .page-title&gt;#{pageTitle}
+        &lt;p&gt;Here is a list of your friends:
+        $if null friends
+            &lt;p&gt;Sorry, I lied, you don't have any friends.
+        $else
+            &lt;ul&gt;
+                $forall Friend name age &lt;- friends
+                    &lt;li&gt;#{name} (#{age} years old)
+        &lt;footer&gt;^{copyright}</pre></div><div class="book" title="Cassius (CSS)"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id2965499" class="calibre1"></a>Cassius (CSS)</h2></div></div></div><a id="I_programlisting4_d1e1250" class="firstname"></a><pre class="programlistinghaskell">#myid
+    color: #{red}
+    font-size: #{bodyFontSize}
+foo bar baz
+    background-image: url(@{MyBackgroundR})</pre></div><div class="book" title="Lucius (CSS)"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id3023307" class="calibre1"></a>Lucius (CSS)</h2></div></div></div><a id="I_programlisting4_d1e1255" class="firstname"></a><pre class="programlistinghaskell">section.blog {
+    padding: 1em;
+    border: 1px solid #000;
+    h1 {
+        color: #{headingColor};
+    }
+}</pre></div><div class="book" title="Julius (JavaScript)"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id2948765" class="calibre1"></a>Julius (JavaScript)</h2></div></div></div><a id="I_programlisting4_d1e1260" class="firstname"></a><pre class="programlistinghaskell">$(function(){
+    $("section.#{sectionClass}").hide();
+    $("#mybutton").click(function(){document.location = "@{SomeRouteR}";});
+    ^{addBling}
+});</pre></div></div></div></div>
+
+{% endraw %}
+

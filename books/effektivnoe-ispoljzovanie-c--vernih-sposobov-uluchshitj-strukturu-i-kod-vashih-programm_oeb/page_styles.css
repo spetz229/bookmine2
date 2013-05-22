@@ -1,0 +1,33 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-style: normal;
+    font-family: Font_2f30464f-e9a7-45f1-9c8a-092065dd8bdc;
+    src: url(OEBPS/fonts/LiberationSerif-Regular.ttf);
+    font-weight: normal
+    }
+@font-face {
+    font-style: italic;
+    font-family: Font_2f30464f-e9a7-45f1-9c8a-092065dd8bdc;
+    src: url(OEBPS/fonts/LiberationSerif-Italic.ttf);
+    font-weight: normal
+    }
+@font-face {
+    font-style: normal;
+    font-family: Font_2f30464f-e9a7-45f1-9c8a-092065dd8bdc;
+    src: url(OEBPS/fonts/LiberationSerif-Bold.ttf);
+    font-weight: bold
+    }
+@font-face {
+    font-style: italic;
+    font-family: Font_2f30464f-e9a7-45f1-9c8a-092065dd8bdc;
+    src: url(OEBPS/fonts/LiberationSerif-BoldItalic.ttf);
+    font-weight: bold
+    }
+@font-face {
+    font-style: italic;
+    font-family: Font_2f30464f-e9a7-45f1-9c8a-092065dd8bdc;
+    src: url(OEBPS/fonts/LiberationSerif-Italic.ttf)
+    }

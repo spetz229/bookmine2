@@ -1,0 +1,101 @@
+---
+layout: page
+title: "jQuery UI"
+prev: OEBPS/ch02s02.html
+next: OEBPS/ch02s04.html
+book_path: books/eric-sarrion-jquery-ui-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="The tabs () Method"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="the_tabs_open_parenthesis_close_parenthe" class="calibre1"></a>The tabs () Method</h1></div></div></div><p class="calibre7">The <code class="literal">tabs ()</code> method can be used in
+    two forms:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7"><code class="literal">$(selector, context).tabs
+        (options)</code></p></li><li class="listitem"><p class="calibre7"><code class="literal">$(selector, context).tabs ("action",
+        params)</code></p></li></ul></div><div class="book" title="The tabs (options) Method"><div class="book"><div class="book"><div class="book"><h2 class="title5"><a id="the_tabs_open_parenthesis_options_close" class="calibre1"></a>The tabs (options) Method</h2></div></div></div><p class="calibre7">The <code class="literal">tabs (options)</code> method
+      declares that an HTML element (and its contents) should be managed as
+      tabs. The <code class="literal">options</code> parameter is an
+      object to specify the appearance and behavior relevant to the tabs.
+      Different types of <code class="literal">options</code> are
+      available, depending on whether they manage tabs directly or events
+      related to tabs.</p><div class="book" title="Tab appearance and behavior"><div class="book"><div class="book"><div class="book"><h3 class="title6"><a id="tab_appearance_and_behavior" class="calibre1"></a>Tab appearance and behavior</h3></div></div></div><p class="calibre7"><a class="ulink" href="ch02s03.html#options_for_managing_tab_appearance_and" title="Table 2-1. Options for managing tab appearance and behavior">Table 2-1</a>
+        describes the options for modifying the appearance and behavior of
+        tabs.</p><div class="table"><a id="options_for_managing_tab_appearance_and" class="firstname"></a><p class="title7">Table 2-1. Options for managing tab appearance and behavior</p><div class="book"><table summary="Options for managing tab appearance and behavior" class="calibre14"><colgroup class="calibre15"><col class="calibre16"/><col class="calibre16"/></colgroup><thead class="calibre17"><tr class="calibre18"><th valign="bottom" class="calibre19"><p class="calibre7">Options</p></th><th valign="bottom" class="calibre19"><p class="calibre7">Function</p></th></tr></thead><tbody class="calibre20"><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.collapsible</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Set to <code class="literal">true</code>, it allows tabs to be
+                deselected. When set to <code class="literal">false</code> (the default), clicking on a
+                selected tab does not deselect (it remains
+                selected).</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.disabled</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Uses an array to
+                indicate index tabs that are disabled (and therefore cannot be
+                selected). For example, use <code class="literal">[0,
+                1]</code> to disable the first two tabs.</p></td></tr><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.selected</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Indicates the index of
+                the first selected tab. The default is <code class="literal">0</code>, indicating the first tab on the
+                page.</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.event</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Name of the event that
+                lets users select a new tab (the default is <code class="literal">"click"</code>). If, for example, this
+                option is set to <code class="literal">"mouseover"</code>, passing the mouse over
+                a tab will select it.</p></td></tr><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.fx</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Indicates the effect
+                that accompanies selection of the tab, such as a progressive
+                display of the tab and its contents (indicated by <code class="literal">options.fx = {opacity:
+                "toggle"}</code>).</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.ajaxOptions</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Specifies options for
+                Ajax (when you want to update the content of a tab with Ajax).
+                For example, <code class="literal">options.ajaxOptions.data</code> allows you
+                to specify parameters to the server.</p></td></tr></tbody></table></div></div></div><div class="book" title="Managing events associated with tabs"><div class="book"><div class="book"><div class="book"><h3 class="title6"><a id="managing_events_associated_with_tabs" class="calibre1"></a>Managing events associated with tabs</h3></div></div></div><p class="calibre7">Some options are used for tab management, such as selecting,
+        adding, and deleting tabs. These options (listed in <a class="ulink" href="ch02s03.html#options_for_managing_tabs" title="Table 2-2. Options for managing tabs">Table 2-2</a>) receive the <code class="literal">event</code> parameter corresponding to the event,
+        followed by the <code class="literal">tab</code> object that
+        describes the tab on which the event occurred. This <code class="literal">tab</code> object is composed of the following
+        properties:</p><div class="book"><dl class="book"><dt class="calibre8"><span class="firstname"><code class="literal">index</code></span></dt><dd class="calibre9"><p class="calibre7">The index of the tab on which the event occurred (0
+              indicates the first tab).</p></dd><dt class="calibre8"><span class="firstname"><code class="literal">panel</code></span></dt><dd class="calibre9"><p class="calibre7">The <code class="literal">&lt;div&gt;</code> element
+              corresponding to the contents of the tab.</p></dd></dl></div><div class="table"><a id="options_for_managing_tabs" class="firstname"></a><p class="title7">Table 2-2. Options for managing tabs</p><div class="book"><table summary="Options for managing tabs" class="calibre14"><colgroup class="calibre15"><col class="calibre16"/><col class="calibre16"/></colgroup><thead class="calibre17"><tr class="calibre18"><th valign="bottom" class="calibre19"><p class="calibre7">Options</p></th><th valign="bottom" class="calibre19"><p class="calibre7">Function</p></th></tr></thead><tbody class="calibre20"><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.select</code></p></td><td valign="top" class="calibre21"><p class="calibre7">The <code class="literal">select (event, tab)</code> method is called
+                during the selection of a tab (either manually or by the
+                <code class="literal">tabs ("select")</code> method
+                call).</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.show</code></p></td><td valign="top" class="calibre21"><p class="calibre7">The <code class="literal">show (event, tab)</code> method is called
+                when the contents of a tab become visible (manually, when
+                displaying the first selected tab, or by calling a method like
+                <code class="literal">tabs
+                ("select")</code>).</p></td></tr><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.add</code></p></td><td valign="top" class="calibre21"><p class="calibre7">The <code class="literal">add (event, tab)</code> method is called
+                when adding a tab in the tab list (by the <code class="literal">tabs ("add")</code> method).</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.remove</code></p></td><td valign="top" class="calibre21"><p class="calibre7">The <code class="literal">remove (event, tab)</code> method is called
+                when deleting a tab in the tab list (by the <code class="literal">tabs ("remove")</code>
+                method).</p></td></tr><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.enable</code></p></td><td valign="top" class="calibre21"><p class="calibre7">The <code class="literal">enable (event, tab)</code> method is called
+                when activating a tab in the tab list (by the <code class="literal">tabs ("enable")</code>
+                method).</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.disable</code></p></td><td valign="top" class="calibre21"><p class="calibre7">The <code class="literal">disable (event, tab)</code> method is
+                called when disabling a tab in the tab list (by the <code class="literal">tabs ("disable")</code>
+                method).</p></td></tr><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">options.load</code></p></td><td valign="top" class="calibre21"><p class="calibre7">The <code class="literal">load (event, tab)</code> method is called
+                when loading or viewing a tab in the list of tabs by Ajax (by
+                the <code class="literal">tabs ("load")</code>
+                method).</p></td></tr></tbody></table></div></div></div></div><div class="book" title="The tabs (“action”, params) Method"><div class="book"><div class="book"><div class="book"><h2 class="title5"><a id="the_tabs_open_parenthesis_quotation_mark" class="calibre1"></a>The tabs (“action”, params) Method</h2></div></div></div><p class="calibre7">Unlike the preceding <code class="literal">tabs
+      (options)</code> method, this new form of the method modifies the
+      behavior of tabs after their creation. The <code class="literal">tabs
+      ("action", params)</code> method allows, through a JavaScript
+      program, an action on the tabs, such as selecting, disabling, adding, or
+      removing a tab. The action is specified as a string in the first
+      argument (e.g., <code class="literal">"add"</code> to add a new
+      tab), while the arguments that follow concern the parameters of this
+      action (e.g., the index of the tab).</p><p class="calibre7">Calling these methods sometimes causes an event having the same
+      name as the corresponding action (the <code class="literal">add</code> event is triggered by the <code class="literal">"add"</code> action). These events are processed by
+      the options already discussed, and are listed in <a class="ulink" href="ch02s03.html#the_tabs_open_parenthesis_quotation" title="Table 2-3. The tabs (“action”, params) method actions">Table 2-3</a>.</p><div class="table"><a id="the_tabs_open_parenthesis_quotation" class="firstname"></a><p class="title7">Table 2-3. The tabs (“action”, params) method actions</p><div class="book"><table summary="The tabs (“action”, params) method actions" class="calibre14"><colgroup class="calibre15"><col class="calibre16"/><col class="calibre16"/></colgroup><thead class="calibre17"><tr class="calibre18"><th valign="bottom" class="calibre19"><p class="calibre7">Method</p></th><th valign="bottom" class="calibre19"><p class="calibre7">Function</p></th></tr></thead><tbody class="calibre20"><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("add", "#id", title,
+              index)</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Add a tab to the position
+              indicated by <code class="literal">index</code> (from 0).
+              Remaining tabs after the added tab will have their index numbers
+              incremented by 1.</p> <p class="calibre7"><code class="literal">"#id"</code> is the id of a <code class="literal">&lt;div&gt;</code> element that is associated
+              with the content of this tab (the <code class="literal">&lt;div&gt;</code> is created by jQuery UI,
+              its content should be added later).</p> <p class="calibre7">The <code class="literal">title</code> parameter is the title of the
+              tab.</p> <p class="calibre7">If the <code class="literal">index</code> parameter is not specified, the
+              tab is added at the end of the list.</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("remove", index)</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Remove the specified tab
+              and the associated content.</p></td></tr><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("disable", index)</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Disable the specified
+              tab.</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("enable", index)</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Make the specified tab
+              active.</p></td></tr><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("select", index)</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Select the specified
+              tab—the content of that tab becomes visible.</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("url", index,
+              url)</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Associate the contents of
+              the tab with the URL specified in the <code class="literal">url</code> parameter. Ajax will retrieve the
+              contents of the tab in the call to the <code class="literal">tabs ("load", index)</code>
+              method.</p></td></tr><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("load", index)</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Have Ajax retrieve the
+              contents of the tab, using the URL indicated by <code class="literal">tabs ("url", index,
+              url)</code>.</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("rotate", duration,
+              repeat)</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Periodically select each
+              tab according to a specified time <code class="literal">duration</code> (in milliseconds).</p>
+              <p class="calibre7">If <code class="literal">repeat</code> is <code class="literal">true</code>, the cycle is repeated, otherwise
+              it is done only once (the default).</p></td></tr><tr class="calibre18"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("destroy")</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Remove the tab
+              management. Tabs again become simple HTML without CSS class or
+              event management.</p></td></tr><tr class="calibre22"><td valign="top" class="calibre21"><p class="calibre7"><code class="literal">tabs ("length")</code></p></td><td valign="top" class="calibre21"><p class="calibre7">Return the number of tabs
+              of the first element of the list for the selector
+              used.</p></td></tr></tbody></table></div></div></div></div></div>
+
+{% endraw %}
+

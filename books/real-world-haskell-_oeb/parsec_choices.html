@@ -1,0 +1,269 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: parsec_sep.html
+next: csv.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="parsec_sep.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="csv.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="parsec_choices" class="calibre27" id="parsec_choices"></a><h3 id="643999-832" class="docSection1Title">16.3. Choices and Errors</h3><a name="x_hJ" class="calibre27" id="x_hJ"></a><p class="docText">Different operating systems use different characters to
+    mark the end of line.<a name="I_indexterm16_d1e36318" class="calibre27" id="I_indexterm16_d1e36318"></a><a name="I_indexterm16_d1e36323" class="calibre27" id="I_indexterm16_d1e36323"></a> Unix/<span class="docEmphasis">Linux</span> systems,
+    and Windows in text mode, use simply <tt class="calibre34">"\n"</tt>. DOS and Windows systems use <tt class="calibre34">"\r\n"</tt>, and Macs<a name="I_indexterm16_d1e36338" class="calibre27" id="I_indexterm16_d1e36338"></a><a name="I_indexterm16_d1e36344" class="calibre27" id="I_indexterm16_d1e36344"></a> traditionally use <tt class="calibre34">"\r"</tt>.
+    We could add support for <tt class="calibre34">"\n\r"</tt> too, just in case anybody uses
+    that.</p><a name="x_iJ" class="calibre27" id="x_iJ"></a><p class="docText">We could easily adapt our example to be able to handle all
+    these types of line endings in a single file. We would need to make two
+    modifications: adjust <tt class="calibre34">eol</tt> to recognize
+    the different endings, and adjust the <tt class="calibre34">noneOf</tt> pattern in <tt class="calibre34">cell</tt> to ignore <tt class="calibre34">\r</tt>.</p><a name="x_jJ" class="calibre27" id="x_jJ"></a><p class="docText">This must be done carefully. Recall that our earlier
+    definition of <tt class="calibre34">eol</tt> was simply <tt class="calibre34">char '\n'</tt>. There is a
+    parser called <tt class="calibre34">string</tt> that we can use to
+    match the multicharacter patterns. Let's start by thinking of how we would
+    add support for <tt class="calibre34">\n\r</tt>.</p><a name="x_kJ" class="calibre27" id="x_kJ"></a><p class="docText">Our first attempt might look like this:</p><pre class="calibre39">-- file: ch16/csv3.hs
+-- This function is not correct!
+eol = string "\n" &lt;|&gt; string "\n\r"</pre><br class="calibre48"/>
+<a name="x_lJ" class="calibre27" id="x_lJ"></a><p class="docText">This isn't quite right. Recall that the <tt class="calibre34">&lt;|&gt;</tt> operator<a name="I_indexterm16_d1e36393" class="calibre27" id="I_indexterm16_d1e36393"></a> always tries the left alternative first. Looking for the
+    single character <tt class="calibre34">\n</tt> will match both
+    types of line endings, so it will look to the system that the following
+    line begins with <tt class="calibre34">\r</tt>. Not what we want.
+    Try it in <i class="docEmphasis">ghci</i>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:m Text.ParserCombinators.Parsec</b>ghci&gt; <b class="calibre40">let eol = string "\n" &lt;|&gt; string "\n\r"</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+ghci&gt; <b class="calibre40">parse eol "" "\n"</b>
+Right "\n"
+ghci&gt; <b class="calibre40">parse eol "" "\n\r"</b>
+Right "\n"</pre><a name="x_mJ" class="calibre27" id="x_mJ"></a><p class="docText">It may seem like the parser worked for both endings, but
+    actually looking at it this way, we can't tell. If it left something
+    unparsed, we don't know, because we're not trying to consume anything else
+    from the input. So let's look for the end of file after our end of
+    line:</p><pre class="calibre39">ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\n\r"</b>
+Left (line 2, column 1):
+unexpected "\r"
+expecting end of input
+ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\n"</b>
+Right ()</pre><a name="x_nJ" class="calibre27" id="x_nJ"></a><p class="docText">As expected, we got an error from the <tt class="calibre34">\n\r</tt> ending. So the next temptation may be to
+    try it this way:</p><pre class="calibre39">-- file: ch16/csv4.hs
+-- This function is not correct!
+eol = string "\n\r" &lt;|&gt; string "\n"</pre><br class="calibre48"/>
+<a name="x_oJ" class="calibre27" id="x_oJ"></a><p class="docText">This also isn't right. Recall that <tt class="calibre34">&lt;|&gt;</tt> attempts the option on the right only
+    if the option on the left consumes no input. But by the time we are able
+    to see if there is a <tt class="calibre34">\r</tt> after the
+    <tt class="calibre34">\n</tt>, we've already consumed the <tt class="calibre34">\n</tt>. This time, we fail on the other case in
+    <i class="docEmphasis">ghci</i>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:m Text.ParserCombinators.Parsec</b>ghci&gt; <b class="calibre40">let eol = string "\n\r" &lt;|&gt; string "\n"</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\n\r"</b>
+Right ()
+ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\n"</b>
+Left (line 1, column 1):
+unexpected end of input
+expecting "\n\r"</pre><a name="x_pJ" class="calibre27" id="x_pJ"></a><p class="docText">We've stumbled upon the lookahead problem. It turns out
+    that, when writing parsers, it's often very convenient to be able to "look
+    ahead" <a name="I_indexterm16_d1e36488" class="calibre27" id="I_indexterm16_d1e36488"></a>at the data that's coming in. Parsec supports this, but
+    before showing you how to use it, let's see how you would have to write
+    this to get along without it. You'd have to manually expand all the
+    options after the <tt class="calibre34">\n</tt> like this:</p><pre class="calibre39">-- file: ch16/csv5.hs
+eol = 
+    do char '\n'
+       char '\r' &lt;|&gt; return '\n'</pre><br class="calibre48"/>
+<a name="x_qJ" class="calibre27" id="x_qJ"></a><p class="docText">This function first looks for <tt class="calibre34">\n</tt>. If it finds it, then it will look for
+    <tt class="calibre34">\r</tt>, consuming it if possible. Since the
+    return type of <tt class="calibre34">char '\r'</tt> is a <tt class="calibre34">Char</tt>, the alternative action is to simply return
+    a <tt class="calibre34">Char</tt> without attempting to parse
+    anything. Parsec has a function <tt class="calibre34">option</tt>
+    that can also express this idiom as <tt class="calibre34">option '\n'
+    (char '\r')</tt>. Let's test this with <i class="docEmphasis">ghci</i>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:l csv5.hs</b>
+[1 of 1] Compiling Main             ( csv5.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\n\r"</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+Right ()
+ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\n"</b>
+Right ()</pre><a name="x_rJ" class="calibre27" id="x_rJ"></a><p class="docText">This time, we got the right result! But we could have done
+    it easier with Parsec's lookahead support.</p><a name="parsec_lookahead" class="calibre27" id="parsec_lookahead"></a><h4 id="title-IDAWFFVD" class="docSection1Title">16.3.1. Lookahead</h4><a name="x_sJ" class="calibre27" id="x_sJ"></a><p class="docText">Parsec has a function called <tt class="calibre34">TRy</tt> that<a name="I_indexterm16_d1e36550" class="calibre27" id="I_indexterm16_d1e36550"></a> is used to express lookaheads. <tt class="calibre34">TRy</tt> takes one function, a parser, and applies
+      it. If the parser doesn't succeed, <tt class="calibre34">try</tt> behaves as if it hadn't consumed any input
+      at all. So, when you use <tt class="calibre34">TRy</tt> on the
+      left side of <tt class="calibre34">&lt;|&gt;</tt>, Parsec will
+      try the option on the right even if the left side failed after consuming
+      some input. <tt class="calibre34">try</tt> has an effect only if
+      it is on the left of a <tt class="calibre34">&lt;|&gt;</tt>.
+      Keep<a name="I_indexterm16_d1e36573" class="calibre27" id="I_indexterm16_d1e36573"></a> in mind, though, that many functions use <tt class="calibre34">&lt;|&gt;</tt> internally. Here's a way to add
+      expanded end-of-line support to our CSV parser using <tt class="calibre34">try</tt>:</p><pre class="calibre39">-- file: ch16/csv6.hs
+import Text.ParserCombinators.Parsec
+
+csvFile = endBy line eol
+line = sepBy cell (char ',')
+cell = many (noneOf ",\n\r")
+
+eol =   try (string "\n\r")
+    &lt;|&gt; try (string "\r\n")
+    &lt;|&gt; string "\n"
+    &lt;|&gt; string "\r"
+
+parseCSV :: String -&gt; Either ParseError [[String]]
+parseCSV input = parse csvFile "(unknown)" input</pre><br class="calibre48"/>
+<a name="x_tJ" class="calibre27" id="x_tJ"></a><p class="docText">Here we put both of the two-character endings first, and
+      run both tests under <tt class="calibre34">TRy</tt>. Both of
+      them occur to the left of a <tt class="calibre34">&lt;|&gt;</tt>, so they will do the right thing. We
+      could have put <tt class="calibre34">string "\n"</tt> within a
+      <tt class="calibre34">try</tt>, but it wouldn't have altered any
+      behavior since they look at only one character anyway. We can load this
+      up and test<a name="I_indexterm16_d1e36601" class="calibre27" id="I_indexterm16_d1e36601"></a> the <tt class="calibre34">eol</tt> function in
+      <i class="docEmphasis">ghci</i>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:l csv6.hs</b>
+[1 of 1] Compiling Main             ( csv6.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\n\r"</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+Right ()
+ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\n"</b>
+Right ()
+ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\r\n"</b>
+Right ()
+ghci&gt; <b class="calibre40">parse (eol &gt;&gt; eof) "" "\r"</b>
+Right ()</pre><a name="x_uJ" class="calibre27" id="x_uJ"></a><p class="docText">All four endings were handled properly. You can also
+      test the full CSV parser with some different endings like this:</p><pre class="calibre39">ghci&gt; <b class="calibre40">parseCSV "line1\r\nline2\nline3\n\rline4\rline5\n"</b>
+Right [["line1"],["line2"],["line3"],["line4"],["line5"]]
+</pre><a name="x_vJ" class="calibre27" id="x_vJ"></a><p class="docText">As you can see, this program even supports different
+      line endings within a single file.</p><a name="parsec_error" class="calibre27" id="parsec_error"></a><h4 id="title-IDAZJFVD" class="docSection1Title">16.3.2. Error Handling</h4><a name="x_wJ" class="calibre27" id="x_wJ"></a><p class="docText">At the<a name="I_indexterm16_d1e36654" class="calibre27" id="I_indexterm16_d1e36654"></a> beginning of this chapter, you saw how Parsec could
+      generate error messages that list the location where the error occurred
+      as well as what was expected. As parsers get more complex, the list of
+      what was expected can become cumbersome. Parsec provides a way for you
+      to specify custom error messages in the event of parse failures.</p><a name="x_xJ" class="calibre27" id="x_xJ"></a><p class="docText">Let's look at what happens when our current CSV parser
+      encounters an error:</p><pre class="calibre39">ghci&gt; <b class="calibre40">parseCSV "line1"</b>
+Left "(unknown)" (line 1, column 6):
+unexpected end of input
+expecting ",", "\n\r", "\r\n", "\n" or "\r"
+</pre><a name="x_yJ" class="calibre27" id="x_yJ"></a><p class="docText">That's a pretty long, and technical, error message. We
+      could make an attempt to resolve this using the monad <i class="docEmphasis">fail</i> function, like so:</p><pre class="calibre39">-- file: ch16/csv7.hs
+eol =   try (string "\n\r")
+    &lt;|&gt; try (string "\r\n")
+    &lt;|&gt; string "\n"
+    &lt;|&gt; string "\r"
+    &lt;|&gt; fail "Couldn't find EOL"</pre><br class="calibre48"/>
+<a name="x_zJ" class="calibre27" id="x_zJ"></a><p class="docText">Under <i class="docEmphasis">ghci</i>, we can
+      see the result:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:l csv7.hs</b>
+[1 of 1] Compiling Main             ( csv7.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">parseCSV "line1"</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+Left "(unknown)" (line 1, column 6):
+unexpected end of input
+expecting ",", "\n\r", "\r\n", "\n" or "\r"
+Couldn't find EOL</pre><a name="x_AK" class="calibre27" id="x_AK"></a><p class="docText">We added to the error result but didn't really help
+      clean up the output. Parsec has an <tt class="calibre34">&lt;?&gt;</tt> operator<a name="I_indexterm16_d1e36696" class="calibre27" id="I_indexterm16_d1e36696"></a> that is designed for just these situations. It is similar
+      to <tt class="calibre34">&lt;|&gt;</tt> in that it first tries
+      the parser on its left. Instead of trying another parser in the event of
+      a failure, it presents an error message. Here's how we'd use it:</p><pre class="calibre39">-- file: ch16/csv8.hs
+eol =   try (string "\n\r")
+    &lt;|&gt; try (string "\r\n")
+    &lt;|&gt; string "\n"
+    &lt;|&gt; string "\r"
+    &lt;?&gt; "end of line"</pre><br class="calibre48"/>
+<a name="x_BK" class="calibre27" id="x_BK"></a><p class="docText">Now, when you generate an error, you'll get more helpful
+      output:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:l csv8.hs</b>
+[1 of 1] Compiling Main             ( csv8.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">parseCSV "line1"</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+Left "(unknown)" (line 1, column 6):
+unexpected end of input
+expecting "," or end of line</pre><a name="x_CK" class="calibre27" id="x_CK"></a><p class="docText">That's pretty helpful! The general rule of thumb is that
+      you put a human description of what you're looking for to the right of
+      <tt class="calibre34">&lt;?&gt;</tt>.</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="parsec_sep.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="csv.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

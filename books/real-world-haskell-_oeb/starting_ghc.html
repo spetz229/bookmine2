@@ -1,0 +1,143 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: starting_split_001.html
+next: starting_ghci.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="starting_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="starting_ghci.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="starting_ghc" class="calibre27" id="starting_ghc"></a><h3 id="643999-898" class="docSection1Title">1.1. Your Haskell Environment</h3><a name="x_g" class="calibre27" id="x_g"></a><p class="docText">Haskell<a name="I_indexterm1_d1e925" class="calibre27" id="I_indexterm1_d1e925"></a><a name="I_indexterm1_d1e928" class="calibre27" id="I_indexterm1_d1e928"></a> is a language with many implementations, two of which are
+    widely used. Hugs <a name="I_indexterm1_d1e932" class="calibre27" id="I_indexterm1_d1e932"></a><a name="I_indexterm1_d1e935" class="calibre27" id="I_indexterm1_d1e935"></a>is an interpreter that is primarily used for teaching. For
+    real applications, the Glasgow <a name="I_indexterm1_d1e939" class="calibre27" id="I_indexterm1_d1e939"></a>Haskell Compiler (<span class="docMonofont">GHC</span>) <a name="I_indexterm1_d1e949" class="calibre27" id="I_indexterm1_d1e949"></a><a name="I_indexterm1_d1e952" class="calibre27" id="I_indexterm1_d1e952"></a>is much more popular. Compared to Hugs, <span class="docMonofont">GHC</span> is more suited to "real
+    work": it compiles to native code, supports parallel execution, and
+    provides useful performance analysis and debugging tools. For these
+    reasons, <span class="docMonofont">GHC</span> is the Haskell
+    implementation that we will be using throughout this book.</p><a name="x_h" class="calibre27" id="x_h"></a><p class="docText"><span class="docMonofont">GHC</span> has three
+    main components:</p><a name="I_indexterm1_d1e977" class="calibre27" id="I_indexterm1_d1e977"></a><a name="ch01-ghciinterpreter" class="calibre27" id="ch01-ghciinterpreter"></a><a name="I_indexterm1_d1e999" class="calibre27" id="I_indexterm1_d1e999"></a><dl class="docList1"><dt class="calibre48"><br class="calibre48"/><p class="calibre37"><span class="docPubcolor">
+<i class="docEmphasis">ghc</i>
+</span></p></dt><dd class="calibre49"><p class="docText">An optimizing compiler<a name="I_indexterm1_d1e977" class="calibre27" id="I_indexterm1_d1e977"></a> that generates fast native code</p></dd><dt class="calibre48"><br class="calibre48"/><p class="calibre37"><span class="docPubcolor">
+<i class="docEmphasis">ghci</i>
+</span></p></dt><dd class="calibre49"><p class="docText">An interactive interpreter<a name="ch01-ghciinterpreter" class="calibre27" id="ch01-ghciinterpreter"></a> and debugger</p></dd><dt class="calibre48"><br class="calibre48"/><p class="calibre37"><span class="docPubcolor">
+<i class="docEmphasis">runghc</i>
+</span></p></dt><dd class="calibre49"><p class="docText">A program for running Haskell<a name="I_indexterm1_d1e999" class="calibre27" id="I_indexterm1_d1e999"></a> programs as scripts, without needing to compile them
+          first</p></dd></dl><a name="starting_ghcd1e1030" class="calibre27" id="starting_ghcd1e1030"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_i" class="calibre27" id="x_i"></a></p><p class="docText">When we discuss the <span class="docMonofont">GHC</span> system as a whole, we will refer to it
+      as <span class="docMonofont">GHC</span>. If we are talking
+      about a specific command, we will mention <i class="docEmphasis">ghc</i>, <i class="docEmphasis">ghci</i>,
+      or <i class="docEmphasis">runghc</i> by name.</p></div><a name="x_j" class="calibre27" id="x_j"></a><p class="docText">We assume that you're using at least version 6.8.2 of
+    <span class="docMonofont">GHC</span>, which was released in
+    2007. Many of our examples will work unmodified with older versions.
+    However, we <span class="docEmphasis">recommend</span> using the newest version
+    available for your platform. If you're using Windows or Mac OS X, you can
+    get started easily and quickly using a prebuilt installer. To obtain a
+    copy of <span class="docMonofont">GHC</span> for these
+    platforms, visit <a class="docLink" target="_blank" href="http://www.haskell.org/ghc/download.html">the
+    <span class="docMonofont">GHC</span> download page</a> and
+    look for the list of binary packages and installers.</p><a name="x_k" class="calibre27" id="x_k"></a><p class="docText">Many Linux distributors and providers of BSD and other Unix
+    variants make custom binary packages of <span class="docMonofont">GHC</span> available. Because these are built
+    specifically for each environment, they are much easier to install and use
+    than the generic binary packages that are available from the <span class="docMonofont">GHC</span> download page. You can find a list of
+    distributions that custom build <span class="docMonofont">GHC</span> at the <span class="docMonofont">GHC</span> page <a class="docLink" target="_blank" href="http://www.haskell.org/ghc/distribution_packages.html">distribution
+    packages</a>.</p><a name="x_nL" class="calibre27" id="x_nL"></a><p class="docText">For more detailed information about how to install
+    <span class="docMonofont">GHC</span> on a variety of popular
+    platforms, we've provided some instructions in <a class="docLink" href="install_split_000.html#install">Appendix A</a>.</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="starting_split_000.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="starting_ghci.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

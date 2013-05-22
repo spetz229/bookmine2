@@ -1,0 +1,36 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: binary_split_000.html
+next: I_sect110_d1e24938.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<div class="calibre47"></div><h2 id="title-IDAS0VKO" class="docPrefaceTitle">Chapter 10. Code Case Study: Parsing a Binary Data Format</h2><a name="x_sQ" class="calibre5" id="x_sQ"></a><p class="docText">In this chapter,<a name="ch10-binarydata" class="calibre27" id="ch10-binarydata"></a> we'll discuss a common task: parsing a binary file. We will
+  use it for two purposes. Our first is indeed to talk a little about parsing,
+  but our main goal is to talk about program organization, refactoring, and
+  "boilerplate removal." We will demonstrate how you can tidy up repetitious
+  code, and set the stage for our discussion of monads in <a class="docLink" href="monads_split_000.html#monads">Chapter 14</a>.</p><a name="x_tQ" class="calibre5" id="x_tQ"></a><p class="docText">The file formats that we will work with come from the
+  <span class="docEmphasis">netpbm suite</span>, an<a name="I_indexterm10_d1e24934" class="calibre27" id="I_indexterm10_d1e24934"></a> ancient and venerable collection of programs and file formats
+  for working with bitmap images. These file formats have the dual advantages
+  of being widely used and being fairly easy, though not completely trivial,
+  to parse. Most importantly for our convenience, netpbm files are not
+  compressed.</p>
+<ul class="calibre28"></ul><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="middle" class="v1" height="5"><img src="pixel.gif" alt="" border="0" class="calibre8"/></td></tr><tr class="calibre6"><td valign="middle" class="v1"><table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody"><tr class="calibre6"><td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td></tr></table></td><td class="v1"/><td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect19_d1e24785_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect110_d1e24938.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="top" class="v2"><span class="calibre9"></span></td></tr></table><!--IP User 2--><td class="calibre7">
+                         
+                      </td><tr class="calibre6"><td colspan="3" valign="bottom" class="calibre7"><br class="calibre20"/><p class="v4"></p><br class="calibre20"/></td></tr></div>
+
+{% endraw %}
+

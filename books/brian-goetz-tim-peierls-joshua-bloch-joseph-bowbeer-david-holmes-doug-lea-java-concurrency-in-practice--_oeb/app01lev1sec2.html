@@ -1,0 +1,26 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: app01lev1sec1.html
+next: bib01.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<a name="app01lev1sec2" class="calibre18" id="app01lev1sec2"></a>
+<h3 id="title-IDAG0V0Z" class="docSection1Title">A.2. Field and Method Annotations</h3>
+<p class="docText1">The class-level annotations above are part of the public documentation for the class. Other aspects of a class's thread-safety strategy are entirely for maintainers and are not part of its public documentation.</p>
+<p class="docText1">Classes that use locking should document which state variables are guarded with which locks, and which locks are used to guard those variables. A common source of inadvertent non-thread-safety is when a thread-safe class consistently uses locking to guard its state, but is later modified to add either new state variables that are not adequately guarded by locking, or new methods that do not <a name="iddle1096" class="calibre18" id="iddle1096"></a>use locking properly to guard the existing state variables. Documenting which variables are guarded by which locks can help prevent both types of omissions.</p>
+<p class="docText1"><tt class="calibre25">@GuardedBy(lock)</tt> documents that a field or method should be accessed only with a specific lock held. The <tt class="calibre25">lock</tt> argument identifies the lock that should be held when accessing the annotated field or method. The possible values for <tt class="calibre25">lock</tt> are:</p>
+<ul class="calibre15"><li class="calibre16"><p class="docText1"><tt class="calibre25">@GuardedBy("this")</tt>, meaning the intrinsic lock on the containing object (the object of which the method or field is a member);</p></li><li class="calibre16"><p class="docText1"><tt class="calibre25">@GuardedBy("</tt><span class="docEmphasis"><tt class="calibre25">fieldName</tt></span><tt class="calibre25">")</tt>, meaning the lock associated with the object referenced by the named field, either an intrinsic lock (for fields that do not refer to a <tt class="calibre25">Lock</tt>) or an explicit <tt class="calibre25">Lock</tt> (for fields that refer to a <tt class="calibre25">Lock</tt>);</p></li><li class="calibre16"><p class="docText1"><tt class="calibre25">@GuardedBy("</tt><span class="docEmphasis"><tt class="calibre25">ClassName.fieldName</tt></span><tt class="calibre25">")</tt>, like <tt class="calibre25">@GuardedBy("fieldName")</tt>, but referencing a lock object held in a static field of another class;</p></li><li class="calibre16"><p class="docText1"><tt class="calibre25">@GuardedBy("</tt><span class="docEmphasis"><tt class="calibre25">methodName</tt></span><tt class="calibre25">()")</tt>, meaning the lock object that is returned by calling the named method;</p></li><li class="calibre16"><p class="docText1"><tt class="calibre25">@GuardedBy("</tt><span class="docEmphasis"><tt class="calibre25">ClassName</tt></span><tt class="calibre25">.class")</tt>, meaning the class literal object for the named class.</p></li></ul>
+<p class="docText1">Using <tt class="calibre25">@GuardedBy</tt> to identify each state variable that needs locking and which lock guards it can assist in maintenance and code reviews, and can help automated analysis tools spot potential thread-safety errors.</p>
+<a href="21021536.html" class="calibre2"><img src="pixel.jpg" alt="" border="0" class="calibre26"/></a>
+<p class="calibre3"> </p>
+
+</div>
+
+{% endraw %}
+

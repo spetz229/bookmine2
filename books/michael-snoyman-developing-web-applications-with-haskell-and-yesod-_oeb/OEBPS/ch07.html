@@ -1,0 +1,120 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch06s08.html
+next: OEBPS/ch07s02.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="calibre8"></div><div class="book" title="Chapter 7. Routing and Handlers"><div class="book"><div class="book"><div class="book"><div class="calibre8"></div><h1 class="title1"><a id="I_chapter7_d1e3003" class="calibre1"></a>Chapter 7. Routing and Handlers</h1></div></div></div><p class="calibre7">If we look at Yesod as a Model-View-Controller framework, routing and handlers make up the
+    controller. For contrast, let’s describe two other routing approaches used in other web
+    development environments:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7">Dispatch based on file name. This is how PHP and ASP work, for example.</p></li><li class="listitem"><p class="calibre7">Have a centralized routing function that parses routes based on regular expressions. Django and Rails follow this approach.</p></li></ul></div><p class="calibre7">Yesod is closer in principle to the latter technique. Even so, there are significant
+    differences. Instead of using regular expressions, Yesod matches on pieces of a route. Instead
+    of having a one-way route-to-handler mapping, Yesod has an intermediate data type (called the
+    route data type, or a type-safe URL) and creates two-way conversion functions.</p><p class="calibre7">Coding this more advanced system manually is tedious and error prone. Therefore,
+            Yesod defines a Domain Specific Language (DSL) for specifying routes, and provides
+            Template Haskell functions to convert this DSL to Haskell code. This chapter will
+            explain the syntax of the routing declarations, give you a glimpse of what code is
+            generated for you, and explain the interaction between routing and handler
+            functions.</p><div class="book" title="Route Syntax"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect17_d1e3028" class="calibre1"></a>Route Syntax</h1></div></div></div><p class="calibre7">Instead of trying to shoe-horn route declarations into an existing syntax, Yesod’s
+      approach is to use a simplified syntax designed just for routes. This has the advantage of
+      making the code not only easy to write, but simple enough for someone with no Yesod experience
+      to read and understand the sitemap of your application.</p><p class="calibre7">A basic example of this syntax is:</p><a id="I_programlisting7_d1e3038" class="firstname"></a><pre class="programlistinghaskell">/             RootR     GET
+/blog         BlogR     GET POST
+/blog/#BlogId BlogPostR GET POST
+
+/static       StaticR   Static getStatic</pre><p class="calibre7">The next few sections will explain the full details of what goes on in the route
+            declaration.</p><div class="book" title="Pieces"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id3081752" class="calibre1"></a>Pieces</h2></div></div></div><p class="calibre7">One of the first thing Yesod does when it gets a request is to split up the requested
+        path into pieces. The pieces are tokenized at all forward slashes. For example:</p><a id="I_programlisting7_d1e3050" class="firstname"></a><pre class="programlistinghaskell"><code class="nf">toPieces</code> <code class="s">"/"</code> <code class="ow">=</code> <code class="kt">[]</code>
+<code class="nf">toPieces</code> <code class="s">"/foo/bar/baz/"</code> <code class="ow">=</code> <code class="p">[</code><code class="s">"foo"</code><code class="p">,</code> <code class="s">"bar"</code><code class="p">,</code> <code class="s">"baz"</code><code class="p">,</code> <code class="s">""</code><code class="p">]</code>
+</pre><p class="calibre7">You may notice that there are some funny things going on with trailing slashes, or
+        double slashes (“/foo//bar//”), or a few other things. Yesod believes in having
+          <em class="calibre4">canonical URLs</em>; if someone requests a URL with a trailing slash, or
+        with a double slash, they automatically get a redirect to the canonical version. This
+        ensures you have one URL for one resource, and can help with your search rankings.</p><p class="calibre7">What this means for you is that you needn’t concern yourself with the exact structure of
+        your URLs: you can safely think about pieces of a path, and Yesod automatically handles
+        intercalating the slashes and escaping problematic characters.</p><p class="calibre7">If, by the way, you want more fine-tuned control of how paths are split into pieces and
+        joined together again, you’ll want to look at the <code class="literal">cleanPath</code> and <code class="literal">joinPath</code> methods in the Yesod
+        typeclass chapter.</p><div class="book" title="Types of Pieces"><div class="book"><div class="book"><div class="book"><h3 class="title5"><a id="id3081814" class="calibre1"></a>Types of Pieces</h3></div></div></div><p class="calibre7">When you are declaring your routes, you have three types of pieces at your disposal:</p><div class="book"><dl class="book"><dt class="calibre9"><span class="firstname">Static</span></dt><dd class="calibre10"><p class="calibre7">This is a plain string that must be matched against precisely in the URL.</p></dd><dt class="calibre9"><span class="firstname">Dynamic single</span></dt><dd class="calibre10"><p class="calibre7">This is a single piece (i.e., between two forward slashes), but can be a
+                user-submitted value. This is the primary method of receiving extra user input on a
+                page request. These pieces begin with a hash (#) and are followed by a data type.
+                The data type must be an instance of <code class="literal">PathPiece</code>.</p></dd><dt class="calibre9"><span class="firstname">Dynamic multi</span></dt><dd class="calibre10"><p class="calibre7">The same as before, but can receive multiple pieces of the URL. This must always
+                be the last piece in a resource pattern. It is specified by an asterisk (*) followed
+                by a data type, which must be an instance of <code class="literal">PathMultiPiece</code>. Multi pieces are not as common as the other two, though
+                they are very important for implementing features like static trees representing
+                file structure or wikis with arbitrary hierarchies.</p></dd></dl></div><p class="calibre7">Let us take a look at some standard kinds of resource patterns you may want to write. Starting simply, the root of an application will just be <code class="literal">/</code>. Similarly, you may want to place your FAQ at <code class="literal">/page/faq</code>.</p><p class="calibre7">Now let’s say you are going to write a Fibonacci website. You may construct your URLs
+          like <code class="literal">/fib/#Int</code>. But there’s a slight problem with this:
+          we do not want to allow negative numbers or zero to be passed into our application.
+          Fortunately, the type system can protect us:</p><a id="I_programlisting7_d1e3110" class="firstname"></a><pre class="programlistinghaskell"><code class="kr">newtype</code> <code class="kt">Natural</code> <code class="ow">=</code> <code class="kt">Natural</code> <code class="kt">Int</code>
+<code class="kr">instance</code> <code class="kt">PathPiece</code> <code class="kt">Natural</code> <code class="kr">where</code>
+    <code class="n">toPathPiece</code> <code class="p">(</code><code class="kt">Natural</code> <code class="n">i</code><code class="p">)</code> <code class="ow">=</code> <code class="kt">T</code><code class="o">.</code><code class="n">pack</code> <code class="o">$</code> <code class="n">show</code> <code class="n">i</code>
+    <code class="n">fromPathPiece</code> <code class="n">s</code> <code class="ow">=</code>
+        <code class="kr">case</code> <code class="n">reads</code> <code class="o">$</code> <code class="kt">T</code><code class="o">.</code><code class="n">unpack</code> <code class="n">s</code> <code class="kr">of</code>
+            <code class="p">(</code><code class="n">i</code><code class="p">,</code> <code class="s">""</code><code class="p">)</code><code class="kt">:</code><code class="kr">_</code>
+                <code class="o">|</code> <code class="n">i</code> <code class="o">&lt;</code> <code class="mi">1</code> <code class="ow">-&gt;</code> <code class="kt">Nothing</code>
+                <code class="o">|</code> <code class="n">otherwise</code> <code class="ow">-&gt;</code> <code class="kt">Just</code> <code class="o">$</code> <code class="kt">Natural</code> <code class="n">i</code>
+            <code class="kt">[]</code> <code class="ow">-&gt;</code> <code class="kt">Nothing</code>
+</pre><p class="calibre7">On line 1 we define a simple newtype wrapper around Int to protect ourselves from
+          invalid input. We can see that <code class="literal">PathPiece</code> is a typeclass
+          with two methods. <code class="literal">toPathPiece</code> does nothing more than
+          convert to a <code class="literal">Text</code>. <code class="literal">fromPathPiece</code>
+          <span class="firstname"><em class="calibre4">attempts</em></span> to convert a <code class="literal">Text</code> to our
+          data type, returning <code class="literal">Nothing</code> when this conversion is
+          impossible. By using this data type, we can ensure that our handler function is only ever
+          given natural numbers, allowing us to once again use the type system to battle the
+          boundary issue.</p><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7">In a real life application, we would also want to ensure we never accidentally
+            constructed an invalid <code class="literal">Natural</code> value internally to
+            our app. To do so, we could use an approach like <a class="ulink" href="http://www.haskell.org/haskellwiki/Smart_constructors">smart
+            constructors</a>. For the purposes of this example, we’ve kept the code
+            simple.</p></div><p class="calibre7">Defining a <code class="literal">PathMultiPiece</code> is just as simple. Let’s
+          say we want to have a wiki with at least two levels of hierarchy; we might define a data
+          type such as:</p><a id="I_programlisting7_d1e3150" class="firstname"></a><pre class="programlistinghaskell"><code class="kr">data</code> <code class="kt">Page</code> <code class="ow">=</code> <code class="kt">Page</code> <code class="kt">Text</code> <code class="kt">Text</code> <code class="p">[</code><code class="kt">Text</code><code class="p">]</code> <code class="cm">-- 2 or more</code>
+<code class="kr">instance</code> <code class="kt">PathMultiPiece</code> <code class="kt">Page</code> <code class="kr">where</code>
+    <code class="n">toPathMultiPiece</code> <code class="p">(</code><code class="kt">Page</code> <code class="n">x</code> <code class="n">y</code> <code class="n">z</code><code class="p">)</code> <code class="ow">=</code> <code class="n">x</code> <code class="kt">:</code> <code class="n">y</code> <code class="kt">:</code> <code class="n">z</code>
+    <code class="n">fromPathMultiPiece</code> <code class="p">(</code><code class="n">x</code><code class="kt">:</code><code class="n">y</code><code class="kt">:</code><code class="n">z</code><code class="p">)</code> <code class="ow">=</code> <code class="kt">Just</code> <code class="o">$</code> <code class="kt">Page</code> <code class="n">x</code> <code class="n">y</code> <code class="n">z</code>
+    <code class="n">fromPathMultiPiece</code> <code class="kr">_</code> <code class="ow">=</code> <code class="kt">Nothing</code>
+</pre></div></div><div class="book" title="Resource Name"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id3082005" class="calibre1"></a>Resource Name</h2></div></div></div><p class="calibre7">Each resource pattern also has a name associated with it. That name will become the
+        constructor for the <em class="calibre4">type safe URL</em> data type associated with your
+        application. Therefore, it has to start with a capital letter. By convention, these resource
+        names all end with a capital R. There is nothing forcing you to do this, it is just common
+        practice.</p><p class="calibre7">The exact definition of our constructor depends upon the resource pattern it is attached
+        to. Whatever data types are included in single and multi pieces of the pattern become
+        arguments to the data type. This gives us a 1-to-1 correspondence between our type-safe URL
+        values and valid URLs in our application.</p><div class="tip" title="Note"><h3 class="title3">Note</h3><p class="calibre7">This doesn’t necessarily mean that <span class="firstname"><em class="calibre4">every</em></span> value is a working page,
+          just that it is a potentially valid URL. As an example, that value <code class="literal">PersonR "Michael"</code> may not resolve to a valid page if there is
+          no Michael in the database.</p></div><p class="calibre7">Let’s get some real examples going here. If you had the resource patterns <code class="literal">/person/#Text</code> named <code class="literal">PersonR</code>,
+          <code class="literal">/year/#Int</code> named <code class="literal">YearR</code> and <code class="literal">/page/faq</code> named <code class="literal">FaqR</code>, you would end up with a route data type roughly looking
+        like:</p><a id="I_programlisting7_d1e3192" class="firstname"></a><pre class="programlistinghaskell"><code class="kr">data</code> <code class="kt">MyRoute</code> <code class="ow">=</code> <code class="kt">PersonR</code> <code class="kt">Text</code>
+             <code class="o">|</code> <code class="kt">YearR</code> <code class="kt">Int</code>
+             <code class="o">|</code> <code class="kt">FaqR</code>
+</pre><p class="calibre7">If a user requests the relative URL of
+                 <code class="literal">/year/2009</code>, Yesod will convert it into the value
+                 <code class="literal">YearR 2009</code>. <code class="literal">/person/Michael</code> becomes
+                 <code class="literal">PersonR "Michael"</code> and <code class="literal">/page/faq</code>
+                 becomes <code class="literal">FaqR</code>. On the other hand,
+                 <code class="literal">/year/two-thousand-nine</code>,
+                 <code class="literal">/person/michael/snoyman</code> and
+                 <code class="literal">/page/FAQ</code> would all result in 404 errors without
+                 ever seeing your code.</p></div><div class="book" title="Handler Specification"><div class="book"><div class="book"><div class="book"><h2 class="title4"><a id="id3082144" class="calibre1"></a>Handler Specification</h2></div></div></div><p class="calibre7">The last piece of the puzzle when declaring your resources is how they will be handled. There are three options in Yesod:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7">A single handler function for all request methods on a given route.</p></li><li class="listitem"><p class="calibre7">A separate handler function for each request method on a given route. Any other request
+                method will generate a 405 Bad Method response.</p></li><li class="listitem"><p class="calibre7">You want to pass off to a <em class="calibre4">subsite</em>.</p></li></ul></div><p class="calibre7">The first two can be easily specified. A single handler function will be a line with
+            just a resource pattern and the resource name, such as <code class="literal">/page/faq
+                FaqR</code>. In this case, the handler function must be named <code class="literal">handleFaqR</code>.</p><p class="calibre7">A separate handler for each request method will be the same, plus a list of request
+        methods. The request methods must be all capital letters. For example, <code class="literal">/person/#String PersonR GET POST DELETE</code>. In this case, you would
+        need to define three handler functions: <code class="literal">getPersonR</code>,
+          <code class="literal">postPersonR</code>, and <code class="literal">deletePersonR</code>.</p><p class="calibre7">Subsites are a very useful—but complicated—topic in Yesod. We will cover writing
+        subsites later, but using them is not too difficult. The most commonly used subsite is the
+        static subsite, which serves static files for your application. In order to serve static
+        files from <code class="literal">/static</code>, you would need a resource line
+        like:</p><a id="I_programlisting7_d1e3269" class="firstname"></a><pre class="programlistinghaskell">/static StaticR Static getStatic</pre><p class="calibre7">In this line, <code class="literal">/static</code> just says where in your URL
+                 structure to serve the static files from. There is nothing
+                 magical about the word static, you could easily replace it
+                 with <code class="literal">/my/non-dynamic/files</code>.</p><p class="calibre7">The next word, <code class="literal">StaticR</code>, gives the resource name. The
+        next two words are what specify that we are using a subsite. <code class="literal">Static</code> is the name of the <em class="calibre4">subsite foundation data type</em>,
+        and <code class="literal">getStatic</code> is a function that gets a <code class="literal">Static</code> value from a value of your master foundation data
+        type.</p><p class="calibre7">Let’s not get too caught up in the details of subsites now. We will look more closely at
+        the static subsite in the scaffolded site chapter.</p></div></div></div></div>
+
+{% endraw %}
+

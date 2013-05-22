@@ -1,0 +1,94 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: DroidSansMono;
+    font-weight: normal;
+    font-style: normal;
+    src: url(fonts/DroidSansMono.ttf)
+    }
+@font-face {
+    font-family: DroidSansMono;
+    font-weight: bold;
+    font-style: normal;
+    src: url(fonts/DroidSansMono.ttf)
+    }
+@font-face {
+    font-family: DroidSans;
+    font-weight: normal;
+    font-style: normal;
+    src: url(fonts/DroidSans.ttf)
+    }
+@font-face {
+    font-family: "DroidFont", serif, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    src: url(res:///system/fonts/DroidSansFallback.ttf)
+    }
+@font-face {
+    font-family: "DroidFont", serif, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    src: url(res:///system/fonts/DroidSansFallback.ttf)
+    }
+@font-face {
+    font-family: "DroidFont", sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    src: url(res:///system/fonts/DroidSansFallback.ttf)
+    }
+@font-face {
+    font-family: "DroidFont", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    src: url(res:///system/fonts/DroidSansFallback.ttf)
+    }
+@font-face {
+    font-family: "DejaVuSans", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    src: url(fonts/DejaVuSans.ttf)
+    }
+@font-face {
+    font-family: "DejaVuSans", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    src: url(fonts/DejaVuSans.ttf)
+    }
+@font-face {
+    font-family: "DejaVuSans", sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    src: url(fonts/DejaVuSans.ttf)
+    }
+@font-face {
+    font-family: "DejaVuSans", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    src: url(fonts/DejaVuSans.ttf)
+    }
+@font-face {
+    font-family: "DroidSerif", serif;
+    font-weight: normal;
+    font-style: normal;
+    src: url(res:///system/fonts/DroidSerif-Regular.ttf)
+    }
+@font-face {
+    font-family: "DroidSerif", serif;
+    font-weight: bold;
+    font-style: normal;
+    src: url(res:///system/fonts/DroidSerif-Bold.ttf)
+    }
+@font-face {
+    font-family: "DroidSerif", serif;
+    font-weight: normal;
+    font-style: italic;
+    src: url(res:///system/fonts/DroidSerif-Italic.ttf)
+    }
+@font-face {
+    font-family: "DroidSerif", serif;
+    font-weight: bold;
+    font-style: italic;
+    src: url(res:///system/fonts/DroidSerif-BoldItalic.ttf)
+    }

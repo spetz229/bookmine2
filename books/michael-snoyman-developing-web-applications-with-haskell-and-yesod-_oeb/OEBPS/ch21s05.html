@@ -1,0 +1,263 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch21s04.html
+next: OEBPS/pt04.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Full Code"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect14_d1e8711" class="calibre1"></a>Full Code</h1></div></div></div><p class="calibre7"></p><a id="I_programlisting4_d1e8715" class="firstname"></a><pre class="programlistinghaskell"><code class="cm">{-# LANGUAGE OverloadedStrings, TypeFamilies, TemplateHaskell,</code>
+<code class="cm">    QuasiQuotes, MultiParamTypeClasses, GADTs, FlexibleContexts</code>
+<code class="cm">  #-}</code>
+<code class="kr">import</code> <code class="nn">Yesod</code>
+<code class="kr">import</code> <code class="nn">Data.Text</code> <code class="p">(</code><code class="kt">Text</code><code class="p">,</code> <code class="nf">unpack</code><code class="p">)</code>
+<code class="kr">import</code> <code class="nn">Control.Applicative</code> <code class="p">((</code><code class="o">&lt;$&gt;</code><code class="p">),</code> <code class="p">(</code><code class="o">&lt;*&gt;</code><code class="p">))</code>
+<code class="kr">import</code> <code class="nn">Database.Persist.Sqlite</code>
+<code class="kr">import</code> <code class="nn">Database.Persist.Query.GenericSql</code> <code class="p">(</code><code class="nf">selectSourceConn</code><code class="p">)</code>
+<code class="kr">import</code> <code class="nn">Database.Persist.Store</code> <code class="p">(</code><code class="kt">PersistValue</code> <code class="p">(</code><code class="kt">PersistInt64</code><code class="p">))</code>
+<code class="kr">import</code> <code class="kr">qualified</code> <code class="nn">Text.Search.Sphinx</code> <code class="kr">as</code> <code class="n">S</code>
+<code class="kr">import</code> <code class="kr">qualified</code> <code class="nn">Text.Search.Sphinx.Types</code> <code class="kr">as</code> <code class="n">ST</code>
+<code class="kr">import</code> <code class="kr">qualified</code> <code class="nn">Text.Search.Sphinx.ExcerptConfiguration</code> <code class="kr">as</code> <code class="n">E</code>
+<code class="kr">import</code> <code class="kr">qualified</code> <code class="nn">Data.ByteString.Lazy</code> <code class="kr">as</code> <code class="n">L</code>
+<code class="kr">import</code> <code class="nn">Data.Text.Lazy.Encoding</code> <code class="p">(</code><code class="nf">decodeUtf8With</code><code class="p">)</code>
+<code class="kr">import</code> <code class="nn">Data.Text.Encoding.Error</code> <code class="p">(</code><code class="nf">ignore</code><code class="p">)</code>
+<code class="kr">import</code> <code class="nn">Data.Maybe</code> <code class="p">(</code><code class="nf">catMaybes</code><code class="p">)</code>
+<code class="kr">import</code> <code class="nn">Control.Monad</code> <code class="p">(</code><code class="nf">forM</code><code class="p">)</code>
+<code class="kr">import</code> <code class="kr">qualified</code> <code class="nn">Data.Text</code> <code class="kr">as</code> <code class="n">T</code>
+<code class="kr">import</code> <code class="nn">Text.Blaze</code> <code class="p">(</code><code class="nf">preEscapedLazyText</code><code class="p">)</code>
+<code class="kr">import</code> <code class="kr">qualified</code> <code class="nn">Data.Conduit</code> <code class="kr">as</code> <code class="n">C</code>
+<code class="kr">import</code> <code class="kr">qualified</code> <code class="nn">Data.Conduit.List</code> <code class="kr">as</code> <code class="n">CL</code>
+<code class="kr">import</code> <code class="kr">qualified</code> <code class="nn">Data.XML.Types</code> <code class="kr">as</code> <code class="n">X</code>
+<code class="kr">import</code> <code class="nn">Network.Wai</code> <code class="p">(</code><code class="kt">Response</code> <code class="p">(</code><code class="kt">ResponseSource</code><code class="p">))</code>
+<code class="kr">import</code> <code class="nn">Network.HTTP.Types</code> <code class="p">(</code><code class="nf">status200</code><code class="p">)</code>
+<code class="kr">import</code> <code class="nn">Text.XML.Stream.Render</code> <code class="p">(</code><code class="nf">renderBuilder</code><code class="p">,</code> <code class="nf">def</code><code class="p">)</code>
+<code class="kr">import</code> <code class="nn">Data.Monoid</code> <code class="p">(</code><code class="nf">mconcat</code><code class="p">)</code>
+<code class="kr">import</code> <code class="nn">Data.Conduit.Pool</code> <code class="p">(</code><code class="nf">takeResource</code><code class="p">,</code> <code class="nf">mrValue</code><code class="p">,</code> <code class="nf">mrReuse</code><code class="p">)</code>
+
+<code class="nf">share</code> <code class="p">[</code><code class="n">mkPersist</code> <code class="n">sqlSettings</code><code class="p">,</code> <code class="n">mkMigrate</code> <code class="s">"migrateAll"</code><code class="p">]</code> <code class="p">[</code><code class="n">persist</code><code class="o">|</code>
+<code class="kt">Doc</code>
+    <code class="n">title</code> <code class="kt">Text</code>
+    <code class="n">content</code> <code class="kt">Textarea</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="kr">data</code> <code class="kt">Searcher</code> <code class="ow">=</code> <code class="kt">Searcher</code> <code class="kt">ConnectionPool</code>
+
+<code class="nf">mkYesod</code> <code class="s">"Searcher"</code> <code class="p">[</code><code class="n">parseRoutes</code><code class="o">|</code>
+<code class="o">/</code> <code class="kt">RootR</code> <code class="kt">GET</code>
+<code class="o">/</code><code class="n">doc</code><code class="o">/#</code><code class="kt">DocId</code> <code class="kt">DocR</code> <code class="kt">GET</code>
+<code class="o">/</code><code class="n">add</code><code class="o">-</code><code class="n">doc</code> <code class="kt">AddDocR</code> <code class="kt">POST</code>
+<code class="o">/</code><code class="n">search</code> <code class="kt">SearchR</code> <code class="kt">GET</code>
+<code class="o">/</code><code class="n">search</code><code class="o">/</code><code class="n">xmlpipe</code> <code class="kt">XmlpipeR</code> <code class="kt">GET</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="kr">instance</code> <code class="kt">Yesod</code> <code class="kt">Searcher</code>
+
+<code class="kr">instance</code> <code class="kt">YesodPersist</code> <code class="kt">Searcher</code> <code class="kr">where</code>
+    <code class="kr">type</code> <code class="kt">YesodPersistBackend</code> <code class="kt">Searcher</code> <code class="ow">=</code> <code class="kt">SqlPersist</code>
+
+    <code class="n">runDB</code> <code class="n">action</code> <code class="ow">=</code> <code class="kr">do</code>
+        <code class="kt">Searcher</code> <code class="n">pool</code> <code class="ow">&lt;-</code> <code class="n">getYesod</code>
+        <code class="n">runSqlPool</code> <code class="n">action</code> <code class="n">pool</code>
+
+<code class="kr">instance</code> <code class="kt">RenderMessage</code> <code class="kt">Searcher</code> <code class="kt">FormMessage</code> <code class="kr">where</code>
+    <code class="n">renderMessage</code> <code class="kr">_</code> <code class="kr">_</code> <code class="ow">=</code> <code class="n">defaultFormMessage</code>
+
+<code class="nf">addDocForm</code> <code class="ow">::</code> <code class="kt">Html</code> <code class="ow">-&gt;</code> <code class="kt">MForm</code> <code class="kt">Searcher</code> <code class="kt">Searcher</code> <code class="p">(</code><code class="kt">FormResult</code> <code class="kt">Doc</code><code class="p">,</code> <code class="kt">Widget</code><code class="p">)</code>
+<code class="nf">addDocForm</code> <code class="ow">=</code> <code class="n">renderTable</code> <code class="o">$</code> <code class="kt">Doc</code>
+    <code class="o">&lt;$&gt;</code> <code class="n">areq</code> <code class="n">textField</code> <code class="s">"Title"</code> <code class="kt">Nothing</code>
+    <code class="o">&lt;*&gt;</code> <code class="n">areq</code> <code class="n">textareaField</code> <code class="s">"Contents"</code> <code class="kt">Nothing</code>
+
+<code class="nf">searchForm</code> <code class="ow">::</code> <code class="kt">Html</code> <code class="ow">-&gt;</code> <code class="kt">MForm</code> <code class="kt">Searcher</code> <code class="kt">Searcher</code> <code class="p">(</code><code class="kt">FormResult</code> <code class="kt">Text</code><code class="p">,</code> <code class="kt">Widget</code><code class="p">)</code>
+<code class="nf">searchForm</code> <code class="ow">=</code> <code class="n">renderDivs</code> <code class="o">$</code> <code class="n">areq</code> <code class="p">(</code><code class="n">searchField</code> <code class="kt">True</code><code class="p">)</code> <code class="s">"Query"</code> <code class="kt">Nothing</code>
+
+<code class="nf">getRootR</code> <code class="ow">::</code> <code class="kt">Handler</code> <code class="kt">RepHtml</code>
+<code class="nf">getRootR</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="n">docCount</code> <code class="ow">&lt;-</code> <code class="n">runDB</code> <code class="o">$</code> <code class="n">count</code> <code class="p">(</code><code class="kt">[]</code> <code class="ow">::</code> <code class="p">[</code><code class="kt">Filter</code> <code class="kt">Doc</code><code class="p">])</code>
+    <code class="p">((</code><code class="kr">_</code><code class="p">,</code> <code class="n">docWidget</code><code class="p">),</code> <code class="kr">_</code><code class="p">)</code> <code class="ow">&lt;-</code> <code class="n">runFormPost</code> <code class="n">addDocForm</code>
+    <code class="p">((</code><code class="kr">_</code><code class="p">,</code> <code class="n">searchWidget</code><code class="p">),</code> <code class="kr">_</code><code class="p">)</code> <code class="ow">&lt;-</code> <code class="n">runFormGet</code> <code class="n">searchForm</code>
+    <code class="kr">let</code> <code class="n">docs</code> <code class="ow">=</code> <code class="kr">if</code> <code class="n">docCount</code> <code class="o">==</code> <code class="mi">1</code>
+                <code class="kr">then</code> <code class="s">"There is currently 1 document."</code>
+                <code class="kr">else</code> <code class="s">"There are currently "</code> <code class="o">++</code> <code class="n">show</code> <code class="n">docCount</code> <code class="o">++</code> <code class="s">" documents."</code>
+    <code class="n">defaultLayout</code> <code class="p">[</code><code class="n">whamlet</code><code class="o">|</code>
+<code class="o">&lt;</code><code class="n">p</code><code class="o">&gt;</code><code class="kt">Welcome</code> <code class="n">to</code> <code class="n">the</code> <code class="n">search</code> <code class="n">application</code><code class="o">.</code> <code class="o">#</code><code class="p">{</code><code class="n">docs</code><code class="p">}</code>
+<code class="o">&lt;</code><code class="n">form</code> <code class="n">method</code><code class="ow">=</code><code class="n">post</code> <code class="n">action</code><code class="o">=@</code><code class="p">{</code><code class="kt">AddDocR</code><code class="p">}</code><code class="o">&gt;</code>
+    <code class="o">&lt;</code><code class="n">table</code><code class="o">&gt;</code>
+        <code class="o">^</code><code class="p">{</code><code class="n">docWidget</code><code class="p">}</code>
+        <code class="o">&lt;</code><code class="n">tr</code><code class="o">&gt;</code>
+            <code class="o">&lt;</code><code class="n">td</code> <code class="n">colspan</code><code class="ow">=</code><code class="mi">3</code><code class="o">&gt;</code>
+                <code class="o">&lt;</code><code class="n">input</code> <code class="kr">type</code><code class="ow">=</code><code class="n">submit</code> <code class="n">value</code><code class="ow">=</code><code class="s">"Add document"</code><code class="o">&gt;</code>
+<code class="o">&lt;</code><code class="n">form</code> <code class="n">method</code><code class="ow">=</code><code class="n">get</code> <code class="n">action</code><code class="o">=@</code><code class="p">{</code><code class="kt">SearchR</code><code class="p">}</code><code class="o">&gt;</code>
+    <code class="o">^</code><code class="p">{</code><code class="n">searchWidget</code><code class="p">}</code>
+    <code class="o">&lt;</code><code class="n">input</code> <code class="kr">type</code><code class="ow">=</code><code class="n">submit</code> <code class="n">value</code><code class="ow">=</code><code class="kt">Search</code><code class="o">&gt;</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="nf">postAddDocR</code> <code class="ow">::</code> <code class="kt">Handler</code> <code class="kt">RepHtml</code>
+<code class="nf">postAddDocR</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="p">((</code><code class="n">res</code><code class="p">,</code> <code class="n">docWidget</code><code class="p">),</code> <code class="kr">_</code><code class="p">)</code> <code class="ow">&lt;-</code> <code class="n">runFormPost</code> <code class="n">addDocForm</code>
+    <code class="kr">case</code> <code class="n">res</code> <code class="kr">of</code>
+        <code class="kt">FormSuccess</code> <code class="n">doc</code> <code class="ow">-&gt;</code> <code class="kr">do</code>
+            <code class="n">docid</code> <code class="ow">&lt;-</code> <code class="n">runDB</code> <code class="o">$</code> <code class="n">insert</code> <code class="n">doc</code>
+            <code class="n">setMessage</code> <code class="s">"Document added"</code>
+            <code class="n">redirect</code> <code class="o">$</code> <code class="kt">DocR</code> <code class="n">docid</code>
+        <code class="kr">_</code> <code class="ow">-&gt;</code> <code class="n">defaultLayout</code> <code class="p">[</code><code class="n">whamlet</code><code class="o">|</code>
+<code class="o">&lt;</code><code class="n">form</code> <code class="n">method</code><code class="ow">=</code><code class="n">post</code> <code class="n">action</code><code class="o">=@</code><code class="p">{</code><code class="kt">AddDocR</code><code class="p">}</code><code class="o">&gt;</code>
+    <code class="o">&lt;</code><code class="n">table</code><code class="o">&gt;</code>
+        <code class="o">^</code><code class="p">{</code><code class="n">docWidget</code><code class="p">}</code>
+        <code class="o">&lt;</code><code class="n">tr</code><code class="o">&gt;</code>
+            <code class="o">&lt;</code><code class="n">td</code> <code class="n">colspan</code><code class="ow">=</code><code class="mi">3</code><code class="o">&gt;</code>
+                <code class="o">&lt;</code><code class="n">input</code> <code class="kr">type</code><code class="ow">=</code><code class="n">submit</code> <code class="n">value</code><code class="ow">=</code><code class="s">"Add document"</code><code class="o">&gt;</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="nf">getDocR</code> <code class="ow">::</code> <code class="kt">DocId</code> <code class="ow">-&gt;</code> <code class="kt">Handler</code> <code class="kt">RepHtml</code>
+<code class="nf">getDocR</code> <code class="n">docid</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="n">doc</code> <code class="ow">&lt;-</code> <code class="n">runDB</code> <code class="o">$</code> <code class="n">get404</code> <code class="n">docid</code>
+    <code class="n">defaultLayout</code> <code class="o">$</code>
+        <code class="p">[</code><code class="n">whamlet</code><code class="o">|</code>
+<code class="o">&lt;</code><code class="n">h1</code><code class="o">&gt;#</code><code class="p">{</code><code class="n">docTitle</code> <code class="n">doc</code><code class="p">}</code>
+<code class="o">&lt;</code><code class="n">div</code> <code class="o">.</code><code class="n">content</code><code class="o">&gt;#</code><code class="p">{</code><code class="n">docContent</code> <code class="n">doc</code><code class="p">}</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="kr">data</code> <code class="kt">Result</code> <code class="ow">=</code> <code class="kt">Result</code>
+    <code class="p">{</code> <code class="n">resultId</code> <code class="ow">::</code> <code class="kt">DocId</code>
+    <code class="p">,</code> <code class="n">resultTitle</code> <code class="ow">::</code> <code class="kt">Text</code>
+    <code class="p">,</code> <code class="n">resultExcerpt</code> <code class="ow">::</code> <code class="kt">Html</code>
+    <code class="p">}</code>
+
+<code class="nf">getResult</code> <code class="ow">::</code> <code class="kt">DocId</code> <code class="ow">-&gt;</code> <code class="kt">Doc</code> <code class="ow">-&gt;</code> <code class="kt">Text</code> <code class="ow">-&gt;</code> <code class="kt">IO</code> <code class="kt">Result</code>
+<code class="nf">getResult</code> <code class="n">docid</code> <code class="n">doc</code> <code class="n">qstring</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="n">excerpt'</code> <code class="ow">&lt;-</code> <code class="kt">S</code><code class="o">.</code><code class="n">buildExcerpts</code>
+        <code class="n">excerptConfig</code>
+        <code class="p">[</code><code class="kt">T</code><code class="o">.</code><code class="n">unpack</code> <code class="o">$</code> <code class="n">escape</code> <code class="o">$</code> <code class="n">docContent</code> <code class="n">doc</code><code class="p">]</code>
+        <code class="s">"searcher"</code>
+        <code class="p">(</code><code class="n">unpack</code> <code class="n">qstring</code><code class="p">)</code>
+    <code class="kr">let</code> <code class="n">excerpt</code> <code class="ow">=</code>
+            <code class="kr">case</code> <code class="n">excerpt'</code> <code class="kr">of</code>
+                <code class="kt">ST</code><code class="o">.</code><code class="kt">Ok</code> <code class="n">bss</code> <code class="ow">-&gt;</code> <code class="n">preEscapedLazyText</code> <code class="o">$</code> <code class="n">decodeUtf8With</code> <code class="n">ignore</code> <code class="o">$</code> <code class="kt">L</code><code class="o">.</code><code class="n">concat</code> <code class="n">bss</code>
+                <code class="kr">_</code> <code class="ow">-&gt;</code> <code class="s">""</code>
+    <code class="n">return</code> <code class="kt">Result</code>
+        <code class="p">{</code> <code class="n">resultId</code> <code class="ow">=</code> <code class="n">docid</code>
+        <code class="p">,</code> <code class="n">resultTitle</code> <code class="ow">=</code> <code class="n">docTitle</code> <code class="n">doc</code>
+        <code class="p">,</code> <code class="n">resultExcerpt</code> <code class="ow">=</code> <code class="n">excerpt</code>
+        <code class="p">}</code>
+  <code class="kr">where</code>
+    <code class="n">excerptConfig</code> <code class="ow">=</code> <code class="kt">E</code><code class="o">.</code><code class="n">altConfig</code> <code class="p">{</code> <code class="kt">E</code><code class="o">.</code><code class="n">port</code> <code class="ow">=</code> <code class="mi">9312</code> <code class="p">}</code>
+
+<code class="nf">escape</code> <code class="ow">::</code> <code class="kt">Textarea</code> <code class="ow">-&gt;</code> <code class="kt">Text</code>
+<code class="nf">escape</code> <code class="ow">=</code>
+    <code class="kt">T</code><code class="o">.</code><code class="n">concatMap</code> <code class="n">escapeChar</code> <code class="o">.</code> <code class="n">unTextarea</code>
+  <code class="kr">where</code>
+    <code class="n">escapeChar</code> <code class="s">'&lt;'</code> <code class="ow">=</code> <code class="s">"&amp;lt;"</code>
+    <code class="n">escapeChar</code> <code class="s">'&gt;'</code> <code class="ow">=</code> <code class="s">"&amp;gt;"</code>
+    <code class="n">escapeChar</code> <code class="s">'&amp;'</code> <code class="ow">=</code> <code class="s">"&amp;amp;"</code>
+    <code class="n">escapeChar</code> <code class="n">c</code>   <code class="ow">=</code> <code class="kt">T</code><code class="o">.</code><code class="n">singleton</code> <code class="n">c</code>
+
+<code class="nf">getResults</code> <code class="ow">::</code> <code class="kt">Text</code> <code class="ow">-&gt;</code> <code class="kt">Handler</code> <code class="p">[</code><code class="kt">Result</code><code class="p">]</code>
+<code class="nf">getResults</code> <code class="n">qstring</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="n">sphinxRes'</code> <code class="ow">&lt;-</code> <code class="n">liftIO</code> <code class="o">$</code> <code class="kt">S</code><code class="o">.</code><code class="n">query</code> <code class="n">config</code> <code class="s">"searcher"</code> <code class="p">(</code><code class="n">unpack</code> <code class="n">qstring</code><code class="p">)</code>
+    <code class="kr">case</code> <code class="n">sphinxRes'</code> <code class="kr">of</code>
+        <code class="kt">ST</code><code class="o">.</code><code class="kt">Ok</code> <code class="n">sphinxRes</code> <code class="ow">-&gt;</code> <code class="kr">do</code>
+            <code class="kr">let</code> <code class="n">docids</code> <code class="ow">=</code> <code class="n">map</code> <code class="p">(</code><code class="kt">Key</code> <code class="o">.</code> <code class="kt">PersistInt64</code> <code class="o">.</code> <code class="kt">ST</code><code class="o">.</code><code class="n">documentId</code><code class="p">)</code> <code class="o">$</code> <code class="kt">ST</code><code class="o">.</code><code class="n">matches</code> <code class="n">sphinxRes</code>
+            <code class="n">fmap</code> <code class="n">catMaybes</code> <code class="o">$</code> <code class="n">runDB</code> <code class="o">$</code> <code class="n">forM</code> <code class="n">docids</code> <code class="o">$</code> <code class="nf">\</code><code class="n">docid</code> <code class="ow">-&gt;</code> <code class="kr">do</code>
+                <code class="n">mdoc</code> <code class="ow">&lt;-</code> <code class="n">get</code> <code class="n">docid</code>
+                <code class="kr">case</code> <code class="n">mdoc</code> <code class="kr">of</code>
+                    <code class="kt">Nothing</code> <code class="ow">-&gt;</code> <code class="n">return</code> <code class="kt">Nothing</code>
+                    <code class="kt">Just</code> <code class="n">doc</code> <code class="ow">-&gt;</code> <code class="n">liftIO</code> <code class="o">$</code> <code class="kt">Just</code> <code class="o">&lt;$&gt;</code> <code class="n">getResult</code> <code class="n">docid</code> <code class="n">doc</code> <code class="n">qstring</code>
+        <code class="kr">_</code> <code class="ow">-&gt;</code> <code class="ne">error</code> <code class="o">$</code> <code class="n">show</code> <code class="n">sphinxRes'</code>
+  <code class="kr">where</code>
+    <code class="n">config</code> <code class="ow">=</code> <code class="kt">S</code><code class="o">.</code><code class="n">defaultConfig</code>
+        <code class="p">{</code> <code class="kt">S</code><code class="o">.</code><code class="n">port</code> <code class="ow">=</code> <code class="mi">9312</code>
+        <code class="p">,</code> <code class="kt">S</code><code class="o">.</code><code class="n">mode</code> <code class="ow">=</code> <code class="kt">ST</code><code class="o">.</code><code class="kt">Any</code>
+        <code class="p">}</code>
+
+<code class="nf">getSearchR</code> <code class="ow">::</code> <code class="kt">Handler</code> <code class="kt">RepHtml</code>
+<code class="nf">getSearchR</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="p">((</code><code class="n">formRes</code><code class="p">,</code> <code class="n">searchWidget</code><code class="p">),</code> <code class="kr">_</code><code class="p">)</code> <code class="ow">&lt;-</code> <code class="n">runFormGet</code> <code class="n">searchForm</code>
+    <code class="n">searchResults</code> <code class="ow">&lt;-</code>
+        <code class="kr">case</code> <code class="n">formRes</code> <code class="kr">of</code>
+            <code class="kt">FormSuccess</code> <code class="n">qstring</code> <code class="ow">-&gt;</code> <code class="n">getResults</code> <code class="n">qstring</code>
+            <code class="kr">_</code> <code class="ow">-&gt;</code> <code class="n">return</code> <code class="kt">[]</code>
+    <code class="n">defaultLayout</code> <code class="o">$</code> <code class="kr">do</code>
+        <code class="n">addLucius</code> <code class="p">[</code><code class="n">lucius</code><code class="o">|</code>
+<code class="o">.</code><code class="n">excerpt</code> <code class="p">{</code>
+    <code class="n">color</code><code class="kt">:</code> <code class="n">green</code><code class="p">;</code> <code class="n">font</code><code class="o">-</code><code class="n">style</code><code class="kt">:</code> <code class="n">italic</code>
+<code class="p">}</code>
+<code class="o">.</code><code class="n">match</code> <code class="p">{</code>
+    <code class="n">background</code><code class="o">-</code><code class="n">color</code><code class="kt">:</code> <code class="n">yellow</code><code class="p">;</code>
+<code class="p">}</code>
+<code class="o">|</code><code class="p">]</code>
+        <code class="p">[</code><code class="n">whamlet</code><code class="o">|</code>
+<code class="o">&lt;</code><code class="n">form</code> <code class="n">method</code><code class="ow">=</code><code class="n">get</code> <code class="n">action</code><code class="o">=@</code><code class="p">{</code><code class="kt">SearchR</code><code class="p">}</code><code class="o">&gt;</code>
+    <code class="o">^</code><code class="p">{</code><code class="n">searchWidget</code><code class="p">}</code>
+    <code class="o">&lt;</code><code class="n">input</code> <code class="kr">type</code><code class="ow">=</code><code class="n">submit</code> <code class="n">value</code><code class="ow">=</code><code class="kt">Search</code><code class="o">&gt;</code>
+<code class="o">$</code><code class="kr">if</code> <code class="n">not</code> <code class="o">$</code> <code class="n">null</code> <code class="n">searchResults</code>
+    <code class="o">&lt;</code><code class="n">h1</code><code class="o">&gt;</code><code class="kt">Results</code>
+    <code class="o">$</code><code class="n">forall</code> <code class="n">result</code> <code class="ow">&lt;-</code> <code class="n">searchResults</code>
+        <code class="o">&lt;</code><code class="n">div</code> <code class="o">.</code><code class="n">result</code><code class="o">&gt;</code>
+            <code class="o">&lt;</code><code class="n">a</code> <code class="n">href</code><code class="o">=@</code><code class="p">{</code><code class="kt">DocR</code> <code class="o">$</code> <code class="n">resultId</code> <code class="n">result</code><code class="p">}</code><code class="o">&gt;#</code><code class="p">{</code><code class="n">resultTitle</code> <code class="n">result</code><code class="p">}</code>
+            <code class="o">&lt;</code><code class="n">div</code> <code class="o">.</code><code class="n">excerpt</code><code class="o">&gt;#</code><code class="p">{</code><code class="n">resultExcerpt</code> <code class="n">result</code><code class="p">}</code>
+<code class="o">|</code><code class="p">]</code>
+
+<code class="nf">getXmlpipeR</code> <code class="ow">::</code> <code class="kt">Handler</code> <code class="kt">RepXml</code>
+<code class="nf">getXmlpipeR</code> <code class="ow">=</code> <code class="kr">do</code>
+    <code class="kt">Searcher</code> <code class="n">pool</code> <code class="ow">&lt;-</code> <code class="n">getYesod</code>
+    <code class="kr">let</code> <code class="n">headers</code> <code class="ow">=</code> <code class="p">[(</code><code class="s">"Content-Type"</code><code class="p">,</code> <code class="s">"text/xml"</code><code class="p">)]</code>
+    <code class="n">managedConn</code> <code class="ow">&lt;-</code> <code class="n">lift</code> <code class="o">$</code> <code class="n">takeResource</code> <code class="n">pool</code>
+    <code class="kr">let</code> <code class="n">conn</code> <code class="ow">=</code> <code class="n">mrValue</code> <code class="n">managedConn</code>
+    <code class="n">lift</code> <code class="o">$</code> <code class="n">mrReuse</code> <code class="n">managedConn</code> <code class="kt">True</code>
+    <code class="kr">let</code> <code class="n">source</code> <code class="ow">=</code> <code class="n">fullDocSource</code> <code class="n">conn</code> <code class="kt">C</code><code class="o">.$=</code> <code class="n">renderBuilder</code> <code class="n">def</code>
+        <code class="n">flushSource</code> <code class="ow">=</code> <code class="n">fmap</code> <code class="kt">C</code><code class="o">.</code><code class="kt">Chunk</code> <code class="n">source</code>
+    <code class="n">sendWaiResponse</code> <code class="o">$</code> <code class="kt">ResponseSource</code> <code class="n">status200</code> <code class="n">headers</code> <code class="n">flushSource</code>
+
+<code class="nf">entityToEvents</code> <code class="ow">::</code> <code class="p">(</code><code class="kt">Entity</code> <code class="kt">Doc</code><code class="p">)</code> <code class="ow">-&gt;</code> <code class="p">[</code><code class="kt">X</code><code class="o">.</code><code class="kt">Event</code><code class="p">]</code>
+<code class="nf">entityToEvents</code> <code class="p">(</code><code class="kt">Entity</code> <code class="n">docid</code> <code class="n">doc</code><code class="p">)</code> <code class="ow">=</code>
+    <code class="p">[</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">document</code> <code class="p">[(</code><code class="s">"id"</code><code class="p">,</code> <code class="p">[</code><code class="kt">X</code><code class="o">.</code><code class="kt">ContentText</code> <code class="o">$</code> <code class="n">toPathPiece</code> <code class="n">docid</code><code class="p">])]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">content</code> <code class="kt">[]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventContent</code> <code class="o">$</code> <code class="kt">X</code><code class="o">.</code><code class="kt">ContentText</code> <code class="o">$</code> <code class="n">unTextarea</code> <code class="o">$</code> <code class="n">docContent</code> <code class="n">doc</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">content</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">document</code>
+    <code class="p">]</code>
+
+<code class="nf">fullDocSource</code> <code class="ow">::</code> <code class="kt">Connection</code> <code class="ow">-&gt;</code> <code class="kt">C</code><code class="o">.</code><code class="kt">Source</code> <code class="kt">IO</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Event</code>
+<code class="nf">fullDocSource</code> <code class="n">conn</code> <code class="ow">=</code> <code class="n">mconcat</code>
+    <code class="p">[</code> <code class="kt">CL</code><code class="o">.</code><code class="n">sourceList</code> <code class="n">startEvents</code>
+    <code class="p">,</code> <code class="n">docSource</code> <code class="n">conn</code>
+    <code class="p">,</code> <code class="kt">CL</code><code class="o">.</code><code class="n">sourceList</code> <code class="n">endEvents</code>
+    <code class="p">]</code>
+
+<code class="nf">docSource</code> <code class="ow">::</code> <code class="kt">Connection</code> <code class="ow">-&gt;</code> <code class="kt">C</code><code class="o">.</code><code class="kt">Source</code> <code class="kt">IO</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Event</code>
+<code class="nf">docSource</code> <code class="n">conn</code> <code class="ow">=</code> <code class="n">selectSourceConn</code> <code class="n">conn</code> <code class="kt">[]</code> <code class="kt">[]</code> <code class="kt">C</code><code class="o">.$=</code> <code class="kt">CL</code><code class="o">.</code><code class="n">concatMap</code> <code class="n">entityToEvents</code>
+
+<code class="nf">toName</code> <code class="ow">::</code> <code class="kt">Text</code> <code class="ow">-&gt;</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Name</code>
+<code class="nf">toName</code> <code class="n">x</code> <code class="ow">=</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Name</code> <code class="n">x</code> <code class="p">(</code><code class="kt">Just</code> <code class="s">"http://sphinxsearch.com/"</code><code class="p">)</code> <code class="p">(</code><code class="kt">Just</code> <code class="s">"sphinx"</code><code class="p">)</code>
+
+<code class="nf">docset</code><code class="p">,</code> <code class="n">schema</code><code class="p">,</code> <code class="n">field</code><code class="p">,</code> <code class="n">document</code><code class="p">,</code> <code class="n">content</code> <code class="ow">::</code> <code class="kt">X</code><code class="o">.</code><code class="kt">Name</code>
+<code class="nf">docset</code> <code class="ow">=</code> <code class="n">toName</code> <code class="s">"docset"</code>
+<code class="nf">schema</code> <code class="ow">=</code> <code class="n">toName</code> <code class="s">"schema"</code>
+<code class="nf">field</code> <code class="ow">=</code> <code class="n">toName</code> <code class="s">"field"</code>
+<code class="nf">document</code> <code class="ow">=</code> <code class="n">toName</code> <code class="s">"document"</code>
+<code class="nf">content</code> <code class="ow">=</code> <code class="s">"content"</code> <code class="cm">-- no prefix</code>
+
+<code class="nf">startEvents</code><code class="p">,</code> <code class="n">endEvents</code> <code class="ow">::</code> <code class="p">[</code><code class="kt">X</code><code class="o">.</code><code class="kt">Event</code><code class="p">]</code>
+<code class="nf">startEvents</code> <code class="ow">=</code>
+    <code class="p">[</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginDocument</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">docset</code> <code class="kt">[]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">schema</code> <code class="kt">[]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventBeginElement</code> <code class="n">field</code> <code class="p">[(</code><code class="s">"name"</code><code class="p">,</code> <code class="p">[</code><code class="kt">X</code><code class="o">.</code><code class="kt">ContentText</code> <code class="s">"content"</code><code class="p">])]</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">field</code>
+    <code class="p">,</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">schema</code>
+    <code class="p">]</code>
+
+<code class="nf">endEvents</code> <code class="ow">=</code>
+    <code class="p">[</code> <code class="kt">X</code><code class="o">.</code><code class="kt">EventEndElement</code> <code class="n">docset</code>
+    <code class="p">]</code>
+
+<code class="nf">main</code> <code class="ow">::</code> <code class="kt">IO</code> <code class="nb">()</code>
+<code class="nf">main</code> <code class="ow">=</code> <code class="n">withSqlitePool</code> <code class="s">"searcher.db3"</code> <code class="mi">10</code> <code class="o">$</code> <code class="nf">\</code><code class="n">pool</code> <code class="ow">-&gt;</code> <code class="kr">do</code>
+    <code class="n">runSqlPool</code> <code class="p">(</code><code class="n">runMigration</code> <code class="n">migrateAll</code><code class="p">)</code> <code class="n">pool</code>
+    <code class="n">warpDebug</code> <code class="mi">3000</code> <code class="o">$</code> <code class="kt">Searcher</code> <code class="n">pool</code>
+</pre></div></div>
+
+{% endraw %}
+

@@ -1,0 +1,851 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: systems_datetime.html
+next: databases_split_000.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="systems_datetime.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="databases_split_000.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="systems_piping" class="calibre27" id="systems_piping"></a><h3 id="title-IDAE4YZH" class="docSection1Title">20.5. Extended Example: Piping</h3><a name="x_Tb" class="calibre27" id="x_Tb"></a><p class="docText">We've <a name="I_indexterm20_d1e43818" class="calibre27" id="I_indexterm20_d1e43818"></a><a name="I_indexterm20_d1e43819" class="calibre27" id="I_indexterm20_d1e43819"></a><a name="I_indexterm20_d1e43820" class="calibre27" id="I_indexterm20_d1e43820"></a><a name="I_indexterm20_d1e43821" class="calibre27" id="I_indexterm20_d1e43821"></a> just seen how to invoke external
+    programs. Sometimes we need more control than that. Perhaps we need to
+    obtain the output from those programs, provide input, or even chain
+    together multiple external programs. Piping can help with all of these
+    needs. Piping is often used in shell scripts. When you set up a pipe in
+    the shell, you run multiple programs. The output of the first program is
+    sent to the input of the second. Its output is sent to the third as input,
+    and so on. The last program's output normally goes to the terminal, or it
+    could go to a file. Here's an example session with the POSIX shell to
+    illustrate piping:</p><pre class="calibre39">$ <b class="calibre40">ls /etc | grep 'm.*ap' | tr a-z A-Z</b>
+IDMAPD.CONF
+MAILCAP
+MAILCAP.ORDER
+MEDIAPRM
+TERMCAP</pre><a name="x_Ub" class="calibre27" id="x_Ub"></a><p class="docText">This command runs three programs, piping data between
+    them. It starts with <tt class="calibre34">ls
+    /etc</tt>, which outputs a list of all files or directories in
+    <tt class="calibre34">/etc</tt>. The output of <tt class="calibre34">ls</tt> is sent as input to <tt class="calibre34">grep</tt>. We gave <tt class="calibre34">grep</tt> a regular expression that will cause it to
+    output only the lines that start with <tt class="calibre34">'m'</tt> and then contain <tt class="calibre34">"ap"</tt> somewhere in the line. Finally, the result
+    of that is sent to <tt class="calibre34">TR</tt>. We gave <tt class="calibre34">TR</tt> options to convert everything to uppercase.
+    The output of <tt class="calibre34">tr</tt> isn't set anywhere in
+    particular, so it is displayed on the screen.</p><a name="x_Vb" class="calibre27" id="x_Vb"></a><p class="docText">In this situation, the shell handles setting up all the
+    pipelines between programs. By using some of the POSIX tools in Haskell,
+    we can accomplish the same thing.</p><a name="x_Wb" class="calibre27" id="x_Wb"></a><p class="docText">Before describing how to do this, we should first warn you
+    that the <tt class="calibre34">System.Posix</tt> modules expose a
+    very low-level interface to Unix systems. The interfaces can be complex
+    and their interactions can be complex as well, regardless of the
+    programming language you use to access them. The full nature of these
+    low-level interfaces has been the topic of entire books themselves, so we
+    will just scratch the surface in this chapter.</p><a name="systems_piping_theory" class="calibre27" id="systems_piping_theory"></a><h4 id="title-IDAABZZH" class="docSection1Title">20.5.1. Using Pipes for Redirection</h4><a name="x_Xb" class="calibre27" id="x_Xb"></a><p class="docText">POSIX defines a function<a name="ch20-pipes" class="calibre27" id="ch20-pipes"></a><a name="ch20-redirectionpipes" class="calibre27" id="ch20-redirectionpipes"></a> that creates a pipe. This function returns two file
+      descriptors (FDs),<a name="I_indexterm20_d1e43880" class="calibre27" id="I_indexterm20_d1e43880"></a><a name="I_indexterm20_d1e43883" class="calibre27" id="I_indexterm20_d1e43883"></a> which are similar in concept to a Haskell <tt class="calibre34">Handle</tt>. One FD is the reading end of the pipe,
+      and the other is the writing end. Anything that is written to the
+      writing end can be read by the reading end. The data is "shoved through
+      a pipe." In Haskell, you call <tt class="calibre34">createPipe</tt> to access this interface.</p><a name="x_Yb" class="calibre27" id="x_Yb"></a><p class="docText">Having a pipe is the first step to being able to pipe
+      data between external programs. We must also be able to redirect the
+      output of a program to a pipe and the input of another program from a
+      pipe. The Haskell function <tt class="calibre34">dupTo</tt>
+      accomplishes this. It takes an FD and makes a copy of it at another FD
+      number. POSIX FDs for standard input, standard output, and standard
+      error have the predefined FD numbers of 0, 1, and 2, respectively. By
+      renumbering an endpoint of a pipe to one of those numbers, we
+      effectively can cause programs to have their input or output
+      redirected.</p><a name="x_Zb" class="calibre27" id="x_Zb"></a><p class="docText">There is another piece of the puzzle, however. We can't
+      just use <tt class="calibre34">dupTo</tt> before a call
+      <a name="I_indexterm20_d1e43903" class="calibre27" id="I_indexterm20_d1e43903"></a>such as <tt class="calibre34">rawSystem</tt>
+      because that would mess up the standard input or output of our main
+      Haskell process. Moreover, <tt class="calibre34">rawSystem</tt>
+      blocks until the invoked program executes, leaving us no way to start
+      multiple processes running in parallel. To make this happen, we must use
+      <tt class="calibre34">forkProcess</tt>.<a name="I_indexterm20_d1e43917" class="calibre27" id="I_indexterm20_d1e43917"></a> This is a very special function. It actually makes a copy
+      of the program currently running and we wind up with two copies of the
+      program running at the same time. Haskell's <tt class="calibre34">forkProcess</tt> function takes a function to
+      execute in the new process (known as the child). We have that function
+      call <tt class="calibre34">dupTo</tt>. After it has done that,
+      it calls <tt class="calibre34">executeFile</tt> to actually
+      invoke the command. This is also a special function: if all goes well,
+      it <span class="docEmphasis">never returns</span>. That's<a name="I_indexterm20_d1e43933" class="calibre27" id="I_indexterm20_d1e43933"></a> because <tt class="calibre34">executeFile</tt>
+      replaces the running process with a different program. Eventually, the
+      original Haskell process will call <tt class="calibre34">getProcessStatus</tt> to<a name="I_indexterm20_d1e43944" class="calibre27" id="I_indexterm20_d1e43944"></a> wait for the child processes to terminate and learn of
+      their exit codes.</p><a name="x_ab" class="calibre27" id="x_ab"></a><p class="docText">Whenever you run a command on POSIX systems, whether
+      you've just typed <tt class="calibre34">ls</tt> on the command
+      line or used <tt class="calibre34">rawSystem</tt> in Haskell,
+      under the hood, <tt class="calibre34">forkProcess</tt>, <tt class="calibre34">executeFile</tt>, and <tt class="calibre34">getProcessStatus</tt> (or their C equivalents) are
+      always being used. To set up pipes, we duplicate the process that the
+      system uses to start up programs, and add a few steps involving piping
+      and redirection along the way.</p><a name="x_bb" class="calibre27" id="x_bb"></a><p class="docText">There are a few other housekeeping things we must be
+      careful about. When you call <tt class="calibre34">forkProcess</tt>, just about everything about your
+      program is cloned.<sup class="docFootnote"><a class="docLink1" href="#x_bbd1e44280">[48]</a></sup> That includes the set of open file descriptors (handles).
+      Programs detect when they're done receiving input from a pipe by
+      checking the end-of-file indicator. When the process at the writing end
+      of a pipe closes the pipe, the process at the reading end will receive
+      an end-of-file indication. However, if the writing file descriptor
+      exists in more than one process, the end-of-file indicator won't be sent
+      until all processes have closed that particular FD. Therefore, we must
+      keep track of which FDs are opened so that we can close them all in the
+      child processes. We must also close the child ends of the pipes in the
+      parent process as soon as possible.</p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_bbd1e44280" class="calibre5" id="x_bbd1e44280">[48]</a></sup> The main exception is threads, which are not
+          cloned.</p></blockquote><a name="x_db" class="calibre27" id="x_db"></a><p class="docText">Here is an initial implementation of a system of piping
+      in Haskell:</p><pre class="calibre39">-- file: ch20/RunProcessSimple.hs
+{-# OPTIONS_GHC -fglasgow-exts #-}
+-- RunProcessSimple.hs
+
+module RunProcessSimple where
+
+import System.Process
+import Control.Concurrent
+import Control.Concurrent.MVar
+import System.IO
+import System.Exit
+import Text.Regex
+import System.Posix.Process
+import System.Posix.IO
+import System.Posix.Types
+
+{- | The type for running external commands.  The first part
+of the tuple is the program name.  The list represents the
+command-line parameters to pass to the command. -}
+type SysCommand = (String, [String])
+
+{- | The result of running any command -}
+data CommandResult = CommandResult {
+    cmdOutput :: IO String,              -- ^ IO action that yields the output
+    getExitStatus :: IO ProcessStatus    -- ^ IO action that yields exit result
+    }
+
+{- | The type for handling global lists of FDs to always close in the clients
+-}
+type CloseFDs = MVar [Fd]
+
+{- | Class representing anything that is a runnable command -}
+class CommandLike a where
+    {- | Given the command and a String representing input,
+         invokes the command.  Returns a String
+         representing the output of the command. -}
+    invoke :: a -&gt; CloseFDs -&gt; String -&gt; IO CommandResult
+
+-- Support for running system commands
+instance CommandLike SysCommand where
+    invoke (cmd, args) closefds input =
+        do -- Create two pipes: one to handle stdin and the other
+           -- to handle stdout.  We do not redirect stderr in this program.
+           (stdinread, stdinwrite) &lt;- createPipe
+           (stdoutread, stdoutwrite) &lt;- createPipe
+
+           -- We add the parent FDs to this list because we always need
+           -- to close them in the clients.
+           addCloseFDs closefds [stdinwrite, stdoutread]
+
+           -- Now, grab the closed FDs list and fork the child.
+           childPID &lt;- withMVar closefds (\fds -&gt;
+                          forkProcess (child fds stdinread stdoutwrite))
+
+           -- Now, on the parent, close the client-side FDs.
+           closeFd stdinread
+           closeFd stdoutwrite
+
+           -- Write the input to the command.
+           stdinhdl &lt;- fdToHandle stdinwrite
+           forkIO $ do hPutStr stdinhdl input
+                       hClose stdinhdl
+
+           -- Prepare to receive output from the command
+           stdouthdl &lt;- fdToHandle stdoutread
+
+           -- Set up the function to call when ready to wait for the
+           -- child to exit.
+           let waitfunc = 
+                do status &lt;- getProcessStatus True False childPID
+                   case status of
+                       Nothing -&gt; fail $ "Error: Nothing from getProcessStatus"
+                       Just ps -&gt; do removeCloseFDs closefds 
+                                          [stdinwrite, stdoutread]
+                                     return ps
+           return $ CommandResult {cmdOutput = hGetContents stdouthdl,
+                                   getExitStatus = waitfunc}
+
+        -- Define what happens in the child process
+        where child closefds stdinread stdoutwrite = 
+                do -- Copy our pipes over the regular stdin/stdout FDs
+                   dupTo stdinread stdInput
+                   dupTo stdoutwrite stdOutput
+
+                   -- Now close the original pipe FDs
+                   closeFd stdinread
+                   closeFd stdoutwrite
+
+                   -- Close all the open FDs we inherited from the parent
+                   mapM_ (\fd -&gt; catch (closeFd fd) (\_ -&gt; return ())) closefds
+
+                   -- Start the program
+                   executeFile cmd True args Nothing
+
+-- Add FDs to the list of FDs that must be closed post-fork in a child
+addCloseFDs :: CloseFDs -&gt; [Fd] -&gt; IO ()
+addCloseFDs closefds newfds =
+    modifyMVar_ closefds (\oldfds -&gt; return $ oldfds ++ newfds)
+
+-- Remove FDs from the list
+removeCloseFDs :: CloseFDs -&gt; [Fd] -&gt; IO ()
+removeCloseFDs closefds removethem =
+    modifyMVar_ closefds (\fdlist -&gt; return $ procfdlist fdlist removethem)
+
+    where
+    procfdlist fdlist [] = fdlist
+    procfdlist fdlist (x:xs) = procfdlist (removefd fdlist x) xs
+
+    -- We want to remove only the first occurance ot any given fd
+    removefd [] _ = []
+    removefd (x:xs) fd 
+        | fd == x = xs
+        | otherwise = x : removefd xs fd
+
+{- | Type representing a pipe.  A 'PipeCommand' consists of a source
+and destination part, both of which must be instances of
+'CommandLike'. -}
+data (CommandLike src, CommandLike dest) =&gt; 
+     PipeCommand src dest = PipeCommand src dest 
+
+{- | A convenient function for creating a 'PipeCommand'. -}
+(-|-) :: (CommandLike a, CommandLike b) =&gt; a -&gt; b -&gt; PipeCommand a b
+(-|-) = PipeCommand
+
+{- | Make 'PipeCommand' runnable as a command -}
+instance (CommandLike a, CommandLike b) =&gt;
+         CommandLike (PipeCommand a b) where
+    invoke (PipeCommand src dest) closefds input =
+        do res1 &lt;- invoke src closefds input
+           output1 &lt;- cmdOutput res1
+           res2 &lt;- invoke dest closefds output1
+           return $ CommandResult (cmdOutput res2) (getEC res1 res2)
+
+{- | Given two 'CommandResult' items, evaluate the exit codes for
+both and then return a "combined" exit code.  This will be ExitSuccess
+if both exited successfully.  Otherwise, it will reflect the first
+error encountered. -}
+getEC :: CommandResult -&gt; CommandResult -&gt; IO ProcessStatus 
+getEC src dest =
+    do sec &lt;- getExitStatus src
+       dec &lt;- getExitStatus dest
+       case sec of
+            Exited ExitSuccess -&gt; return dec
+            x -&gt; return x
+
+{- | Execute a 'CommandLike'. -}
+runIO :: CommandLike a =&gt; a -&gt; IO ()
+runIO cmd =
+    do -- Initialize our closefds list
+       closefds &lt;- newMVar []
+
+       -- Invoke the command
+       res &lt;- invoke cmd closefds []
+
+       -- Process its output
+       output &lt;- cmdOutput res
+       putStr output
+
+       -- Wait for termination and get exit status
+       ec &lt;- getExitStatus res
+       case ec of
+            Exited ExitSuccess -&gt; return ()
+            x -&gt; fail $ "Exited: " ++ show x</pre><br class="calibre48"/>
+<a name="x_eb" class="calibre27" id="x_eb"></a><p class="docText">Let's experiment with this in <i class="docEmphasis">ghci</i> a bit before looking at how it
+      works:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:load RunProcessSimple.hs</b>
+[1 of 1] Compiling RunProcessSimple ( RunProcessSimple.hs, interpreted )
+Ok, modules loaded: RunProcessSimple.
+ghci&gt; <b class="calibre40">runIO $ ("pwd", []::[String])</b>
+Loading package array-0.1.0.0 ... linking ... done.
+Loading package bytestring-0.9.0.1.1 ... linking ... done.
+Loading package old-locale-1.0.0.0 ... linking ... done.
+Loading package old-time-1.0.0.0 ... linking ... done.
+Loading package filepath-1.1.0.0 ... linking ... done.
+Loading package directory-1.0.0.1 ... linking ... done.
+Loading package unix-2.3.0.1 ... linking ... done.
+Loading package process-1.0.0.1 ... linking ... done.
+Loading package regex-base-0.72.0.1 ... linking ... done.
+Loading package regex-posix-0.72.0.2 ... linking ... done.
+Loading package regex-compat-0.71.0.1 ... linking ... done.
+/home/bos/src/darcs/book/examples/ch20
+ghci&gt; <b class="calibre40">runIO $ ("ls", ["/usr"])</b>
+bin
+etc
+games
+include
+java
+kerberos
+lib
+lib64
+libexec
+local
+sbin
+share
+src
+tmp
+X11R6
+ghci&gt; <b class="calibre40">runIO $ ("ls", ["/usr"]) -|- ("grep", ["^l"])</b>
+lib
+lib64
+libexec
+local
+ghci&gt; <b class="calibre40">runIO $ ("ls", ["/etc"]) -|- ("grep", ["m.*ap"]) -|- ("tr", ["a-z", "A-Z"])</b>
+IDMAPD.CONF
+MAILCAP
+PM-UTILS-HD-APM-RESTORE.CONF</pre><a name="x_fb" class="calibre27" id="x_fb"></a><p class="docText">We start by running a simple command, <tt class="calibre34">pwd</tt>, which<a name="I_indexterm20_d1e44015" class="calibre27" id="I_indexterm20_d1e44015"></a> just prints the name of the current working directory. We
+      pass <tt class="calibre34">[]</tt> for the list of arguments,
+      because <tt class="calibre34">pwd</tt> doesn't need any
+      arguments. Due to the typeclasses used, Haskell can't infer the type of
+      <tt class="calibre34">[]</tt>, so we specifically mention that
+      it's a <tt class="calibre34">String</tt>.</p><a name="x_gb" class="calibre27" id="x_gb"></a><p class="docText">Then we get into more complex commands. We run <tt class="calibre34">ls</tt>, sending it through <tt class="calibre34">grep</tt>. At the end, we set up a pipe to run the
+      exact same command that we ran via a shell-built pipe at the start of
+      this section. It's not yet as pleasant as it was in the shell, but then
+      again our program is still relatively simple when compared to the
+      shell.</p><a name="x_hb" class="calibre27" id="x_hb"></a><p class="docText">Let's look at the program. The very first line has a
+      special <tt class="calibre34">OPTIONS_GHC</tt> clause.<a name="I_indexterm20_d1e44046" class="calibre27" id="I_indexterm20_d1e44046"></a> This is the same as passing <tt class="calibre34">-fglasgow-exts</tt> to <i class="docEmphasis">ghc</i> or <i class="docEmphasis">ghci</i>. We are using a GHC extension that
+      permits us to use a <tt class="calibre34">(String,
+      [String])</tt> type as an instance of a typeclass.<sup class="docFootnote"><a class="docLink1" href="#x_hbd1e44373">[49]</a></sup> Putting it in the source file means we don't have to
+      remember to specify it every time we use this module.</p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_hbd1e44373" class="calibre5" id="x_hbd1e44373">[49]</a></sup> This extension is well-supported in the Haskell
+          community; Hugs users can access the same thing with <tt class="calibre34">hugs -98 +o</tt>.</p></blockquote><a name="x_jb" class="calibre27" id="x_jb"></a><p class="docText">After the <tt class="calibre34">import</tt>
+      lines, we define a few types. First, we define <tt class="calibre34">type SysCommand = (String, [String])</tt> as an
+      alias. This is the type a command to be executed by the system will
+      take. We used data of this type for each command in the example
+      execution above. The <tt class="calibre34">CommandResult</tt>
+      type represents the result from executing a given command, and the
+      <tt class="calibre34">CloseFDs</tt> type represents the list of
+      FDs that we must close upon forking a new child process.</p><a name="x_kb" class="calibre27" id="x_kb"></a><p class="docText">Next, we define a class named <tt class="calibre34">CommandLike</tt>, which will be used to run
+      "things," where a "thing" might be a standalone program, a pipe set up
+      between two or more programs, or in the future, even pure Haskell
+      functions. To be a member of this class, only one function—<tt class="calibre34">invoke</tt>—needs to be present for a given type.
+      This will let us use <tt class="calibre34">runIO</tt> to start
+      either a standalone command or a pipeline. It will also be useful for
+      defining a pipeline, since we may have a whole stack of commands on one
+      or both sides of a given command.</p><a name="x_lb" class="calibre27" id="x_lb"></a><p class="docText">Our piping infrastructure is going to use strings as the
+      way of sending data from one process to another. We can take advantage
+      of Haskell's support for lazy reading via <tt class="calibre34">hGetContents</tt> while reading data, and use
+      <tt class="calibre34">forkIO</tt> to let writing occur in the
+      background. This will work well, although not as fast as connecting the
+      endpoints of two processes directly together.<sup class="docFootnote"><a class="docLink1" href="#x_lbd1e44413">[50]</a></sup> It makes implementation quite simple, however. We need
+      only take care to do nothing that would require the entire <tt class="calibre34">String</tt> to be buffered, and let Haskell's
+      laziness do the rest.</p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_lbd1e44413" class="calibre5" id="x_lbd1e44413">[50]</a></sup> The Haskell library HSH provides a similar API to
+          that presented here, but it uses a more efficient (and much more
+          complex) mechanism of connecting pipes directly between external
+          processes without the data needing to pass through Haskell. This is
+          the same approach that the shell takes, and it reduces the CPU load
+          of handling piping.</p></blockquote><a name="x_nb" class="calibre27" id="x_nb"></a><p class="docText">Next, we define an instance of <tt class="calibre34">CommandLike</tt> for <tt class="calibre34">SysCommand</tt>. We create two pipes: one to use
+      for the new process's standard input, and the other for its standard
+      output. This creates four endpoints, and thus four file descriptors. We
+      add the parent file descriptors to the list of those that must be closed
+      in all children. These would be the write end of the child's standard
+      input, and the read end of the child's standard output. Next, we fork
+      the child process. In the parent, we can then close the file descriptors
+      that correspond to the child. We can't do that before the fork, because
+      they wouldn't be available to the child. We obtain a handle for the
+      <tt class="calibre34">stdinwrite</tt> file descriptor, and start
+      a thread via <tt class="calibre34">forkIO</tt> to write the
+      input data to it. We then define <tt class="calibre34">waitfunc</tt>, which is the action that the caller
+      will invoke when it is ready to wait for the called process to
+      terminate. Meanwhile, the child uses <tt class="calibre34">dupTo</tt>, closes the file descriptors it doesn't
+      need, and executes the command.</p><a name="x_ob" class="calibre27" id="x_ob"></a><p class="docText">Next, we define some utility functions to manage the
+      list of file descriptors. After that, we define the tools that help set
+      up pipelines. First, we define a new type <tt class="calibre34">PipeCommand</tt> that has a source and destination.
+      Both the source and destination must be members of <tt class="calibre34">CommandLike</tt>. We also define the <tt class="calibre34">-|-</tt> convenience operator. Then, we make
+      <tt class="calibre34">PipeCommand</tt> an
+      instance of <tt class="calibre34">CommandLike</tt>. Its <tt class="calibre34">invoke</tt> implementation starts the first command
+      with the given input, obtains its output, and passes that output to the
+      invocation of the second command. It then returns the output of the
+      second command and causes the <tt class="calibre34">getExitStatus</tt> function to wait for and check
+      the exit statuses from both commands.</p><a name="x_pb" class="calibre27" id="x_pb"></a><p class="docText">We finish by defining <tt class="calibre34">runIO</tt>. This function establishes the list of
+      FDs that must be closed in the client, starts the command, displays its
+      output, and checks its exit status.</p><a name="piping_extended" class="calibre27" id="piping_extended"></a><h4 id="title-IDA4MZZH" class="docSection1Title">20.5.2. Better Piping</h4><a name="x_qb" class="calibre27" id="x_qb"></a><p class="docText">Our previous example solved the basic need of letting us
+      set up shell-like pipes. There are some other features that it would be
+      nice to have though:</p><ul class="calibre18"><li class="calibre19"><p class="docText">Support more shell-like syntax</p></li><li class="calibre19"><p class="docText">The ability to let people pipe data into external
+          programs or regular Haskell functions, freely mixing and matching
+          the two</p></li><li class="calibre19"><p class="docText">The ability to return the final output and exit code
+          in a way that Haskell programs can readily use</p></li></ul><a name="x_ub" class="calibre27" id="x_ub"></a><p class="docText">Fortunately, we already have most of the pieces to
+      support this in place. We need only to add a few more instances of
+      <tt class="calibre34">CommandLike</tt> to support this and a few
+      more functions similar to <tt class="calibre34">runIO</tt>. Here
+      is a revised example that implements all of these features:</p><pre class="calibre39">-- file: ch20/RunProcess.hs
+{-# OPTIONS_GHC -fglasgow-exts #-}
+
+module RunProcess where
+
+import System.Process
+import Control.Concurrent
+import Control.Concurrent.MVar
+import Control.Exception(evaluate)
+import System.Posix.Directory
+import System.Directory(setCurrentDirectory)
+import System.IO
+import System.Exit
+import Text.Regex
+import System.Posix.Process
+import System.Posix.IO
+import System.Posix.Types
+import Data.List
+import System.Posix.Env(getEnv)
+
+{- | The type for running external commands.  The first part
+of the tuple is the program name.  The list represents the
+command-line parameters to pass to the command. -}
+type SysCommand = (String, [String])
+
+{- | The result of running any command -}
+data CommandResult = CommandResult {
+    cmdOutput :: IO String,              -- ^ IO action that yields the output
+    getExitStatus :: IO ProcessStatus    -- ^ IO action that yields exit result
+    }
+
+{- | The type for handling global lists of FDs to always close in the clients
+-}
+type CloseFDs = MVar [Fd]
+
+{- | Class representing anything that is a runnable command -}
+class CommandLike a where
+    {- | Given the command and a String representing input,
+         invokes the command.  Returns a String
+         representing the output of the command. -}
+    invoke :: a -&gt; CloseFDs -&gt; String -&gt; IO CommandResult
+
+-- Support for running system commands
+instance CommandLike SysCommand where
+    invoke (cmd, args) closefds input =
+        do -- Create two pipes: one to handle stdin and the other
+           -- to handle stdout.  We do not redirect stderr in this program.
+           (stdinread, stdinwrite) &lt;- createPipe
+           (stdoutread, stdoutwrite) &lt;- createPipe
+
+           -- We add the parent FDs to this list because we always need
+           -- to close them in the clients.
+           addCloseFDs closefds [stdinwrite, stdoutread]
+
+           -- Now, grab the closed FDs list and fork the child.
+           childPID &lt;- withMVar closefds (\fds -&gt;
+                          forkProcess (child fds stdinread stdoutwrite))
+
+           -- Now, on the parent, close the client-side FDs.
+           closeFd stdinread
+           closeFd stdoutwrite
+
+           -- Write the input to the command.
+           stdinhdl &lt;- fdToHandle stdinwrite
+           forkIO $ do hPutStr stdinhdl input
+                       hClose stdinhdl
+
+           -- Prepare to receive output from the command
+           stdouthdl &lt;- fdToHandle stdoutread
+
+           -- Set up the function to call when ready to wait for the
+           -- child to exit.
+           let waitfunc = 
+                do status &lt;- getProcessStatus True False childPID
+                   case status of
+                       Nothing -&gt; fail $ "Error: Nothing from getProcessStatus"
+                       Just ps -&gt; do removeCloseFDs closefds 
+                                          [stdinwrite, stdoutread]
+                                     return ps
+           return $ CommandResult {cmdOutput = hGetContents stdouthdl,
+                                   getExitStatus = waitfunc}
+
+        -- Define what happens in the child process
+        where child closefds stdinread stdoutwrite = 
+                do -- Copy our pipes over the regular stdin/stdout FDs
+                   dupTo stdinread stdInput
+                   dupTo stdoutwrite stdOutput
+
+                   -- Now close the original pipe FDs
+                   closeFd stdinread
+                   closeFd stdoutwrite
+
+                   -- Close all the open FDs we inherited from the parent
+                   mapM_ (\fd -&gt; catch (closeFd fd) (\_ -&gt; return ())) closefds
+
+                   -- Start the program
+                   executeFile cmd True args Nothing
+
+{- | An instance of 'CommandLike' for an external command.  The String is
+passed to a shell for evaluation and invocation. -}
+instance CommandLike String where
+    invoke cmd closefds input =
+        do -- Use the shell given by the environment variable SHELL,
+           -- if any.  Otherwise, use /bin/sh
+           esh &lt;- getEnv "SHELL"
+           let sh = case esh of
+                       Nothing -&gt; "/bin/sh"
+                       Just x -&gt; x
+           invoke (sh, ["-c", cmd]) closefds input
+
+-- Add FDs to the list of FDs that must be closed post-fork in a child
+addCloseFDs :: CloseFDs -&gt; [Fd] -&gt; IO ()
+addCloseFDs closefds newfds =
+    modifyMVar_ closefds (\oldfds -&gt; return $ oldfds ++ newfds)
+
+-- Remove FDs from the list
+removeCloseFDs :: CloseFDs -&gt; [Fd] -&gt; IO ()
+removeCloseFDs closefds removethem =
+    modifyMVar_ closefds (\fdlist -&gt; return $ procfdlist fdlist removethem)
+
+    where
+    procfdlist fdlist [] = fdlist
+    procfdlist fdlist (x:xs) = procfdlist (removefd fdlist x) xs
+
+    -- We want to remove only the first occurance ot any given fd
+    removefd [] _ = []
+    removefd (x:xs) fd 
+        | fd == x = xs
+        | otherwise = x : removefd xs fd
+
+-- Support for running Haskell commands
+instance CommandLike (String -&gt; IO String) where
+    invoke func _ input =
+       return $ CommandResult (func input) (return (Exited ExitSuccess))
+
+-- Support pure Haskell functions by wrapping them in IO
+instance CommandLike (String -&gt; String) where
+    invoke func = invoke iofunc
+        where iofunc :: String -&gt; IO String
+              iofunc = return . func
+
+-- It's also useful to operate on lines.  Define support for line-based
+-- functions both within and without the IO monad.
+
+instance CommandLike ([String] -&gt; IO [String]) where
+    invoke func _ input =
+           return $ CommandResult linedfunc (return (Exited ExitSuccess))
+       where linedfunc = func (lines input) &gt;&gt;= (return . unlines)
+
+instance CommandLike ([String] -&gt; [String]) where
+    invoke func = invoke (unlines . func . lines)
+
+{- | Type representing a pipe.  A 'PipeCommand' consists of a source
+and destination part, both of which must be instances of
+'CommandLike'. -}
+data (CommandLike src, CommandLike dest) =&gt; 
+     PipeCommand src dest = PipeCommand src dest 
+
+{- | A convenient function for creating a 'PipeCommand'. -}
+(-|-) :: (CommandLike a, CommandLike b) =&gt; a -&gt; b -&gt; PipeCommand a b
+(-|-) = PipeCommand
+
+{- | Make 'PipeCommand' runnable as a command -}
+instance (CommandLike a, CommandLike b) =&gt;
+         CommandLike (PipeCommand a b) where
+    invoke (PipeCommand src dest) closefds input =
+        do res1 &lt;- invoke src closefds input
+           output1 &lt;- cmdOutput res1
+           res2 &lt;- invoke dest closefds output1
+           return $ CommandResult (cmdOutput res2) (getEC res1 res2)
+
+{- | Given two 'CommandResult' items, evaluate the exit codes for
+both and then return a "combined" exit code.  This will be ExitSuccess
+if both exited successfully.  Otherwise, it will reflect the first
+error encountered. -}
+getEC :: CommandResult -&gt; CommandResult -&gt; IO ProcessStatus 
+getEC src dest =
+    do sec &lt;- getExitStatus src
+       dec &lt;- getExitStatus dest
+       case sec of
+            Exited ExitSuccess -&gt; return dec
+            x -&gt; return x
+
+{- | Different ways to get data from 'run'.
+
+ * IO () runs, throws an exception on error, and sends stdout to stdout.
+
+ * IO String runs, throws an exception on error, reads stdout into
+   a buffer, and returns it as a string.
+
+ * IO [String] is same as IO String, but returns the results as lines.
+
+ * IO ProcessStatus runs and returns a ProcessStatus with the exit
+   information.  stdout is sent to stdout.  Exceptions are not thrown.
+
+ * IO (String, ProcessStatus) is like IO ProcessStatus, but also
+   includes a description of the last command in the pipe to have
+   an error (or the last command, if there was no error).
+
+ * IO Int returns the exit code from a program directly.  If a signal
+   caused the command to be reaped, returns 128 + SIGNUM.
+
+ * IO Bool returns True if the program exited normally (exit code 0,
+   not stopped by a signal) and False otherwise.
+
+-}
+class RunResult a where
+    {- | Runs a command (or pipe of commands), with results presented
+       in any number of different ways. -}
+    run :: (CommandLike b) =&gt; b -&gt; a
+
+-- | Utility function for use by 'RunResult' instances
+setUpCommand :: CommandLike a =&gt; a -&gt; IO CommandResult
+setUpCommand cmd = 
+    do -- Initialize our closefds list
+       closefds &lt;- newMVar []
+
+       -- Invoke the command
+       invoke cmd closefds []
+
+instance RunResult (IO ()) where
+    run cmd = run cmd &gt;&gt;= checkResult
+
+instance RunResult (IO ProcessStatus) where
+    run cmd = 
+        do res &lt;- setUpCommand cmd
+
+           -- Process its output
+           output &lt;- cmdOutput res
+           putStr output
+
+           getExitStatus res
+           
+instance RunResult (IO Int) where
+    run cmd = do rc &lt;- run cmd
+                 case rc of
+                   Exited (ExitSuccess) -&gt; return 0
+                   Exited (ExitFailure x) -&gt; return x
+                   Terminated x -&gt; return (128 + (fromIntegral x))
+                   Stopped x -&gt; return (128 + (fromIntegral x))
+
+instance RunResult (IO Bool) where
+    run cmd = do rc &lt;- run cmd
+                 return ((rc::Int) == 0)
+
+instance RunResult (IO [String]) where
+    run cmd = do r &lt;- run cmd
+                 return (lines r)
+
+instance RunResult (IO String) where
+    run cmd =
+        do res &lt;- setUpCommand cmd
+
+           output &lt;- cmdOutput res
+
+           -- Force output to be buffered
+           evaluate (length output)
+
+           ec &lt;- getExitStatus res
+           checkResult ec
+           return output
+
+checkResult :: ProcessStatus -&gt; IO ()
+checkResult ps =
+    case ps of
+         Exited (ExitSuccess) -&gt; return ()
+         x -&gt; fail (show x)
+
+{- | A convenience function.  Refers only to the version of 'run'
+that returns @IO ()@.  This prevents you from having to cast to it
+all the time when you do not care about the result of 'run'.
+-}
+runIO :: CommandLike a =&gt; a -&gt; IO ()
+runIO = run
+
+------------------------------------------------------------
+-- Utility Functions
+------------------------------------------------------------
+cd :: FilePath -&gt; IO ()
+cd = setCurrentDirectory
+ 
+{- | Takes a string and sends it on as standard output.
+The input to this function is never read. -}
+echo :: String -&gt; String -&gt; String
+echo inp _ = inp
+
+-- | Search for the regexp in the lines.  Return those that match.
+grep :: String -&gt; [String] -&gt; [String]
+grep pat = filter (ismatch regex)
+    where regex = mkRegex pat
+          ismatch r inp = case matchRegex r inp of
+                            Nothing -&gt; False
+                            Just _ -&gt; True
+
+{- | Creates the given directory.  A value of 0o755 for mode would be typical.
+An alias for System.Posix.Directory.createDirectory. -}
+mkdir :: FilePath -&gt; FileMode -&gt; IO ()
+mkdir = createDirectory
+
+{- | Remove duplicate lines from a file (like Unix uniq).
+Takes a String representing a file or output and plugs it through 
+lines and then nub to uniqify on a line basis. -}
+uniq :: String -&gt; String
+uniq = unlines . nub . lines
+
+-- | Count number of lines.  wc -l
+wcL, wcW :: [String] -&gt; [String]
+wcL inp = [show (genericLength inp :: Integer)]
+
+-- | Count number of words in a file (like wc -w)
+wcW inp = [show ((genericLength $ words $ unlines inp) :: Integer)]
+
+sortLines :: [String] -&gt; [String]
+sortLines = sort
+
+-- | Count the lines in the input
+countLines :: String -&gt; IO String
+countLines = return . (++) "\n" . show . length . lines</pre><br class="calibre48"/>
+<a name="x_vb" class="calibre27" id="x_vb"></a><p class="docText">Here's what has changed:</p><ul class="calibre18"><li class="calibre19"><p class="docText">A new <tt class="calibre34">CommandLike</tt>
+          instance for <tt class="calibre34">String</tt> that uses the
+          shell to evaluate and invoke the string.</p></li><li class="calibre19"><p class="docText">New <tt class="calibre34">CommandLike</tt>
+          instances for <tt class="calibre34">String -&gt; IO
+          String</tt> and various other types that are implemented in
+          terms of this one. These process Haskell functions as <span class="docEmphasis">commands</span>.</p></li><li class="calibre19"><p class="docText">A new <tt class="calibre34">RunResult</tt>
+          typeclass that defines a function <tt class="calibre34">run</tt> that returns information about the
+          command in many different ways. See the comments in the source for
+          more information. <tt class="calibre34">runIO</tt> is now
+          just an alias for one particular <tt class="calibre34">RunResult</tt> instance.</p></li><li class="calibre19"><p class="docText">A few utility functions providing Haskell
+          implementations of familiar Unix shell commands.</p></li></ul><a name="x_Ac" class="calibre27" id="x_Ac"></a><p class="docText">Let's try out the new shell features. First, let's make
+      sure that the command we used in the previous example still works. Then,
+      let's try it using a more shell-like syntax.</p><pre class="calibre39">ghci&gt; <b class="calibre40">:load RunProcess.hs</b>
+[1 of 1] Compiling RunProcess       ( RunProcess.hs, interpreted )
+Ok, modules loaded: RunProcess.
+ghci&gt; <b class="calibre40">runIO $ ("ls", ["/etc"]) -|- ("grep", ["m.*ap"]) -|- ("tr", ["a-z", "A-Z"])</b>
+Loading package array-0.1.0.0 ... linking ... done.
+Loading package bytestring-0.9.0.1.1 ... linking ... done.
+Loading package old-locale-1.0.0.0 ... linking ... done.
+Loading package old-time-1.0.0.0 ... linking ... done.
+Loading package filepath-1.1.0.0 ... linking ... done.
+Loading package directory-1.0.0.1 ... linking ... done.
+Loading package unix-2.3.0.1 ... linking ... done.
+Loading package process-1.0.0.1 ... linking ... done.
+Loading package regex-base-0.72.0.1 ... linking ... done.
+Loading package regex-posix-0.72.0.2 ... linking ... done.
+Loading package regex-compat-0.71.0.1 ... linking ... done.
+IDMAPD.CONF
+MAILCAP
+PM-UTILS-HD-APM-RESTORE.CONF
+ghci&gt; <b class="calibre40">runIO $ "ls /etc" -|- "grep 'm.*ap'" -|- "tr a-z A-Z"</b>
+IDMAPD.CONF
+MAILCAP
+PM-UTILS-HD-APM-RESTORE.CONF</pre><a name="x_Bc" class="calibre27" id="x_Bc"></a><p class="docText">That was a lot easier to type. Let's try substituting
+      our native Haskell implementation of <tt class="calibre34">grep</tt> and try out some other new features as
+      well:</p><pre class="calibre39">ghci&gt; <b class="calibre40">runIO $ "ls /etc" -|- grep "m.*ap" -|- "tr a-z A-Z"</b>
+IDMAPD.CONF
+MAILCAP
+PM-UTILS-HD-APM-RESTORE.CONF
+ghci&gt; <b class="calibre40">run $ "ls /etc" -|- grep "m.*ap" -|- "tr a-z A-Z" :: IO String</b>
+"IDMAPD.CONF\nMAILCAP\nPM-UTILS-HD-APM-RESTORE.CONF\n"
+ghci&gt; <b class="calibre40">run $ "ls /etc" -|- grep "m.*ap" -|- "tr a-z A-Z" :: IO [String]</b>
+["IDMAPD.CONF","MAILCAP","PM-UTILS-HD-APM-RESTORE.CONF"]
+ghci&gt; <b class="calibre40">run $ "ls /nonexistant" :: IO String</b>
+ls: cannot access /nonexistant: No such file or directory
+*** Exception: user error (Exited (ExitFailure 2))
+ghci&gt; <b class="calibre40">run $ "ls /nonexistant" :: IO ProcessStatus</b>
+ls: cannot access /nonexistant: No such file or directory
+Exited (ExitFailure 2)
+ghci&gt; <b class="calibre40">run $ "ls /nonexistant" :: IO Int</b>
+ls: cannot access /nonexistant: No such file or directory
+2
+ghci&gt; <b class="calibre40">runIO $ echo "Line1\nHi, test\n" -|- "tr a-z A-Z" -|- sortLines</b>
+HI, TEST
+LINE1</pre><a name="systems_piping_finalwords" class="calibre27" id="systems_piping_finalwords"></a><h4 id="title-IDAYRZZH" class="docSection1Title">20.5.3. Final Words on Pipes</h4><a name="x_Cc" class="calibre27" id="x_Cc"></a><p class="docText">We have developed a sophisticated system here. We warned
+      you earlier that POSIX can be complex. One other thing we need to
+      highlight: you must always make sure to evaluate the <tt class="calibre34">String</tt> returned by these functions before you
+      attempt to evaluate the exit code of the child process. The child
+      process will often not exit until it can write all of its data, and if
+      you do this in the wrong order, your program will hang.</p><a name="x_Dc" class="calibre27" id="x_Dc"></a><p class="docText">In this chapter, we developed, from the ground up, a
+      simplified version of HSH. If you wish to use these shell-like
+      capabilities in your own programs, we recommend HSH instead of the
+      example developed here due to optimizations present in HSH. HSH also
+      comes with a larger set of utility functions and more capabilities, but
+      the source code behind the library is much more complex and large. Some
+      of the utility functions presented here, in fact, were copied verbatim
+      from HSH. HSH is available <a name="I_indexterm20_d1e44300" class="calibre27" id="I_indexterm20_d1e44300"></a><a name="I_indexterm20_d1e44301" class="calibre27" id="I_indexterm20_d1e44301"></a><a name="I_indexterm20_d1e44302" class="calibre27" id="I_indexterm20_d1e44302"></a>at
+      .</p>
+<a href="21061538.html" class="calibre2"><img src="pixel.gif" alt="" border="0" class="calibre31"/></a><ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"> 
+           
+          <span class="calibre33"><a target="_self" href="systems_datetime.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="databases_split_000.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>The Pragmatic Bookshelf, LLC (351417)</dc:publisher>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Stuart Halloway</dc:creator>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Aaron Bedra</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T22:01:52.115578+00:00"/>
+    <dc:title>Programming Clojure (for Roman Fäckl)</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">9781934356869</dc:identifier>
+    <dc:identifier opf:scheme="MOBI-ASIN">54ac54f8-9523-4d60-a44b-b022131d1bf1</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">c1f998ce-dbdc-44b5-ad52-6c003e12dabf</dc:identifier>
+    <dc:subject>Pragmatic Bookshelf</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="images/calibre_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="Programming_Clojure_(for_Roman_.html" id="id1" media-type="application/xhtml+xml"/>
+    <item href="images/00001.jpg" id="id3" media-type="image/jpeg"/>
+    <item href="images/00002.jpg" id="id4" media-type="image/jpeg"/>
+    <item href="images/00003.jpg" id="id5" media-type="image/jpeg"/>
+    <item href="images/00004.jpg" id="id6" media-type="image/jpeg"/>
+    <item href="images/00005.jpg" id="id7" media-type="image/jpeg"/>
+    <item href="images/00007.jpg" id="id9" media-type="image/jpeg"/>
+    <item href="images/00008.jpg" id="id10" media-type="image/jpeg"/>
+    <item href="images/00011.jpg" id="id13" media-type="image/jpeg"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id1"/>
+  </spine>
+  <guide>
+    <reference href="Programming_Clojure_(for_Roman_.html#filepos1538569" type="toc" title="Table of Contents"/>
+    <reference href="images/calibre_cover.jpg" type="cover" title="Cover"/>
+  </guide>
+</package>

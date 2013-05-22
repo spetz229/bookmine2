@@ -1,0 +1,29 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch01s06.html
+next: OEBPS/ch01s08.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Arrays"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e839" class="calibre2"></a>Arrays</h1></div></div></div><p class="calibre8">CoffeeScript takes inspiration from Ruby when it comes to array
+    slicing by using ranges. Ranges are created by two numerical values, the
+    first and last positions in the range, separated by <code class="literal">..</code> or <code class="literal">...</code>. If
+    a range isn’t prefixed by anything, CoffeeScript expands it out into an
+    array:</p><pre class="screen">range = [1..5]</pre><p class="calibre8">If, however, the range is specified immediately after a variable,
+    CoffeeScript converts it into a <code class="literal">slice()</code>
+    method call:</p><pre class="screen">firstTwo = ["one", "two", "three"][0..1]</pre><p class="calibre8">In the example above, the range returns a new array, containing only
+    the first two elements of the original array. You can also use the same
+    syntax for replacing an array segment with another array:</p><pre class="screen">numbers = [0..9]
+numbers[3..5] = [-3, -4, -5]</pre><p class="calibre8">What’s neat, is that JavaScript allows you to call <code class="literal">slice()</code> on strings too, so you can use ranges
+    with string to return a new subset of characters:</p><pre class="screen">my = "my string"[0..1]</pre><p class="calibre8">Checking to see if a value exists inside an array is always a bore
+    in JavaScript, particularly because <code class="literal">indexOf()</code> doesn’t yet have full cross-browser
+    support (Internet Explorer, I’m talking about you). CoffeeScript solves
+    this with the <code class="literal">in</code> operator, for
+    example:</p><pre class="screen">words = ["rattled", "roudy", "rebbles", "ranks"]
+alert "Stop wagging me" if "ranks" in words</pre></div></div>
+
+{% endraw %}
+

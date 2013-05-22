@@ -1,0 +1,87 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: ch03lev1sec3.html
+next: ch03lev1sec5.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<a name="ch03lev1sec4" class="calibre18" id="ch03lev1sec4"></a>
+<h3 id="title-IDAGSGIT" class="docSection1Title">3.4. Immutability</h3>
+<p class="docText1">The other end-run around the need to synchronize is to use <span class="docEmphasis">immutable</span> objects [EJ Item 13]. Nearly all the atomicity and visibility hazards we've described so far, such as seeing stale values, losing updates, or observing an object to be in an inconsistent state, have to do with the vagaries of multiple threads trying to access the same mutable state at the same time. If an object's state cannot be modified, these risks and complexities simply go away.</p>
+<p class="docText1">An immutable object is one whose state cannot be changed after construction. Immutable objects are inherently thread-safe; their invariants are established by the constructor, and if their state cannot be changed, these invariants always hold.</p>
+<a name="ch03sb06" class="calibre18" id="ch03sb06"></a><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<p class="docText1">Immutable objects are always thread-safe.</p>
+</td></tr></table></p><p class="calibre1"> </p>
+<p class="docText1">Immutable objects are <span class="docEmphasis">simple</span>. They can only be in one state, which is carefully controlled by the constructor. One of the most difficult elements of program design is reasoning about the possible states of complex objects. Reasoning about the state of immutable objects, on the other hand, is trivial.</p>
+<p class="docText1">Immutable objects are also <span class="docEmphasis">safer</span>. Passing a mutable object to untrusted code, or otherwise publishing it where untrusted code could find it, is dangerousthe untrusted code might modify its state, or, worse, retain a reference to it and modify its state later from another thread. On the other hand, immutable objects cannot be subverted in this manner by malicious or buggy code, so they are safe <a name="iddle2204" class="calibre18" id="iddle2204"></a><a name="iddle2353" class="calibre18" id="iddle2353"></a><a name="iddle2376" class="calibre18" id="iddle2376"></a><a name="iddle2533" class="calibre18" id="iddle2533"></a><a name="iddle2713" class="calibre18" id="iddle2713"></a><a name="iddle4496" class="calibre18" id="iddle4496"></a><a name="iddle4497" class="calibre18" id="iddle4497"></a><a name="iddle5016" class="calibre18" id="iddle5016"></a>to share and publish freely without the need to make defensive copies [EJ Item 24].</p>
+<p class="docText1">Neither the Java Language Specification nor the Java Memory Model formally defines immutability, but immutability is <span class="docEmphasis">not</span> equivalent to simply declaring all fields of an object <tt class="calibre25">final</tt>. An object whose fields are all final may still be mutable, since final fields can hold references to mutable objects.</p>
+<a name="ch03sb07" class="calibre18" id="ch03sb07"></a><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<p class="docText1">An object is <span class="docEmphasis">immutable</span> if:</p>
+<ul class="calibre15"><li class="calibre16"><p class="docText1">Its state cannot be modifled after construction;</p></li><li class="calibre16"><p class="docText1">All its flelds are <tt class="calibre25">final</tt>;<sup class="docFootnote"><a class="calibre2" href="#ch03fn12">[12]</a></sup> and</p></li><li class="calibre16"><p class="docText1">It is <span class="docEmphasis">properly constructed</span> (the <tt class="calibre25">this</tt> reference does not escape during construction).</p></li></ul>
+</td></tr></table></p><p class="calibre1"> </p><blockquote class="calibre19"><p class="docFootnote1"><sup class="calibre27"><a name="ch03fn12" class="calibre18" id="ch03fn12">[12]</a></sup> It is technically possible to have an immutable object without all fields being final<tt class="calibre35">String</tt> is such a classbut this relies on delicate reasoning about benign data races that requires a deep understanding of the Java Memory Model. (For the curious: <tt class="calibre35">String</tt> lazily computes the hash code the first time <tt class="calibre35">hashCode</tt> is called and caches it in a nonfinal field, but this works only because that field can take on only one nondefault value that is the same every time it is computed because it is derived deterministically from immutable state. Don't try this at home.)</p></blockquote>
+<p class="docText1">Immutable objects can still use mutable objects internally to manage their state, as illustrated by <tt class="calibre25">ThreeStooges</tt> in <a class="calibre2" href="#ch03list11">Listing 3.11</a>. While the <tt class="calibre25">Set</tt> that stores the names is mutable, the design of <tt class="calibre25">ThreeStooges</tt> makes it impossible to modify that <tt class="calibre25">Set</tt> after construction. The <tt class="calibre25">stooges</tt> reference is <tt class="calibre25">final</tt>, so all object state is reached through a <tt class="calibre25">final</tt> field. The last requirement, proper construction, is easily met since the constructor does nothing that would cause the <tt class="calibre25">this</tt> reference to become accessible to code other than the constructor and its caller.</p>
+<a name="ch03list11" class="calibre18" id="ch03list11"></a><h5 id="title-IDARYGIT" class="docExampleTitle">Listing 3.11. Immutable Class Built Out of Mutable Underlying Objects.</h5><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<pre class="calibre30">@Immutable
+public final class ThreeStooges {
+    private final Set&lt;String&gt; stooges = new HashSet&lt;String&gt;();
+
+    public ThreeStooges() {
+        stooges.add("Moe");
+        stooges.add("Larry");
+        stooges.add("Curly");
+    }
+
+    public boolean isStooge(String name) {
+        return stooges.contains(name);
+    }
+}
+</pre><br class="calibre11"/>
+</td></tr></table></p>
+<p class="docText1">Because program state changes all the time, you might be tempted to think that immutable objects are of limited use, but this is not the case. There is a difference <a name="iddle1073" class="calibre18" id="iddle1073"></a><a name="iddle1158" class="calibre18" id="iddle1158"></a><a name="iddle1726" class="calibre18" id="iddle1726"></a><a name="iddle1920" class="calibre18" id="iddle1920"></a><a name="iddle1921" class="calibre18" id="iddle1921"></a><a name="iddle2343" class="calibre18" id="iddle2343"></a><a name="iddle2344" class="calibre18" id="iddle2344"></a><a name="iddle2350" class="calibre18" id="iddle2350"></a><a name="iddle2351" class="calibre18" id="iddle2351"></a><a name="iddle2527" class="calibre18" id="iddle2527"></a><a name="iddle2568" class="calibre18" id="iddle2568"></a><a name="iddle2712" class="calibre18" id="iddle2712"></a><a name="iddle2742" class="calibre18" id="iddle2742"></a><a name="iddle3352" class="calibre18" id="iddle3352"></a><a name="iddle3485" class="calibre18" id="iddle3485"></a><a name="iddle3725" class="calibre18" id="iddle3725"></a><a name="iddle3726" class="calibre18" id="iddle3726"></a><a name="iddle3780" class="calibre18" id="iddle3780"></a><a name="iddle3781" class="calibre18" id="iddle3781"></a><a name="iddle4124" class="calibre18" id="iddle4124"></a><a name="iddle5119" class="calibre18" id="iddle5119"></a>between an <span class="docEmphasis">object</span> being immutable and the <span class="docEmphasis">reference</span> to it being immutable. Program state stored in immutable objects can still be updated by "replacing" immutable objects with a new instance holding new state; the next section offers an example of this technique.<sup class="docFootnote"><a class="calibre2" href="#ch03fn13">[13]</a></sup></p><blockquote class="calibre19"><p class="docFootnote1"><sup class="calibre27"><a name="ch03fn13" class="calibre18" id="ch03fn13">[13]</a></sup> Many developers fear that this approach will create performance problems, but these fears are usually unwarranted. Allocation is cheaper than you might think, and immutable objects offer additional performance advantages such as reduced need for locking or defensive copies and reduced impact on generational garbage collection.</p></blockquote>
+<a name="ch03lev2sec9" class="calibre18" id="ch03lev2sec9"></a>
+<h4 id="title-IDAPIHIT" class="docSection2Title">3.4.1. Final Fields</h4>
+<p class="docText1">The <tt class="calibre25">final</tt> keyword, a more limited version of the <tt class="calibre25">const</tt> mechanism from C++, supports the construction of immutable objects. Final fields can't be modified (although the objects they refer to can be modified if they are mutable), but they also have special semantics under the Java Memory Model. It is the use of final fields that makes possible the guarantee of <span class="docEmphasis">initialization safety</span> (see <a class="calibre2" href="ch03lev1sec5.html#ch03lev2sec12">Section 3.5.2</a>) that lets immutable objects be freely accessed and shared without synchronization.</p>
+<p class="docText1">Even if an object is mutable, making some fields <tt class="calibre25">final</tt> can still simplify reasoning about its state, since limiting the mutability of an object restricts its set of possible states. An object that is "mostly immutable" but has one or two mutable state variables is still simpler than one that has many mutable variables. Declaring fields <tt class="calibre25">final</tt> also documents to maintainers that these fields are not expected to change.</p>
+<a name="ch03sb08" class="calibre18" id="ch03sb08"></a><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<p class="docText1">Just as it is a good practice to make all fields <tt class="calibre25">private</tt> unless they need greater visibility [EJ Item 12], it is a good practice to make all fields <tt class="calibre25">final</tt> unless they need to be mutable.</p>
+</td></tr></table></p><p class="calibre1"> </p>
+<a name="ch03lev2sec10" class="calibre18" id="ch03lev2sec10"></a>
+<h4 id="title-IDA4JHIT" class="docSection2Title">3.4.2. Example: Using Volatile to Publish Immutable Objects</h4>
+<p class="docText1">In <tt class="calibre25">UnsafeCachingFactorizer</tt> on page <a class="calibre2" href="ch02lev1sec3.html#ch02list05">24</a>,we tried to use two <tt class="calibre25">AtomicReference</tt>s to store the last number and last factors, but this was not thread-safe because we could not fetch or update the two related values atomically. Using volatile variables for these values would not be thread-safe for the same reason. However, immutable objects can sometimes provide a weak form of atomicity.</p>
+<p class="docText1">The factoring servlet performs two operations that must be atomic: updating the cached result and conditionally fetching the cached factors if the cached number matches the requested number. Whenever a group of related data items must be acted on atomically, consider creating an immutable holder class for them, such as <tt class="calibre25">OneValueCache</tt><sup class="docFootnote"><a class="calibre2" href="#ch03fn14">[14]</a></sup> in <a class="calibre2" href="#ch03list12">Listing 3.12</a>.</p><blockquote class="calibre19"><p class="docFootnote1"><sup class="calibre27"><a name="ch03fn14" class="calibre18" id="ch03fn14">[14]</a></sup> <tt class="calibre35">OneValueCache</tt> wouldn't be immutable without the <tt class="calibre35">copyOf</tt> calls in the constructor and getter. <tt class="calibre35">Arrays.copyOf</tt> was added as a convenience in Java 6; <tt class="calibre35">clone</tt> would also work.</p></blockquote>
+<p class="docText1">Race conditions in accessing or updating multiple related variables can be eliminated by using an immutable object to hold all the variables. With a mutable <a name="iddle2149" class="calibre18" id="iddle2149"></a><a name="iddle2851" class="calibre18" id="iddle2851"></a><a name="iddle3061" class="calibre18" id="iddle3061"></a><a name="iddle3062" class="calibre18" id="iddle3062"></a><a name="iddle3732" class="calibre18" id="iddle3732"></a><a name="iddle5108" class="calibre18" id="iddle5108"></a>holder object, you would have to use locking to ensure atomicity; with an immutable one, once a thread acquires a reference to it, it need never worry about another thread modifying its state. If the variables are to be updated, a new holder object is created, but any threads working with the previous holder still see it in a consistent state.</p>
+<a name="ch03list12" class="calibre18" id="ch03list12"></a><h5 id="title-IDATNHIT" class="docExampleTitle">Listing 3.12. Immutable Holder for Caching a Number and its Factors.</h5><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<pre class="calibre30">@Immutable
+class OneValueCache {
+    private final BigInteger lastNumber;
+    private final BigInteger[] lastFactors;
+
+    public OneValueCache(BigInteger i,
+                         BigInteger[] factors) {
+        lastNumber  = i;
+        lastFactors = Arrays.copyOf(factors, factors.length);
+    }
+
+    public BigInteger[] getFactors(BigInteger i) {
+        if (lastNumber == null || !lastNumber.equals(i))
+            return null;
+        else
+            return Arrays.copyOf(lastFactors, lastFactors.length);
+    }
+}
+</pre><br class="calibre11"/>
+</td></tr></table></p>
+<p class="docText1"><tt class="calibre25">VolatileCachedFactorizer</tt> in <a class="calibre2" href="ch03lev1sec5.html#ch03list13">Listing 3.13</a> uses a <tt class="calibre25">OneValueCache</tt> to store the cached number and factors. When a thread sets the volatile <tt class="calibre25">cache</tt> field to reference a new <tt class="calibre25">OneValueCache</tt>, the new cached data becomes immediately visible to other threads.</p>
+<p class="docText1">The cache-related operations cannot interfere with each other because <tt class="calibre25">One-ValueCache</tt> is immutable and the <tt class="calibre25">cache</tt> field is accessed only once in each of the relevant code paths. This combination of an immutable holder object for multiple state variables related by an invariant, and a volatile reference used to ensure its timely visibility, allows <tt class="calibre25">VolatileCachedFactorizer</tt> to be thread-safe even though it does no explicit locking.</p>
+
+<p class="calibre1"> </p>
+
+</div>
+
+{% endraw %}
+

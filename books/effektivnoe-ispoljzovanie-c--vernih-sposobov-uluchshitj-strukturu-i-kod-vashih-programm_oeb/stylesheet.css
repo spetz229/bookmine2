@@ -1,0 +1,222 @@
+.annotation {
+    display: block;
+    font-size: 0.75em;
+    font-style: italic;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    text-indent: 0
+    }
+.calibre {
+    display: block
+    }
+.calibre1 {
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.calibre10 {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1.33em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.calibre11 {
+    display: block;
+    list-style-type: disc;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em
+    }
+.calibre12 {
+    display: list-item
+    }
+.calibre13 {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.67em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.calibre2 {
+    display: block;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    text-align: justify;
+    text-indent: 1.5em
+    }
+.calibre3 {
+    display: block;
+    font-size: 1.48148em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.83em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.calibre4 {
+    font-weight: bold
+    }
+.calibre5 {
+    font-style: italic
+    }
+.calibre6 {
+    font-size: 0.75em;
+    line-height: 1.2;
+    vertical-align: super
+    }
+.calibre7 {
+    font-family: "Font_2f30464f-e9a7-45f1-9c8a-092065dd8bdc"
+    }
+.calibre8 {
+    height: auto;
+    max-width: 95%;
+    width: auto
+    }
+.calibre9 {
+    display: block;
+    font-size: 1.41176em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.67em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.citation {
+    display: block;
+    font-style: italic;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    margin-right: 0;
+    margin-top: 1em;
+    text-indent: 0
+    }
+.empty-line {
+    display: block;
+    height: 1em;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    text-align: justify;
+    text-indent: 1.5em
+    }
+.epub {
+    display: block;
+    font-family: "Font_2f30464f-e9a7-45f1-9c8a-092065dd8bdc";
+    font-size: 1em;
+    margin-bottom: 0;
+    margin-left: 5pt;
+    margin-right: 5pt;
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0
+    }
+.noteanchor {
+    font-size: 1.125em;
+    line-height: 1.2;
+    text-align: center;
+    vertical-align: middle
+    }
+.sectionimage {
+    display: block;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.subtitle {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.subtitle1 {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center;
+    text-indent: 1.5em
+    }
+.title {
+    display: block;
+    font-size: 1.41667em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.83em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.title1 {
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    margin-left: 1.5625em;
+    margin-right: 0;
+    margin-top: 1em;
+    page-break-after: avoid;
+    page-break-inside: avoid
+    }
+.title2 {
+    display: block;
+    font-size: 1.41667em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.titlepage {
+    display: block;
+    page-break-after: always;
+    text-align: center
+    }

@@ -1,0 +1,180 @@
+---
+layout: page
+title: "Learning GNU Emacs, 3rd Edition"
+prev: OEBPS/ch14s04.html
+next: OEBPS/apa.html
+book_path: books/learning-gnu-emacs--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" xml:lang="en"><div class="book"><div class="book"><div class="book"><h1 class="title"><a id="gnu3-CHP-14-SECT-5" class="calibre1"></a>Completion</h1></div></div></div><p class="copyright">We saw an
+<a id="gnu3-CHP-14-ITERM-2999" class="calibre2"></a>example
+of Emacs's completion facility in <a class="calibre2" href="ch01.html" title="Chapter 1. Emacs Basics">Chapter 1</a>. Completion is more than just a feature: it
+is a general principle in the design of Emacs. It can be articulated
+as follows:</p><div class="book"><blockquote class="blockquote"><p class="copyright">If you have to type in the name of something, and that name is one of
+a finite number of possibilities, Emacs should figure out what you
+mean after the smallest possible number of keystrokes.</p></blockquote></div><p class="copyright">In other words, you can type in the <span><em class="calibre7">shortest unambiguous
+prefix</em></span> and tell Emacs to figure out the rest of the name.
+By "shortest unambiguous prefix,"
+we mean "enough of the name, starting from the
+beginning, to distinguish it from the other
+possibilities." Several important things in Emacs
+have names that are chosen from a finite number of possibilities,
+including the following:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="copyright">Commands</p></li><li class="listitem"><p class="copyright">Files in a given directory</p></li><li class="listitem"><p class="copyright">Buffers</p></li><li class="listitem"><p class="copyright">Emacs variables</p></li></ul></div><p class="copyright">Most of the time, completion is available when you are prompted for a
+name of something in the minibuffer. While you are typing in the
+name, you can use three keys to tell Emacs to help complete it for
+you: <span><strong class="calibre5">Tab</strong></span>, <span><strong class="calibre5">Space</strong></span>, and question mark (<span><strong class="calibre5">?</strong></span>). Their functions are shown in <a class="calibre2" href="ch14s05.html#gnu3-CHP-14-TABLE-5" title="Table 14-5. Completion keys">Table 14-5</a>.</p><div class="book"><a id="gnu3-CHP-14-TABLE-5" class="calibre2"></a><p class="title2"><b class="calibre25">Table 14-5. Completion keys</b></p><div class="table-contents"><table summary="Completion keys" class="calibre8"><colgroup class="calibre9"><col class="calibre10"/><col class="calibre10"/></colgroup><thead class="calibre11"><tr class="calibre12"><th class="calibre26">
+                        <p class="copyright">Keystroke</p>
+                     </th><th class="calibre27">
+                        <p class="copyright">Action</p>
+                     </th></tr></thead><tbody class="calibre15"><tr class="calibre12"><td class="calibre28">
+                        <p class="copyright">
+                           <span><strong class="calibre5">Tab</strong></span>
+                        </p>
+                     </td><td class="calibre29">
+                        <p class="copyright">Completes the name as far as possible.</p>
+                     </td></tr><tr class="calibre12"><td class="calibre28">
+                        <p class="copyright">
+                           <span><strong class="calibre5">Space</strong></span>
+                        </p>
+                     </td><td class="calibre29">
+                        <p class="copyright">Completes the name out to the next punctuation character.</p>
+                     </td></tr><tr class="calibre12"><td class="calibre30">
+                        <p class="copyright">
+                           <span><strong class="calibre5">?</strong></span>
+                        </p>
+                     </td><td class="calibre31">
+                        <p class="copyright">Lists the choices at this point in a <code class="calibre21">*Completions*</code>
+window.</p>
+                     </td></tr></tbody></table></div></div><br class="book"/><p class="copyright">You will probably find <span><strong class="calibre5">Tab</strong></span> to be the
+most useful.</p><p class="copyright">As a running example, assume you have typed <span><strong class="calibre5">C-x
+C-f</strong></span> to visit a file, and the file you want to visit is a C
+program called <span><em class="calibre7">program.c</em></span>. Let's
+say you type <span><strong class="calibre5">pro</strong></span> and press <span><strong class="calibre5">Tab</strong></span>; Emacs responds by completing the name to
+the full <span><em class="calibre7">program.c</em></span>. If you press <span><strong class="calibre5">Space</strong></span>, Emacs completes only as far as
+<span><em class="calibre7">program</em></span>. After Emacs completes the name, you can
+press <span><strong class="calibre5">Enter</strong></span> to visit the file.</p><p class="copyright">How much of the name do you need to type in before you can use
+completion? That depends on the other possible choices in the given
+situation. If <span><em class="calibre7">program.c</em></span> were the only file in
+your directory, you could just type <span><strong class="calibre5">p</strong></span> and press <span><strong class="calibre5">Tab</strong></span>.<sup class="calibre6">[<a id="gnu3-CHP-14-FNOTE-2" href="#ftn.gnu3-CHP-14-FNOTE-2" class="calibre2">2</a>]</sup> If there were
+other files in your directory and none of them has a name beginning
+with <span><strong class="calibre5">p</strong></span>, you could do the same thing.
+But if you had a file called <span><em class="calibre7">problem.c</em></span>, you
+would have to type <span><strong class="calibre5">prog</strong></span> before you
+pressed Tab; in this case, <span><strong class="calibre5">prog</strong></span> is
+the shortest unambiguous prefix. If you just type in <span><strong class="calibre5">pro</strong></span> and press <span><strong class="calibre5">Tab</strong></span>, Emacs responds with a
+<code class="calibre21">*Completions*</code> window containing a list of the
+completion choices, in this case <span><em class="calibre7">program.c</em></span> and
+<span><em class="calibre7">problem.c</em></span>, and returns your cursor to the
+minibuffer so that you can finish typing the filename. The same thing
+happens if you typed a question mark instead of <span><strong class="calibre5">Tab</strong></span>. At this point, you can type <span><strong class="calibre5">g</strong></span> and press <span><strong class="calibre5">Tab</strong></span> again; Emacs completes the name to
+<span><em class="calibre7">program.c</em></span>.</p><p class="copyright">As another example, let's say you have documentation
+for your C program in the file <span><em class="calibre7">program.txt</em></span>, and
+you want to visit it. You press <span><strong class="calibre5">C-x
+C-f</strong></span> and type <span><strong class="calibre5">prog</strong></span> at the
+prompt, followed by <span><strong class="calibre5">Tab</strong></span>. Emacs
+completes out to <span><em class="calibre7">program</em></span>.. At this point, you
+can type <span><strong class="calibre5">t</strong></span> and press <span><strong class="calibre5">Tab</strong></span> again; Emacs completes the entire
+<span><em class="calibre7">program.txt</em></span>. In other words, you can use
+completion repeatedly when specifying a name.</p><p class="copyright">Finally, let's say you also have a file in your
+directory called simply <span><em class="calibre7">program</em></span>, which is the
+result of compiling your C file, but you still want to visit the
+documentation file. You type <span><strong class="calibre5">prog</strong></span>
+and press <span><strong class="calibre5">Tab</strong></span>; Emacs completes out
+to <span><em class="calibre7">program</em></span>. (including the period). At this
+point, <span><strong class="calibre5">Tab</strong></span> and <span><strong class="calibre5">Space</strong></span> do different things. If you press
+<span><strong class="calibre5">Tab</strong></span> again, Emacs responds with the
+message <code class="calibre21">[Complete, but not unique]</code> in the
+minibuffer, but if you press <span><strong class="calibre5">Space</strong></span>,
+Emacs assumes you aren't interested in the file
+<span><em class="calibre7">program</em></span> and attempts to complete further.
+Because you have the files <span><em class="calibre7">program.c</em></span> and
+<span><em class="calibre7">program.txt</em></span>, Emacs only completes out to
+<span><em class="calibre7">program</em></span>., and you have to type <span><strong class="calibre5">t</strong></span> and press <span><strong class="calibre5">Tab</strong></span> again.</p><p class="copyright">Completion works the same way with buffer names, for example, when
+you type <span><strong class="calibre5">C-x b</strong></span> to switch to another
+buffer in the current window. It also works with command names when
+you type <span><strong class="calibre5">M-x</strong></span>—but with one
+added feature. Notice that when you specify a file or buffer name, it
+is possible that the file or buffer you want doesn't
+yet exist (for example, when you want to create a new file). In this
+case, of course, you must type in the entire file or buffer name and
+press <span><strong class="calibre5">Enter</strong></span>. But when you type
+<span><strong class="calibre5">M-x</strong></span> for a command, there is no
+possibility of the command not existing. Therefore, Emacs
+automatically attempts to do completion on command names when you
+press <span><strong class="calibre5">Enter</strong></span>.</p><p class="copyright">For example, if you want to put a buffer for a text file in auto-fill
+mode (see <a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>), you can type <span><strong class="calibre5">M-x auto-f</strong></span> and press <span><strong class="calibre5">Enter</strong></span> instead of typing the entire <span><strong class="calibre5">M-x auto-fill-mode</strong></span>. If you type in a nonunique
+(ambiguous) prefix of a command name—for example, if you type
+<span><strong class="calibre5">M-x aut</strong></span>—and press <span><strong class="calibre5">Enter</strong></span>, then <span><strong class="calibre5">Enter</strong></span> acts just like <span><strong class="calibre5">Tab</strong></span>; in this case, it completes out to
+<span><strong class="calibre5">auto</strong></span>. If you press <span><strong class="calibre5">Enter</strong></span> again, Emacs responds with a
+<code class="calibre21">*Completions*</code> window listing the choices. To get
+<span><strong class="calibre5">auto-fill-mode</strong></span>, you have to type
+<span><strong class="calibre5">f</strong></span> and press <span><strong class="calibre5">Enter</strong></span> again.</p><p class="copyright">Completion on command names with <span><strong class="calibre5">Enter</strong></span> is <span><em class="calibre7">very</em></span> convenient.
+After you have used Emacs for a while, you will become familiar with
+the shortest unambiguous prefixes for commands you use often, and you
+can save a considerable amount of typing by using these prefixes
+instead of the full names.<sup class="calibre6">[<a id="gnu3-CHP-14-FNOTE-3" href="#ftn.gnu3-CHP-14-FNOTE-3" class="calibre2">3</a>]</sup>
+         </p><p class="copyright">Emacs can also do completion on the names of Emacs variables. In
+<a class="calibre2" href="ch02.html" title="Chapter 2. Editing">Chapter 2</a>, and elsewhere, we saw how you can
+use <span><strong class="calibre5">M-x set-variable</strong></span> to change the
+values of Emacs variables. The <span><strong class="calibre5">Enter</strong></span>
+feature just described works on variables as well as commands;
+therefore, you can use completion, including <span><strong class="calibre5">Enter</strong></span>, when doing <span><strong class="calibre5">M-x
+set-variable</strong></span>. Actually, commands and variables are both
+special kinds of Emacs Lisp <span><em class="calibre7">symbols</em></span>, and Emacs
+can do completion with <span><strong class="calibre5">Enter</strong></span> on all
+kinds of Lisp symbols. Completion on Lisp symbols comes in handy when
+you are using some of the help commands described earlier in this
+chapter.</p><div class="book" xml:lang="en"><div class="book"><div class="book"><div class="book"><h2 class="title1"><a id="gnu3-CHP-14-SECT-5.1" class="calibre1"></a>Customizing Completion</h2></div></div></div><p class="copyright">If you have read <a class="calibre2" href="ch10.html" title="Chapter 10. Customizing Emacs">Chapter 10</a> and are
+<a id="gnu3-CHP-14-ITERM-3000" class="calibre2"></a>
+               <a id="gnu3-CHP-14-ITERM-3001" class="calibre2"></a>comfortable
+with setting Emacs variables, you should know that a few variables
+can customize the way Emacs does completion. The variable <span><strong class="calibre5">completion-auto-help</strong></span> determines whether a
+<code class="calibre21">*Completions*</code> window automatically appears when
+you try to use <span><strong class="calibre5">Space</strong></span> or <span><strong class="calibre5">Tab</strong></span> on an ambiguous prefix. Its default is
+<span><strong class="calibre5">t</strong></span>, meaning that such windows
+automatically appear. If you set it to <span><strong class="calibre5">nil</strong></span>, instead of a
+<code class="calibre21">*Completions*</code> window appearing, Emacs just
+displays the message <code class="calibre21">[Next</code> 
+               <code class="calibre21">char not
+unique]</code> for a couple of seconds in the minibuffer.</p><p class="copyright">If you are a programmer or if you use text formatters like LATEX ,
+you will create files that are not meant for humans to read, such as
+object files created by compilers and print files created by text
+formatters. Ideally, you wouldn't want Emacs to
+bother with these files when you are doing completion; for example,
+if you have the files <span><em class="calibre7">program.c</em></span> and
+<span><em class="calibre7">program.o</em></span> (object-code output from the
+compiler), you want Emacs to recognize only the former. Emacs does
+have a feature that deals with this; indeed, you may already have
+noticed that in this kind of situation, if you type <span><strong class="calibre5">program</strong></span> and press <span><strong class="calibre5">Tab</strong></span>, Emacs ignores
+<span><em class="calibre7">program.o</em></span> and completes out to
+<span><em class="calibre7">program.c</em></span>. The variable <span><strong class="calibre5">completion-ignored-extensions</strong></span> controls this;
+it is a list of filename suffixes that Emacs ignores during filename
+completion. By default, the list includes tilde
+(<em class="calibre7"><code class="calibre21">~</code></em>) for Emacs backup files,
+<span><em class="calibre7">.o</em></span> for programmers, various suffixes for users,
+<span><em class="calibre7">.elc</em></span> (byte-compiled Emacs Lisp) for Emacs
+customizers, and others. (Of course, if you really want to look at
+these files, you can type their names manually.)</p><p class="copyright">You can add your own "ignored"
+suffix to the list by putting a line of this form in your
+<span><em class="calibre7">.emacs</em></span> file:</p><a id="I_14_tt713" class="calibre2"></a><pre class="programlisting">(setq completion-ignored-extensions
+      (cons "<em class="calibre7"><code class="calibre32">suffix</code></em>" completion-ignored-extensions))</pre><p class="copyright">For example, let's say you are doing text processing
+with a printer that prints PostScript, and your text processor
+produces print files with the suffix <span><em class="calibre7">.ps</em></span>. If you
+don't want to look at these files, put the following
+line in your <span><em class="calibre7">.emacs</em></span> file:</p><a id="I_14_tt714" class="calibre2"></a><pre class="programlisting">(setq completion-ignored-extensions
+      (cons ".ps" completion-ignored-extensions))</pre><p class="copyright">Finally, you can tell Emacs to ignore case distinctions when doing
+completion by setting the variable <span><strong class="calibre5">completion-ignore-case</strong></span> to <span><strong class="calibre5">t</strong></span> (or any value other than <span><strong class="calibre5">nil</strong></span>). Its default value is <span><strong class="calibre5">nil</strong></span>, meaning that Emacs respects case
+distinctions.</p></div><div class="book"><br class="book"/><hr class="calibre4"/><div class="book"><p class="copyright"><sup class="calibre6">[<a id="ftn.gnu3-CHP-14-FNOTE-2" href="#gnu3-CHP-14-FNOTE-2" class="calibre2">2</a>] </sup>You
+can't just press <span><strong class="calibre5">Tab</strong></span> without typing the <span><strong class="calibre5">p</strong></span> because the current and parent directories,
+named <em class="calibre7"><code class="calibre21">.</code></em> and <em class="calibre7"><code class="calibre21">..</code></em>,
+respectively, are also file choices. Normally, Emacs runs <span><strong class="calibre5">dired</strong></span> when you visit a file
+that's a directory.</p></div><div class="book"><p class="copyright"><sup class="calibre6">[<a id="ftn.gnu3-CHP-14-FNOTE-3" href="#gnu3-CHP-14-FNOTE-3" class="calibre2">3</a>] </sup>For example, if you make
+changes to your <span><em class="calibre7">.emacs</em></span> file regularly, you will
+appreciate that <span><strong class="calibre5">M-x eval-c</strong></span> is an
+acceptable prefix for <span><strong class="calibre5">M-x
+eval-current-buffer</strong></span>.</p></div></div></div></div>
+
+{% endraw %}
+

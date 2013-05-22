@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>The Pragmatic Bookshelf, LLC (383138)</dc:publisher>
+    <dc:rights>Copyright © 2012 The Pragmatic Bookshelf</dc:rights>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Drew Neil</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T21:57:35.238510+00:00"/>
+    <dc:title>Practical Vim (for Kathryn Amaral)</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="ISBN">978-1-934356-98-2</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">d53788f5-689b-4990-81ea-c0141032052a</dc:identifier>
+    <dc:subject>Pragmatic Bookshelf</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="calibre_raster_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="cover.xhtml" id="uce3b46d0-ec09-4397-abd2-7749e7518191" media-type="application/xhtml+xml"/>
+    <item href="f_0000.html" id="f_0000" media-type="application/xhtml+xml"/>
+    <item href="f_0001.html" id="f_0001" media-type="application/xhtml+xml"/>
+    <item href="f_0002.html" id="f_0002" media-type="application/xhtml+xml"/>
+    <item href="f_0003.html" id="f_0003" media-type="application/xhtml+xml"/>
+    <item href="f_0004.html" id="f_0004" media-type="application/xhtml+xml"/>
+    <item href="f_0005.html" id="f_0005" media-type="application/xhtml+xml"/>
+    <item href="f_0006.html" id="f_0006" media-type="application/xhtml+xml"/>
+    <item href="f_0007.html" id="f_0007" media-type="application/xhtml+xml"/>
+    <item href="f_0008.html" id="f_0008" media-type="application/xhtml+xml"/>
+    <item href="f_0009.html" id="f_0009" media-type="application/xhtml+xml"/>
+    <item href="f_0010.html" id="f_0010" media-type="application/xhtml+xml"/>
+    <item href="f_0011.html" id="f_0011" media-type="application/xhtml+xml"/>
+    <item href="f_0012.html" id="f_0012" media-type="application/xhtml+xml"/>
+    <item href="f_0013.html" id="f_0013" media-type="application/xhtml+xml"/>
+    <item href="f_0014.html" id="f_0014" media-type="application/xhtml+xml"/>
+    <item href="f_0015.html" id="f_0015" media-type="application/xhtml+xml"/>
+    <item href="f_0016.html" id="f_0016" media-type="application/xhtml+xml"/>
+    <item href="f_0017.html" id="f_0017" media-type="application/xhtml+xml"/>
+    <item href="f_0018.html" id="f_0018" media-type="application/xhtml+xml"/>
+    <item href="f_0019.html" id="f_0019" media-type="application/xhtml+xml"/>
+    <item href="f_0020.html" id="f_0020" media-type="application/xhtml+xml"/>
+    <item href="f_0021.html" id="f_0021" media-type="application/xhtml+xml"/>
+    <item href="f_0022.html" id="f_0022" media-type="application/xhtml+xml"/>
+    <item href="f_0023.html" id="f_0023" media-type="application/xhtml+xml"/>
+    <item href="f_0024.html" id="f_0024" media-type="application/xhtml+xml"/>
+    <item href="f_0025.html" id="f_0025" media-type="application/xhtml+xml"/>
+    <item href="f_0026.html" id="f_0026" media-type="application/xhtml+xml"/>
+    <item href="f_0027.html" id="f_0027" media-type="application/xhtml+xml"/>
+    <item href="f_0028.html" id="f_0028" media-type="application/xhtml+xml"/>
+    <item href="f_0029.html" id="f_0029" media-type="application/xhtml+xml"/>
+    <item href="f_0030.html" id="f_0030" media-type="application/xhtml+xml"/>
+    <item href="f_0031.html" id="f_0031" media-type="application/xhtml+xml"/>
+    <item href="f_0032.html" id="f_0032" media-type="application/xhtml+xml"/>
+    <item href="f_0033.html" id="f_0033" media-type="application/xhtml+xml"/>
+    <item href="f_0034.html" id="f_0034" media-type="application/xhtml+xml"/>
+    <item href="f_0035.html" id="f_0035" media-type="application/xhtml+xml"/>
+    <item href="f_0036.html" id="f_0036" media-type="application/xhtml+xml"/>
+    <item href="f_0037.html" id="f_0037" media-type="application/xhtml+xml"/>
+    <item href="f_0038.html" id="f_0038" media-type="application/xhtml+xml"/>
+    <item href="f_0039.html" id="f_0039" media-type="application/xhtml+xml"/>
+    <item href="f_0040.html" id="f_0040" media-type="application/xhtml+xml"/>
+    <item href="f_0041.html" id="f_0041" media-type="application/xhtml+xml"/>
+    <item href="f_0042.html" id="f_0042" media-type="application/xhtml+xml"/>
+    <item href="f_0043.html" id="f_0043" media-type="application/xhtml+xml"/>
+    <item href="f_0044.html" id="f_0044" media-type="application/xhtml+xml"/>
+    <item href="f_0045.html" id="f_0045" media-type="application/xhtml+xml"/>
+    <item href="f_0046.html" id="f_0046" media-type="application/xhtml+xml"/>
+    <item href="f_0047.html" id="f_0047" media-type="application/xhtml+xml"/>
+    <item href="f_0048.html" id="f_0048" media-type="application/xhtml+xml"/>
+    <item href="f_0049.html" id="f_0049" media-type="application/xhtml+xml"/>
+    <item href="f_0050.html" id="f_0050" media-type="application/xhtml+xml"/>
+    <item href="f_0051.html" id="f_0051" media-type="application/xhtml+xml"/>
+    <item href="f_0052.html" id="f_0052" media-type="application/xhtml+xml"/>
+    <item href="f_0053.html" id="f_0053" media-type="application/xhtml+xml"/>
+    <item href="f_0054.html" id="f_0054" media-type="application/xhtml+xml"/>
+    <item href="f_0055.html" id="f_0055" media-type="application/xhtml+xml"/>
+    <item href="f_0056.html" id="f_0056" media-type="application/xhtml+xml"/>
+    <item href="f_0057.html" id="f_0057" media-type="application/xhtml+xml"/>
+    <item href="f_0058.html" id="f_0058" media-type="application/xhtml+xml"/>
+    <item href="f_0059.html" id="f_0059" media-type="application/xhtml+xml"/>
+    <item href="f_0060.html" id="f_0060" media-type="application/xhtml+xml"/>
+    <item href="f_0061.html" id="f_0061" media-type="application/xhtml+xml"/>
+    <item href="f_0062.html" id="f_0062" media-type="application/xhtml+xml"/>
+    <item href="f_0063.html" id="f_0063" media-type="application/xhtml+xml"/>
+    <item href="f_0064.html" id="f_0064" media-type="application/xhtml+xml"/>
+    <item href="f_0065.html" id="f_0065" media-type="application/xhtml+xml"/>
+    <item href="f_0066.html" id="f_0066" media-type="application/xhtml+xml"/>
+    <item href="f_0067.html" id="f_0067" media-type="application/xhtml+xml"/>
+    <item href="f_0068.html" id="f_0068" media-type="application/xhtml+xml"/>
+    <item href="f_0069.html" id="f_0069" media-type="application/xhtml+xml"/>
+    <item href="f_0070.html" id="f_0070" media-type="application/xhtml+xml"/>
+    <item href="f_0071.html" id="f_0071" media-type="application/xhtml+xml"/>
+    <item href="f_0072.html" id="f_0072" media-type="application/xhtml+xml"/>
+    <item href="f_0073.html" id="f_0073" media-type="application/xhtml+xml"/>
+    <item href="f_0074.html" id="f_0074" media-type="application/xhtml+xml"/>
+    <item href="f_0075.html" id="f_0075" media-type="application/xhtml+xml"/>
+    <item href="f_0076.html" id="f_0076" media-type="application/xhtml+xml"/>
+    <item href="f_0077.html" id="f_0077" media-type="application/xhtml+xml"/>
+    <item href="f_0078.html" id="f_0078" media-type="application/xhtml+xml"/>
+    <item href="f_0079.html" id="f_0079" media-type="application/xhtml+xml"/>
+    <item href="f_0080.html" id="f_0080" media-type="application/xhtml+xml"/>
+    <item href="f_0081.html" id="f_0081" media-type="application/xhtml+xml"/>
+    <item href="f_0082.html" id="f_0082" media-type="application/xhtml+xml"/>
+    <item href="f_0083.html" id="f_0083" media-type="application/xhtml+xml"/>
+    <item href="f_0084.html" id="f_0084" media-type="application/xhtml+xml"/>
+    <item href="f_0085.html" id="f_0085" media-type="application/xhtml+xml"/>
+    <item href="f_0086.html" id="f_0086" media-type="application/xhtml+xml"/>
+    <item href="f_0087.html" id="f_0087" media-type="application/xhtml+xml"/>
+    <item href="f_0088.html" id="f_0088" media-type="application/xhtml+xml"/>
+    <item href="f_0089.html" id="f_0089" media-type="application/xhtml+xml"/>
+    <item href="f_0090.html" id="f_0090" media-type="application/xhtml+xml"/>
+    <item href="f_0091.html" id="f_0091" media-type="application/xhtml+xml"/>
+    <item href="f_0092.html" id="f_0092" media-type="application/xhtml+xml"/>
+    <item href="f_0093.html" id="f_0093" media-type="application/xhtml+xml"/>
+    <item href="f_0094.html" id="f_0094" media-type="application/xhtml+xml"/>
+    <item href="f_0095.html" id="f_0095" media-type="application/xhtml+xml"/>
+    <item href="f_0096.html" id="f_0096" media-type="application/xhtml+xml"/>
+    <item href="f_0097.html" id="f_0097" media-type="application/xhtml+xml"/>
+    <item href="f_0098.html" id="f_0098" media-type="application/xhtml+xml"/>
+    <item href="f_0099.html" id="f_0099" media-type="application/xhtml+xml"/>
+    <item href="f_0100.html" id="f_0100" media-type="application/xhtml+xml"/>
+    <item href="f_0101.html" id="f_0101" media-type="application/xhtml+xml"/>
+    <item href="f_0102.html" id="f_0102" media-type="application/xhtml+xml"/>
+    <item href="f_0103.html" id="f_0103" media-type="application/xhtml+xml"/>
+    <item href="f_0104.html" id="f_0104" media-type="application/xhtml+xml"/>
+    <item href="f_0105.html" id="f_0105" media-type="application/xhtml+xml"/>
+    <item href="f_0106.html" id="f_0106" media-type="application/xhtml+xml"/>
+    <item href="f_0107.html" id="f_0107" media-type="application/xhtml+xml"/>
+    <item href="f_0108.html" id="f_0108" media-type="application/xhtml+xml"/>
+    <item href="f_0109.html" id="f_0109" media-type="application/xhtml+xml"/>
+    <item href="f_0110.html" id="f_0110" media-type="application/xhtml+xml"/>
+    <item href="f_0111.html" id="f_0111" media-type="application/xhtml+xml"/>
+    <item href="f_0112.html" id="f_0112" media-type="application/xhtml+xml"/>
+    <item href="f_0113.html" id="f_0113" media-type="application/xhtml+xml"/>
+    <item href="f_0114.html" id="f_0114" media-type="application/xhtml+xml"/>
+    <item href="f_0115.html" id="f_0115" media-type="application/xhtml+xml"/>
+    <item href="f_0116.html" id="f_0116" media-type="application/xhtml+xml"/>
+    <item href="f_0117.html" id="f_0117" media-type="application/xhtml+xml"/>
+    <item href="f_0118.html" id="f_0118" media-type="application/xhtml+xml"/>
+    <item href="f_0119.html" id="f_0119" media-type="application/xhtml+xml"/>
+    <item href="f_0120.html" id="f_0120" media-type="application/xhtml+xml"/>
+    <item href="f_0121.html" id="f_0121" media-type="application/xhtml+xml"/>
+    <item href="f_0122.html" id="f_0122" media-type="application/xhtml+xml"/>
+    <item href="f_0123.html" id="f_0123" media-type="application/xhtml+xml"/>
+    <item href="f_0124.html" id="f_0124" media-type="application/xhtml+xml"/>
+    <item href="f_0125.html" id="f_0125" media-type="application/xhtml+xml"/>
+    <item href="f_0126.html" id="f_0126" media-type="application/xhtml+xml"/>
+    <item href="f_0127.html" id="f_0127" media-type="application/xhtml+xml"/>
+    <item href="f_0128.html" id="f_0128" media-type="application/xhtml+xml"/>
+    <item href="f_0129.html" id="f_0129" media-type="application/xhtml+xml"/>
+    <item href="f_0130.html" id="f_0130" media-type="application/xhtml+xml"/>
+    <item href="f_0131.html" id="f_0131" media-type="application/xhtml+xml"/>
+    <item href="f_0132.html" id="f_0132" media-type="application/xhtml+xml"/>
+    <item href="f_0133.html" id="f_0133" media-type="application/xhtml+xml"/>
+    <item href="f_0134.html" id="f_0134" media-type="application/xhtml+xml"/>
+    <item href="f_0135.html" id="f_0135" media-type="application/xhtml+xml"/>
+    <item href="f_0136.html" id="f_0136" media-type="application/xhtml+xml"/>
+    <item href="f_0137.html" id="f_0137" media-type="application/xhtml+xml"/>
+    <item href="f_0138.html" id="f_0138" media-type="application/xhtml+xml"/>
+    <item href="f_0139.html" id="f_0139" media-type="application/xhtml+xml"/>
+    <item href="f_0140.html" id="f_0140" media-type="application/xhtml+xml"/>
+    <item href="f_0141.html" id="f_0141" media-type="application/xhtml+xml"/>
+    <item href="f_0142.html" id="f_0142" media-type="application/xhtml+xml"/>
+    <item href="f_0143.html" id="f_0143" media-type="application/xhtml+xml"/>
+    <item href="f_0144.html" id="f_0144" media-type="application/xhtml+xml"/>
+    <item href="f_0145.html" id="f_0145" media-type="application/xhtml+xml"/>
+    <item href="f_0146.html" id="f_0146" media-type="application/xhtml+xml"/>
+    <item href="f_0147.html" id="f_0147" media-type="application/xhtml+xml"/>
+    <item href="f_0148.html" id="f_0148" media-type="application/xhtml+xml"/>
+    <item href="f_0149.html" id="f_0149" media-type="application/xhtml+xml"/>
+    <item href="f_0150.html" id="f_0150" media-type="application/xhtml+xml"/>
+    <item href="f_0151.html" id="f_0151" media-type="application/xhtml+xml"/>
+    <item href="f_0152.html" id="f_0152" media-type="application/xhtml+xml"/>
+    <item href="f_0153.html" id="f_0153" media-type="application/xhtml+xml"/>
+    <item href="f_0154.html" id="f_0154" media-type="application/xhtml+xml"/>
+    <item href="f_0155.html" id="f_0155" media-type="application/xhtml+xml"/>
+    <item href="f_0156.html" id="f_0156" media-type="application/xhtml+xml"/>
+    <item href="f_0157.html" id="f_0157" media-type="application/xhtml+xml"/>
+    <item href="f_0158.html" id="f_0158" media-type="application/xhtml+xml"/>
+    <item href="f_0159.html" id="f_0159" media-type="application/xhtml+xml"/>
+    <item href="f_0160.html" id="f_0160" media-type="application/xhtml+xml"/>
+    <item href="f_0161.html" id="f_0161" media-type="application/xhtml+xml"/>
+    <item href="f_0162.html" id="f_0162" media-type="application/xhtml+xml"/>
+    <item href="f_0163.html" id="f_0163" media-type="application/xhtml+xml"/>
+    <item href="f_0164.html" id="f_0164" media-type="application/xhtml+xml"/>
+    <item href="f_0165.html" id="f_0165" media-type="application/xhtml+xml"/>
+    <item href="f_0166.html" id="f_0166" media-type="application/xhtml+xml"/>
+    <item href="f_0167.html" id="f_0167" media-type="application/xhtml+xml"/>
+    <item href="f_0168.html" id="f_0168" media-type="application/xhtml+xml"/>
+    <item href="f_0169.html" id="f_0169" media-type="application/xhtml+xml"/>
+    <item href="f_0170.html" id="f_0170" media-type="application/xhtml+xml"/>
+    <item href="f_0171.html" id="f_0171" media-type="application/xhtml+xml"/>
+    <item href="f_0172.html" id="f_0172" media-type="application/xhtml+xml"/>
+    <item href="fonts/DejaVuSans.ttf" id="added1" media-type="application/x-font-truetype"/>
+    <item href="fonts/DroidSans.ttf" id="DroidSans" media-type="font/opentype"/>
+    <item href="fonts/DroidSansMono.ttf" id="DroidSansMono" media-type="font/opentype"/>
+    <item href="images/_covers/actb.jpg" id="cover-actb" media-type="image/jpeg"/>
+    <item href="images/_covers/bhtmux.jpg" id="cover-bhtmux" media-type="image/jpeg"/>
+    <item href="images/_covers/btlang.jpg" id="cover-btlang" media-type="image/jpeg"/>
+    <item href="images/_covers/dccar.jpg" id="cover-dccar" media-type="image/jpeg"/>
+    <item href="images/_covers/hklean.jpg" id="cover-hklean" media-type="image/jpeg"/>
+    <item href="images/_covers/kcdc.jpg" id="cover-kcdc" media-type="image/jpeg"/>
+    <item href="images/_covers/olag.jpg" id="cover-olag" media-type="image/jpeg"/>
+    <item href="images/_covers/pg_git.jpg" id="cover-pg_git" media-type="image/jpeg"/>
+    <item href="images/_covers/pg_js.jpg" id="cover-pg_js" media-type="image/jpeg"/>
+    <item href="images/_covers/rwdata.jpg" id="cover-rwdata" media-type="image/jpeg"/>
+    <item href="images/_covers/tbcoffee.jpg" id="cover-tbcoffee" media-type="image/jpeg"/>
+    <item href="images/_covers/wbdev.jpg" id="cover-wbdev" media-type="image/jpeg"/>
+    <item href="images/auto-complete-spelling.png" id="img13" media-type="image/png"/>
+    <item href="images/cell-division.png" id="img1" media-type="image/png"/>
+    <item href="images/compl-omni-css-combined.png" id="img11" media-type="image/png"/>
+    <item href="images/cover.jpg" id="cover-image" media-type="image/jpeg"/>
+    <item href="images/dictionary-completion.png" id="img10" media-type="image/png"/>
+    <item href="images/h1-underline.gif" id="added" media-type="image/gif"/>
+    <item href="images/information.png" id="info-image" media-type="image/png"/>
+    <item href="images/lorem-ipsum-wrapped.png" id="img5" media-type="image/png"/>
+    <item href="images/netrw-mac_classic.png" id="img3" media-type="image/png"/>
+    <item href="images/ninjas.png" id="img7" media-type="image/png"/>
+    <item href="images/open_box.png" id="info-openbox" media-type="image/png"/>
+    <item href="images/robots.png" id="img8" media-type="image/png"/>
+    <item href="images/she_sells_sea_shells.png" id="img9" media-type="image/png"/>
+    <item href="images/split-explorer.png" id="img4" media-type="image/png"/>
+    <item href="images/tab-pages.png" id="img2" media-type="image/png"/>
+    <item href="images/wordmotions.png" id="img6" media-type="image/png"/>
+    <item href="images/yoru-mum.png" id="img12" media-type="image/png"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="scripts/book_local.js" id="book_local-js" media-type="text/javascript"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="f_0000"/>
+    <itemref idref="f_0001"/>
+    <itemref idref="f_0002"/>
+    <itemref idref="f_0003"/>
+    <itemref idref="f_0004"/>
+    <itemref idref="f_0005"/>
+    <itemref idref="f_0006"/>
+    <itemref idref="f_0007"/>
+    <itemref idref="f_0008"/>
+    <itemref idref="f_0009"/>
+    <itemref idref="f_0010"/>
+    <itemref idref="f_0011"/>
+    <itemref idref="f_0012"/>
+    <itemref idref="f_0013"/>
+    <itemref idref="f_0014"/>
+    <itemref idref="f_0015"/>
+    <itemref idref="f_0016"/>
+    <itemref idref="f_0017"/>
+    <itemref idref="f_0018"/>
+    <itemref idref="f_0019"/>
+    <itemref idref="f_0020"/>
+    <itemref idref="f_0021"/>
+    <itemref idref="f_0022"/>
+    <itemref idref="f_0023"/>
+    <itemref idref="f_0024"/>
+    <itemref idref="f_0025"/>
+    <itemref idref="f_0026"/>
+    <itemref idref="f_0027"/>
+    <itemref idref="f_0028"/>
+    <itemref idref="f_0029"/>
+    <itemref idref="f_0030"/>
+    <itemref idref="f_0031"/>
+    <itemref idref="f_0032"/>
+    <itemref idref="f_0033"/>
+    <itemref idref="f_0034"/>
+    <itemref idref="f_0035"/>
+    <itemref idref="f_0036"/>
+    <itemref idref="f_0037"/>
+    <itemref idref="f_0038"/>
+    <itemref idref="f_0039"/>
+    <itemref idref="f_0040"/>
+    <itemref idref="f_0041"/>
+    <itemref idref="f_0042"/>
+    <itemref idref="f_0043"/>
+    <itemref idref="f_0044"/>
+    <itemref idref="f_0045"/>
+    <itemref idref="f_0046"/>
+    <itemref idref="f_0047"/>
+    <itemref idref="f_0048"/>
+    <itemref idref="f_0049"/>
+    <itemref idref="f_0050"/>
+    <itemref idref="f_0051"/>
+    <itemref idref="f_0052"/>
+    <itemref idref="f_0053"/>
+    <itemref idref="f_0054"/>
+    <itemref idref="f_0055"/>
+    <itemref idref="f_0056"/>
+    <itemref idref="f_0057"/>
+    <itemref idref="f_0058"/>
+    <itemref idref="f_0059"/>
+    <itemref idref="f_0060"/>
+    <itemref idref="f_0061"/>
+    <itemref idref="f_0062"/>
+    <itemref idref="f_0063"/>
+    <itemref idref="f_0064"/>
+    <itemref idref="f_0065"/>
+    <itemref idref="f_0066"/>
+    <itemref idref="f_0067"/>
+    <itemref idref="f_0068"/>
+    <itemref idref="f_0069"/>
+    <itemref idref="f_0070"/>
+    <itemref idref="f_0071"/>
+    <itemref idref="f_0072"/>
+    <itemref idref="f_0073"/>
+    <itemref idref="f_0074"/>
+    <itemref idref="f_0075"/>
+    <itemref idref="f_0076"/>
+    <itemref idref="f_0077"/>
+    <itemref idref="f_0078"/>
+    <itemref idref="f_0079"/>
+    <itemref idref="f_0080"/>
+    <itemref idref="f_0081"/>
+    <itemref idref="f_0082"/>
+    <itemref idref="f_0083"/>
+    <itemref idref="f_0084"/>
+    <itemref idref="f_0085"/>
+    <itemref idref="f_0086"/>
+    <itemref idref="f_0087"/>
+    <itemref idref="f_0088"/>
+    <itemref idref="f_0089"/>
+    <itemref idref="f_0090"/>
+    <itemref idref="f_0091"/>
+    <itemref idref="f_0092"/>
+    <itemref idref="f_0093"/>
+    <itemref idref="f_0094"/>
+    <itemref idref="f_0095"/>
+    <itemref idref="f_0096"/>
+    <itemref idref="f_0097"/>
+    <itemref idref="f_0098"/>
+    <itemref idref="f_0099"/>
+    <itemref idref="f_0100"/>
+    <itemref idref="f_0101"/>
+    <itemref idref="f_0102"/>
+    <itemref idref="f_0103"/>
+    <itemref idref="f_0104"/>
+    <itemref idref="f_0105"/>
+    <itemref idref="f_0106"/>
+    <itemref idref="f_0107"/>
+    <itemref idref="f_0108"/>
+    <itemref idref="f_0109"/>
+    <itemref idref="f_0110"/>
+    <itemref idref="f_0111"/>
+    <itemref idref="f_0112"/>
+    <itemref idref="f_0113"/>
+    <itemref idref="f_0114"/>
+    <itemref idref="f_0115"/>
+    <itemref idref="f_0116"/>
+    <itemref idref="f_0117"/>
+    <itemref idref="f_0118"/>
+    <itemref idref="f_0119"/>
+    <itemref idref="f_0120"/>
+    <itemref idref="f_0121"/>
+    <itemref idref="f_0122"/>
+    <itemref idref="f_0123"/>
+    <itemref idref="f_0124"/>
+    <itemref idref="f_0125"/>
+    <itemref idref="f_0126"/>
+    <itemref idref="f_0127"/>
+    <itemref idref="f_0128"/>
+    <itemref idref="f_0129"/>
+    <itemref idref="f_0130"/>
+    <itemref idref="f_0131"/>
+    <itemref idref="f_0132"/>
+    <itemref idref="f_0133"/>
+    <itemref idref="f_0134"/>
+    <itemref idref="f_0135"/>
+    <itemref idref="f_0136"/>
+    <itemref idref="f_0137"/>
+    <itemref idref="f_0138"/>
+    <itemref idref="f_0139"/>
+    <itemref idref="f_0140"/>
+    <itemref idref="f_0141"/>
+    <itemref idref="f_0142"/>
+    <itemref idref="f_0143"/>
+    <itemref idref="f_0144"/>
+    <itemref idref="f_0145"/>
+    <itemref idref="f_0146"/>
+    <itemref idref="f_0147"/>
+    <itemref idref="f_0148"/>
+    <itemref idref="f_0149"/>
+    <itemref idref="f_0150"/>
+    <itemref idref="f_0151"/>
+    <itemref idref="f_0152"/>
+    <itemref idref="f_0153"/>
+    <itemref idref="f_0154"/>
+    <itemref idref="f_0155"/>
+    <itemref idref="f_0156"/>
+    <itemref idref="f_0157"/>
+    <itemref idref="f_0158"/>
+    <itemref idref="f_0159"/>
+    <itemref idref="f_0160"/>
+    <itemref idref="f_0161"/>
+    <itemref idref="f_0162"/>
+    <itemref idref="f_0163"/>
+    <itemref idref="f_0164"/>
+    <itemref idref="f_0165"/>
+    <itemref idref="f_0166"/>
+    <itemref idref="f_0167"/>
+    <itemref idref="f_0168"/>
+    <itemref idref="f_0169"/>
+    <itemref idref="f_0170"/>
+    <itemref idref="f_0171"/>
+    <itemref idref="f_0172"/>
+  </spine>
+  <guide>
+    <reference href="calibre_raster_cover.jpg" type="cover" title="Cover"/>
+    <reference href="cover.xhtml" type="other.titlepage" title="Title Page"/>
+  </guide>
+</package>

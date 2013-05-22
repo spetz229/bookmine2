@@ -1,0 +1,40 @@
+---
+layout: page
+title: "The Little Book on CoffeeScript"
+prev: OEBPS/ch01s02.html
+next: OEBPS/ch01s04.html
+book_path: books/alex-maccaw-the-little-book-on-coffeescript-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Object Literals and Array Definition"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect11_d1e644" class="calibre2"></a>Object Literals and Array Definition</h1></div></div></div><p class="calibre8">Object literals can be specified exactly as in JavaScript, with a
+    pair of braces and key/value
+    statements. However, like with function invocation, CoffeeScript makes the
+    braces optional. In fact, you can also use indentation and new lines
+    instead of comma separation:</p><pre class="screen">object1 = {one: 1, two: 2}
+
+# Without braces
+object2 = one: 1, two: 2
+
+# Using new lines instead of commas
+object3 = 
+  one: 1
+  two: 2
+
+User.create(name: "John Smith")</pre><p class="calibre8">Likewise, arrays can use white space instead of comma separators,
+    although the square brackets (<code class="literal">[]</code>) are
+    still required:</p><pre class="screen">array1 = [1, 2, 3]
+
+array2 = [
+  1
+  2
+  3
+]
+
+array3 = [1,2,3,]</pre><p class="calibre8">As you can see in this example, CoffeeScript has also stripped the
+    trailing comma in <code class="literal">array3</code>, another
+    common source of cross-browser errors.</p></div></div>
+
+{% endraw %}
+

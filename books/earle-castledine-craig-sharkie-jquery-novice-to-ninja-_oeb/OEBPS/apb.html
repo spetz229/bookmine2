@@ -1,0 +1,439 @@
+---
+layout: page
+title: "jQuery: Novice to Ninja"
+prev: OEBPS/apa.html
+next: OEBPS/apc.html
+book_path: books/earle-castledine-craig-sharkie-jquery-novice-to-ninja-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="toc" title="Appendix B. JavaScript Tidbits"><div class="toc"><div class="toc"><div class="toc"><h1 class="title"><a xmlns:saxon="http://icl.com/saxon" id="appendix_jstidbits" class="calibre5"></a>Appendix B. JavaScript Tidbits</h1></div></div></div>
+  
+      
+
+  
+      We can’t stress this enough: jQuery is just JavaScript, so the best
+  way to improve your jQuery skills is to brush up on your JavaScript
+  knowledge! We’ll have a look now at a few aspects of JavaScript we used
+  throughout the book that you might be wondering about.
+
+  
+      <div class="tip" title="Note: Learning More about JavaScript"><h3 class="title2">Note: Learning More about JavaScript</h3>
+    
+         
+
+    
+         If you’re looking to take your JavaScript to the next level, we
+    highly recommend <a id="chb-001"></a>Douglas Crockford’s <em class="calibre8">JavaScript: The Good
+    Parts</em> (Sebastopol: O’Reilly, 2008). It’s not particularly
+    light reading, but it’s a succinct and pragmatic explanation of how and
+    why JavaScript rocks!
+  
+      </div>
+
+  
+      <div class="toc" title="Type Coercion"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e14484" class="calibre5"></a>Type Coercion<a id="chb-002" class="calibre5"></a>
+            <a id="chb-002d" class="calibre5"></a>
+            <a id="chb-002a" class="calibre5"></a>
+            <a id="chb-002b" class="calibre5"></a>
+            <a id="chb-002c" class="calibre5"></a>
+         </h2></div></div></div>
+    
+         
+
+    
+         JavaScript is what’s known as a loosely typed language. Some
+    languages, such as Java, are strictly typed: this means that the type of a
+    variable must be set when the variable is declared. JavaScript, on the
+    other hand, allows for variables to be <span><strong class="calibre9">coerced</strong></span>.
+    That is, their type can change depending on what we require of
+    them:
+
+    
+         <pre class="programlisting">var a = 2;
+var b = "two";
+var c = "2";
+alert(typeof a);// alerts "number"
+alert(typeof b);// alerts "string"
+alert(typeof c);// alerts "string"</pre>
+
+    
+         No surprises here: the variables are behaving as we expect. It looks
+    different, though, when we ask JavaScript to take its best guess at what
+    type we <span><em class="calibre8">want</em></span> the variables to be:
+
+    
+         <pre class="programlisting">alert(a * a);// alerts 4
+alert(a + b);// alerts 2two
+alert(a * c);// alerts 4
+alert(typeof (a * a));// alerts "number"
+alert(typeof (a + b));// alerts "string"
+alert(typeof (a * c));// alerts "number"</pre>
+
+    
+         When we “add” a string and a number using the <code class="email">+</code>
+    operator, JavaScript assumes we’re trying to concatenate the two, so it
+    creates a new string. It would appear to change the number’s variable type
+    to <code class="email">string</code>. When we use the multiplication operator
+    (<code class="email">*</code>), though, JavaScript assumes that we want to treat
+    the two variables as numbers.
+
+    
+         The variable itself remains the same throughout, it’s just treated
+    differently. We can always explicitly tell JavaScript how we intend to
+    treat a variable, but if we don’t, we need to understand just what
+    JavaScript is doing for us. Here’s another example:
+
+    
+         <pre class="programlisting">alert(a + c);// alerts 22 
+alert(a + parseInt(c));// alerts 4</pre>
+
+    
+         <div class="tip" title="Note: jQuery Knows It’s JavaScript"><h3 class="title2">Note: jQuery Knows It’s JavaScript</h3>
+      
+            
+
+      
+            
+               <a id="chb-003b"></a>jQuery can help us out a bit in this area too, using the
+      <a id="chb-003"></a>
+               <code class="email">$.type</code> helper function. This function
+      accepts a variable or expression and returns its type. For example,
+      entering <code class="email">$.type(5)</code> will return “number,” and
+      <code class="email">$.type([]</code>) will return “array.”<a id="d4e14522"></a>
+               <a id="d4e14523"></a>
+               <a id="d4e14524"></a>
+               <a id="d4e14525"></a>
+               <a id="d4e14526"></a>
+            
+    
+         </div>
+  
+      </div>
+
+  
+      <div class="toc" title="Equality Operators"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e14527" class="calibre5"></a>Equality Operators<a id="chb-005" class="calibre5"></a>
+            <a id="chb-005a" class="calibre5"></a>
+         </h2></div></div></div>
+    
+         
+
+    
+         The equal sign (<code class="email">=</code>) and its related operators can
+    also provide a trap for young players. And where it was once just a little
+    odd, it became even more so in JavaScript 1.3. The first trick is that the
+    equal sign has a different meaning to that which you’ll remember from your
+    school mathematics classes:
+
+    
+         <pre class="programlisting">var a = 2;
+var b = "2";</pre>
+
+    
+         
+            <a id="chb-006"></a>
+            <a id="chb-006a"></a>A single equal sign is an <span><strong class="calibre9">assignment
+    operator</strong></span>, and is used to assign values to variables. We all
+    knew what it did, but now we know what it’s called:
+
+    
+         <pre class="programlisting">var c = (a == b);</pre>
+
+    
+         
+            <a id="chb-007"></a>
+            <a id="chb-007a"></a>Two <code class="email">=</code> signs together,
+    <code class="email">==</code>, is the <span><strong class="calibre9">equality operator</strong></span>,
+    and establishes a Boolean value. In our example, the variable
+    <code class="email">c</code> will have a value of <code class="email">true</code>, as
+    JavaScript compares the values before and after the equality operator, and
+    considers them to be equal. Using the equality operator, JavaScript pays
+    no heed to the variable’s type, and attempts to coerce the values to
+    assess them.
+
+    
+         Switch out the first equal sign for an exclamation mark, and you
+    have yourself an <a id="chb-008"></a>
+            <a id="chb-008a"></a>
+            <span><strong class="calibre9">inequality operator</strong></span>
+    (<code class="email">!=</code>). This operator will return
+    <code class="email">false</code> if the variables are equal, or
+    <code class="email">true</code> if they aren’t:
+
+    
+         <pre class="programlisting">var d = (a != b);</pre>
+
+    
+         The variable <code class="email">d</code> will now have a value of
+    <code class="email">false</code>, since <code class="email">a</code> and
+    <code class="email">b</code> are equal. It may be a little complex, but at least
+    it’s consistent.
+
+    
+         
+            <a id="chb-009"></a>In JavaScript 1.3, the situation became less simple still,
+    with the introduction of one further operator: the <a id="chb-009a"></a>
+            <span><strong class="calibre9">strict equality operator</strong></span>, shown as
+    <code class="email">===</code>.
+
+    
+         <pre class="programlisting">var e = (a === b);</pre>
+
+    
+         The strict equality operator differs from the equality operator, in
+    that it pays strict attention to <span><em class="calibre8">type</em></span> as well as
+    value when it assigns its Boolean. In the above case, <code class="email">d</code>
+    is set to <code class="email">false</code>: while <code class="email">a</code> and
+    <code class="email">b</code> both have a value of 2, they have different
+    types.<a id="d4e14587"></a>
+            <a id="d4e14588"></a>
+         
+
+    
+         
+            <a id="chb-010"></a>
+            <a id="chb-010a"></a>And as you might have guessed, where the inequality operator
+    was paired with the equality operator, the strict equality operator has a
+    corresponding <span><strong class="calibre9">strict inequality operator</strong></span>:
+
+    
+         <pre class="programlisting">var f = (a !== b);</pre>
+
+    
+         In this case the variable <code class="email">f</code> will return
+    <code class="email">true</code>, as we know the two compared variables are of
+    different types, though similar values.<a id="d4e14600"></a>
+            <a id="d4e14601"></a>
+         
+
+    
+         Suffice to say that some equal signs are more equal than
+    others!<a id="d4e14603"></a>
+            <a id="d4e14604"></a>
+         
+  
+      </div>
+
+  
+      <div class="toc" title="Truthiness and Falsiness"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e14605" class="calibre5"></a>Truthiness and Falsiness</h2></div></div></div>
+    
+         
+
+    
+         JavaScript’s <a id="chb-011"></a>Boolean type has two possible values:
+    <code class="email">true</code> and <code class="email">false</code>:
+
+    
+         <pre class="programlisting">var jQueryIsFun = true;
+var javaScriptIsJava = false;</pre>
+
+    
+         But we know that JavaScript likes to be trickier than this. In
+    reality, there are a multitude of ways that variables can evaluate to
+    <code class="email">true</code> or <code class="email">false</code>. These values are
+    referred to as being <a id="chb-012"></a>
+            <span><strong class="calibre9">truthy</strong></span> or
+    <span><strong class="calibre9">falsy</strong></span>. So when we write <code class="email">if(variable) { …
+    }</code>, <code class="email">variable</code> need not be a Boolean value: the
+    code between the brackets will run if <code class="email">variable</code> contains
+    the number 5, or the string <code class="email">"Hello World!"</code>, or even an
+    empty array. Any value that acts as though it were the Boolean value
+    <code class="email">true</code> in this type of context is called
+    <span><em class="calibre8">truthy</em></span>, and <a id="chb-0119"></a>any value that acts like <code class="email">false</code> is called
+    <span><em class="calibre8">falsy</em></span>.
+
+    
+         JavaScript treats all these values as truthy:
+
+    
+         <div class="toc"><ul class="itemizedlist"><li class="listitem">
+        
+               
+                  <code class="email">true</code>
+               
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">1</code> (because it’s a non-zero number)
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">"0"</code> (because it’s a non-empty string)
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">"false"</code> (because it’s a non-empty
+        string)
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">function() {}</code> (any function)
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">{}</code> (any object)
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">[]</code> (any array)<a id="d4e14653"></a>
+               
+      
+            </li></ul></div>
+
+    
+         
+            <a id="chb-013"></a>And these values are falsy:
+
+    
+         <div class="toc"><ul class="itemizedlist"><li class="listitem">
+        
+               
+                  <code class="email">false</code>
+               
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">0</code> (the number zero)
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">""</code> (an empty string)
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">null</code>
+               
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">undefined</code>
+               
+      
+            </li><li class="listitem">
+        
+               
+                  <code class="email">NaN</code> (a special number value meaning Not a
+        Number)<a id="d4e14676"></a>
+               
+      
+            </li></ul></div>
+
+    
+         
+            <a id="chb-014a"></a>
+            <a id="chb-014"></a>These values can be combined with the logical NOT operator
+    to great effect. A single exclamation mark is used:
+
+    
+         <pre class="programlisting">var a = 0;
+var b = 1;
+
+if (!b) {
+  // do something
+}
+else if (!a) {
+  // do something else
+}</pre>
+
+    
+         The logical NOT operator returns <code class="email">true</code> if the
+    value of the variable is <code class="email">false</code> and, conversely, it will
+    return <code class="email">false</code> if the value is <code class="email">true</code>.
+    In the example above, <code class="email">b</code> is truthy and so
+    <code class="email">!b</code> returns <code class="email">false</code>, and
+    <code class="email">a</code> is falsy so <code class="email">!a</code> returns
+    <code class="email">true</code>—so the code in the <code class="email">else if</code>
+    block would execute.
+
+    
+         It’s important to remember that while a value may be <code class="email">==
+    true</code>, it may only be truthy, and not strictly
+    <code class="email">true</code>:
+
+    
+         <pre class="programlisting">var a = true;
+var b = 1;
+
+alert(a == b);// alerts true
+alert(a === b);// alerts false
+alert(a != b); // alerts false
+alert(a !== b); // alerts true<a id="d4e14699"></a>
+            <a id="d4e14700"></a>
+         </pre>
+
+    
+         If you have the option, always elect to use the Boolean values of
+    <code class="email">true</code> and <code class="email">false</code>. If there’s one thing
+    that’s undoubtedly true, it’s that hunting down a truthy or falsy logic
+    error is truly painstaking!
+
+    
+         <div class="tip" title="Note: It’s Not Even THAT Simple"><h3 class="title2">Note: It’s Not Even THAT Simple</h3>
+      
+            
+
+      
+            
+               <a id="chb-015"></a>
+               <a id="chb-015a"></a>As we’re in an appendix, it’s worth mentioning here that
+      <code class="email">x === null || x === undefined</code> is equivalent to
+      <code class="email">x == null</code>. This is one case where double-equal should
+      be used!<a id="d4e14713"></a>
+            
+    
+         </div>
+  
+      </div>
+
+  
+      <div class="toc" title="Unmasking jQuery"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e14714" class="calibre5"></a>Unmasking jQuery</h2></div></div></div>
+    
+         
+
+    
+         As we’ve mentioned before, jQuery isn’t magical. It’s just
+    JavaScript. And as JavaScript continues to improve, many of the holes that
+    jQuery filled are being patched.
+
+    
+         Here are some comparisons on <a id="chb-020"></a>
+            <a id="chb-020a"></a>jQuery versus plain old JavaScript: <pre class="programlisting">$("div"); // in jQuery
+document.querySelectorAll("div"); // in JavaScript</pre>
+            <pre class="programlisting">$("&lt;div/&gt;"); // in jQuery
+document.createElement("div"); // in JavaScript</pre>
+            <pre class="programlisting">myElement.addClass("classy"); // in jQuery
+newDiv.classList.add("classy"); // in JavaScript</pre>
+            <pre class="programlisting">newDiv.toggleClass("classy"); // in jQuery
+newDiv.classList.toggle("classy"); // in JavaScript</pre>
+            <pre class="programlisting">$("#myElement").next(); // in jQuery
+document.getElementById("myElement").nextSibling; // in JavaScript</pre>Even
+    from these short examples, you can see that jQuery is more succinct.
+    Additionally, the JavaScript version uses new features unavailable in all
+    older browsers. What’s important to realize is that jQuery is a wrapper,
+    and understanding what is underneath that wrapper will make you better at
+    JavaScript, jQuery, and web development in general.
+
+    
+         And if you’re just writing a small proof-of-concept demo, it may be
+    unnecessary for you to even reach for that jQuery include after
+    all.<a id="d4e14730"></a>
+            <a id="d4e14731"></a>
+         
+  
+      </div>
+
+   </div></div>
+
+{% endraw %}
+

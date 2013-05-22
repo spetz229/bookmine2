@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:description>Книга Эдварда Йордона «Путь камикадзе» представляет собой полное руководство по выживанию в безнадёжных проектах, предназначенное для разработчиков программного обеспечения. Практически каждому разработчику ПО и менеджеру приходится сталкиваться с проектами, характеризующимися никуда не годными персоналом, планом и бюджетом, т.е. проектами, обречёнными на неудачу. В условиях реинжиниринга корпораций безнадёжные проекты становятся «стилем жизни» многих организаций. Книга Эдварда Йордона является руководством по решению следующих проблем: выживание в проектах, обречённых на неудачу; достижение оптимальных соглашений во время переговоров; управление персоналом и расстановка приоритетов; выбор средств и технологий; определение момента, когда уже пора выйти изпроекта. Эдвард Йордон применяет свою уникальную технологию и интуицию менеджера к наихудшим вариантам софтверных проектов, показывая, как максимально повысить шансы на успех, или, по крайней мере, вывести вашу карьеру из-под удара. Шаг за шагом Йордон проходит все стадии жизненного цикла проекта, учит менеджеров и разработчиков правильно вести себя с заказчиками и оптимально использовать доступные ресурсы, включая людей, средства, процессы и технологию. Учитесь проявлять необходимую гибкость при проведении переговоров, расставлять осмысленные приоритеты и… вовремя выходить из проекта. Если вам когда-либо требовалось совершить невозможное, «Путь камикадзе» – ваша книга.</dc:description>
+    <dc:language>ru</dc:language>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">Эдвард  Йордон</dc:creator>
+    <meta name="calibre:timestamp" content="2013-05-21T22:04:34.148018+00:00"/>
+    <dc:title>Путь камикадзе [Смертельный марш]</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:contributor opf:role="bkp">calibre (0.9.28) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">d11d38f1-5797-4331-b529-7c05c6d10cff</dc:identifier>
+  </metadata>
+  <manifest>
+    <item href="images/calibre_cover.jpg" id="cover" media-type="image/jpeg"/>
+    <item href="PZYI_QGSOQGK-LWYLRITHP_SGWE.html" id="id1" media-type="application/xhtml+xml"/>
+    <item href="images/00001.jpg" id="id3" media-type="image/jpeg"/>
+    <item href="images/00002.jpg" id="id4" media-type="image/jpeg"/>
+    <item href="images/00003.jpg" id="id5" media-type="image/jpeg"/>
+    <item href="images/00004.jpg" id="id6" media-type="image/jpeg"/>
+    <item href="images/00005.jpg" id="id7" media-type="image/jpeg"/>
+    <item href="images/00006.jpg" id="id8" media-type="image/jpeg"/>
+    <item href="images/00007.jpg" id="id9" media-type="image/jpeg"/>
+    <item href="images/00008.jpg" id="id10" media-type="image/jpeg"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id1"/>
+  </spine>
+  <guide>
+    <reference href="PZYI_QGSOQGK-LWYLRITHP_SGWE.html#filepos109" type="toc" title="Table of Contents"/>
+    <reference href="images/calibre_cover.jpg" type="cover" title="Cover"/>
+  </guide>
+</package>

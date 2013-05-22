@@ -1,0 +1,693 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: typeclasses_instances.html
+next: typeclasses_auto_derivation.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="typeclasses_instances.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="typeclasses_auto_derivation.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="typeclasses_wellknown" class="calibre27" id="typeclasses_wellknown"></a><h3 id="643999-928" class="docSection1Title">6.4. Important Built-in Typeclasses</h3><a name="x_KB" class="calibre27" id="x_KB"></a><p class="docText">Now<a name="ch06-typeclassbuiltin" class="calibre27" id="ch06-typeclassbuiltin"></a> that we've discussed defining your own typeclasses and
+    making your types instances of typeclasses, it's time to introduce you to
+    typeclasses that are a standard part of the Haskell<a name="I_indexterm6_d1e15261" class="calibre27" id="I_indexterm6_d1e15261"></a> <tt class="calibre34">Prelude</tt>. As we mentioned at the
+    beginning of this chapter, typeclasses are at the core of some important
+    aspects of the language. We'll cover the most common ones here. For more
+    details, the Haskell library reference is a good resource. It will give
+    you a description of the typeclasses and usually also will tell you which
+    functions you must implement to have a complete definition.</p><a name="typeclasses_wellknown_show" class="calibre27" id="typeclasses_wellknown_show"></a><h4 id="title-IDA1HDUD" class="docSection1Title">6.4.1. Show</h4><a name="x_LB" class="calibre27" id="x_LB"></a><p class="docText">The <tt class="calibre34">Show</tt> typeclass is
+      <a name="I_indexterm6_d1e15276" class="calibre27" id="I_indexterm6_d1e15276"></a>used to convert values to <tt class="calibre34">String</tt>s. It is perhaps most commonly used to
+      convert numbers to <tt class="calibre34">String</tt>s, but it is
+      defined for so many types that it can be used to convert quite a bit
+      more. If you have defined your own types, making them instances of
+      <tt class="calibre34">Show</tt> will make it easy to display
+      them in <i class="docEmphasis">ghci</i> or print them out in
+      programs.</p><a name="x_MB" class="calibre27" id="x_MB"></a><p class="docText">The most important function of <tt class="calibre34">Show</tt> is <tt class="calibre34">show</tt>. It takes one argument—the data to
+      convert. It returns a <tt class="calibre34">String</tt>
+      representing that data. <i class="docEmphasis">ghci</i> reports
+      the type of <tt class="calibre34">show</tt> like this:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:type show</b>
+show :: (Show a) =&gt; a -&gt; String
+</pre><a name="x_NB" class="calibre27" id="x_NB"></a><p class="docText">Let's look at some examples of converting values to
+      strings:</p><pre class="calibre39">ghci&gt; <b class="calibre40">show 1</b>
+"1"
+ghci&gt; <b class="calibre40">show [1, 2, 3]</b>
+"[1,2,3]"
+ghci&gt; <b class="calibre40">show (1, 2)</b>
+"(1,2)"</pre><a name="x_OB" class="calibre27" id="x_OB"></a><p class="docText">Remember that <i class="docEmphasis">ghci</i>
+      displays results as they would be entered into a Haskell program. So the
+      expression <tt class="calibre34">show 1</tt> returns a
+      single-character string containing the digit <tt class="calibre34">1</tt>. That is, the quotes are not part of the
+      string itself. We can make that clear by using <tt class="calibre34">putStrLn</tt>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">putStrLn (show 1)</b>
+1
+ghci&gt; <b class="calibre40">putStrLn (show [1,2,3])</b>
+[1,2,3]</pre><a name="x_PB" class="calibre27" id="x_PB"></a><p class="docText">You can also use <tt class="calibre34">show</tt>
+      on <tt class="calibre34">String</tt>s:</p><pre class="calibre39">ghci&gt; <b class="calibre40">show "Hello!"</b>
+"\"Hello!\""
+ghci&gt; <b class="calibre40">putStrLn (show "Hello!")</b>
+"Hello!"
+ghci&gt; <b class="calibre40">show ['H', 'i']</b>
+"\"Hi\""
+ghci&gt; <b class="calibre40">putStrLn (show "Hi")</b>
+"Hi"
+ghci&gt; <b class="calibre40">show "Hi, \"Jane\""</b>
+"\"Hi, \\\"Jane\\\"\""
+ghci&gt; <b class="calibre40">putStrLn (show "Hi, \"Jane\"")</b>
+"Hi, \"Jane\""</pre><a name="x_QB" class="calibre27" id="x_QB"></a><p class="docText">Running <tt class="calibre34">show</tt> on
+      <tt class="calibre34">String</tt>s can be confusing. Since
+      <tt class="calibre34">show</tt> generates a result that is
+      suitable for a Haskell literal, it adds quotes and escaping suitable for
+      inclusion in a Haskell program. <i class="docEmphasis">ghci</i>
+      also uses <tt class="calibre34">show</tt> to display results, so
+      quotes and escaping get added twice. Using <tt class="calibre34">putStrLn</tt> can help make this difference
+      clear.</p><a name="x_RB" class="calibre27" id="x_RB"></a><p class="docText">You can define a <tt class="calibre34">Show</tt>
+      instance for your own types easily. Here's an example:</p><pre class="calibre39">-- file: ch06/eqclasses.hs
+instance Show Color where
+    show Red   = "Red"
+    show Green = "Green"
+    show Blue  = "Blue"</pre><br class="calibre48"/>
+<a name="x_SB" class="calibre27" id="x_SB"></a><p class="docText">This example defines an instance of <tt class="calibre34">Show</tt> for our type <tt class="calibre34">Color</tt> (see <a class="docLink" href="typeclasses_need.html#typeclasses_need">Section 6.1</a>). The implementation is simple: we define
+      a function <tt class="calibre34">show</tt>. That's all that's
+      needed.</p><a name="typeclasses_wellknown_showd1e15505" class="calibre27" id="typeclasses_wellknown_showd1e15505"></a><div class="docNote"><p class="docNormalTitle">NOTE</p><p class="calibre37"><a name="x_kp" class="calibre27" id="x_kp"></a></p><p class="docText"><tt class="calibre34">Show</tt> is usually
+        used to define a <tt class="calibre34">String</tt>
+        representation for data that is useful for a machine to parse back
+        with <tt class="calibre34">Read</tt>. Haskell programmers
+        generally write custom functions to format data attractively for end
+        users, if this representation would be different than expected via
+        <tt class="calibre34">Show</tt>.</p></div><a name="typeclasses_wellknown_read" class="calibre27" id="typeclasses_wellknown_read"></a><h4 id="title-IDAGPDUD" class="docSection1Title">6.4.2. Read</h4><a name="x_TB" class="calibre27" id="x_TB"></a><p class="docText">The <tt class="calibre34">Read</tt> typeclass
+      <a name="I_indexterm6_d1e15465" class="calibre27" id="I_indexterm6_d1e15465"></a>is essentially the opposite of <tt class="calibre34">Show</tt>. It defines functions that will take a
+      <tt class="calibre34">String</tt>, parse it, and return data in
+      any type that is a member of <tt class="calibre34">Read</tt>.
+      The most useful function in <tt class="calibre34">Read</tt> is
+      <tt class="calibre34">read</tt>. You can ask <i class="docEmphasis">ghci</i> for its type like this:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:type read</b>
+read :: (Read a) =&gt; String -&gt; a
+</pre><a name="x_UB" class="calibre27" id="x_UB"></a><p class="docText">Here's an example illustrating the use of <tt class="calibre34">read</tt> and <tt class="calibre34">show</tt>:</p><pre class="calibre39">-- file: ch06/read.hs
+main = do
+        putStrLn "Please enter a Double:"
+        inpStr &lt;- getLine
+        let inpDouble = (read inpStr)::Double
+        putStrLn ("Twice " ++ show inpDouble ++ " is " ++ show (inpDouble * 2))</pre><br class="calibre48"/>
+<a name="x_VB" class="calibre27" id="x_VB"></a><p class="docText">This is a simple example of <tt class="calibre34">read</tt> and <tt class="calibre34">show</tt> together. Notice that we gave an explicit
+      type of <tt class="calibre34">Double</tt> when processing the
+      <tt class="calibre34">read</tt>. That's because <tt class="calibre34">read</tt> returns a value of type <tt class="calibre34">Read a =&gt; a</tt>, and
+      <tt class="calibre34">show</tt> expects a value of type <tt class="calibre34">Show a =&gt; a</tt>. There are many types that have
+      instances defined for both <tt class="calibre34">Read</tt> and
+      <tt class="calibre34">Show</tt>. Without knowing a specific
+      type, the compiler must guess from these many types which one is needed.
+      In situations such as this, it may often choose <tt class="calibre34">Integer</tt>. If we want to accept floating-point
+      input, this wouldn't work, so we provide an explicit type.</p><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><p class="docNormalTitle">A note about defaulting</p><a name="x_lp" class="calibre27" id="x_lp"></a><p class="docText">In most cases, if the explicit <tt class="calibre34">Double</tt> type annotation were omitted, the
+        compiler would refuse to guess a common type and simply give an error.
+        The fact that it could default to <tt class="calibre34">Integer</tt> here is a special case arising from
+        the fact that the literal <tt class="calibre34">2</tt> is
+        treated as an <tt class="calibre34">Integer</tt> unless a
+        different type is expected for it.</p></td></tr></table></td></tr></table></p><br class="calibre48"/><a name="x_WB" class="calibre27" id="x_WB"></a><p class="docText">You can see the same effect at work if you try to use
+      <tt class="calibre34">read</tt> on the <i class="docEmphasis">ghci</i> command line. <i class="docEmphasis">ghci</i> uses <tt class="calibre34">show</tt> internally to display results, meaning
+      that you can encounter this ambiguous typing problem there as well.
+      You'll need to explicitly give types for your <tt class="calibre34">read</tt> results in <i class="docEmphasis">ghci</i> as shown here:</p><pre class="calibre39">ghci&gt; <b class="calibre40">read "5"</b>
+
+&lt;interactive&gt;:1:0:
+    Ambiguous type variable `a' in the constraint:
+      `Read a' arising from a use of `read' at &lt;interactive&gt;:1:0-7
+    Probable fix: add a type signature that fixes these type variable(s)
+ghci&gt; <b class="calibre40">:type (read "5")</b>
+(read "5") :: (Read a) =&gt; a
+ghci&gt; <b class="calibre40">(read "5")::Integer</b>
+5
+ghci&gt; <b class="calibre40">(read "5")::Double</b>
+5.0</pre><a name="x_XB" class="calibre27" id="x_XB"></a><p class="docText">Recall the type of <tt class="calibre34">read</tt>: <tt class="calibre34">(Read a) =&gt;
+      String -&gt; a</tt>. The <tt class="calibre34">a</tt> here
+      is the type of each instance of <tt class="calibre34">Read</tt>.
+      The particular parsing function that is called depends upon the type
+      that is expected from the return value of <tt class="calibre34">read</tt>. Let's see how that works:</p><pre class="calibre39">ghci&gt; <b class="calibre40">(read "5.0")::Double</b>
+5.0
+ghci&gt; <b class="calibre40">(read "5.0")::Integer</b>
+*** Exception: Prelude.read: no parse</pre><a name="x_YB" class="calibre27" id="x_YB"></a><p class="docText">Notice the error when trying to parse <tt class="calibre34">5.0</tt> as an <tt class="calibre34">Integer</tt>. The interpreter selects a different
+      instance of <tt class="calibre34">Read</tt> when the return
+      value was expected to be <tt class="calibre34">Integer</tt> than
+      it did when a <tt class="calibre34">Double</tt> was expected.
+      The <tt class="calibre34">Integer</tt> parser doesn't accept
+      decimal points and caused an exception to be raised.</p><a name="x_ZB" class="calibre27" id="x_ZB"></a><p class="docText">The <tt class="calibre34">Read</tt> class
+      provides for some fairly complicated parsers. You can define a simple
+      parser by providing an implementation for the <tt class="calibre34">readsPrec</tt> function. Your implementation can
+      return a list containing exactly one tuple on a successful parse, or it
+      can return an empty list on an unsuccessful parse. Here's an example
+      implementation:</p><pre class="calibre39">-- file: ch06/eqclasses.hs
+instance Read Color where
+    -- readsPrec is the main function for parsing input
+    readsPrec _ value = 
+        -- We pass tryParse a list of pairs.  Each pair has a string
+        -- and the desired return value.  tryParse will try to match
+        -- the input to one of these strings.
+        tryParse [("Red", Red), ("Green", Green), ("Blue", Blue)]
+        where tryParse [] = []    -- If there is nothing left to try, fail
+              tryParse ((attempt, result):xs) =
+                      -- Compare the start of the string to be parsed to the
+                      -- text we are looking for.
+                      if (take (length attempt) value) == attempt
+                         -- If we have a match, return the result and the
+                         -- remaining input
+                         then [(result, drop (length attempt) value)]
+                         -- If we don't have a match, try the next pair
+                         -- in the list of attempts.
+                         else tryParse xs</pre><br class="calibre48"/>
+<a name="x_aB" class="calibre27" id="x_aB"></a><p class="docText">This example handles the known cases for the three
+      colors. It returns an empty list (resulting in a "no parse" message) for
+      others. The function is supposed to return the part of the input that
+      was not parsed so that the system can integrate the parsing of different
+      types together. Here's an example of using this new instance of <tt class="calibre34">Read</tt>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">(read "Red")::Color</b>
+Red
+ghci&gt; <b class="calibre40">(read "Green")::Color</b>
+Green
+ghci&gt; <b class="calibre40">(read "Blue")::Color</b>
+Blue
+ghci&gt; <b class="calibre40">(read "[Red]")::[Color]</b>
+[Red]
+ghci&gt; <b class="calibre40">(read "[Red,Red,Blue]")::[Color]</b>
+[Red,Red,Blue]
+ghci&gt; <b class="calibre40">(read "[Red, Red, Blue]")::[Color]</b>
+*** Exception: Prelude.read: no parse</pre><a name="x_bB" class="calibre27" id="x_bB"></a><p class="docText">Notice the error on the final attempt. That's because
+      our parser is not smart enough to handle leading spaces yet. If we
+      modify it to accept leading spaces, that attempt would work. You could
+      rectify this by changing your <tt class="calibre34">Read</tt>
+      instance to discard any leading spaces, which is common practice in
+      Haskell programs.</p><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><p class="docNormalTitle">Read is not widely used</p><a name="x_mp" class="calibre27" id="x_mp"></a><p class="docText">While it is possible to build sophisticated parsers
+        using the <tt class="calibre34">Read</tt> typeclass, many
+        people find it easier to do so using <tt class="calibre34">Parsec</tt>, and
+        rely on <tt class="calibre34">Read</tt> only for simpler
+        tasks. <tt class="calibre34">Parsec</tt> is covered in detail in <a class="docLink" href="parsec_split_000.html#parsec">Chapter 16</a>.</p></td></tr></table></td></tr></table></p><br class="calibre48"/><a name="typeclasses_wellknown_serialization" class="calibre27" id="typeclasses_wellknown_serialization"></a><h4 id="title-IDATZDUD" class="docSection1Title">6.4.3. Serialization with read and show</h4><a name="x_cB" class="calibre27" id="x_cB"></a><p class="docText">You may<a name="I_indexterm6_d1e15725" class="calibre27" id="I_indexterm6_d1e15725"></a> often have a data structure in memory that you need to
+      store on disk for later retrieval or to send across the network. The
+      process of converting data in memory to a flat series of bits for
+      storage is called <span class="docEmphasis">serialization</span>.</p><a name="x_dB" class="calibre27" id="x_dB"></a><p class="docText">It turns out that <tt class="calibre34">read</tt> and <tt class="calibre34">show</tt> make<a name="I_indexterm6_d1e15740" class="calibre27" id="I_indexterm6_d1e15740"></a><a name="I_indexterm6_d1e15743" class="calibre27" id="I_indexterm6_d1e15743"></a> excellent tools for serialization. <tt class="calibre34">show</tt> produces output that is both human- and
+      machine-readable. Most <tt class="calibre34">show</tt> output is
+      also syntactically valid Haskell, though it is up to people that write
+      <tt class="calibre34">Show</tt> instances to make it so.</p><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><p class="docNormalTitle">Parsing large strings</p><a name="x_np" class="calibre27" id="x_np"></a><p class="docText">String handling in Haskell is normally lazy, so
+        <tt class="calibre34">read</tt> and <tt class="calibre34">show</tt> can be used on quite large data
+        structures without incident. The built-in <tt class="calibre34">read</tt> and <tt class="calibre34">show</tt> instances in Haskell are efficient and
+        implemented in pure Haskell. For information on how to handle parsing
+        exceptions, refer to <a class="docLink" href="errors_split_000.html#errors">Chapter 19</a>.</p></td></tr></table></td></tr></table></p><br class="calibre48"/><a name="x_eB" class="calibre27" id="x_eB"></a><p class="docText">Let's try it out in <i class="docEmphasis">ghci</i>:</p><pre class="calibre39">ghci&gt; <b class="calibre40">let d1 = [Just 5, Nothing, Nothing, Just 8, Just 9]::[Maybe Int]</b>ghci&gt; <b class="calibre40">putStrLn (show d1)</b>
+[Just 5,Nothing,Nothing,Just 8,Just 9]
+ghci&gt; <b class="calibre40">writeFile "test" (show d1)</b></pre><a name="x_fB" class="calibre27" id="x_fB"></a><p class="docText">First, we assign <tt class="calibre34">d1</tt>
+      to be a list. Next, we print out the result of <tt class="calibre34">show d1</tt>, so we can see what it generates.
+      Then, we write the result of <tt class="calibre34">show d1</tt>
+      to a file named <tt class="calibre34">test</tt>.</p><a name="x_gB" class="calibre27" id="x_gB"></a><p class="docText">Let's try reading it back: </p><pre class="calibre39">ghci&gt; <b class="calibre40">input &lt;- readFile "test"</b>
+"[Just 5,Nothing,Nothing,Just 8,Just 9]"
+ghci&gt; <b class="calibre40">let d2 = read input</b>
+
+&lt;interactive&gt;:1:9:
+    Ambiguous type variable `a' in the constraint:
+      `Read a' arising from a use of `read' at &lt;interactive&gt;:1:9-18
+    Probable fix: add a type signature that fixes these type variable(s)
+ghci&gt; <b class="calibre40">let d2 = (read input)::[Maybe Int]</b>
+ghci&gt; <b class="calibre40">print d1</b>
+[Just 5,Nothing,Nothing,Just 8,Just 9]
+ghci&gt; <b class="calibre40">print d2</b>
+[Just 5,Nothing,Nothing,Just 8,Just 9]
+ghci&gt; <b class="calibre40">d1 == d2</b>
+True</pre><a name="x_hB" class="calibre27" id="x_hB"></a><p class="docText">First, we ask Haskell to read the file back.<sup class="docFootnote"><a class="docLink1" href="#x_hBd1e15911">[13]</a></sup> Then, we try to assign the result of <tt class="calibre34">read input</tt> to <tt class="calibre34">d2</tt>. That generates an error. The reason is
+      that the interpreter doesn't know what type <tt class="calibre34">d2</tt> is meant to be, so it doesn't know how to
+      parse the input. If we give it an explicit type, it works, and we can
+      verify that the two sets of data are equal.</p><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="x_hBd1e15911" class="calibre5" id="x_hBd1e15911">[13]</a></sup> As you will see in <a class="docLink" href="io_lazy.html#io_lazy">Section 7.4</a>,
+          Haskell doesn't actually read the entire file at this point. But for
+          the purposes of this example, we can ignore that distinction.</p></blockquote><a name="x_jB" class="calibre27" id="x_jB"></a><p class="docText">Since so many different types are instances of <tt class="calibre34">Read</tt> and <tt class="calibre34">Show</tt> by default (and others can be made
+      instances easily; see <a class="docLink" href="typeclasses_auto_derivation.html#typeclasses_auto_derivation">Section 6.5</a>),
+      you can use it for some really complex data structures. Here are a few
+      examples of slightly more complex data structures:</p><pre class="calibre39">ghci&gt; <b class="calibre40">putStrLn $ show [("hi", 1), ("there", 3)]</b>
+[("hi",1),("there",3)]
+ghci&gt; <b class="calibre40">putStrLn $ show [[1, 2, 3], [], [4, 0, 1], [], [503]]</b>
+[[1,2,3],[],[4,0,1],[],[503]]
+ghci&gt; <b class="calibre40">putStrLn $ show [Left 5, Right "three", Left 0, Right "nine"]</b>
+[Left 5,Right "three",Left 0,Right "nine"]
+ghci&gt; <b class="calibre40">putStrLn $ show [Left 0, Right [1, 2, 3], Left 5, Right []]</b>
+[Left 0,Right [1,2,3],Left 5,Right []]</pre><a name="typeclasses_wellknown_numeric" class="calibre27" id="typeclasses_wellknown_numeric"></a><h4 id="title-IDAJAEUD" class="docSection1Title">6.4.4. Numeric Types</h4><a name="x_kB" class="calibre27" id="x_kB"></a><p class="docText">Haskell<a name="ch06-typesnumeric" class="calibre27" id="ch06-typesnumeric"></a><a name="ch06-numerictypes" class="calibre27" id="ch06-numerictypes"></a> has a powerful set of numeric types. You can use
+      everything from fast 32-bit or 64-bit integers to arbitrary-precision
+      rational numbers. You probably know that operators such as <tt class="calibre34">+</tt> can work with just about all of these. This
+      feature is implemented using typeclasses. As a side benefit, it allows
+      us to define your own numeric types and make them first-class citizens
+      in Haskell.</p><a name="x_lB" class="calibre27" id="x_lB"></a><p class="docText">Let's begin our discussion of the typeclasses
+      surrounding numeric types with an <span class="docEmphasis">examination</span> of the types themselves. <a class="docLink" href="#numerictypes_summary">Table 6-1</a> describes the most commonly used
+      numeric types in Haskell. Note that there are also many more numeric
+      types available for specific purposes such as interfacing to C.</p><a name="numerictypes_summary" class="calibre27" id="numerictypes_summary"></a><p class="calibre37"><table cellspacing="0" border="1" rules="all" cellpadding="4" width="100%" class="calibre54"><caption class="calibre55"><h5 class="docTableTitle">Table 6-1. Selected numeric types</h5></caption><colgroup span="2" class="calibre56"><col class="calibre57"/><col class="calibre57"/></colgroup><thead class="calibre58"><tr class="calibre59"><th class="thead" scope="col">Type</th><th class="thead" scope="col">Description</th></tr></thead><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Double</tt>
+</td><td class="docTableCell">Double-precision<a name="I_indexterm6_d1e15941" class="calibre27" id="I_indexterm6_d1e15941"></a> floating point. A common choice for
+              floating-point data.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Float</tt>
+</td><td class="docTableCell">Single-precision<a name="I_indexterm6_d1e15951" class="calibre27" id="I_indexterm6_d1e15951"></a> floating point. Often used when interfacing with
+              C.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Int</tt>
+</td><td class="docTableCell">Fixed-precision<a name="I_indexterm6_d1e15961" class="calibre27" id="I_indexterm6_d1e15961"></a> signed integer; minimum range [-2^29..2^29-1].
+              Commonly used.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Int8</tt>
+</td><td class="docTableCell">8-bit signed integer.<a name="I_indexterm6_d1e15971" class="calibre27" id="I_indexterm6_d1e15971"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Int16</tt>
+</td><td class="docTableCell">16-bit signed integer.<a name="I_indexterm6_d1e15980" class="calibre27" id="I_indexterm6_d1e15980"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Int32</tt>
+</td><td class="docTableCell">32-bit signed integer.<a name="I_indexterm6_d1e15989" class="calibre27" id="I_indexterm6_d1e15989"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Int64</tt>
+</td><td class="docTableCell">64-bit signed integer.<a name="I_indexterm6_d1e15998" class="calibre27" id="I_indexterm6_d1e15998"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Integer</tt>
+</td><td class="docTableCell">Arbitrary-precision signed integer; range limited only by
+              machine resources. Commonly used.<a name="I_indexterm6_d1e16007" class="calibre27" id="I_indexterm6_d1e16007"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Rational</tt>
+</td><td class="docTableCell">Arbitrary-precision<a name="I_indexterm6_d1e16016" class="calibre27" id="I_indexterm6_d1e16016"></a> rational numbers. Stored as a ratio of two
+              <tt class="calibre34">Integer</tt>s.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Word</tt>
+</td><td class="docTableCell">Fixed-precision<a name="I_indexterm6_d1e16029" class="calibre27" id="I_indexterm6_d1e16029"></a> unsigned integer; storage size same as <tt class="calibre34">Int</tt>.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Word8</tt>
+</td><td class="docTableCell">8-bit unsigned<a name="I_indexterm6_d1e16042" class="calibre27" id="I_indexterm6_d1e16042"></a> integer.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Word16</tt>
+</td><td class="docTableCell">16-bit unsigned<a name="I_indexterm6_d1e16053" class="calibre27" id="I_indexterm6_d1e16053"></a> integer.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Word32</tt>
+</td><td class="docTableCell">32-bit unsigned<a name="I_indexterm6_d1e16063" class="calibre27" id="I_indexterm6_d1e16063"></a> integer.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Word64</tt>
+</td><td class="docTableCell">64-bit unsigned<a name="I_indexterm6_d1e16073" class="calibre27" id="I_indexterm6_d1e16073"></a> integer.</td></tr></table></p><br class="calibre48"/><a name="x_mB" class="calibre27" id="x_mB"></a><p class="docText">These are quite a few different numeric types. There are
+      some operations, such as <span class="docEmphasis">addition</span>,
+      that work with all of them. There are others, such as <tt class="calibre34">asin</tt>, that apply only to floating-point types.
+      <a class="docLink" href="#numerictypes_funcs">Table 6-2</a> summarizes the different functions
+      that operate on numeric types, and <a class="docLink" href="#numerictypes_typeclasses">Table 6-3</a> matches the types with their
+      respective typeclasses. As you read <a class="docLink" href="#numerictypes_typeclasses">Table 6-3</a>, keep in mind that Haskell
+      operators are just functions: you can say either <tt class="calibre34">(+) 2 3</tt> or <tt class="calibre34">2 +
+      3</tt> with the same result. By convention, when referring to an
+      operator as a function, it is written in parentheses as seen in <a class="docLink" href="#numerictypes_funcs">Table 6-2</a>.</p><a name="numerictypes_funcs" class="calibre27" id="numerictypes_funcs"></a><p class="calibre37"><table cellspacing="0" border="1" rules="all" cellpadding="4" width="100%" class="calibre54"><caption class="calibre55"><h5 class="docTableTitle">Table 6-2. Selected numeric functions and constants</h5></caption><colgroup span="4" class="calibre56"><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/></colgroup><thead class="calibre58"><tr class="calibre59"><th class="thead" scope="col">Item</th><th class="thead" scope="col">Type</th><th class="thead" scope="col">Module</th><th class="thead" scope="col">Description</th></tr></thead><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(+)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Num a =&gt; a -&gt; a</tt>
+<tt class="calibre34">-&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Addition.<a name="I_indexterm6_d1e16134" class="calibre27" id="I_indexterm6_d1e16134"></a><a name="I_indexterm6_d1e16139" class="calibre27" id="I_indexterm6_d1e16139"></a><a name="I_indexterm6_d1e16142" class="calibre27" id="I_indexterm6_d1e16142"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(-)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Num a =&gt;
+              a -&gt; a -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Subtraction.<a name="I_indexterm6_d1e16157" class="calibre27" id="I_indexterm6_d1e16157"></a><a name="I_indexterm6_d1e16160" class="calibre27" id="I_indexterm6_d1e16160"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(*)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Num a =&gt;
+              a -&gt; a -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Multiplication.<a name="I_indexterm6_d1e16175" class="calibre27" id="I_indexterm6_d1e16175"></a><a name="I_indexterm6_d1e16178" class="calibre27" id="I_indexterm6_d1e16178"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(/)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Fractional
+              a =&gt; a -&gt; a -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Fractional<a name="I_indexterm6_d1e16193" class="calibre27" id="I_indexterm6_d1e16193"></a><a name="I_indexterm6_d1e16196" class="calibre27" id="I_indexterm6_d1e16196"></a> division.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(**)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Floating a
+              =&gt; a -&gt; a -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Raise to the <a name="I_indexterm6_d1e16212" class="calibre27" id="I_indexterm6_d1e16212"></a><a name="I_indexterm6_d1e16215" class="calibre27" id="I_indexterm6_d1e16215"></a>power of.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(^)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">(Num a, Integral b)</tt>
+<tt class="calibre34">=&gt; a -&gt; b -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Raise<a name="I_indexterm6_d1e16234" class="calibre27" id="I_indexterm6_d1e16234"></a> a number to a nonnegative, integral
+              power.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(^^)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">(Fractional a, Integral b) </tt>
+<tt class="calibre34">=&gt; a -&gt; b -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Raise<a name="I_indexterm6_d1e16252" class="calibre27" id="I_indexterm6_d1e16252"></a> a fractional number to any integral
+              power.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(%)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Integral a =&gt; a -&gt; a -&gt;
+              Ratio a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Data.Ratio</tt>
+</td><td class="docTableCell">Ratio<a name="I_indexterm6_d1e16268" class="calibre27" id="I_indexterm6_d1e16268"></a> composition.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(.&amp;.)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Bits a
+              =&gt; a -&gt; a -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Data.Bits</tt>
+</td><td class="docTableCell">Bitwise<a name="I_indexterm6_d1e16284" class="calibre27" id="I_indexterm6_d1e16284"></a><a name="I_indexterm6_d1e16287" class="calibre27" id="I_indexterm6_d1e16287"></a> and.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">(.|.)</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Bits a
+              =&gt; a -&gt; a -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Data.Bits</tt>
+</td><td class="docTableCell">Bitwise<a name="I_indexterm6_d1e16303" class="calibre27" id="I_indexterm6_d1e16303"></a><a name="I_indexterm6_d1e16306" class="calibre27" id="I_indexterm6_d1e16306"></a> or.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">abs</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Num a =&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Absolute value<a name="I_indexterm6_d1e16322" class="calibre27" id="I_indexterm6_d1e16322"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">approxRational</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">RealFrac a =&gt; a -&gt; a -&gt;
+              Rational</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Data.Ratio</tt>
+</td><td class="docTableCell">Approximate<a name="I_indexterm6_d1e16338" class="calibre27" id="I_indexterm6_d1e16338"></a> rational composition based on fractional
+              numerators and denominators.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">cos</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Floating a
+              =&gt; a -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Cosine. <a name="I_indexterm6_d1e16354" class="calibre27" id="I_indexterm6_d1e16354"></a>Also provided are <tt class="calibre34">acos</tt>, <tt class="calibre34">cosh</tt>, and <tt class="calibre34">acosh</tt>, with the same type.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">div</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Integral a =&gt; a -&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Integer<a name="I_indexterm6_d1e16379" class="calibre27" id="I_indexterm6_d1e16379"></a> division always truncated down; see also <tt class="calibre34">quot</tt>.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">fromInteger</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Num a =&gt; Integer -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Conversion<a name="I_indexterm6_d1e16398" class="calibre27" id="I_indexterm6_d1e16398"></a> from an <tt class="calibre34">Integer</tt> to any numeric type.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">fromIntegral</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">(Integral a, Num b) =&gt; a
+              -&gt; b</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">More<a name="I_indexterm6_d1e16417" class="calibre27" id="I_indexterm6_d1e16417"></a> general conversion from any <tt class="calibre34">Integral</tt> to any numeric type.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">fromRational</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Fractional a =&gt; Rational
+              -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Conversion<a name="I_indexterm6_d1e16436" class="calibre27" id="I_indexterm6_d1e16436"></a> from a <tt class="calibre34">Rational</tt>. May be lossy.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">log</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Floating a =&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Natural <a name="I_indexterm6_d1e16455" class="calibre27" id="I_indexterm6_d1e16455"></a>logarithm.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">logBase</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Floating a =&gt; a -&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Log with<a name="I_indexterm6_d1e16471" class="calibre27" id="I_indexterm6_d1e16471"></a> explicit base.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">maxBound</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Bounded a =&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">The<a name="I_indexterm6_d1e16487" class="calibre27" id="I_indexterm6_d1e16487"></a> maximum value of a bounded type.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">minBound</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Bounded a =&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">The minimum<a name="I_indexterm6_d1e16503" class="calibre27" id="I_indexterm6_d1e16503"></a> value of a bounded type.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">mod</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Integral a =&gt; a -&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Integer<a name="I_indexterm6_d1e16519" class="calibre27" id="I_indexterm6_d1e16519"></a> modulus.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">pi</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Floating a =&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Mathematical<a name="I_indexterm6_d1e16536" class="calibre27" id="I_indexterm6_d1e16536"></a> constant pi.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">quot</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Integral a =&gt; a -&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Integer<a name="I_indexterm6_d1e16552" class="calibre27" id="I_indexterm6_d1e16552"></a> division; fractional part of quotient truncated
+              towards zero.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">recip</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Fractional a =&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Reciprocal.<a name="I_indexterm6_d1e16568" class="calibre27" id="I_indexterm6_d1e16568"></a></td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">rem</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Integral a =&gt; a -&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Remainder<a name="I_indexterm6_d1e16583" class="calibre27" id="I_indexterm6_d1e16583"></a> of integer division.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">round</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">(RealFrac a, Integral b)</tt>
+<tt class="calibre34">=&gt; a -&gt; b</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Rounds<a name="I_indexterm6_d1e16602" class="calibre27" id="I_indexterm6_d1e16602"></a> to nearest integer.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">shift</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Bits a =&gt; a -&gt; Int -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Bits</tt>
+</td><td class="docTableCell">Shift<a name="I_indexterm6_d1e16618" class="calibre27" id="I_indexterm6_d1e16618"></a> left by the specified number of bits, which may
+              be negative for a right shift.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">sin</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Floating a =&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Sine.<a name="I_indexterm6_d1e16634" class="calibre27" id="I_indexterm6_d1e16634"></a> Also provided are <tt class="calibre34">asin</tt>, <tt class="calibre34">sinh</tt>, and <tt class="calibre34">asinh</tt>, with the same type.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">sqrt</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Floating a =&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Square <a name="I_indexterm6_d1e16659" class="calibre27" id="I_indexterm6_d1e16659"></a>root.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">tan</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Floating a
+              =&gt; a -&gt; a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Tangent.<a name="I_indexterm6_d1e16675" class="calibre27" id="I_indexterm6_d1e16675"></a> Also provided are <tt class="calibre34">atan</tt>, <tt class="calibre34">tanh</tt>, and <tt class="calibre34">atanh</tt>, with the same type.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">toInteger</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Integral a =&gt; a -&gt;
+              Integer</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Convert<a name="I_indexterm6_d1e16700" class="calibre27" id="I_indexterm6_d1e16700"></a> any <tt class="calibre34">Integral</tt>
+              to an <tt class="calibre34">Integer</tt>.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">toRational</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Real a =&gt; a -&gt;
+              Rational</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Convert<a name="I_indexterm6_d1e16722" class="calibre27" id="I_indexterm6_d1e16722"></a> losslessly to <tt class="calibre34">Rational</tt>.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">truncate</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">(RealFrac a, Integral b)</tt>
+<tt class="calibre34">=&gt; a -&gt; b</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Prelude</tt>
+</td><td class="docTableCell">Truncates<a name="I_indexterm6_d1e16745" class="calibre27" id="I_indexterm6_d1e16745"></a> number towards zero.</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">xor</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Bits a =&gt; a -&gt; a -&gt;
+              a</tt>
+</td><td class="docTableCell">
+<tt class="calibre34">Data.Bits</tt>
+</td><td class="docTableCell">Bitwise<a name="I_indexterm6_d1e16761" class="calibre27" id="I_indexterm6_d1e16761"></a> exclusive or.</td></tr></table></p><br class="calibre48"/><a name="numerictypes_typeclasses" class="calibre27" id="numerictypes_typeclasses"></a><p class="calibre37"><table cellspacing="0" border="1" rules="all" cellpadding="4" width="100%" class="calibre54"><caption class="calibre55"><h5 class="docTableTitle">Table 6-3. Typeclass instances for numeric types</h5></caption><colgroup span="9" class="calibre56"><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/></colgroup><thead class="calibre58"><tr class="calibre59"><th class="thead" scope="col">Type</th><th class="thead" scope="col">Bits</th><th class="thead" scope="col">Bounded</th><th class="thead" scope="col">Floating</th><th class="thead" scope="col">Fractional</th><th class="thead" scope="col">Integral</th><th class="thead" scope="col">Num</th><th class="thead" scope="col">
+                  Real
+                </th><th class="thead" scope="col">
+<span class="docEmphasis">RealFrac</span>
+</th></tr></thead><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Double</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Float</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Int</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Int16</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Int32</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Int64</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Integer</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell"><tt class="calibre34">Rational</tt> or any
+              <tt class="calibre34">Ratio</tt></td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Word</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Word16</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Word32</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr><tr class="calibre16"><td class="docTableCell">
+<tt class="calibre34">Word64</tt>
+</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td><td class="docTableCell">X</td></tr></table></p><br class="calibre48"/><a name="x_nB" class="calibre27" id="x_nB"></a><p class="docText">Converting between numeric types is another common need.
+      <a class="docLink" href="#numerictypes_funcs">Table 6-2</a> listed many functions that can be
+      used for conversion. However, it is not always obvious how to apply them
+      to convert between two arbitrary types. To help you out, <a class="docLink" href="#numerictypes_conversion">Table 6-4</a> provides information on converting
+      between different types.</p><a name="numerictypes_conversion" class="calibre27" id="numerictypes_conversion"></a><p class="calibre37"><table cellspacing="0" border="1" rules="all" cellpadding="4" width="100%" class="calibre54"><caption class="calibre55"><h5 class="docTableTitle">Table 6-4. Conversion between numeric types<sup class="docFootnote"><a class="docLink1" href="#idd1e17306">[14]</a></sup></h5></caption><colgroup span="5" class="calibre60"><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/><col class="calibre57"/></colgroup><thead class="calibre58"><tr class="calibre59"><th class="thead" scope="col" rowspan="2">Source type</th><th class="thead1" scope="col" colspan="1">Destination type</th></tr><tr class="calibre59"><th class="thead" scope="col"><tt class="calibre34">Double</tt>, <tt class="calibre34">Float</tt></th><th class="thead" scope="col"><tt class="calibre34">Int</tt>,
+              <tt class="calibre34">Word</tt></th><th class="thead" scope="col">
+<tt class="calibre34">Integer</tt>
+</th><th class="thead" scope="col">
+<tt class="calibre34">Rational</tt>
+</th></tr></thead><tr class="calibre16"><td class="docTableCell1"><tt class="calibre34">Double</tt>, <tt class="calibre34">Float</tt></td><td class="docTableCell1">
+<tt class="calibre34">fromRational .
+              toRational</tt>
+</td><td class="docTableCell1"><tt class="calibre34">truncate</tt>
+              *</td><td class="docTableCell1"><tt class="calibre34">truncate</tt> *</td><td class="docTableCell1">
+<tt class="calibre34">toRational</tt>
+</td></tr><tr class="calibre16"><td class="docTableCell1"><tt class="calibre34">Int</tt>, <tt class="calibre34">Word</tt></td><td class="docTableCell1">
+<tt class="calibre34">fromIntegral</tt>
+</td><td class="docTableCell1">
+<tt class="calibre34">fromIntegral</tt>
+</td><td class="docTableCell1">
+<tt class="calibre34">fromIntegral</tt>
+</td><td class="docTableCell1">
+<tt class="calibre34">fromIntegral</tt>
+</td></tr><tr class="calibre16"><td class="docTableCell1">
+<tt class="calibre34">Integer</tt>
+</td><td class="docTableCell1">
+<tt class="calibre34">fromIntegral</tt>
+</td><td class="docTableCell1">
+<tt class="calibre34">fromIntegral</tt>
+</td><td class="docTableCell1">N/A</td><td class="docTableCell1">
+<tt class="calibre34">fromIntegral</tt>
+</td></tr><tr class="calibre16"><td class="docTableCell1">
+<tt class="calibre34">Rational</tt>
+</td><td class="docTableCell1">
+<tt class="calibre34">fromRational</tt>
+</td><td class="docTableCell1"><tt class="calibre34">TRuncate</tt>
+              *</td><td class="docTableCell1"><tt class="calibre34">truncate</tt> *</td><td class="docTableCell1">N/A</td></tr></table></p><br class="calibre48"/><blockquote class="calibre30"><p class="docFootnote1"><sup class="calibre50"><a name="idd1e17306" class="calibre5" id="idd1e17306">[14]</a></sup> Instead of <tt class="calibre34">truncate</tt>, you
+            could also use <tt class="calibre34">round</tt>, <tt class="calibre34">ceiling</tt>, or <tt class="calibre34">floor</tt>.</p></blockquote><a name="x_oL" class="calibre27" id="x_oL"></a><p class="docText">For an extended example demonstrating the use of these
+      numeric typeclasses, see <a class="docLink" href="data_num_split_000.html#data_num">Section 13.5</a>.</p><a name="typeclasses_wellknown_equality" class="calibre27" id="typeclasses_wellknown_equality"></a><h4 id="title-IDAF2FUD" class="docSection1Title">6.4.5. Equality, Ordering, and Comparisons</h4><a name="x_oB" class="calibre27" id="x_oB"></a><p class="docText">We've<a name="I_indexterm6_d1e17108" class="calibre27" id="I_indexterm6_d1e17108"></a><a name="I_indexterm6_d1e17109" class="calibre27" id="I_indexterm6_d1e17109"></a><a name="I_indexterm6_d1e17110" class="calibre27" id="I_indexterm6_d1e17110"></a> already talked about the arithmetic operators such as
+      <tt class="calibre34">+</tt> that can be used for all sorts of
+      different numbers. But there are some even more widely applied operators
+      in Haskell. The most obvious, of course, are the equality tests:
+      <tt class="calibre34">==</tt> and <tt class="calibre34">/=</tt>. These<a name="I_indexterm6_d1e17124" class="calibre27" id="I_indexterm6_d1e17124"></a><a name="I_indexterm6_d1e17127" class="calibre27" id="I_indexterm6_d1e17127"></a> operators are defined in the <tt class="calibre34">Eq</tt> class.</p><a name="x_pB" class="calibre27" id="x_pB"></a><p class="docText">There are also comparison operators such as <tt class="calibre34">&gt;=</tt> and <tt class="calibre34">&lt;=</tt>. These<a name="I_indexterm6_d1e17142" class="calibre27" id="I_indexterm6_d1e17142"></a><a name="I_indexterm6_d1e17145" class="calibre27" id="I_indexterm6_d1e17145"></a> are declared by the <tt class="calibre34">Ord</tt> typeclass. These are in a separate
+      typeclass because there are some types, such as <tt class="calibre34">Handle</tt>, where an equality test makes sense,
+      but there is no way to express a particular ordering. Anything that is
+      an instance of <tt class="calibre34">Ord</tt> can be sorted by
+      <tt class="calibre34">Data.List.sort</tt>.</p><a name="x_qB" class="calibre27" id="x_qB"></a><p class="docText">Almost all Haskell types are instances of <tt class="calibre34">Eq</tt>, and nearly as many are instances of
+      <tt class="calibre34">Ord</tt>.</p>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="typeclasses_instances.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="typeclasses_auto_derivation.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

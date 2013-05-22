@@ -1,0 +1,89 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: starting_string.html
+next: starting_types_split_001.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="starting_string.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect11_d1e2727_split_000.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="starting_types" class="calibre27" id="starting_types"></a><h3 id="title-IDA4UIYH" class="docSection1Title">1.7. First Steps with Types</h3><a name="x_S2" class="calibre27" id="x_S2"></a><p class="docText">While we've talked a little about types<a name="ch01-types" class="calibre27" id="ch01-types"></a> already, our interactions with <i class="docEmphasis">ghci</i> have so far been free of much type-related
+    thinking. We haven't told <i class="docEmphasis">ghci</i> what
+    types we've been using, and it's mostly been willing to accept our
+    input.</p><a name="x_zM" class="calibre27" id="x_zM"></a><p class="docText">Haskell requires type names to start with an uppercase
+    letter, and variable names must start with a lowercase letter. Bear this
+    in mind as you read on; it makes it much easier to follow the
+    names.</p><a name="x_T2" class="calibre27" id="x_T2"></a><p class="docText">The first thing we can do to start exploring the world of
+    types is to get <i class="docEmphasis">ghci</i> to tell us more
+    about what it's doing. <i class="docEmphasis">ghci</i> has a
+    command, <i class="docEmphasis">:set</i>, that <a name="I_indexterm1_d1e2404" class="calibre27" id="I_indexterm1_d1e2404"></a>lets us change a few of its default behaviors. We can tell
+    it to print more type information as follows:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:set +t</b>ghci&gt; <b class="calibre40">'c'</b>
+'c'
+it :: Char
+ghci&gt; <b class="calibre40">"foo"</b>
+"foo"
+it :: [Char]</pre><a name="x_U2" class="calibre27" id="x_U2"></a><p class="docText">What the <tt class="calibre34">+t</tt> does is tell <i class="docEmphasis">ghci</i> to print the type of an expression after
+    the expression. That <a name="I_indexterm1_d1e2432" class="calibre27" id="I_indexterm1_d1e2432"></a>cryptic <span class="docMonofont">it</span> in the output can be very
+    useful: it's actually the name of a special variable, in which <i class="docEmphasis">ghci</i> stores the result of the last expression we
+    evaluated. (This isn't a Haskell language feature; it's specific to
+    <i class="docEmphasis">ghci</i> alone.) Let's break down the
+    meaning of the last line of <i class="docEmphasis">ghci</i>
+    output:</p><ul class="calibre18"><li class="calibre19"><p class="docText">It tells us about the special variable
+        <span class="docMonofont">it</span>.</p></li><li class="calibre19"><p class="docText">We can read text of the form <tt class="calibre34">x :: y</tt> as
+        meaning "the expression x has the type <tt class="calibre34">y</tt>."</p></li><li class="calibre19"><p class="docText">Here, the expression "it" has the type
+        [Char]. (The name String is<a name="I_indexterm1_d1e2477" class="calibre27" id="I_indexterm1_d1e2477"></a> often used instead of [Char]. It is simply
+        a synonym for [Char].)</p></li></ul><a name="I_sidebar1_d1e2488" class="calibre27" id="I_sidebar1_d1e2488"></a></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

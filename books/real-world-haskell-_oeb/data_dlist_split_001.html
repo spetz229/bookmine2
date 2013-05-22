@@ -1,0 +1,61 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: data_dlist_split_000.html
+next: data_seq.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<p class="calibre37"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="sfbody1"><tr class="calibre16"><td class="v3"><h2 class="docSidebarTitle" id="calibre_pb_0">Writing Multiple Monoid Instances</h2><a name="x_rq" class="calibre27" id="x_rq"></a><p class="docText">Although from a mathematical perspective, integers can
+        be monoids in two different ways, we can't write two differing
+        Monoid instances for Int in Haskell—the
+        compiler would complain about duplicate instances.</p><a name="x_sq" class="calibre27" id="x_sq"></a><p class="docText">In those rare cases where we really need several
+        Monoid instances for the same type, we can use some
+        <tt class="calibre34">newtype</tt> trickery to create distinct types for the
+        purpose:</p><pre class="calibre39">-- file: ch13/Monoid.hs
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+                   
+newtype AInt = A { unA :: Int }
+    deriving (Show, Eq, Num)
+
+-- monoid under addition
+instance Monoid AInt where
+    mempty = 0
+    mappend = (+)
+
+newtype MInt = M { unM :: Int }
+    deriving (Show, Eq, Num)
+
+-- monoid under multiplication
+instance Monoid MInt where
+    mempty = 1
+    mappend = (*)</pre><br class="calibre48"/>
+<p class="docText">We'll then get different behavior depending on the type we
+        use:</p><pre class="calibre39">ghci&gt; <b class="calibre40">2 `mappend` 5 :: MInt</b>
+M {unM = 10}
+ghci&gt; <b class="calibre40">2 `mappend` 5 :: AInt</b>
+A {unA = 7}</pre><br class="calibre48"/>
+</td></tr></table></p><br class="calibre20"/><a name="x_uq" class="calibre5" id="x_uq"></a><p class="docText">We will have more to say about difference lists and
+      their monoidal nature in <a class="docLink" href="I_sect115_d1e35473_split_000.html#monadcase_writer_dlist">Section 15.8.5</a>.</p><p class="calibre37"><table border="0" cellspacing="0" cellpadding="1" width="90%" class="calibre41"><tr class="calibre16"><td class="v3"><table width="100%" border="0" cellspacing="0" cellpadding="6" class="calibre42"><tr class="calibre16"><td width="60" valign="top" class="v3"><img src="tip_yellow.gif" alt="" class="calibre43"/></td><td valign="top" class="v3"><p class="docNormalTitle">Enforcing the monoid rules</p><a name="x_KG1" class="calibre27" id="x_KG1"></a><p class="docText">As with the rules for functors, Haskell cannot check
+        the rules for monoids on our behalf. If we're defining a
+        Monoid instance, we can easily write QuickCheck
+        properties to give us high statistical confidence that our code is
+        following the monoid rules.</p></td></tr></table></td></tr></table></p><br class="calibre20"/>
+<ul class="calibre28"></ul><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="middle" class="v1" height="5"><img src="pixel.gif" alt="" border="0" class="calibre8"/></td></tr><tr class="calibre6"><td valign="middle" class="v1"><table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody"><tr class="calibre6"><td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td></tr></table></td><td class="v1"/><td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="data_num_split_000.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="data_seq.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="top" class="v2"><span class="calibre9"></span></td></tr></table><!--IP User 2--><td class="calibre7">
+                         
+                      </td><tr class="calibre6"><td colspan="3" valign="bottom" class="calibre7"><br class="calibre20"/><p class="v4"></p><br class="calibre20"/></td></tr></div>
+
+{% endraw %}
+

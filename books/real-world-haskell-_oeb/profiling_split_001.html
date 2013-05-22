@@ -1,0 +1,48 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: profiling_split_000.html
+next: I_sect125_d1e48477.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<div class="calibre47"></div><h2 id="title-IDAJZ0XG" class="docPrefaceTitle">Chapter 25. Profiling and Optimization</h2><a name="x_qJ1" class="calibre5" id="x_qJ1"></a><p class="docText">Haskell is a high-level language. A really high-level
+  language. We can spend our days programming entirely in abstractions, in
+  monoids, functors, and hylomorphisms, far removed from any specific hardware
+  model of computation. The language specification goes to great lengths to
+  avoid prescribing any particular evaluation model. These layers of
+  abstraction let us treat Haskell as a notation for computation itself,
+  letting us concentrate on the essence of the problem without getting bogged
+  down in low-level <span class="docEmphasis">implementation</span>
+  decisions. We get to program in pure thought.</p><a name="x_rJ1" class="calibre5" id="x_rJ1"></a><p class="docText">However, this is a book about real-world programming, and
+  in the real world, code runs on stock hardware with limited resources. Our
+  programs will have time and space requirements that we may need to enforce.
+  As such, we need a good knowledge of how our program data is represented,
+  the precise consequences of using lazy or strict evaluation strategies, and
+  techniques for analyzing and controlling space and time behavior.</p><a name="x_sJ1" class="calibre5" id="x_sJ1"></a><p class="docText">In this chapter, we'll look at typical space and time
+  problems a Haskell programmer might encounter and how to methodically
+  analyze, understand, and address them. To do this, we'll use a range of
+  techniques: time and space profiling, runtime statistics, and reasoning
+  about strict and lazy evaluation. We'll also look at the impact of compiler
+  optimizations on performance and the use of advanced optimization techniques
+  that become feasible in a purely functional language. So let's begin with a
+  challenge: squashing unexpected memory usage in some inocuous-looking
+  code.</p>
+<a href="21061538.html" class="calibre13"><img src="pixel.gif" alt="" border="0" class="calibre26"/></a><ul class="calibre28"></ul><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="middle" class="v1" height="5"><img src="pixel.gif" alt="" border="0" class="calibre8"/></td></tr><tr class="calibre6"><td valign="middle" class="v1"><table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody"><tr class="calibre6"><td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td></tr></table></td><td class="v1"/><td valign="middle" class="v2"> 
+           
+          <span class="calibre9"><a target="_self" href="I_sect124_d1e48019.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect125_d1e48477.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody"><tr class="calibre6"><td valign="top" class="v2"><span class="calibre9"></span></td></tr></table><!--IP User 2--><td class="calibre7">
+                         
+                      </td><tr class="calibre6"><td colspan="3" valign="bottom" class="calibre7"><br class="calibre20"/><p class="v4"></p><br class="calibre20"/></td></tr></div>
+
+{% endraw %}
+

@@ -1,0 +1,289 @@
+---
+layout: page
+title: "jQuery: Novice to Ninja"
+prev: OEBPS/apb.html
+next: OEBPS/ix01.html
+book_path: books/earle-castledine-craig-sharkie-jquery-novice-to-ninja-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="toc" title="Appendix C. Plugin Helpers"><div class="toc"><div class="toc"><div class="toc"><h1 class="title"><a xmlns:saxon="http://icl.com/saxon" id="appendix_plugins" class="calibre5"></a>Appendix C. Plugin Helpers</h1></div></div></div>
+  
+      
+
+  
+      There are a few jQuery properties and actions that, although applying
+  to any jQuery selection, are particularly useful for plugin development. The
+  reason they’re hidden away in this appendix is that they’re not commonly
+  used. Despite this, they’re quite powerful, and you should familiarize
+  yourself with them if you intend to spend time developing plugins.
+
+  
+      <div class="toc" title="Selector and Context"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e14735" class="calibre5"></a>Selector and Context</h2></div></div></div>
+    
+         
+
+    
+         
+            <a id="chc-001b"></a>
+            <a id="chc-001c"></a>The first ones we’ll look at are the
+    <code class="email">selector</code> and <code class="email">context</code> properties.
+    These work together to show you what jQuery thinks it’s working on. These
+    are basically internal methods, but depending on what your plugin is
+    doing, it can be good to know.
+
+    
+         The <a id="chc-001a"></a>
+            <a id="chc-001"></a>
+            <code class="email">selector</code> property returns a string
+    value of the current jQuery selector string, so the command
+    <code class="email">$('p:first').selector</code> will return the string
+    <code class="email">"p:first"</code>. This is useful in your plugins if you need
+    to know what the user originally selected.
+
+    
+         You might think that the optional second parameter to the jQuery
+    selector, which is called <a id="chc-002"></a>
+            <a id="chc-002a"></a>
+            <code class="email">context</code>, is what you’d obtain with the
+    <code class="email">context</code> property—but it’s a bit trickier than that.
+    In fact, if you supply <code class="email">context</code> as a string, it’s
+    converted internally to a regular jQuery statement, which will actually
+    affect the <code class="email">selector</code> property:
+
+    
+         <pre class="programlisting">var selector = $('p:first', '#content').selector
+var context = $('p:first', '#content').context</pre>
+
+    
+         In the aforementioned example, the <code class="email">selector</code>
+    resolves to <code class="email">"#content p:first"</code> and the
+    <code class="email">context</code> resolves to <code class="email">Document</code> (the
+    context that all your selectors will default to). The
+    <code class="email">context</code> property is only modified if you supply an
+    actual DOM node to it:
+
+    
+         <pre class="programlisting">var domContext = $('#content')[0]; // Get the DOM element
+var selector = $('p:first', domContext).selector;
+var context = $('p:first', domContext).context;</pre>
+
+    
+         In this case, the <code class="email">selector</code> will be reported as
+    <code class="email">"p:first"</code>, and the <code class="email">context</code> will be
+    the DOM element itself (for this example, it’s the
+    <code class="email">&lt;div id="content"&gt;</code> element).
+
+    
+         Specifying the DOM node provides no guarantee that your queries will
+    run faster; internally jQuery’s selector engine will only search inside
+    the context you specify anyway, even though the
+    <code class="email">context</code> property will be reported as
+    <code class="email">Document</code>.<a id="d4e14784"></a>
+            <a id="d4e14785"></a>
+            <a id="d4e14786"></a>
+            <a id="d4e14787"></a>
+            <a id="d4e14788"></a>
+            <a id="d4e14789"></a>
+         
+  
+      </div>
+
+  
+      <div class="toc" title="The jQuery Stack"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e14790" class="calibre5"></a>The jQuery Stack<a id="chc-003" class="calibre5"></a>
+         </h2></div></div></div>
+    
+         
+
+    
+         To make our plugins play nicely with jQuery, we’ve learned that we
+    should return each jQuery element from our code, so that commands can
+    continue to be chained after our plugin. Generally, we just modify
+    elements in the selection before we pass them back, but sometimes we want
+    to alter the items that are returned—perhaps remove some elements, or add
+    some new ones. The best way to accomplish this is via the <a id="chc-004"></a>
+            <code class="email">pushStack</code> action. This is a
+    convenient way to create a jQuery selection for inclusion in the
+    chain.
+
+    
+         
+            <a id="chc-003a"></a>By way of example, we’ll set up a small plugin that
+    retrieves the elements that surround the selected element. The use case
+    might be to highlight the next and previous items in a list of elements.
+    Our plugin will also wrap around if the selected item is the first or last
+    in the list:
+
+    
+         <pre class="programlisting">jQuery.fn.surrounds = function() {
+  var prev = this.index() == 0 ? 
+    this.siblings(':last') : 
+    this.prev();
+  var next = this.index() == this.siblings().length ? 
+    this.siblings(':first') : 
+    this.next();
+
+  var newStack = prev.add(next);
+  return this.pushStack(newStack, 'surrounds', '');
+};</pre>
+
+    
+         The plugin retrieves the previous and next elements, and combines
+    them into one selection with the <a id="chc-005"></a>
+            <code class="email">add</code> action. This new collection is
+    returned via <code class="email">pushStack</code>, which accepts the
+    collection, a name for it, and a name for the selector string. The two
+    name parameters will be readable by the <a id="chc-006"></a>
+            <code class="email">selector</code> property we looked at above.
+    To use this plugin, we might apply it to an unordered list called
+    categories, like so:
+
+    
+         <pre class="programlisting">$('#categories li:first')
+  .surrounds()
+  .css('color', 'red')
+  .end()
+  .css('color', 'blue'); </pre>
+
+    
+         This will select the two elements that surround the first list item,
+    then color them red. Because we’ve used
+    <code class="email">pushStack</code>, the jQuery chain remains intact; we
+    can then use the <a id="chc-007a"></a>
+            <a id="chc-007"></a>
+            <code class="email">end</code> command to move back to the
+    original selection (the first list item), and color it blue. You can use
+    <code class="email">pushStack</code> anytime you want to manipulate the
+    chain like this.
+
+    
+         The last trick we’ll look at in regard to the jQuery internal
+    <a id="chc-0079"></a>chain is the ability to access other steps in the chain. As
+    you might remember, the <code class="email">end</code> action takes you back
+    up one level to the last command that modified the jQuery selection. If
+    you look into the jQuery core, you’ll see that
+    <code class="email">end</code> is implemented using the <a id="chc-008"></a>
+            <code class="email">prevObject</code> property. Inside your plugin
+    you can gain access to the previous jQuery object by using
+    <code class="email">this.prevObject</code>. If the previous object has a previous
+    object, you can access this too!<a id="d4e14838"></a>
+            <a id="d4e14839"></a>
+            <a id="d4e14840"></a>
+         
+  
+      </div>
+
+  
+      <div class="toc" title="Minification"><div class="toc"><div class="toc"><div class="toc"><h2 class="title1"><a xmlns:saxon="http://icl.com/saxon" id="d4e14841" class="calibre5"></a>Minification<a id="chc-009" class="calibre5"></a>
+            <a id="chc-009b" class="calibre5"></a>
+            <a id="chc-009a" class="calibre5"></a>
+         </h2></div></div></div>
+    
+         
+
+    
+         You know there are two versions of jQuery, jQuery UI, and many
+    jQuery plugins: an uncompressed version and a minified version. Why is
+    this so?
+
+    
+         Regardless of which one you choose, when you add them to your page
+    you gain access to all the features of jQuery (or the plugin in question).
+    The difference is, of course, that the file size of the
+    “<span xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0" xmlns:d="http://docbook.org/ns/docbook">.min</span>” version is markedly smaller. With jQuery
+    coming in at around 250kB and the minified version at less than 100kB, you
+    save well over half the file size in bandwidth. If your server, and your
+    users’ browsers, support sending Gzipped files (most do these days), this
+    can easily be halved again.
+
+    
+         And if the file is half as big, it’s delivered twice as fast. Faster
+    downloads mean faster page loads, so you may be wondering how to enjoy the
+    benefit of minified files with your own script files, and—more
+    importantly—your plugins.
+
+    
+         There are a number of utilities you can use to compress your files,
+    so we’ll go over a few of the more commonly used ones.
+
+    
+         The world of JavaScript minifiers ebbs and flows like the tide, as
+    there have been a lot of players come and go over the last five years.
+    Those who have been around for a while include <a id="chc-010"></a>
+            <a href="http://developer.yahoo.com/yui/compressor/">Yahoo’s YUI
+    Compressor</a> and <a id="chc-011"></a>
+            <a href="http://code.google.com/closure/compiler/">Google’s Closure
+    Compiler.</a> Another major player is <a id="chc-012"></a>
+            <a href="https://github.com/mishoo/UglifyJS">UglifyJS,</a> which the
+    jQuery team themselves use for minification.
+
+    
+         Both solutions work by eliminating whitespace and shortening
+    variable and function names. The code becomes obfuscated by human
+    standards, but the browser’s JavaScript engine has no trouble interpreting
+    the code output. So, for example, this human-readable code:
+
+    
+         <pre class="programlisting">$growl.animate({
+  border: "none",
+  height: 0,
+  marginBottom: 0,
+  marginTop: "-6px",
+  opacity : 0,
+  paddingBottom: 0,
+  paddingTop: 0,
+  queue: false
+});</pre>
+
+    
+         … would be shortened to this:
+
+    
+         <pre class="programlisting">$growl.animate({border:"none",height:0,marginBottom:0,marginTop:
+↵"-6px",opacity :0,paddingBottom:0,paddingTop:0,queue:false}</pre>
+
+    
+         The second statement has the whitespace removed, and you can already
+    see that it’s taking up less space to achieve the same results. You can
+    also see how it’s become more difficult to read. Multiply this effect by
+    the 9,000-odd lines in the jQuery source, and you can imagine how
+    difficult it would be to make any sense of it. And that’s without altering
+    any names.
+
+    
+         The minifier you choose depends largely on your development
+    environment and workflow. Both the <a id="chc-013"></a>Closure Compiler and <a id="chc-014"></a>YUI Compressor are Java applications that can be called from
+    the command line. <a id="chc-015"></a>UglifyJS is written in JavaScript and runs on Node.JS. The
+    overhead per run is a lot lower for Node compared to the Java Virtual
+    Machine, which is important if you’re minifying a lot of individual files.
+    Whichever option you choose, the method for minification is similar. For
+    example, to compress a file such as <span xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0" xmlns:d="http://docbook.org/ns/docbook">hello.js</span> using
+    Closure Compiler, you could do this:<pre class="programlisting">java -jar compiler.jar --js hello.js --js_output_file 
+↵hello-compiled.js</pre>It can then be integrated into your build
+    process, so you will automatically have minified and non-minified versions
+    of your latest code.
+
+    
+         If you just need to minimize once-off, or are interested in what
+    minifiers do, you could also try the online version of the <a id="chc-016"></a>
+            <a href="http://closure-compiler.appspot.com/">Closure
+    Compiler</a> by pasting in the code and hitting “compile.”
+
+    
+         In the end, your choice of minifier mostly comes down to personal
+    preference (though, seeing as it’s our book, we can say we like
+    UglifyJS!). Some minifiers have a slightly smaller output, while others
+    are faster to compile; ultimately, they are all continually refining their
+    solutions, and are responsive to industry and community
+    feedback.<a id="d4e14884"></a>
+            <a id="d4e14885"></a>
+            <a id="d4e14886"></a>
+         
+  
+      </div>
+
+   </div></div>
+
+{% endraw %}
+

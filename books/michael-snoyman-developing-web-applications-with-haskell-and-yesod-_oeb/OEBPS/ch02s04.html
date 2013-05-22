@@ -1,0 +1,44 @@
+---
+layout: page
+title: "Developing Web Applications with Haskell and Yesod"
+prev: OEBPS/ch02s03.html
+next: OEBPS/ch02s05.html
+book_path: books/michael-snoyman-developing-web-applications-with-haskell-and-yesod-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+<div class="book" title="Overloaded Strings"><div class="book"><div class="book"><div class="book"><h1 class="title2"><a id="I_sect12_d1e671" class="calibre1"></a>Overloaded Strings</h1></div></div></div><p class="calibre7">What’s the type of <code class="literal">"hello"</code>? Traditionally, it’s
+        <code class="literal">String</code>, which is defined as <code class="literal">type
+        String = [Char]</code>. Unfortunately, there are a number of limitations with
+      this:</p><div class="book"><ul class="itemizedlist"><li class="listitem"><p class="calibre7">It’s a very inefficient implementation of textual data. We need to allocate extra
+          memory for each cons cell, plus the characters themselves each take up a full machine
+          word.</p></li><li class="listitem"><p class="calibre7">Sometimes we have string-like data that’s not actually text, such as <code class="literal">ByteString</code>s and HTML.</p></li></ul></div><p class="calibre7">To work around these limitations, GHC has a language extension called
+    <code class="literal">OverloadedStrings</code>. When enabled, literal strings no longer have the monomorphic
+   type <code class="literal">String</code>; instead, they have the type <code class="literal">IsString a =&gt; a</code>, where
+    <code class="literal">IsString</code> is defined as:</p><a id="I_programlisting2_d1e709" class="firstname"></a><pre class="programlistinghaskell"><code class="kr">class</code> <code class="kt">IsString</code> <code class="n">a</code> <code class="kr">where</code>
+    <code class="n">fromString</code> <code class="ow">::</code> <code class="kt">String</code> <code class="ow">-&gt;</code> <code class="n">a</code>
+</pre><p class="calibre7">There are <code class="literal">IsString</code> instances available for a number of types in Haskell, such
+   as <code class="literal">Text</code> (a much more efficient packed <code class="literal">String</code> type),
+    <code class="literal">ByteString</code>, and <code class="literal">Html</code>. Virtually every example in this book
+   will assume that this language extension is turned on.</p><p class="calibre7">Unfortunately, there is one drawback to this extension: it can sometimes confuse GHC’s
+      type checker. Imagine we have:</p><a id="I_programlisting2_d1e734" class="firstname"></a><pre class="programlistinghaskell"><code class="cm">{-# LANGUAGE OverloadedStrings, TypeSynonymInstances, FlexibleInstances #-}</code>
+<code class="kr">import</code> <code class="nn">Data.Text</code> <code class="p">(</code><code class="kt">Text</code><code class="p">)</code>
+
+<code class="kr">class</code> <code class="kt">DoSomething</code> <code class="n">a</code> <code class="kr">where</code>
+    <code class="n">something</code> <code class="ow">::</code> <code class="n">a</code> <code class="ow">-&gt;</code> <code class="kt">IO</code> <code class="nb">()</code>
+
+<code class="kr">instance</code> <code class="kt">DoSomething</code> <code class="kt">String</code> <code class="kr">where</code>
+    <code class="n">something</code> <code class="kr">_</code> <code class="ow">=</code> <code class="n">putStrLn</code> <code class="s">"String"</code>
+
+<code class="kr">instance</code> <code class="kt">DoSomething</code> <code class="kt">Text</code> <code class="kr">where</code>
+    <code class="n">something</code> <code class="kr">_</code> <code class="ow">=</code> <code class="n">putStrLn</code> <code class="s">"Text"</code>
+
+<code class="nf">myFunc</code> <code class="ow">::</code> <code class="kt">IO</code> <code class="nb">()</code>
+<code class="nf">myFunc</code> <code class="ow">=</code> <code class="n">something</code> <code class="s">"hello"</code>
+</pre><p class="calibre7">Will the program print out <code class="literal">String</code> or <code class="literal">Text</code>? It’s not clear. So instead, you’ll need to give an explicit
+      type annotation to specify whether <code class="literal">"hello"</code> should be
+      treated as a <code class="literal">String</code> or <code class="literal">Text</code>.</p></div></div>
+
+{% endraw %}
+

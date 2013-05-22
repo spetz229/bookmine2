@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="feec4787-7888-4a08-943a-32a1d19eac7c" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Путь программиста: от 100$ до 10000$ в месяц</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Введение</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos10456"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Часть 1. СТАТИСТИКА</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos13367"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Глава 1. Шокирующие данные</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos13609"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Глава 2. Грабли, которые обязательно треснут нас по лбу</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos18589"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Уровень программиста пропорционален количеству граблей, на которые ему приходилось наступать во время практики.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos19737"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Любая неудача продвигает нас ближе к цели.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos20583"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="7">
+      <navLabel>
+        <text>Часть 2. АНАЛИТИКА</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos21539"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="8">
+      <navLabel>
+        <text>Глава 3. Смотрим в книгу, видим фигу</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos21779"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_9" playOrder="9">
+      <navLabel>
+        <text>Почему не работают книги</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos23744"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_10" playOrder="10">
+      <navLabel>
+        <text>Самый быстрый способ получения справки по вопросам разработки ПО – это yandex или google.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos25980"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_11" playOrder="11">
+      <navLabel>
+        <text>Почему не работает высшее образование</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos31939"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="12">
+      <navLabel>
+        <text>Почему работа и курсы работают… но редко</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos41662"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_13" playOrder="13">
+      <navLabel>
+        <text>Глава 4. Пора взглянуть на себя без прикрас</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos46163"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_14" playOrder="14">
+      <navLabel>
+        <text>Критерии оценки программиста</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos46958"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_15" playOrder="15">
+      <navLabel>
+        <text>Глава 5. Начинаем взлетать. Концепция развития программиста</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos57845"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_16" playOrder="16">
+      <navLabel>
+        <text>Часть 3. ПРАКТИКА</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos61710"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_17" playOrder="17">
+      <navLabel>
+        <text>Глава 6. Мощный рывок вперед. Развитие профессиональных навыков</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos61948"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_18" playOrder="18">
+      <navLabel>
+        <text>Регулярная практика программирования</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos62971"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_19" playOrder="19">
+      <navLabel>
+        <text>Быть в авангарде</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos64802"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_20" playOrder="20">
+      <navLabel>
+        <text>Книги must read</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos67334"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_21" playOrder="21">
+      <navLabel>
+        <text>Умение искать, отфильтровывать и использовать информацию</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos69683"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_22" playOrder="22">
+      <navLabel>
+        <text>Пошаговая инструкция развития</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos72650"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_23" playOrder="23">
+      <navLabel>
+        <text>Шаг 1. Новичок. Опыт работы = 0. Знания в рамках школьных и институтских курсов информатики.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos76273"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_24" playOrder="24">
+      <navLabel>
+        <text>Шаг 2. Advanced Новичок. Опыт работы &lt;= 0,5 года. Знания в рамках школьных и институтских курсов информатики + полученные на работе навыки решения конкретных задач.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos80954"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_25" playOrder="25">
+      <navLabel>
+        <text>Шаг 3. Младший программист. Опыт работы 0,5-1 год.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos86061"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_26" playOrder="26">
+      <navLabel>
+        <text>Шаг 4. Программист. Опыт работы 1-3 года.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos89988"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_27" playOrder="27">
+      <navLabel>
+        <text>Шаг 5. Старший программист. Опыт работы от 2 лет.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos93894"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_28" playOrder="28">
+      <navLabel>
+        <text>Шаг 6. Функциональный архитектор. Опыт работы от 3 лет.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos99037"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_29" playOrder="29">
+      <navLabel>
+        <text>Шаг 7. Менеджер проектов. Опыт работы от 5 лет.</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos102196"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_30" playOrder="30">
+      <navLabel>
+        <text>Глава 7. Ускорение до максимума. Развитие сопряженных навыков</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos105004"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_31" playOrder="31">
+      <navLabel>
+        <text>Английский язык</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos105783"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_32" playOrder="32">
+      <navLabel>
+        <text>Учитесь читать наискосок</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos112144"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_33" playOrder="33">
+      <navLabel>
+        <text>Подготовка к собеседованию</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos114014"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_34" playOrder="34">
+      <navLabel>
+        <text>Глава 8. В полушаге от идеала. Развитие общих навыков</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos122634"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_35" playOrder="35">
+      <navLabel>
+        <text>Физическое и эмоциональное состояние</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos123487"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_36" playOrder="36">
+      <navLabel>
+        <text>Правильный отдых</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos125759"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_37" playOrder="37">
+      <navLabel>
+        <text>Планирование</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos129656"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_38" playOrder="38">
+      <navLabel>
+        <text>Совершенствование полезных навыков</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos132611"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_39" playOrder="39">
+      <navLabel>
+        <text>Мотивация</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos135892"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_40" playOrder="40">
+      <navLabel>
+        <text>Не теряйте надежду и верьте в успех</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos137002"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_41" playOrder="41">
+      <navLabel>
+        <text>Часть 4. ИТОГИ</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos140389"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_42" playOrder="42">
+      <navLabel>
+        <text>Глава 9. От новичка до гуру. Дерево развития технаря</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos140621"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_43" playOrder="43">
+      <navLabel>
+        <text>Глава 10. Заключение</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos147684"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_44" playOrder="44">
+      <navLabel>
+        <text>Приложение А. Чем Школа Программирования может быть полезна лично Вам</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos153167"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_45" playOrder="45">
+      <navLabel>
+        <text>Методы обучения в ШП</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos157712"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_46" playOrder="46">
+      <navLabel>
+        <text>Приложение Б. Продукты и обратная связь</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos161770"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_47" playOrder="47">
+      <navLabel>
+        <text>Контакты</text>
+      </navLabel>
+      <content src="Put%27_proghrammista__ot_100%24_do_.html#filepos164492"/>
+    </navPoint>
+  </navMap>
+</ncx>

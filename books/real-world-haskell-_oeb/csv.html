@@ -1,0 +1,197 @@
+---
+layout: page
+title: "Real World Haskell, 1st Edition"
+prev: parsec_choices.html
+next: I_sect116_d1e36850.html
+book_path: books/real-world-haskell-_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+    <a name="toppage" class="calibre5" id="toppage"></a>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody">
+      <tr valign="top" class="calibre6">
+        <td class="calibre7">
+          <a name="MainContent" class="calibre5" id="MainContent"></a>
+          <table width="95%" class="sfbody">
+            <tr class="calibre6">
+              <td class="v">
+                <!--Copyright (c) 2002 Safari Tech Books Online-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody">
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1" height="5">
+                      <img src="pixel.gif" alt="" border="0" class="calibre8"/>
+                    </td>
+                  </tr>
+                  <tr class="calibre6">
+                    <td valign="middle" class="v1">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody">
+                        <tr class="calibre6">
+                          <td class="v"><span class="calibre9"> </span>
+                   
+                  <span class="calibre9">   </span>
+             <span class="calibre9"> </span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="v1"/>
+                    <td valign="middle" class="v2"><a href="21061538.html" class="calibre13"><img src="btn_next_.gif" alt="Next" border="0" class="calibre26"/></a> 
+           
+          <span class="calibre9"><a target="_self" href="parsec_choices.html" title="Previous section" class="calibre13"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre14"/></a></span>
+				
+				 
+				
+				<span class="calibre9"><a target="_self" href="I_sect116_d1e36850.html" title="Next section" class="calibre13"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre14"/></a></span></td>
+                  </tr>
+                </table>
+                <div id="section" class="calibre15">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v3">Safari IT Books Language Constructs Functional Programming Haskell Safari IT Books Programming Programming Programming Bryan O'Sullivan  Donald Bruce Stewart  John Goerzen  O'Reilly Media, Inc. Real World Haskell, 1st Edition<a name="csv" class="calibre27" id="csv"></a><h3 id="643999-886" class="docSection1Title">16.4. Extended Example: Full CSV Parser</h3><a name="x_DK" class="calibre27" id="x_DK"></a><p class="docText">Our earlier CSV examples have had an important flaw—they
+    weren't able to handle cells that contain a comma. CSV generating programs
+    typically put quotation marks around such data. But then you have another
+    problem: what to do if a cell contains a quotation mark and a comma. In
+    these cases, the embedded quotation marks are doubled up.</p><a name="x_EK" class="calibre27" id="x_EK"></a><p class="docText">Here is a full CSV parser. You can use this from <i class="docEmphasis">ghci</i>, or if you compile it to a standalone
+    program, it will parse a CSV file on standard input and convert it to a
+    different format on output:</p><pre class="calibre39">-- file: ch16/csv9.hs
+import Text.ParserCombinators.Parsec
+
+csvFile = endBy line eol
+line = sepBy cell (char ',')
+cell = quotedCell &lt;|&gt; many (noneOf ",\n\r")
+
+quotedCell = 
+    do char '"'
+       content &lt;- many quotedChar
+       char '"' &lt;?&gt; "quote at end of cell"
+       return content
+
+quotedChar =
+        noneOf "\""
+    &lt;|&gt; try (string "\"\"" &gt;&gt; return '"')
+
+eol =   try (string "\n\r")
+    &lt;|&gt; try (string "\r\n")
+    &lt;|&gt; string "\n"
+    &lt;|&gt; string "\r"
+    &lt;?&gt; "end of line"
+
+parseCSV :: String -&gt; Either ParseError [[String]]
+parseCSV input = parse csvFile "(unknown)" input
+
+main =
+    do c &lt;- getContents
+       case parse csvFile "(stdin)" c of
+            Left e -&gt; do putStrLn "Error parsing input:"
+                         print e
+            Right r -&gt; mapM_ print r</pre><br class="calibre48"/>
+<a name="x_FK" class="calibre27" id="x_FK"></a><p class="docText">That's a full-featured CSV parser in just 21 lines of
+    code, plus an additional 10 lines for the <tt class="calibre34">parseCSV</tt> and <tt class="calibre34">main</tt> utility functions.</p><a name="x_GK" class="calibre27" id="x_GK"></a><p class="docText">Let's look at the changes in this program from the
+    previous versions. First, a cell may now be either a bare cell or a
+    <span class="docEmphasis">quoted</span> cell. We give the <tt class="calibre34">quotedCell</tt> option first, because we want to
+    follow that path if the first character in a cell is the quote
+    mark.</p><a name="x_HK" class="calibre27" id="x_HK"></a><p class="docText">The <tt class="calibre34">quotedCell</tt> begins
+    and ends with a quote mark and contains zero or more characters. These
+    characters can't be copied directly, though, because they may contain
+    embedded, doubled-up quote marks themselves, so we define a custom
+    <tt class="calibre34">quotedChar</tt> to process them.</p><a name="x_IK" class="calibre27" id="x_IK"></a><p class="docText">When we're processing characters inside a quoted cell, we
+    first say <tt class="calibre34">noneOf "\""</tt>. This will match
+    and return any single character as long as it's not the quote mark.
+    Otherwise, if it is the quote mark, we see if we have two in a row. If so,
+    we return a single quote mark to go on our result string.</p><a name="x_JK" class="calibre27" id="x_JK"></a><p class="docText">Notice that <tt class="calibre34">try</tt> in
+    <tt class="calibre34">quotedChar</tt> is on the
+    <span class="docEmphasis">right</span> side of <tt class="calibre34">&lt;|&gt;</tt>. Recall that we said that <tt class="calibre34">TRy</tt> has an effect only if it is on the left side
+    of <tt class="calibre34">&lt;|&gt;</tt>. This <tt class="calibre34">try</tt> does occur on the left side of a <tt class="calibre34">&lt;|&gt;</tt>, but on the left
+    of one that must be within the implementation of <tt class="calibre34">many</tt>.</p><a name="x_KK" class="calibre27" id="x_KK"></a><p class="docText">This <tt class="calibre34">try</tt> is important.
+    Let's say we are parsing a quoted cell and are getting towards the end of
+    it. There will be another cell following. So we will expect to see a quote
+    to end the current cell, followed by a comma. When we hit <tt class="calibre34">quotedChar</tt>, we will fail the <tt class="calibre34">noneOf</tt> test and proceed to the test that looks
+    for two quotes in a row. We'll also fail that one because we'll have a
+    quote, and then a comma. If we hadn't used <tt class="calibre34">TRy</tt>, we'd crash with an error at this point,
+    saying that it was expecting the second quote, because the first quote was
+    already consumed. Since we use <tt class="calibre34">try</tt>,
+    this is properly recognized as not part of the cell, so it terminates the
+    <tt class="calibre34">many quotedChar</tt> expression as expected.
+    Lookahead has once again proven very useful, and the fact that it is so
+    easy to add makes it a remarkable tool in Parsec.</p><a name="x_LK" class="calibre27" id="x_LK"></a><p class="docText">We can test this program with <i class="docEmphasis">ghci</i> over some quoted cells:</p><pre class="calibre39">ghci&gt; <b class="calibre40">:l csv9.hs</b>
+[1 of 1] Compiling Main             ( csv9.hs, interpreted )
+Ok, modules loaded: Main.
+ghci&gt; <b class="calibre40">parseCSV "\"This, is, one, big, cell\"\n"</b>
+Loading package parsec-2.1.0.1 ... linking ... done.
+Right [["This, is, one, big, cell"]]
+ghci&gt; <b class="calibre40">parseCSV "\"Cell without an end\n"</b>
+Left "(unknown)" (line 2, column 1):
+unexpected end of input
+expecting "\"\"" or quote at end of cell</pre><a name="x_MK" class="calibre27" id="x_MK"></a><p class="docText">Let's run it over a real CSV file. Here's one generated by
+    a spreadsheet program:</p><pre class="calibre39">"Product","Price"
+"O'Reilly Socks",10
+"Shirt with ""Haskell"" text",20
+"Shirt, ""O'Reilly"" version",20
+"Haskell Caps",15</pre><br class="calibre48"/>
+<a name="x_NK" class="calibre27" id="x_NK"></a><p class="docText">Now, we can run this under our test program and
+    watch:</p><pre class="calibre39">$ <b class="calibre40">runhaskell csv9.hs &lt; test.csv</b>
+["Product","Price"]
+["O'Reilly Socks","10"]
+["Shirt with \"Haskell\" text","20"]
+["Shirt, \"O'Reilly\" version","20"]
+["Haskell Caps","15"]</pre>
+<ul class="calibre18"></ul></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3" height="5">
+                        <img src="pixel.gif" alt="" border="0" class="calibre32"/>
+                      </td>
+                    </tr>
+                    <tr class="calibre16">
+                      <td valign="middle" class="v3">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="sfbody1">
+                          <tr class="calibre16">
+                            <td class="v5"><span class="calibre33"> </span>
+                   
+                  <span class="calibre33">   </span>
+             <span class="calibre33"> </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="v3"/>
+                      <td valign="middle" class="v6"><a href="21061538.html" class="calibre2"><img src="btn_next_.gif" alt="Next" border="0" class="calibre31"/></a> 
+           
+          <span class="calibre33"><a target="_self" href="parsec_choices.html" title="Previous section" class="calibre2"><img border="0" src="btn_prev.gif" alt="Previous section" id="btn_prev" class="calibre17"/></a></span>
+				
+				 
+				
+				<span class="calibre33"><a target="_self" href="I_sect116_d1e36850.html" title="Next section" class="calibre2"><img border="0" src="btn_next.gif" alt="Next section" id="btn_next" class="calibre17"/></a></span></td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="sfbody1">
+                    <tr class="calibre16">
+                      <td valign="top" class="v6">
+                        <span class="calibre33"></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--IP User 2-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="calibre7">
+                         
+                      </td>
+      </tr>
+      <tr class="calibre6">
+        <td colspan="3" valign="bottom" class="calibre7">
+          <br class="calibre20"/>
+          <p class="v4"></p>
+          <br class="calibre20"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+{% endraw %}
+

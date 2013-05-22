@@ -1,0 +1,89 @@
+---
+layout: page
+title: "Java Concurrency in Practice"
+prev: ch03lev1sec1.html
+next: ch03lev1sec3.html
+book_path: books/brian-goetz-tim-peierls-joshua-bloch-joseph-bowbeer-david-holmes-doug-lea-java-concurrency-in-practice--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+
+<a name="ch03lev1sec2" class="calibre18" id="ch03lev1sec2"></a>
+<h3 id="title-IDAGY5DV" class="docSection1Title">3.2. Publication and Escape</h3>
+<p class="docText1"><span class="docEmphasis">Publishing</span> an object means making it available to code outside of its current scope, such as by storing a reference to it where other code can find it, returning it from a nonprivate method, or passing it to a method in another class. In many situations, we want to ensure that objects and their internals are <span class="docEmphasis">not</span> published. In other situations, we do want to publish an object for general use, but doing so in a thread-safe manner may require synchronization. Publishing internal state variables can compromise encapsulation and make it more difficult to preserve invariants; publishing objects before they are fully constructed can compromise thread safety. An object that is published when it should not have been is said to have <span class="docEmphasis">escaped</span>. <a class="calibre2" href="ch03lev1sec5.html#ch03lev1sec5">Section 3.5</a> covers idioms for safe publication; right now, we look at how an object can escape.</p>
+<p class="docText1"><a name="iddle1068" class="calibre18" id="iddle1068"></a><a name="iddle1070" class="calibre18" id="iddle1070"></a><a name="iddle2212" class="calibre18" id="iddle2212"></a><a name="iddle3791" class="calibre18" id="iddle3791"></a><a name="iddle3792" class="calibre18" id="iddle3792"></a>The most blatant form of publication is to store a reference in a public static field, where any class and thread could see it, as in <a class="calibre2" href="#ch03list05">Listing 3.5</a>. The <tt class="calibre25">initialize</tt> method instantiates a new <tt class="calibre25">HashSet</tt> and publishes it by storing a reference to it into <tt class="calibre25">knownSecrets</tt>.</p>
+<a name="ch03list05" class="calibre18" id="ch03list05"></a><h5 id="title-IDAK15DV" class="docExampleTitle">Listing 3.5. Publishing an Object.</h5><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<pre class="calibre30">public static Set&lt;Secret&gt; knownSecrets;
+
+public void initialize() {
+    knownSecrets = new HashSet&lt;Secret&gt;();
+}
+</pre><br class="calibre11"/>
+</td></tr></table></p>
+<p class="docText1">Publishing one object may indirectly publish others. If you add a <tt class="calibre25">Secret</tt> to the published <tt class="calibre25">knownSecrets</tt> set, you've also published that <tt class="calibre25">Secret</tt>, because any code can iterate the <tt class="calibre25">Set</tt> and obtain a reference to the new <tt class="calibre25">Secret</tt>. Similarly, returning a reference from a nonprivate method also publishes the returned object. <tt class="calibre25">UnsafeStates</tt> in <a class="calibre2" href="#ch03list06">Listing 3.6</a> publishes the supposedly private array of state abbreviations.</p>
+<a name="ch03list06" class="calibre18" id="ch03list06"></a><h5 id="title-IDAQ25DV" class="docExampleTitle">Listing 3.6. Allowing Internal Mutable State to Escape. <span class="docEmphasis">Don't Do this.</span></h5><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<img border="0" alt="" src="face.jpg" class="calibre29"/>
+<pre class="calibre30">class UnsafeStates {
+    private String[] states = new String[] {
+        "AK", "AL" ...
+    };
+    public String[] getStates() { return states; }
+}
+</pre><br class="calibre11"/>
+</td></tr></table></p>
+<p class="docText1">Publishing <tt class="calibre25">states</tt> in this way is problematic because any caller can modify its contents. In this case, the <tt class="calibre25">states</tt> array has escaped its intended scope, because what was supposed to be private state has been effectively made public.</p>
+<p class="docText1">Publishing an object also publishes any objects referred to by its nonprivate fields. More generally, any object that is <span class="docEmphasis">reachable</span> from a published object by following some chain of nonprivate field references and method calls has also been published.</p>
+<p class="docText1">From the perspective of a class <span class="docEmphasis">C</span>, an <span class="docEmphasis">alien</span> method is one whose behavior is not fully specified by <span class="docEmphasis">C</span>. This includes methods in other classes as well as overrideable methods (neither <tt class="calibre25">private</tt> nor <tt class="calibre25">final</tt>) in <span class="docEmphasis">C</span> itself. Passing an object to an alien method must also be considered publishing that object. Since you can't know what code will actually be invoked, you don't know that the alien method won't publish the object or retain a reference to it that might later be used from another thread.</p>
+<p class="docText1">Whether another thread actually does something with a published reference doesn't really matter, because the risk of misuse is still present.<sup class="docFootnote"><a class="calibre2" href="#ch03fn07">[7]</a></sup> Once an object <a name="iddle1566" class="calibre18" id="iddle1566"></a><a name="iddle1567" class="calibre18" id="iddle1567"></a><a name="iddle1568" class="calibre18" id="iddle1568"></a><a name="iddle2199" class="calibre18" id="iddle2199"></a><a name="iddle2601" class="calibre18" id="iddle2601"></a><a name="iddle2602" class="calibre18" id="iddle2602"></a><a name="iddle2745" class="calibre18" id="iddle2745"></a><a name="iddle2746" class="calibre18" id="iddle2746"></a><a name="iddle4718" class="calibre18" id="iddle4718"></a><a name="iddle4719" class="calibre18" id="iddle4719"></a>escapes, you have to assume that another class or thread may, maliciously or carelessly, misuse it. This is a compelling reason to use encapsulation: it makes it practical to analyze programs for correctness and harder to violate design constraints accidentally.</p><blockquote class="calibre19"><p class="docFootnote1"><sup class="calibre27"><a name="ch03fn07" class="calibre18" id="ch03fn07">[7]</a></sup> If someone steals your password and posts it on the <tt class="calibre35">alt.free-passwords</tt> newsgroup, that information has escaped: whether or not someone has (yet) used those credentials to create mischief, your account has still been compromised. Publishing a reference poses the same sort of risk.</p></blockquote>
+<p class="docText1">A final mechanism by which an object or its internal state can be published is to publish an inner class instance, as shown in <tt class="calibre25">ThisEscape</tt> in <a class="calibre2" href="#ch03list07">Listing 3.7</a>. When <tt class="calibre25">ThisEscape</tt> publishes the <tt class="calibre25">EventListener</tt>, it implicitly publishes the enclosing <tt class="calibre25">ThisEscape</tt> instance as well, because inner class instances contain a hidden reference to the enclosing instance.</p>
+<a name="ch03list07" class="calibre18" id="ch03list07"></a><h5 id="title-IDATCAEV" class="docExampleTitle">Listing 3.7. Implicitly Allowing the <tt class="calibre33">this</tt> Reference to Escape. <span class="docEmphasis">Don't Do this.</span></h5><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<img border="0" alt="" src="face.jpg" class="calibre29"/>
+<pre class="calibre30">public class ThisEscape {
+    public ThisEscape(EventSource source) {
+        source.registerListener(
+            new EventListener() {
+                public void onEvent(Event e) {
+                    doSomething(e);
+                }
+            });
+    }
+}
+</pre><br class="calibre11"/>
+</td></tr></table></p>
+<a name="ch03lev2sec5" class="calibre18" id="ch03lev2sec5"></a>
+<h4 id="title-IDAPDAEV" class="docSection2Title">3.2.1. Safe Construction Practices</h4>
+<p class="docText1"><tt class="calibre25">ThisEscape</tt> illustrates an important special case of escapewhen the <tt class="calibre25">this</tt> references escapes during construction. When the inner <tt class="calibre25">EventListener</tt> instance is published, so is the enclosing <tt class="calibre25">ThisEscape</tt> instance. But an object is in a predictable, consistent state only after its constructor returns, so publishing an object from within its constructor can publish an incompletely constructed object. This is true <span class="docEmphasis">even if the publication is the last statement in the constructor.</span> If the <tt class="calibre25">this</tt> reference escapes during construction, the object is considered <span class="docEmphasis">not properly constructed</span>.<sup class="docFootnote"><a class="calibre2" href="#ch03fn08">[8]</a></sup></p><blockquote class="calibre19"><p class="docFootnote1"><sup class="calibre27"><a name="ch03fn08" class="calibre18" id="ch03fn08">[8]</a></sup> More specifically, the <tt class="calibre35">this</tt> reference should not escape from the <span class="docEmphasis">thread</span> until after the constructor returns. The <tt class="calibre35">this</tt> reference can be stored somewhere by the constructor so long as it is not <span class="docEmphasis">used</span> by another thread until after construction. <tt class="calibre35">SafeListener</tt> in <a class="calibre2" href="#ch03list08">Listing 3.8</a> uses this technique.</p></blockquote>
+<a name="ch03sb05" class="calibre18" id="ch03sb05"></a><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<p class="docText1">Do not allow the <tt class="calibre25">this</tt> reference to escape during construction.</p>
+</td></tr></table></p><p class="calibre1"> </p>
+<p class="docText1">A common mistake that can let the <tt class="calibre25">this</tt> reference escape during construction is to start a thread from a constructor. When an object creates a thread from its constructor, it almost always shares its <tt class="calibre25">this</tt> reference with the new thread, either explicitly (by passing it to the constructor) or implicitly (because the <tt class="calibre25">Thread</tt> or <a name="iddle1436" class="calibre18" id="iddle1436"></a><a name="iddle1537" class="calibre18" id="iddle1537"></a><a name="iddle1538" class="calibre18" id="iddle1538"></a><a name="iddle1982" class="calibre18" id="iddle1982"></a><a name="iddle2170" class="calibre18" id="iddle2170"></a><a name="iddle2292" class="calibre18" id="iddle2292"></a><a name="iddle2293" class="calibre18" id="iddle2293"></a><a name="iddle4297" class="calibre18" id="iddle4297"></a><a name="iddle4524" class="calibre18" id="iddle4524"></a><a name="iddle4525" class="calibre18" id="iddle4525"></a><a name="iddle4748" class="calibre18" id="iddle4748"></a><a name="iddle4749" class="calibre18" id="iddle4749"></a><a name="iddle4750" class="calibre18" id="iddle4750"></a><tt class="calibre25">Runnable</tt> is an inner class of the owning object). The new thread might then be able to see the owning object before it is fully constructed. There's nothing wrong with <span class="docEmphasis">creating</span> a thread in a constructor, but it is best not to <span class="docEmphasis">start</span> the thread immediately. Instead, expose a <tt class="calibre25">start</tt> or <tt class="calibre25">initialize</tt> method that starts the owned thread. (See <a class="calibre2" href="ch07.html#ch07">Chapter 7</a> for more on service lifecycle issues.) Calling an overrideable instance method (one that is neither <tt class="calibre25">private</tt> nor <tt class="calibre25">final</tt>) from the constructor can also allow the <tt class="calibre25">this</tt> reference to escape.</p>
+<p class="docText1">If you are tempted to register an event listener or start a thread from a constructor, you can avoid the improper construction by using a private constructor and a public factory method, as shown in <tt class="calibre25">SafeListener</tt> in <a class="calibre2" href="#ch03list08">Listing 3.8</a>.</p>
+<a name="ch03list08" class="calibre18" id="ch03list08"></a><h5 id="title-IDAVLAEV" class="docExampleTitle">Listing 3.8. Using a Factory Method to Prevent the <tt class="calibre33">this</tt> Reference from Escaping During Construction.</h5><p class="calibre21"><table cellspacing="0" width="90%" border="1" cellpadding="5" class="calibre5"><tr class="calibre6"><td class="calibre28">
+<pre class="calibre30">public class SafeListener {
+    private final EventListener listener;
+
+    private SafeListener() {
+        listener = new EventListener() {
+            public void onEvent(Event e) {
+                doSomething(e);
+            }
+        };
+    }
+
+    public static SafeListener newInstance(EventSource source) {
+        SafeListener safe = new SafeListener();
+        source.registerListener(safe.listener);
+        return safe;
+    }
+}
+</pre><br class="calibre11"/>
+</td></tr></table></p>
+
+<p class="calibre1"> </p>
+
+</div>
+
+{% endraw %}
+

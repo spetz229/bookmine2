@@ -1,0 +1,154 @@
+---
+layout: page
+title: "Scala in Depth"
+prev: kindle_split_006.html
+next: kindle_split_008.html
+book_path: books/scala-in-depth-joshua-d-suereth--_oeb/
+---
+{% include JB/setup %}
+{% raw %}
+<div>
+
+<div class="calibre5"></div><h2 class="chapter" id="pref04"><a id="pref04__title" class="calibre6"></a>About this Book
+      </h2>
+      
+      
+      
+      <p class="noind"><i class="calibre9">Scala in Depth</i> is a practical guide to using Scala with deep dives into necessary topics. This book, picking up where introductory books
+         drop off, enables readers to write idiomatic Scala code and understand trade-offs when making use of advanced language features.
+         In particular, this book covers Scala’s implicit and type systems in detail before discussing how these can be used to drastically
+         simplify development. The book promotes the “blended style” of Scala, where paradigms are mixed to achieve something greater.
+      </p>
+      
+      
+      <h3 id="pref04lev1sec1" class="calibre17"><a id="pref04lev1sec1__title" class="calibre6"></a>Who should read this book?
+      </h3>
+      
+      <p class="noind"><i class="calibre9">Scala in Depth</i> is for new or intermediate Scala developers who wish to improve their skills with the language. While this book covers very
+         advanced concepts in Scala, it attempts to pull along those new to Scala.
+      </p>
+      
+      <p class="noind">This book was written for readers who know Java or another object-oriented language. Prior experience with Scala is helpful
+         but not required. It covers Scala 2.7.x through Scala 2.9.x.
+      </p>
+      
+      
+      
+      <h3 id="pref04lev1sec2" class="calibre17"><a id="pref04lev1sec2__title" class="calibre6"></a>Roadmap
+      </h3>
+      
+      <p class="noind"><i class="calibre9">Scala in Depth</i> begins with a philosophical discussion of the “xen” of Scala—that Scala is a blending of concepts that achieve a greater
+         whole when combined. In particular, three dichotomies are discussed: static typing versus expressiveness, functional programming
+         versus object-oriented programming, and powerful language features versus dead simple Java integration.
+      </p>
+      
+      <p class="noind"><a href="kindle_split_010.html#ch02" class="calibre7">Chapter 2</a> is a discussion of the core rules of Scala. These are the things that every Scala developer should be aware of and make use
+         of in daily development. This chapter is for every Scala developer and covers the basics that make Scala a great language.
+      </p>
+      
+      <p class="noind"><a href="kindle_split_011.html#ch03" class="calibre7">Chapter 3</a> is a digression in code style and associated issues. Scala brings a few new players to the table, and any Scala style guide
+         should reflect that. Some common conventions from popular languages like Ruby and Java can actually be deterrents to good
+         Scala code.
+      </p>
+      
+      <p class="noind"><a href="kindle_split_012.html#ch04" class="calibre7">Chapter 4</a> covers new issues arising in object-oriented design due to Scala’s mixin inheritance. One topic of interest to any Scala
+         developer is the early initializer coverage, which gets little coverage in other books.
+      </p>
+      
+      <p class="noind">After object orientation, the book moves into the implicit system. In <a href="kindle_split_013.html#ch05" class="calibre7">chapter 5</a>, rather than simply discussing best practices, a deep dive is taken into the mechanics of implicits in Scala. This chapter
+         is a must for all Scala developers who wish to write expressive libraries and code.
+      </p>
+      
+      <p class="noind"><a href="kindle_split_014.html#ch06" class="calibre7">Chapter 6</a> is devoted to Scala’s type system. The discussion covers all the ways types appear in Scala and how to utilize the type system
+         to enforce constraints. The chapter moves into a discussion of higher-kinded types and finishes with a dive into existential
+         types.
+      </p>
+      
+      <p class="noind"><a href="kindle_split_015.html#ch07" class="calibre7">Chapter 7</a> discusses the most advanced usage patterns in the language, the intersection of types and implicits. This intersection is
+         where a lot of interesting and powerful abstractions occur, the epitome of which is the type class pattern.
+      </p>
+      
+      <p class="noind">Having covered the most advanced aspects of Scala, in <a href="kindle_split_016.html#ch08" class="calibre7">chapter 8</a> we move into a discussion of Scala’s collection library. This includes the design and performance of Scala’s collections
+         as well as how to deal with the powerful type mechanisms.
+      </p>
+      
+      <p class="noind"><a href="kindle_split_017.html#ch09" class="calibre7">Chapter 9</a> kicks off the discussion on actors in Scala. Actors are a concurrency mechanism that can provide great throughput and parallelism
+         when used appropriately. The chapter dives into issues of designing actor-based systems and finishes with a demonstration
+         of how the Akka actors library provides best practices by default.
+      </p>
+      
+      <p class="noind"><a href="kindle_split_018.html#ch10" class="calibre7">Chapter 10</a> covers Java integration with Scala. While Scala is more compatible with Java than most other JVM languages, there’s still
+         a mismatch in features between the two. It’s at these corners that issues arise in Scala-Java integration and this chapter
+         provides a few simple rules that help avoid these issues.
+      </p>
+      
+      <p class="noind"><a href="kindle_split_019.html#ch11" class="calibre7">Chapter 11</a> takes concepts from category theory and makes them practical. In pure functional programming, a lot of concepts from category
+         theory have been applied to code. These are akin to object-oriented design patterns, but far more abstract. While they have
+         terrible names, as is common in mathematics, these concepts are immensely useful in practice. No coverage of functional programming
+         would be complete without a discussion of some of these abstractions, and Scala in Depth does its best to make these concepts
+         real.
+      </p>
+      
+      
+      
+      <h3 id="pref04lev1sec3" class="calibre17"><a id="pref04lev1sec3__title" class="calibre6"></a>Code downloads and conventions
+      </h3>
+      
+      <p class="noind">All source code in the book is in a <kbd class="calibre18">fixed-width font like this</kbd>, which sets it off from the surrounding text. In many listings, the code is annotated to point out the key concepts. I have
+         tried to format the code so that it fits within the available page space in the book by adding line breaks and using indentation
+         carefully. Sometimes, however, very long lines include line-continuation markers.
+      </p>
+      
+      <p class="noind">Source code for all the working examples is available from <a href="http://www.manning.com/ScalainDepth" class="calibre7">www.manning.com/ScalainDepth</a> and at <a href="https://github.com/jsuereth/scala-in-depth-source" class="calibre7">https://github.com/jsuereth/scala-in-depth-source</a>. To run the examples, readers should have Scala installed and, optionally, SBT (<a href="http://scalasbt.org" class="calibre7">http://scalasbt.org</a>).
+      </p>
+      
+      <p class="noind">Code examples appear throughout this book. Longer listings appear under clear listing headers; shorter listings appear between
+         lines of text.
+      </p>
+      
+      
+      
+      <h3 id="pref04lev1sec4" class="calibre17"><a id="pref04lev1sec4__title" class="calibre6"></a>Author online
+      </h3>
+      
+      <p class="noind">Purchase of <i class="calibre9">Scala in Depth</i> includes free access to a private web forum run by Manning Publications where you can make comments about the book, ask technical
+         questions, and receive help from the authors and from other users. To access the forum and subscribe to it, point your web
+         browser to <a href="http://www.manning.com/ScalainDepth" class="calibre7">www.manning.com/ScalainDepth</a>. This page provides information on how to get on the forum once you’re registered, what kind of help is available, and the
+         rules of conduct on the forum.
+      </p>
+      
+      <p class="noind">Manning’s commitment to our readers is to provide a venue where a meaningful dialog between individual readers and between
+         readers and the authors can take place. It’s not a commitment to any specific amount of participation on the part of the authors,
+         whose contribution to the AO forum remains voluntary (and unpaid). We suggest you try asking the author some challenging questions
+         lest his interest stray.
+      </p>
+      
+      <p class="noind">The Author Online forum and the archives of previous discussions will be accessible from the publisher’s website as long as
+         the book is in print.
+      </p>
+      
+      
+      
+      <h3 id="pref04lev1sec5" class="calibre17"><a id="pref04lev1sec5__title" class="calibre6"></a>About the author
+      </h3>
+      
+      <p class="noind">Josh Suereth is a Senior Software Engineer at Typesafe Inc., the company behind Scala. He has been a Scala enthusiast since
+         he came to know this beautiful language in 2007. He started his professional career as a software developer in 2004, cutting
+         his teeth with C++, STL, and Boost. Around the same time, Java fever was spreading and his interest was migrating to web-hosted
+         distributed Java-delivered solutions to aid health departments in the discovery of disease outbreaks.
+      </p>
+      
+      <p class="noind">He introduced Scala into his company code base in 2007, and soon after he was infected by Scala fever, contributing to the
+         Scala IDE, maven-scala-plugin and Scala itself. Today, Josh is the author of several open source Scala projects, including
+         the Scala automated resource management library and the PGP sbt plugin, as well as contributing to key components in the Scala
+         ecosystem, like the maven-scala-plugin. His current work at Typesafe Inc., has him doing everything from building MSIs to
+         profiling performance issues.
+      </p>
+      
+      <p class="noind">Josh regularly shares his expertise in articles and talks. He likes short walks on the beach and dark beer.</p>
+      
+      
+      <div class="calibre4" id="calibre_pb_7"></div></div>
+
+{% endraw %}
+

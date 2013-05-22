@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="82f3d689-8ee1-4a1a-8348-deecb6af0b8b" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (0.9.28)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Mental Traps: The Overthinker's Guide to a Happier Life</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="4195cb93-c535-4c17-bcc3-c431966aa5a6" playOrder="1">
+      <navLabel>
+        <text>The Nature of Mental Traps</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_004.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="bf557df8-e886-43a5-9e9f-9b04a0571fcc" playOrder="2">
+      <navLabel>
+        <text>Persistence</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_005.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="27359229-8f74-4483-b115-8187ecbc6936" playOrder="3">
+      <navLabel>
+        <text>Amplification</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_006.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="2c7941e5-2fec-413e-ab03-f14ccd01e5a2" playOrder="4">
+      <navLabel>
+        <text>Fixation</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_007.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="66834479-c8b6-4bd4-acf6-58c533f71c10" playOrder="5">
+      <navLabel>
+        <text>Reversion</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_008.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="d2ed712b-687f-42c1-bc66-c23f048fa84a" playOrder="6">
+      <navLabel>
+        <text>Anticipation</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_009.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="c044cc38-9b97-46d1-9ca3-071f3cef4c8c" playOrder="7">
+      <navLabel>
+        <text>Resistance</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_010.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="90905f6f-d498-459f-a794-c50968d808b2" playOrder="8">
+      <navLabel>
+        <text>Procrastination</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_011.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="35e46b17-001c-4a3a-a2f6-7eb57c307ca7" playOrder="9">
+      <navLabel>
+        <text>Division</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_012.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="2ccd209d-3990-474b-9b4d-59d00e184f93" playOrder="10">
+      <navLabel>
+        <text>Acceleration</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_013.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="72a440d6-127d-4ec0-9155-37a5e87c7330" playOrder="11">
+      <navLabel>
+        <text>Regulation</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_014.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="34605342-ad7b-4feb-b65f-6ab86fbcecde" playOrder="12">
+      <navLabel>
+        <text>Formulation</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_015.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="73130712-0c4f-4d9d-b730-88b81a61f8c5" playOrder="13">
+      <navLabel>
+        <text>Keeping Out of Mental Traps</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_016.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="2112df33-ad90-4e7b-94da-d282ffd12c66" playOrder="14">
+      <navLabel>
+        <text>Appendix The Practice of Thought-Watching</text>
+      </navLabel>
+      <content src="Mental_Traps-a_Happier_Life_split_017.html"/>
+    </navPoint>
+  </navMap>
+</ncx>
